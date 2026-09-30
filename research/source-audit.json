@@ -1,0 +1,1711 @@
+{
+  "checked_at": "2026-09-30T23:18:33.689220+00:00",
+  "review_cutoff": "2026-09-30",
+  "scope": "Primary document links and arXiv metadata; no data or model download",
+  "sources": [
+    {
+      "url": "https://aclanthology.org/2025.acl-long.709/",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.acl-long.709/",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.13040",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2305.13040",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "SpokenWOZ: A Large-Scale Speech-Text Benchmark for Spoken Task-Oriented Dialogue Agents"
+        ],
+        "citation_author": [
+          "Si, Shuzheng",
+          "Ma, Wentao",
+          "Gao, Haoyu",
+          "Wu, Yuchuan",
+          "Lin, Ting-En",
+          "Dai, Yinpei",
+          "Li, Hangyu",
+          "Yan, Rui",
+          "Huang, Fei",
+          "Li, Yongbin"
+        ],
+        "citation_date": [
+          "2023/05/22"
+        ],
+        "citation_online_date": [
+          "2025/06/24"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2305.13040"
+        ],
+        "citation_arxiv_id": [
+          "2305.13040"
+        ],
+        "citation_abstract": [
+          "Task-oriented dialogue (TOD) models have made significant progress in recent years. However, previous studies primarily focus on datasets written by annotators, which has resulted in a gap between academic research and real-world spoken conversation scenarios. While several small-scale spoken TOD datasets are proposed to address robustness issues such as ASR errors, they ignore the unique challenges in spoken conversation. To tackle the limitations, we introduce SpokenWOZ, a large-scale speech-text dataset for spoken TOD, containing 8 domains, 203k turns, 5.7k dialogues and 249 hours of audios from human-to-human spoken conversations. SpokenWOZ further incorporates common spoken characteristics such as word-by-word processing and reasoning in spoken language. Based on these characteristics, we present cross-turn slot and reasoning slot detection as new challenges. We conduct experiments on various baselines, including text-modal models, newly proposed dual-modal models, and LLMs, e.g., ChatGPT. The results show that the current models still have substantial room for improvement in spoken conversation, where the most advanced dialogue state tracker only achieves 25.65% in joint goal accuracy and the SOTA end-to-end model only correctly completes the user request in 52.1% of dialogues. The dataset, code, and leaderboard are available: https://spokenwoz.github.io/."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.00037",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.00037",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Moshi: a speech-text foundation model for real-time dialogue"
+        ],
+        "citation_author": [
+          "Défossez, Alexandre",
+          "Mazaré, Laurent",
+          "Orsini, Manu",
+          "Royer, Amélie",
+          "Pérez, Patrick",
+          "Jégou, Hervé",
+          "Grave, Edouard",
+          "Zeghidour, Neil"
+        ],
+        "citation_date": [
+          "2024/09/17"
+        ],
+        "citation_online_date": [
+          "2024/10/02"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2410.00037"
+        ],
+        "citation_arxiv_id": [
+          "2410.00037"
+        ],
+        "citation_abstract": [
+          "We introduce Moshi, a speech-text foundation model and full-duplex spoken dialogue framework. Current systems for spoken dialogue rely on pipelines of independent components, namely voice activity detection, speech recognition, textual dialogue and text-to-speech. Such frameworks cannot emulate the experience of real conversations. First, their complexity induces a latency of several seconds between interactions. Second, text being the intermediate modality for dialogue, non-linguistic information that modifies meaning -- such as emotion or non-speech sounds -- is lost in the interaction. Finally, they rely on a segmentation into speaker turns, which does not take into account overlapping speech, interruptions and interjections. Moshi solves these independent issues altogether by casting spoken dialogue as speech-to-speech generation. Starting from a text language model backbone, Moshi generates speech as tokens from the residual quantizer of a neural audio codec, while modeling separately its own speech and that of the user into parallel streams. This allows for the removal of explicit speaker turns, and the modeling of arbitrary conversational dynamics. We moreover extend the hierarchical semantic-to-acoustic token generation of previous work to first predict time-aligned text tokens as a prefix to audio tokens. Not only this \"Inner Monologue\" method significantly improves the linguistic quality of generated speech, but we also illustrate how it can provide streaming speech recognition and text-to-speech. Our resulting model is the first real-time full-duplex spoken large language model, with a theoretical latency of 160ms, 200ms in practice, and is available at https://github.com/kyutai-labs/moshi."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.17196",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.17196",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "VoiceBench: Benchmarking LLM-Based Voice Assistants"
+        ],
+        "citation_author": [
+          "Chen, Yiming",
+          "Yue, Xianghu",
+          "Zhang, Chen",
+          "Gao, Xiaoxue",
+          "Tan, Robby T.",
+          "Li, Haizhou"
+        ],
+        "citation_date": [
+          "2024/10/22"
+        ],
+        "citation_online_date": [
+          "2024/12/11"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2410.17196"
+        ],
+        "citation_arxiv_id": [
+          "2410.17196"
+        ],
+        "citation_abstract": [
+          "Building on the success of large language models (LLMs), recent advancements such as GPT-4o have enabled real-time speech interactions through LLM-based voice assistants, offering a significantly improved user experience compared to traditional text-based interactions. However, the absence of benchmarks designed to evaluate these speech interaction capabilities has hindered progress of LLM-based voice assistants development. Current evaluations focus primarily on automatic speech recognition (ASR) or general knowledge evaluation with clean speeches, neglecting the more intricate, real-world scenarios that involve diverse speaker characteristics, environmental and content factors. To address this, we introduce VoiceBench, the first benchmark designed to provide a multi-faceted evaluation of LLM-based voice assistants. VoiceBench also includes both real and synthetic spoken instructions that incorporate the above three key real-world variations. Extensive experiments reveal the limitations of current LLM-based voice assistant models and offer valuable insights for future research and development in this field."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.17799",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.17799",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation"
+        ],
+        "citation_author": [
+          "Zhang, Qinglin",
+          "Cheng, Luyao",
+          "Deng, Chong",
+          "Chen, Qian",
+          "Wang, Wen",
+          "Zheng, Siqi",
+          "Liu, Jiaqing",
+          "Yu, Hai",
+          "Tan, Chaohong",
+          "Du, Zhihao",
+          "Zhang, Shiliang"
+        ],
+        "citation_date": [
+          "2024/10/23"
+        ],
+        "citation_online_date": [
+          "2025/01/03"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2410.17799"
+        ],
+        "citation_arxiv_id": [
+          "2410.17799"
+        ],
+        "citation_abstract": [
+          "Full-duplex spoken dialogue systems significantly surpass traditional turn-based dialogue systems, as they allow simultaneous bidirectional communication, closely mirroring human-human interactions. However, achieving low latency and natural interactions in full-duplex dialogue systems remains a significant challenge, especially considering human conversation dynamics such as interruptions, backchannels, and overlapping speech. In this paper, we introduce a novel End-to-End GPT-based model OmniFlatten for full-duplex conversation, capable of effectively modeling the complex behaviors inherent to natural conversations with low latency. To achieve full-duplex conversation capabilities, we propose a multi-stage post-training scheme that progressively adapts a text large language model (LLM) backbone into a speech-text dialogue LLM, capable of generating text and speech in real time, without modifying the architecture of the backbone LLM. The training process comprises three stages: modality alignment, half-duplex dialogue learning, and full-duplex dialogue learning. In all training stages, we standardize the data using a flattening operation, which enables unifying the training methods and the GPT backbone across different modalities and tasks. Our approach offers a simple modeling technique and a promising research direction for developing efficient and natural end-to-end full-duplex spoken dialogue systems. Audio samples of dialogues generated by OmniFlatten can be found at this web site (https://omniflatten.github.io/)."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2411.00774",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2411.00774",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Freeze-Omni: A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM"
+        ],
+        "citation_author": [
+          "Wang, Xiong",
+          "Li, Yangze",
+          "Fu, Chaoyou",
+          "Shen, Yunhang",
+          "Xie, Lei",
+          "Li, Ke",
+          "Sun, Xing",
+          "Ma, Long"
+        ],
+        "citation_date": [
+          "2024/11/01"
+        ],
+        "citation_online_date": [
+          "2024/12/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2411.00774"
+        ],
+        "citation_arxiv_id": [
+          "2411.00774"
+        ],
+        "citation_abstract": [
+          "Rapidly developing large language models (LLMs) have brought tremendous intelligent applications. Especially, the GPT-4o's excellent duplex speech interaction ability has brought impressive experience to users. Researchers have recently proposed several multi-modal LLMs in this direction that can achieve user-agent speech-to-speech conversations. This paper proposes a novel speech-text multimodal LLM architecture called Freeze-Omni. Our main contribution is that the speech input and output modalities can be easily connected to a textual LLM while keeping the LLM's parameters frozen throughout the training process. We design a three-stage training strategy for modeling both the speech input and output, enabling Freeze-Omni to obtain speech-to-speech conversation ability using text-speech paired data (such as ASR and TTS data) and only 60,000 multi-round text Q&A data on 8 GPUs. Moreover, we can effectively ensure that the intelligence of the Freeze-Omni in the speech modality is at the same level compared with that in the text modality of its backbone LLM, while achieving low latency end-to-end spoken response. In addition, we also designed a method to achieve duplex dialogue ability through multi-task training, giving Freeze-Omni a more natural style of dialogue ability between users and agents. In summary, Freeze-Omni holds great potential to conduct speech-to-speech dialogue based on a multimodal LLM under the condition of a frozen LLM, avoiding the catastrophic forgetting problem caused by limited data and training resources."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.04721",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2503.04721",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Full-Duplex-Bench: A Benchmark to Evaluate Full-duplex Spoken Dialogue Models on Turn-taking Capabilities"
+        ],
+        "citation_author": [
+          "Lin, Guan-Ting",
+          "Lian, Jiachen",
+          "Li, Tingle",
+          "Wang, Qirui",
+          "Anumanchipalli, Gopala",
+          "Liu, Alexander H.",
+          "Lee, Hung-yi"
+        ],
+        "citation_date": [
+          "2025/03/06"
+        ],
+        "citation_online_date": [
+          "2025/08/16"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2503.04721"
+        ],
+        "citation_arxiv_id": [
+          "2503.04721"
+        ],
+        "citation_abstract": [
+          "Spoken dialogue modeling poses challenges beyond text-based language modeling, requiring real-time interaction, turn-taking, and backchanneling. While most Spoken Dialogue Models (SDMs) operate in half-duplex mode-processing one turn at a time - emerging full-duplex SDMs can listen and speak simultaneously, enabling more natural conversations. However, current evaluations remain limited, focusing mainly on turn-based metrics or coarse corpus-level analyses. To address this, we introduce Full-Duplex-Bench, a benchmark that systematically evaluates key interactive behaviors: pause handling, backchanneling, turn-taking, and interruption management. Our framework uses automatic metrics for consistent, reproducible assessment and provides a fair, fast evaluation setup. By releasing our benchmark and code, we aim to advance spoken dialogue modeling and foster the development of more natural and engaging SDMs."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.02707",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2505.02707",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Voila: Voice-Language Foundation Models for Real-Time Autonomous Interaction and Voice Role-Play"
+        ],
+        "citation_author": [
+          "Shi, Yemin",
+          "Shu, Yu",
+          "Dong, Siwei",
+          "Liu, Guangyi",
+          "Sesay, Jaward",
+          "Li, Jingwen",
+          "Hu, Zhiting"
+        ],
+        "citation_date": [
+          "2025/05/05"
+        ],
+        "citation_online_date": [
+          "2025/05/05"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2505.02707"
+        ],
+        "citation_arxiv_id": [
+          "2505.02707"
+        ],
+        "citation_abstract": [
+          "A voice AI agent that blends seamlessly into daily life would interact with humans in an autonomous, real-time, and emotionally expressive manner. Rather than merely reacting to commands, it would continuously listen, reason, and respond proactively, fostering fluid, dynamic, and emotionally resonant interactions. We introduce Voila, a family of large voice-language foundation models that make a step towards this vision. Voila moves beyond traditional pipeline systems by adopting a new end-to-end architecture that enables full-duplex, low-latency conversations while preserving rich vocal nuances such as tone, rhythm, and emotion. It achieves a response latency of just 195 milliseconds, surpassing the average human response time. Its hierarchical multi-scale Transformer integrates the reasoning capabilities of large language models (LLMs) with powerful acoustic modeling, enabling natural, persona-aware voice generation -- where users can simply write text instructions to define the speaker's identity, tone, and other characteristics. Moreover, Voila supports over one million pre-built voices and efficient customization of new ones from brief audio samples as short as 10 seconds. Beyond spoken dialogue, Voila is designed as a unified model for a wide range of voice-based applications, including automatic speech recognition (ASR), Text-to-Speech (TTS), and, with minimal adaptation, multilingual speech translation. Voila is fully open-sourced to support open research and accelerate progress toward next-generation human-machine interactions."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.15670",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2505.15670",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "SALM-Duplex: Efficient and Direct Duplex Modeling for Speech-to-Speech Language Model"
+        ],
+        "citation_author": [
+          "Hu, Ke",
+          "Hosseini-Asl, Ehsan",
+          "Chen, Chen",
+          "Casanova, Edresson",
+          "Ghosh, Subhankar",
+          "Żelasko, Piotr",
+          "Chen, Zhehuai",
+          "Li, Jason",
+          "Balam, Jagadeesh",
+          "Ginsburg, Boris"
+        ],
+        "citation_date": [
+          "2025/05/21"
+        ],
+        "citation_online_date": [
+          "2025/07/25"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2505.15670"
+        ],
+        "citation_arxiv_id": [
+          "2505.15670"
+        ],
+        "citation_abstract": [
+          "Spoken dialogue is an intuitive form of human-computer interaction, yet current speech language models often remain constrained to turn-based exchanges, lacking real-time adaptability such as user barge-in. We propose a novel duplex speech to speech (S2S) architecture featuring continuous user inputs and codec agent outputs with channel fusion that directly models simultaneous user and agent streams. Using a pretrained streaming encoder for user input enables the first duplex S2S model without requiring speech pretrain. Separate architectures for agent and user modeling facilitate codec fine-tuning for better agent voices and halve the bitrate (0.6 kbps) compared to previous works. Experimental results show that the proposed model outperforms previous duplex models in reasoning, turn-taking, and barge-in abilities. The model requires significantly less speech data, as speech pretrain is skipped, which markedly simplifies the process of building a duplex S2S model from any LLMs. Finally, it is the first openly available duplex S2S model with training and inference code to foster reproducibility."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.17060",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2505.17060",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "SALMONN-omni: A Standalone Speech LLM without Codec Injection for Full-duplex Conversation"
+        ],
+        "citation_author": [
+          "Yu, Wenyi",
+          "Wang, Siyin",
+          "Yang, Xiaoyu",
+          "Chen, Xianzhao",
+          "Tian, Xiaohai",
+          "Zhang, Jun",
+          "Sun, Guangzhi",
+          "Lu, Lu",
+          "Wang, Yuxuan",
+          "Zhang, Chao"
+        ],
+        "citation_date": [
+          "2025/05/17"
+        ],
+        "citation_online_date": [
+          "2025/05/17"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2505.17060"
+        ],
+        "citation_arxiv_id": [
+          "2505.17060"
+        ],
+        "citation_abstract": [
+          "In order to enable fluid and natural human-machine speech interaction, existing full-duplex conversational systems often adopt modular architectures with auxiliary components such as voice activity detectors, interrupters, conversation state predictors, or multiple LLMs. These systems, however, suffer from error accumulation across modules and struggle with key challenges such as context-dependent barge-in and echo cancellation. Recent approaches, most notably Moshi, simplify the pipeline by injecting audio codecs into the token space of a single LLM. However, such methods still incur significant performance degradation when operating on the speech rather than text modality. In this paper, we introduce SALMONN-omni, the first single, standalone full-duplex speech LLM that operates without audio codecs in its token space. It features a novel dynamic thinking mechanism within the LLM backbone, enabling the model to learn when to transition between speaking and listening states. Experiments on widely used benchmarks for spoken question answering and open-domain dialogue show that SALMONN-omni achieves at least 30\\% relative performance improvement over existing open-source full-duplex models and performs highly competitively to half-duplex and turn-based systems, despite using substantially less training data. Moreover, SALMONN-omni demonstrates strong performance in complex conversational scenarios, including turn-taking, backchanneling, echo cancellation and context-dependent barge-in, with further improvements achieved through reinforcement learning. Some demo conversations between user and SALMONN-omni are provided in the following repository https://github.com/bytedance/SALMONN."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.19040",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2507.19040",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "FD-Bench: A Full-Duplex Benchmarking Pipeline Designed for Full Duplex Spoken Dialogue Systems"
+        ],
+        "citation_author": [
+          "Peng, Yizhou",
+          "Chao, Yi-Wen",
+          "Ng, Dianwen",
+          "Ma, Yukun",
+          "Ni, Chongjia",
+          "Ma, Bin",
+          "Chng, Eng Siong"
+        ],
+        "citation_date": [
+          "2025/07/25"
+        ],
+        "citation_online_date": [
+          "2025/07/25"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2507.19040"
+        ],
+        "citation_arxiv_id": [
+          "2507.19040"
+        ],
+        "citation_abstract": [
+          "Full-duplex spoken dialogue systems (FDSDS) enable more natural human-machine interactions by allowing real-time user interruptions and backchanneling, compared to traditional SDS that rely on turn-taking. However, existing benchmarks lack metrics for FD scenes, e.g., evaluating model performance during user interruptions. In this paper, we present a comprehensive FD benchmarking pipeline utilizing LLMs, TTS, and ASR to address this gap. It assesses FDSDS's ability to handle user interruptions, manage delays, and maintain robustness in challenging scenarios with diverse novel metrics. We applied our benchmark to three open-source FDSDS (Moshi, Freeze-omni, and VITA-1.5) using over 40 hours of generated speech, with 293 simulated conversations and 1,200 interruptions. The results show that all models continue to face challenges, such as failing to respond to user interruptions, under frequent disruptions and noisy conditions. Demonstrations, data, and code will be released."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.23159",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2507.23159",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Full-Duplex-Bench v1.5: Evaluating Overlap Handling for Full-Duplex Speech Models"
+        ],
+        "citation_author": [
+          "Lin, Guan-Ting",
+          "Kuan, Shih-Yun Shan",
+          "Wang, Qirui",
+          "Lian, Jiachen",
+          "Li, Tingle",
+          "Watanabe, Shinji",
+          "Lee, Hung-yi"
+        ],
+        "citation_date": [
+          "2025/07/30"
+        ],
+        "citation_online_date": [
+          "2026/04/26"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2507.23159"
+        ],
+        "citation_arxiv_id": [
+          "2507.23159"
+        ],
+        "citation_abstract": [
+          "Full-duplex spoken dialogue systems promise to transform human-machine interaction from a rigid, turn-based protocol into a fluid, natural conversation. However, the central challenge to realizing this vision, managing overlapping speech, remains critically under-evaluated. We introduce Full-Duplex-Bench v1.5, the first fully automated benchmark designed to systematically probe how models behave during speech overlap. The benchmark simulates four representative overlap scenarios: user interruption, user backchannel, talking to others, and background speech. Our framework, compatible with open-source and commercial API-based models, provides a comprehensive suite of metrics analyzing categorical dialogue behaviors, stop and response latency, and prosodic adaptation. Benchmarking five state-of-the-art agents reveals two divergent strategies: a responsive approach prioritizing rapid response to user input, and a floor-holding approach that preserves conversational flow by filtering overlapping events. Our open-source framework enables practitioners to accelerate the development of robust full-duplex systems by providing the tools for reproducible evaluation."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2508.13992",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2508.13992",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MMAU-Pro: A Challenging and Comprehensive Benchmark for Holistic Evaluation of Audio General Intelligence"
+        ],
+        "citation_author": [
+          "Kumar, Sonal",
+          "Sedláček, Šimon",
+          "Lokegaonkar, Vaibhavi",
+          "López, Fernando",
+          "Yu, Wenyi",
+          "Anand, Nishit",
+          "Ryu, Hyeonggon",
+          "Chen, Lichang",
+          "Plička, Maxim",
+          "Hlaváček, Miroslav",
+          "Ellingwood, William Fineas",
+          "Udupa, Sathvik",
+          "Hou, Siyuan",
+          "Ferner, Allison",
+          "Barahona, Sara",
+          "Bolaños, Cecilia",
+          "Rahi, Satish",
+          "Herrera-Alarcón, Laura",
+          "Dixit, Satvik",
+          "Patil, Siddhi",
+          "Deshmukh, Soham",
+          "Koroshinadze, Lasha",
+          "Liu, Yao",
+          "Perera, Leibny Paola Garcia",
+          "Zanou, Eleni",
+          "Stafylakis, Themos",
+          "Chung, Joon Son",
+          "Harwath, David",
+          "Zhang, Chao",
+          "Manocha, Dinesh",
+          "Lozano-Diez, Alicia",
+          "Kesiraju, Santosh",
+          "Ghosh, Sreyan",
+          "Duraiswami, Ramani"
+        ],
+        "citation_date": [
+          "2025/08/19"
+        ],
+        "citation_online_date": [
+          "2025/08/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2508.13992"
+        ],
+        "citation_arxiv_id": [
+          "2508.13992"
+        ],
+        "citation_abstract": [
+          "Audio comprehension-including speech, non-speech sounds, and music-is essential for achieving human-level intelligence. Consequently, AI agents must demonstrate holistic audio understanding to qualify as generally intelligent. However, evaluating auditory intelligence comprehensively remains challenging. To address this gap, we introduce MMAU-Pro, the most comprehensive and rigorously curated benchmark for assessing audio intelligence in AI systems. MMAU-Pro contains 5,305 instances, where each instance has one or more audios paired with human expert-generated question-answer pairs, spanning speech, sound, music, and their combinations. Unlike existing benchmarks, MMAU-Pro evaluates auditory intelligence across 49 unique skills and multiple complex dimensions, including long-form audio comprehension, spatial audio reasoning, multi-audio understanding, among others. All questions are meticulously designed to require deliberate multi-hop reasoning, including both multiple-choice and open-ended response formats. Importantly, audio data is sourced directly ``from the wild\" rather than from existing datasets with known distributions. We evaluate 22 leading open-source and proprietary multimodal AI models, revealing significant limitations: even state-of-the-art models such as Gemini 2.5 Flash and Audio Flamingo 3 achieve only 59.2% and 51.7% accuracy, respectively, approaching random performance in multiple categories. Our extensive analysis highlights specific shortcomings and provides novel insights, offering actionable perspectives for the community to enhance future AI systems' progression toward audio general intelligence. The benchmark and code is available at https://sonalkum.github.io/mmau-pro."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2509.04093",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2509.04093",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Open-Source Full-Duplex Conversational Datasets for Natural and Interactive Speech Synthesis"
+        ],
+        "citation_author": [
+          "Zhou, Zhitong",
+          "Zhang, Qingqing",
+          "Luo, Lei",
+          "Liu, Jiechen",
+          "Zhou, Ruohua"
+        ],
+        "citation_date": [
+          "2025/09/04"
+        ],
+        "citation_online_date": [
+          "2025/09/04"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2509.04093"
+        ],
+        "citation_arxiv_id": [
+          "2509.04093"
+        ],
+        "citation_abstract": [
+          "Full-duplex, spontaneous conversational data are essential for enhancing the naturalness and interactivity of synthesized speech in conversational TTS systems. We present two open-source dual-track conversational speech datasets, one in Chinese and one in English, designed to enhance the naturalness of synthesized speech by providing more realistic conversational data. The two datasets contain a total of 15 hours of natural, spontaneous conversations recorded in isolated rooms, which produces separate high-quality audio tracks for each speaker. The conversations cover diverse daily topics and domains, capturing realistic interaction patterns including frequent overlaps, backchannel responses, laughter, and other non-verbal vocalizations. We introduce the data collection procedure, transcription and annotation methods. We demonstrate the utility of these corpora by fine-tuning a baseline TTS model with the proposed datasets. The fine-tuned TTS model achieves higher subjective and objective evaluation metrics compared to the baseline, indicating improved naturalness and conversational realism in synthetic speech. All data, annotations, and supporting code for fine-tuning and evaluation are made available to facilitate further research in conversational speech synthesis."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2510.07497",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2510.07497",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Can Speech LLMs Think while Listening?"
+        ],
+        "citation_author": [
+          "Shih, Yi-Jen",
+          "Raj, Desh",
+          "Wu, Chunyang",
+          "Zhou, Wei",
+          "Bong, SK",
+          "Gaur, Yashesh",
+          "Mahadeokar, Jay",
+          "Kalinli, Ozlem",
+          "Seltzer, Mike"
+        ],
+        "citation_date": [
+          "2025/10/08"
+        ],
+        "citation_online_date": [
+          "2025/10/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2510.07497"
+        ],
+        "citation_arxiv_id": [
+          "2510.07497"
+        ],
+        "citation_abstract": [
+          "Recent advances in speech large language models (speech LLMs) have enabled seamless spoken interactions, but these systems still struggle with complex reasoning tasks. Previously, chain-of-thought (CoT) prompting or fine-tuning has been to shown to significantly improve the reasoning abilities of text-based LLMs. In this work, we investigate the effect of CoT fine-tuning for multi-stream speech LLMs, demonstrating that reasoning in text space improves the accuracy of speech LLMs by 2.4x, on average, over a suite of spoken reasoning tasks. Beyond accuracy, the latency of the spoken response is a crucial factor for interacting with voice-based agents. Inspired by the human behavior of \"thinking while listening,\" we propose methods to reduce the additional latency from reasoning by allowing the model to start reasoning before the user query has ended. To achieve this, we introduce an entropy-based metric, \"question completeness,\" which acts as an indicator to guide the model on the optimal time to start reasoning. This method provides greater control over the accuracy-latency trade-off compared with heuristic-based approaches and, under equivalent latency conditions, yields a 4% accuracy gain on ARC-Easy. Finally, we use Direct Preference Optimization (DPO) on preference data created using rejection sampling to push the accuracy-latency pareto frontier further, resulting in a 70% reduction in latency without loss in accuracy."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2510.07838",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2510.07838",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner"
+        ],
+        "citation_author": [
+          "Lin, Guan-Ting",
+          "Kuan, Shih-Yun Shan",
+          "Shi, Jiatong",
+          "Chang, Kai-Wei",
+          "Arora, Siddhant",
+          "Watanabe, Shinji",
+          "Lee, Hung-yi"
+        ],
+        "citation_date": [
+          "2025/10/09"
+        ],
+        "citation_online_date": [
+          "2026/04/26"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2510.07838"
+        ],
+        "citation_arxiv_id": [
+          "2510.07838"
+        ],
+        "citation_abstract": [
+          "While full-duplex speech agents enable natural, low-latency interaction by speaking and listening simultaneously, their consistency and task performance in multi-turn settings remain underexplored. We introduce Full-Duplex-Bench-v2 (FDB-v2), a streaming framework that integrates with an automated examiner that enforces staged goals under two pacing setups (Fast vs. Slow). FDB-v2 covers four task families: daily, correction, entity tracking, and safety. We report turn-taking fluency, multi-turn instruction following, and task-specific competence. The framework is extensible, supporting both commercial APIs and open source models. When we test full-duplex systems with FDB-v2, they often get confused when people talk at the same time, struggle to handle corrections smoothly, and sometimes lose track of who or what is being talked about. Through an open-sourced, standardized streaming protocol and a task set, FDB-v2 makes it easy to extend to new task families, allowing the community to tailor and accelerate evaluation of multi-turn full-duplex systems."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2511.10262",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.10262",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models"
+        ],
+        "citation_author": [
+          "Zhang, He",
+          "Cui, Wenqian",
+          "Xu, Haoning",
+          "Li, Xiaohui",
+          "Zhu, Lei",
+          "Bai, Haoli",
+          "Ma, Shaohua",
+          "King, Irwin"
+        ],
+        "citation_date": [
+          "2025/11/13"
+        ],
+        "citation_online_date": [
+          "2026/04/17"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2511.10262"
+        ],
+        "citation_arxiv_id": [
+          "2511.10262"
+        ],
+        "citation_abstract": [
+          "Full-Duplex Speech Language Models (FD-SLMs) enable real-time, overlapping conversational interactions, offering a more dynamic user experience compared to traditional half-duplex models. However, existing benchmarks primarily focus on evaluating single-round interactions, neglecting the complexities of multi-round communication. Evaluating FD-SLMs in multi-round settings poses significant challenges, including blurred turn boundaries in communication and context inconsistency during model inference. Also, existing benchmarks often focus solely on evaluating conversational features, neglecting other critical aspects. To address these gaps, we introduce MTR-DuplexBench, a novel benchmark designed for a comprehensive multi-round evaluation of FD-SLMs. MTR-DuplexBench not only segments continuous full-duplex dialogues into discrete turns for turn-by-turn assessment but also incorporates various evaluation aspects, including conversational features, dialogue quality, instruction following, and safety. Experimental results reveal that current FD-SLMs face difficulties in maintaining consistent performance across multiple rounds and evaluation dimensions, highlighting the necessity and effectiveness of our benchmark. Code and data are available at: https://github.com/ZhangHe0918/MTR-DuplexBench"
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.06053",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2602.06053",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models"
+        ],
+        "citation_author": [
+          "Roy, Rajarshi",
+          "Raiman, Jonathan",
+          "Lee, Sang-gil",
+          "Ene, Teodor-Dumitru",
+          "Kirby, Robert",
+          "Kim, Sungwon",
+          "Kim, Jaehyeon",
+          "Catanzaro, Bryan"
+        ],
+        "citation_date": [
+          "2026/01/14"
+        ],
+        "citation_online_date": [
+          "2026/01/14"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2602.06053"
+        ],
+        "citation_arxiv_id": [
+          "2602.06053"
+        ],
+        "citation_abstract": [
+          "Recent advances in duplex speech models have enabled natural, low-latency speech-to-speech interactions. However, existing models are restricted to a fixed role and voice, limiting their ability to support structured, role-driven real-world applications and personalized interactions. In this work, we introduce PersonaPlex, a duplex conversational speech model that incorporates hybrid system prompts, combining role conditioning with text prompts and voice cloning with speech samples. PersonaPlex is trained on a large-scale synthetic dataset of paired prompts and user-agent conversations, generated with open-source large language models (LLM) and text-to-speech (TTS) models. To evaluate role conditioning in real-world settings, we extend the Full-Duplex-Bench benchmark beyond a single assistant role to multi-role customer service scenarios. Experiments show that PersonaPlex achieves strong role-conditioned behavior, voice-conditioned speech, and natural conversational responsiveness, surpassing state-of-the-art duplex speech models and hybrid large language model-based speech systems in role adherence, speaker similarity, latency, and naturalness."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.13686",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2603.13686",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "$\\tau$-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains"
+        ],
+        "citation_author": [
+          "Ray, Soham",
+          "Dhandhania, Keshav",
+          "Barres, Victor",
+          "Narasimhan, Karthik"
+        ],
+        "citation_date": [
+          "2026/03/14"
+        ],
+        "citation_online_date": [
+          "2026/03/14"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2603.13686"
+        ],
+        "citation_arxiv_id": [
+          "2603.13686"
+        ],
+        "citation_abstract": [
+          "Full-duplex voice agents--systems that listen and speak simultaneously--are rapidly moving from research to production. However, existing evaluations address conversational dynamics and task completion in isolation. We introduce $\\tau$-voice, a benchmark for evaluating voice agents on grounded tasks with real-world complexity: agents must navigate complex multi-turn conversations, adhere to domain policies, and interact with the environment. The framework extends $\\tau^2$-bench into a novel voice agent benchmark combining verifiable completion of complex grounded tasks, full-duplex interaction, and realistic audio--enabling direct comparison between voice and text performance. A controllable and realistic voice user simulator provides diverse accents, realistic audio environments, and rich turn-taking dynamics; by decoupling simulation from wall-clock time, the user simulator can use the most capable LLM without real-time constraints. We evaluate task completion (pass@1) and voice interaction quality across 278 tasks: while GPT-5 (reasoning) achieves 85%, voice agents reach only 31--51% under clean conditions and 26--38% under realistic conditions with noise and diverse accents--retaining only 30--45% of text capability; qualitative analysis confirms 79--90% of failures stem from agent behavior, suggesting that observed failures primarily reflect agent behavior under our evaluation setup. $\\tau$-voice provides a reproducible testbed for measuring progress toward voice agents that are natural, conversational, and reliable."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2604.04847",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2604.04847",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency"
+        ],
+        "citation_author": [
+          "Lin, Guan-Ting",
+          "Chen, Chen",
+          "Chen, Zhehuai",
+          "Lee, Hung-yi"
+        ],
+        "citation_date": [
+          "2026/04/06"
+        ],
+        "citation_online_date": [
+          "2026/04/06"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2604.04847"
+        ],
+        "citation_arxiv_id": [
+          "2604.04847"
+        ],
+        "citation_abstract": [
+          "We introduce Full-Duplex-Bench-v3 (FDB-v3), a benchmark for evaluating spoken language models under naturalistic speech conditions and multi-step tool use. Unlike prior work, our dataset consists entirely of real human audio annotated for five disfluency categories, paired with scenarios requiring chained API calls across four task domains. We evaluate six model configurations -- GPT-Realtime, Gemini Live 2.5, Gemini Live 3.1, Grok, Ultravox v0.7, and a traditional Cascaded pipeline (Whisper$\\rightarrow$GPT-4o$\\rightarrow$TTS) -- across accuracy, latency, and turn-taking dimensions. GPT-Realtime leads on Pass@1 (0.600) and interruption avoidance (13.5\\%); Gemini Live 3.1 achieves the fastest latency (4.25~s) but the lowest turn-take rate (78.0\\%); and the Cascaded baseline, despite a perfect turn-take rate, incurs the highest latency (10.12~s). Across all systems, self-correction handling and multi-step reasoning under hard scenarios remain the most consistent failure modes."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2604.27393",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2604.27393",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction"
+        ],
+        "citation_author": [
+          "Cui, Junbo",
+          "Xu, Bokai",
+          "Wang, Chongyi",
+          "Yu, Tianyu",
+          "Sun, Weiyue",
+          "Xu, Yingjing",
+          "Wang, Tianran",
+          "He, Zhihui",
+          "Ma, Wenshuo",
+          "Cai, Tianchi",
+          "Gui, Jiancheng",
+          "Zhang, Luoyuan",
+          "Sun, Xian",
+          "Huang, Fuwei",
+          "Chen, Moye",
+          "Lin, Zhuo",
+          "Liu, Hanyu",
+          "Gui, Qingxin",
+          "Han, Qingzhe",
+          "Wen, Yuyang",
+          "Liu, Huiping",
+          "Wang, Rongkang",
+          "Zhang, Yaqi",
+          "Wei, Hongliang",
+          "Chen, Chi",
+          "Li, You",
+          "Fang, Kechen",
+          "Zhou, Jie",
+          "Li, Yuxuan",
+          "Zeng, Guoyang",
+          "Xiao, Chaojun",
+          "Lin, Yankai",
+          "Han, Xu",
+          "Sun, Maosong",
+          "Liu, Zhiyuan",
+          "Yao, Yuan"
+        ],
+        "citation_date": [
+          "2026/04/30"
+        ],
+        "citation_online_date": [
+          "2026/04/30"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2604.27393"
+        ],
+        "citation_arxiv_id": [
+          "2604.27393"
+        ],
+        "citation_abstract": [
+          "Recent progress in multimodal large language models (MLLMs) has brought AI capabilities from static offline data processing to real-time streaming interaction, yet they still remain far from human-level multimodal interaction. The key bottlenecks are no longer modality coverage or latency alone, but the interaction paradigm itself. First, perception and response are still separated into alternating phases, preventing models from incorporating new inputs for timely adjustment during generation. Second, most current models remain reactive, responding only to explicit user requests instead of acting proactively in the evolving multimodal environment. We present MiniCPM-o 4.5, our latest effort towards human-like multimodal interaction, which mitigates these gaps by real-time full-duplex omni-modal interaction. It can see, listen, and speak simultaneously in real-time, while also exhibiting proactive behaviors such as issuing reminders or comments based on its continuous understanding of the live scene. The key technique behind MiniCPM-o 4.5 is Omni-Flow, a unified streaming framework that aligns omni-modal inputs and outputs along a shared temporal axis. This formulation converts conventional turn-based interaction into a full-duplex, time-aligned process, enabling simultaneous perception and response and allowing proactive behavior to arise within the same framework. With a total of 9B parameters, MiniCPM-o 4.5 approaches Gemini 2.5 Flash in vision-language capabilities, delivering state-of-the-art open-source performance at its scale. It also surpasses Qwen3-Omni-30B-A3B in omni-modal understanding and delivers better speech generation, with significantly higher computation efficiency. Driven by its efficient architecture design and inference optimization, the model can perform real-time full-duplex omni-modal interaction on edge devices with less than 12GB RAM cost."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.09186",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.09186",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction"
+        ],
+        "citation_author": [
+          "Huang, Muye",
+          "Zhang, Lingling",
+          "Yu, Xingyu",
+          "Shi, Lei",
+          "Ma, Zhanyu",
+          "Xu, Jun",
+          "Gao, Jiuchong",
+          "Hao, Jinghua",
+          "He, Renqing",
+          "Liu, Jun"
+        ],
+        "citation_date": [
+          "2026/06/08"
+        ],
+        "citation_online_date": [
+          "2026/06/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2606.09186"
+        ],
+        "citation_arxiv_id": [
+          "2606.09186"
+        ],
+        "citation_abstract": [
+          "Human interaction is continuous, multimodal, and full-duplex by nature. Although recent omni models have made substantial progress in unified speech, vision, and text modeling, combining seamless real-time interaction with complex reasoning and tool use remains challenging. We present DuplexOmni, a method for real-time multimodal full-duplex interaction. DuplexOmni separates model capability into an interaction layer and a thinking layer, which collaborate asynchronously in parallel. The interaction layer is implemented by the DuplexOmni model, an end-to-end system that processes streaming audio and video inputs while generating text and speech responses in real time. The thinking layer is a pluggable module that provides complex reasoning and tool-use capabilities. To support this method, we further develop a Writer-Director pipeline for constructing continuous-interaction training data. Experiments show that DuplexOmni achieves strong performance on multiple public benchmarks and exhibits natural full-duplex interaction ability."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.14528",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.14528",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "BayLing-Duplex: Native Full-Duplex Speech Dialogue with a Single Autoregressive LLM"
+        ],
+        "citation_author": [
+          "Fang, Qingkai",
+          "Guo, Shoutao",
+          "Feng, Yang"
+        ],
+        "citation_date": [
+          "2026/06/12"
+        ],
+        "citation_online_date": [
+          "2026/06/12"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2606.14528"
+        ],
+        "citation_arxiv_id": [
+          "2606.14528"
+        ],
+        "citation_abstract": [
+          "Real-time, full-duplex speech interaction is a key feature of next-generation spoken chatbots, allowing the model to listen and speak at the same time and to handle natural phenomena such as overlap, hesitation, and barge-in. Existing speech language models (SpeechLMs) such as LLaMA-Omni and GLM-4-Voice are still turn-based and rely on an external Voice Activity Detection (VAD) module to mark the end of the user's turn, which fundamentally limits their interactive ability. In this paper, we introduce BayLing-Duplex, a native full-duplex SpeechLM where a single autoregressive LLM decides when to listen, when to speak, and when to stop, with no auxiliary turn-taking module. The design adds only a few special tokens to the standard vocabulary, so it transfers across LLMs and reuses existing training and serving stacks with no architectural adaptation. Starting from the public GLM-4-Voice checkpoint and using only 400K full-duplex samples for fine-tuning followed by a lightweight DPO stage, BayLing-Duplex reaches 92% turn-taking success and 100% interruption success on InstructS2S-Eval, while improving the speech-response score from 2.17 to 3.39 over Moshi. BayLing-Duplex also matches or surpasses its turn-based counterpart on Llama Questions, Web Questions, and Alpaca-Eval, showing that simultaneous listen-and-speak modeling does not sacrifice response quality."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.04941",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2607.04941",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "DuplexChat: Constructing Speaker-Separated Full-Duplex Dialogue Speech at Scale for Spoken Dialogue Language Modeling"
+        ],
+        "citation_author": [
+          "Nakata, Wataru",
+          "Saito, Yuki",
+          "Saruwatari, Hiroshi"
+        ],
+        "citation_date": [
+          "2026/07/06"
+        ],
+        "citation_online_date": [
+          "2026/07/06"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2607.04941"
+        ],
+        "citation_arxiv_id": [
+          "2607.04941"
+        ],
+        "citation_abstract": [
+          "Full-duplex spoken dialogue models are trained on conversational speech in which each speaker is represented as a separate stream, but existing large-scale public speech corpora are mostly monaural, making them unsuited for SDLM training. We present DuplexChat, an open-source corpus for full-duplex spoken dialogue models, and DuplexChat-Pipe, a pipeline for constructing speaker-separated full-duplex dialogue speech from public podcast feeds. DuplexChat-Pipe filters language-specific podcast feeds, retrieves and cleans episode audio, extracts diarization-guided two-speaker dialogue clips, and applies speech separation and restoration to produce one channel per speaker. Running this pipeline yields a speaker-separated spoken dialogue corpus covering 282,634 hours of English and 132,723 hours of Japanese. Analysis results on DuplexChat show that it contains turn-taking dynamics present in human dialogues."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.06540",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2607.06540",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs"
+        ],
+        "citation_author": [
+          "Liu, Zhenyu",
+          "Zhang, Xuanyu",
+          "Li, Yunxin",
+          "Teng, Qixun",
+          "Jiang, Shenyuan",
+          "Chen, Haolan",
+          "Zhao, Minjun",
+          "Meng, Fanbo",
+          "Xu, Yu",
+          "He, Yancheng",
+          "Hu, Baotian",
+          "Li, Haizhou",
+          "Zhang, Min"
+        ],
+        "citation_date": [
+          "2026/07/07"
+        ],
+        "citation_online_date": [
+          "2026/08/10"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2607.06540"
+        ],
+        "citation_arxiv_id": [
+          "2607.06540"
+        ],
+        "citation_abstract": [
+          "Developing seamless, high-performance, native intelligent full-duplex Spoken Language Models (SLMs) remains a critical challenge and long-standing goal for the speech and NLP community. Despite notable progress, recent endeavors are fundamentally constrained by severe modality interference, which causes substantial knowledge degradation and compromises semantic integrity -- ultimately making full-duplex SLMs feel unnatural and unintelligent. In this paper, through an exhaustive fine-grained analysis of model optimization dynamics, we uncover the root cause of such performance degradation, revealing that modality interference arises from inherent gradient conflicts between acoustic and semantic modeling when the two modalities are forced to share a deep parameter space. Guided by this key insight, we introduce Lychee-FD, a native end-to-end full-duplex framework designed to mitigate modality interference. Importantly, we propose a hierarchical parameter separation strategy that decouples conflicting modalities in deep layers while preserving cross-modality coherence via a dedicated semantic alignment channel. Extensive experiments on multiple full-duplex benchmarks demonstrate that our method significantly advances the state of the art, yielding substantial improvements in both speech intelligence (+7.4% on Spoken QA) and full-duplex interaction fluidity (+28.5% on FullDuplexBench 1.5) without compromising inference efficiency. To the best of our knowledge, this work is the first to achieve two key advances: 1) uncovering and elucidating the root cause of modality interference in full-duplex SLMs, and 2) designing an elegant hierarchical model together with a practical solution for seamless, high-performance, native intelligent full-duplex SLMs."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13814",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.13814",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Realtime-Venus: A full-duplex interaction system with asynchronous delegation"
+        ],
+        "citation_author": [
+          "Ant Group"
+        ],
+        "citation_date": [
+          "2026/09/12"
+        ],
+        "citation_online_date": [
+          "2026/09/23"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.13814"
+        ],
+        "citation_arxiv_id": [
+          "2609.13814"
+        ],
+        "citation_abstract": [
+          "Natural interaction in digital and physical environments requires continuous perception and timely responses. Spoken dialogue relies on acoustic and linguistic cues, while video interaction also requires grounding the conversation in evolving visual context. We present Realtime-Venus, a proactive full-duplex interaction system with two separately trained 9B models: Realtime-Venus-Omni for audio-visual interaction and Realtime-Venus-Audio for spoken interaction. Each model serves as a complete conversational frontend, integrating continuous perception, conversational control, and native speech generation through a shared causal timeline for user inputs, model outputs, and delegation events. A dual-loop runtime coordinates live interaction with background reasoning and tool execution. Foreground interaction continues while Realtime-Venus-Harness executes tasks asynchronously and returns results for integration into the ongoing dialogue. Both models follow a common post-training recipe combining offline understanding, proactive full-duplex trajectories, and delegation workflows. Among the evaluated online models, Realtime-Venus-Omni achieves the highest scores on six of eight video benchmarks, including StreamingBench (70.2%), OVO-Bench (64.7%), and Daily-Omni (81.3%). Across eight audio understanding and spoken question answering benchmarks, Realtime-Venus-Audio leads the compared models on MMAU (78.0%), MMAU-Pro (63.2%), Llama Questions (83.8%), and Speech CMMLU (67.8%), while matching the best VoiceBench AlpacaEval score of 4.81. On Full-Duplex-Bench v1.5, Realtime-Venus-Audio responds to 75% of user interruptions and achieves continuation rates of 97%, 88%, and 86% under backchannels, other-directed speech, and background speech, respectively, exceeding Gemini 3.1 Live and GPT-4o on all three continuation metrics."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.14005",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.14005",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "StepAudio 3 Realtime Technical Report"
+        ],
+        "citation_author": [
+          "Lin, Bin",
+          "Zhao, Bo",
+          "Zhang, Boyang",
+          "Wu, Boyong",
+          "Yan, Chao",
+          "Geng, Chen",
+          "Wu, Chen",
+          "Yi, Cheng",
+          "Feng, Chengli",
+          "Zhu, Chenglin",
+          "Feng, Chengting",
+          "Yao, Chengyuan",
+          "Liu, Daijiao",
+          "Wan, DanNi",
+          "Jiang, Daxin",
+          "Li, Dongjian",
+          "Pang, Dongqing",
+          "Tian, Fei",
+          "Tian, Feng",
+          "Li, Future",
+          "Yu, Gang",
+          "Yang, Guanglong",
+          "Zhang, Haoyang",
+          "Wang, Hongyuan",
+          "Peng, Jia",
+          "Song, Jiahao",
+          "Xue, Jialong",
+          "Fan, Jiamin",
+          "Zhen, Jiangjie",
+          "Gao, Jianzheng",
+          "Wen, Jincheng",
+          "Liang, Jinghua",
+          "Gong, Jinglan",
+          "Chen, Jun",
+          "Xie, Li",
+          "Zhao, Liang",
+          "Zhang, Lifang",
+          "Ji, Lingli",
+          "Cai, Lun",
+          "Xu, Min",
+          "Li, Peilin",
+          "Yang, Peng",
+          "Tan, Pengfei",
+          "Lin, Qingjian",
+          "Du, Qinxin",
+          "Xiong, Ruijie",
+          "Li, Runze",
+          "Hu, Shenghua",
+          "Qin, Shengqian",
+          "Qiu, Shi",
+          "Tu, Siqi",
+          "Zhou, Siyi",
+          "Deng, Tianjiao",
+          "Lu, Wanying",
+          "Niu, Weiming",
+          "Sun, Wen",
+          "Qu, WenWen",
+          "Zhang, Xiangyu",
+          "Zhang, Xianwei",
+          "Su, Xiaosu",
+          "Chen, Xing",
+          "Liu, Xinyu",
+          "Yang, Xuerui",
+          "Wu, Yan",
+          "Li, Yang",
+          "Yang, Yang",
+          "Huang, Yechang",
+          "Zhu, Yibo",
+          "Zhang, Yifan",
+          "Yan, Yinuo",
+          "Chen, Youjun",
+          "Fu, Yu",
+          "Luo, Yu",
+          "Zhou, Yu",
+          "Chen, Yujie",
+          "Wang, Yumang",
+          "Ju, Yunzhou",
+          "Yang, Yuxiang",
+          "Li, Yuxin",
+          "Zhang, Yuxin",
+          "Liu, Zekai",
+          "Yao, Zengwei",
+          "Yuan, Zhaoxin",
+          "Mou, Zhenwei",
+          "Zhang, Zhiquan",
+          "Wu, Zhiyue",
+          "Li, Zichao",
+          "Zhou, Zichao",
+          "Ren, Ziqi",
+          "Wang, Zixuan"
+        ],
+        "citation_date": [
+          "2026/09/12"
+        ],
+        "citation_online_date": [
+          "2026/09/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.14005"
+        ],
+        "citation_arxiv_id": [
+          "2609.14005"
+        ],
+        "citation_abstract": [
+          "Realtime spoken interaction demands deep reasoning, prompt responses, and fluid turn-taking. We present StepAudio 3 Realtime, an audio-language foundation model organized around a continuous listen-converse-think-act loop. Deep Perception captures rich acoustic cues to interpret user intent, while Seamless Duplex models synchronized audio streams to handle pauses, backchannels, and interruptions naturally. Crucially, we resolve the tension between deep deliberation and latency via Think-While-Speaking, executing private reasoning in parallel with spoken delivery. In reasoning mode, StepAudio 3 reaches a 73.0 macro average on StepAudioChat. With Think-While-Speaking, it achieves dialogue and reasoning performance comparable to dedicated reasoning models while speaking in real time. Furthermore, an integrated Voice Agent handles asynchronous tool execution without disrupting the dialogue flow. StepAudio 3 Realtime achieves top-tier performance across key dimensions: an exceptional 90.6 on the MMSU benchmark, 98.9 Overall on the Artificial Analysis Full-Duplex Bench, and a 56.0% macro task-success rate on $\\tau$-Voice."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.19334",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.19334",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "A frontend-backend architecture for tool calls in full-duplex speech models"
+        ],
+        "citation_author": [
+          "Hu, Ke",
+          "Deng, Slyne",
+          "Chen, Chen",
+          "Rastorgueva, Elena",
+          "Casanova, Edresson",
+          "Kumar, Punit",
+          "Choudhary, Dharmendra",
+          "Srihari, Nikhil",
+          "Mahabaleshwarkar, Ameya Sunil",
+          "Trinh, Viet Anh",
+          "Essid, Slim",
+          "Olabiyi, Oluwatobi",
+          "Chen, Zhehuai"
+        ],
+        "citation_date": [
+          "2026/09/16"
+        ],
+        "citation_online_date": [
+          "2026/09/18"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.19334"
+        ],
+        "citation_arxiv_id": [
+          "2609.19334"
+        ],
+        "citation_abstract": [
+          "Full-duplex speech-to-speech (S2S) models provide natural, low-latency conversational interaction and would benefit from the ability to use external tools and complete voice-agent tasks. We propose a frontend-backend architecture where a duplex speech-to-text frontend learns to emit a delegation token and forwards streaming ASR transcripts to a text-based backend LLM for tool calls. Tool-call results from the backend are injected back into the frontend through a lightweight prefill-and-repeat mechanism and then synthesized using streaming TTS to the user. Our approach largely preserves regular duplex turn-taking, interruption handling, and low-latency interaction as it requires minimal modifications to the frontend model. In a single-turn tool-call evaluation, our system achieves 92-97% tool-call recall, competitive tool-call prediction performance, and 81.2% accuracy in rejecting irrelevant calls. When equipped with a larger backend (e.g., Qwen3-235B-A22B), our system achieves competitive results on Full-Duplex-Bench-V3 compared to open and closed source models, and significantly outperforms GPT-realtime-mini and Qwen3-Omni-30B-A3B-Instruct on EVA-Bench. These results demonstrate that backend delegation is an effective and modular approach for combining natural duplex speech interaction with strong agentic tool-call capabilities."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21967",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.21967",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities"
+        ],
+        "citation_author": [
+          "Balam, Jagadeesh",
+          "Bartley, Travis",
+          "Casanova, Edresson",
+          "Chauhan, Sanjay",
+          "Chen, Chen",
+          "Chen, Zhehuai",
+          "Chen, Zijia",
+          "Ciannella, Francesco",
+          "Deng, Slyne",
+          "Desta, Mikyas",
+          "Dubey, Harishchandra",
+          "Essid, Slim",
+          "Ferchichi, Nourchene",
+          "Ginsburg, Boris",
+          "Fuenmayor, Mariana Graterol",
+          "Habibi, Negar",
+          "Hu, Kevin",
+          "Joseph, Anand",
+          "Karandikar, Viraj",
+          "Kim, Myungjong",
+          "Klimkov, Viacheslav",
+          "Narasimhan, Seelan Lakshmi",
+          "Lee, Lily",
+          "Li, Jason",
+          "Long, Eileen",
+          "Mahabaleshwarkar, Ameya",
+          "Malte, Aditya",
+          "Margolin, Adi",
+          "Meister, Sasha",
+          "Mendelev, Valentin",
+          "Olabiyi, Oluwatobi",
+          "Pasad, Ankita",
+          "Peng, Yifan",
+          "Rastorgueva, Elena",
+          "Ritchie, Jayda",
+          "Roche, Jason",
+          "Srihari, Nikhil",
+          "Su, Yuanhang",
+          "Suhara, Yoshi",
+          "Trinh, Viet Anh",
+          "Wang, Jinhan",
+          "Zelasko, Piotr",
+          "Wang, Hui",
+          "Meng, Puhui",
+          "Zhang, Chaosen",
+          "Liu, Yunsheng",
+          "Wang, Shawn",
+          "Li, Wenjing",
+          "He, Zhonglei"
+        ],
+        "citation_date": [
+          "2026/09/18"
+        ],
+        "citation_online_date": [
+          "2026/09/18"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.21967"
+        ],
+        "citation_arxiv_id": [
+          "2609.21967"
+        ],
+        "citation_abstract": [
+          "We introduce NemotronLabs VoiceChat, an open full-duplex speech-to-speech model with native tool-calling capabilities. NemotronLabs VoiceChat combines a streaming speech encoder and decoder-only language model with parallel specialized output streams for agent text and structured function calls, an auxiliary RNN-T branch for incremental user transcription, and a streaming TTS decoder. This design enables the model to listen, transcribe, reason, invoke tools, and speak within a unified streaming architecture while preserving the temporal behavior required for natural conversation. On Full-Duplex-Bench 1.0, NemotronLabs VoiceChat achieves the lowest pause-handling takeover rates among evaluated open-weight systems, 100\\% takeover following user interruptions, and a 4.33/5 post-interruption response-quality score. On Full-Duplex-Bench 1.5, it resumes its response after user backchannels in 93\\% of cases. NemotronLabs VoiceChat obtains a 55.1 normalized average on VoiceBench and, on Full-Duplex-Bench 3.0 (FDB 3.0), achieves 82.5\\% tool-selection F1, while argument accuracy and end-to-end tool execution remain areas for improvement. These results demonstrate that full-duplex interaction, speech recognition and generation, general language capabilities, and external tool use can be integrated in a single open speech-to-speech model without sacrificing real-time conversational behavior."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.29217",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.29217",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "AdaptDuplex: from static to adaptive full-duplex spoken dialogue"
+        ],
+        "citation_author": [
+          "Zhou, Zhiyang",
+          "Shang, Yingxin",
+          "Wang, Zhou",
+          "Cai, Hongwei",
+          "Wang, Weixu",
+          "Zhou, Shuran",
+          "Zhao, Shuofeng",
+          "Fan, Wenke",
+          "Guo, Qingxiang",
+          "Yang, Dawei",
+          "Yang, Lin",
+          "Song, Yang"
+        ],
+        "citation_date": [
+          "2026/09/24"
+        ],
+        "citation_online_date": [
+          "2026/09/29"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.29217"
+        ],
+        "citation_arxiv_id": [
+          "2609.29217"
+        ],
+        "citation_abstract": [
+          "Full-duplex spoken dialogue requires simultaneous listening and speaking at sub-second latency, under conversational timing and cognitive demands that change moment to moment. Yet current models mostly impose static operating points, lacking a systematic mechanism for adaptive decisions. We present AdaptDuplex, which extends Qwen3-Omni with such a mechanism, co-designed across three layers. A compact token-level protocol represents every window as a canonical sequence, trains dual-stream alignment through a bounded text lead over speech, and exposes every behavioral decision as an explicit token for training-free runtime control via logits bias. Adaptive mechanisms dynamically predict among discrete window durations and augment direct response as needed with non-blocking cognitive consolidation and multi-flight external reasoning. A progressive pipeline introduces these behaviors through a three-stage Thinker curriculum, then Talker-only and joint SFT, with GRPO as a preliminary increment. On Full-Duplex-Bench v1 and v1.5, AdaptDuplex outperforms DuplexOmni on 18 of 21 comparable turn-taking, overlap-behavior, and timing metrics and MiniCPM-o 4.5 on 19 of 22, with gains in both interaction decisions and response timing. On human-recorded HumDial-FDBench, it attains the top Final score (69.6) of the compared duplex models."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31948",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.31948",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue"
+        ],
+        "citation_author": [
+          "Ma, Chengqian",
+          "Feng, Wenhao",
+          "Jin, Weixuan",
+          "Dai, Gaole",
+          "Xie, Tianyu",
+          "Ma, Yuexiao",
+          "Kang, Zhaolu",
+          "Zhao, Xiangyu",
+          "Zheng, Xiawu",
+          "Chao, Fei"
+        ],
+        "citation_date": [
+          "2026/09/25"
+        ],
+        "citation_online_date": [
+          "2026/09/25"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.31948"
+        ],
+        "citation_arxiv_id": [
+          "2609.31948"
+        ],
+        "citation_abstract": [
+          "Real-time full-duplex speech models can listen while speaking, enabling natural interaction without rigid turn boundaries. Existing benchmarks evaluate turn-taking, interruption handling and multi-round dialogue, but largely centre on a designated user rather than an assistant participating in a shared conversation among several people. We introduce Duplex-MPE to evaluate when such an assistant should answer, remain silent or stop speaking. The benchmark contains 2,000 scenarios with three or four human speakers and one assistant, each paired across explicit and implicit addressing of the same request. Models receive continuous conversation audio without transcripts or supplied turn boundaries. Four scores measure fresh response initiation, answer accuracy, silence preservation and stopping when a human resolves a request. We evaluate five open-weight speech systems: MiniCPM-o 4.5, Moshi, FLM-Audio, Voila and Freeze-Omni. MiniCPM-o 4.5 leads on three scored capabilities, while frequent speech from other systems can coexist with inaccurate answers or failures to remain silent. A transcript-based Gemini 3.1 Pro reference responds 64.3 percentage points more often to explicit than implicit requests; paired tests detect no significant response-rate difference for the speech systems."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.33443",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.33443",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends"
+        ],
+        "citation_author": [
+          "Go, Seonghyeon",
+          "Kim, Yongwoo",
+          "Cha, Hyeonjin",
+          "Shin, Jaeho"
+        ],
+        "citation_date": [
+          "2026/09/27"
+        ],
+        "citation_online_date": [
+          "2026/09/27"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.33443"
+        ],
+        "citation_arxiv_id": [
+          "2609.33443"
+        ],
+        "citation_abstract": [
+          "Full-duplex spoken dialogue models can listen and speak simultaneously like the real-time dynamics of human conversation. For natural dialogue, the ability to search for external information in real-time is also an important capability. Many models remain trapped in parametric knowledge, leaving them unable to access real-time information and tool execution. Furthermore, even when Large Language Models (LLM) retrieve information, many duplex speech models process it within a compressed latent space rather than in its raw text form, which can lead to information loss from compression. To address this issue, we propose Context Spanning, a framework for information injection between a full-duplex speech model and an external LLM backend via real-time chunked prefill. The injected frame is encoded in a single forward pass inside the real-time frame budget. It feeds the retrieved information to the speech model as-is, enabling it to reason over the information independently and generate responses. With this approach, our model achieves high performance on Full-Duplex benchmarks and strong results on Question Answering tasks, demonstrating its conversation potential. Context Spanning shows that external information can be injected directly into a duplex speech model, introducing a new simple and powerful mechanism for duplex systems."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.34461",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.34461",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "CharDuplex: Building Character-Consistent Full-Duplex Spoken Dialogue Models"
+        ],
+        "citation_author": [
+          "Wu, Donghang",
+          "Liu, Yisi",
+          "Chen, Chen",
+          "Liu, Hexin",
+          "Chng, Eng Siong"
+        ],
+        "citation_date": [
+          "2026/09/28"
+        ],
+        "citation_online_date": [
+          "2026/09/28"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.34461"
+        ],
+        "citation_arxiv_id": [
+          "2609.34461"
+        ],
+        "citation_abstract": [
+          "Full-duplex speech models are moving voice interaction beyond conventional turn-taking, yet natural conversation is shaped not only by when an agent speaks, but also by how it behaves as a conversational character. We present CharDuplex, a character-driven full-duplex speech model that combines real-time spoken interaction with persona-conditioned behavior. We first adapt GLM-4-Voice to an always-on dual-stream architecture and train the model for full-duplex conversation. Then a fully automated pipeline constructs character-conditioned dialogue data from open-source character descriptions for character-conditioned supervised fine-tuning. The model is further refined with the proposed FDGym, where an LLM-simulated user dynamically interacts with the model, enabling reinforcement learning over evolving multi-turn interactions. On SpeechRole-Eval, CharDuplex achieves the highest average score among the evaluated open-source models, while remaining competitive with closed-source systems. It also demonstrates competitive general speech intelligence and strong full-duplex interaction capabilities. CharDuplex demonstrates a practical training recipe for building full-duplex voice assistants that are not only interactive, but also character-consistent."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://catalog.ldc.upenn.edu/LDC2004S13",
+      "http_status": 200,
+      "final_url": "https://catalog.ldc.upenn.edu/LDC2004S13",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://catalog.ldc.upenn.edu/LDC2005S13",
+      "http_status": 200,
+      "final_url": "https://catalog.ldc.upenn.edu/LDC2005S13",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://catalog.ldc.upenn.edu/LDC97S62",
+      "http_status": 200,
+      "final_url": "https://catalog.ldc.upenn.edu/LDC97S62",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ASLP-lab/Hum-Dial",
+      "http_status": 200,
+      "final_url": "https://github.com/ASLP-lab/Hum-Dial",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/BayLing-Models/BayLing-Duplex",
+      "http_status": 200,
+      "final_url": "https://github.com/BayLing-Models/BayLing-Duplex",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v1_v1.5",
+      "http_status": 200,
+      "final_url": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v1_v1.5",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v2",
+      "http_status": 200,
+      "final_url": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v2",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v3",
+      "http_status": 200,
+      "final_url": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v3",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/HITsz-TMG/Lychee-FD",
+      "http_status": 200,
+      "final_url": "https://github.com/HITsz-TMG/Lychee-FD",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/HITsz-TMG/Lychee-FD/tree/main/Training_package",
+      "http_status": 200,
+      "final_url": "https://github.com/HITsz-TMG/Lychee-FD/tree/main/Training_package",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MatthewCYM/VoiceBench",
+      "http_status": 200,
+      "final_url": "https://github.com/MatthewCYM/VoiceBench",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/MuyeHuang/DuplexOmni",
+      "http_status": 200,
+      "final_url": "https://github.com/MuyeHuang/DuplexOmni",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/NVIDIA-NeMo/Speech/tree/nemotron-labs-voicechat",
+      "http_status": 200,
+      "final_url": "https://github.com/NVIDIA-NeMo/Speech/tree/nemotron-labs-voicechat",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/NVIDIA/personaplex",
+      "http_status": 200,
+      "final_url": "https://github.com/NVIDIA/personaplex",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/OpenBMB/MiniCPM-V",
+      "http_status": 200,
+      "final_url": "https://github.com/OpenBMB/MiniCPM-V",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/The-Agentic-Data-Co/open-yap-1k",
+      "http_status": 200,
+      "final_url": "https://github.com/The-Agentic-Data-Co/open-yap-1k",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/VITA-MLLM/Freeze-Omni",
+      "http_status": 200,
+      "final_url": "https://github.com/VITA-MLLM/Freeze-Omni",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/ZhangHe0918/MTR-DuplexBench",
+      "http_status": 200,
+      "final_url": "https://github.com/ZhangHe0918/MTR-DuplexBench",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/bytedance/SALMONN",
+      "http_status": 200,
+      "final_url": "https://github.com/bytedance/SALMONN",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/inclusionAI/Realtime-Venus",
+      "http_status": 200,
+      "final_url": "https://github.com/inclusionAI/Realtime-Venus",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/kyutai-labs/moshi",
+      "http_status": 200,
+      "final_url": "https://github.com/kyutai-labs/moshi",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/kyutai-labs/moshi-finetune",
+      "http_status": 200,
+      "final_url": "https://github.com/kyutai-labs/moshi-finetune",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/maitrix-org/Voila",
+      "http_status": 200,
+      "final_url": "https://github.com/maitrix-org/Voila",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/pengyizhou/FD-Bench",
+      "http_status": 200,
+      "final_url": "https://github.com/pengyizhou/FD-Bench",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://github.com/sierra-research/tau2-bench",
+      "http_status": 200,
+      "final_url": "https://github.com/sierra-research/tau2-bench",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://groups.inf.ed.ac.uk/ami/corpus/",
+      "http_status": 200,
+      "final_url": "https://groups.inf.ed.ac.uk/ami/corpus/",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/BayLing-Models/BayLing-Duplex",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/BayLing-Models/BayLing-Duplex",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/HIT-TMG/Lychee-FD",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/HIT-TMG/Lychee-FD",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/MuyeHuang/DuplexOmni",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/MuyeHuang/DuplexOmni",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/VITA-MLLM/Freeze-Omni",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/VITA-MLLM/Freeze-Omni",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/MuyeHuang/DuplexOmni-Data",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/MuyeHuang/DuplexOmni-Data",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/OpenT2S/DuplexConv",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/OpenT2S/DuplexConv",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/maitrix-org/Voila-Benchmark",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/maitrix-org/Voila-Benchmark",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/otoearth/otoSpeech-full-duplex-processed-141h",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/otoearth/otoSpeech-full-duplex-processed-141h",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/otoearth/otoSpeech-full-duplex-task-oriented-20h",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/otoearth/otoSpeech-full-duplex-task-oriented-20h",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/qualialabsAI/SmoothConv",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/qualialabsAI/SmoothConv",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/datasets/sarulab-speech/DuplexChat",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/sarulab-speech/DuplexChat",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/inclusionAI/Realtime-Venus",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/inclusionAI/Realtime-Venus",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/kyutai/moshiko-pytorch-bf16",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/kyutai/moshiko-pytorch-bf16",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/maitrix-org/Voila-autonomous-preview",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/maitrix-org/Voila-autonomous-preview",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/nvidia/personaplex-7b-v1",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/nvidia/personaplex-7b-v1",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/openbmb/MiniCPM-o-4_5",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/openbmb/MiniCPM-o-4_5",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://huggingface.co/spaces/frontend-backend-duplex/demo",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/spaces/frontend-backend-duplex/demo",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://omniflatten.github.io/",
+      "http_status": 200,
+      "final_url": "https://omniflatten.github.io/",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://platform.stepfun.com/",
+      "http_status": 200,
+      "final_url": "https://platform.stepfun.com/",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf",
+      "http_status": 200,
+      "final_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf",
+      "content_type": "application/pdf",
+      "status": "reachable"
+    },
+    {
+      "url": "https://sonalkum.github.io/mmau-pro/",
+      "http_status": 200,
+      "final_url": "https://sonalkum.github.io/mmau-pro/",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://stepaudiollm.github.io/step-audio-3-realtime/",
+      "http_status": 200,
+      "final_url": "https://stepaudiollm.github.io/step-audio-3-realtime/",
+      "content_type": "text/html; charset=utf-8",
+      "status": "reachable"
+    },
+    {
+      "url": "https://www.isca-archive.org/interspeech_2025/hu25f_interspeech.html",
+      "http_status": 200,
+      "final_url": "https://www.isca-archive.org/interspeech_2025/hu25f_interspeech.html",
+      "content_type": "text/html",
+      "status": "reachable"
+    }
+  ]
+}
