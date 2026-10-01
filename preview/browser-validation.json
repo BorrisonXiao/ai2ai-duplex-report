@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "view": "desktop",
+      "viewport": 1366,
+      "document": 1366,
+      "figures": 15,
+      "images": 14,
+      "tables": 14,
+      "projectTabs": 1,
+      "background": "rgb(244, 243, 238)",
+      "plot_regions_with_horizontal_pan": 0,
+      "filter_and_paper_notes": "passed",
+      "javascript_errors": [],
+      "external_requests": 0
+    },
+    {
+      "view": "mobile",
+      "viewport": 390,
+      "document": 390,
+      "figures": 15,
+      "images": 14,
+      "tables": 14,
+      "projectTabs": 1,
+      "background": "rgb(244, 243, 238)",
+      "plot_regions_with_horizontal_pan": 14,
+      "filter_and_paper_notes": "passed",
+      "javascript_errors": [],
+      "external_requests": 0
+    },
+    {
+      "view": "dark",
+      "viewport": 1366,
+      "document": 1366,
+      "figures": 15,
+      "images": 14,
+      "tables": 14,
+      "projectTabs": 1,
+      "background": "rgb(18, 21, 18)",
+      "plot_regions_with_horizontal_pan": 0,
+      "filter_and_paper_notes": "passed",
+      "javascript_errors": [],
+      "external_requests": 0
+    }
+  ]
+}

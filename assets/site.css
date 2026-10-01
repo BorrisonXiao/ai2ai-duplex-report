@@ -67,6 +67,16 @@ td p { margin:0; }
 .pipeline span { padding:7px 9px; border:1px solid var(--border); background:var(--surface-2); border-radius:7px; }
 .pipeline i { font-style:normal; color:var(--accent); }
 figcaption { color:var(--muted); font-size:13px; margin-top:15px; }
+.architecture-gallery { display:grid; gap:22px; margin:24px 0 34px; }
+.paper-figure { min-width:0; margin:0; padding:22px; background:var(--surface); border:1px solid var(--border); border-radius:14px; }
+.paper-figure img { display:block; width:100%; height:auto; background:white; border-radius:5px; }
+.performance-profile { margin:38px 0; padding-top:26px; border-top:1px solid var(--border); }
+.performance-profile>h3 { font-size:24px; }
+.performance-figure { margin:24px 0; padding:16px; background:var(--surface); border:1px solid var(--border); border-radius:14px; }
+.performance-figure img { display:block; width:100%; height:auto; background:white; border-radius:5px; }
+.plot-scroll { overflow-x:auto; width:100%; border-radius:5px; }
+.plot-scroll>a { display:block; }
+.performance-profile table { font-variant-numeric:tabular-nums; }
 details { margin:12px 0; padding:17px 20px; border:1px solid var(--border); border-radius:10px; background:var(--surface); }
 summary { cursor:pointer; font-weight:700; }
 .paper-note { margin-top:16px; }
@@ -83,6 +93,6 @@ summary { cursor:pointer; font-weight:700; }
 .site-footer p { margin:0; }
 code { font-family:ui-monospace,"SFMono-Regular",Consolas,monospace; font-size:.9em; }
 [hidden] { display:none !important; }
-@media (max-width:700px) { .container,.nav-inner { width:calc(100% - 28px); } .hero { padding:44px 0 30px; } .section { padding:36px 0; } .card-grid { grid-template-columns:minmax(0,1fr); } .stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .brand { font-size:14px; } .nav-links a { font-size:12px; } .filter output { margin-left:0; } .card { padding:20px; } }
+@media (max-width:700px) { .container,.nav-inner { width:calc(100% - 28px); } .hero { padding:44px 0 30px; } .section { padding:36px 0; } .card-grid { grid-template-columns:minmax(0,1fr); } .stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .brand { font-size:14px; } .nav-links a { font-size:12px; } .filter output { margin-left:0; } .card { padding:20px; } .plot-scroll img { min-width:640px; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 @media print { .site-nav,.filter,.button-row,.jump-links,.scroll-note { display:none; } body { background:white; color:black; font-size:11px; } .container { width:100%; } .hero,.section { padding:20px 0; } .table-wrap { overflow:visible; } table { min-width:0; font-size:9px; } th,td { padding:5px; } details { break-inside:avoid; } }

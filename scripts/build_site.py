@@ -6,16 +6,18 @@ CSS, not author-inserted line breaks, controls browser wrapping.
 """
 from copy import deepcopy
 from html import escape
+import hashlib
 import json
 from pathlib import Path
 import re
 import sys
+from report_content import verified_sources, architecture_gallery, performance_section, evidence
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'research'))
 import review_data as data
 
-AUDIT = json.loads((ROOT / 'research/source-audit.json').read_text())
+AUDIT = verified_sources()
 SOURCES = {row['url']: row for row in AUDIT['sources']}
 SYSTEMS = deepcopy(data.SYSTEMS)
 BENCHMARKS = deepcopy(data.BENCHMARKS)
@@ -117,7 +119,14 @@ def row(cells):
     return '<tr><th scope="row">' + cells[0] + '</th>' + ''.join('<td>' + cell + '</td>' for cell in cells[1:]) + '</tr>'
 
 
+ASSET_COUNTS = {'Table': 0, 'Figure': 0}
+
+def next_label(kind):
+    ASSET_COUNTS[kind] += 1
+    return ASSET_COUNTS[kind]
+
 def table(ident, number, caption, headers, rows, searchable=True):
+    number = next_label('Table')
     pieces = []
     if searchable:
         pieces.append(f'<div class="filter"><label for="{ident}-filter">Filter entries</label><input id="{ident}-filter" data-filter="{ident}" type="search" placeholder="Search any feature or model" autocomplete="off"><output id="{ident}-count" aria-live="polite">{len(rows)} of {len(rows)} entries</output></div>')
@@ -139,6 +148,7 @@ def system_label(s):
 
 
 def architecture_figure():
+    number = next_label('Figure')
     families = [
         ('Native parallel streams', 'User audio ∥ assistant text ∥ assistant audio', ['Shared temporal state', 'Depth / acoustic heads'], 'Moshi, PersonaPlex, Lychee-FD. Streams are synchronized; text semantics and speech bandwidth need not advance at the same rate.', ['2410.00037', '2602.06053', '2607.06540']),
         ('Serialized token modeling', 'Speech + text + control token blocks', ['Single causal LLM', 'Speech tokens → waveform'], 'OmniFlatten and BayLing-Duplex. Chunk sizes and token order determine when the model can hear, decide and emit.', ['2410.17799', '2606.14528']),
@@ -149,19 +159,20 @@ def architecture_figure():
     for title, input_text, stages, description, refs in families:
         pipeline = '<div class="pipeline">' + '<i aria-hidden="true">→</i>'.join('<span>' + e(t) + '</span>' for t in [input_text] + stages) + '</div>'
         cards.append('<div class="card"><h3>' + e(title) + '</h3>' + pipeline + p(description, refs) + '</div>')
-    return '<figure class="architecture"><div class="card-grid">' + '\n'.join(cards) + '</div><figcaption>Figure 1. Four recurring design patterns, redrawn as a conceptual synthesis of the cited architectures. Delegation can be combined with any of the first three; arrows indicate information flow, not measured latency or strictly sequential execution.</figcaption></figure>'
+    return '<figure class="architecture"><div class="card-grid">' + '\n'.join(cards) + f'</div><figcaption>Figure {number}. Four recurring design patterns, redrawn as a conceptual synthesis of the cited architectures. Delegation can be combined with any of the first three; arrows indicate information flow, not measured latency or strictly sequential execution.</figcaption></figure>'
 
 
 def build_html():
+    ASSET_COUNTS.update(Table=0, Figure=0)
     summary_refs = [ ['2604.27393','2606.14528','2607.06540','2609.13814','2606.09186'], ['2410.00037','2604.27393','2505.17060'], ['2510.07497','2609.31948','2609.13814'], ['2603.13686','2510.07838','2604.04847','2609.31948','2410.17196','2508.13992'] ]
     overview = p(N['scope']) + p(N['proposal_context'])
     overview += '<div class="stat-grid">' + ''.join(f'<div class="stat"><strong>{count}</strong><span>{e(label)}</span></div>' for count, label in [(len(SYSTEMS),'system designs'), (len(BENCHMARKS),'evaluation suites'), (len(DATASETS),'data sources'), (len(PAPERS),'verified papers')]) + '</div>'
     overview += '<div class="prose">' + '\n'.join(p(text, refs) for text, refs in zip(N['summary'], summary_refs)) + '</div>'
     overview += '<div class="callout amber"><h3>Read comparisons as evidence, not a unified leaderboard</h3>' + p('All numerical results below are author-reported. Models, judges, hardware, audio conditions, task versions and latency definitions differ. We did not reproduce these measurements.') + '</div>'
-    overview += '<nav class="jump-links" aria-label="Review sections">' + ' '.join(link(label, '#' + ident) for ident, label in [('systems','System designs'), ('availability','Open releases'), ('benchmarks','Benchmarks'), ('training-data','Training data'), ('implications','Proposal implications'), ('paper-notes','Paper notes'), ('references','References')]) + '</nav>'
+    overview += '<nav class="jump-links" aria-label="Review sections">' + ' '.join(link(label, '#' + ident) for ident, label in [('systems','System designs'), ('availability','Open releases'), ('benchmarks','Benchmarks'), ('reported-performance','Model performance'), ('training-data','Training data'), ('implications','Proposal implications'), ('paper-notes','Paper notes'), ('references','References')]) + '</nav>'
 
     system_rows = [[system_label(s) + small(s['family']), e(s['backbone']), e(s['stream']), e(s['decoder']), e(s['control'])] for s in SYSTEMS]
-    architectures = architecture_figure() + table('systems-table', 1, 'System designs: backbone, time/stream representation, speech generation and control.', ['System / first submission', 'Backbone', 'Time and input representation', 'Speech decoder / output', 'Control and reasoning location'], system_rows)
+    architectures = architecture_figure() + architecture_gallery(e, link, lambda: next_label('Figure')) + table('systems-table', 1, 'System designs: backbone, time/stream representation, speech generation and control.', ['System / first submission', 'Backbone', 'Time and input representation', 'Speech decoder / output', 'Control and reasoning location'], system_rows)
     architectures += '<div class="callout"><h3>A finer distinction than “Moshi versus LLM decoder”</h3>' + p('Moshi’s temporal model is initialized from the Helium text LLM. The more useful comparison is parallel streams versus serialized tokens, text versus speech prediction in the main backbone, and internal versus delegated reasoning. An “inner monologue” aligned to spoken words is also not automatically a private chain of thought.', ['2410.00037','2510.07497','2604.27393','2606.14528']) + '</div>'
     release_rows = []
     for s in SYSTEMS:
@@ -179,6 +190,8 @@ def build_html():
     benchmarks = table('benchmarks-table', 3, 'Benchmarks compared by test setting, metrics, release status and relevance to incremental reasoning.', ['Benchmark', 'Interaction / content', 'Measured outcome', 'Availability', 'Use for this project / caveat'], bench_rows)
     benchmarks += '<div class="callout">' + p(N['evaluation_note'], ['2510.07497','2604.04847','2603.13686','2609.31948']) + '</div>'
     benchmarks += p('τ-Voice’s original tasks and protocol should be distinguished from the actively updated τ³-bench repository. Pin a commit and task files before comparing against a number in the March paper. Tool-call recall, tool-selection F1, argument accuracy and grounded task success answer different questions.', ['2603.13686','2609.19334','2604.04847'])
+
+    performance = performance_section(table, e, p, link, small, lambda: next_label('Figure'))
 
     data_rows = []
     for d in DATASETS:
@@ -218,17 +231,18 @@ def build_html():
         supplementary = next((s['extra'] for s in SYSTEMS if s['id'] == ident), [])
         references += f'<li id="ref-{ident.replace(".", "-")}">' + link(paper['title'], paper['source']) + ' ' + small(compact_authors(paper['author_list']) + ' · ' + paper['date'] + ' · ' + paper['venue'] + ' · arXiv:' + ident) + inline_links(supplementary) + '</li>'
     reachable = sum(s['status'] == 'reachable' for s in SOURCES.values())
-    references += '</ol>' + p(f'Source audit: {reachable} of {len(SOURCES)} primary links returned successfully at the recorded check. The JSON records exact URLs, redirects, HTTP status and bibliographic metadata; it does not contain downloaded papers, model weights or training audio.') + inline_links([('Source audit JSON','research/source-audit.json'), ('Structured literature digest','research/literature.json'), ('Readable Markdown digest','research/LITERATURE.md')])
+    references += '</ol>' + p(f'Combined source audits: {reachable} of {len(SOURCES)} primary links returned successfully at their recorded checks. The original and focused-report snapshots record exact URLs, redirects, HTTP status and bibliographic metadata. Downloaded papers, model weights and training audio are excluded.') + inline_links([('Original source audit','research/source-audit.json'), ('Focused-report source audit','report/research/source-audit.json'), ('Structured literature digest','research/literature.json'), ('Readable Markdown digest','research/LITERATURE.md')])
 
     body = '\n'.join([
         '<a class="skip-link" href="#main">Skip to review</a>',
         '<header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="#literature-review" aria-current="page">Literature review</a></nav></div></header>',
         '<main id="main"><div class="container">',
-        '<header id="literature-review" class="hero"><p class="eyebrow">Research landscape · September 2026</p><h1>Reasoning while listening, revising while speaking.</h1><p class="lede">A literature review of modern full-duplex speech architectures, open releases, training resources and evaluations for incremental, speaker-aware reasoning.</p><p class="meta">Updated 30 September 2026 · Primary-source review · Author-reported results, not a reproduced leaderboard</p><div class="button-row">' + link('Explore system designs','#systems','button primary') + link('Structured digest','research/literature.json','button') + link('Source repository','https://github.com/BorrisonXiao/ai2ai-duplex-report','button') + '</div></header>',
+        '<header id="literature-review" class="hero"><p class="eyebrow">Research landscape · September 2026</p><h1>Reasoning while listening, revising while speaking.</h1><p class="lede">A literature review of modern full-duplex speech architectures, open releases, training resources and evaluations for incremental, speaker-aware reasoning.</p><p class="meta">Revised 1 October 2026 · Evidence cutoff 30 September 2026 · Author-reported results, not a reproduced leaderboard</p><div class="button-row">' + link('Explore system designs','#systems','button primary') + link('Model performance','#reported-performance','button') + link('Detailed PDF','report/build/detailed-report.pdf','button') + link('Source repository','https://github.com/BorrisonXiao/ai2ai-duplex-report','button') + '</div></header>',
         section('overview','What changed since the original proposal',overview),
         section('systems','System designs',architectures,N['architecture_lead']),
         section('availability','What is actually open?',releases,N['availability_lead']),
         section('benchmarks','Benchmarks and measurement',benchmarks,N['benchmarks_lead']),
+        section('reported-performance','Reported performance and model profiles',performance,'Selected systems, named reference models and source-specific closed leaders; no universal model ranking.'),
         section('training-data','Training data and supervision',training_data,N['data_lead']),
         section('implications','Implications for the original proposal',implications,'Literature-derived implications only: no experiments or new implementation proposal are presented.'),
         section('paper-notes','System paper notes',notes),
@@ -236,7 +250,8 @@ def build_html():
         '<footer class="site-footer"><p>AI2AI Duplex · Literature review only · ' + link('Source and maintenance notes','https://github.com/BorrisonXiao/ai2ai-duplex-report') + ' · Visual direction adapted from ' + link('JSALT 2026 Downsampling','https://borrisonxiao.github.io/jsalt26-downsampling/') + '</p></footer>',
         '</div></main>',
     ])
-    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="description" content="Primary-source review of modern full-duplex speech models: architectures, releases, benchmarks and training data for incremental reasoning.">\n<meta name="color-scheme" content="light dark">\n<title>AI2AI Duplex — Literature Review</title>\n<link rel="stylesheet" href="assets/site.css">\n<script src="assets/site.js" defer></script>\n</head>\n<body>\n' + body + '\n</body>\n</html>\n'
+    css_version = hashlib.sha256((ROOT / 'assets/site.css').read_bytes()).hexdigest()[:12]
+    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="description" content="Primary-source review of modern full-duplex speech models: architectures, releases, benchmarks and training data for incremental reasoning.">\n<meta name="color-scheme" content="light dark">\n<title>AI2AI Duplex — Literature Review</title>\n<link rel="stylesheet" href="assets/site.css?v=' + css_version + '">\n<script src="assets/site.js" defer></script>\n</head>\n<body>\n' + body + '\n</body>\n</html>\n'
 
 
 def md_link(label, url):
@@ -257,7 +272,7 @@ def build_markdown():
         text.extend([paragraph, ''])
     text.extend(['## Paper table', '', md_table(['Paper (authors, first submission)', 'Venue', 'Method', 'Author-reported result', 'Relevance / limitation', 'Status'], [[md_link(p['title'], p['source']) + ' (' + compact_authors(p['author_list']) + ', ' + p['date'] + ')', p['venue'], p['method'], p['results'], p['relevance'] + ' ' + p['limitations'], p['status']] for p in PAPERS.values()]), '', '## Release availability', ''])
     text.append(md_table(['System', 'Code / demo', 'Weights', 'Training', 'Data / license'], [[s['name'], md_link(*s['code']) if s['code'] else 'Not located', md_link(*s['weights']) if s['weights'] else 'Not located', s['training'], s['data'] + '; ' + s['license']] for s in SYSTEMS]))
-    text.extend(['', '## Benchmarks', '', md_table(['Benchmark', 'Scope', 'Metrics', 'Access', 'Use / caveat'], [[md_link(b['name'], b['paper'] or b['artifact']), b['scope'], b['metrics'], b['access'] + (' ' + md_link('Artifact',b['artifact']) if b['artifact'] else ''), b['use'] + ' ' + b['caveat']] for b in BENCHMARKS]), '', '## Training data', '', md_table(['Source', 'Scale / capture', 'Annotations', 'Access', 'Use / limitation'], [[md_link(d['name'], d['source']), d['scale'] + '; ' + d['kind'], d['annotation'], d['access'], d['use']] for d in DATASETS]), '', N['access_note'], '', '## Reported training recipes', '', md_table(['Model', 'Recipe', 'Availability / evidence'], [[name, recipe, access + ' ' + md_link('Source', first) + (' ' + md_link('Second source', second) if second else '')] for name, recipe, access, first, second in data.RECIPES]), '', '## Themes & consensus', '', *['- ' + theme for theme in data.THEMES], '', '## Open gaps & opportunities', ''])
+    text.extend(['', '## Benchmarks', '', md_table(['Benchmark', 'Scope', 'Metrics', 'Access', 'Use / caveat'], [[md_link(b['name'], b['paper'] or b['artifact']), b['scope'], b['metrics'], b['access'] + (' ' + md_link('Artifact',b['artifact']) if b['artifact'] else ''), b['use'] + ' ' + b['caveat']] for b in BENCHMARKS]), '', *performance_markdown(), '## Training data', '', md_table(['Source', 'Scale / capture', 'Annotations', 'Access', 'Use / limitation'], [[md_link(d['name'], d['source']), d['scale'] + '; ' + d['kind'], d['annotation'], d['access'], d['use']] for d in DATASETS]), '', N['access_note'], '', '## Reported training recipes', '', md_table(['Model', 'Recipe', 'Availability / evidence'], [[name, recipe, access + ' ' + md_link('Source', first) + (' ' + md_link('Second source', second) if second else '')] for name, recipe, access, first, second in data.RECIPES]), '', '## Themes & consensus', '', *['- ' + theme for theme in data.THEMES], '', '## Open gaps & opportunities', ''])
     for gap in data.GAPS:
         refs = ', '.join(md_link(ident, PAPERS[ident]['source']) for ident in gap['refs'])
         text.extend(['### ' + gap['statement'], '', gap['evidence'] + ' ' + refs + '.', ''])
@@ -267,8 +282,28 @@ def build_markdown():
     return '\n'.join(text) + '\n'
 
 
+def performance_markdown():
+    results, plots = evidence()
+    groups = {group['id']: group for group in results['groups'] + results['supplementary_groups']}
+    lines = ['## Reported model performance', '', plots['convention'], '', 'The selected systems have sparse evaluation coverage. Missing results are NR, never zero. Closed source leaders are not a claim about current global SoTA. Text-only and transcript-conditioned controls are excluded from speech-model comparisons. These are transcription-checked source reports, not reproduced experiments.', '', '![Selected-system protocol coverage](../report/figures/performance/coverage.svg)', '']
+    for profile in plots['profiles']:
+        group = groups[profile['group']]
+        labels = results['domain_metric_labels'] + group['metric_labels'] if group['id'] == 'tau_aa' else group['metric_labels']
+        definitions = group.get('metric_specs', [{'unit': '%', 'higher': True, 'decimals': group['rows'][0]['decimals']} for _ in labels])
+        headers = ['Model / configuration'] + [label + ' (' + definition['unit'] + '; ' + ('higher' if definition['higher'] else 'lower') + ')' for label, definition in zip(labels, definitions)]
+        rows = [[record['model']] + ['NR' if value is None else f"{value:.{definition['decimals']}f}" for value, definition in zip(record['scores'], definitions)] for record in profile['table_rows']]
+        source_links = '; '.join(md_link(source['version'] + ' · Tables ' + ', '.join(source['tables']) + ' · PDF pages ' + ', '.join(map(str, source['pages'])), source['url']) for source in profile['sources'])
+        lines += ['### ' + profile['title'], '', profile['note'], '', '![' + profile['title'] + '](../report/' + profile['artifacts']['svg']['file'] + ')', '', md_table(headers, rows), '', 'Review interpretation: ' + profile['takeaway'], '', 'Primary score evidence: ' + source_links + '.', '']
+    lines += ['### Text controls, not voice competitors', '']
+    for control in results['text_controls']:
+        values = ' / '.join(f"{value*control['scale']:.{control['decimals']}f}" for value in control['source_values'])
+        lines += [control['model'] + ': ' + values + '% (' + ' / '.join(control['metric_labels']) + '). ' + control['notes'] + ' ' + md_link('Primary source', results['sources'][control['source']]['url']) + '.', '']
+    return lines
+
+
 def main():
     digest = dict(instruction=data.INSTRUCTION, date=data.DATE, scope=data.SCOPE, sub_questions=data.QUESTIONS, papers=list(PAPERS.values()), themes=data.THEMES, gaps=data.GAPS, systems=SYSTEMS, benchmarks=BENCHMARKS, datasets=DATASETS, training_recipes=data.RECIPES, methodology=N['methodology'], limitations=N['limitations'], source_audit='source-audit.json')
+    digest.update(revision_date='2026-10-01', reported_performance='../report/research/reported-performance.json', performance_plots='../report/research/performance-plots.json', supplemental_source_audit='../report/research/source-audit.json')
     (ROOT / 'index.html').write_text(build_html(),encoding='utf-8')
     (ROOT / 'research/LITERATURE.md').write_text(build_markdown(),encoding='utf-8')
     (ROOT / 'research/literature.json').write_text(json.dumps(digest,ensure_ascii=False,indent=2) + '\n',encoding='utf-8')

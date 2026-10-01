@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{iclr2026_conference,times}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\else
+\usepackage{fontspec}
+\setmainfont{texgyretermes-regular.otf}[BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf,BoldItalicFont=texgyretermes-bolditalic.otf]
+\setsansfont{texgyreheros-regular.otf}[BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,BoldItalicFont=texgyreheros-bolditalic.otf]
+\setmonofont{texgyrecursor-regular.otf}
+\fi
+\usepackage{amsmath,amssymb,booktabs,array,graphicx,float}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{xcolor}
+\definecolor{reportblue}{RGB}{36,75,117}
+\usepackage[colorlinks=true,linkcolor=reportblue,citecolor=reportblue,urlcolor=reportblue,breaklinks=true]{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+\iclrfinalcopy
+\newlength{\tablewidth}
+\input{figures/styles}
+\input{tables/performance-macros}
+\title{Full-Duplex Speech Reasoning: Architectures and Synchronization}
+\author{AI2AI Duplex Project: 20-minute discussion brief}
+\hypersetup{pdftitle={Full-Duplex Speech Reasoning: 20-minute Discussion Brief},pdfauthor={AI2AI Duplex Project},pdfsubject={Figure-led literature review; revised 1 October 2026}}
+
+\begin{document}
+\maketitle
+\lhead{AI2AI Duplex: discussion brief, 1 October 2026}
+\rhead{}
+\cfoot{\thepage}
+\raggedbottom
+\setlength{\intextsep}{3pt plus 1pt minus 1pt}
+\label{page:mapone}
+
+\section{Architecture map I: parallel codec streams vs. a text backbone}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/papers/moshi.png}
+\caption{\textbf{Moshi.} Reproduced from \citet{moshi}, Fig.~1. TWL builds on this architecture, adding silent reasoning to the text stream \citep{thinklisten}; that extension is not shown here.}
+\label{fig:moshi}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.94\linewidth]{figures/papers/minicpm.png}
+\caption{\textbf{MiniCPM-o 4.5.} Reproduced from \citet{minicpm}, Fig.~4. Timed Qwen3-8B text backbone; separate speech-token and waveform decoders.}
+\label{fig:minicpm}
+\end{figure}
+
+\newpage
+\label{page:maptwo}
+\section{Architecture map II: where computation lives}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/papers/flair.png}
+\caption{\textbf{FLAIR.} Reproduced from \citet{flair}, Fig.~2. Qwen2.5-7B: latent reasoning while listening; text while speaking. Full-context teacher is training-only.}
+\label{fig:flair}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/papers/step3.png}
+\caption{\textbf{StepAudio 3 Realtime.} Reproduced from \citet{step3}, Fig.~7B (routing panel A omitted). Same-model formulation/articulation; playback-aware pacing follows Mind-Paced Speaking \citep{mindpaced}.}
+\label{fig:step3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/papers/venus.png}
+\caption{\textbf{Realtime-Venus.} Reproduced from \citet{venus}, Fig.~3. Foreground interaction continues during asynchronous delegation; the frontend controls reply delivery timing.}
+\label{fig:venus}
+\end{figure}
+
+\newpage
+\label{page:questions}
+\section{Synchronization: incoming speech vs. played speech}
+
+The original proposal centers on \emph{prefix sufficiency, correction-aware reasoning and speaker ownership}. \textbf{Listening sync:} track how much of each speaker's speech the model has \emph{actually processed}, not just received. \textbf{Speaking sync:} distinguish generated speech, buffered audio and speech \emph{already played}. Autoregressive steps are not wall-clock seconds. Wrong claims already played need a spoken correction; buffered audio can still be changed.
+
+\begin{figure}[H]
+\centering
+\input{figures/commitment}
+\caption{\textbf{Illustrative example, not an experiment.} User speech enters as streaming audio tokens or features, depending on the model. Once the Tuesday correction is processed, revise the answer plan and check buffered audio before playback. A wrong claim already played cannot be taken back; correct it aloud.}
+\label{fig:commitment}
+\end{figure}
+
+\input{tables/brief-synchronization}
+\input{tables/brief-questions}
+
+\textbf{Novelty boundary.} Early thought, dual-process articulation, adaptive windows and stale-job suppression already exist \citep{thinklisten,mindpaced,adapt}. The candidate contribution is \emph{joint speaker/evidence/playback consistency}, tested against those mechanisms. Five questions are discussion options, not ranked winners.
+
+\newpage
+\label{page:resources}
+\section{Resource sheet and a small first test}
+\input{tables/brief-benchmarks}
+\input{tables/brief-data}
+
+\begin{figure}[H]
+\centering
+\input{figures/timing}
+\caption{\textbf{Published timing parameters, not a latency leaderboard.} Codec frames, shared action clocks and language windows are different quantities \citep{moshi,duplexsla,adapt,minicpm,venus}. Smaller quantum does not imply a faster \emph{correct} answer.}
+\label{fig:timing}
+\end{figure}
+
+\textbf{First test.} Instrument a released 7--9B runtime on 200--500 paired dialogues: relevant correction vs. backchannel; before vs. after playback; same vs. different speaker. Keep model, lookahead and compute budget fixed; use a simulated read-only backend. Log ingestion, state version, output queue and playback. Compare \emph{correct useful-answer latency, stale audible seconds, final task success and false interruption}, not first filler sound. Natural corpora need added sufficiency/revision labels; hold out benchmark tests. No experiments or performance measurements were run for this brief.
+
+{\small Literature/availability cutoff: 30 September 2026. “Not located” is not proof of nonexistence. Details and caveats: see the preserved nine-page report and source notes.}
+
+\newpage
+\label{page:performance}
+\section{Reported performance on the selected benchmarks}
+These are source-reported results, not our experiments. Original benchmark comparisons and later system-report evaluations are labeled separately; their model versions, conditions and aggregation can differ.
+
+\input{tables/brief-performance}
+
+{\small\textbf{Coverage and configuration caveats.} FLAIR has no located score on these five benchmarks; its Full-Duplex-Bench results use an earlier version. SRQA's CoT and early-DPO rows are different checkpoints (Tables 2 and 4); early-DPO uses question-completeness threshold \srqaQCThreshold, with delays of \srqaDPODelays{} tokens in the same task order, not runtime seconds. Venus's v3 scores come from its revised report, not a common rerun with the benchmark authors. The two $\tau$-Voice rows are not interchangeable. Duplex-MPE yield has model-specific eligibility; Gemini's text reference supplies speaker identity. Unlisted selected-system/benchmark pairs are NR.}
+
+\smallskip
+\textbf{Reading the gaps.} Tool selection can be strong while complete-task success remains weak; a response can occur without being correct or appropriate. The missing cross-system coverage is itself a reason to build a shared, version-pinned evaluation harness, not evidence that an untested system fails.
+
+\newpage
+\label{page:references}
+\section*{Availability and references}
+\input{tables/brief-systems}
+\begingroup
+\footnotesize
+\setlength{\parskip}{2pt}
+\input{brief-references}
+\endgroup
+\end{document}

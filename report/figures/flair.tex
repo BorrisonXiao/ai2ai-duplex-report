@@ -1,0 +1,13 @@
+\begin{tikzpicture}[arch]
+\node[audio,text width=1.60cm] (enc) at (1.00,0) {Audio + streaming encoder};
+\node[model,text width=2.10cm] (lm) at (4.00,0) {Qwen2.5-7B + speech state};
+\node[mind,text width=2.25cm] (latent) at (7.15,0.68) {Listen: soft vocabulary-weighted embedding};
+\node[audio,text width=2.25cm] (speak) at (7.15,-0.77) {Speak: text + speech decoder};
+\node[voice,text width=1.25cm] (out) at (10.30,-0.77) {Agent audio};
+\draw[flow] (enc)--(lm);
+\draw[flow] (lm.north east)--(latent.west);
+\draw[flow] (lm.south east)--(speak.west);
+\draw[feedback] (latent.north)--(7.15,1.42)--node[note,above] {next listening step} (4.00,1.42)--(lm.north);
+\draw[flow] (speak)--(out);
+\node[note,text width=3.2cm] at (10.15,0.90) {Full-context teacher: training only, never runtime input.};
+\end{tikzpicture}

@@ -1,0 +1,29 @@
+\begin{tikzpicture}[arch,x=0.96cm,y=0.65cm]
+\foreach \y/\label in {3/User speech,2/Listening,1/Reasoning,0/Speech output} {
+  \node[anchor=east] at (2.13,\y) {\label};
+  \draw[->,gray] (2.28,\y)--(12.15,\y);
+}
+\draw[fill=audiocolor,draw=reportblue] (2.45,2.78) rectangle (5.20,3.22);
+\node at (3.82,3) {Weather Monday?};
+\draw[fill=mindcolor,draw=orange!70!black] (6.30,2.78) rectangle (8.70,3.22);
+\node at (7.50,3) {No, Tuesday.};
+\node[model,minimum height=0.40cm,inner sep=2pt] at (5.45,2) {Monday processed};
+\node[mind,minimum height=0.40cm,inner sep=2pt] at (9.10,2) {Tuesday processed};
+\draw[flow] (5.20,2.7)--(5.45,2.35);
+\draw[flow] (8.70,2.7)--(9.10,2.35);
+\draw[fill=statecolor,draw=reportblue] (5.45,0.78) rectangle (9.10,1.22);
+\node at (7.27,1) {Monday answer plan};
+\draw[fill=mindcolor,draw=orange!70!black] (9.10,0.78) rectangle (12.00,1.22);
+\node at (10.55,1) {Revise for Tuesday};
+\draw[->,orange!80!black,thick] (9.10,1.65)--(10.55,1.30);
+\draw[fill=voicecolor,draw=green!50!black] (5.45,-0.22) rectangle (9.10,0.22);
+\node at (7.27,0) {Already played};
+\draw[fill=gray!12,draw=gray] (9.10,-0.22) rectangle (12.00,0.22);
+\node at (10.55,0) {Queued audio};
+\draw[->,orange!80!black,thick] (10.55,0.70)--(10.55,0.30);
+\draw[dashed,thick] (9.10,-0.35)--(9.10,0.50);
+\node[note,anchor=north,text width=3.4cm] at (7.27,-0.50) {If wrong, correct aloud};
+\node[note,anchor=north,text width=2.9cm] at (10.55,-0.50) {Check before playing};
+\node[note,anchor=east] at (11.10,3.65) {Time};
+\draw[->,gray] (11.25,3.65)--(12.10,3.65);
+\end{tikzpicture}

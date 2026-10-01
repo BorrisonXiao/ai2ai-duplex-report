@@ -46,8 +46,10 @@ Evaluation now extends well beyond single-turn spoken reasoning: τ-Voice measur
 | [Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](https://arxiv.org/abs/2510.07838) (Guan-Ting Lin, Shih-Yun Shan Kuan, Jiatong Shi et al., 2025-10-09) | Preprint; updated framework 2026 | Live automated examiner; daily, correction, entity tracking and safety tasks; Fast / Slow pacing. Metrics: Turn fluency, multi-turn instruction following and task competence. | Reveals correction handling and entity-tracking failures in multi-turn systems. | Dynamic corrections and long dialogue state. Examiner and judge choices affect results; keep versions and prompts fixed. | verified |
 | [MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](https://arxiv.org/abs/2511.10262) (He Zhang, Wenqian Cui, Haoning Xu et al., 2025-11-13) | Findings of ACL 2026 | Multi-round full-duplex conversations with explicit continuous-dialogue segmentation. Metrics: Conversation behavior, dialogue quality, instruction following and safety. | Shows uneven performance across rounds and evaluation dimensions. | Persistence of dialogue state and quality across rounds. Segmentation/ASR choices influence turn-wise scoring; not a direct semantic-sufficiency label. | verified |
 | [PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models](https://arxiv.org/abs/2602.06053) (Rajarshi Roy, Jonathan Raiman, Sang-gil Lee et al., 2026-01-14) | Preprint | Moshi / Helium 7B Concurrent user audio, assistant text and assistant audio; text role and voice prompts. Moshi-family temporal/depth speech decoder with voice conditioning. Learns duplex timing and persona-conditioned responses from real and synthetic conversations. | Paper evaluates role adherence, voice similarity and conversational timing. | Strong released Moshi-family control condition; persona control differs from speaker-specific reasoning. Code and weights are available, but the complete paired-prompt conversation corpus was not located. | verified |
-| [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686) (Soham Ray, Keshav Dhandhania, Victor Barres et al., 2026-03-14) | Preprint | 278 airline / retail / telecom tasks; clean and realistic accents/noise; simulated full-duplex user. Metrics: Grounded pass@1; latency, interruptions and voice interaction quality. | Original study reports voice-task success below its text baseline under both audio conditions. | End-to-end task completion and correction consequences. Pin the task revision and simulator/provider configuration. Paper-clean, realistic and macro-domain scores are different conditions. | verified |
+| [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686) (Soham Ray, Keshav Dhandhania, Victor Barres et al., 2026-03-14) | ICML 2026 / PMLR 306 | 278 airline / retail / telecom tasks; clean and realistic accents/noise; simulated full-duplex user. Metrics: Grounded pass@1; latency, interruptions and voice interaction quality. | Original study reports voice-task success below its text baseline under both audio conditions. | End-to-end task completion and correction consequences. Pin the task revision and simulator/provider configuration. Paper-clean, realistic and macro-domain scores are different conditions. | verified |
+| [The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](https://arxiv.org/abs/2603.17837) (Donghang Wu, Tianyu Zhang, Yuxin Li et al., 2026-03-18) | Revised primary manuscript | Qwen2.5-7B with a streaming speech encoder Continuous vocabulary-weighted embeddings replace silence-token input during listening; inference is causal. Autoregressive speech-token module followed by streaming flow matching. Full-context expert trains listening-time latent reasoning via ELBO/SFT; expert removed at inference. | Own-study QA and earlier Full-Duplex-Bench results are shown in the model profiles; not SRQA or FDB-v3. | Direct think-while-listening alternative to silent textual CoT. Imported reference evaluations are not a common rerun. Dedicated code/weights and the complete training mixture were not located. | verified |
 | [Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency](https://arxiv.org/abs/2604.04847) (Guan-Ting Lin, Chen Chen, Zhehuai Chen et al., 2026-04-06) | Preprint | Real human audio; five disfluency types; chained tool calls in four task domains. Metrics: Tool selection F1, argument accuracy, pass@1, first response / tool / completion latency. | Authors identify self-correction and hard multi-step reasoning as recurring failures. | Self-corrections, hesitation and multi-step tool reasoning. Tool-selection F1 is not task completion. Judge-assisted and exact argument matching differ. | verified |
+| [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456) (Smit Nautambhai Modi, Gandharv Mahajan, Marc Wetter et al., 2026-04-08) | Preprint | 200 synthetic interrupted conversations with controlled state corrections and human-audited rubrics. Metrics: Conversation mean pass rate (MPR) and individual criterion pass rate (MCP). | Best reported conversation MPR is 48.5%, despite much higher individual-criterion pass rates. | Direct test of task-state revision during speaking. Four closed voice systems; no selected-system result located. Criteria and conversation pass rates have different denominators. | verified |
 | [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393) (Junbo Cui, Bokai Xu, Chongyi Wang et al., 2026-04-30) | Technical report / preprint | Qwen3-8B; about 9B total Omni-Flow serializes time windows of audio, video and assistant output; [listen] when silent. Small Llama speech-token decoder + S3 tokens + streaming flow-matching waveform decoder. Explicit listen/speak decision; main LLM generates text, separate decoder generates speech. | In the paper’s ablation, 1.0 s windows outperform 0.1 / 0.2 s on the tested language tasks. | Concrete open alternative to Moshi for a streaming encoder + text reasoning backbone. Shorter windows trade response opportunity against language competence. A full duplex-training mixture is not released. | verified |
 | [DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction](https://arxiv.org/abs/2606.09186) (Muye Huang, Lingling Zhang, Xingyu Yu et al., 2026-06-08) | Preprint | Qwen3-Omni-derived interaction model + thinking backend Streaming audio/video interaction layer; reasoning and tool layer run in parallel. Interaction model streams text and speech while incorporating backend results. Separates fast conversational behavior from slower reasoning/tool work. | Reports full-duplex and multimodal evaluations; code, weights and a partial training artifact are linked. | Research-ready two-layer design with an explicit data-generation and training framework. Full trainable dataset is described as about 9 TB; release contains metadata and one generated shard, not the entire corpus. | verified |
 | [BayLing-Duplex: Native Full-Duplex Speech Dialogue with a Single Autoregressive LLM](https://arxiv.org/abs/2606.14528) (Qingkai Fang, Shoutao Guo, Yang Feng, 2026-06-12) | Preprint | GLM-4-Voice / GLM-4-9B User speech, assistant text and assistant speech interleaved in 10:5:10 blocks. LLM predicts text and speech tokens; GLM flow-matching decoder renders speech. Four vocabulary control tokens encode silence and response boundaries; no auxiliary control head. | 400K duplex SFT samples + DPO; authors report 92% turn-taking and 100% interruption success on InstructS2S-Eval. | A direct example of duplex decisions implemented as ordinary autoregressive token prediction. 0.8 s block granularity constrains response opportunities. The reported results do not establish private reasoning revision. | verified |
@@ -85,11 +87,13 @@ Evaluation now extends well beyond single-turn spoken reasoning: τ-Voice measur
 | SALM-Duplex | Not located | Not located | Authors report release; exact artifact mapping unconfirmed | Synthetic duplex recipe described; full mixture not established; Consult component licenses |
 | Context Spanning | Not located | Not located | Method described; dedicated code/checkpoint not located | Full training mixture not located; Consult component licenses |
 | CharDuplex / FDGym | Not located | Not located | FDGym recipe documented; code/checkpoint not located | Full training mixture not located; Consult component licenses |
+| FLAIR | Not located | Not located | ELBO/SFT method described; complete package not located | Full training mixture not located; Consult component licenses |
 
 ## Benchmarks
 
 | Benchmark | Scope | Metrics | Access | Use / caveat |
 | --- | --- | --- | --- | --- |
+| [EchoChain](https://arxiv.org/abs/2604.16456) | 200 synthetic interrupted conversations with controlled state corrections and human-audited rubrics. | Conversation mean pass rate (MPR) and individual criterion pass rate (MCP). | Paper verified; standalone runnable release not located. | Direct test of task-state revision during speaking. Four closed voice systems; no selected-system result located. Criteria and conversation pass rates have different denominators. |
 | [τ-Voice](https://arxiv.org/abs/2603.13686) | 278 airline / retail / telecom tasks; clean and realistic accents/noise; simulated full-duplex user. | Grounded pass@1; latency, interruptions and voice interaction quality. | Code + domain tasks + simulator; model/TTS APIs required. Current repo is τ³-bench. [Artifact](https://github.com/sierra-research/tau2-bench) | End-to-end task completion and correction consequences. Pin the task revision and simulator/provider configuration. Paper-clean, realistic and macro-domain scores are different conditions. |
 | [Full-Duplex-Bench v1](https://arxiv.org/abs/2503.04721) | Controlled pause, backchannel, turn transition and user interruption scenarios. | Takeover / continuation / response timing and response quality by scenario. | Evaluation code and static data released. [Artifact](https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v1_v1.5) | Basic conversational timing regression suite. Coarse timing/interaction evaluation does not establish reasoning or real tool execution. |
 | [Full-Duplex-Bench v1.5](https://arxiv.org/abs/2507.23159) | User interruption, listener backchannel, side conversation and ambient speech overlap. | Continue or yield appropriately; interruption response quality and timing. | Code + overlap data and metadata released. [Artifact](https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v1_v1.5) | Distinguish meaningful barge-in from other-directed/background speech. Good overlap rejection alone does not prove correct speaker-conditioned reasoning. |
@@ -104,6 +108,161 @@ Evaluation now extends well beyond single-turn spoken reasoning: τ-Voice measur
 | [MMAU-Pro](https://arxiv.org/abs/2508.13992) | 5,305 expert QA items; 49 skills across speech, sound, music and mixed audio. | Multiple-choice and open-answer audio reasoning by capability. | Public project, dataset and evaluation code. [Artifact](https://sonalkum.github.io/mmau-pro/) | Broader acoustic reasoning anchor from the original proposal. Long-form, spatial and multi-audio understanding are different from real-time duplex control. |
 | [StepAudioChat](https://arxiv.org/abs/2609.14005) | Eight dialogue capability dimensions, including reasoning, memory, pragmatics and role. | Dimension and macro scores under the report’s judging protocol. | Benchmark described; public item/scoring release not located. | Contemporary dialogue/reasoning taxonomy. An unreleased suite cannot yet support an independently reproduced comparison. |
 | [Voila Benchmark](https://arxiv.org/abs/2505.02707) | Spoken versions of MMLU, MATH, HumanEval, NQ-Open and GSM8K. | Spoken knowledge / reasoning response correctness. | maitrix-org/Voila-Benchmark dataset released. [Artifact](https://huggingface.co/datasets/maitrix-org/Voila-Benchmark) | Additional spoken reasoning control for the Voila family. Turn-wise synthetic evaluation; no direct concurrent-listening or correction metric. |
+
+## Reported model performance
+
+Radars use raw 0–100 percentages. No polygon-area ranking, normalization to a reference, imputation or cross-protocol averaging. Mixed units and fewer than three metrics use separate bar axes. No error bars: these are source-reported point estimates, not independent reruns.
+
+The selected systems have sparse evaluation coverage. Missing results are NR, never zero. Closed source leaders are not a claim about current global SoTA. Text-only and transcript-conditioned controls are excluded from speech-model comparisons. These are transcription-checked source reports, not reproduced experiments.
+
+![Selected-system protocol coverage](../report/figures/performance/coverage.svg)
+
+### Think while listening: SRQA
+
+Two TWL-study checkpoints are distinct. Kimi-Audio is a speech reference, not a full-duplex system. The table also includes Qwen2-Audio; Helium's non-comparable text result is omitted.
+
+![Think while listening: SRQA](../report/figures/performance/twl.svg)
+
+| Model / configuration | ARC-E (%; higher) | ARC-C (%; higher) | SIQA (%; higher) | PIQA (%; higher) | GSM8K (%; higher) |
+| --- | --- | --- | --- | --- | --- |
+| Moshi + CoT (TWL study) | 77.7 | 59.8 | 56.1 | 56.9 | 16.1 |
+| TWL: early length-DPO | 65.4 | 46.0 | 45.3 | 46.0 | 14.7 |
+| Moshi baseline | 30.2 | 21.5 | 22.8 | 23.8 | 8.7 |
+| Kimi-Audio-7B-Instruct | 83.0 | 71.5 | 32.9 | 34.4 | 15.7 |
+| Qwen2-Audio-7B-Instruct | 59.1 | 42.4 | 21.9 | 24.5 | 18.1 |
+
+Review interpretation: The CoT configuration is stronger on these tasks than foundation Moshi, but early length-DPO is a different accuracy/latency operating point, not the same high-accuracy checkpoint.
+
+Primary score evidence: [ICLR 2026 proceedings · Tables 2, 4 · PDF pages 8, 9](https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf).
+
+### FLAIR: spoken QA accuracy
+
+FLAIR's own QA suite is not SRQA. Only accuracy-valued tasks are plotted; 1–5 open-ended judge scores are excluded. Published reference scores are imported, not all rerun. Kimi-Audio is half-duplex.
+
+![FLAIR: spoken QA accuracy](../report/figures/performance/flair-qa.svg)
+
+| Model / configuration | LlamaQ (%; higher) | WebQ (%; higher) | TriviaQA (%; higher) | SDQA (%; higher) | OpenbookQA (%; higher) | MMSU (%; higher) |
+| --- | --- | --- | --- | --- | --- | --- |
+| FLAIR w/ thk | 78.0 | 43.0 | 51.2 | 56.2 | 74.2 | 56.2 |
+| FLAIR w/o thk | 73.0 | 41.7 | 53.8 | 54.4 | 72.9 | 50.2 |
+| Moshi | 54.5 | 22.1 | 16.7 | 15.6 | 25.9 | 24.0 |
+| Freeze-Omni | 56.2 | 27.9 | 28.5 | 53.5 | 31.0 | 28.1 |
+| Kimi-Audio | 68.3 | 37.3 | 51.2 | 63.1 | 83.5 | 62.2 |
+
+Review interpretation: Latent thinking improves several tasks over the no-thinking ablation, but not every task: TriviaQA is lower. No single curve wins across all tasks shown.
+
+Primary score evidence: [arXiv v5, 4 June 2026 · Tables 1, 3 · PDF pages 7, 8](https://arxiv.org/pdf/2603.17837v5).
+
+### FLAIR: earlier duplex interaction suite
+
+Separate axes preserve percentages, seconds and 0–5 judge scores. TOR means takeover rate. Gemini Live is the study's sole closed reference; its API revision is unspecified. This is not FDB-v3 tool use.
+
+![FLAIR: earlier duplex interaction suite](../report/figures/performance/flair-interaction.svg)
+
+| Model / configuration | Turn-taking TOR (%; higher) | Turn-taking latency (s; lower) | Barge-in TOR (%; higher) | Barge-in GPT-4o (0–5; higher) | Barge-in latency (s; lower) |
+| --- | --- | --- | --- | --- | --- |
+| FLAIR w/ thk | 93.0 | 0.43 | 92.0 | 4.22 | 0.36 |
+| FLAIR w/o thk | 94.1 | 0.37 | 89.0 | 4.08 | 0.35 |
+| Moshi | 94.1 | 0.27 | 100.0 | 0.77 | 0.26 |
+| Gemini Live | 65.5 | 1.30 | 89.1 | 3.38 | 1.18 |
+
+Review interpretation: Response quality, takeover rate and response delay expose different trade-offs. A high takeover rate alone does not establish a useful answer.
+
+Primary score evidence: [arXiv v5, 4 June 2026 · Tables 1, 3 · PDF pages 7, 8](https://arxiv.org/pdf/2603.17837v5).
+
+### StepAudio 3 Realtime: τ-Voice (AA)
+
+Artificial Analysis implementation and API versions from StepAudio's report. The radar shows three domain success rates; the bar panel shows the separately reported equal-domain macro. Grok is the macro leader, not the winner in every domain.
+
+![StepAudio 3 Realtime: τ-Voice (AA)](../report/figures/performance/step3.svg)
+
+| Model / configuration | Airline (%; higher) | Retail (%; higher) | Telecom (%; higher) | Macro task success (%; higher) |
+| --- | --- | --- | --- | --- |
+| StepAudio 3 Realtime | 60.0 | 37.7 | 70.2 | 56.0 |
+| Grok Voice Think Fast 2.0 High | 56.0 | 49.7 | 63.7 | 56.5 |
+| Qwen Audio 3.0 Realtime Plus | 61.3 | 49.0 | 53.5 | 54.6 |
+| GPT-Realtime-2.1 High | 62.0 | 45.6 | 29.4 | 45.7 |
+
+Review interpretation: The reported macro scores are close while the domain profiles differ. This comparison cannot be pooled with the original clean/realistic τ-Voice results.
+
+Primary score evidence: [arXiv v2, 19 September 2026 · Tables 9 · PDF pages 18, 19, 20](https://arxiv.org/pdf/2609.14005v2).
+
+### Realtime-Venus: Full-Duplex-Bench v3
+
+Both Venus frontends are from the revised system report; closed references are from the benchmark comparison. GPT-Realtime leads these three metrics in that source, not a current global leaderboard. This is not a common rerun.
+
+![Realtime-Venus: Full-Duplex-Bench v3](../report/figures/performance/venus.svg)
+
+| Model / configuration | Tool F1 (%; higher) | Argument accuracy (%; higher) | Pass@1 (%; higher) |
+| --- | --- | --- | --- |
+| Realtime-Venus-Omni | 86.0 | 53.1 | 43.0 |
+| Realtime-Venus-Audio | 82.0 | 52.2 | 42.0 |
+| GPT-Realtime | 87.6 | 68.0 | 60.0 |
+| Gemini Live 3.1 | 81.7 | 58.8 | 54.0 |
+
+Review interpretation: Tool-selection F1 is substantially higher than complete-task pass@1. These metrics have different success criteria, so their difference is not a stage-wise failure rate.
+
+Primary score evidence: [arXiv v1, 6 April 2026 · Tables 2 · PDF pages 4, 5](https://arxiv.org/pdf/2604.04847v1); [arXiv v3, 23 September 2026 · Tables 7 · PDF pages 21, 22](https://arxiv.org/pdf/2609.13814v3).
+
+### MiniCPM-o 4.5: Duplex-MPE
+
+Explicit and implicit addressing are separate panels. Moshi and Voila are representative speech references. Answer accuracy is conditional on fresh responses; yield uses model-specific eligible speaking events. Polygon area is not an overall score. Gemini's transcript control is excluded.
+
+![MiniCPM-o 4.5: Duplex-MPE](../report/figures/performance/minicpm.svg)
+
+| Model / configuration | Fresh onset (%; higher) | Conditional answer (%; higher) | Silence preservation (%; higher) | Answering-window yield (%; higher) |
+| --- | --- | --- | --- | --- |
+| MiniCPM-o 4.5 (explicit) | 95.00 | 47.30 | 92.42 | 59.64 |
+| MiniCPM-o 4.5 (implicit) | 94.35 | 46.65 | 92.89 | 59.25 |
+| Voila (explicit) | 64.65 | 0.31 | 83.51 | 84.84 |
+| Voila (implicit) | 66.70 | 0.75 | 83.07 | 80.46 |
+| Moshi (explicit) | 63.40 | 1.23 | 27.34 | 19.18 |
+| Moshi (implicit) | 67.00 | 1.70 | 26.76 | 21.07 |
+
+Review interpretation: MiniCPM-o combines frequent fresh responses and silence preservation, but conditional answer accuracy is much lower. Voila's higher yield is conditional on different eligible events.
+
+Primary score evidence: [arXiv v1, 25 September 2026 · Tables 3, 17 · PDF pages 8, 25](https://arxiv.org/pdf/2609.31948v1).
+
+### Original τ-Voice: closed voice references
+
+Original benchmark Table 6 All row; clean and realistic conditions remain separate. None of the five selected systems is evaluated here. GPT-5's text control is not plotted as a voice competitor.
+
+![Original τ-Voice: closed voice references](../report/figures/performance/tau-original.svg)
+
+| Model / configuration | Clean pass@1 (%; higher) | Realistic pass@1 (%; higher) |
+| --- | --- | --- |
+| Grok Voice | 51 | 38 |
+| GPT-Realtime-1.5 | 49 | 35 |
+| Gemini Live 2.5 | 31 | 26 |
+
+Review interpretation: All three voice systems perform worse under realistic audio conditions in this source comparison; later τ-Voice implementations are separate evidence.
+
+Primary score evidence: [ICML 2026 / PMLR 306 · Tables 6 · PDF pages 7](https://raw.githubusercontent.com/mlresearch/v306/main/assets/ray26a/ray26a.pdf).
+
+### EchoChain: closed voice references
+
+Paper Table 1, across 200 interrupted conversations. MPR requires every criterion in a conversation to pass; MCP scores individual criteria. None of the five selected systems is evaluated here.
+
+![EchoChain: closed voice references](../report/figures/performance/echochain.svg)
+
+| Model / configuration | MPR (%; higher) | MCP (%; higher) |
+| --- | --- | --- |
+| Grok Voice Agent | 48.5 | 85.5 |
+| GPT-realtime-2025-08-28 | 45.0 | 81.1 |
+| Amazon Nova Sonic 2 | 26.5 | 78.1 |
+| Gemini Live 2.5 native audio | 16.5 | 64.8 |
+
+Review interpretation: Passing many individual criteria does not guarantee complete conversation success. Even the strongest reported voice reference passes fewer than half of conversations.
+
+Primary score evidence: [arXiv v1, 17 April 2026 · Tables 1 · PDF pages 8](https://arxiv.org/pdf/2604.16456v1).
+
+### Text controls, not voice competitors
+
+GPT-5 (reasoning, text): 85% (Text task pass@1). Text control, not a realtime voice result. [Primary source](https://raw.githubusercontent.com/mlresearch/v306/main/assets/ray26a/ray26a.pdf).
+
+Gemini 3.1 Pro (explicit, transcript): 94.70 / 90.39 / 95.37% (Response presence / Conditional answer / Silence preservation). Table 17 reference run; not acoustic, not a speech-model upper bound. [Primary source](https://arxiv.org/pdf/2609.31948v1).
+
+Gemini 3.1 Pro (implicit, transcript): 30.40 / 79.11 / 99.34% (Response presence / Conditional answer / Silence preservation). No fresh-onset or stopping score; speaker-attributed transcript is supplied. [Primary source](https://arxiv.org/pdf/2609.31948v1).
 
 ## Training data
 
@@ -189,18 +348,20 @@ For a comparison, pin the model and harness revision, prompt, task split, judge,
 15. [Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](https://arxiv.org/abs/2510.07838). Guan-Ting Lin, Shih-Yun Shan Kuan, Jiatong Shi, Kai-Wei Chang, Siddhant Arora, Shinji Watanabe, Hung-yi Lee. Preprint; updated framework 2026, 2025-10-09; arXiv:2510.07838. Verified.
 16. [MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](https://arxiv.org/abs/2511.10262). He Zhang, Wenqian Cui, Haoning Xu, Xiaohui Li, Lei Zhu, Haoli Bai, Shaohua Ma, Irwin King. Findings of ACL 2026, 2025-11-13; arXiv:2511.10262. Verified.
 17. [PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models](https://arxiv.org/abs/2602.06053). Rajarshi Roy, Jonathan Raiman, Sang-gil Lee, Teodor-Dumitru Ene, Robert Kirby, Sungwon Kim, Jaehyeon Kim, Bryan Catanzaro. Preprint, 2026-01-14; arXiv:2602.06053. Verified.
-18. [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686). Soham Ray, Keshav Dhandhania, Victor Barres, Karthik Narasimhan. Preprint, 2026-03-14; arXiv:2603.13686. Verified.
-19. [Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency](https://arxiv.org/abs/2604.04847). Guan-Ting Lin, Chen Chen, Zhehuai Chen, Hung-yi Lee. Preprint, 2026-04-06; arXiv:2604.04847. Verified.
-20. [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393). Junbo Cui, Bokai Xu, Chongyi Wang, Tianyu Yu, Weiyue Sun, Yingjing Xu, Tianran Wang, Zhihui He, Wenshuo Ma, Tianchi Cai, Jiancheng Gui, Luoyuan Zhang, Xian Sun, Fuwei Huang, Moye Chen, Zhuo Lin, Hanyu Liu, Qingxin Gui, Qingzhe Han, Yuyang Wen, Huiping Liu, Rongkang Wang, Yaqi Zhang, Hongliang Wei, Chi Chen, You Li, Kechen Fang, Jie Zhou, Yuxuan Li, Guoyang Zeng, Chaojun Xiao, Yankai Lin, Xu Han, Maosong Sun, Zhiyuan Liu, Yuan Yao. Technical report / preprint, 2026-04-30; arXiv:2604.27393. Verified.
-21. [DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction](https://arxiv.org/abs/2606.09186). Muye Huang, Lingling Zhang, Xingyu Yu, Lei Shi, Zhanyu Ma, Jun Xu, Jiuchong Gao, Jinghua Hao, Renqing He, Jun Liu. Preprint, 2026-06-08; arXiv:2606.09186. Verified.
-22. [BayLing-Duplex: Native Full-Duplex Speech Dialogue with a Single Autoregressive LLM](https://arxiv.org/abs/2606.14528). Qingkai Fang, Shoutao Guo, Yang Feng. Preprint, 2026-06-12; arXiv:2606.14528. Verified.
-23. [DuplexChat: Constructing Speaker-Separated Full-Duplex Dialogue Speech at Scale for Spoken Dialogue Language Modeling](https://arxiv.org/abs/2607.04941). Wataru Nakata, Yuki Saito, Hiroshi Saruwatari. Preprint / technical report, 2026-07-06; arXiv:2607.04941. Verified.
-24. [Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs](https://arxiv.org/abs/2607.06540). Zhenyu Liu, Xuanyu Zhang, Yunxin Li, Qixun Teng, Shenyuan Jiang, Haolan Chen, Minjun Zhao, Fanbo Meng, Yu Xu, Yancheng He, Baotian Hu, Haizhou Li, Min Zhang. ACL 2026; linked arXiv manuscript, 2026-07-07; arXiv:2607.06540. Verified.
-25. [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](https://arxiv.org/abs/2609.13814). Ant Group. Technical report / preprint, 2026-09-12; arXiv:2609.13814. Verified.
-26. [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005). Bin Lin, Bo Zhao, Boyang Zhang, Boyong Wu, Chao Yan, Chen Geng, Chen Wu, Cheng Yi, Chengli Feng, Chenglin Zhu, Chengting Feng, Chengyuan Yao, Daijiao Liu, DanNi Wan, Daxin Jiang, Dongjian Li, Dongqing Pang, Fei Tian, Feng Tian, Future Li, Gang Yu, Guanglong Yang, Haoyang Zhang, Hongyuan Wang, Jia Peng, Jiahao Song, Jialong Xue, Jiamin Fan, Jiangjie Zhen, Jianzheng Gao, Jincheng Wen, Jinghua Liang, Jinglan Gong, Jun Chen, Li Xie, Liang Zhao, Lifang Zhang, Lingli Ji, Lun Cai, Min Xu, Peilin Li, Peng Yang, Pengfei Tan, Qingjian Lin, Qinxin Du, Ruijie Xiong, Runze Li, Shenghua Hu, Shengqian Qin, Shi Qiu, Siqi Tu, Siyi Zhou, Tianjiao Deng, Wanying Lu, Weiming Niu, Wen Sun, WenWen Qu, Xiangyu Zhang, Xianwei Zhang, Xiaosu Su, Xing Chen, Xinyu Liu, Xuerui Yang, Yan Wu, Yang Li, Yang Yang, Yechang Huang, Yibo Zhu, Yifan Zhang, Yinuo Yan, Youjun Chen, Yu Fu, Yu Luo, Yu Zhou, Yujie Chen, Yumang Wang, Yunzhou Ju, Yuxiang Yang, Yuxin Li, Yuxin Zhang, Zekai Liu, Zengwei Yao, Zhaoxin Yuan, Zhenwei Mou, Zhiquan Zhang, Zhiyue Wu, Zichao Li, Zichao Zhou, Ziqi Ren, Zixuan Wang. Technical report / preprint, 2026-09-12; arXiv:2609.14005. Verified.
-27. [A frontend-backend architecture for tool calls in full-duplex speech models](https://arxiv.org/abs/2609.19334). Ke Hu, Slyne Deng, Chen Chen, Elena Rastorgueva, Edresson Casanova, Punit Kumar, Dharmendra Choudhary, Nikhil Srihari, Ameya Sunil Mahabaleshwarkar, Viet Anh Trinh, Slim Essid, Oluwatobi Olabiyi, Zhehuai Chen. Preprint, 2026-09-16; arXiv:2609.19334. Verified.
-28. [NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities](https://arxiv.org/abs/2609.21967). Jagadeesh Balam, Travis Bartley, Edresson Casanova, Sanjay Chauhan, Chen Chen, Zhehuai Chen, Zijia Chen, Francesco Ciannella, Slyne Deng, Mikyas Desta, Harishchandra Dubey, Slim Essid, Nourchene Ferchichi, Boris Ginsburg, Mariana Graterol Fuenmayor, Negar Habibi, Kevin Hu, Anand Joseph, Viraj Karandikar, Myungjong Kim, Viacheslav Klimkov, Seelan Lakshmi Narasimhan, Lily Lee, Jason Li, Eileen Long, Ameya Mahabaleshwarkar, Aditya Malte, Adi Margolin, Sasha Meister, Valentin Mendelev, Oluwatobi Olabiyi, Ankita Pasad, Yifan Peng, Elena Rastorgueva, Jayda Ritchie, Jason Roche, Nikhil Srihari, Yuanhang Su, Yoshi Suhara, Viet Anh Trinh, Jinhan Wang, Piotr Zelasko, Hui Wang, Puhui Meng, Chaosen Zhang, Yunsheng Liu, Shawn Wang, Wenjing Li, Zhonglei He. Technical report / preprint, 2026-09-18; arXiv:2609.21967. Verified.
-29. [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217). Zhiyang Zhou, Yingxin Shang, Zhou Wang, Hongwei Cai, Weixu Wang, Shuran Zhou, Shuofeng Zhao, Wenke Fan, Qingxiang Guo, Dawei Yang, Lin Yang, Yang Song. Preprint, 2026-09-24; arXiv:2609.29217. Verified.
-30. [Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue](https://arxiv.org/abs/2609.31948). Chengqian Ma, Wenhao Feng, Weixuan Jin, Gaole Dai, Tianyu Xie, Yuexiao Ma, Zhaolu Kang, Xiangyu Zhao, Xiawu Zheng, Fei Chao. Preprint, 2026-09-25; arXiv:2609.31948. Verified.
-31. [Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends](https://arxiv.org/abs/2609.33443). Seonghyeon Go, Yongwoo Kim, Hyeonjin Cha, Jaeho Shin. Preprint; submitted to ICASSP 2027, 2026-09-27; arXiv:2609.33443. Verified.
-32. [CharDuplex: Building Character-Consistent Full-Duplex Spoken Dialogue Models](https://arxiv.org/abs/2609.34461). Donghang Wu, Yisi Liu, Chen Chen, Hexin Liu, Eng Siong Chng. Preprint, 2026-09-28; arXiv:2609.34461. Verified.
+18. [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686). Soham Ray, Keshav Dhandhania, Victor Barres, Karthik Narasimhan. ICML 2026 / PMLR 306, 2026-03-14; arXiv:2603.13686. Verified.
+19. [The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](https://arxiv.org/abs/2603.17837). Donghang Wu, Tianyu Zhang, Yuxin Li, Hexin Liu, Chen Chen, Eng Siong Chng, Yoshua Bengio. Revised primary manuscript, 2026-03-18; arXiv:2603.17837. Verified.
+20. [Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency](https://arxiv.org/abs/2604.04847). Guan-Ting Lin, Chen Chen, Zhehuai Chen, Hung-yi Lee. Preprint, 2026-04-06; arXiv:2604.04847. Verified.
+21. [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456). Smit Nautambhai Modi, Gandharv Mahajan, Marc Wetter, Randall Welles. Preprint, 2026-04-08; arXiv:2604.16456. Verified.
+22. [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393). Junbo Cui, Bokai Xu, Chongyi Wang, Tianyu Yu, Weiyue Sun, Yingjing Xu, Tianran Wang, Zhihui He, Wenshuo Ma, Tianchi Cai, Jiancheng Gui, Luoyuan Zhang, Xian Sun, Fuwei Huang, Moye Chen, Zhuo Lin, Hanyu Liu, Qingxin Gui, Qingzhe Han, Yuyang Wen, Huiping Liu, Rongkang Wang, Yaqi Zhang, Hongliang Wei, Chi Chen, You Li, Kechen Fang, Jie Zhou, Yuxuan Li, Guoyang Zeng, Chaojun Xiao, Yankai Lin, Xu Han, Maosong Sun, Zhiyuan Liu, Yuan Yao. Technical report / preprint, 2026-04-30; arXiv:2604.27393. Verified.
+23. [DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction](https://arxiv.org/abs/2606.09186). Muye Huang, Lingling Zhang, Xingyu Yu, Lei Shi, Zhanyu Ma, Jun Xu, Jiuchong Gao, Jinghua Hao, Renqing He, Jun Liu. Preprint, 2026-06-08; arXiv:2606.09186. Verified.
+24. [BayLing-Duplex: Native Full-Duplex Speech Dialogue with a Single Autoregressive LLM](https://arxiv.org/abs/2606.14528). Qingkai Fang, Shoutao Guo, Yang Feng. Preprint, 2026-06-12; arXiv:2606.14528. Verified.
+25. [DuplexChat: Constructing Speaker-Separated Full-Duplex Dialogue Speech at Scale for Spoken Dialogue Language Modeling](https://arxiv.org/abs/2607.04941). Wataru Nakata, Yuki Saito, Hiroshi Saruwatari. Preprint / technical report, 2026-07-06; arXiv:2607.04941. Verified.
+26. [Hierarchical Acoustic-Semantic Modeling: Modality Separation and Semantic Coherence for Full-Duplex SLMs](https://arxiv.org/abs/2607.06540). Zhenyu Liu, Xuanyu Zhang, Yunxin Li, Qixun Teng, Shenyuan Jiang, Haolan Chen, Minjun Zhao, Fanbo Meng, Yu Xu, Yancheng He, Baotian Hu, Haizhou Li, Min Zhang. ACL 2026; linked arXiv manuscript, 2026-07-07; arXiv:2607.06540. Verified.
+27. [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](https://arxiv.org/abs/2609.13814). Ant Group. Technical report / preprint, 2026-09-12; arXiv:2609.13814. Verified.
+28. [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005). Bin Lin, Bo Zhao, Boyang Zhang, Boyong Wu, Chao Yan, Chen Geng, Chen Wu, Cheng Yi, Chengli Feng, Chenglin Zhu, Chengting Feng, Chengyuan Yao, Daijiao Liu, DanNi Wan, Daxin Jiang, Dongjian Li, Dongqing Pang, Fei Tian, Feng Tian, Future Li, Gang Yu, Guanglong Yang, Haoyang Zhang, Hongyuan Wang, Jia Peng, Jiahao Song, Jialong Xue, Jiamin Fan, Jiangjie Zhen, Jianzheng Gao, Jincheng Wen, Jinghua Liang, Jinglan Gong, Jun Chen, Li Xie, Liang Zhao, Lifang Zhang, Lingli Ji, Lun Cai, Min Xu, Peilin Li, Peng Yang, Pengfei Tan, Qingjian Lin, Qinxin Du, Ruijie Xiong, Runze Li, Shenghua Hu, Shengqian Qin, Shi Qiu, Siqi Tu, Siyi Zhou, Tianjiao Deng, Wanying Lu, Weiming Niu, Wen Sun, WenWen Qu, Xiangyu Zhang, Xianwei Zhang, Xiaosu Su, Xing Chen, Xinyu Liu, Xuerui Yang, Yan Wu, Yang Li, Yang Yang, Yechang Huang, Yibo Zhu, Yifan Zhang, Yinuo Yan, Youjun Chen, Yu Fu, Yu Luo, Yu Zhou, Yujie Chen, Yumang Wang, Yunzhou Ju, Yuxiang Yang, Yuxin Li, Yuxin Zhang, Zekai Liu, Zengwei Yao, Zhaoxin Yuan, Zhenwei Mou, Zhiquan Zhang, Zhiyue Wu, Zichao Li, Zichao Zhou, Ziqi Ren, Zixuan Wang. Technical report / preprint, 2026-09-12; arXiv:2609.14005. Verified.
+29. [A frontend-backend architecture for tool calls in full-duplex speech models](https://arxiv.org/abs/2609.19334). Ke Hu, Slyne Deng, Chen Chen, Elena Rastorgueva, Edresson Casanova, Punit Kumar, Dharmendra Choudhary, Nikhil Srihari, Ameya Sunil Mahabaleshwarkar, Viet Anh Trinh, Slim Essid, Oluwatobi Olabiyi, Zhehuai Chen. Preprint, 2026-09-16; arXiv:2609.19334. Verified.
+30. [NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities](https://arxiv.org/abs/2609.21967). Jagadeesh Balam, Travis Bartley, Edresson Casanova, Sanjay Chauhan, Chen Chen, Zhehuai Chen, Zijia Chen, Francesco Ciannella, Slyne Deng, Mikyas Desta, Harishchandra Dubey, Slim Essid, Nourchene Ferchichi, Boris Ginsburg, Mariana Graterol Fuenmayor, Negar Habibi, Kevin Hu, Anand Joseph, Viraj Karandikar, Myungjong Kim, Viacheslav Klimkov, Seelan Lakshmi Narasimhan, Lily Lee, Jason Li, Eileen Long, Ameya Mahabaleshwarkar, Aditya Malte, Adi Margolin, Sasha Meister, Valentin Mendelev, Oluwatobi Olabiyi, Ankita Pasad, Yifan Peng, Elena Rastorgueva, Jayda Ritchie, Jason Roche, Nikhil Srihari, Yuanhang Su, Yoshi Suhara, Viet Anh Trinh, Jinhan Wang, Piotr Zelasko, Hui Wang, Puhui Meng, Chaosen Zhang, Yunsheng Liu, Shawn Wang, Wenjing Li, Zhonglei He. Technical report / preprint, 2026-09-18; arXiv:2609.21967. Verified.
+31. [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217). Zhiyang Zhou, Yingxin Shang, Zhou Wang, Hongwei Cai, Weixu Wang, Shuran Zhou, Shuofeng Zhao, Wenke Fan, Qingxiang Guo, Dawei Yang, Lin Yang, Yang Song. Preprint, 2026-09-24; arXiv:2609.29217. Verified.
+32. [Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue](https://arxiv.org/abs/2609.31948). Chengqian Ma, Wenhao Feng, Weixuan Jin, Gaole Dai, Tianyu Xie, Yuexiao Ma, Zhaolu Kang, Xiangyu Zhao, Xiawu Zheng, Fei Chao. Preprint, 2026-09-25; arXiv:2609.31948. Verified.
+33. [Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends](https://arxiv.org/abs/2609.33443). Seonghyeon Go, Yongwoo Kim, Hyeonjin Cha, Jaeho Shin. Preprint; submitted to ICASSP 2027, 2026-09-27; arXiv:2609.33443. Verified.
+34. [CharDuplex: Building Character-Consistent Full-Duplex Spoken Dialogue Models](https://arxiv.org/abs/2609.34461). Donghang Wu, Yisi Liu, Chen Chen, Hexin Liu, Eng Siong Chng. Preprint, 2026-09-28; arXiv:2609.34461. Verified.

@@ -1,0 +1,587 @@
+{
+  "status": "passed",
+  "checked": "2026-10-01",
+  "evidence_cutoff": "2026-09-30",
+  "data_sha256": "4c267f169ad43fcab813bcc35342c089156c6f11601679239b948b5101b58e53",
+  "sources": {
+    "srqa": {
+      "cite": "thinklisten",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf",
+      "local_pdf": "proceedings.iclr.cc_paper_files_paper_2026_file_75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf.pdf",
+      "version": "ICLR 2026 proceedings",
+      "pages": [
+        8,
+        9
+      ],
+      "tables": [
+        "2",
+        "4"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "22f4fb41b05e433629a0a023941cc083cfd1529e7a64044578279d63cf0ddc23"
+    },
+    "tau_original": {
+      "cite": "tauvoice",
+      "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ray26a/ray26a.pdf",
+      "local_pdf": "raw.githubusercontent.com_mlresearch_v306_main_assets_ray26a_ray26a.pdf.pdf",
+      "version": "ICML 2026 / PMLR 306",
+      "pages": [
+        7
+      ],
+      "tables": [
+        "6"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "7a356d62b36d18463cc1cf51bf04eb0ef87ace7835804a7547660b744a13308e"
+    },
+    "tau_aa": {
+      "cite": "step3",
+      "url": "https://arxiv.org/pdf/2609.14005v2",
+      "local_pdf": "arxiv.org_pdf_2609.14005.pdf",
+      "version": "arXiv v2, 19 September 2026",
+      "pages": [
+        18,
+        19,
+        20
+      ],
+      "tables": [
+        "9"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "bd8a58d49f1d01fa2a4413795953fc0bdaccd2bca4d8afe9a02e1b81ad682a6b"
+    },
+    "fdb_original": {
+      "cite": "fdb3",
+      "url": "https://arxiv.org/pdf/2604.04847v1",
+      "local_pdf": "arxiv.org_pdf_2604.04847.pdf",
+      "version": "arXiv v1, 6 April 2026",
+      "pages": [
+        4,
+        5
+      ],
+      "tables": [
+        "2"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "bb3c9143ac444f766aaa57a29f92bfe3294181b1d5f1c0426383489356cb8bc6"
+    },
+    "fdb_venus": {
+      "cite": "venus",
+      "url": "https://arxiv.org/pdf/2609.13814v3",
+      "local_pdf": "arxiv.org_pdf_2609.13814.pdf",
+      "version": "arXiv v3, 23 September 2026",
+      "pages": [
+        21,
+        22
+      ],
+      "tables": [
+        "7"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "03abeaf83455b207fbc525ec07f1d17a3eedd8d58c5857e6efd922aa87aa72d6"
+    },
+    "echo": {
+      "cite": "echochain",
+      "url": "https://arxiv.org/pdf/2604.16456v1",
+      "local_pdf": "arxiv.org_pdf_2604.16456.pdf",
+      "version": "arXiv v1, 17 April 2026",
+      "pages": [
+        8
+      ],
+      "tables": [
+        "1"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "4d0df21eeea17f1567224f5f2fc8b29dce043580a995c76ebc217f10c83156de"
+    },
+    "flair": {
+      "cite": "flair",
+      "url": "https://arxiv.org/pdf/2603.17837v5",
+      "local_pdf": "arxiv.org_pdf_2603.17837.pdf",
+      "version": "arXiv v5, 4 June 2026",
+      "pages": [
+        7,
+        8
+      ],
+      "tables": [
+        "1",
+        "3"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "9f242ccd76a57d2d08525c9ea27b90cdc8f45b301c4aefc6ae9ab4dfca06b24f"
+    },
+    "mpe": {
+      "cite": "mpe",
+      "url": "https://arxiv.org/pdf/2609.31948v1",
+      "local_pdf": "arxiv.org_pdf_2609.31948.pdf",
+      "version": "arXiv v1, 25 September 2026",
+      "pages": [
+        8,
+        25
+      ],
+      "tables": [
+        "3",
+        "17"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "125f7c66e2d7b1c6d7e60051abb4028ce5535cc03362d53c4f263c49c7ca265d"
+    }
+  },
+  "checks": [
+    {
+      "group": "srqa",
+      "model": "Moshi + CoT (TWL study)",
+      "source_values": [
+        77.7,
+        59.8,
+        56.1,
+        56.9,
+        16.1
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "srqa",
+      "model": "TWL: early length-DPO",
+      "source_values": [
+        65.4,
+        46.0,
+        45.3,
+        46.0,
+        14.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "srqa",
+      "model": "Moshi baseline",
+      "source_values": [
+        30.2,
+        21.5,
+        22.8,
+        23.8,
+        8.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "srqa",
+      "model": "Kimi-Audio-7B-Instruct",
+      "source_values": [
+        83.0,
+        71.5,
+        32.9,
+        34.4,
+        15.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "srqa",
+      "model": "Qwen2-Audio-7B-Instruct",
+      "source_values": [
+        59.1,
+        42.4,
+        21.9,
+        24.5,
+        18.1
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "srqa",
+      "model": "Helium",
+      "source_values": [
+        79.6,
+        55.9,
+        51.0,
+        79.4,
+        null
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_original",
+      "model": "Grok Voice",
+      "source_values": [
+        51.0,
+        38.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_original",
+      "model": "GPT-Realtime-1.5",
+      "source_values": [
+        49.0,
+        35.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_original",
+      "model": "Gemini Live 2.5",
+      "source_values": [
+        31.0,
+        26.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa",
+      "model": "StepAudio 3 Realtime",
+      "source_values": [
+        56.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa_domains",
+      "model": "StepAudio 3 Realtime",
+      "source_values": [
+        60.0,
+        37.7,
+        70.2
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa",
+      "model": "Grok Voice Think Fast 2.0 High",
+      "source_values": [
+        56.5
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa_domains",
+      "model": "Grok Voice Think Fast 2.0 High",
+      "source_values": [
+        56.0,
+        49.7,
+        63.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa",
+      "model": "Qwen Audio 3.0 Realtime Plus",
+      "source_values": [
+        54.6
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa_domains",
+      "model": "Qwen Audio 3.0 Realtime Plus",
+      "source_values": [
+        61.3,
+        49.0,
+        53.5
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa",
+      "model": "GPT-Realtime-2.1 High",
+      "source_values": [
+        45.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_aa_domains",
+      "model": "GPT-Realtime-2.1 High",
+      "source_values": [
+        62.0,
+        45.6,
+        29.4
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "fdb3",
+      "model": "Realtime-Venus-Omni",
+      "source_values": [
+        86.0,
+        53.1,
+        43.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "fdb3",
+      "model": "Realtime-Venus-Audio",
+      "source_values": [
+        82.0,
+        52.2,
+        42.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "fdb3",
+      "model": "GPT-Realtime",
+      "source_values": [
+        0.876,
+        0.68,
+        0.6
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "fdb3",
+      "model": "Gemini Live 3.1",
+      "source_values": [
+        0.817,
+        0.588,
+        0.54
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "echo",
+      "model": "Grok Voice Agent",
+      "source_values": [
+        48.5,
+        85.5
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "echo",
+      "model": "GPT-realtime-2025-08-28",
+      "source_values": [
+        45.0,
+        81.1
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "echo",
+      "model": "Amazon Nova Sonic 2",
+      "source_values": [
+        26.5,
+        78.1
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "echo",
+      "model": "Gemini Live 2.5 native audio",
+      "source_values": [
+        16.5,
+        64.8
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "MiniCPM-o 4.5 (explicit)",
+      "source_values": [
+        0.95,
+        0.473,
+        0.9242,
+        0.5964
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "MiniCPM-o 4.5 (implicit)",
+      "source_values": [
+        0.9435,
+        0.4665,
+        0.9289,
+        0.5925
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "Voila (explicit)",
+      "source_values": [
+        0.6465,
+        0.0031,
+        0.8351,
+        0.8484
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "Voila (implicit)",
+      "source_values": [
+        0.667,
+        0.0075,
+        0.8307,
+        0.8046
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "Moshi (explicit)",
+      "source_values": [
+        0.634,
+        0.0123,
+        0.2734,
+        0.1918
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "Moshi (implicit)",
+      "source_values": [
+        0.67,
+        0.017,
+        0.2676,
+        0.2107
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_qa",
+      "model": "FLAIR w/ thk",
+      "source_values": [
+        78.0,
+        43.0,
+        51.2,
+        56.2,
+        74.2,
+        56.2
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_qa",
+      "model": "FLAIR w/o thk",
+      "source_values": [
+        73.0,
+        41.7,
+        53.8,
+        54.4,
+        72.9,
+        50.2
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_qa",
+      "model": "Moshi",
+      "source_values": [
+        54.5,
+        22.1,
+        16.7,
+        15.6,
+        25.9,
+        24.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_qa",
+      "model": "Freeze-Omni",
+      "source_values": [
+        56.2,
+        27.9,
+        28.5,
+        53.5,
+        31.0,
+        28.1
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_qa",
+      "model": "Kimi-Audio",
+      "source_values": [
+        68.3,
+        37.3,
+        51.2,
+        63.1,
+        83.5,
+        62.2
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_interaction",
+      "model": "FLAIR w/ thk",
+      "source_values": [
+        93.0,
+        0.43,
+        92.0,
+        4.22,
+        0.36
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_interaction",
+      "model": "FLAIR w/o thk",
+      "source_values": [
+        94.1,
+        0.37,
+        89.0,
+        4.08,
+        0.35
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_interaction",
+      "model": "Moshi",
+      "source_values": [
+        94.1,
+        0.27,
+        100.0,
+        0.77,
+        0.26
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "flair_interaction",
+      "model": "Gemini Live",
+      "source_values": [
+        65.5,
+        1.3,
+        89.1,
+        3.38,
+        1.18
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "tau_original",
+      "model": "GPT-5 (reasoning, text)",
+      "source_values": [
+        85.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "Gemini 3.1 Pro (explicit, transcript)",
+      "source_values": [
+        0.947,
+        0.9039,
+        0.9537
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "mpe",
+      "model": "Gemini 3.1 Pro (implicit, transcript)",
+      "source_values": [
+        0.304,
+        0.7911,
+        0.9934
+      ],
+      "status": "matches_primary_pdf"
+    }
+  ],
+  "scope": "Primary PDF table-value verification; not experimental reproduction. Raster evidence-page renders remain private and are not packaged."
+}

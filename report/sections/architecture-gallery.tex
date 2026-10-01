@@ -1,0 +1,36 @@
+\clearpage
+\subsection{Original-paper architecture views: Moshi and MiniCPM-o}
+The screenshots in Figures~\ref{fig:detailed-moshi}--\ref{fig:detailed-venus} preserve the source labels, arrows and legends. They show the main architecture choices, not a shared timing scale or an experimentally established ranking. The system and availability distinctions in Table~\ref{tab:systems} still apply.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/papers/moshi.png}
+\caption{\textbf{Moshi.} Reproduced from \citet{moshi}, Fig.~1. The temporal transformer coordinates user audio, assistant text and assistant audio; the depth transformer predicts acoustic codebooks. Think while listening adds silent reasoning and streaming ASR to the text stream \citep{thinklisten}; that extension is not shown in this source figure.}
+\label{fig:detailed-moshi}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.94\linewidth]{figures/papers/minicpm.png}
+\caption{\textbf{MiniCPM-o 4.5.} Reproduced from \citet{minicpm}, Fig.~4. A timed Qwen3-8B text backbone receives streaming multimodal input; separate speech-token and waveform decoders render its response. Open inference does not imply release of the complete training mixture.}
+\label{fig:detailed-minicpm}
+\end{figure}
+\clearpage
+\subsection{Original-paper architecture views: reasoning and delegation}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.96\linewidth]{figures/papers/flair.png}
+\caption{\textbf{FLAIR.} Reproduced from \citet{flair}, Fig.~2. Latent reasoning while listening; text while speaking. The full-context expert is training-only.}
+\label{fig:detailed-flair}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/papers/step3.png}
+\caption{\textbf{StepAudio 3 Realtime.} Reproduced from \citet{step3}, Fig.~7B (routing panel A omitted). Shared-model formulation/articulation; playback-aware pacing follows Mind-Paced Speaking \citep{mindpaced}.}
+\label{fig:detailed-step3}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/papers/venus.png}
+\caption{\textbf{Realtime-Venus.} Reproduced from \citet{venus}, Fig.~3. Foreground interaction continues during delegation; the frontend controls reply-delivery timing.}
+\label{fig:detailed-venus}
+\end{figure}
+\clearpage

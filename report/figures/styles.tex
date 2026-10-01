@@ -1,0 +1,16 @@
+% Editable vector styles; no raster paper artwork.
+\definecolor{audiocolor}{RGB}{222,236,249}
+\definecolor{mindcolor}{RGB}{255,234,204}
+\definecolor{statecolor}{RGB}{232,226,246}
+\definecolor{voicecolor}{RGB}{226,242,225}
+\tikzset{
+  arch/.style={x=1cm,y=1cm,font=\small,>=Latex},
+  block/.style={draw=reportblue!75,rounded corners=2pt,align=center,inner sep=4pt,minimum height=0.68cm},
+  audio/.style={block,fill=audiocolor},
+  model/.style={block,fill=statecolor},
+  mind/.style={block,fill=mindcolor},
+  voice/.style={block,fill=voicecolor},
+  note/.style={font=\footnotesize,align=center},
+  flow/.style={->,thick,draw=reportblue!85},
+  feedback/.style={flow,dashed},
+}

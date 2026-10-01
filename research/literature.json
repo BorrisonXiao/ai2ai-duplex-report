@@ -630,7 +630,7 @@
       ],
       "year": 2026,
       "date": "2026-03-14",
-      "venue": "Preprint",
+      "venue": "ICML 2026 / PMLR 306",
       "arxiv_id": "2603.13686",
       "doi": null,
       "status": "verified",
@@ -643,6 +643,39 @@
       "artifacts": {
         "evaluation": "https://github.com/sierra-research/tau2-bench",
         "access": "Code + domain tasks + simulator; model/TTS APIs required. Current repo is τ³-bench."
+      }
+    },
+    {
+      "id": "2603.17837",
+      "title": "The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning",
+      "authors": "Donghang Wu, Tianyu Zhang, Yuxin Li, Hexin Liu, Chen Chen, Eng Siong Chng, Yoshua Bengio",
+      "author_list": [
+        "Donghang Wu",
+        "Tianyu Zhang",
+        "Yuxin Li",
+        "Hexin Liu",
+        "Chen Chen",
+        "Eng Siong Chng",
+        "Yoshua Bengio"
+      ],
+      "year": 2026,
+      "date": "2026-03-18",
+      "venue": "Revised primary manuscript",
+      "arxiv_id": "2603.17837",
+      "doi": null,
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2603.17837",
+      "problem": "Direct think-while-listening alternative to silent textual CoT.",
+      "method": "Qwen2.5-7B with a streaming speech encoder Continuous vocabulary-weighted embeddings replace silence-token input during listening; inference is causal. Autoregressive speech-token module followed by streaming flow matching. Full-context expert trains listening-time latent reasoning via ELBO/SFT; expert removed at inference.",
+      "results": "Own-study QA and earlier Full-Duplex-Bench results are shown in the model profiles; not SRQA or FDB-v3.",
+      "relevance": "Direct think-while-listening alternative to silent textual CoT.",
+      "limitations": "Imported reference evaluations are not a common rerun. Dedicated code/weights and the complete training mixture were not located.",
+      "artifacts": {
+        "code": null,
+        "weights": null,
+        "training": "ELBO/SFT method described; complete package not located",
+        "data": "Full training mixture not located",
+        "license": "Consult component licenses"
       }
     },
     {
@@ -670,6 +703,33 @@
       "artifacts": {
         "evaluation": "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v3",
         "access": "Inference/scoring code + released recording download."
+      }
+    },
+    {
+      "id": "2604.16456",
+      "title": "EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions",
+      "authors": "Smit Nautambhai Modi, Gandharv Mahajan, Marc Wetter, Randall Welles",
+      "author_list": [
+        "Smit Nautambhai Modi",
+        "Gandharv Mahajan",
+        "Marc Wetter",
+        "Randall Welles"
+      ],
+      "year": 2026,
+      "date": "2026-04-08",
+      "venue": "Preprint",
+      "arxiv_id": "2604.16456",
+      "doi": null,
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2604.16456",
+      "problem": "200 synthetic interrupted conversations with controlled state corrections and human-audited rubrics.",
+      "method": "200 synthetic interrupted conversations with controlled state corrections and human-audited rubrics. Metrics: Conversation mean pass rate (MPR) and individual criterion pass rate (MCP).",
+      "results": "Best reported conversation MPR is 48.5%, despite much higher individual-criterion pass rates.",
+      "relevance": "Direct test of task-state revision during speaking.",
+      "limitations": "Four closed voice systems; no selected-system result located. Criteria and conversation pass rates have different denominators.",
+      "artifacts": {
+        "evaluation": null,
+        "access": "Paper verified; standalone runnable release not located."
       }
     },
     {
@@ -1867,15 +1927,52 @@
       "data": "Full training mixture not located",
       "license": "Consult component licenses",
       "extra": []
+    },
+    {
+      "id": "2603.17837",
+      "name": "FLAIR",
+      "title": "The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning",
+      "authors": "Donghang Wu, Tianyu Zhang, Yuxin Li et al.",
+      "date": "2026-03-18",
+      "venue": "Revised primary manuscript",
+      "family": "Text backbone / latent reasoning",
+      "backbone": "Qwen2.5-7B with a streaming speech encoder",
+      "stream": "Continuous vocabulary-weighted embeddings replace silence-token input during listening; inference is causal.",
+      "decoder": "Autoregressive speech-token module followed by streaming flow matching.",
+      "control": "Full-context expert trains listening-time latent reasoning via ELBO/SFT; expert removed at inference.",
+      "result": "Own-study QA and earlier Full-Duplex-Bench results are shown in the model profiles; not SRQA or FDB-v3.",
+      "relevance": "Direct think-while-listening alternative to silent textual CoT.",
+      "limitation": "Imported reference evaluations are not a common rerun. Dedicated code/weights and the complete training mixture were not located.",
+      "code": null,
+      "weights": null,
+      "training": "ELBO/SFT method described; complete package not located",
+      "data": "Full training mixture not located",
+      "license": "Consult component licenses",
+      "extra": []
     }
   ],
   "benchmarks": [
+    {
+      "id": "2604.16456",
+      "name": "EchoChain",
+      "authors": "Smit Nautambhai Modi, Gandharv Mahajan, Marc Wetter et al.",
+      "date": "2026-04-08",
+      "venue": "Preprint",
+      "scope": "200 synthetic interrupted conversations with controlled state corrections and human-audited rubrics.",
+      "metrics": "Conversation mean pass rate (MPR) and individual criterion pass rate (MCP).",
+      "access": "Paper verified; standalone runnable release not located.",
+      "use": "Direct test of task-state revision during speaking.",
+      "caveat": "Four closed voice systems; no selected-system result located. Criteria and conversation pass rates have different denominators.",
+      "paper": "https://arxiv.org/abs/2604.16456",
+      "artifact": null,
+      "result": "Best reported conversation MPR is 48.5%, despite much higher individual-criterion pass rates."
+    },
     {
       "id": "2603.13686",
       "name": "τ-Voice",
       "authors": "Soham Ray, Keshav Dhandhania, Victor Barres et al.",
       "date": "2026-03-14",
-      "venue": "Preprint",
+      "venue": "ICML 2026 / PMLR 306",
       "scope": "278 airline / retail / telecom tasks; clean and realistic accents/noise; simulated full-duplex user.",
       "metrics": "Grounded pass@1; latency, interruptions and voice interaction quality.",
       "access": "Code + domain tasks + simulator; model/TTS APIs required. Current repo is τ³-bench.",
@@ -2242,5 +2339,9 @@
   ],
   "methodology": "Search angles covered native multi-stream models, serialized LLM decoders, codec-free text backbones, asynchronous delegation, reasoning under partial speech, interaction benchmarks, and natural/synthetic conversational data. Paper existence was verified through arXiv or publisher/venue pages; substantive descriptions use primary manuscripts. Availability was checked against official repositories and model/dataset cards. Repository release notes and cards can change after this date. No training, benchmarks, model downloads or provider calls were run.",
   "limitations": "This is a focused architecture and resource review, not an exhaustive survey or an independently reproduced leaderboard. Some newly posted papers have no located release; some code packages expose inference or fine-tuning rather than foundation training. Unknown authors/venues and artifact status remain explicit. Closed realtime APIs appear as comparators in benchmark papers, but their private internal architecture cannot be inferred from those results.",
-  "source_audit": "source-audit.json"
+  "source_audit": "source-audit.json",
+  "revision_date": "2026-10-01",
+  "reported_performance": "../report/research/reported-performance.json",
+  "performance_plots": "../report/research/performance-plots.json",
+  "supplemental_source_audit": "../report/research/source-audit.json"
 }

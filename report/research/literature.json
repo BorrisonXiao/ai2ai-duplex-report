@@ -1,0 +1,1237 @@
+{
+  "date": "2026-09-30",
+  "scope": "Original streaming/revision/speaker-aware reasoning proposal; exactly five resources in each of four categories",
+  "selection": "Purposive relevance selection, unranked; not an exhaustive or independently reproduced survey",
+  "categories": [
+    {
+      "id": "systems",
+      "title": "Reasoning and system designs",
+      "label": "tab:systems",
+      "selection": "Five anchors span explicit reasoning while listening, latent listening-time cognition, a released text-LLM duplex backbone, concurrent formulation/articulation, and a released asynchronous frontend/backend. Moshi is compared separately in the synchronization shortlist.",
+      "headers": [
+        "System / paper",
+        "Reasoning, backbone and speech path",
+        "Code / weights",
+        "Training release"
+      ],
+      "widths": [
+        0.22,
+        0.43,
+        0.2,
+        0.15
+      ],
+      "rows": [
+        {
+          "name": "Think while listening",
+          "cite": "thinklisten",
+          "cells": [
+            "Moshi/Helium 7B temporal + depth transformers; parallel user/agent audio and text. Silent text reasoning is interleaved with ASR and answer text; completeness and preference supervision.",
+            "Study-specific code/weights not located; released Moshi is a different checkpoint.",
+            "Recipe only; full 1.8M-example spoken-CoT collection not located."
+          ],
+          "links": []
+        },
+        {
+          "name": "FLAIR",
+          "cite": "flair",
+          "cells": [
+            "Qwen2.5-7B + streaming Parakeet encoder + autoregressive speech decoder. Listening steps feed a soft vocabulary-weighted latent embedding; full-context teacher trains a causal inference model.",
+            "Dedicated implementation/checkpoint not located.",
+            "ELBO/SFT recipe; full mixture not located."
+          ],
+          "links": []
+        },
+        {
+          "name": "MiniCPM-o 4.5",
+          "cite": "minicpm",
+          "cells": [
+            "Qwen3-8B (~9B system). Omni-Flow serializes timed windows. Main LLM predicts text/listen decisions; a small Llama/S3 speech-token decoder and streaming flow decoder synthesize audio.",
+            "Inference + realtime demo and weights; Apache-2.0.",
+            "General fine-tuning tools; complete duplex recipe and mixture not established."
+          ],
+          "links": [
+            [
+              "Code",
+              "https://github.com/OpenBMB/MiniCPM-V"
+            ],
+            [
+              "Weights",
+              "https://huggingface.co/openbmb/MiniCPM-o-4_5"
+            ]
+          ]
+        },
+        {
+          "name": "StepAudio 3 Realtime",
+          "cite": "step3",
+          "cells": [
+            "Step 3.7 Flash MoE (196B total/11B active) + AuT speech encoder. Two concurrent audio-LLM processes share parameters: private formulation and articulation, with playback-aware pacing and async tools.",
+            "Report/project demos; Realtime code/weights not located. Earlier Step releases are not this model.",
+            "Recipe; full training code/mixture not located."
+          ],
+          "links": [
+            [
+              "Project",
+              "https://stepaudiollm.github.io/step-audio-3-realtime/"
+            ]
+          ]
+        },
+        {
+          "name": "Realtime-Venus",
+          "cite": "venus",
+          "cells": [
+            "MiniCPM-o 4.5-derived 9B Audio/Omni frontend; causal 1 s chunks, persistent context, and an asynchronous backend. A harness returns backend text to the speaking frontend.",
+            "Inference/harness + Audio/Omni weights; Apache-2.0. Demo integration is Omni-based.",
+            "Methods; complete training package/mixture not located."
+          ],
+          "links": [
+            [
+              "Code",
+              "https://github.com/inclusionAI/Realtime-Venus"
+            ],
+            [
+              "Weights",
+              "https://huggingface.co/inclusionAI/Realtime-Venus"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "synchronization",
+      "title": "Synchronization and temporal interfaces",
+      "label": "tab:synchronization",
+      "selection": "Five directly relevant works cover clock-aligned serialization, codec-rate multi-stream generation, speech/listening/action alignment, adaptive scheduling, and representation-level speaker/listener coupling. The last is an analysis, not another model architecture.",
+      "headers": [
+        "Paper",
+        "Temporal mechanism",
+        "What it establishes",
+        "Access / remaining issue"
+      ],
+      "widths": [
+        0.22,
+        0.3,
+        0.27,
+        0.21
+      ],
+      "rows": [
+        {
+          "name": "SyncLLM",
+          "cite": "syncllm",
+          "cells": [
+            "Llama 3-8B with deduplicated HuBERT units (25 Hz before deduplication); periodic speaker/chunk tokens align the sequence to a real-world clock. Speculative user chunks are replaced by observed input.",
+            "Synchronous full-duplex scheduling despite variable token counts; evaluates processing/network delay.",
+            "Official paper/demos; model code/weights not located. Clock alignment alone does not establish revision correctness."
+          ],
+          "links": [
+            [
+              "Project",
+              "https://syncllm.cs.washington.edu/"
+            ]
+          ]
+        },
+        {
+          "name": "Moshi",
+          "cite": "moshi",
+          "cells": [
+            "Mimi 12.5 Hz (80 ms) frames; temporal transformer plus depth transformer model parallel audio streams and aligned inner-monologue text.",
+            "A concrete shared acoustic grid, streaming speech generation, and low-latency duplex interaction.",
+            "Inference and fine-tuning code + weights. MIT/Apache code; model CC BY 4.0. A frame clock is not a semantic commitment policy."
+          ],
+          "links": [
+            [
+              "Code",
+              "https://github.com/kyutai-labs/moshi"
+            ],
+            [
+              "Fine-tuning",
+              "https://github.com/kyutai-labs/moshi-finetune"
+            ],
+            [
+              "Weights",
+              "https://huggingface.co/kyutai/moshiko-pytorch-bf16"
+            ]
+          ]
+        },
+        {
+          "name": "DuplexSLA",
+          "cite": "duplexsla",
+          "cells": [
+            "Step-Audio 2 mini-derived ~7B model. A 160 ms clock joins two 80 ms listening features, one text/four audio tokens, and up to ten action tokens; queued action spillover and dual-side ASR.",
+            "Native concurrent speaking/listening plus timestamp-aligned planning, control and tool events.",
+            "Official repository says inference, weights and benchmark are forthcoming. Not a released checkpoint as of cutoff."
+          ],
+          "links": [
+            [
+              "Release status",
+              "https://github.com/hyzhang24/DuplexSLA"
+            ]
+          ]
+        },
+        {
+          "name": "AdaptDuplex",
+          "cite": "adapt",
+          "cells": [
+            "Qwen3-Omni Thinker/Talker; 0.48/0.64/0.96 s windows, bounded text lead, and up to four indexed backend jobs. Cancelled/stale results are suppressed before injection.",
+            "Adaptive granularity and explicit backend-result admission already exist; not a new idea to simply cancel a stale job.",
+            "Paper verified; dedicated code/checkpoint not located. Joint speaker-owned state and actual playback still need controlled tests."
+          ],
+          "links": []
+        },
+        {
+          "name": "Synchronization and Turn-Taking",
+          "cite": "synchrony",
+          "cells": [
+            "Moshi--Moshi appointment dialogues: lagged CKA compares speaker/listener hidden states; causal probes classify end-of-interpausal-unit hold/non-hold events.",
+            "Representational coupling and predictive timing signals vary with noise and speech activity bias.",
+            "Preprint; study artifacts not located. Restricted task; CKA/probe success is not causal reasoning consistency."
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "benchmarks",
+      "title": "Benchmarks for the proposal",
+      "label": "tab:benchmarks",
+      "selection": "Five complementary tests cover streaming reasoning onset, grounded task completion, natural disfluency/tool use, post-interruption state revision, and speaker/addressee control. Their scores should not be merged into a leaderboard.",
+      "headers": [
+        "Benchmark",
+        "Coverage / provenance",
+        "Useful measurements",
+        "Availability / blind spot"
+      ],
+      "widths": [
+        0.22,
+        0.28,
+        0.25,
+        0.25
+      ],
+      "rows": [
+        {
+          "name": "SRQA",
+          "cite": "thinklisten",
+          "cells": [
+            "TTS/LLM-rewritten ARC-E/C, SIQA, PIQA, GSM8K; mostly single-turn synthetic spoken questions.",
+            "Reasoning accuracy and post-question chain-of-thought delay; prefix sufficiency controls.",
+            "Construction in ICLR paper; released audio/eval package not located. CoT onset is not first useful audible answer."
+          ],
+          "links": []
+        },
+        {
+          "name": "tau-Voice",
+          "cite": "tauvoice",
+          "cells": [
+            "278 airline/retail/telecom tasks; clean/realistic speech; full-duplex simulated user. ICML 2026 (PMLR 306).",
+            "Grounded pass@1, interruption behavior and voice interaction quality; tool/task consequences.",
+            "Code/tasks/simulator; provider APIs needed. Virtual time decouples simulation from wall-clock runtime; pin original revision (repo now tau3-bench)."
+          ],
+          "links": [
+            [
+              "Code/tasks",
+              "https://github.com/sierra-research/tau2-bench"
+            ]
+          ]
+        },
+        {
+          "name": "Full-Duplex-Bench v3",
+          "cite": "fdb3",
+          "cells": [
+            "Human recordings, five disfluency types, chained tools across four task domains.",
+            "Tool-selection F1, argument accuracy, pass@1; first response, tool and completion latencies.",
+            "Scoring/inference code + recording download. Tool F1 is not task success; exact and judge-assisted argument scores differ."
+          ],
+          "links": [
+            [
+              "Code/data",
+              "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v3"
+            ]
+          ]
+        },
+        {
+          "name": "EchoChain",
+          "cite": "echochain",
+          "cells": [
+            "200 controlled interrupted conversations; synthesized user/barge-in audio; four closed realtime models; paired half-duplex control.",
+            "Conversation/criterion pass rates and failures: contextual inertia, interruption amnesia, objective displacement.",
+            "Paper, prompts and examples verified; standalone code/audio release not located. Does not cover backchannels, side speech or detailed acoustic timing."
+          ],
+          "links": []
+        },
+        {
+          "name": "Duplex-MPE",
+          "cite": "mpe",
+          "cells": [
+            "2,000 matched pairs / 4,000 synthetic streams; 3--4 human roles plus assistant; explicit/implicit address.",
+            "Response initiation, answer accuracy, silence preservation, floor release; speaker-owned update controls.",
+            "Paper verified; standalone code/audio release not located. Floor release is conditional on the assistant already speaking."
+          ],
+          "links": []
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Training data and supervision sources",
+      "label": "tab:data",
+      "selection": "Five natural conversational resources are chosen for channel separation, temporal/speaker annotations, or task events. These are resources to construct supervision, not five existing reasoning-training mixtures.",
+      "headers": [
+        "Resource",
+        "Scale / channels",
+        "What is annotated",
+        "Access / project use"
+      ],
+      "widths": [
+        0.2,
+        0.22,
+        0.28,
+        0.3
+      ],
+      "rows": [
+        {
+          "name": "SmoothConv",
+          "cite": "smoothconv",
+          "cells": [
+            "100.53 h; Chinese; natural multi-party, multi-channel audio.",
+            "Expert transcripts, speaker IDs, turn state, timing and paralinguistic labels.",
+            "HF release; CC BY-NC 4.0. Control/speaker supervision; shares source conversations with DuplexConv."
+          ],
+          "links": [
+            [
+              "Dataset card",
+              "https://huggingface.co/datasets/qualialabsAI/SmoothConv"
+            ]
+          ]
+        },
+        {
+          "name": "DuplexConv",
+          "cite": "duplexconv",
+          "cells": [
+            "2,000.21 h; Chinese; natural multi-party, multi-channel audio.",
+            "LLM-assisted transcripts, per-track VAD, speaker/turn segments, acoustic and scene labels.",
+            "HF release; CC BY-NC 4.0. Larger timing pretraining; audit labels and split by underlying source session."
+          ],
+          "links": [
+            [
+              "Dataset card",
+              "https://huggingface.co/datasets/OpenT2S/DuplexConv"
+            ]
+          ]
+        },
+        {
+          "name": "otoSpeech Task",
+          "cite": "ototask",
+          "cells": [
+            "20.006 h; 58 English sessions; two-speaker 48 kHz channels; seven task types.",
+            "Synchronized events, stimuli, participant artifacts and task-related metadata.",
+            "Gated HF files/contact acceptance; CC BY 4.0. Task-evidence alignment; verify outcomes before treating as reasoning labels."
+          ],
+          "links": [
+            [
+              "Dataset card",
+              "https://huggingface.co/datasets/otoearth/otoSpeech-full-duplex-task-oriented-20h"
+            ]
+          ]
+        },
+        {
+          "name": "otoSpeech conversational",
+          "cite": "otoconv",
+          "cells": [
+            "280 h raw / 141 h curated; English; separate speaker channels; curated 44.1 kHz.",
+            "Session/speaker metadata, redactions, surveys; natural overlap and timing.",
+            "Gated HF files/contact acceptance; CC BY 4.0. Listening robustness; curated hours are a subset, not extra data."
+          ],
+          "links": [
+            [
+              "Dataset card",
+              "https://huggingface.co/datasets/otoearth/otoSpeech-full-duplex-processed-141h"
+            ]
+          ]
+        },
+        {
+          "name": "Open Yap 1K",
+          "cite": "openyap",
+          "cells": [
+            "1,000 h; 1,602 English conversations; 239 speakers; separate 48 kHz channels.",
+            "Word-level transcripts, speaker/device metadata, overlap and turn-gap statistics.",
+            "Public sample; full corpus by request/Data Use Agreement. Natural conversation, not an ungated full release."
+          ],
+          "links": [
+            [
+              "Release/terms",
+              "https://github.com/The-Agentic-Data-Co/open-yap-1k"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "key": "thinklisten",
+      "id": "2510.07497",
+      "title": "Can Speech LLMs Think while Listening?",
+      "authors": [
+        "Shih, Yi-Jen",
+        "Raj, Desh",
+        "Wu, Chunyang",
+        "Zhou, Wei",
+        "Bong, SK",
+        "Gaur, Yashesh",
+        "Mahadeokar, Jay",
+        "Kalinli, Ozlem",
+        "Seltzer, Mike"
+      ],
+      "date": "2025-10-08",
+      "venue": "ICLR 2026",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2510.07497",
+      "publisher_source": "https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf",
+      "problem": "Direct prior work for both semantic sufficiency and revision-aware reasoning in the original proposal.",
+      "method": "Moshi / Helium 7B + Mimi Text monologue interleaves streaming ASR, silent text CoT and answer text alongside audio. Moshi temporal + depth transformers; reasoning tokens have no corresponding spoken output. Question-completeness supervision starts CoT early; correctness and length DPO improve adaptation.",
+      "results": "Authors report 2.4× mean reasoning accuracy over Moshi and about 70% lower reasoning latency without accuracy loss.",
+      "relevance": "Direct prior work for both semantic sufficiency and revision-aware reasoning in the original proposal.",
+      "limitations": "Single-turn spoken reasoning suite; 480 ms ASR look-ahead; benchmark/model release not located. Reasoning latency is not first useful spoken answer latency.",
+      "focused_notes": [
+        {
+          "resource": "Think while listening",
+          "comparison": [
+            "Moshi/Helium 7B temporal + depth transformers; parallel user/agent audio and text. Silent text reasoning is interleaved with ASR and answer text; completeness and preference supervision.",
+            "Study-specific code/weights not located; released Moshi is a different checkpoint.",
+            "Recipe only; full 1.8M-example spoken-CoT collection not located."
+          ],
+          "artifacts": []
+        },
+        {
+          "resource": "SRQA",
+          "comparison": [
+            "TTS/LLM-rewritten ARC-E/C, SIQA, PIQA, GSM8K; mostly single-turn synthetic spoken questions.",
+            "Reasoning accuracy and post-question chain-of-thought delay; prefix sufficiency controls.",
+            "Construction in ICLR paper; released audio/eval package not located. CoT onset is not first useful audible answer."
+          ],
+          "artifacts": []
+        }
+      ]
+    },
+    {
+      "key": "flair",
+      "id": "2603.17837",
+      "title": "The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning",
+      "authors": [
+        "Wu, Donghang",
+        "Zhang, Tianyu",
+        "Li, Yuxin",
+        "Liu, Hexin",
+        "Chen, Chen",
+        "Chng, Eng Siong",
+        "Bengio, Yoshua"
+      ],
+      "date": "2026-03-18",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2603.17837",
+      "publisher_source": null,
+      "problem": "Listening-time silence/padding does not exploit ongoing latent reasoning.",
+      "method": "Soft vocabulary-weighted latent embeddings; ELBO/SFT from a full-context expert into a causal inference model.",
+      "results": "Authors evaluate reasoning and interaction improvements over their pretraining-only baseline; no independent reproduction or unified leaderboard in this review.",
+      "relevance": "Direct alternative to explicit prefix chain-of-thought and a close prior to think-while-listening claims.",
+      "limitations": "Complete mixture and dedicated artifacts not located; teacher access to future context is training supervision, not permitted evaluation evidence.",
+      "focused_notes": [
+        {
+          "resource": "FLAIR",
+          "comparison": [
+            "Qwen2.5-7B + streaming Parakeet encoder + autoregressive speech decoder. Listening steps feed a soft vocabulary-weighted latent embedding; full-context teacher trains a causal inference model.",
+            "Dedicated implementation/checkpoint not located.",
+            "ELBO/SFT recipe; full mixture not located."
+          ],
+          "artifacts": []
+        }
+      ]
+    },
+    {
+      "key": "minicpm",
+      "id": "2604.27393",
+      "title": "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction",
+      "authors": [
+        "Cui, Junbo",
+        "Xu, Bokai",
+        "Wang, Chongyi",
+        "Yu, Tianyu",
+        "Sun, Weiyue",
+        "Xu, Yingjing",
+        "Wang, Tianran",
+        "He, Zhihui",
+        "Ma, Wenshuo",
+        "Cai, Tianchi",
+        "Gui, Jiancheng",
+        "Zhang, Luoyuan",
+        "Sun, Xian",
+        "Huang, Fuwei",
+        "Chen, Moye",
+        "Lin, Zhuo",
+        "Liu, Hanyu",
+        "Gui, Qingxin",
+        "Han, Qingzhe",
+        "Wen, Yuyang",
+        "Liu, Huiping",
+        "Wang, Rongkang",
+        "Zhang, Yaqi",
+        "Wei, Hongliang",
+        "Chen, Chi",
+        "Li, You",
+        "Fang, Kechen",
+        "Zhou, Jie",
+        "Li, Yuxuan",
+        "Zeng, Guoyang",
+        "Xiao, Chaojun",
+        "Lin, Yankai",
+        "Han, Xu",
+        "Sun, Maosong",
+        "Liu, Zhiyuan",
+        "Yao, Yuan"
+      ],
+      "date": "2026-04-30",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2604.27393",
+      "publisher_source": null,
+      "problem": "Concrete open alternative to Moshi for a streaming encoder + text reasoning backbone.",
+      "method": "Qwen3-8B; about 9B total Omni-Flow serializes time windows of audio, video and assistant output; [listen] when silent. Small Llama speech-token decoder + S3 tokens + streaming flow-matching waveform decoder. Explicit listen/speak decision; main LLM generates text, separate decoder generates speech.",
+      "results": "In the paper’s ablation, 1.0 s windows outperform 0.1 / 0.2 s on the tested language tasks.",
+      "relevance": "Concrete open alternative to Moshi for a streaming encoder + text reasoning backbone.",
+      "limitations": "Shorter windows trade response opportunity against language competence. A full duplex-training mixture is not released.",
+      "focused_notes": [
+        {
+          "resource": "MiniCPM-o 4.5",
+          "comparison": [
+            "Qwen3-8B (~9B system). Omni-Flow serializes timed windows. Main LLM predicts text/listen decisions; a small Llama/S3 speech-token decoder and streaming flow decoder synthesize audio.",
+            "Inference + realtime demo and weights; Apache-2.0.",
+            "General fine-tuning tools; complete duplex recipe and mixture not established."
+          ],
+          "artifacts": [
+            [
+              "Code",
+              "https://github.com/OpenBMB/MiniCPM-V"
+            ],
+            [
+              "Weights",
+              "https://huggingface.co/openbmb/MiniCPM-o-4_5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "step3",
+      "id": "2609.14005",
+      "title": "StepAudio 3 Realtime Technical Report",
+      "authors": [
+        "Lin, Bin",
+        "Zhao, Bo",
+        "Zhang, Boyang",
+        "Wu, Boyong",
+        "Yan, Chao",
+        "Geng, Chen",
+        "Wu, Chen",
+        "Yi, Cheng",
+        "Feng, Chengli",
+        "Zhu, Chenglin",
+        "Feng, Chengting",
+        "Yao, Chengyuan",
+        "Liu, Daijiao",
+        "Wan, DanNi",
+        "Jiang, Daxin",
+        "Li, Dongjian",
+        "Pang, Dongqing",
+        "Tian, Fei",
+        "Tian, Feng",
+        "Li, Future",
+        "Yu, Gang",
+        "Yang, Guanglong",
+        "Zhang, Haoyang",
+        "Wang, Hongyuan",
+        "Peng, Jia",
+        "Song, Jiahao",
+        "Xue, Jialong",
+        "Fan, Jiamin",
+        "Zhen, Jiangjie",
+        "Gao, Jianzheng",
+        "Wen, Jincheng",
+        "Liang, Jinghua",
+        "Gong, Jinglan",
+        "Chen, Jun",
+        "Xie, Li",
+        "Zhao, Liang",
+        "Zhang, Lifang",
+        "Ji, Lingli",
+        "Cai, Lun",
+        "Xu, Min",
+        "Li, Peilin",
+        "Yang, Peng",
+        "Tan, Pengfei",
+        "Lin, Qingjian",
+        "Du, Qinxin",
+        "Xiong, Ruijie",
+        "Li, Runze",
+        "Hu, Shenghua",
+        "Qin, Shengqian",
+        "Qiu, Shi",
+        "Tu, Siqi",
+        "Zhou, Siyi",
+        "Deng, Tianjiao",
+        "Lu, Wanying",
+        "Niu, Weiming",
+        "Sun, Wen",
+        "Qu, WenWen",
+        "Zhang, Xiangyu",
+        "Zhang, Xianwei",
+        "Su, Xiaosu",
+        "Chen, Xing",
+        "Liu, Xinyu",
+        "Yang, Xuerui",
+        "Wu, Yan",
+        "Li, Yang",
+        "Yang, Yang",
+        "Huang, Yechang",
+        "Zhu, Yibo",
+        "Zhang, Yifan",
+        "Yan, Yinuo",
+        "Chen, Youjun",
+        "Fu, Yu",
+        "Luo, Yu",
+        "Zhou, Yu",
+        "Chen, Yujie",
+        "Wang, Yumang",
+        "Ju, Yunzhou",
+        "Yang, Yuxiang",
+        "Li, Yuxin",
+        "Zhang, Yuxin",
+        "Liu, Zekai",
+        "Yao, Zengwei",
+        "Yuan, Zhaoxin",
+        "Mou, Zhenwei",
+        "Zhang, Zhiquan",
+        "Wu, Zhiyue",
+        "Li, Zichao",
+        "Zhou, Zichao",
+        "Ren, Ziqi",
+        "Wang, Zixuan"
+      ],
+      "date": "2026-09-12",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.14005",
+      "publisher_source": null,
+      "problem": "Strong reference for coordinating speech, private reasoning and tool execution.",
+      "method": "Step 3.7 Flash MoE: 196B total / 11B active AuT encoder + adapter; user and model audio feed shared conversational context. Streaming speech generator; detailed generator internals are less specified than the LLM. Listen / speak / start / end states; private think-while-speaking; asynchronous tools.",
+      "results": "Authors report 98.9 Overall on Artificial Analysis Full-Duplex Bench and 56.0% macro task success on τ-Voice.",
+      "relevance": "Strong reference for coordinating speech, private reasoning and tool execution.",
+      "limitations": "Reported benchmark scores use their own protocol. No StepAudio 3 Realtime checkpoint or training release was located; earlier Step-Audio releases are separate models.",
+      "focused_notes": [
+        {
+          "resource": "StepAudio 3 Realtime",
+          "comparison": [
+            "Step 3.7 Flash MoE (196B total/11B active) + AuT speech encoder. Two concurrent audio-LLM processes share parameters: private formulation and articulation, with playback-aware pacing and async tools.",
+            "Report/project demos; Realtime code/weights not located. Earlier Step releases are not this model.",
+            "Recipe; full training code/mixture not located."
+          ],
+          "artifacts": [
+            [
+              "Project",
+              "https://stepaudiollm.github.io/step-audio-3-realtime/"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "venus",
+      "id": "2609.13814",
+      "title": "Realtime-Venus: A full-duplex interaction system with asynchronous delegation",
+      "authors": [
+        "Ant Group"
+      ],
+      "date": "2026-09-12",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.13814",
+      "publisher_source": null,
+      "problem": "Released architecture and harness for testing revisions while a backend task is pending.",
+      "method": "MiniCPM-o 4.5-derived Audio and Omni frontends; 9B family One-second causal chunks; retained frontend state; separate background task loop. Frontend text and speech generation; text results admitted back into the stream. Explicit foreground / delegation outputs; harness executes background jobs asynchronously.",
+      "results": "Audio variant reports continuation of 97% / 88% / 86% for backchannel / other-directed / background speech in FDB v1.5.",
+      "relevance": "Released architecture and harness for testing revisions while a backend task is pending.",
+      "limitations": "Audio and Omni evaluations differ. Released harness/demo integration is Omni-based; do not assume every paper setting is reproduced.",
+      "focused_notes": [
+        {
+          "resource": "Realtime-Venus",
+          "comparison": [
+            "MiniCPM-o 4.5-derived 9B Audio/Omni frontend; causal 1 s chunks, persistent context, and an asynchronous backend. A harness returns backend text to the speaking frontend.",
+            "Inference/harness + Audio/Omni weights; Apache-2.0. Demo integration is Omni-based.",
+            "Methods; complete training package/mixture not located."
+          ],
+          "artifacts": [
+            [
+              "Code",
+              "https://github.com/inclusionAI/Realtime-Venus"
+            ],
+            [
+              "Weights",
+              "https://huggingface.co/inclusionAI/Realtime-Venus"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "syncllm",
+      "id": "2409.15594",
+      "title": "Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents",
+      "authors": [
+        "Veluri, Bandhav",
+        "Peloquin, Benjamin N",
+        "Yu, Bokai",
+        "Gong, Hongyu",
+        "Gollakota, Shyamnath"
+      ],
+      "date": "2024-09-23",
+      "venue": "EMNLP 2024",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2409.15594",
+      "publisher_source": "https://aclanthology.org/2024.emnlp-main.1192/",
+      "problem": "Variable text/unit sequence length must still track a real acoustic clock.",
+      "method": "Periodic speaker/chunk boundaries plus deduplicated semantic units and speculative user prediction/replacement.",
+      "results": "Authors demonstrate synchronous full-duplex generation and evaluate processing/network delay; no independent reproduction.",
+      "relevance": "Direct temporal-interface prior work, predating modern text-backbone duplex releases.",
+      "limitations": "Clock alignment does not itself establish correction-sensitive reasoning; dedicated released checkpoint not located.",
+      "focused_notes": [
+        {
+          "resource": "SyncLLM",
+          "comparison": [
+            "Llama 3-8B with deduplicated HuBERT units (25 Hz before deduplication); periodic speaker/chunk tokens align the sequence to a real-world clock. Speculative user chunks are replaced by observed input.",
+            "Synchronous full-duplex scheduling despite variable token counts; evaluates processing/network delay.",
+            "Official paper/demos; model code/weights not located. Clock alignment alone does not establish revision correctness."
+          ],
+          "artifacts": [
+            [
+              "Project",
+              "https://syncllm.cs.washington.edu/"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "moshi",
+      "id": "2410.00037",
+      "title": "Moshi: a speech-text foundation model for real-time dialogue",
+      "authors": [
+        "Défossez, Alexandre",
+        "Mazaré, Laurent",
+        "Orsini, Manu",
+        "Royer, Amélie",
+        "Pérez, Patrick",
+        "Jégou, Hervé",
+        "Grave, Edouard",
+        "Zeghidour, Neil"
+      ],
+      "date": "2024-09-17",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2410.00037",
+      "publisher_source": null,
+      "problem": "Open foundation for the supplied paper; it already uses a pretrained LLM backbone.",
+      "method": "Helium 7B text LM + Mimi codec Synchronized user-audio, assistant-audio and assistant-text streams at 12.5 Hz. Temporal transformer models time; depth transformer predicts residual codec levels. Text inner monologue precedes acoustic generation; learned silence and overlap patterns.",
+      "results": "Paper reports 160 ms theoretical and approximately 200 ms practical latency under its setup.",
+      "relevance": "Open foundation for the supplied paper; it already uses a pretrained LLM backbone.",
+      "limitations": "Frame timing limits text bandwidth; basic inner monologue is not a private reasoning implementation.",
+      "focused_notes": [
+        {
+          "resource": "Moshi",
+          "comparison": [
+            "Mimi 12.5 Hz (80 ms) frames; temporal transformer plus depth transformer model parallel audio streams and aligned inner-monologue text.",
+            "A concrete shared acoustic grid, streaming speech generation, and low-latency duplex interaction.",
+            "Inference and fine-tuning code + weights. MIT/Apache code; model CC BY 4.0. A frame clock is not a semantic commitment policy."
+          ],
+          "artifacts": [
+            [
+              "Code",
+              "https://github.com/kyutai-labs/moshi"
+            ],
+            [
+              "Fine-tuning",
+              "https://github.com/kyutai-labs/moshi-finetune"
+            ],
+            [
+              "Weights",
+              "https://huggingface.co/kyutai/moshiko-pytorch-bf16"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "duplexsla",
+      "id": "2605.20755",
+      "title": "DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action",
+      "authors": [
+        "Zhang, Haoyang",
+        "Chen, Jun",
+        "Wu, Donghang",
+        "Li, Yuxin",
+        "Zhang, Yuxin",
+        "Zhang, Xiangyu Tony",
+        "Liu, Che",
+        "Lin, Qingjian",
+        "Peng, Yizhou",
+        "Liu, Hexin",
+        "Chng, Eng Siong",
+        "Yan, Chao",
+        "Wu, Boyong",
+        "Huang, Yechang",
+        "Yang, Xuerui",
+        "Tian, Fei"
+      ],
+      "date": "2026-05-20",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2605.20755",
+      "publisher_source": null,
+      "problem": "Speaking, listening and structured actions need a shared temporal protocol.",
+      "method": "160 ms shared clock; two listening features, one text/four audio outputs, bounded action tokens and queued action spillover.",
+      "results": "Authors evaluate integrated duplex/tool behavior on a reported 2,100-case benchmark; no independent reproduction.",
+      "relevance": "Very close prior work for explicit action/speech/listening synchronization.",
+      "limitations": "Official repository marks inference, checkpoints and benchmark as forthcoming at cutoff.",
+      "focused_notes": [
+        {
+          "resource": "DuplexSLA",
+          "comparison": [
+            "Step-Audio 2 mini-derived ~7B model. A 160 ms clock joins two 80 ms listening features, one text/four audio tokens, and up to ten action tokens; queued action spillover and dual-side ASR.",
+            "Native concurrent speaking/listening plus timestamp-aligned planning, control and tool events.",
+            "Official repository says inference, weights and benchmark are forthcoming. Not a released checkpoint as of cutoff."
+          ],
+          "artifacts": [
+            [
+              "Release status",
+              "https://github.com/hyzhang24/DuplexSLA"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "adapt",
+      "id": "2609.29217",
+      "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
+      "authors": [
+        "Zhou, Zhiyang",
+        "Shang, Yingxin",
+        "Wang, Zhou",
+        "Cai, Hongwei",
+        "Wang, Weixu",
+        "Zhou, Shuran",
+        "Zhao, Shuofeng",
+        "Fan, Wenke",
+        "Guo, Qingxiang",
+        "Yang, Dawei",
+        "Yang, Lin",
+        "Song, Yang"
+      ],
+      "date": "2026-09-24",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.29217",
+      "publisher_source": null,
+      "problem": "Very recent alternative for controlling the timing/capacity trade-off.",
+      "method": "Adaptive windows and bounded text lead; indexed backend launch/cancel; cancelled/stale results suppressed before injection.",
+      "results": "Reports 72.9 Final score on HumDial-FDBench; interruption and rejection have separate trade-offs.",
+      "relevance": "Cancellation alone is already implemented; joint speaker-owned result/output commitment must be differentiated.",
+      "limitations": "Paper verified; trained checkpoint and training package not located at the review cutoff.",
+      "focused_notes": [
+        {
+          "resource": "AdaptDuplex",
+          "comparison": [
+            "Qwen3-Omni Thinker/Talker; 0.48/0.64/0.96 s windows, bounded text lead, and up to four indexed backend jobs. Cancelled/stale results are suppressed before injection.",
+            "Adaptive granularity and explicit backend-result admission already exist; not a new idea to simply cancel a stale job.",
+            "Paper verified; dedicated code/checkpoint not located. Joint speaker-owned state and actual playback still need controlled tests."
+          ],
+          "artifacts": []
+        }
+      ]
+    },
+    {
+      "key": "synchrony",
+      "id": "2605.20356",
+      "title": "Synchronization and Turn-Taking in Full-Duplex Speech Dialogue Models",
+      "authors": [
+        "Riera, Pablo",
+        "Brusco, Pablo",
+        "Kuo, Cristina",
+        "Sancinetti, Marcelo",
+        "Branavan, S. R. K."
+      ],
+      "date": "2026-05-19",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2605.20356",
+      "publisher_source": null,
+      "problem": "Determine whether speaker/listener hidden states synchronize and encode turn-taking signals.",
+      "method": "Moshi--Moshi appointment conversations; lagged CKA and causal end-of-interpausal-unit probes under noise/activity-bias variation.",
+      "results": "Authors report near-zero-lag coupling that degrades with noise and useful timing probes; no causal correctness guarantee.",
+      "relevance": "Representation-level synchronization evidence complementary to runtime clocks.",
+      "limitations": "Restricted conversational task; artifact package not located; probe quality is not revision correctness.",
+      "focused_notes": [
+        {
+          "resource": "Synchronization and Turn-Taking",
+          "comparison": [
+            "Moshi--Moshi appointment dialogues: lagged CKA compares speaker/listener hidden states; causal probes classify end-of-interpausal-unit hold/non-hold events.",
+            "Representational coupling and predictive timing signals vary with noise and speech activity bias.",
+            "Preprint; study artifacts not located. Restricted task; CKA/probe success is not causal reasoning consistency."
+          ],
+          "artifacts": []
+        }
+      ]
+    },
+    {
+      "key": "tauvoice",
+      "id": "2603.13686",
+      "title": "τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains",
+      "authors": [
+        "Ray, Soham",
+        "Dhandhania, Keshav",
+        "Barres, Victor",
+        "Narasimhan, Karthik"
+      ],
+      "date": "2026-03-14",
+      "venue": "ICML 2026",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2603.13686",
+      "publisher_source": "https://proceedings.mlr.press/v306/ray26a.html",
+      "problem": "278 airline / retail / telecom tasks; clean and realistic accents/noise; simulated full-duplex user.",
+      "method": "278 airline / retail / telecom tasks; clean and realistic accents/noise; simulated full-duplex user. Metrics: Grounded pass@1; latency, interruptions and voice interaction quality.",
+      "results": "Original study reports voice-task success below its text baseline under both audio conditions.",
+      "relevance": "End-to-end task completion and correction consequences.",
+      "limitations": "Pin the task revision and simulator/provider configuration. Paper-clean, realistic and macro-domain scores are different conditions.",
+      "focused_notes": [
+        {
+          "resource": "tau-Voice",
+          "comparison": [
+            "278 airline/retail/telecom tasks; clean/realistic speech; full-duplex simulated user. ICML 2026 (PMLR 306).",
+            "Grounded pass@1, interruption behavior and voice interaction quality; tool/task consequences.",
+            "Code/tasks/simulator; provider APIs needed. Virtual time decouples simulation from wall-clock runtime; pin original revision (repo now tau3-bench)."
+          ],
+          "artifacts": [
+            [
+              "Code/tasks",
+              "https://github.com/sierra-research/tau2-bench"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fdb3",
+      "id": "2604.04847",
+      "title": "Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency",
+      "authors": [
+        "Lin, Guan-Ting",
+        "Chen, Chen",
+        "Chen, Zhehuai",
+        "Lee, Hung-yi"
+      ],
+      "date": "2026-04-06",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2604.04847",
+      "publisher_source": null,
+      "problem": "Real human audio; five disfluency types; chained tool calls in four task domains.",
+      "method": "Real human audio; five disfluency types; chained tool calls in four task domains. Metrics: Tool selection F1, argument accuracy, pass@1, first response / tool / completion latency.",
+      "results": "Authors identify self-correction and hard multi-step reasoning as recurring failures.",
+      "relevance": "Self-corrections, hesitation and multi-step tool reasoning.",
+      "limitations": "Tool-selection F1 is not task completion. Judge-assisted and exact argument matching differ.",
+      "focused_notes": [
+        {
+          "resource": "Full-Duplex-Bench v3",
+          "comparison": [
+            "Human recordings, five disfluency types, chained tools across four task domains.",
+            "Tool-selection F1, argument accuracy, pass@1; first response, tool and completion latencies.",
+            "Scoring/inference code + recording download. Tool F1 is not task success; exact and judge-assisted argument scores differ."
+          ],
+          "artifacts": [
+            [
+              "Code/data",
+              "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/main/v3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "key": "echochain",
+      "id": "2604.16456",
+      "title": "EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions",
+      "authors": [
+        "Modi, Smit Nautambhai",
+        "Mahajan, Gandharv",
+        "Wetter, Marc",
+        "Welles, Randall"
+      ],
+      "date": "2026-04-08",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2604.16456",
+      "publisher_source": null,
+      "problem": "A model can acknowledge an interruption while its subsequent task-state reasoning remains wrong.",
+      "method": "Speech-onset-relative controlled interruptions, paired half-duplex control, and conversation-specific human-audited rubrics.",
+      "results": "Authors report no evaluated model above 50% conversation pass rate across 200 interrupted conversations; result not reproduced here.",
+      "relevance": "Direct benchmark predecessor for correction-sensitive ongoing reasoning.",
+      "limitations": "Four closed models; no backchannel/side-speech coverage or detailed acoustic timing; separate runnable release not located.",
+      "focused_notes": [
+        {
+          "resource": "EchoChain",
+          "comparison": [
+            "200 controlled interrupted conversations; synthesized user/barge-in audio; four closed realtime models; paired half-duplex control.",
+            "Conversation/criterion pass rates and failures: contextual inertia, interruption amnesia, objective displacement.",
+            "Paper, prompts and examples verified; standalone code/audio release not located. Does not cover backchannels, side speech or detailed acoustic timing."
+          ],
+          "artifacts": []
+        }
+      ]
+    },
+    {
+      "key": "mpe",
+      "id": "2609.31948",
+      "title": "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue",
+      "authors": [
+        "Ma, Chengqian",
+        "Feng, Wenhao",
+        "Jin, Weixuan",
+        "Dai, Gaole",
+        "Xie, Tianyu",
+        "Ma, Yuexiao",
+        "Kang, Zhaolu",
+        "Zhao, Xiangyu",
+        "Zheng, Xiawu",
+        "Chao, Fei"
+      ],
+      "date": "2026-09-25",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.31948",
+      "publisher_source": null,
+      "problem": "2,000 matched scenario pairs / 4,000 streams; 3–4 human roles plus an assistant; explicit versus implicit address.",
+      "method": "2,000 matched scenario pairs / 4,000 streams; 3–4 human roles plus an assistant; explicit versus implicit address. Metrics: Fresh response initiation, answer accuracy, silence preservation and floor release.",
+      "results": "Shows that frequent speech can coexist with wrong answers and failures to remain silent.",
+      "relevance": "Closest recent benchmark for the proposal’s multi-party speaker/stream-aware goal.",
+      "limitations": "Scenario roles do not imply natural human recordings. Floor release depends on whether the model was speaking.",
+      "focused_notes": [
+        {
+          "resource": "Duplex-MPE",
+          "comparison": [
+            "2,000 matched pairs / 4,000 synthetic streams; 3--4 human roles plus assistant; explicit/implicit address.",
+            "Response initiation, answer accuracy, silence preservation, floor release; speaker-owned update controls.",
+            "Paper verified; standalone code/audio release not located. Floor release is conditional on the assistant already speaking."
+          ],
+          "artifacts": []
+        }
+      ]
+    },
+    {
+      "key": "mindpaced",
+      "id": "2510.09592",
+      "title": "Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models",
+      "authors": [
+        "Wu, Donghang",
+        "Zhang, Haoyang",
+        "Chen, Jun",
+        "Xiangyu",
+        "Zhang",
+        "Liu, Hexin",
+        "Chng, Eng Siong",
+        "Tian, Fei",
+        "Yang, Xuerui",
+        "Zhang, Xiangyu",
+        "Jiang, Daxin",
+        "Yu, Gang"
+      ],
+      "date": "2025-10-10",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2510.09592",
+      "publisher_source": null,
+      "problem": "Full pre-response reasoning delays speech; interleaving may disrupt reasoning continuity.",
+      "method": "Concurrent formulation/articulation with shared Step-Audio 2 parameters; incremental thought segments and think-incomplete SFT.",
+      "results": "Authors report improved latency/quality trade-offs; their near-zero-latency configuration still depends on synthesis buffering.",
+      "relevance": "Established think-while-speaking predecessor, underlying Step-Audio R1.1 and referenced by StepAudio 3.",
+      "limitations": "Concurrent formulation does not establish correction-safe audible commitment; performance depends on the tested backbone/tasks.",
+      "focused_notes": []
+    },
+    {
+      "key": "contextspan",
+      "id": "2609.33443",
+      "title": "Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends",
+      "authors": [
+        "Go, Seonghyeon",
+        "Kim, Yongwoo",
+        "Cha, Hyeonjin",
+        "Shin, Jaeho"
+      ],
+      "date": "2026-09-27",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.33443",
+      "publisher_source": null,
+      "problem": "Fresh alternative to compressed backend conditioning; useful for evidence provenance.",
+      "method": "Moshi frontend + external text backend Backend text injected into duplex token frames through chunked causal prefill. Frontend independently produces speech after receiving raw reference text. Context injection must fit prefill + one decode step in an 80 ms frame budget.",
+      "results": "Reports QA and full-duplex evaluations with direct information injection.",
+      "relevance": "Fresh alternative to compressed backend conditioning; useful for evidence provenance.",
+      "limitations": "Very recent preprint. Some experiments use precomputed backend answers with fixed delay; that differs from live tool execution.",
+      "focused_notes": []
+    }
+  ],
+  "themes": [
+    "Acoustic frames, autoregressive tokens, physical elapsed time and audible commitments are distinct.",
+    "Full-duplex interfaces already encode timing, but do not by themselves establish causal reasoning-state consistency.",
+    "Model inference releases are more common than reproducible complete training mixtures."
+  ],
+  "gaps": [
+    {
+      "id": "G1",
+      "text": "Jointly measure evidence age, correct useful audible response time, and unsafe commitment under late corrections.",
+      "closest": [
+        "thinklisten",
+        "echochain",
+        "mindpaced"
+      ]
+    },
+    {
+      "id": "G2",
+      "text": "Maintain speaker-owned hypothesis versions across concurrent capture, reasoning, synthesis and playback.",
+      "closest": [
+        "moshi",
+        "mpe",
+        "synchrony"
+      ]
+    },
+    {
+      "id": "G3",
+      "text": "Establish causal end-to-end consistency across corrected frontend state, pending tools and output queues, beyond cancellation alone.",
+      "closest": [
+        "adapt",
+        "venus",
+        "contextspan"
+      ]
+    },
+    {
+      "id": "G4",
+      "text": "Validate adaptive temporal interfaces against real wall-clock deadlines and compute contention, not only virtual-clock task scores.",
+      "closest": [
+        "syncllm",
+        "minicpm",
+        "duplexsla",
+        "tauvoice"
+      ]
+    },
+    {
+      "id": "G5",
+      "text": "Construct auditable prefix-sufficiency, revision and addressee labels without future-evidence leakage or cross-corpus session contamination.",
+      "closest": [
+        "thinklisten",
+        "flair",
+        "fdb3",
+        "mpe"
+      ]
+    }
+  ],
+  "research_questions": [
+    {
+      "id": "RQ1",
+      "title": "Think while listening",
+      "question": "When is partial speech sufficient to begin useful reasoning, and when should an emerging hypothesis remain provisional?",
+      "proposal_link": "Semantic sufficiency and revision-aware partial-input supervision.",
+      "hypothesis": "A trigger conditioned on available evidence and correction risk improves the correct-answer/latency frontier over end-of-turn and fixed-prefix triggers.",
+      "method": "Predict prefix sufficiency from causal input and track hypothesis versions; allow private inference before authorizing a task-specific spoken claim.",
+      "experiment": "200 matched late-constraint questions with two suffixes sharing an identical prefix; compare end-of-turn, fixed-prefix and calibrated triggers under the same evidence and decode budgets.",
+      "metrics": "Correct useful audible response latency, final accuracy, premature-claim rate, calibration and unnecessary revisions.",
+      "prior_work": [
+        "thinklisten",
+        "flair"
+      ],
+      "distinction": "Early or latent reasoning while listening already exists; the candidate contribution is risk-calibrated revision under delayed/jittered evidence, not the concurrency claim itself."
+    },
+    {
+      "id": "RQ2",
+      "title": "Think while speaking",
+      "question": "How far can reasoning and synthesis run ahead of playback without committing to an answer that new evidence will invalidate?",
+      "proposal_link": "Time to the first useful response and robustness to self-correction.",
+      "hypothesis": "Evidence-tagged output queues and a bounded playback lead reduce stale audible claims at matched response-quality and compute budgets.",
+      "method": "Separate private formulation from articulation, annotate queued output with evidence/state dependencies, revalidate unplayed output and repair already audible claims.",
+      "experiment": "Deliver a correction before generation, during synthesis, while queued, or after playback; compare unrestricted lead, fixed-duration lead and evidence-aware admission.",
+      "metrics": "Stale audible duration, useful-response latency, output underruns, repetition and repair success.",
+      "prior_work": [
+        "mindpaced",
+        "step3",
+        "adapt",
+        "echochain"
+      ],
+      "distinction": "Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound."
+    },
+    {
+      "id": "RQ3",
+      "title": "Listen while speaking",
+      "question": "Can new input update the right speaker/task hypothesis while the system speaks, without mistaking backchannels or side conversations for corrections?",
+      "proposal_link": "Speaker/stream-aware listening and evidence integration across turns.",
+      "hypothesis": "Per-speaker evidence watermarks and selective state invalidation improve correction accuracy without increasing needless interruption or side-speech responses.",
+      "method": "Prioritize fresh input ingestion under generation load; associate updates with speaker, addressee, task and hypothesis versions before invalidating dependent output.",
+      "experiment": "Use matched corrections, backchannels and other-directed utterances with oracle versus predicted speaker/addressee labels; compare global versus speaker-owned state under matched load.",
+      "metrics": "Correction accuracy, evidence staleness, false interruption, silence preservation and task completion.",
+      "prior_work": [
+        "mpe",
+        "synchrony",
+        "venus"
+      ],
+      "distinction": "Turn-taking and addressee tests are not new. The candidate is their coupling to causal reasoning-state ownership; attribution noise must be separated from reasoning failure."
+    },
+    {
+      "id": "RQ4",
+      "title": "Synchronize listening, reasoning and speaking",
+      "question": "Which temporal interface remains reliable when speaking rate, inference speed, network delay and backend latency vary independently?",
+      "proposal_link": "Streaming latent state, uncertainty, and response preparation under partial evidence.",
+      "hypothesis": "A scheduler observing evidence age and audio-buffer duration has fewer missed deadlines and stale claims than fixed-window scheduling at matched task accuracy.",
+      "method": "Expose input watermarks, deadlines and predicted audio lead to the controller; adapt ingestion/generation quantum without using future speech or privileging one arm's compute.",
+      "experiment": "Replay identical dialogues across speech-rate, jitter and compute-contention conditions; compare fixed 80 ms/1 s interfaces where implementable with a two- or three-level adaptive controller.",
+      "metrics": "p50/p95 event-to-ingestion and correct-useful-response delays, buffer underruns, deadline misses, quality and GPU-seconds.",
+      "prior_work": [
+        "syncllm",
+        "moshi",
+        "minicpm",
+        "duplexsla",
+        "adapt",
+        "tauvoice"
+      ],
+      "distinction": "Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient."
+    },
+    {
+      "id": "RQ5",
+      "title": "Revise while delegating",
+      "question": "What should be canceled, reused or withheld when a speaker correction arrives between backend launch, result return and audible delivery?",
+      "proposal_link": "Revision-aware hypotheses and late-arriving constraints; extension to modern asynchronous systems.",
+      "hypothesis": "Speaker/task-versioned dependency checks at both result admission and playback reduce stale-answer failures beyond an existing cancellation-only baseline.",
+      "method": "Tag jobs/results and output segments with dependencies, reject invalidated results, and recompute only affected work; use read-only or simulated tools in the pilot.",
+      "experiment": "Inject corrections into a simulated 0.5/2/5 s backend at launch, inflight, return and pre-playback stages; compare blind injection, explicit cancel/stale suppression, and joint result/output validation.",
+      "metrics": "Task success, stale-result use, wasted backend work, repair latency and unnecessary cancellation.",
+      "prior_work": [
+        "venus",
+        "adapt",
+        "contextspan",
+        "fdb3",
+        "tauvoice"
+      ],
+      "distinction": "AdaptDuplex already cancels jobs and suppresses stale results. Candidate novelty requires speaker-specific dependency plus audible-commitment consistency, not renaming that mechanism."
+    }
+  ],
+  "limitations": [
+    "Availability snapshots can change; not located is not evidence of nonexistence.",
+    "No benchmarks, model calls, training or GPU jobs were run.",
+    "Novelty is a bounded inference from these sources, not an exhaustive guarantee.",
+    "Dataset scales and licenses are reported by their documentation, not independently audited."
+  ]
+}

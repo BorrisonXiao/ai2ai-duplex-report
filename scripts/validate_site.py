@@ -2,9 +2,11 @@
 """Portable structural, citation and natural-wrapping checks for this review."""
 from collections import Counter
 from html.parser import HTMLParser
+from html import unescape
 import json
 from pathlib import Path
 import re
+from report_content import verified_sources, evidence
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,7 +82,8 @@ def validate():
     for kind,count in [('Table',len(parser.tables)),('Figure',parser.figures)]:
         actual = [int(match.group(1)) for text in parser.labels if (match := re.match(kind + r' (\d+)\.',text))]
         if actual != list(range(1,count+1)): errors.append('Missing or non-sequential ' + kind + ' captions')
-    if len(parser.tables) != 6: errors.append('Expected six comparison tables')
+    if len(parser.tables) != 14: errors.append('Expected six landscape and eight reported-result tables')
+    if parser.figures != 15: errors.append('Expected a taxonomy, five paper screenshots and nine performance plots')
     for ident in parser.filters:
         for required in (ident,ident+'-filter',ident+'-count',ident+'-empty'):
             if required not in parser.ids: errors.append('Missing filter component: ' + required)
@@ -94,7 +97,7 @@ def validate():
     markdown = (ROOT / 'research/LITERATURE.md').read_text()
     if re.search(r' {2,}\n|\\\n|<br\b',markdown): errors.append('Markdown contains a forced line break')
     digest = json.loads((ROOT / 'research/literature.json').read_text())
-    audit = json.loads((ROOT / 'research/source-audit.json').read_text())
+    audit = verified_sources()
     audited = {s['url']:s for s in audit['sources']}
     for field in ('instruction','date','scope','sub_questions','papers','themes','gaps'):
         if not digest.get(field): errors.append('Missing digest field: ' + field)
@@ -112,15 +115,35 @@ def validate():
     for gap in digest['gaps']:
         if any(ident not in paper_ids for ident in gap['refs']): errors.append('Gap cites an unknown paper: ' + gap['id'])
     expected = dict(zip(['systems-table','availability-table','benchmarks-table','datasets-table','recipes-table','implications-table'],[len(digest['systems']),len(digest['systems']),len(digest['benchmarks']),len(digest['datasets']),len(digest['training_recipes']),3]))
+    performance, plot_manifest = evidence()
+    expected.update({'performance-' + group['id']: len([row for row in group['rows'] if row['role'] != 'text_control']) for group in performance['groups'] + performance['supplementary_groups']})
     for ident,count in expected.items():
         match = re.search(r'<table id="'+ident+r'">.*?<tbody>(.*?)</tbody>',source,re.S)
         if not match or match.group(1).count('<tr>') != count:
             errors.append('Incorrect table row count: ' + ident)
+    for group in performance['groups'] + performance['supplementary_groups']:
+        match = re.search(r'<table id="performance-' + group['id'] + r'">.*?<tbody>(.*?)</tbody>', source, re.S)
+        if not match:
+            continue
+        numeric_rows = re.findall(r'<tr>(.*?)</tr>', match.group(1), re.S)
+        source_rows = [row for row in group['rows'] if row['role'] != 'text_control']
+        for actual, row in zip(numeric_rows, source_rows):
+            values = row['domain_scores'] + row['source_values'] if group['id'] == 'tau_aa' else [None if value is None else value * row['scale'] for value in row['source_values']]
+            definitions = group.get('metric_specs', [{'decimals': row['decimals']} for _ in values])
+            wanted = ['NR' if value is None else f"{value:.{definition['decimals']}f}" for value, definition in zip(values, definitions)]
+            found = [unescape(re.sub(r'<[^>]+>', '', cell)).strip() for cell in re.findall(r'<td>(.*?)</td>', actual, re.S)]
+            if wanted != found:
+                errors.append('Numeric table does not match source scores: ' + group['id'] + '/' + row['model'])
     readme = (ROOT / 'README.md').read_text()
     if '[Project webpage](https://borrisonxiao.github.io/ai2ai-duplex-report/)' not in readme:
         errors.append('README lacks the webpage link')
-    if 'pending' not in readme.lower(): errors.append('README must disclose pending Pages configuration')
+    if not any(status in readme.lower() for status in ('live on github pages', 'pending repository pages configuration')):
+        errors.append('README must state whether GitHub Pages is live or awaiting configuration')
     if parser.images_missing_alt: errors.append('Images missing alt text')
+    for ident in ['twl','flair-qa','flair-interaction','step3','venus','minicpm','tau-original','echochain']:
+        if 'profile-' + ident not in parser.ids: errors.append('Missing model/benchmark profile: ' + ident)
+    if 'NR, never zero' not in source or 'not global SoTA' not in source:
+        errors.append('Missing sparse-coverage or source-specific leadership caveat')
     return errors, digest
 
 
@@ -129,4 +152,4 @@ if __name__ == '__main__':
     if errors:
         for error in errors: print('ERROR:',error)
         raise SystemExit(1)
-    print(f'Validation passed: one project tab, six tables, one labeled figure, {len(digest["papers"])} verified papers, complete local links/citations, natural text wrapping.')
+    print(f'Validation passed: one project tab, 14 tables, 15 labeled figures, {len(digest["papers"])} verified papers, complete local links/citations, natural text wrapping.')

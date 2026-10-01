@@ -1,0 +1,732 @@
+{
+  "revision_date": "2026-10-01",
+  "evidence_cutoff": "2026-09-30",
+  "data_sha256": "4c267f169ad43fcab813bcc35342c089156c6f11601679239b948b5101b58e53",
+  "convention": "Radars use raw 0–100 percentages. No polygon-area ranking, normalization to a reference, imputation or cross-protocol averaging. Mixed units and fewer than three metrics use separate bar axes. No error bars: these are source-reported point estimates, not independent reruns.",
+  "coverage": {
+    "pdf": {
+      "file": "figures/performance/coverage.pdf",
+      "sha256": "8d4ea9604381d19a0da951ca32403d578242a50225b8e32f2c8e15d96923b0dc"
+    },
+    "svg": {
+      "file": "figures/performance/coverage.svg",
+      "sha256": "e5282518ab1ea6ab8bafc696bf87fd30bb81abbbb186dc1266b6986a067b6f46"
+    },
+    "png": {
+      "file": "figures/performance/coverage.png",
+      "sha256": "1b5da98a06947feeeaa743eadcd459be06ca03d98eead25db4cf6ce67cb105e5"
+    }
+  },
+  "profiles": [
+    {
+      "id": "twl",
+      "group": "srqa",
+      "title": "Think while listening: SRQA",
+      "kind": "radar",
+      "models": [
+        "Moshi + CoT (TWL study)",
+        "TWL: early length-DPO",
+        "Moshi baseline",
+        "Kimi-Audio-7B-Instruct"
+      ],
+      "axes": [
+        "ARC-E",
+        "ARC-C",
+        "SIQA",
+        "PIQA",
+        "GSM8K"
+      ],
+      "note": "Two TWL-study checkpoints are distinct. Kimi-Audio is a speech reference, not a full-duplex system. The table also includes Qwen2-Audio; Helium's non-comparable text result is omitted.",
+      "takeaway": "The CoT configuration is stronger on these tasks than foundation Moshi, but early length-DPO is a different accuracy/latency operating point, not the same high-accuracy checkpoint.",
+      "sources": [
+        {
+          "cite": "thinklisten",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf",
+          "local_pdf": "proceedings.iclr.cc_paper_files_paper_2026_file_75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf.pdf",
+          "version": "ICLR 2026 proceedings",
+          "pages": [
+            8,
+            9
+          ],
+          "tables": [
+            "2",
+            "4"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-srqa.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/twl.pdf",
+          "sha256": "40c7a7eaa50d22d74533563cfeb3d70f650ea750d4244d3242b402d71d4a18aa"
+        },
+        "svg": {
+          "file": "figures/performance/twl.svg",
+          "sha256": "cbd83b61940f194111bce2f59a7a2f24e10128e0d7f5c115408e66cfa1f01f26"
+        },
+        "png": {
+          "file": "figures/performance/twl.png",
+          "sha256": "8f491370e7e8eb372bcaa1449ec2c3dcd78a4bb34b9e547c07cbb18999d8e9c9"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "Moshi + CoT (TWL study)",
+          "scores": [
+            77.7,
+            59.8,
+            56.1,
+            56.9,
+            16.1
+          ]
+        },
+        {
+          "model": "TWL: early length-DPO",
+          "scores": [
+            65.4,
+            46,
+            45.3,
+            46,
+            14.7
+          ]
+        },
+        {
+          "model": "Moshi baseline",
+          "scores": [
+            30.2,
+            21.5,
+            22.8,
+            23.8,
+            8.7
+          ]
+        },
+        {
+          "model": "Kimi-Audio-7B-Instruct",
+          "scores": [
+            83.0,
+            71.5,
+            32.9,
+            34.4,
+            15.7
+          ]
+        },
+        {
+          "model": "Qwen2-Audio-7B-Instruct",
+          "scores": [
+            59.1,
+            42.4,
+            21.9,
+            24.5,
+            18.1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flair-qa",
+      "group": "flair_qa",
+      "title": "FLAIR: spoken QA accuracy",
+      "kind": "radar",
+      "models": [
+        "FLAIR w/ thk",
+        "FLAIR w/o thk",
+        "Moshi",
+        "Kimi-Audio"
+      ],
+      "axes": [
+        "LlamaQ",
+        "WebQ",
+        "TriviaQA",
+        "SDQA",
+        "OpenbookQA",
+        "MMSU"
+      ],
+      "note": "FLAIR's own QA suite is not SRQA. Only accuracy-valued tasks are plotted; 1–5 open-ended judge scores are excluded. Published reference scores are imported, not all rerun. Kimi-Audio is half-duplex.",
+      "takeaway": "Latent thinking improves several tasks over the no-thinking ablation, but not every task: TriviaQA is lower. No single curve wins across all tasks shown.",
+      "sources": [
+        {
+          "cite": "flair",
+          "url": "https://arxiv.org/pdf/2603.17837v5",
+          "local_pdf": "arxiv.org_pdf_2603.17837.pdf",
+          "version": "arXiv v5, 4 June 2026",
+          "pages": [
+            7,
+            8
+          ],
+          "tables": [
+            "1",
+            "3"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-flair_qa.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/flair-qa.pdf",
+          "sha256": "21f78cb9a6b3bb3c98d45018f5c4c111e8deef2213045a0129a60857c5c49164"
+        },
+        "svg": {
+          "file": "figures/performance/flair-qa.svg",
+          "sha256": "c1774936bee48b086c9e637b3bb03aecd2f36393f4d957ded171cabebb397f7c"
+        },
+        "png": {
+          "file": "figures/performance/flair-qa.png",
+          "sha256": "9a2630560de0f71f10e69aa830b4fc00793fb5c2887fc9862c71e27c7f208297"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "FLAIR w/ thk",
+          "scores": [
+            78.0,
+            43.0,
+            51.2,
+            56.2,
+            74.2,
+            56.2
+          ]
+        },
+        {
+          "model": "FLAIR w/o thk",
+          "scores": [
+            73.0,
+            41.7,
+            53.8,
+            54.4,
+            72.9,
+            50.2
+          ]
+        },
+        {
+          "model": "Moshi",
+          "scores": [
+            54.5,
+            22.1,
+            16.7,
+            15.6,
+            25.9,
+            24.0
+          ]
+        },
+        {
+          "model": "Freeze-Omni",
+          "scores": [
+            56.2,
+            27.9,
+            28.5,
+            53.5,
+            31.0,
+            28.1
+          ]
+        },
+        {
+          "model": "Kimi-Audio",
+          "scores": [
+            68.3,
+            37.3,
+            51.2,
+            63.1,
+            83.5,
+            62.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flair-interaction",
+      "group": "flair_interaction",
+      "title": "FLAIR: earlier duplex interaction suite",
+      "kind": "facets",
+      "note": "Separate axes preserve percentages, seconds and 0–5 judge scores. TOR means takeover rate. Gemini Live is the study's sole closed reference; its API revision is unspecified. This is not FDB-v3 tool use.",
+      "takeaway": "Response quality, takeover rate and response delay expose different trade-offs. A high takeover rate alone does not establish a useful answer.",
+      "sources": [
+        {
+          "cite": "flair",
+          "url": "https://arxiv.org/pdf/2603.17837v5",
+          "local_pdf": "arxiv.org_pdf_2603.17837.pdf",
+          "version": "arXiv v5, 4 June 2026",
+          "pages": [
+            7,
+            8
+          ],
+          "tables": [
+            "1",
+            "3"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-flair_interaction.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/flair-interaction.pdf",
+          "sha256": "313733b56babcf40e0cc83588ef9d79d341910ef12857a3eb09e47ffa23115d7"
+        },
+        "svg": {
+          "file": "figures/performance/flair-interaction.svg",
+          "sha256": "78aec6e4d1974ea3718d379be56b830ad47d7fbd77f97e3e9878e6ccefcd1411"
+        },
+        "png": {
+          "file": "figures/performance/flair-interaction.png",
+          "sha256": "27149bdf6247f1279e31c551464bf2db66b14b772dee99e993d6d47386ce4a87"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "FLAIR w/ thk",
+          "scores": [
+            93.0,
+            0.43,
+            92.0,
+            4.22,
+            0.36
+          ]
+        },
+        {
+          "model": "FLAIR w/o thk",
+          "scores": [
+            94.1,
+            0.37,
+            89.0,
+            4.08,
+            0.35
+          ]
+        },
+        {
+          "model": "Moshi",
+          "scores": [
+            94.1,
+            0.27,
+            100.0,
+            0.77,
+            0.26
+          ]
+        },
+        {
+          "model": "Gemini Live",
+          "scores": [
+            65.5,
+            1.3,
+            89.1,
+            3.38,
+            1.18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step3",
+      "group": "tau_aa",
+      "title": "StepAudio 3 Realtime: τ-Voice (AA)",
+      "kind": "domain-radar",
+      "axes": [
+        "Airline",
+        "Retail",
+        "Telecom"
+      ],
+      "note": "Artificial Analysis implementation and API versions from StepAudio's report. The radar shows three domain success rates; the bar panel shows the separately reported equal-domain macro. Grok is the macro leader, not the winner in every domain.",
+      "takeaway": "The reported macro scores are close while the domain profiles differ. This comparison cannot be pooled with the original clean/realistic τ-Voice results.",
+      "sources": [
+        {
+          "cite": "step3",
+          "url": "https://arxiv.org/pdf/2609.14005v2",
+          "local_pdf": "arxiv.org_pdf_2609.14005.pdf",
+          "version": "arXiv v2, 19 September 2026",
+          "pages": [
+            18,
+            19,
+            20
+          ],
+          "tables": [
+            "9"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-tau_aa.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/step3.pdf",
+          "sha256": "ca5fefd5e4ebc30ef0702e0d9387528118c3eafeca476d70f383e3dccdae0ec8"
+        },
+        "svg": {
+          "file": "figures/performance/step3.svg",
+          "sha256": "fd663a91c95fbd8c98d9ae16a9938bbc347be728e7e203b3e4d918ff0bb2127c"
+        },
+        "png": {
+          "file": "figures/performance/step3.png",
+          "sha256": "ee29c091c62de8131c56ac06144857d8551ae365c82f3e9bb843358da6cd0b94"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "StepAudio 3 Realtime",
+          "scores": [
+            60,
+            37.7,
+            70.2,
+            56
+          ]
+        },
+        {
+          "model": "Grok Voice Think Fast 2.0 High",
+          "scores": [
+            56,
+            49.7,
+            63.7,
+            56.5
+          ]
+        },
+        {
+          "model": "Qwen Audio 3.0 Realtime Plus",
+          "scores": [
+            61.3,
+            49.0,
+            53.5,
+            54.6
+          ]
+        },
+        {
+          "model": "GPT-Realtime-2.1 High",
+          "scores": [
+            62.0,
+            45.6,
+            29.4,
+            45.7
+          ]
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "group": "fdb3",
+      "title": "Realtime-Venus: Full-Duplex-Bench v3",
+      "kind": "radar",
+      "models": [
+        "Realtime-Venus-Omni",
+        "Realtime-Venus-Audio",
+        "GPT-Realtime",
+        "Gemini Live 3.1"
+      ],
+      "axes": [
+        "Tool selection F1",
+        "Argument accuracy",
+        "Task pass@1"
+      ],
+      "note": "Both Venus frontends are from the revised system report; closed references are from the benchmark comparison. GPT-Realtime leads these three metrics in that source, not a current global leaderboard. This is not a common rerun.",
+      "takeaway": "Tool-selection F1 is substantially higher than complete-task pass@1. These metrics have different success criteria, so their difference is not a stage-wise failure rate.",
+      "sources": [
+        {
+          "cite": "fdb3",
+          "url": "https://arxiv.org/pdf/2604.04847v1",
+          "local_pdf": "arxiv.org_pdf_2604.04847.pdf",
+          "version": "arXiv v1, 6 April 2026",
+          "pages": [
+            4,
+            5
+          ],
+          "tables": [
+            "2"
+          ],
+          "status": "primary_pdf_checked"
+        },
+        {
+          "cite": "venus",
+          "url": "https://arxiv.org/pdf/2609.13814v3",
+          "local_pdf": "arxiv.org_pdf_2609.13814.pdf",
+          "version": "arXiv v3, 23 September 2026",
+          "pages": [
+            21,
+            22
+          ],
+          "tables": [
+            "7"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-fdb3.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/venus.pdf",
+          "sha256": "ec68e80a1aca593e004de8781ed38fb3e92adc0e5fc6536b3c7512964ada2a28"
+        },
+        "svg": {
+          "file": "figures/performance/venus.svg",
+          "sha256": "087e8569fd2df29f200341b8d31bda7c3f35d120705b934d8d91c1f9ecb560c9"
+        },
+        "png": {
+          "file": "figures/performance/venus.png",
+          "sha256": "9443eaa256d44cbfad00a29c8151c1cd307fd923b9684258f04511671cd28abf"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "Realtime-Venus-Omni",
+          "scores": [
+            86,
+            53.1,
+            43
+          ]
+        },
+        {
+          "model": "Realtime-Venus-Audio",
+          "scores": [
+            82,
+            52.2,
+            42
+          ]
+        },
+        {
+          "model": "GPT-Realtime",
+          "scores": [
+            87.6,
+            68.0,
+            60.0
+          ]
+        },
+        {
+          "model": "Gemini Live 3.1",
+          "scores": [
+            81.69999999999999,
+            58.8,
+            54.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "minicpm",
+      "group": "mpe",
+      "title": "MiniCPM-o 4.5: Duplex-MPE",
+      "kind": "paired-radar",
+      "axes": [
+        "Fresh onset",
+        "Answer accuracy",
+        "Silence",
+        "Yield"
+      ],
+      "note": "Explicit and implicit addressing are separate panels. Moshi and Voila are representative speech references. Answer accuracy is conditional on fresh responses; yield uses model-specific eligible speaking events. Polygon area is not an overall score. Gemini's transcript control is excluded.",
+      "takeaway": "MiniCPM-o combines frequent fresh responses and silence preservation, but conditional answer accuracy is much lower. Voila's higher yield is conditional on different eligible events.",
+      "sources": [
+        {
+          "cite": "mpe",
+          "url": "https://arxiv.org/pdf/2609.31948v1",
+          "local_pdf": "arxiv.org_pdf_2609.31948.pdf",
+          "version": "arXiv v1, 25 September 2026",
+          "pages": [
+            8,
+            25
+          ],
+          "tables": [
+            "3",
+            "17"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-mpe.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/minicpm.pdf",
+          "sha256": "0e3a678411d989a605eb57eb6d5f314bf843895cd96ea4e29c249f86915c3ca9"
+        },
+        "svg": {
+          "file": "figures/performance/minicpm.svg",
+          "sha256": "8cecbde55d7f23253d2fbaaed014af61377b6b627d5a0d95b26c71b1f4eee1da"
+        },
+        "png": {
+          "file": "figures/performance/minicpm.png",
+          "sha256": "2c75b90defe53e92a8c95a80542176367178f4f8e6837555e634af795bca4ea9"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "MiniCPM-o 4.5 (explicit)",
+          "scores": [
+            95.0,
+            47.3,
+            92.42,
+            59.64
+          ]
+        },
+        {
+          "model": "MiniCPM-o 4.5 (implicit)",
+          "scores": [
+            94.35,
+            46.650000000000006,
+            92.89,
+            59.25
+          ]
+        },
+        {
+          "model": "Voila (explicit)",
+          "scores": [
+            64.64999999999999,
+            0.31,
+            83.50999999999999,
+            84.84
+          ]
+        },
+        {
+          "model": "Voila (implicit)",
+          "scores": [
+            66.7,
+            0.75,
+            83.07,
+            80.46
+          ]
+        },
+        {
+          "model": "Moshi (explicit)",
+          "scores": [
+            63.4,
+            1.23,
+            27.339999999999996,
+            19.18
+          ]
+        },
+        {
+          "model": "Moshi (implicit)",
+          "scores": [
+            67.0,
+            1.7000000000000002,
+            26.76,
+            21.07
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tau-original",
+      "group": "tau_original",
+      "title": "Original τ-Voice: closed voice references",
+      "kind": "facets",
+      "note": "Original benchmark Table 6 All row; clean and realistic conditions remain separate. None of the five selected systems is evaluated here. GPT-5's text control is not plotted as a voice competitor.",
+      "takeaway": "All three voice systems perform worse under realistic audio conditions in this source comparison; later τ-Voice implementations are separate evidence.",
+      "sources": [
+        {
+          "cite": "tauvoice",
+          "url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/ray26a/ray26a.pdf",
+          "local_pdf": "raw.githubusercontent.com_mlresearch_v306_main_assets_ray26a_ray26a.pdf.pdf",
+          "version": "ICML 2026 / PMLR 306",
+          "pages": [
+            7
+          ],
+          "tables": [
+            "6"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-tau_original.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/tau-original.pdf",
+          "sha256": "1de3f4e827f13e3be3c8b1b5e8859627d3a758a92d1981fef86c854d689c6723"
+        },
+        "svg": {
+          "file": "figures/performance/tau-original.svg",
+          "sha256": "1af10722cdf8bc610939fd3303420ab7c9ab26d77832573f6b6f306d030446be"
+        },
+        "png": {
+          "file": "figures/performance/tau-original.png",
+          "sha256": "db5834c36bbba8868e4493422d45f9b9b114e784c81616c3a1ad8bcaa12c2162"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "Grok Voice",
+          "scores": [
+            51,
+            38
+          ]
+        },
+        {
+          "model": "GPT-Realtime-1.5",
+          "scores": [
+            49,
+            35
+          ]
+        },
+        {
+          "model": "Gemini Live 2.5",
+          "scores": [
+            31,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "echochain",
+      "group": "echo",
+      "title": "EchoChain: closed voice references",
+      "kind": "facets",
+      "note": "Paper Table 1, across 200 interrupted conversations. MPR requires every criterion in a conversation to pass; MCP scores individual criteria. None of the five selected systems is evaluated here.",
+      "takeaway": "Passing many individual criteria does not guarantee complete conversation success. Even the strongest reported voice reference passes fewer than half of conversations.",
+      "sources": [
+        {
+          "cite": "echochain",
+          "url": "https://arxiv.org/pdf/2604.16456v1",
+          "local_pdf": "arxiv.org_pdf_2604.16456.pdf",
+          "version": "arXiv v1, 17 April 2026",
+          "pages": [
+            8
+          ],
+          "tables": [
+            "1"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-echo.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/echochain.pdf",
+          "sha256": "c71c00b5aef819a7c4df883b986de6a98b70a4e51f4a7487f55f7afe433eb76d"
+        },
+        "svg": {
+          "file": "figures/performance/echochain.svg",
+          "sha256": "beb9d280d758a9b3126bf30139718599632e8acc8580617670a7973e42f4fa87"
+        },
+        "png": {
+          "file": "figures/performance/echochain.png",
+          "sha256": "ed0ce005cb640931790086357c6c19523aadcb0b617e1a570bcf878f627caf29"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "Grok Voice Agent",
+          "scores": [
+            48.5,
+            85.5
+          ]
+        },
+        {
+          "model": "GPT-realtime-2025-08-28",
+          "scores": [
+            45,
+            81.1
+          ]
+        },
+        {
+          "model": "Amazon Nova Sonic 2",
+          "scores": [
+            26.5,
+            78.1
+          ]
+        },
+        {
+          "model": "Gemini Live 2.5 native audio",
+          "scores": [
+            16.5,
+            64.8
+          ]
+        }
+      ]
+    }
+  ]
+}

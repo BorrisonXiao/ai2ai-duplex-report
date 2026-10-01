@@ -1,0 +1,970 @@
+{
+  "instruction": "Now craft a latex document, using a proper template (e.g., ICLR or something), as also a report, but 1). be a bit more focused, for each category, list the top-5 most relevant systems/papers. 2). Based on the original proposal, also list the major research questions that we might be able to pursue. For instance, the think while listen or think while speaking, etc., are some good formulations. Also I think the key is synchronization, both speaking sync the listening sync, since LLM is not time-aware. Create also a preview for the drafted latex.",
+  "date": "2026-09-30",
+  "grounded_on": "literature.json",
+  "grounding_status": "grounded",
+  "status": "Unranked candidate ideas; hypotheses, not results or established novelty",
+  "light_filter": "Eight retained; two obvious directions excluded for duplication or pilot infeasibility. No independent external judging was requested or performed.",
+  "ideas": [
+    {
+      "id": "I1",
+      "research_question": "RQ1",
+      "title": "Calibrated prefix sufficiency under late constraints",
+      "one_liner": "Trigger private reasoning from causal prefix sufficiency and correction risk.",
+      "hypothesis": "Causal correction-risk calibration improves accuracy/latency over fixed prefix length without learning only speech duration.",
+      "proposed_method": "Trigger private reasoning from causal prefix sufficiency and correction risk. Predict prefix sufficiency from causal input and track hypothesis versions; allow private inference before authorizing a task-specific spoken claim.",
+      "minimal_experiment": "Train a small calibration head on paired shared-prefix questions; hold out templates/speaking rates and compare with fixed/end-of-turn triggers.",
+      "contribution_type": "method",
+      "novelty_rationale": "Early or latent reasoning while listening already exists; the candidate contribution is risk-calibrated revision under delayed/jittered evidence, not the concurrency claim itself.",
+      "closest_prior_work": "Shih, Yi-Jen et al., 2026 — Can Speech LLMs Think while Listening? (https://arxiv.org/abs/2510.07497); Wu, Donghang et al., 2026 — The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning (https://arxiv.org/abs/2603.17837)",
+      "closest_prior_work_records": [
+        {
+          "key": "thinklisten",
+          "title": "Can Speech LLMs Think while Listening?",
+          "authors": [
+            "Shih, Yi-Jen",
+            "Raj, Desh",
+            "Wu, Chunyang",
+            "Zhou, Wei",
+            "Bong, SK",
+            "Gaur, Yashesh",
+            "Mahadeokar, Jay",
+            "Kalinli, Ozlem",
+            "Seltzer, Mike"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2510.07497"
+        },
+        {
+          "key": "flair",
+          "title": "The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning",
+          "authors": [
+            "Wu, Donghang",
+            "Zhang, Tianyu",
+            "Li, Yuxin",
+            "Liu, Hexin",
+            "Chen, Chen",
+            "Chng, Eng Siong",
+            "Bengio, Yoshua"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2603.17837"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 12--24 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "low"
+      },
+      "implementation_notes": "Small calibration head / inference controller; no foundation pretraining.",
+      "risk": "medium",
+      "risk_notes": "A sufficiency estimator may merely learn question-length or TTS cues.",
+      "expected_outcome": "Either a better latency/accuracy frontier or a measured limit on prefix-only calibration.",
+      "based_on_gaps": [
+        "G1",
+        "G5"
+      ]
+    },
+    {
+      "id": "I2",
+      "research_question": "RQ2",
+      "title": "Evidence-aware playback commitment fence",
+      "one_liner": "Admit task-specific output only while its evidence dependencies remain valid.",
+      "hypothesis": "Playback-stage dependency validation reduces stale audible claims beyond generation-stage validation alone.",
+      "proposed_method": "Admit task-specific output only while its evidence dependencies remain valid. Separate private formulation from articulation, annotate queued output with evidence/state dependencies, revalidate unplayed output and repair already audible claims.",
+      "minimal_experiment": "Inject corrections at generation, synthesis, queue and playback stages; compare the same model with and without playback revalidation.",
+      "contribution_type": "method",
+      "novelty_rationale": "Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.",
+      "closest_prior_work": "Wu, Donghang et al., 2025 — Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models (https://arxiv.org/abs/2510.09592); Lin, Bin et al., 2026 — StepAudio 3 Realtime Technical Report (https://arxiv.org/abs/2609.14005); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Modi, Smit Nautambhai et al., 2026 — EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions (https://arxiv.org/abs/2604.16456)",
+      "closest_prior_work_records": [
+        {
+          "key": "mindpaced",
+          "title": "Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models",
+          "authors": [
+            "Wu, Donghang",
+            "Zhang, Haoyang",
+            "Chen, Jun",
+            "Xiangyu",
+            "Zhang",
+            "Liu, Hexin",
+            "Chng, Eng Siong",
+            "Tian, Fei",
+            "Yang, Xuerui",
+            "Zhang, Xiangyu",
+            "Jiang, Daxin",
+            "Yu, Gang"
+          ],
+          "year": "2025",
+          "url": "https://arxiv.org/abs/2510.09592"
+        },
+        {
+          "key": "step3",
+          "title": "StepAudio 3 Realtime Technical Report",
+          "authors": [
+            "Lin, Bin",
+            "Zhao, Bo",
+            "Zhang, Boyang",
+            "Wu, Boyong",
+            "Yan, Chao",
+            "Geng, Chen",
+            "Wu, Chen",
+            "Yi, Cheng",
+            "Feng, Chengli",
+            "Zhu, Chenglin",
+            "Feng, Chengting",
+            "Yao, Chengyuan",
+            "Liu, Daijiao",
+            "Wan, DanNi",
+            "Jiang, Daxin",
+            "Li, Dongjian",
+            "Pang, Dongqing",
+            "Tian, Fei",
+            "Tian, Feng",
+            "Li, Future",
+            "Yu, Gang",
+            "Yang, Guanglong",
+            "Zhang, Haoyang",
+            "Wang, Hongyuan",
+            "Peng, Jia",
+            "Song, Jiahao",
+            "Xue, Jialong",
+            "Fan, Jiamin",
+            "Zhen, Jiangjie",
+            "Gao, Jianzheng",
+            "Wen, Jincheng",
+            "Liang, Jinghua",
+            "Gong, Jinglan",
+            "Chen, Jun",
+            "Xie, Li",
+            "Zhao, Liang",
+            "Zhang, Lifang",
+            "Ji, Lingli",
+            "Cai, Lun",
+            "Xu, Min",
+            "Li, Peilin",
+            "Yang, Peng",
+            "Tan, Pengfei",
+            "Lin, Qingjian",
+            "Du, Qinxin",
+            "Xiong, Ruijie",
+            "Li, Runze",
+            "Hu, Shenghua",
+            "Qin, Shengqian",
+            "Qiu, Shi",
+            "Tu, Siqi",
+            "Zhou, Siyi",
+            "Deng, Tianjiao",
+            "Lu, Wanying",
+            "Niu, Weiming",
+            "Sun, Wen",
+            "Qu, WenWen",
+            "Zhang, Xiangyu",
+            "Zhang, Xianwei",
+            "Su, Xiaosu",
+            "Chen, Xing",
+            "Liu, Xinyu",
+            "Yang, Xuerui",
+            "Wu, Yan",
+            "Li, Yang",
+            "Yang, Yang",
+            "Huang, Yechang",
+            "Zhu, Yibo",
+            "Zhang, Yifan",
+            "Yan, Yinuo",
+            "Chen, Youjun",
+            "Fu, Yu",
+            "Luo, Yu",
+            "Zhou, Yu",
+            "Chen, Yujie",
+            "Wang, Yumang",
+            "Ju, Yunzhou",
+            "Yang, Yuxiang",
+            "Li, Yuxin",
+            "Zhang, Yuxin",
+            "Liu, Zekai",
+            "Yao, Zengwei",
+            "Yuan, Zhaoxin",
+            "Mou, Zhenwei",
+            "Zhang, Zhiquan",
+            "Wu, Zhiyue",
+            "Li, Zichao",
+            "Zhou, Zichao",
+            "Ren, Ziqi",
+            "Wang, Zixuan"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.14005"
+        },
+        {
+          "key": "adapt",
+          "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
+          "authors": [
+            "Zhou, Zhiyang",
+            "Shang, Yingxin",
+            "Wang, Zhou",
+            "Cai, Hongwei",
+            "Wang, Weixu",
+            "Zhou, Shuran",
+            "Zhao, Shuofeng",
+            "Fan, Wenke",
+            "Guo, Qingxiang",
+            "Yang, Dawei",
+            "Yang, Lin",
+            "Song, Yang"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.29217"
+        },
+        {
+          "key": "echochain",
+          "title": "EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions",
+          "authors": [
+            "Modi, Smit Nautambhai",
+            "Mahajan, Gandharv",
+            "Wetter, Marc",
+            "Welles, Randall"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2604.16456"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 8--20 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "medium"
+      },
+      "implementation_notes": "Instrument text, synthesis and playback queues and dependency tags.",
+      "risk": "medium",
+      "risk_notes": "Word/audio boundaries and mutable decoder state may prevent selective cancellation.",
+      "expected_outcome": "Quantify whether queue-level revalidation reduces stale audible claims.",
+      "based_on_gaps": [
+        "G1",
+        "G2"
+      ]
+    },
+    {
+      "id": "I3",
+      "research_question": "RQ2",
+      "title": "Correction-aware bounded articulation lead",
+      "one_liner": "Adapt unplayed speech duration to correction risk rather than a token-count limit.",
+      "hypothesis": "A duration- and correction-risk-aware cap offers a better stale-claim/fluency frontier than a fixed lead limit.",
+      "proposed_method": "Adapt unplayed speech duration to correction risk rather than a token-count limit. Separate private formulation from articulation, annotate queued output with evidence/state dependencies, revalidate unplayed output and repair already audible claims.",
+      "minimal_experiment": "Sweep fixed-duration queue caps against a risk-aware cap on matched interrupted dialogues; report stale seconds, underruns and repair quality.",
+      "contribution_type": "method",
+      "novelty_rationale": "Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.",
+      "closest_prior_work": "Wu, Donghang et al., 2025 — Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models (https://arxiv.org/abs/2510.09592); Lin, Bin et al., 2026 — StepAudio 3 Realtime Technical Report (https://arxiv.org/abs/2609.14005); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Modi, Smit Nautambhai et al., 2026 — EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions (https://arxiv.org/abs/2604.16456)",
+      "closest_prior_work_records": [
+        {
+          "key": "mindpaced",
+          "title": "Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models",
+          "authors": [
+            "Wu, Donghang",
+            "Zhang, Haoyang",
+            "Chen, Jun",
+            "Xiangyu",
+            "Zhang",
+            "Liu, Hexin",
+            "Chng, Eng Siong",
+            "Tian, Fei",
+            "Yang, Xuerui",
+            "Zhang, Xiangyu",
+            "Jiang, Daxin",
+            "Yu, Gang"
+          ],
+          "year": "2025",
+          "url": "https://arxiv.org/abs/2510.09592"
+        },
+        {
+          "key": "step3",
+          "title": "StepAudio 3 Realtime Technical Report",
+          "authors": [
+            "Lin, Bin",
+            "Zhao, Bo",
+            "Zhang, Boyang",
+            "Wu, Boyong",
+            "Yan, Chao",
+            "Geng, Chen",
+            "Wu, Chen",
+            "Yi, Cheng",
+            "Feng, Chengli",
+            "Zhu, Chenglin",
+            "Feng, Chengting",
+            "Yao, Chengyuan",
+            "Liu, Daijiao",
+            "Wan, DanNi",
+            "Jiang, Daxin",
+            "Li, Dongjian",
+            "Pang, Dongqing",
+            "Tian, Fei",
+            "Tian, Feng",
+            "Li, Future",
+            "Yu, Gang",
+            "Yang, Guanglong",
+            "Zhang, Haoyang",
+            "Wang, Hongyuan",
+            "Peng, Jia",
+            "Song, Jiahao",
+            "Xue, Jialong",
+            "Fan, Jiamin",
+            "Zhen, Jiangjie",
+            "Gao, Jianzheng",
+            "Wen, Jincheng",
+            "Liang, Jinghua",
+            "Gong, Jinglan",
+            "Chen, Jun",
+            "Xie, Li",
+            "Zhao, Liang",
+            "Zhang, Lifang",
+            "Ji, Lingli",
+            "Cai, Lun",
+            "Xu, Min",
+            "Li, Peilin",
+            "Yang, Peng",
+            "Tan, Pengfei",
+            "Lin, Qingjian",
+            "Du, Qinxin",
+            "Xiong, Ruijie",
+            "Li, Runze",
+            "Hu, Shenghua",
+            "Qin, Shengqian",
+            "Qiu, Shi",
+            "Tu, Siqi",
+            "Zhou, Siyi",
+            "Deng, Tianjiao",
+            "Lu, Wanying",
+            "Niu, Weiming",
+            "Sun, Wen",
+            "Qu, WenWen",
+            "Zhang, Xiangyu",
+            "Zhang, Xianwei",
+            "Su, Xiaosu",
+            "Chen, Xing",
+            "Liu, Xinyu",
+            "Yang, Xuerui",
+            "Wu, Yan",
+            "Li, Yang",
+            "Yang, Yang",
+            "Huang, Yechang",
+            "Zhu, Yibo",
+            "Zhang, Yifan",
+            "Yan, Yinuo",
+            "Chen, Youjun",
+            "Fu, Yu",
+            "Luo, Yu",
+            "Zhou, Yu",
+            "Chen, Yujie",
+            "Wang, Yumang",
+            "Ju, Yunzhou",
+            "Yang, Yuxiang",
+            "Li, Yuxin",
+            "Zhang, Yuxin",
+            "Liu, Zekai",
+            "Yao, Zengwei",
+            "Yuan, Zhaoxin",
+            "Mou, Zhenwei",
+            "Zhang, Zhiquan",
+            "Wu, Zhiyue",
+            "Li, Zichao",
+            "Zhou, Zichao",
+            "Ren, Ziqi",
+            "Wang, Zixuan"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.14005"
+        },
+        {
+          "key": "adapt",
+          "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
+          "authors": [
+            "Zhou, Zhiyang",
+            "Shang, Yingxin",
+            "Wang, Zhou",
+            "Cai, Hongwei",
+            "Wang, Weixu",
+            "Zhou, Shuran",
+            "Zhao, Shuofeng",
+            "Fan, Wenke",
+            "Guo, Qingxiang",
+            "Yang, Dawei",
+            "Yang, Lin",
+            "Song, Yang"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.29217"
+        },
+        {
+          "key": "echochain",
+          "title": "EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions",
+          "authors": [
+            "Modi, Smit Nautambhai",
+            "Mahajan, Gandharv",
+            "Wetter, Marc",
+            "Welles, Randall"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2604.16456"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 8--20 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "medium"
+      },
+      "implementation_notes": "Duration estimator plus two- or three-level queue cap.",
+      "risk": "medium",
+      "risk_notes": "Short buffers may trade false commitments for stutter/underruns.",
+      "expected_outcome": "A commitment/latency/fluency Pareto curve, including negative results.",
+      "based_on_gaps": [
+        "G1",
+        "G4"
+      ]
+    },
+    {
+      "id": "I4",
+      "research_question": "RQ3",
+      "title": "Listening freshness under speaking load",
+      "one_liner": "Reserve ingestion capacity to keep new evidence from becoming stale during generation.",
+      "hypothesis": "Reserving ingestion capacity reduces correction failures attributable to generation contention, but not intrinsic encoder lookahead.",
+      "proposed_method": "Reserve ingestion capacity to keep new evidence from becoming stale during generation. Prioritize fresh input ingestion under generation load; associate updates with speaker, addressee, task and hypothesis versions before invalidating dependent output.",
+      "minimal_experiment": "Under matched speaking load, compare FIFO and ingestion-priority scheduling with a fixed encoder; log capture/arrival/incorporation delays separately.",
+      "contribution_type": "method",
+      "novelty_rationale": "Turn-taking and addressee tests are not new. The candidate is their coupling to causal reasoning-state ownership; attribution noise must be separated from reasoning failure.",
+      "closest_prior_work": "Ma, Chengqian et al., 2026 — Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue (https://arxiv.org/abs/2609.31948); Riera, Pablo et al., 2026 — Synchronization and Turn-Taking in Full-Duplex Speech Dialogue Models (https://arxiv.org/abs/2605.20356); Ant Group et al., 2026 — Realtime-Venus: A full-duplex interaction system with asynchronous delegation (https://arxiv.org/abs/2609.13814)",
+      "closest_prior_work_records": [
+        {
+          "key": "mpe",
+          "title": "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue",
+          "authors": [
+            "Ma, Chengqian",
+            "Feng, Wenhao",
+            "Jin, Weixuan",
+            "Dai, Gaole",
+            "Xie, Tianyu",
+            "Ma, Yuexiao",
+            "Kang, Zhaolu",
+            "Zhao, Xiangyu",
+            "Zheng, Xiawu",
+            "Chao, Fei"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.31948"
+        },
+        {
+          "key": "synchrony",
+          "title": "Synchronization and Turn-Taking in Full-Duplex Speech Dialogue Models",
+          "authors": [
+            "Riera, Pablo",
+            "Brusco, Pablo",
+            "Kuo, Cristina",
+            "Sancinetti, Marcelo",
+            "Branavan, S. R. K."
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2605.20356"
+        },
+        {
+          "key": "venus",
+          "title": "Realtime-Venus: A full-duplex interaction system with asynchronous delegation",
+          "authors": [
+            "Ant Group"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.13814"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 6--16 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "medium"
+      },
+      "implementation_notes": "Instrument ingested-input watermarks and scheduler priorities.",
+      "risk": "low",
+      "risk_notes": "Freshness may be dominated by encoder lookahead rather than scheduler priority.",
+      "expected_outcome": "Identify whether contention or intrinsic lookahead limits correction responsiveness.",
+      "based_on_gaps": [
+        "G2",
+        "G4"
+      ]
+    },
+    {
+      "id": "I5",
+      "research_question": "RQ3",
+      "title": "Speaker-owned revision states",
+      "one_liner": "Invalidate only hypotheses and output that depend on the speaker's relevant correction.",
+      "hypothesis": "Speaker-owned dependency states reduce irrelevant invalidation and stale relevant answers relative to a global state.",
+      "proposed_method": "Invalidate only hypotheses and output that depend on the speaker's relevant correction. Prioritize fresh input ingestion under generation load; associate updates with speaker, addressee, task and hypothesis versions before invalidating dependent output.",
+      "minimal_experiment": "Cross relevant correction/backchannel/other-directed input with oracle and predicted speaker labels; measure attribution and reasoning errors separately.",
+      "contribution_type": "method",
+      "novelty_rationale": "Turn-taking and addressee tests are not new. The candidate is their coupling to causal reasoning-state ownership; attribution noise must be separated from reasoning failure.",
+      "closest_prior_work": "Ma, Chengqian et al., 2026 — Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue (https://arxiv.org/abs/2609.31948); Riera, Pablo et al., 2026 — Synchronization and Turn-Taking in Full-Duplex Speech Dialogue Models (https://arxiv.org/abs/2605.20356); Ant Group et al., 2026 — Realtime-Venus: A full-duplex interaction system with asynchronous delegation (https://arxiv.org/abs/2609.13814)",
+      "closest_prior_work_records": [
+        {
+          "key": "mpe",
+          "title": "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue",
+          "authors": [
+            "Ma, Chengqian",
+            "Feng, Wenhao",
+            "Jin, Weixuan",
+            "Dai, Gaole",
+            "Xie, Tianyu",
+            "Ma, Yuexiao",
+            "Kang, Zhaolu",
+            "Zhao, Xiangyu",
+            "Zheng, Xiawu",
+            "Chao, Fei"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.31948"
+        },
+        {
+          "key": "synchrony",
+          "title": "Synchronization and Turn-Taking in Full-Duplex Speech Dialogue Models",
+          "authors": [
+            "Riera, Pablo",
+            "Brusco, Pablo",
+            "Kuo, Cristina",
+            "Sancinetti, Marcelo",
+            "Branavan, S. R. K."
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2605.20356"
+        },
+        {
+          "key": "venus",
+          "title": "Realtime-Venus: A full-duplex interaction system with asynchronous delegation",
+          "authors": [
+            "Ant Group"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.13814"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 12--28 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "high"
+      },
+      "implementation_notes": "First oracle identities, then predicted diarization/addressee labels.",
+      "risk": "high",
+      "risk_notes": "Attribution mistakes may erase any gain from state separation.",
+      "expected_outcome": "Decompose attribution errors versus stale shared-reasoning errors.",
+      "based_on_gaps": [
+        "G2",
+        "G5"
+      ]
+    },
+    {
+      "id": "I6",
+      "research_question": "RQ4",
+      "title": "Evidence-age-aware adaptive temporal quantum",
+      "one_liner": "Adapt chunk duration using evidence age, playback budget and compute deadlines.",
+      "hypothesis": "An evidence-age-aware controller has fewer deadline misses at matched accuracy than a fixed temporal quantum under jitter/load.",
+      "proposed_method": "Adapt chunk duration using evidence age, playback budget and compute deadlines. Expose input watermarks, deadlines and predicted audio lead to the controller; adapt ingestion/generation quantum without using future speech or privileging one arm's compute.",
+      "minimal_experiment": "Replay identical speech under controlled jitter/rates/contention using the same backbone and feature extractor; compare fixed and two/three-level scheduling.",
+      "contribution_type": "method",
+      "novelty_rationale": "Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.",
+      "closest_prior_work": "Veluri, Bandhav et al., 2024 — Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents (https://arxiv.org/abs/2409.15594); Défossez, Alexandre et al., 2024 — Moshi: a speech-text foundation model for real-time dialogue (https://arxiv.org/abs/2410.00037); Cui, Junbo et al., 2026 — MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction (https://arxiv.org/abs/2604.27393); Zhang, Haoyang et al., 2026 — DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action (https://arxiv.org/abs/2605.20755); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686)",
+      "closest_prior_work_records": [
+        {
+          "key": "syncllm",
+          "title": "Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents",
+          "authors": [
+            "Veluri, Bandhav",
+            "Peloquin, Benjamin N",
+            "Yu, Bokai",
+            "Gong, Hongyu",
+            "Gollakota, Shyamnath"
+          ],
+          "year": "2024",
+          "url": "https://arxiv.org/abs/2409.15594"
+        },
+        {
+          "key": "moshi",
+          "title": "Moshi: a speech-text foundation model for real-time dialogue",
+          "authors": [
+            "Défossez, Alexandre",
+            "Mazaré, Laurent",
+            "Orsini, Manu",
+            "Royer, Amélie",
+            "Pérez, Patrick",
+            "Jégou, Hervé",
+            "Grave, Edouard",
+            "Zeghidour, Neil"
+          ],
+          "year": "2024",
+          "url": "https://arxiv.org/abs/2410.00037"
+        },
+        {
+          "key": "minicpm",
+          "title": "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction",
+          "authors": [
+            "Cui, Junbo",
+            "Xu, Bokai",
+            "Wang, Chongyi",
+            "Yu, Tianyu",
+            "Sun, Weiyue",
+            "Xu, Yingjing",
+            "Wang, Tianran",
+            "He, Zhihui",
+            "Ma, Wenshuo",
+            "Cai, Tianchi",
+            "Gui, Jiancheng",
+            "Zhang, Luoyuan",
+            "Sun, Xian",
+            "Huang, Fuwei",
+            "Chen, Moye",
+            "Lin, Zhuo",
+            "Liu, Hanyu",
+            "Gui, Qingxin",
+            "Han, Qingzhe",
+            "Wen, Yuyang",
+            "Liu, Huiping",
+            "Wang, Rongkang",
+            "Zhang, Yaqi",
+            "Wei, Hongliang",
+            "Chen, Chi",
+            "Li, You",
+            "Fang, Kechen",
+            "Zhou, Jie",
+            "Li, Yuxuan",
+            "Zeng, Guoyang",
+            "Xiao, Chaojun",
+            "Lin, Yankai",
+            "Han, Xu",
+            "Sun, Maosong",
+            "Liu, Zhiyuan",
+            "Yao, Yuan"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2604.27393"
+        },
+        {
+          "key": "duplexsla",
+          "title": "DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action",
+          "authors": [
+            "Zhang, Haoyang",
+            "Chen, Jun",
+            "Wu, Donghang",
+            "Li, Yuxin",
+            "Zhang, Yuxin",
+            "Zhang, Xiangyu Tony",
+            "Liu, Che",
+            "Lin, Qingjian",
+            "Peng, Yizhou",
+            "Liu, Hexin",
+            "Chng, Eng Siong",
+            "Yan, Chao",
+            "Wu, Boyong",
+            "Huang, Yechang",
+            "Yang, Xuerui",
+            "Tian, Fei"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2605.20755"
+        },
+        {
+          "key": "adapt",
+          "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
+          "authors": [
+            "Zhou, Zhiyang",
+            "Shang, Yingxin",
+            "Wang, Zhou",
+            "Cai, Hongwei",
+            "Wang, Weixu",
+            "Zhou, Shuran",
+            "Zhao, Shuofeng",
+            "Fan, Wenke",
+            "Guo, Qingxiang",
+            "Yang, Dawei",
+            "Yang, Lin",
+            "Song, Yang"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.29217"
+        },
+        {
+          "key": "tauvoice",
+          "title": "τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains",
+          "authors": [
+            "Ray, Soham",
+            "Dhandhania, Keshav",
+            "Barres, Victor",
+            "Narasimhan, Karthik"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2603.13686"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 8--24 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "high"
+      },
+      "implementation_notes": "Controller around a released streaming runtime; fixed feature extractors.",
+      "risk": "high",
+      "risk_notes": "Changing quantum can mismatch the model's training protocol.",
+      "expected_outcome": "Measure robustness boundaries rather than claiming universal adaptivity.",
+      "based_on_gaps": [
+        "G4"
+      ]
+    },
+    {
+      "id": "I7",
+      "research_question": "RQ5",
+      "title": "Joint backend-result and output dependency validation",
+      "one_liner": "Check state dependencies both when a job returns and before its answer becomes audible.",
+      "hypothesis": "Joint backend and playback dependency validation improves corrected outcomes beyond existing indexed cancellation and stale-result suppression.",
+      "proposed_method": "Check state dependencies both when a job returns and before its answer becomes audible. Tag jobs/results and output segments with dependencies, reject invalidated results, and recompute only affected work; use read-only or simulated tools in the pilot.",
+      "minimal_experiment": "Vary simulated backend delay and correction stage; compare blind admission, cancel/stale suppression, and joint speaker/task-output validation.",
+      "contribution_type": "method",
+      "novelty_rationale": "AdaptDuplex already cancels jobs and suppresses stale results. Candidate novelty requires speaker-specific dependency plus audible-commitment consistency, not renaming that mechanism.",
+      "closest_prior_work": "Ant Group et al., 2026 — Realtime-Venus: A full-duplex interaction system with asynchronous delegation (https://arxiv.org/abs/2609.13814); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Go, Seonghyeon et al., 2026 — Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends (https://arxiv.org/abs/2609.33443); Lin, Guan-Ting et al., 2026 — Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency (https://arxiv.org/abs/2604.04847); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686)",
+      "closest_prior_work_records": [
+        {
+          "key": "venus",
+          "title": "Realtime-Venus: A full-duplex interaction system with asynchronous delegation",
+          "authors": [
+            "Ant Group"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.13814"
+        },
+        {
+          "key": "adapt",
+          "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
+          "authors": [
+            "Zhou, Zhiyang",
+            "Shang, Yingxin",
+            "Wang, Zhou",
+            "Cai, Hongwei",
+            "Wang, Weixu",
+            "Zhou, Shuran",
+            "Zhao, Shuofeng",
+            "Fan, Wenke",
+            "Guo, Qingxiang",
+            "Yang, Dawei",
+            "Yang, Lin",
+            "Song, Yang"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.29217"
+        },
+        {
+          "key": "contextspan",
+          "title": "Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends",
+          "authors": [
+            "Go, Seonghyeon",
+            "Kim, Yongwoo",
+            "Cha, Hyeonjin",
+            "Shin, Jaeho"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.33443"
+        },
+        {
+          "key": "fdb3",
+          "title": "Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency",
+          "authors": [
+            "Lin, Guan-Ting",
+            "Chen, Chen",
+            "Chen, Zhehuai",
+            "Lee, Hung-yi"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2604.04847"
+        },
+        {
+          "key": "tauvoice",
+          "title": "τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains",
+          "authors": [
+            "Ray, Soham",
+            "Dhandhania, Keshav",
+            "Barres, Victor",
+            "Narasimhan, Karthik"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2603.13686"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 8--20 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "medium"
+      },
+      "implementation_notes": "Versioned read-only/simulated jobs; cancellation baseline explicitly included.",
+      "risk": "medium",
+      "risk_notes": "This duplicates AdaptDuplex unless joint speaker/output dependencies add measurable value.",
+      "expected_outcome": "Determine whether a second commitment-stage check improves corrected task success.",
+      "based_on_gaps": [
+        "G2",
+        "G3"
+      ]
+    },
+    {
+      "id": "I8",
+      "research_question": "RQ4",
+      "title": "Virtual-time versus wall-clock consistency audit",
+      "one_liner": "Compare identical task traces under virtual replay and physical inference/playback time.",
+      "hypothesis": "Some virtual-time task-success advantages disappear or reverse when real inference/playback deadlines are enforced.",
+      "proposed_method": "Compare identical task traces under virtual replay and physical inference/playback time. Expose input watermarks, deadlines and predicted audio lead to the controller; adapt ingestion/generation quantum without using future speech or privileging one arm's compute.",
+      "minimal_experiment": "Replay the same deterministic tasks and model traces with virtual advancement versus measured physical time; isolate runtime/provider confounds.",
+      "contribution_type": "diagnostic",
+      "novelty_rationale": "Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.",
+      "closest_prior_work": "Veluri, Bandhav et al., 2024 — Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents (https://arxiv.org/abs/2409.15594); Défossez, Alexandre et al., 2024 — Moshi: a speech-text foundation model for real-time dialogue (https://arxiv.org/abs/2410.00037); Cui, Junbo et al., 2026 — MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction (https://arxiv.org/abs/2604.27393); Zhang, Haoyang et al., 2026 — DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action (https://arxiv.org/abs/2605.20755); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686)",
+      "closest_prior_work_records": [
+        {
+          "key": "syncllm",
+          "title": "Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents",
+          "authors": [
+            "Veluri, Bandhav",
+            "Peloquin, Benjamin N",
+            "Yu, Bokai",
+            "Gong, Hongyu",
+            "Gollakota, Shyamnath"
+          ],
+          "year": "2024",
+          "url": "https://arxiv.org/abs/2409.15594"
+        },
+        {
+          "key": "moshi",
+          "title": "Moshi: a speech-text foundation model for real-time dialogue",
+          "authors": [
+            "Défossez, Alexandre",
+            "Mazaré, Laurent",
+            "Orsini, Manu",
+            "Royer, Amélie",
+            "Pérez, Patrick",
+            "Jégou, Hervé",
+            "Grave, Edouard",
+            "Zeghidour, Neil"
+          ],
+          "year": "2024",
+          "url": "https://arxiv.org/abs/2410.00037"
+        },
+        {
+          "key": "minicpm",
+          "title": "MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction",
+          "authors": [
+            "Cui, Junbo",
+            "Xu, Bokai",
+            "Wang, Chongyi",
+            "Yu, Tianyu",
+            "Sun, Weiyue",
+            "Xu, Yingjing",
+            "Wang, Tianran",
+            "He, Zhihui",
+            "Ma, Wenshuo",
+            "Cai, Tianchi",
+            "Gui, Jiancheng",
+            "Zhang, Luoyuan",
+            "Sun, Xian",
+            "Huang, Fuwei",
+            "Chen, Moye",
+            "Lin, Zhuo",
+            "Liu, Hanyu",
+            "Gui, Qingxin",
+            "Han, Qingzhe",
+            "Wen, Yuyang",
+            "Liu, Huiping",
+            "Wang, Rongkang",
+            "Zhang, Yaqi",
+            "Wei, Hongliang",
+            "Chen, Chi",
+            "Li, You",
+            "Fang, Kechen",
+            "Zhou, Jie",
+            "Li, Yuxuan",
+            "Zeng, Guoyang",
+            "Xiao, Chaojun",
+            "Lin, Yankai",
+            "Han, Xu",
+            "Sun, Maosong",
+            "Liu, Zhiyuan",
+            "Yao, Yuan"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2604.27393"
+        },
+        {
+          "key": "duplexsla",
+          "title": "DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action",
+          "authors": [
+            "Zhang, Haoyang",
+            "Chen, Jun",
+            "Wu, Donghang",
+            "Li, Yuxin",
+            "Zhang, Yuxin",
+            "Zhang, Xiangyu Tony",
+            "Liu, Che",
+            "Lin, Qingjian",
+            "Peng, Yizhou",
+            "Liu, Hexin",
+            "Chng, Eng Siong",
+            "Yan, Chao",
+            "Wu, Boyong",
+            "Huang, Yechang",
+            "Yang, Xuerui",
+            "Tian, Fei"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2605.20755"
+        },
+        {
+          "key": "adapt",
+          "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
+          "authors": [
+            "Zhou, Zhiyang",
+            "Shang, Yingxin",
+            "Wang, Zhou",
+            "Cai, Hongwei",
+            "Wang, Weixu",
+            "Zhou, Shuran",
+            "Zhao, Shuofeng",
+            "Fan, Wenke",
+            "Guo, Qingxiang",
+            "Yang, Dawei",
+            "Yang, Lin",
+            "Song, Yang"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.29217"
+        },
+        {
+          "key": "tauvoice",
+          "title": "τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains",
+          "authors": [
+            "Ray, Soham",
+            "Dhandhania, Keshav",
+            "Barres, Victor",
+            "Narasimhan, Karthik"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2603.13686"
+        }
+      ],
+      "feasibility": {
+        "compute": "Pilot estimate, not measured: 4--12 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment.",
+        "data": "200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out.",
+        "implementation": "medium"
+      },
+      "implementation_notes": "Timestamped trace harness, controlled delay and queue instrumentation.",
+      "risk": "low",
+      "risk_notes": "Provider/runtime differences may confound the timing comparison.",
+      "expected_outcome": "Expose which conclusions survive real deadlines and which are simulator artifacts.",
+      "based_on_gaps": [
+        "G1",
+        "G4"
+      ]
+    }
+  ],
+  "removed": [
+    {
+      "title": "Standalone indexed backend cancellation and stale-result suppression",
+      "reason": "Already explicitly implemented by AdaptDuplex (arXiv:2609.29217); no distinct research claim on its own."
+    },
+    {
+      "title": "Foundation-scale reproduction of FLAIR or StepAudio 3 Realtime",
+      "reason": "Not a feasible small pilot: complete training mixture not located and documented foundation-scale compute exceeds the skill's one-week pilot bound."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+\begin{tikzpicture}[arch]
+\node[audio,text width=1.20cm] (u) at (0.72,0) {Live audio};
+\node[model,text width=3.35cm] (front) at (4.0,0) {MiniCPM-o-derived frontend: persistent context; 1 s loop};
+\node[voice,text width=2.25cm] (out) at (9.0,0) {Foreground text + speech output};
+\node[mind,text width=3.35cm] (task) at (4.0,-1.67) {Harness: snapshot request context; dispatch backend};
+\node[mind,text width=2.25cm] (reply) at (9.0,-1.67) {Prepare reply text; same-session return};
+\draw[flow] (u)--(front);
+\draw[flow] (front)--(out);
+\draw[flow] (front.south)--node[note,left] {private delegation} (task.north);
+\draw[flow] (task)--(reply);
+\draw[feedback] (reply.south)--(9.0,-2.35)--node[note,below] {prepared text admitted at a later input boundary} (1.60,-2.35)--(1.60,-0.65)--(front.south west);
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[arch]
+\node[audio,text width=1.00cm] (u) at (0.65,0) {User audio};
+\node[audio,text width=1.70cm] (enc) at (2.55,0) {Whisper + projector};
+\node[model,text width=2.00cm] (stream) at (5.05,0) {Omni-Flow timed stream};
+\node[model,text width=2.10cm] (lm) at (7.85,0) {Qwen3-8B text backbone};
+\node[mind,text width=1.90cm] (text) at (10.65,0) {Text + hidden state; listen / speak};
+\node[audio,text width=2.30cm] (speech) at (7.75,-1.65) {Small Llama decoder: S3 tokens};
+\node[voice,text width=1.75cm] (wave) at (10.70,-1.65) {Streaming flow decoder};
+\draw[flow] (u)--(enc);
+\draw[flow] (enc)--(stream);
+\draw[flow] (stream)--(lm);
+\draw[flow] (lm)--(text);
+\draw[flow] (text.south)--(10.65,-0.82)--(7.75,-0.82)--(speech.north);
+\draw[flow] (speech)--(wave);
+\draw[flow] (wave.south)--(10.70,-2.27)--node[note,right] {audio out} (10.70,-2.48);
+\draw[feedback] (text.east)--(12.05,0)--(12.05,0.92)--node[note,above] {next-window context} (5.05,0.92)--(stream.north);
+\node[note,text width=5.1cm,anchor=west] at (0.0,-1.65) {1 s interaction windows; main LLM stays in the text domain. Speech token production is delegated to the small decoder.};
+\end{tikzpicture}

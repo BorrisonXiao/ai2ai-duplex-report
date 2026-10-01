@@ -1,0 +1,12 @@
+\begin{tikzpicture}[arch]
+\node[audio,text width=1.85cm] (ctx) at (1.08,0) {AuT + adapter; speech / context};
+\node[mind,text width=2.85cm] (think) at (4.75,0.68) {Formulation: private reasoning};
+\node[model,text width=2.85cm] (talk) at (4.75,-0.78) {Articulation: response segments};
+\node[voice,text width=2.55cm] (out) at (9.0,-0.78) {Speech generator + queue / playback};
+\draw[flow] (ctx.north east)--(think.west);
+\draw[flow] (ctx.south east)--(talk.west);
+\draw[flow] (think.south)--node[note,right] {available thought} (talk.north);
+\draw[flow] (talk)--(out);
+\draw[feedback] (out.south)--(9.0,-1.72)--node[note,below] {playback progress paces output; spoken prefix remains context} (4.75,-1.72)--(talk.south);
+\node[note,text width=3.8cm] at (9.50,0.80) {Two concurrent calls, same weights. Step 3.7 Flash: 196B total / 11B active.};
+\end{tikzpicture}

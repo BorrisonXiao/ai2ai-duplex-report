@@ -1,0 +1,124 @@
+{
+  "revision_date": "2026-10-01",
+  "literature_cutoff": "2026-09-30",
+  "format": "Five brief pages, including reported performance, plus availability/references; speech-research discussion",
+  "figures": [
+    {
+      "id": "moshi",
+      "file": "figures/papers/moshi.png",
+      "paper_keys": [
+        "moshi",
+        "thinklisten"
+      ],
+      "source_figures": [
+        "Moshi Figure 1 (PDF p.7)",
+        "TWL Section 2.2; silent-CoT/streaming-ASR definition"
+      ],
+      "verified_details": "Original Moshi architecture screenshot. TWL is discussed in the caption but is not shown in the source figure."
+    },
+    {
+      "id": "minicpm",
+      "file": "figures/papers/minicpm.png",
+      "paper_keys": [
+        "minicpm"
+      ],
+      "source_figures": [
+        "MiniCPM-o Figure 4 (PDF p.4)",
+        "Sections 2--3"
+      ],
+      "verified_details": "Original full multimodal architecture screenshot, including the legend, video/audio inputs, text/hidden output and separate speech decoders."
+    },
+    {
+      "id": "flair",
+      "file": "figures/papers/flair.png",
+      "paper_keys": [
+        "flair"
+      ],
+      "source_figures": [
+        "FLAIR Figure 2 (PDF p.5)",
+        "Section 4"
+      ],
+      "verified_details": "Original latent-reasoning, data-stream and SDLM panels. The method's listening embedding is a soft vocabulary-weighted embedding; full-context expert is training-only."
+    },
+    {
+      "id": "step3",
+      "file": "figures/papers/step3.png",
+      "paper_keys": [
+        "step3",
+        "mindpaced"
+      ],
+      "source_figures": [
+        "StepAudio 3 Figure 7B (PDF p.14)",
+        "Section 6.3"
+      ],
+      "verified_details": "Original Think-While-Speaking panel B, retaining same-model formulation/articulation, MTP and audio path; adaptive-routing panel A omitted and explicitly labeled."
+    },
+    {
+      "id": "venus",
+      "file": "figures/papers/venus.png",
+      "paper_keys": [
+        "venus"
+      ],
+      "source_figures": [
+        "Venus Figure 3 (PDF p.5)",
+        "Sections 3.1--3.2 and 5"
+      ],
+      "verified_details": "Original interaction/capability loops, tracked work, dispatch and same-session return. Harness prepares wording; frontend selects delivery timing."
+    },
+    {
+      "id": "commitment",
+      "file": "figures/commitment.tex",
+      "paper_keys": [],
+      "source_figures": [],
+      "verified_details": "Original Monday-to-Tuesday correction example using plain user-speech, listening, reasoning and playback labels. Distinguishes received audio from processed input, answer-plan revision, already played speech and queued audio; not a published experiment or architecture guarantee."
+    },
+    {
+      "id": "timing",
+      "file": "figures/timing.tex",
+      "paper_keys": [
+        "moshi",
+        "duplexsla",
+        "adapt",
+        "minicpm",
+        "venus"
+      ],
+      "source_figures": [],
+      "verified_details": "Primary-paper modeling quanta only; distinct clock types, not measured response latencies."
+    }
+  ],
+  "timing_parameters": [
+    {
+      "name": "Moshi codec frame",
+      "values": [
+        0.08
+      ],
+      "cite": "moshi"
+    },
+    {
+      "name": "DuplexSLA shared clock",
+      "values": [
+        0.16
+      ],
+      "cite": "duplexsla"
+    },
+    {
+      "name": "AdaptDuplex window",
+      "values": [
+        0.48,
+        0.64,
+        0.96
+      ],
+      "cite": "adapt"
+    },
+    {
+      "name": "MiniCPM-o / Venus window",
+      "values": [
+        1.0
+      ],
+      "cite": "minicpm,venus"
+    }
+  ],
+  "architecture_provenance": "figures/papers/manifest.json",
+  "copyright_scope": "Five attributed architecture screenshots reproduced from the original papers; crop margins/prose and select StepAudio panel B. Labels/arrows are not edited; rights remain with original holders. Conceptual trace and timing plot are original. Full papers/private proposal are not redistributed.",
+  "omissions": "StepAudio Figure 7A (adaptive routing) omitted, explicitly labeled. Method details, losses and mixtures remain in detailed-report.pdf and original papers."
+}

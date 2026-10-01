@@ -1,0 +1,169 @@
+\documentclass{article}
+\usepackage{iclr2026_conference,times}
+\usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\else
+\usepackage{fontspec}
+\setmainfont{texgyretermes-regular.otf}[BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf,BoldItalicFont=texgyretermes-bolditalic.otf]
+\setsansfont{texgyreheros-regular.otf}[BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,BoldItalicFont=texgyreheros-bolditalic.otf]
+\setmonofont{texgyrecursor-regular.otf}
+\fi
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage{float,needspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[section]{placeins}
+\usepackage{xcolor}
+\definecolor{reportblue}{RGB}{36,75,117}
+\usepackage[colorlinks=true,linkcolor=reportblue,citecolor=reportblue,urlcolor=reportblue,breaklinks=true]{hyperref}
+\usepackage{xurl}
+\urlstyle{same}
+\iclrfinalcopy
+\newlength{\tablewidth}
+\newcommand{\researchquestion}[2]{\subsection{#1: #2}}
+\title{Synchronization for Full-Duplex Speech Reasoning: A Focused Literature Review and Research Agenda}
+\author{AI2AI Duplex Project}
+\hypersetup{pdftitle={Synchronization for Full-Duplex Speech Reasoning},pdfauthor={AI2AI Duplex Project},pdfsubject={Focused literature review and proposed research questions; 30 September 2026}}
+
+\begin{document}
+\maketitle
+% The official template sets an acceptance/review header. This is a report, not an ICLR submission.
+\lhead{AI2AI Duplex: technical report, 30 September 2026}
+\rhead{}
+\cfoot{\thepage}
+\raggedbottom
+
+\begin{abstract}
+Full-duplex speech systems increasingly listen, reason, speak and delegate work concurrently. Concurrency alone, however, does not guarantee that an audible answer reflects the evidence the system has actually incorporated. We revisit the original streaming, revision-aware, speaker-aware reasoning proposal through four focused shortlists: five reasoning/system designs, five synchronization papers, five benchmarks, and five conversational training resources. We distinguish released inference artifacts from complete training reproducibility and separate synthetic evaluation from natural conversational data. Our organizing question is how to synchronize input availability, reasoning state, speech generation and irreversible audible commitments. Five research questions address thinking while listening, thinking while speaking, listening while speaking, heterogeneous-clock scheduling, and revision during delegation. Each includes a falsifiable hypothesis, a small controlled experiment, and an explicit boundary against existing work. This is a literature-based research agenda, not an experimental results paper.
+\end{abstract}
+
+\section{Scope and the proposal's updated premise}
+\label{sec:scope}
+The original proposal asks when partial speech is semantically sufficient for reasoning, how reasoning should revise under late constraints or self-corrections, and which speaker's stream should update which hypothesis. Its proposed streaming encoder feeds a latent state containing partial semantics, task context, speaker attribution and uncertainty. The intended outcomes include answer correctness, time to the first \emph{useful} response, revision efficiency and robustness to corrections. These goals remain relevant; the update is to make synchronization an explicit modeling and systems problem rather than treating it as an incidental consequence of streaming.
+
+An autoregressive LLM's token position does not intrinsically specify elapsed wall-clock time or how much generated speech a listener has heard. This does \emph{not} mean a model cannot learn timing: SyncLLM, Moshi, MiniCPM-o and DuplexSLA already introduce temporal interfaces, and AdaptDuplex changes window duration dynamically \citep{syncllm,moshi,minicpm,duplexsla,adapt}. The sharper issue is whether listening, private reasoning, action execution and actual playback remain causally consistent when they run at different rates. An early thought, an early sound and an early correct task-specific answer are three different events.
+
+\paragraph{Selection and evidence.}
+The cutoff is 30 September 2026. We select exactly five entries per category by relevance to the proposal, architecture diversity, observability and access, \emph{not} by benchmark rank. Reasoning/system anchors and temporal-interface papers are separated to keep each comparison interpretable. Two additional references clarify concurrent formulation/articulation and backend-context injection; they are context, not extra shortlist rows. Descriptions use primary manuscripts, publisher pages and official artifact cards. ``Not located'' is an availability snapshot, not proof of nonexistence. No model, dataset or benchmark was executed. The ICLR 2026 template is used only for report layout, with its conference-status header replaced.
+
+\Needspace{12\baselineskip}
+\section{Focused literature and resource comparison}
+\label{sec:review}
+\subsection{Five reasoning and system-design anchors}
+\input{tables/systems}
+Table~\ref{tab:systems} contrasts three locations for reasoning: explicit private text in a codec-stream model, latent computation during listening, and text-centric or delegated reasoning coupled to speech generation. These are independent choices: ``uses an LLM decoder'' does not distinguish a serialized temporal protocol from Moshi's parallel streams. Likewise, a separate speech decoder does not automatically imply a half-duplex cascade.
+
+Think while listening is the direct predecessor for prefix sufficiency, but its streaming ASR has 480 ms lookahead and its post-question reasoning delay is not a first-useful-answer metric \citep{thinklisten}. FLAIR instead trains listening-time latent embeddings using a full-context teacher; inference is causal, so evaluation must distinguish input actually incorporated from information available to a training teacher \citep{flair}. MiniCPM-o is a practical open text-backbone comparison; Realtime-Venus exposes a released asynchronous harness. Neither release implies access to the full training mixture. StepAudio 3 offers a useful high-capability design reference, not a locally reproducible Realtime checkpoint \citep{minicpm,venus,step3}.
+
+\Needspace{12\baselineskip}
+\subsection{Five synchronization and temporal-interface papers}
+\input{tables/synchronization}
+Table~\ref{tab:synchronization} separates \emph{acoustic synchronization}, \emph{compute scheduling}, \emph{action/event alignment}, and \emph{representation-level coupling}. A shared 80 or 160 ms grid can align streams without deciding whether a task hypothesis is ready to be spoken. Conversely, a good semantic answer can still miss its real-time deadline or be based on stale input. The Moshi--Moshi synchronization study provides evidence about hidden-state coupling and turn-taking signals, not a guarantee of correct state revision \citep{synchrony}.
+
+The newest designs weaken several easy novelty claims. DuplexSLA already aligns speaking, listening and structured actions on one clock; its repository nevertheless marks inference, checkpoints and the benchmark as forthcoming \citep{duplexsla}. AdaptDuplex already supports variable windows, bounded text lead, indexed job cancellation and suppression of stale results \citep{adapt}. A project on synchronization must therefore test a stronger property---such as consistency between speaker-owned evidence, returned results and actual audible commitments---rather than claim that adaptation or cancellation itself is missing.
+
+\Needspace{12\baselineskip}
+\subsection{Five evaluation resources}
+\input{tables/benchmarks}
+Table~\ref{tab:benchmarks} covers complementary failure modes. SRQA is suitable for early reasoning onset; $\tau$-Voice for grounded outcomes; Full-Duplex-Bench v3 for natural disfluency and tools; EchoChain for mid-generation task-state revision; and Duplex-MPE for silence/addressee control. $\tau$-Voice now has an ICML 2026 publisher record, updating its earlier preprint label \citep{tauvoice}. Its virtual-time simulator deliberately decouples simulated conversation from physical inference time. Task success there is valuable but cannot, by itself, validate wall-clock scheduling under contention.
+
+EchoChain is especially close to the proposal: it diagnoses a failure to apply a correction, loss of earlier constraints, and abandonment of the original goal after interruption \citep{echochain}. We should reuse this conceptual distinction rather than present correction-sensitive reasoning as unevaluated. Its fixed speech-onset-relative injection and closed-model evaluation leave useful extensions: instrument the input evidence actually incorporated, distinguish generated from played audio, and include irrelevant or other-directed speech. The five benchmark scores measure different conditions and should not be averaged or interpreted as a common leaderboard.
+
+\Needspace{12\baselineskip}
+\subsection{Five conversational training and supervision resources}
+\input{tables/data}
+The five resources in Table~\ref{tab:data} supply natural timing, channels, speaker identity or task events. None automatically supplies a label saying ``this prefix supports this reasoning step'' or ``this correction invalidates that claim.'' SmoothConv and DuplexConv share underlying conversational sources: split by original session \emph{before} using one for training and the other for evaluation. The curated otoSpeech hours are a subset of its raw hours; Open Yap's sample is not its full corpus. Non-commercial restrictions, gated access and Data Use Agreements constrain any eventual release or usage.
+
+A small supervision layer should identify the evidence interval for a claim, earliest causally sufficient prefix, source speaker/addressee, task-state revision, and whether the affected output has already been played. Use counterfactual suffixes with an identical prefix to detect premature conclusions, and retain negative examples with backchannels and side speech. The reported spoken-CoT construction in Think while listening is a useful recipe, not an independently released 1.8M-example dataset \citep{thinklisten}. Use held-out benchmark tests for evaluation, not as an unreported source of training supervision.
+
+\section{Synchronization as causal consistency across clocks}
+\label{sec:clocks}
+\paragraph{Listening synchronization: availability is not incorporation.}
+For speaker $s$ and input frame $j$, let $c_{s,j}$ be capture time, $a_{s,j}$ arrival time at the runtime, and $i_{s,j}$ the time its encoded evidence has been incorporated into reasoning state. On a synchronized coordinator clock, causal processing requires $i_{s,j}\geq a_{s,j}\geq c_{s,j}$; encoder lookahead and compute backlog contribute different delays. Define an evidence watermark by
+\begin{equation}
+\label{eq:watermark}
+w_s(t)=\max\{j:\max_{r\leq j}i_{s,r}\leq t\},\qquad E_s(t)=t-c_{s,w_s(t)}.
+\end{equation}
+Here $w_s$ is the latest fully incorporated prefix, and $E_s$ its evidence age. An empty stream has an explicit ``no evidence yet'' state, not a fabricated age; dropped input must be logged, not silently counted as incorporated. Token count or audio merely received by the network is not a substitute for this watermark. Silence/VAD frames should advance the capture timeline too. Clock offsets must be calibrated if capture happens on a separate device.
+
+\paragraph{Speaking synchronization: generation is not commitment.}
+For output segment $k$, distinguish generation time $g_k$ from playback time $p_k\geq g_k$. Private reasoning steps occur on a third, compute-dependent timeline; backend completion is another event stream. Maintain the observed audible frontier $A(t)$ separately from queued text, codec and waveform output. A queued segment may be tagged with an evidence watermark and hypothesis/dependency version. A changed version triggers \emph{revalidation}, not automatic deletion of every segment: some earlier claims remain correct. Unplayed output can be withheld or regenerated; heard output requires explicit repair and cannot be rolled back.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1.12cm,y=0.70cm,font=\small,>=Latex]
+\foreach \y/\label in {3/Capture,2/Incorporate,1/Reason or tool,0/Output} {
+  \node[anchor=east] at (1.7,\y) {\label};
+  \draw[->,gray] (1.85,\y)--(10.15,\y);
+}
+\draw[fill=blue!10,draw=reportblue] (2,2.78) rectangle (4.4,3.22);
+\node at (3.2,3) {initial evidence};
+\draw[fill=orange!20,draw=orange!70!black] (5.3,2.78) rectangle (7.4,3.22);
+\node at (6.35,3) {correction};
+\node[draw,fill=blue!10] at (4.1,2) {$w_s,v_s$};
+\node[draw,fill=orange!20] at (7.6,2) {$w'_s,v'_s$};
+\draw[->] (4.4,2.7)--(4.1,2.35);
+\draw[->] (7.4,2.7)--(7.6,2.35);
+\draw[fill=blue!10,draw=reportblue] (4.4,0.78) rectangle (8.2,1.22);
+\node at (6.3,1) {work based on $v_s$};
+\draw[fill=green!12,draw=green!50!black] (4.4,-0.22) rectangle (7.6,0.22);
+\node at (6.0,0) {heard: repair if wrong};
+\draw[fill=gray!12,draw=gray] (7.6,-0.22) rectangle (10.0,0.22);
+\node at (8.8,0) {queued: revalidate};
+\draw[dashed,thick] (7.6,-0.55)--(7.6,0.5);
+\node[anchor=north,font=\footnotesize] at (7.6,-0.55) {now / audible frontier};
+\draw[->,orange!80!black,thick] (7.6,1.7)--(9.0,0.4);
+\end{tikzpicture}
+\caption{Proposed conceptual trace, not an experimental result. A correction becomes usable only after incorporation. Work and queued output based on earlier state must be revalidated; already heard content needs repair. The audible frontier is a runtime observation, not a fixed point in the model's token sequence.}
+\label{fig:clocks}
+\end{figure}
+
+\paragraph{A testable output-admission policy.}
+Let $Q(t)$ be the unplayed audio queue and $d_k$ each segment's remaining audible duration. A candidate policy imposes
+\begin{equation}
+\label{eq:admission}
+H(t)=\sum_{k\in Q(t)} d_k\leq H_{\max}(t),\qquad
+\operatorname{admit}(k,t)\Rightarrow\operatorname{valid}(\operatorname{deps}(k),\operatorname{state}(t)).
+\end{equation}
+The cap may adapt to correction risk or available compute; unrendered text lead requires an estimated speech duration, not a universal tokens-to-seconds conversion. Dependency validity is a proposed observable/controller target, \emph{not} an oracle guarantee that a claim is semantically true. A small in-flight hardware buffer creates residual stop latency that must be measured. Figure~\ref{fig:clocks} makes these separate commitment points explicit. This framing extends rather than replaces existing acoustic clocks and cancellation mechanisms.
+
+\section{Five major research questions}
+\label{sec:questions}
+All questions are hypotheses to test, not claims of established novelty. They map to the proposal's sufficiency, revision, speaker ownership and useful-response objectives. The first three separate private thought, audible commitment and fresh listening; the fourth studies their scheduler; the fifth extends revision to delegated work.
+
+\researchquestion{RQ1}{Think while listening: sufficient for what, and at what risk?}
+\textbf{Question.} When is a speech prefix sufficient to begin useful reasoning, and when should its hypothesis remain provisional? \textbf{Hypothesis.} A causal prefix trigger calibrated for correction risk improves the correct-answer/latency frontier over end-of-turn and fixed-prefix triggers. Begin private work early but gate task-specific spoken claims separately. \textbf{Minimal test.} Construct 200 matched late-constraint questions with two suffixes sharing exactly the same prefix. Hold input watermarks and decoding budgets fixed; compare end-of-turn, fixed-prefix and calibrated triggers, including held-out speaking rates. Measure correct useful audible response time, final accuracy, premature claims, calibration and unnecessary revisions. \textbf{Prior-work boundary.} Early explicit reasoning and latent listening-time computation already exist \citep{thinklisten,flair}. The potential contribution is correction-risk calibration under causal delayed evidence, not ``thinking before the user finishes.'' An oracle suffix-aware trigger is an upper bound only, never a deployable baseline.
+
+\researchquestion{RQ2}{Think while speaking: how much uncommitted lead is safe?}
+\textbf{Question.} How far can reasoning and synthesis run ahead of playback before a late correction makes the spoken answer stale? \textbf{Hypothesis.} Evidence-tagged output and a bounded playback lead reduce stale audible claims at matched compute and answer quality. \textbf{Minimal test.} Inject an otherwise identical correction before generation, during synthesis, while audio is queued, and after it becomes audible. Compare unrestricted lead, a fixed-duration cap, and dependency-aware admission; revalidate only unplayed output and explicitly repair heard errors. Measure stale audible duration, useful-response time, underruns, repetitions and repair success. \textbf{Prior-work boundary.} Mind-Paced Speaking and StepAudio 3 already separate formulation from articulation; AdaptDuplex already bounds text lead \citep{mindpaced,step3,adapt}. EchoChain already tests interrupted reasoning \citep{echochain}. The candidate contribution is a measured causal playback commitment policy, not concurrent reasoning itself or fast filler speech.
+
+\researchquestion{RQ3}{Listen while speaking: whose evidence changes whose state?}
+\textbf{Question.} Can fresh input update the appropriate speaker/task hypothesis during speaking without treating a backchannel or side conversation as a correction? \textbf{Hypothesis.} Per-speaker evidence watermarks and selective dependency invalidation improve correction accuracy without increasing false interruption or unsolicited responses. \textbf{Minimal test.} Match relevant corrections against backchannels and other-directed utterances. Compare one global reasoning state with speaker/task-owned versions under generation contention. First use oracle speaker/addressee labels, then predicted labels, to isolate attribution from reasoning errors. Measure evidence age, correction accuracy, silence preservation, false interruption and task success. \textbf{Prior-work boundary.} Duplex-MPE evaluates addressee behavior, and synchronization probes reveal timing signals \citep{mpe,synchrony}. Our proposed extension couples speaker attribution to state revision and listening freshness; it is not a new diarization or turn-taking problem in isolation.
+
+\researchquestion{RQ4}{Synchronize the clocks under variable rates and load}
+\textbf{Question.} Which temporal interface keeps listening, reasoning and speaking consistent when speech rate, inference speed and network delay vary independently? \textbf{Hypothesis.} A controller observing evidence age and queued-audio duration reduces missed deadlines and stale claims at matched task accuracy. \textbf{Minimal test.} Replay identical short dialogues under controlled rate, jitter and compute contention. Compare fixed scheduling with a two- or three-level adaptive quantum, preserving feature extraction and model capabilities; use 80 ms or 1 s reference interfaces only where the runtime supports them. Report p50/p95 ingestion and useful-response delays, underruns, missed deadlines, quality and GPU-seconds. \textbf{Prior-work boundary.} SyncLLM, Moshi, MiniCPM-o, DuplexSLA and AdaptDuplex already represent or adapt time \citep{syncllm,moshi,minicpm,duplexsla,adapt}. The open test is causal robustness under heterogeneous clocks, with physical timing in addition to virtual-time task results \citep{tauvoice}. Faster hardware must not be credited as a modeling gain.
+
+\researchquestion{RQ5}{Revise while delegating: which result is still admissible?}
+\textbf{Question.} When a correction arrives between backend launch, result return and audible delivery, what should be canceled, reused or withheld? \textbf{Hypothesis.} Speaker/task-dependent checks at both result admission and playback improve corrected task success beyond cancellation and stale-result suppression alone. \textbf{Minimal test.} Use read-only or simulated tools with 0.5, 2 and 5 s backend delays; inject corrections at launch, inflight, return and pre-playback stages. Compare blind result injection, an explicit cancellation/stale-suppression baseline, and joint result/output revalidation. Measure stale-result use, task success, wasted work, unnecessary cancellation and repair latency. \textbf{Prior-work boundary.} Realtime-Venus and Context Spanning provide delegation/injection designs; AdaptDuplex already rejects canceled and stale results \citep{venus,contextspan,adapt}. The potential extension is joint speaker-owned and audible-commitment consistency. Real irreversible tool actions require a \emph{separate} action-commit protocol; cancellation cannot undo an executed side effect.
+
+\section{A controlled first study and reporting protocol}
+\label{sec:protocol}
+Start with a released, instrumentable 7--9B runtime (Moshi, MiniCPM-o or the Venus harness, according to the hooks the study needs), not foundation-scale reproduction. Build a 200--500-case causal-prefix pilot with small paired variations: late relevant constraint versus irrelevant/backchannel input; correction before versus after an audible claim; and, where relevant, same versus different speaker/addressee. Use a simulated read-only backend for deterministic timing. Establish access and licensing before introducing natural recordings; document the synthetic-to-natural transition rather than silently mixing conditions. No GPU jobs are launched by this report.
+
+Log timestamps for capture, arrival and incorporation, together with source/hypothesis versions, generated text/codec/audio boundaries, actual playback, cancellation/admission events, and task outcomes. Define the \emph{first useful correct audible response} as the earliest task-specific claim that is correct given the evidence incorporated at that time; report latency relative to both the gold sufficient-prefix endpoint and actual sufficient-evidence incorporation. Score correctness separately against evidence physically available to the runtime, so an agent cannot obtain a good freshness score merely by delaying ingestion. Distinguish first token, first audio/filler, private-reasoning onset, useful answer, tool request, task completion and interruption stop time. Include stale audible seconds and whether an incorrect heard claim was successfully repaired.
+
+Use paired task-level comparisons and confidence intervals, not independent reruns with different prompts or audio. Hold feature lookahead, available evidence, task split, model/harness revision, decode budget, backend delay and judge configuration fixed. Report accuracy--latency--commitment trade-offs, rather than a single weighted score that hides premature errors. Natural corpus splits must be by source session and speaker where appropriate; machine-generated labels need manual auditing. Oracle speaker labels, future-aware sufficiency and backend gold answers are diagnostic upper bounds only. Virtual-clock simulation and physical-clock playback are separate experimental conditions.
+
+\section{Limitations and intended contribution}
+\label{sec:limits}
+The shortlists are deliberately focused, not exhaustive. Recent preprints and artifact statuses can change; open inference does not imply reproducible training. Reported scales and licenses come from resource documentation, not a full provenance audit. No published scores are independently reproduced here, and none of the proposed hypotheses has been validated. The five research questions are unranked; eight concrete candidate implementations and their risks/estimated pilot costs are supplied in the accompanying research notes, not presented as selected winners. Each novelty claim needs further search before a paper submission.
+
+The central proposal update is to treat \emph{listening freshness} and \emph{speaking commitment} as separate, measurable synchronization obligations. Timing-aware interfaces already exist. A meaningful next contribution would show when correctly attributed new evidence can revise ongoing reasoning, pending work and unplayed output without either stale audible claims or unnecessary disruption---and characterize the regimes in which that approach fails.
+
+\begingroup
+\small
+\bibliography{references}
+\bibliographystyle{iclr2026_conference}
+\endgroup
+\end{document}

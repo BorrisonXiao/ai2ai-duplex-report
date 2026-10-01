@@ -1,0 +1,18 @@
+\begin{tikzpicture}[arch]
+\node[audio,text width=1.10cm] (u) at (0.70,0) {User audio};
+\node[audio,text width=1.40cm] (enc) at (2.40,0) {Mimi encoder};
+\node[model,text width=2.10cm] (lm) at (4.90,0) {Helium 7B temporal transformer};
+\node[model,text width=1.65cm] (depth) at (7.45,0) {Depth transformer};
+\node[audio,text width=1.30cm] (codes) at (9.50,0) {Agent codec tokens};
+\node[voice,text width=1.65cm] (out) at (11.65,0) {Mimi decoder + audio};
+\node[mind,text width=4.35cm] (text) at (6.20,1.60) {Text lane: inner monologue; TWL adds ASR / private CoT / answer};
+\draw[flow] (u)--(enc);
+\draw[flow] (enc)--(lm);
+\draw[flow] (lm)--(depth);
+\draw[flow] (depth)--(codes);
+\draw[flow] (codes)--(out);
+\draw[flow] (lm.north)--(4.90,1.05)--(text.south west);
+\draw[flow] (text.south east)--(7.45,1.05)--(depth.north);
+\draw[feedback] (codes.south)--(9.50,-0.93)--node[note,below] {past agent tokens} (4.90,-0.93)--(lm.south);
+\node[note,anchor=west] at (0.0,-1.65) {Parallel streams, 12.5 Hz / 80 ms grid. Private CoT is silent; audio can be speech or silence.};
+\end{tikzpicture}
