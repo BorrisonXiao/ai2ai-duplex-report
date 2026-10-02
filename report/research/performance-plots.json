@@ -1,20 +1,20 @@
 {
   "revision_date": "2026-10-01",
   "evidence_cutoff": "2026-09-30",
-  "data_sha256": "4c267f169ad43fcab813bcc35342c089156c6f11601679239b948b5101b58e53",
+  "data_sha256": "91f7d89757ca118e0928bec29f2b2b09897bde4672062f3dd3c4c343f350d4ce",
   "convention": "Radars use raw 0–100 percentages. No polygon-area ranking, normalization to a reference, imputation or cross-protocol averaging. Mixed units and fewer than three metrics use separate bar axes. No error bars: these are source-reported point estimates, not independent reruns.",
   "coverage": {
     "pdf": {
       "file": "figures/performance/coverage.pdf",
-      "sha256": "8d4ea9604381d19a0da951ca32403d578242a50225b8e32f2c8e15d96923b0dc"
+      "sha256": "fede469e42950d605e246e8ae354ef468d7bb5e700a13394bb090fce6b18c000"
     },
     "svg": {
       "file": "figures/performance/coverage.svg",
-      "sha256": "e5282518ab1ea6ab8bafc696bf87fd30bb81abbbb186dc1266b6986a067b6f46"
+      "sha256": "2b7d2d98a448336be2d17fe2c50a8c54a9508dbbfd3159e5fd834b9b359f0f2a"
     },
     "png": {
       "file": "figures/performance/coverage.png",
-      "sha256": "1b5da98a06947feeeaa743eadcd459be06ca03d98eead25db4cf6ce67cb105e5"
+      "sha256": "2a7f95ddc0d9222ef579151a4829904fe4259a982cef5c11a87c086c5fdee48e"
     }
   },
   "profiles": [
@@ -59,11 +59,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/twl.pdf",
-          "sha256": "40c7a7eaa50d22d74533563cfeb3d70f650ea750d4244d3242b402d71d4a18aa"
+          "sha256": "2851d411de81e54f0ec01026c1b634fbadc42d11b99312d07589a95b23cb1d60"
         },
         "svg": {
           "file": "figures/performance/twl.svg",
-          "sha256": "cbd83b61940f194111bce2f59a7a2f24e10128e0d7f5c115408e66cfa1f01f26"
+          "sha256": "36b61e68af239161a674a73ce10848cc8a09713cab55bf936f60301e84b7177c"
         },
         "png": {
           "file": "figures/performance/twl.png",
@@ -165,11 +165,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/flair-qa.pdf",
-          "sha256": "21f78cb9a6b3bb3c98d45018f5c4c111e8deef2213045a0129a60857c5c49164"
+          "sha256": "d24c15b44cfe1129a4ae236aa1bedb18c4a576dd0da289d322e9a226aff55bc5"
         },
         "svg": {
           "file": "figures/performance/flair-qa.svg",
-          "sha256": "c1774936bee48b086c9e637b3bb03aecd2f36393f4d957ded171cabebb397f7c"
+          "sha256": "7aa5bfa8b58afe157d3f6df6cb7723623310a72b7b586b97ca9feace7b7a79f5"
         },
         "png": {
           "file": "figures/performance/flair-qa.png",
@@ -262,11 +262,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/flair-interaction.pdf",
-          "sha256": "313733b56babcf40e0cc83588ef9d79d341910ef12857a3eb09e47ffa23115d7"
+          "sha256": "0496c95e41954a8cf06cc51d37440da0862c159b97eb4caf114c349064084409"
         },
         "svg": {
           "file": "figures/performance/flair-interaction.svg",
-          "sha256": "78aec6e4d1974ea3718d379be56b830ad47d7fbd77f97e3e9878e6ccefcd1411"
+          "sha256": "d9583ab82149fe45ee3f76f6c0c12205a66f2e469cd0151e27e371b0daf4df15"
         },
         "png": {
           "file": "figures/performance/flair-interaction.png",
@@ -349,11 +349,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/step3.pdf",
-          "sha256": "ca5fefd5e4ebc30ef0702e0d9387528118c3eafeca476d70f383e3dccdae0ec8"
+          "sha256": "af42800c6d495e9836d2653c8750f5cc42a9e549d814ebf5f419a729ecaffa12"
         },
         "svg": {
           "file": "figures/performance/step3.svg",
-          "sha256": "fd663a91c95fbd8c98d9ae16a9938bbc347be728e7e203b3e4d918ff0bb2127c"
+          "sha256": "0c5901b42189034c09a34da3f271732e6fe04ab32c6aeec8cc5b4bccd76dac5c"
         },
         "png": {
           "file": "figures/performance/step3.png",
@@ -451,11 +451,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/venus.pdf",
-          "sha256": "ec68e80a1aca593e004de8781ed38fb3e92adc0e5fc6536b3c7512964ada2a28"
+          "sha256": "6e34e1571f7c49225d41d06549a14a861a8554e54a1c2046ee67ca2c29497069"
         },
         "svg": {
           "file": "figures/performance/venus.svg",
-          "sha256": "087e8569fd2df29f200341b8d31bda7c3f35d120705b934d8d91c1f9ecb560c9"
+          "sha256": "3149f417f25b36b2e4ba715273566f4efa932ebc4539448be6212fe7d8726be4"
         },
         "png": {
           "file": "figures/performance/venus.png",
@@ -531,11 +531,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/minicpm.pdf",
-          "sha256": "0e3a678411d989a605eb57eb6d5f314bf843895cd96ea4e29c249f86915c3ca9"
+          "sha256": "250d8700ab63561ea71b6915a6b78a1858d751b1592cebd4bd0fb06fe1327d65"
         },
         "svg": {
           "file": "figures/performance/minicpm.svg",
-          "sha256": "8cecbde55d7f23253d2fbaaed014af61377b6b627d5a0d95b26c71b1f4eee1da"
+          "sha256": "7e5bd8c7ca59e56edfb6f83cf3c6db90fa804c01533aa7ca7348a8d2c72eafba"
         },
         "png": {
           "file": "figures/performance/minicpm.png",
@@ -600,11 +600,241 @@
       ]
     },
     {
+      "id": "duplexomni",
+      "group": "duplexomni",
+      "title": "DuplexOmni: streaming/realtime study",
+      "kind": "facets",
+      "note": "Table 1, v1. DuplexOmni's full configuration includes the closed Gemini-3.1-Flash-Lite thinking backend. Separate axes retain units and missing results. WER fractions are converted to percent. Daily-Omni is streaming; DuplexBench v1.5 ToR is the authors' aggregate, not FDB-v3 or a per-scenario resume rate. Flash-Lite alone is a backend-only reference in the table, not a voice curve. Latency endpoints and hardware are not harmonized across studies.",
+      "takeaway": "The combined system leads the reported interaction and Big Bench Audio scores, but trails several references on Daily-Omni and WER. Its low reported delay is not a guarantee of early correct speech. The study's thinking-layer ablation also makes backend capacity a necessary control.",
+      "sources": [
+        {
+          "cite": "duplexomni",
+          "url": "https://arxiv.org/pdf/2606.09186v1",
+          "local_pdf": "arxiv.org_pdf_2606.09186.pdf",
+          "version": "arXiv v1, 8 June 2026",
+          "pages": [
+            8
+          ],
+          "tables": [
+            "1"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-duplexomni.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/duplexomni.pdf",
+          "sha256": "517c8eb42f3c1106b53054014b935849bc5a6cee94003ddd6e05a60e12718a30"
+        },
+        "svg": {
+          "file": "figures/performance/duplexomni.svg",
+          "sha256": "b7fc47faf7717b322cbf488c7cf78b1c01ecb11ef0556f10a9f67067fc7b84f8"
+        },
+        "png": {
+          "file": "figures/performance/duplexomni.png",
+          "sha256": "ddd3e6b2de763b0f586dc3c1c5b632b5029675b7372bb722a05a18158caefbdb"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "DuplexOmni + Gemini-3.1-Flash-Lite",
+          "scores": [
+            72.6,
+            77.2,
+            53.8,
+            11.92,
+            0.506
+          ]
+        },
+        {
+          "model": "MiniCPM-o 4.5",
+          "scores": [
+            36.3,
+            36.0,
+            80.2,
+            null,
+            0.502
+          ]
+        },
+        {
+          "model": "Doubao",
+          "scores": [
+            27.8,
+            47.9,
+            null,
+            null,
+            1.82
+          ]
+        },
+        {
+          "model": "Qwen3-Omni-Realtime-Flash",
+          "scores": [
+            25.2,
+            32.1,
+            76.2,
+            1.3,
+            1.28
+          ]
+        },
+        {
+          "model": "Qwen3.5-Omni-Realtime-Flash",
+          "scores": [
+            26.4,
+            35.0,
+            81.8,
+            1.0999999999999999,
+            1.25
+          ]
+        },
+        {
+          "model": "Gemini-3.1-Flash-Live",
+          "scores": [
+            24.1,
+            57.9,
+            null,
+            4.1000000000000005,
+            2.57
+          ]
+        },
+        {
+          "model": "Gemini-3.1-Flash-Lite (thinking only)",
+          "scores": [
+            null,
+            58.9,
+            59.0,
+            3.8,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voicechat",
+      "group": "voicechat_fdb3",
+      "title": "NemotronLabs VoiceChat: Full-Duplex-Bench v3",
+      "kind": "radar",
+      "models": [
+        "NemotronLabs VoiceChat",
+        "Gemini Live 2.5",
+        "Gemini Live 3.1",
+        "GPT-Realtime",
+        "Realtime-Venus-Omni"
+      ],
+      "axes": [
+        "Tool selection F1",
+        "Argument accuracy",
+        "Task pass@1"
+      ],
+      "note": "VoiceChat Table 4 reports the model and imported Gemini references. GPT-Realtime is the original benchmark's leading closed context reference; Venus Omni is a representative open frontend from its separate system report. Neither is a VoiceChat-author evaluation, and no common rerun is implied. User barge-in is unavailable during VoiceChat tool execution; this plot does not establish correction-safe tools.",
+      "takeaway": "VoiceChat's tool F1 exceeds both Gemini references in its paper, while argument accuracy and complete-task pass@1 are lower. The open native tool channel is therefore an architectural baseline, not an established end-to-end task leader.",
+      "sources": [
+        {
+          "cite": "voicechat",
+          "url": "https://arxiv.org/pdf/2609.21967v1",
+          "local_pdf": "arxiv.org_pdf_2609.21967.pdf",
+          "version": "arXiv v1, 18 September 2026",
+          "pages": [
+            9
+          ],
+          "tables": [
+            "4"
+          ],
+          "status": "primary_pdf_checked"
+        },
+        {
+          "cite": "fdb3",
+          "url": "https://arxiv.org/pdf/2604.04847v1",
+          "local_pdf": "arxiv.org_pdf_2604.04847.pdf",
+          "version": "arXiv v1, 6 April 2026",
+          "pages": [
+            4,
+            5
+          ],
+          "tables": [
+            "2"
+          ],
+          "status": "primary_pdf_checked"
+        },
+        {
+          "cite": "venus",
+          "url": "https://arxiv.org/pdf/2609.13814v3",
+          "local_pdf": "arxiv.org_pdf_2609.13814.pdf",
+          "version": "arXiv v3, 23 September 2026",
+          "pages": [
+            21,
+            22
+          ],
+          "tables": [
+            "7"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-voicechat_fdb3.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/voicechat.pdf",
+          "sha256": "72066136ba050d8c5ba1368b19988e78820b2a038431b6dbb0b4c98f64278a5b"
+        },
+        "svg": {
+          "file": "figures/performance/voicechat.svg",
+          "sha256": "70a92874f04ed71cc99637c6cc1c92d711f1f0055c702d67951484e28cf6b93a"
+        },
+        "png": {
+          "file": "figures/performance/voicechat.png",
+          "sha256": "8616303d2612f1a214fac0ab39b1aa3bd77577d76a4b84a51b1ffec83acec2e9"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "NemotronLabs VoiceChat",
+          "scores": [
+            82.5,
+            42.2,
+            33.0
+          ]
+        },
+        {
+          "model": "Gemini Live 2.5",
+          "scores": [
+            78.6,
+            59.3,
+            49.0
+          ]
+        },
+        {
+          "model": "Gemini Live 3.1",
+          "scores": [
+            81.7,
+            58.8,
+            54.0
+          ]
+        },
+        {
+          "model": "GPT-Realtime",
+          "scores": [
+            87.6,
+            68.0,
+            60.0
+          ]
+        },
+        {
+          "model": "Realtime-Venus-Omni",
+          "scores": [
+            86.0,
+            53.1,
+            43.0
+          ]
+        }
+      ]
+    },
+    {
       "id": "tau-original",
       "group": "tau_original",
       "title": "Original τ-Voice: closed voice references",
       "kind": "facets",
-      "note": "Original benchmark Table 6 All row; clean and realistic conditions remain separate. None of the five selected systems is evaluated here. GPT-5's text control is not plotted as a voice competitor.",
+      "note": "Original benchmark Table 6 All row; clean and realistic conditions remain separate. None of the seven selected systems is evaluated here. GPT-5's text control is not plotted as a voice competitor.",
       "takeaway": "All three voice systems perform worse under realistic audio conditions in this source comparison; later τ-Voice implementations are separate evidence.",
       "sources": [
         {
@@ -625,11 +855,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/tau-original.pdf",
-          "sha256": "1de3f4e827f13e3be3c8b1b5e8859627d3a758a92d1981fef86c854d689c6723"
+          "sha256": "374b69fe23da2044c09b60b9454f6e5c9f2008650294f9062fbe0e82935582ca"
         },
         "svg": {
           "file": "figures/performance/tau-original.svg",
-          "sha256": "1af10722cdf8bc610939fd3303420ab7c9ab26d77832573f6b6f306d030446be"
+          "sha256": "835e8468124a671100827ad4b0fe911b51c67d75737731727a23f1f19f39d514"
         },
         "png": {
           "file": "figures/performance/tau-original.png",
@@ -665,7 +895,7 @@
       "group": "echo",
       "title": "EchoChain: closed voice references",
       "kind": "facets",
-      "note": "Paper Table 1, across 200 interrupted conversations. MPR requires every criterion in a conversation to pass; MCP scores individual criteria. None of the five selected systems is evaluated here.",
+      "note": "Paper Table 1, across 200 interrupted conversations. MPR requires every criterion in a conversation to pass; MCP scores individual criteria. None of the seven selected systems is evaluated here.",
       "takeaway": "Passing many individual criteria does not guarantee complete conversation success. Even the strongest reported voice reference passes fewer than half of conversations.",
       "sources": [
         {
@@ -686,11 +916,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/echochain.pdf",
-          "sha256": "c71c00b5aef819a7c4df883b986de6a98b70a4e51f4a7487f55f7afe433eb76d"
+          "sha256": "c975638fa90a7eb25c457e781a4741139dd9b1f8566390f3fc4eef90b763bb60"
         },
         "svg": {
           "file": "figures/performance/echochain.svg",
-          "sha256": "beb9d280d758a9b3126bf30139718599632e8acc8580617670a7973e42f4fa87"
+          "sha256": "0fca5e5b6fa7a02a88890da3571a4f7de2d93e0b4e60bf06c45df8c90304ac62"
         },
         "png": {
           "file": "figures/performance/echochain.png",

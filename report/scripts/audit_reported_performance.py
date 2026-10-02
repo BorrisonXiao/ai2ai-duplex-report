@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from build_performance import all_groups
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,6 +25,16 @@ def numbers(text):
 
 def extract(group, row, pages):
     name = row["model"]
+    if group == "duplexomni":
+        aliases = {"DuplexOmni + Gemini-3.1-Flash-Lite": "DuplexOmni", "Gemini-3.1-Flash-Lite (thinking only)": "Gemini-3.1-Flash-Lite"}
+        text = after(pages[8], aliases.get(name, name))
+        cells = re.findall(r"(?m)^\s*(\d+(?:\.\d+)?|–)\s*$", text)[:5]
+        return [None if value == "–" else float(value) for value in cells]
+    if group == "voicechat_fdb3":
+        if row["source"] in {"fdb_original", "fdb_venus"}:
+            return extract("fdb3", row, pages)
+        text = after(pages[9], "Table 4")
+        return numbers(after(text, "Ours" if name == "NemotronLabs VoiceChat" else name))[:3]
     if group == "srqa":
         text = pages[8]
         aliases = {"Moshi + CoT (TWL study)": "Moshi + CoT (ours)", "Moshi baseline": "Moshi (baseline)", "Helium": "Helium†"}
@@ -100,7 +111,7 @@ def main():
             if key == "fdb_venus": number = 22
             document[number-1].get_pixmap(dpi=120, alpha=False).save(args.render_dir / f"{key}-page-{number:02d}.png")
         document.close()
-    for group in data["groups"] + data.get("supplementary_groups", []):
+    for group in all_groups(data):
         for row in group["rows"]:
             actual = extract(group["id"], row, source_pages[row["source"]])
             assert actual == row["source_values"], (group["id"], row["model"], actual, row["source_values"])

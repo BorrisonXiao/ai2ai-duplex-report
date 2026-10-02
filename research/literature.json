@@ -823,11 +823,11 @@
       "doi": null,
       "status": "verified",
       "source": "https://arxiv.org/abs/2606.09186",
-      "problem": "Research-ready two-layer design with an explicit data-generation and training framework.",
-      "method": "Qwen3-Omni-derived interaction model + thinking backend Streaming audio/video interaction layer; reasoning and tool layer run in parallel. Interaction model streams text and speech while incorporating backend results. Separates fast conversational behavior from slower reasoning/tool work.",
-      "results": "Reports full-duplex and multimodal evaluations; code, weights and a partial training artifact are linked.",
-      "relevance": "Research-ready two-layer design with an explicit data-generation and training framework.",
-      "limitations": "Full trainable dataset is described as about 9 TB; release contains metadata and one generated shard, not the entire corpus.",
+      "problem": "Released layered baseline with Writer-Director temporal annotations, a dedicated training framework and source-specific performance comparison.",
+      "method": "Qwen3-Omni-derived interaction Thinker/Talker + separate thinking backend Fixed 480 ms slices consume previous-slice audio/video and streaming backend feedback; interaction and external thinking run asynchronously. Persistent Talker context; six 80 ms codec frames per slice, MTP codebooks and Code2Wav. The external thinking layer is not the internal Qwen Thinker. Separates fast interaction from slower reasoning/tools; thinking can be stopped/reset after a changed user request.",
+      "results": "Full configuration with Gemini-3.1-Flash-Lite: 72.6% DuplexBench v1.5 ToR, 77.2% Big Bench Audio, 53.8% streaming Daily-Omni, 11.92% LibriSpeech WER and 0.506 s author-reported response delay.",
+      "relevance": "Released layered baseline with Writer-Director temporal annotations, a dedicated training framework and source-specific performance comparison.",
+      "limitations": "Default results include a closed backend, not just the released frontend. Reported ToR and latency are not harmonized across studies. English/video weaknesses; ~9 TB full generated corpus is not directly hosted.",
       "artifacts": {
         "code": [
           "Pipeline + training + runtime",
@@ -839,7 +839,7 @@
         ],
         "training": "Training_framework and data_pipeline released",
         "data": "Metadata + one generated parquet shard; full corpus reconstructed",
-        "license": "Consult component licenses"
+        "license": "Owned source: Apache-2.0; upstream model/data terms apply"
       }
     },
     {
@@ -1204,11 +1204,11 @@
       "doi": null,
       "status": "verified",
       "source": "https://arxiv.org/abs/2609.21967",
-      "problem": "Open encoder–LLM system with distinct transcript, reply and tool streams.",
-      "method": "Nemotron Nano v2 9B; about 11B system 600M streaming FastConformer; parallel agent-text and function-call channels; auxiliary RNN-T transcript. Separately trained streaming TTS with causal codec and acoustic decoder. Learned streaming turn control and native structured tool output.",
-      "results": "Reports 82.5% tool-selection F1 on FDB v3; tool arguments and full execution remain weaker.",
-      "relevance": "Open encoder–LLM system with distinct transcript, reply and tool streams.",
-      "limitations": "Card/paper explicitly limit barge-in during tool execution, context length and noisy-speech robustness.",
+      "problem": "Open text-backbone system with distinct transcript, reply and function streams; architecture and source-specific tool radar shown above/below.",
+      "method": "Nemotron Nano v2 9B; about 11B system 600M streaming FastConformer on an 80 ms grid; parallel text/function heads; auxiliary RNN-T output is not fed into the LLM. Separately trained persistent streaming TTS with causal codec and acoustic decoder. Learned streaming turn control and native structured tool output; predefined acknowledgment during tool execution.",
+      "results": "FDB-v3 Table 4: 82.5% tool F1 / 42.2% argument accuracy / 33.0% pass@1. Tool F1 exceeds imported Gemini references, but argument and task success are lower.",
+      "relevance": "Open text-backbone system with distinct transcript, reply and function streams; architecture and source-specific tool radar shown above/below.",
+      "limitations": "User audio is replaced by silence during tool-call training; barge-in is unavailable during tool execution. Roughly two-minute context and noisy-speech/tool-composition limitations.",
       "artifacts": {
         "code": [
           "Inference / runtime branch",
@@ -1218,7 +1218,7 @@
           "11B weights",
           "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B"
         ],
-        "training": "Recipe documented; complete training pipeline not established",
+        "training": "Recipe and source datasets documented; complete training pipeline/assembled mixture not established",
         "data": "Full training mixture not located",
         "license": "Weights: OpenMDW 1.1; code: repository terms"
       }
@@ -1385,12 +1385,13 @@
     },
     {
       "id": "g3",
-      "statement": "Invalidate stale backend work when a correction arrives after delegation and before result admission.",
-      "evidence": "Realtime-Venus, NVIDIA frontend–backend and Context Spanning provide different delegation/injection mechanisms. Robust correction during this interval needs an explicit controlled test.",
+      "statement": "Jointly validate revised task state, returned backend results and queued speech after a late correction.",
+      "evidence": "DuplexOmni already stops/resets background thinking; Realtime-Venus and Context Spanning provide delegation/injection mechanisms. VoiceChat prevents barge-in during tool execution. Cancellation alone is not the missing contribution: test listening freshness and output admission together.",
       "refs": [
+        "2606.09186",
         "2609.13814",
-        "2609.19334",
-        "2609.33443"
+        "2609.33443",
+        "2609.21967"
       ]
     },
     {
@@ -1498,12 +1499,12 @@
       "venue": "Technical report / preprint",
       "family": "Text backbone",
       "backbone": "Nemotron Nano v2 9B; about 11B system",
-      "stream": "600M streaming FastConformer; parallel agent-text and function-call channels; auxiliary RNN-T transcript.",
-      "decoder": "Separately trained streaming TTS with causal codec and acoustic decoder.",
-      "control": "Learned streaming turn control and native structured tool output.",
-      "result": "Reports 82.5% tool-selection F1 on FDB v3; tool arguments and full execution remain weaker.",
-      "relevance": "Open encoder–LLM system with distinct transcript, reply and tool streams.",
-      "limitation": "Card/paper explicitly limit barge-in during tool execution, context length and noisy-speech robustness.",
+      "stream": "600M streaming FastConformer on an 80 ms grid; parallel text/function heads; auxiliary RNN-T output is not fed into the LLM.",
+      "decoder": "Separately trained persistent streaming TTS with causal codec and acoustic decoder.",
+      "control": "Learned streaming turn control and native structured tool output; predefined acknowledgment during tool execution.",
+      "result": "FDB-v3 Table 4: 82.5% tool F1 / 42.2% argument accuracy / 33.0% pass@1. Tool F1 exceeds imported Gemini references, but argument and task success are lower.",
+      "relevance": "Open text-backbone system with distinct transcript, reply and function streams; architecture and source-specific tool radar shown above/below.",
+      "limitation": "User audio is replaced by silence during tool-call training; barge-in is unavailable during tool execution. Roughly two-minute context and noisy-speech/tool-composition limitations.",
       "code": [
         "Inference / runtime branch",
         "https://github.com/NVIDIA-NeMo/Speech/tree/nemotron-labs-voicechat"
@@ -1512,7 +1513,7 @@
         "11B weights",
         "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B"
       ],
-      "training": "Recipe documented; complete training pipeline not established",
+      "training": "Recipe and source datasets documented; complete training pipeline/assembled mixture not established",
       "data": "Full training mixture not located",
       "license": "Weights: OpenMDW 1.1; code: repository terms",
       "extra": []
@@ -1633,13 +1634,13 @@
       "date": "2026-06-08",
       "venue": "Preprint",
       "family": "Delegated",
-      "backbone": "Qwen3-Omni-derived interaction model + thinking backend",
-      "stream": "Streaming audio/video interaction layer; reasoning and tool layer run in parallel.",
-      "decoder": "Interaction model streams text and speech while incorporating backend results.",
-      "control": "Separates fast conversational behavior from slower reasoning/tool work.",
-      "result": "Reports full-duplex and multimodal evaluations; code, weights and a partial training artifact are linked.",
-      "relevance": "Research-ready two-layer design with an explicit data-generation and training framework.",
-      "limitation": "Full trainable dataset is described as about 9 TB; release contains metadata and one generated shard, not the entire corpus.",
+      "backbone": "Qwen3-Omni-derived interaction Thinker/Talker + separate thinking backend",
+      "stream": "Fixed 480 ms slices consume previous-slice audio/video and streaming backend feedback; interaction and external thinking run asynchronously.",
+      "decoder": "Persistent Talker context; six 80 ms codec frames per slice, MTP codebooks and Code2Wav. The external thinking layer is not the internal Qwen Thinker.",
+      "control": "Separates fast interaction from slower reasoning/tools; thinking can be stopped/reset after a changed user request.",
+      "result": "Full configuration with Gemini-3.1-Flash-Lite: 72.6% DuplexBench v1.5 ToR, 77.2% Big Bench Audio, 53.8% streaming Daily-Omni, 11.92% LibriSpeech WER and 0.506 s author-reported response delay.",
+      "relevance": "Released layered baseline with Writer-Director temporal annotations, a dedicated training framework and source-specific performance comparison.",
+      "limitation": "Default results include a closed backend, not just the released frontend. Reported ToR and latency are not harmonized across studies. English/video weaknesses; ~9 TB full generated corpus is not directly hosted.",
       "code": [
         "Pipeline + training + runtime",
         "https://github.com/MuyeHuang/DuplexOmni"
@@ -1650,7 +1651,7 @@
       ],
       "training": "Training_framework and data_pipeline released",
       "data": "Metadata + one generated parquet shard; full corpus reconstructed",
-      "license": "Consult component licenses",
+      "license": "Owned source: Apache-2.0; upstream model/data terms apply",
       "extra": [
         [
           "Training data artifact",

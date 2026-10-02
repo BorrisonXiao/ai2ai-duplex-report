@@ -1,10 +1,10 @@
 # Focused duplex literature review
 
-Review cutoff: 2026-09-30. Four categories, five resources each; rows are not ranked.
+Review cutoff: 2026-09-30. Seven system architectures; five resources in each other category. Rows are not ranked.
 
 ## Reasoning and system designs
 
-Five anchors span explicit reasoning while listening, latent listening-time cognition, a released text-LLM duplex backbone, concurrent formulation/articulation, and a released asynchronous frontend/backend. Moshi is compared separately in the synchronization shortlist.
+Seven anchors span explicit and latent listening-time reasoning, timed text-backbone speech, concurrent formulation/articulation, two asynchronous interaction/thinking designs, and native parallel text/function heads. Moshi is compared separately in the synchronization shortlist. The other three categories retain five entries each.
 
 | System / paper | Reasoning, backbone and speech path | Code / weights | Training release |
 | --- | --- | --- | --- |
@@ -13,6 +13,8 @@ Five anchors span explicit reasoning while listening, latent listening-time cogn
 | [MiniCPM-o 4.5](https://arxiv.org/abs/2604.27393) | Qwen3-8B (~9B system). Omni-Flow serializes timed windows. Main LLM predicts text/listen decisions; a small Llama/S3 speech-token decoder and streaming flow decoder synthesize audio. | Inference + realtime demo and weights; Apache-2.0. | General fine-tuning tools; complete duplex recipe and mixture not established. |
 | [StepAudio 3 Realtime](https://arxiv.org/abs/2609.14005) | Step 3.7 Flash MoE (196B total/11B active) + AuT speech encoder. Two concurrent audio-LLM processes share parameters: private formulation and articulation, with playback-aware pacing and async tools. | Report/project demos; Realtime code/weights not located. Earlier Step releases are not this model. | Recipe; full training code/mixture not located. |
 | [Realtime-Venus](https://arxiv.org/abs/2609.13814) | MiniCPM-o 4.5-derived 9B Audio/Omni frontend; causal 1 s chunks, persistent context, and an asynchronous backend. A harness returns backend text to the speaking frontend. | Inference/harness + Audio/Omni weights; Apache-2.0. Demo integration is Omni-based. | Methods; complete training package/mixture not located. |
+| [DuplexOmni](https://arxiv.org/abs/2606.09186) | Qwen3-Omni Thinker/Talker interaction model; 480 ms slices and persistent speech context. A separate pluggable thinking layer returns streaming feedback and can be stopped. Reported full configuration uses Gemini-3.1-Flash-Lite. | Inference, training and data-pipeline code; weights released. Source Apache-2.0; upstream terms apply. | Writer-Director metadata + one generated shard; not the full ~9 TB corpus. |
+| [NemotronLabs VoiceChat](https://arxiv.org/abs/2609.21967) | 11B system: Nemotron Nano 9B v2 + 80 ms FastConformer features; parallel text/function heads, auxiliary RNN-T and separately trained streaming TTS. No user ASR transcript fed into the LLM. Tool execution currently disables barge-in. | NeMo runtime branch + weights; OpenMDW-1.1 weights. Not a Moshi decoder. | Training methods and sources; full pipeline and mixture not established. |
 
 ## Synchronization and temporal interfaces
 
@@ -54,7 +56,7 @@ Five natural conversational resources are chosen for channel separation, tempora
 
 G1: Jointly measure evidence age, correct useful audible response time, and unsafe commitment under late corrections.
 G2: Maintain speaker-owned hypothesis versions across concurrent capture, reasoning, synthesis and playback.
-G3: Establish causal end-to-end consistency across corrected frontend state, pending tools and output queues, beyond cancellation alone.
+G3: Establish causal end-to-end consistency across corrected frontend state, pending tools and output queues, beyond cancellation alone; distinguish VoiceChat's tool-execution listening restriction.
 G4: Validate adaptive temporal interfaces against real wall-clock deadlines and compute contention, not only virtual-clock task scores.
 G5: Construct auditable prefix-sufficiency, revision and addressee labels without future-evidence leakage or cross-corpus session contamination.
 
@@ -108,7 +110,7 @@ Hypothesis: Speaker/task-versioned dependency checks at both result admission an
 
 Small experiment: Inject corrections into a simulated 0.5/2/5 s backend at launch, inflight, return and pre-playback stages; compare blind injection, explicit cancel/stale suppression, and joint result/output validation.
 
-Prior-work distinction: AdaptDuplex already cancels jobs and suppresses stale results. Candidate novelty requires speaker-specific dependency plus audible-commitment consistency, not renaming that mechanism.
+Prior-work distinction: AdaptDuplex cancels jobs and suppresses stale results; DuplexOmni stops/resets background thinking. VoiceChat's tool-execution barge-in restriction is a separate baseline condition. Candidate novelty requires speaker-specific dependency plus audible-commitment consistency, not renaming cancellation.
 
 ## References
 
@@ -117,6 +119,8 @@ Prior-work distinction: AdaptDuplex already cancels jobs and suppresses stale re
 - [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393). Cui, Junbo, Xu, Bokai, Wang, Chongyi, Yu, Tianyu, Sun, Weiyue, Xu, Yingjing, Wang, Tianran, He, Zhihui, Ma, Wenshuo, Cai, Tianchi, Gui, Jiancheng, Zhang, Luoyuan, Sun, Xian, Huang, Fuwei, Chen, Moye, Lin, Zhuo, Liu, Hanyu, Gui, Qingxin, Han, Qingzhe, Wen, Yuyang, Liu, Huiping, Wang, Rongkang, Zhang, Yaqi, Wei, Hongliang, Chen, Chi, Li, You, Fang, Kechen, Zhou, Jie, Li, Yuxuan, Zeng, Guoyang, Xiao, Chaojun, Lin, Yankai, Han, Xu, Sun, Maosong, Liu, Zhiyuan, Yao, Yuan. Preprint / technical report; 2026-04-30.
 - [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005). Lin, Bin, Zhao, Bo, Zhang, Boyang, Wu, Boyong, Yan, Chao, Geng, Chen, Wu, Chen, Yi, Cheng, Feng, Chengli, Zhu, Chenglin, Feng, Chengting, Yao, Chengyuan, Liu, Daijiao, Wan, DanNi, Jiang, Daxin, Li, Dongjian, Pang, Dongqing, Tian, Fei, Tian, Feng, Li, Future, Yu, Gang, Yang, Guanglong, Zhang, Haoyang, Wang, Hongyuan, Peng, Jia, Song, Jiahao, Xue, Jialong, Fan, Jiamin, Zhen, Jiangjie, Gao, Jianzheng, Wen, Jincheng, Liang, Jinghua, Gong, Jinglan, Chen, Jun, Xie, Li, Zhao, Liang, Zhang, Lifang, Ji, Lingli, Cai, Lun, Xu, Min, Li, Peilin, Yang, Peng, Tan, Pengfei, Lin, Qingjian, Du, Qinxin, Xiong, Ruijie, Li, Runze, Hu, Shenghua, Qin, Shengqian, Qiu, Shi, Tu, Siqi, Zhou, Siyi, Deng, Tianjiao, Lu, Wanying, Niu, Weiming, Sun, Wen, Qu, WenWen, Zhang, Xiangyu, Zhang, Xianwei, Su, Xiaosu, Chen, Xing, Liu, Xinyu, Yang, Xuerui, Wu, Yan, Li, Yang, Yang, Yang, Huang, Yechang, Zhu, Yibo, Zhang, Yifan, Yan, Yinuo, Chen, Youjun, Fu, Yu, Luo, Yu, Zhou, Yu, Chen, Yujie, Wang, Yumang, Ju, Yunzhou, Yang, Yuxiang, Li, Yuxin, Zhang, Yuxin, Liu, Zekai, Yao, Zengwei, Yuan, Zhaoxin, Mou, Zhenwei, Zhang, Zhiquan, Wu, Zhiyue, Li, Zichao, Zhou, Zichao, Ren, Ziqi, Wang, Zixuan. Preprint / technical report; 2026-09-12.
 - [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](https://arxiv.org/abs/2609.13814). Ant Group. Preprint / technical report; 2026-09-12.
+- [DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction](https://arxiv.org/abs/2606.09186). Huang, Muye, Zhang, Lingling, Yu, Xingyu, Shi, Lei, Ma, Zhanyu, Xu, Jun, Gao, Jiuchong, Hao, Jinghua, He, Renqing, Liu, Jun. Preprint / technical report; 2026-06-08.
+- [NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities](https://arxiv.org/abs/2609.21967). Balam, Jagadeesh, Bartley, Travis, Casanova, Edresson, Chauhan, Sanjay, Chen, Chen, Chen, Zhehuai, Chen, Zijia, Ciannella, Francesco, Deng, Slyne, Desta, Mikyas, Dubey, Harishchandra, Essid, Slim, Ferchichi, Nourchene, Ginsburg, Boris, Fuenmayor, Mariana Graterol, Habibi, Negar, Hu, Kevin, Joseph, Anand, Karandikar, Viraj, Kim, Myungjong, Klimkov, Viacheslav, Narasimhan, Seelan Lakshmi, Lee, Lily, Li, Jason, Long, Eileen, Mahabaleshwarkar, Ameya, Malte, Aditya, Margolin, Adi, Meister, Sasha, Mendelev, Valentin, Olabiyi, Oluwatobi, Pasad, Ankita, Peng, Yifan, Rastorgueva, Elena, Ritchie, Jayda, Roche, Jason, Srihari, Nikhil, Su, Yuanhang, Suhara, Yoshi, Trinh, Viet Anh, Wang, Jinhan, Zelasko, Piotr, Wang, Hui, Meng, Puhui, Zhang, Chaosen, Liu, Yunsheng, Wang, Shawn, Li, Wenjing, He, Zhonglei. Preprint / technical report; 2026-09-18.
 - [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594). Veluri, Bandhav, Peloquin, Benjamin N, Yu, Bokai, Gong, Hongyu, Gollakota, Shyamnath. EMNLP 2024; 2024-09-23.
 - [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037). Défossez, Alexandre, Mazaré, Laurent, Orsini, Manu, Royer, Amélie, Pérez, Patrick, Jégou, Hervé, Grave, Edouard, Zeghidour, Neil. Preprint / technical report; 2024-09-17.
 - [DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action](https://arxiv.org/abs/2605.20755). Zhang, Haoyang, Chen, Jun, Wu, Donghang, Li, Yuxin, Zhang, Yuxin, Zhang, Xiangyu Tony, Liu, Che, Lin, Qingjian, Peng, Yizhou, Liu, Hexin, Chng, Eng Siong, Yan, Chao, Wu, Boyong, Huang, Yechang, Yang, Xuerui, Tian, Fei. Preprint / technical report; 2026-05-20.
@@ -190,6 +194,30 @@ Results: Audio variant reports continuation of 97% / 88% / 86% for backchannel /
 Relevance: Released architecture and harness for testing revisions while a backend task is pending.
 
 Limitations: Audio and Omni evaluations differ. Released harness/demo integration is Omni-based; do not assume every paper setting is reproduced.
+
+### DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction
+
+Problem: Real-time dialogue must continue while slower multimodal reasoning and tools run asynchronously.
+
+Method: Qwen3-Omni-derived interaction Thinker/Talker on 480 ms slices, separate pluggable thinking layer, streaming feedback/reset and Writer-Director supervision.
+
+Results: Table 1 reports interaction, streaming understanding, WER and latency for the full system with Gemini-3.1-Flash-Lite. Shared audited numeric profiles retain missing values and convert WER fractions to percent; no independent reproduction.
+
+Relevance: Released layered baseline for think/listen/speak concurrency, explicit reasoning interruption and synthesized causal timing labels.
+
+Limitations: Reported full configuration is not an all-open backend comparison. English/video weaknesses are acknowledged. Metadata and one shard do not constitute the full approximately 9 TB generated corpus; the ToR aggregate and latency endpoint are not harmonized across studies.
+
+### NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities
+
+Problem: Native tool calling must coexist with low-latency speech, user transcription and conversational turn control.
+
+Method: Nemotron Nano 9B v2 with streaming FastConformer, parallel text/function heads, auxiliary shared-encoder RNN-T and independently trained persistent TTS on an 80 ms feature grid.
+
+Results: Table 4 reports FDB-v3 tool F1, argument accuracy and pass@1; the shared profile includes its imported Gemini references and a separately attributed GPT-Realtime benchmark context reference. No independent reproduction.
+
+Relevance: An open text-backbone alternative to Moshi and serialized action tokens; exposes separate speech, transcription and native function channels.
+
+Limitations: User ASR transcript is not the LLM input. Tool execution substitutes silence during training, predefined acknowledgments at runtime, and currently prevents barge-in. Approximately two-minute context, limited tool composition and background-speech robustness; complete assembled training mixture not established.
 
 ### Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents
 

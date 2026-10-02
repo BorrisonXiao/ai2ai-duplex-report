@@ -8,6 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "report"
 sys.path.insert(0, str(REPORT / "research"))
 from performance_profiles import PROFILES
+sys.path.insert(0, str(REPORT / "scripts"))
+from build_performance import all_groups, scores
 
 def verified_sources():
     audit = json.loads((ROOT / "research/source-audit.json").read_text())
@@ -41,8 +43,10 @@ def architecture_gallery(e, link, figure_number):
         ("flair", "FLAIR", "Listening-time latent embeddings and speaking-time text share a Qwen2.5-7B backbone. Full-context expert supervision is training-only."),
         ("step3", "StepAudio 3 Realtime", "Same-model formulation and articulation for think-while-speaking. Figure 7B is selected; routing panel A is omitted."),
         ("venus", "Realtime-Venus", "Concurrent interaction and capability loops, tracked background work and same-session return; the frontend selects reply-delivery timing."),
+        ("duplexomni", "DuplexOmni", "Both original panels: asynchronous interaction/thinking layers above, and the interaction model’s internal Qwen Thinker/Talker below. These are different boundaries. Fixed 480 ms slices; reported full-system scores include a Gemini-3.1-Flash-Lite backend."),
+        ("voicechat", "NemotronLabs VoiceChat", "Streaming FastConformer feeds a Nemotron text backbone with parallel agent-text/function heads, auxiliary RNN-T and separate streaming TTS. User transcription is not fed into the LLM. Tool execution currently disables user barge-in."),
     ]
-    body = '<h3>Original-paper architecture views</h3><p>Figures 2–6 retain the papers’ labels, arrows and legends. On narrow screens, pan the image horizontally or open it full-size. These are attributed screenshots, not redraws or latency comparisons.</p><div class="architecture-gallery">'
+    body = '<h3>Seven focused architecture views</h3><p>The original top-five gallery is expanded with DuplexOmni and NemotronLabs VoiceChat, both pinned to arXiv v1. Figures 2–8 retain the papers’ labels, arrows and legends; the broader system table follows. On narrow screens, pan the image horizontally or open it full-size. These are attributed screenshots, not redraws or latency comparisons.</p><div class="architecture-gallery">'
     for ident, title, description in descriptions:
         source = records[ident]
         image = "report/" + source["image"]
@@ -52,26 +56,26 @@ def architecture_gallery(e, link, figure_number):
 
 def performance_section(table, e, p, link, small, figure_number):
     data, plots = evidence()
-    groups = {group['id']: group for group in data['groups'] + data.get('supplementary_groups', [])}
+    groups = {group['id']: group for group in all_groups(data)}
     profiles = {profile['id']: profile for profile in plots['profiles']}
     def plot(ident, title, caption, alt, artifacts):
         image = 'report/' + artifacts['svg']['file'] + '?v=' + artifacts['svg']['sha256'][:12]
         return '<figure class="performance-figure" id="plot-' + ident + '"><div class="plot-scroll" tabindex="0" role="region" aria-label="' + e(title + ' plot') + '"><img src="' + e(image) + '" alt="' + e(alt) + '" loading="lazy"></div><figcaption>' + e(f'Figure {figure_number()}. {title}. {caption}') + ' ' + link('Open full-size SVG', image) + ' · ' + link('Vector PDF', 'report/' + artifacts['pdf']['file']) + '</figcaption></figure>'
     body = p('The selected models do not share a complete evaluation grid. Compare individual metrics within a named protocol, not radar area or panels from different benchmarks. Raw percentages use 0–100 radars; seconds and judge scores retain their own bar axes. Missing results are NR, never zero. No cross-benchmark average or normalization to a reference is used.')
     body += p('On narrow screens, pan the figures horizontally or open the full-size SVG; exact values remain in the scrollable tables.', cls='scroll-note')
-    body += plot('coverage', 'Selected-system benchmark coverage', 'Reported and NR cells, not performance scores. Original and Artificial Analysis τ-Voice stay separate. FLAIR’s study-specific scores do not fill SRQA or FDB-v3 cells.', 'Coverage: TWL has SRQA, MiniCPM-o has Duplex-MPE, StepAudio has AA tau-Voice, Venus has FDB-v3; FLAIR has no matching result in these protocols.', plots['coverage'])
-    body += '<nav class="jump-links" aria-label="Model performance profiles">' + ' '.join(link(label, '#profile-' + ident) for ident, label in [('twl','TWL'), ('flair-qa','FLAIR'), ('step3','StepAudio 3'), ('venus','Venus'), ('minicpm','MiniCPM-o'), ('tau-original','Closed references')]) + '</nav>'
+    body += plot('coverage', 'Selected-system benchmark coverage', 'Reported and NR cells, not performance scores. Original and Artificial Analysis τ-Voice stay separate. FLAIR’s and DuplexOmni’s study-specific scores do not fill SRQA or FDB-v3 cells.', 'Coverage for seven architectures: TWL has SRQA, MiniCPM-o has Duplex-MPE, StepAudio has AA tau-Voice, Venus and VoiceChat have FDB-v3; FLAIR and DuplexOmni have no matching result in these protocols.', plots['coverage'])
+    body += '<nav class="jump-links" aria-label="Model performance profiles">' + ' '.join(link(label, '#profile-' + ident) for ident, label in [('twl','TWL'), ('flair-qa','FLAIR'), ('step3','StepAudio 3'), ('venus','Venus'), ('minicpm','MiniCPM-o'), ('duplexomni','DuplexOmni'), ('voicechat','VoiceChat'), ('tau-original','Closed references')]) + '</nav>'
     body += '<div class="callout amber"><h3>Best reported in a source is not global SoTA</h3>' + p('Named closed source leaders appear where evaluated, alongside representative models. Some references are imported from earlier studies or evaluated later in system reports, not a shared rerun. Plots show source-reported point estimates without invented error bars. Text-only and transcript-conditioned controls stay out of speech-model radars.') + '</div>'
     for spec in PROFILES:
         group, record = groups[spec['group']], profiles[spec['id']]
         rows = [row for row in group['rows'] if row['role'] != 'text_control']
         labels = data['domain_metric_labels'] + group['metric_labels'] if group['id'] == 'tau_aa' else group['metric_labels']
         definitions = group.get('metric_specs', [{'unit': '%', 'higher': True, 'decimals': rows[0]['decimals']} for _ in labels])
-        numeric = [row['domain_scores'] + row['source_values'] if group['id'] == 'tau_aa' else [None if value is None else value*row['scale'] for value in row['source_values']] for row in rows]
+        numeric = [scores(group, row) for row in rows]
         winners = [(max if definition['higher'] else min)(values[index] for values in numeric if values[index] is not None) for index, definition in enumerate(definitions)]
         headers = ['Model / configuration'] + [label + ' (' + definition['unit'] + ('; higher' if definition['higher'] else '; lower') + ')' for label, definition in zip(labels, definitions)]
         rendered = []
-        roles = {'selected':'Selected configuration','closed_voice':'Closed voice reference','ablation':'No-thinking ablation','foundation':'Foundation speech reference','representative':'Representative speech reference','api_comparator':'API comparator'}
+        roles = {'selected':'Selected configuration','closed_voice':'Closed voice reference','ablation':'No-thinking ablation','foundation':'Foundation speech reference','representative':'Representative speech reference','api_comparator':'API comparator','backend_only':'Thinking-only backend; not a realtime voice competitor'}
         for row, values in zip(rows, numeric):
             name = ('<strong>' + e(row['model']) + '</strong>') if row['role'] == 'selected' else e(row['model'])
             name += small(roles.get(row['role'], row['role'])) + '<span class="inline-links">' + link('Primary score source', data['sources'][row['source']]['url']) + '</span>'
@@ -90,6 +94,7 @@ def performance_section(table, e, p, link, small, figure_number):
     for control in data['text_controls']:
         values = ' / '.join(f"{value*control['scale']:.{control['decimals']}f}" for value in control['source_values'])
         body += p(control['model'] + ': ' + values + '% (' + ' / '.join(control['metric_labels']) + '). ' + control['notes'])
-    body += p('The structured data retains source scores and conversion rules; the audit matches 43 model/configuration vectors to eight primary PDFs. This verifies transcription, not experimental reproduction. The evidence cutoff remains 30 September 2026.')
+    audit = json.loads((REPORT / 'research/reported-performance-audit.json').read_text())
+    body += p(f'The structured data retains source scores and conversion rules; the audit matches {len(audit["checks"])} model/configuration vectors to {len(audit["sources"])} primary PDFs. This verifies transcription, not experimental reproduction. The evidence cutoff remains 30 September 2026.')
     body += '<div class="button-row">' + ' '.join(link(label, target, 'button') for label, target in [('Detailed PDF','report/build/detailed-report.pdf'), ('Detailed preview','report/preview/detailed/contact-sheet.png'), ('Meeting brief','report/build/duplex-report.pdf'), ('Source ZIP','report/build/duplex-report-source.zip'), ('Score data','report/research/reported-performance.json'), ('Primary-value audit','report/research/reported-performance-audit.json'), ('Plot provenance','report/research/performance-plots.json')]) + '</div>'
     return body

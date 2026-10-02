@@ -184,7 +184,7 @@ Research question: RQ5.
 
 **Contribution type:** method
 
-**Novelty rationale:** AdaptDuplex already cancels jobs and suppresses stale results. Candidate novelty requires speaker-specific dependency plus audible-commitment consistency, not renaming that mechanism.
+**Novelty rationale:** AdaptDuplex cancels jobs and suppresses stale results; DuplexOmni stops/resets background thinking. VoiceChat's tool-execution barge-in restriction is a separate baseline condition. Candidate novelty requires speaker-specific dependency plus audible-commitment consistency, not renaming cancellation.
 
 **Risk:** medium
 
@@ -192,7 +192,7 @@ Research question: RQ5.
 
 **Expected outcome:** Determine whether a second commitment-stage check improves corrected task success.
 
-**Closest prior work:** [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](https://arxiv.org/abs/2609.13814), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends](https://arxiv.org/abs/2609.33443), [Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency](https://arxiv.org/abs/2604.04847), [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686)
+**Closest prior work:** [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](https://arxiv.org/abs/2609.13814), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [Context Spanning: A Communication Framework for Full-Duplex Speech Models and External LLM Backends](https://arxiv.org/abs/2609.33443), [DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction](https://arxiv.org/abs/2606.09186), [NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities](https://arxiv.org/abs/2609.21967), [Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency](https://arxiv.org/abs/2604.04847), [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686)
 
 **Feasibility:** Pilot estimate, not measured: 8--20 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment. 200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out. medium Versioned read-only/simulated jobs; cancellation baseline explicitly included.
 

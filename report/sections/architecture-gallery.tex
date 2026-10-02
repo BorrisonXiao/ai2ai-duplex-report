@@ -1,6 +1,6 @@
 \clearpage
 \subsection{Original-paper architecture views: Moshi and MiniCPM-o}
-The screenshots in Figures~\ref{fig:detailed-moshi}--\ref{fig:detailed-venus} preserve the source labels, arrows and legends. They show the main architecture choices, not a shared timing scale or an experimentally established ranking. The system and availability distinctions in Table~\ref{tab:systems} still apply.
+The seven screenshots in Figures~\ref{fig:detailed-moshi}--\ref{fig:detailed-voicechat} preserve the source labels, arrows and legends. They show the main architecture choices, not a shared timing scale or an experimentally established ranking. The system and availability distinctions in Table~\ref{tab:systems} still apply.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/papers/moshi.png}
@@ -33,4 +33,24 @@ The screenshots in Figures~\ref{fig:detailed-moshi}--\ref{fig:detailed-venus} pr
 \caption{\textbf{Realtime-Venus.} Reproduced from \citet{venus}, Fig.~3. Foreground interaction continues during delegation; the frontend controls reply-delivery timing.}
 \label{fig:detailed-venus}
 \end{figure}
+\clearpage
+\subsection{Original-paper architecture view: DuplexOmni}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/papers/duplexomni.png}
+\caption{\textbf{DuplexOmni.} Reproduced from \citet{duplexomni}, v1, Fig.~2 (both panels). Panel (a) separates real-time interaction from the asynchronous thinking layer. Panel (b) shows the interaction model's internal Thinker/Talker; these names must not be confused with the external thinking layer. The figure omits MTP and Code2Wav, as in the original.}
+\label{fig:detailed-duplexomni}
+\end{figure}
+\paragraph{Clock and reasoning boundary.}
+The interaction model consumes the preceding slice's audio/video and backend feedback, and generates the next 480 ms speech slice. Its Talker emits six 80 ms codec frames per slice with persistent speech context. Background thinking can be stopped when the user changes the task; cancellation alone does not establish correction-safe playback. The Writer-Director training pipeline supplies explicit overlap, cutoff, thinking-reset and silence annotations. Code, weights, metadata and one generated shard are released; the complete generated corpus is not directly hosted. The performance profile below labels the default closed thinking backend rather than treating the frontend as an all-open evaluated system \citep{duplexomni}.
+\clearpage
+\subsection{Original-paper architecture view: NemotronLabs VoiceChat}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/papers/voicechat.png}
+\caption{\textbf{NemotronLabs VoiceChat.} Reproduced from \citet{voicechat}, v1, Fig.~1. A streaming speech encoder feeds a decoder-only text backbone, parallel agent-text/tool heads, and an auxiliary RNN-T branch. Separate speech and codec decoders generate audio. The user transcription is an auxiliary output, not an ASR-to-LLM text cascade.}
+\label{fig:detailed-voicechat}
+\end{figure}
+\paragraph{Parallel outputs are not unrestricted parallel interaction.}
+The 11B system uses 80 ms audio features and separately trained persistent TTS. Native function tokens run alongside agent text, instead of sharing a serialized action/text output channel. During tool calls, training replaces user audio with silence; runtime uses predefined acknowledgment text. User barge-in is currently unavailable while a tool executes. This is an especially concrete listening-synchronization boundary to instrument: a new correction may be physically spoken without reaching the task state before tool completion. Approximately two-minute context, weak multi-tool composition and competing speech are further reported limitations \citep{voicechat}.
 \clearpage

@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "research"))
 import focused_review as data
 import brief_data as brief
+from build_performance import all_groups
+from performance_profiles import PROFILES
 
 def body_word_count(document, page_limit=None):
     """Count extractable PDF text; raster screenshot labels are excluded."""
@@ -34,7 +36,7 @@ def main():
     digest = json.loads((ROOT / "research" / "literature.json").read_text())
     ideas = json.loads((ROOT / "research" / "ideas.json").read_text())
     audit = json.loads((ROOT / "research" / "source-audit.json").read_text())
-    check(len(digest["categories"]) == 4 and all(len(c["rows"]) == 5 for c in digest["categories"]), "Exactly four categories and five entries per category")
+    check(len(digest["categories"]) == 4 and all(len(c["rows"]) == (7 if c["id"] == "systems" else 5) for c in digest["categories"]), "Seven systems and five entries in each other category")
     check(len(digest["research_questions"]) == 5, "Five major research questions")
     check(len(ideas["ideas"]) == 8 and len(ideas["removed"]) == 2, "Eight unranked, grounded candidates; duplicate/infeasible exclusions recorded")
     check(all(i["risk"] in {"low", "medium", "high"} and i["contribution_type"] in {"empirical", "method", "theory", "diagnostic"} for i in ideas["ideas"]), "Candidate schema and risk labels")
@@ -46,17 +48,17 @@ def main():
     all_tex = tex + "\n" + (ROOT / "detailed-report.tex").read_text() + "\n" + "\n".join(p.read_text() for folder in ("tables", "figures", "sections") for p in (ROOT / folder).glob("*.tex"))
     keys = set(re.findall(r"@\w+\{([^,]+),", (ROOT / "references.bib").read_text()))
     citations = {key for match in re.findall(r"\\cite[tp]?\{([^}]+)\}", all_tex) for key in match.split(",")}
-    check(citations <= keys and len(keys) == 21, "All citation keys resolve to 21 documented bibliography entries")
+    check(citations <= keys and len(keys) == 23, "All citation keys resolve to 23 documented bibliography entries")
     compact_bib = (ROOT / "brief-references.tex").read_text()
     compact_keys = set(re.findall(r"\\bibitem\[[^]]+\]\{([^}]+)\}", compact_bib))
     compact_tex = tex + "\n" + "\n".join(p.read_text() for p in (ROOT / "tables").glob("brief-*.tex"))
     compact_citations = {key for match in re.findall(r"\\cite[tp]?\{([^}]+)\}", compact_tex) for key in match.split(",")}
     check(compact_citations == compact_keys and len(compact_keys) == 20, "All 20 brief references cited and all brief citations resolve")
     check(compact_bib.count(r"\href{") == 20, "Every compact reference links to its primary document or dataset card")
-    check(all(p["status"] == "verified" and p["title"] and p["authors"] for p in digest["papers"]), "All 16 paper entries have verified primary bibliographic metadata")
+    check(len(digest["papers"]) == 18 and all(p["status"] == "verified" and p["title"] and p["authors"] for p in digest["papers"]), "All 18 paper entries have verified primary bibliographic metadata")
     for category in data.CATEGORIES:
         table = (ROOT / "tables" / (category["id"] + ".tex")).read_text()
-        check(table.count(r"\par\citep{") == 5 and category["label"] in table, "Five labeled generated rows: " + category["id"])
+        check(table.count(r"\par\citep{") == len(category["rows"]) and category["label"] in table, "Correct labeled generated rows: " + category["id"])
     check(len(brief.TABLES) == 4 and len(brief.QUESTIONS) == 5, "Four literature categories and five questions preserved in the brief")
     for category in brief.TABLES:
         table = (ROOT / "tables" / ("brief-" + category["id"] + ".tex")).read_text()
@@ -66,8 +68,8 @@ def main():
     check(len(figures["figures"][:5]) == 5 and all(f["paper_keys"] and f["source_figures"] for f in figures["figures"][:5]), "Five architecture screenshots traced to primary figure/method evidence")
     manifest = json.loads((ROOT / "figures" / "papers" / "manifest.json").read_text())
     screenshots = {record["image"]: record for record in manifest["sources"]}
-    check(len(screenshots) == 5 and tex.count("Reproduced from") == 5, "Five original-paper screenshots with per-caption attribution")
-    for figure in figures["figures"]:
+    check(len(screenshots) == 7 and tex.count("Reproduced from") == 5 and len(figures["detailed_only_figures"]) == 2, "Seven original-paper screenshots; meeting brief keeps its five")
+    for figure in figures["figures"] + figures["detailed_only_figures"]:
         path = ROOT / figure["file"]
         if path.suffix == ".png":
             record = screenshots[figure["file"]]
@@ -76,7 +78,8 @@ def main():
         else:
             source = path.read_text()
             check(r"\begin{tikzpicture}" in source and r"\includegraphics" not in source, "Editable native-vector trace/plot: " + figure["id"])
-        check(set(figure["paper_keys"]) <= compact_keys, "Figure-source citations resolve: " + figure["id"])
+        available_keys = compact_keys if figure in figures["figures"] else keys
+        check(set(figure["paper_keys"]) <= available_keys, "Figure-source citations resolve: " + figure["id"])
     check(screenshots["figures/papers/step3.png"]["figure"] == "7B" and "routing panel A omitted" in tex, "StepAudio panel selection explicitly labeled")
     check("not a latency leaderboard" in tex and "not an experiment" in tex, "Published timing parameters and proposed trace explicitly separated from measured results")
     trace = (ROOT / "figures" / "commitment.tex").read_text()
@@ -85,25 +88,25 @@ def main():
     performance = json.loads(performance_path.read_text())
     performance_audit = json.loads((ROOT / "research" / "reported-performance-audit.json").read_text())
     check(len(performance["groups"]) == 6 and {group["id"] for group in performance["groups"]} == {"srqa", "tau_original", "tau_aa", "fdb3", "echo", "mpe"}, "Five benchmark families, with original and AA tau-Voice protocols kept separate")
-    check(len(performance["coverage"]) == 5 and {row["system"] for row in performance["coverage"]} == {row[0] for row in brief.TABLES[0]["rows"]}, "Coverage records match all five selected systems")
+    check(len(performance["coverage"]) == 7 and {row["system"] for row in performance["coverage"]} == {row["name"] for row in data.CATEGORIES[0]["rows"]}, "Coverage records match all seven selected architectures")
     check(performance_audit["status"] == "passed" and performance_audit["data_sha256"] == hashlib.sha256(performance_path.read_bytes()).hexdigest(), "Reported-results audit matches the current structured data")
     source_rows = []
-    for group in performance["groups"] + performance["supplementary_groups"]:
+    for group in all_groups(performance):
         for row in group["rows"]:
             source_rows.append({"group": group["id"], "model": row["model"], "source_values": row["source_values"], "status": "matches_primary_pdf"})
             if "domain_scores" in row:
                 source_rows.append({"group": "tau_aa_domains", "model": row["model"], "source_values": row["domain_scores"], "status": "matches_primary_pdf"})
     source_rows += [{"group": row["benchmark"], "model": row["model"], "source_values": row["source_values"], "status": "matches_primary_pdf"} for row in performance["text_controls"]]
-    check(performance_audit["checks"] == source_rows and len(source_rows) == 43, "All 43 model/configuration vectors match primary PDF table evidence")
-    check(len(performance_audit["sources"]) == 8 and all(re.fullmatch(r"[0-9a-f]{64}", source["pdf_sha256"]) for source in performance_audit["sources"].values()), "Eight primary result sources have version, table, page and PDF-hash provenance")
+    check(performance_audit["checks"] == source_rows and len(source_rows) == 55, "All 55 model/configuration vectors match primary PDF table evidence")
+    check(len(performance_audit["sources"]) == 10 and all(re.fullmatch(r"[0-9a-f]{64}", source["pdf_sha256"]) for source in performance_audit["sources"].values()), "Ten primary result sources have version, table, page and PDF-hash provenance")
     plots = json.loads((ROOT / "research/performance-plots.json").read_text())
-    check(plots["data_sha256"] == performance_audit["data_sha256"] and len(plots["profiles"]) == 8, "Eight model/benchmark profiles generated from the current audited data")
+    check(plots["data_sha256"] == performance_audit["data_sha256"] and len(plots["profiles"]) == len(PROFILES), "Ten model/benchmark profiles generated from the current audited data")
     artifacts = [plots["coverage"]] + [profile["artifacts"] for profile in plots["profiles"]]
     for asset in artifacts:
         for extension, record in asset.items():
             check(hashlib.sha256((ROOT / record["file"]).read_bytes()).hexdigest() == record["sha256"], "Plot source matches its provenance: " + record["file"])
     from build_performance import exact_table
-    for group in performance["groups"] + performance["supplementary_groups"]:
+    for group in all_groups(performance):
         check((ROOT / "tables" / ("performance-" + group["id"] + ".tex")).read_text() == exact_table(performance, group), "Exact-value table matches the structured result data: " + group["id"])
     performance_table = (ROOT / "tables" / "brief-performance.tex").read_text()
     check(performance_table.startswith("% Generated by scripts/make_table_reported_performance.py;") and performance_table.count(r"\addlinespace[2pt]") == 5, "Reported-performance table is code-generated with six protocol rows")
@@ -131,7 +134,9 @@ def main():
     detailed_source = (ROOT / "detailed-report.tex").read_text()
     detailed_log = (ROOT / "build/detailed-report.log").read_text()
     check(not re.search(r"Overfull \\[hv]box|undefined|LaTeX Error|Missing character|Font Warning", detailed_log, re.I), "Detailed report has no overflow, missing glyphs, font fallback or unresolved references")
-    check(all(f"Table {n}:" in detailed_text for n in range(1, 13)) and all(f"Figure {n}:" in detailed_text for n in range(1, 16)), "Detailed report renders 12 tables and 15 figures")
+    detailed_tables = 4 + len(PROFILES)
+    detailed_figures = len(screenshots) + len(PROFILES) + 2
+    check(all(f"Table {n}:" in detailed_text for n in range(1, detailed_tables+1)) and all(f"Figure {n}:" in detailed_text for n in range(1, detailed_figures+1)), f"Detailed report renders {detailed_tables} tables and {detailed_figures} figures")
     check(r"\input{figures/commitment}" in detailed_source and "initial evidence" not in detailed_source, "Detailed report reuses the plain-language correction figure")
     detailed_aux = (ROOT / "build/detailed-report.aux").read_text()
     for profile in plots["profiles"]:
@@ -154,11 +159,11 @@ def main():
     with zipfile.ZipFile(ROOT / "build" / "duplex-report-source.zip") as archive:
         members = set(archive.namelist())
         check({"duplex-report.tex", "detailed-report.tex", "brief-references.tex", "research/figure-sources.json", "references.bib", "iclr2026_conference.sty", "iclr2026_conference.bst", "README.md"} <= members, "Source ZIP has both versions, bibliographies, figure evidence and official styles")
-        check(all(figure["file"] in members for figure in figures["figures"]) and "figures/papers/manifest.json" in members, "Source ZIP includes five screenshots, two native figures and screenshot provenance")
+        check(all(figure["file"] in members for figure in figures["figures"] + figures["detailed_only_figures"]) and "figures/papers/manifest.json" in members, "Source ZIP includes seven screenshots, two native figures and screenshot provenance")
         check({"research/reported-performance.json", "research/reported-performance-audit.json", "tables/brief-performance.tex", "tables/performance-macros.tex"} <= members, "Source ZIP includes reported-score data, primary-value audit and generated table/macros")
         check(archive.read("research/reported-performance.json") == performance_path.read_bytes(), "Packaged result data matches the current source-checked values")
         check({"archived-report.tex", "sections/architecture-gallery.tex", "sections/performance.tex", "research/performance-plots.json"} <= members, "Source ZIP includes the updated detailed sections, plot evidence and archived source")
-        for path in [ROOT / "duplex-report.tex", ROOT / "detailed-report.tex"] + list((ROOT / "sections").glob("*.tex")):
+        for path in [ROOT / "duplex-report.tex", ROOT / "detailed-report.tex", ROOT / "archived-report.tex"] + list((ROOT / "sections").glob("*.tex")):
             for target in re.findall(r"\\input\{([^}]+)\}", path.read_text()):
                 check(target + ".tex" in members, "Source ZIP includes input dependency: " + target)
             for target in re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", path.read_text()):
@@ -175,9 +180,9 @@ def main():
             fresh_log = (args.source_check_dir / (stem + '.log')).read_text()
             check(not re.search(r'Overfull \\[hv]box|undefined|LaTeX Error|Missing character|Font Warning', fresh_log, re.I), 'Fresh source-ZIP compilation has no overflow, missing glyphs or unresolved references: ' + stem)
             independent.append({'source': stem + '.tex', 'pages': len(fresh), 'content_matches': True})
-    result = {"status": "passed", "pages": len(document), "discussion_pages": 5, "detailed_report_pages": len(detailed), "archived_report_pages": len(archived), "extractable_discussion_words": word_count, "detailed_pre_reference_words": old_word_count, "word_count_scope": "PDF-extractable text; raster architecture screenshot labels excluded. Brief count is its first five pages; availability/reference appendix is separate.", "architecture_screenshots": 5, "native_trace_and_plot": 2, "figures": 7, "detailed_figures": 15, "performance_plots": 9, "detailed_tables": 12, "categories": 4, "entries_per_category": 5, "major_research_questions": 5, "performance_protocols": 6, "supplementary_flair_protocols": 2, "performance_benchmarks": 5, "primary_reported_score_vectors": len(source_rows), "primary_performance_sources": len(performance_audit["sources"]), "brief_references": len(compact_keys), "full_references": len(keys), "primary_links": len(audit["sources"]), "pdf_sha256": hashlib.sha256((ROOT / "build" / "duplex-report.pdf").read_bytes()).hexdigest(), "detailed_pdf_sha256": hashlib.sha256((ROOT / "build" / "detailed-report.pdf").read_bytes()).hexdigest(), "source_zip_sha256": hashlib.sha256((ROOT / "build" / "duplex-report-source.zip").read_bytes()).hexdigest(), "independent_source_compilation": independent, "checks": sorted(set(checks))}
+    result = {"status": "passed", "pages": len(document), "discussion_pages": 5, "detailed_report_pages": len(detailed), "archived_report_pages": len(archived), "extractable_discussion_words": word_count, "detailed_pre_reference_words": old_word_count, "word_count_scope": "PDF-extractable text; raster architecture screenshot labels excluded. Brief count is its first five pages; availability/reference appendix is separate.", "architecture_screenshots": len(screenshots), "brief_architecture_screenshots": 5, "native_trace_and_plot": 2, "figures": 7, "detailed_figures": detailed_figures, "performance_plots": len(artifacts), "detailed_tables": detailed_tables, "categories": 4, "entries_per_category": {c["id"]: len(c["rows"]) for c in data.CATEGORIES}, "major_research_questions": 5, "performance_protocols": 6, "supplementary_flair_protocols": 2, "additional_system_protocols": len(performance["additional_system_groups"]), "performance_benchmarks": 5, "primary_reported_score_vectors": len(source_rows), "primary_performance_sources": len(performance_audit["sources"]), "brief_references": len(compact_keys), "full_references": len(keys), "primary_links": len(audit["sources"]), "pdf_sha256": hashlib.sha256((ROOT / "build" / "duplex-report.pdf").read_bytes()).hexdigest(), "detailed_pdf_sha256": hashlib.sha256((ROOT / "build" / "detailed-report.pdf").read_bytes()).hexdigest(), "source_zip_sha256": hashlib.sha256((ROOT / "build" / "duplex-report-source.zip").read_bytes()).hexdigest(), "independent_source_compilation": independent, "checks": sorted(set(checks))}
     (ROOT / "build" / "validation.json").write_text(json.dumps(result, indent=2) + "\n")
-    print(f"PASS: five brief pages + availability/references; {word_count} extractable words (screenshot labels excluded); five original-paper screenshots; reported scores on five benchmarks; five RQs; no overflow or unresolved citations.")
+    print(f"PASS: unchanged six-page brief; {len(detailed)}-page detailed report; seven architecture screenshots; ten score profiles; five RQs; no overflow or unresolved citations.")
 
 if __name__ == "__main__":
     main()

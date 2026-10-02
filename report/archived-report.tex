@@ -51,7 +51,7 @@ The cutoff is 30 September 2026. We select exactly five entries per category by 
 \section{Focused literature and resource comparison}
 \label{sec:review}
 \subsection{Five reasoning and system-design anchors}
-\input{tables/systems}
+\input{tables/archived-systems}
 Table~\ref{tab:systems} contrasts three locations for reasoning: explicit private text in a codec-stream model, latent computation during listening, and text-centric or delegated reasoning coupled to speech generation. These are independent choices: ``uses an LLM decoder'' does not distinguish a serialized temporal protocol from Moshi's parallel streams. Likewise, a separate speech decoder does not automatically imply a half-duplex cascade.
 
 Think while listening is the direct predecessor for prefix sufficiency, but its streaming ASR has 480 ms lookahead and its post-question reasoning delay is not a first-useful-answer metric \citep{thinklisten}. FLAIR instead trains listening-time latent embeddings using a full-context teacher; inference is causal, so evaluation must distinguish input actually incorporated from information available to a training teacher \citep{flair}. MiniCPM-o is a practical open text-backbone comparison; Realtime-Venus exposes a released asynchronous harness. Neither release implies access to the full training mixture. StepAudio 3 offers a useful high-capability design reference, not a locally reproducible Realtime checkpoint \citep{minicpm,venus,step3}.

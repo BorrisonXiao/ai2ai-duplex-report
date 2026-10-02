@@ -86,6 +86,28 @@
       "verified_details": "Primary-paper modeling quanta only; distinct clock types, not measured response latencies."
     }
   ],
+  "detailed_only_figures": [
+    {
+      "id": "duplexomni",
+      "file": "figures/papers/duplexomni.png",
+      "paper_keys": [
+        "duplexomni"
+      ],
+      "source_figures": [
+        "2"
+      ]
+    },
+    {
+      "id": "voicechat",
+      "file": "figures/papers/voicechat.png",
+      "paper_keys": [
+        "voicechat"
+      ],
+      "source_figures": [
+        "1"
+      ]
+    }
+  ],
   "timing_parameters": [
     {
       "name": "Moshi codec frame",
@@ -119,6 +141,6 @@
     }
   ],
   "architecture_provenance": "figures/papers/manifest.json",
-  "copyright_scope": "Five attributed architecture screenshots reproduced from the original papers; crop margins/prose and select StepAudio panel B. Labels/arrows are not edited; rights remain with original holders. Conceptual trace and timing plot are original. Full papers/private proposal are not redistributed.",
+  "copyright_scope": "Seven attributed architecture screenshots in the detailed report; the meeting brief retains its original five. Crop margins/prose and select StepAudio panel B. Labels/arrows are not edited; rights remain with original holders. Conceptual trace and timing plot are original. Full papers/private proposal are not redistributed.",
   "omissions": "StepAudio Figure 7A (adaptive routing) omitted, explicitly labeled. Method details, losses and mixtures remain in detailed-report.pdf and original papers."
 }

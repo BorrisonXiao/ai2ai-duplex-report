@@ -861,6 +861,123 @@
       "final_url": "https://syncllm.cs.washington.edu/",
       "content_type": "text/html; charset=UTF-8",
       "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.09186",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.09186",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction"
+        ],
+        "citation_author": [
+          "Huang, Muye",
+          "Zhang, Lingling",
+          "Yu, Xingyu",
+          "Shi, Lei",
+          "Ma, Zhanyu",
+          "Xu, Jun",
+          "Gao, Jiuchong",
+          "Hao, Jinghua",
+          "He, Renqing",
+          "Liu, Jun"
+        ],
+        "citation_date": [
+          "2026/06/08"
+        ],
+        "citation_online_date": [
+          "2026/06/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2606.09186"
+        ],
+        "citation_arxiv_id": [
+          "2606.09186"
+        ],
+        "citation_abstract": [
+          "Human interaction is continuous, multimodal, and full-duplex by nature. Although recent omni models have made substantial progress in unified speech, vision, and text modeling, combining seamless real-time interaction with complex reasoning and tool use remains challenging. We present DuplexOmni, a method for real-time multimodal full-duplex interaction. DuplexOmni separates model capability into an interaction layer and a thinking layer, which collaborate asynchronously in parallel. The interaction layer is implemented by the DuplexOmni model, an end-to-end system that processes streaming audio and video inputs while generating text and speech responses in real time. The thinking layer is a pluggable module that provides complex reasoning and tool-use capabilities. To support this method, we further develop a Writer-Director pipeline for constructing continuous-interaction training data. Experiments show that DuplexOmni achieves strong performance on multiple public benchmarks and exhibits natural full-duplex interaction ability."
+        ]
+      },
+      "status": "reachable"
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.21967",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.21967",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities"
+        ],
+        "citation_author": [
+          "Balam, Jagadeesh",
+          "Bartley, Travis",
+          "Casanova, Edresson",
+          "Chauhan, Sanjay",
+          "Chen, Chen",
+          "Chen, Zhehuai",
+          "Chen, Zijia",
+          "Ciannella, Francesco",
+          "Deng, Slyne",
+          "Desta, Mikyas",
+          "Dubey, Harishchandra",
+          "Essid, Slim",
+          "Ferchichi, Nourchene",
+          "Ginsburg, Boris",
+          "Fuenmayor, Mariana Graterol",
+          "Habibi, Negar",
+          "Hu, Kevin",
+          "Joseph, Anand",
+          "Karandikar, Viraj",
+          "Kim, Myungjong",
+          "Klimkov, Viacheslav",
+          "Narasimhan, Seelan Lakshmi",
+          "Lee, Lily",
+          "Li, Jason",
+          "Long, Eileen",
+          "Mahabaleshwarkar, Ameya",
+          "Malte, Aditya",
+          "Margolin, Adi",
+          "Meister, Sasha",
+          "Mendelev, Valentin",
+          "Olabiyi, Oluwatobi",
+          "Pasad, Ankita",
+          "Peng, Yifan",
+          "Rastorgueva, Elena",
+          "Ritchie, Jayda",
+          "Roche, Jason",
+          "Srihari, Nikhil",
+          "Su, Yuanhang",
+          "Suhara, Yoshi",
+          "Trinh, Viet Anh",
+          "Wang, Jinhan",
+          "Zelasko, Piotr",
+          "Wang, Hui",
+          "Meng, Puhui",
+          "Zhang, Chaosen",
+          "Liu, Yunsheng",
+          "Wang, Shawn",
+          "Li, Wenjing",
+          "He, Zhonglei"
+        ],
+        "citation_date": [
+          "2026/09/18"
+        ],
+        "citation_online_date": [
+          "2026/09/18"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.21967"
+        ],
+        "citation_arxiv_id": [
+          "2609.21967"
+        ],
+        "citation_abstract": [
+          "We introduce NemotronLabs VoiceChat, an open full-duplex speech-to-speech model with native tool-calling capabilities. NemotronLabs VoiceChat combines a streaming speech encoder and decoder-only language model with parallel specialized output streams for agent text and structured function calls, an auxiliary RNN-T branch for incremental user transcription, and a streaming TTS decoder. This design enables the model to listen, transcribe, reason, invoke tools, and speak within a unified streaming architecture while preserving the temporal behavior required for natural conversation. On Full-Duplex-Bench 1.0, NemotronLabs VoiceChat achieves the lowest pause-handling takeover rates among evaluated open-weight systems, 100\\% takeover following user interruptions, and a 4.33/5 post-interruption response-quality score. On Full-Duplex-Bench 1.5, it resumes its response after user backchannels in 93\\% of cases. NemotronLabs VoiceChat obtains a 55.1 normalized average on VoiceBench and, on Full-Duplex-Bench 3.0 (FDB 3.0), achieves 82.5\\% tool-selection F1, while argument accuracy and end-to-end tool execution remain areas for improvement. These results demonstrate that full-duplex interaction, speech recognition and generation, general language capabilities, and external tool use can be integrated in a single open speech-to-speech model without sacrificing real-time conversational behavior."
+        ]
+      },
+      "status": "reachable"
     }
   ]
 }

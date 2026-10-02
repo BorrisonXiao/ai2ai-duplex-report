@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 import re
 import sys
-from report_content import verified_sources, architecture_gallery, performance_section, evidence
+from report_content import verified_sources, architecture_gallery, performance_section, evidence, all_groups
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'research'))
@@ -284,7 +284,7 @@ def build_markdown():
 
 def performance_markdown():
     results, plots = evidence()
-    groups = {group['id']: group for group in results['groups'] + results['supplementary_groups']}
+    groups = {group['id']: group for group in all_groups(results)}
     lines = ['## Reported model performance', '', plots['convention'], '', 'The selected systems have sparse evaluation coverage. Missing results are NR, never zero. Closed source leaders are not a claim about current global SoTA. Text-only and transcript-conditioned controls are excluded from speech-model comparisons. These are transcription-checked source reports, not reproduced experiments.', '', '![Selected-system protocol coverage](../report/figures/performance/coverage.svg)', '']
     for profile in plots['profiles']:
         group = groups[profile['group']]

@@ -1,10 +1,28 @@
 {
   "revision_date": "2026-10-01",
   "evidence_cutoff": "2026-09-30",
-  "scope": "Five selected benchmark families, plus separately labeled FLAIR study evaluations; selected-system results and representative references, not current global best.",
+  "scope": "Five selected benchmark families, plus separately labeled FLAIR, DuplexOmni and VoiceChat study evaluations; seven selected architectures and representative references, not current global best.",
   "provenance": "Reported numbers, not reproduced experiments. Original benchmark tables and later system-report evaluations are separated.",
-  "unit": "Percent; fraction-valued source scores are multiplied by 100. Token latency is stored separately, never converted into runtime seconds.",
+  "unit": "Units and directions are explicit per metric. Fraction-valued accuracy and WER scores are multiplied by 100; source values are retained. Token latency is stored separately, never converted into runtime seconds.",
   "sources": {
+    "duplexomni": {
+      "cite": "duplexomni",
+      "url": "https://arxiv.org/pdf/2606.09186v1",
+      "local_pdf": "arxiv.org_pdf_2606.09186.pdf",
+      "version": "arXiv v1, 8 June 2026",
+      "pages": [8],
+      "tables": ["1"],
+      "status": "primary_pdf_checked"
+    },
+    "voicechat": {
+      "cite": "voicechat",
+      "url": "https://arxiv.org/pdf/2609.21967v1",
+      "local_pdf": "arxiv.org_pdf_2609.21967.pdf",
+      "version": "arXiv v1, 18 September 2026",
+      "pages": [9],
+      "tables": ["4"],
+      "status": "primary_pdf_checked"
+    },
     "srqa": {
       "cite": "thinklisten",
       "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/75c45fca2aa416ada062b26cc4fb7641-Paper-Conference.pdf",
@@ -600,6 +618,41 @@
       ]
     }
   ],
+  "additional_system_groups": [
+    {
+      "id": "duplexomni",
+      "benchmark": "DuplexOmni study: streaming/realtime comparison",
+      "protocol": "Table 1: DuplexBench v1.5 ToR, Big Bench Audio, streaming Daily-Omni, LibriSpeech WER and response latency",
+      "metric_labels": ["DuplexBench ToR", "Big Bench Audio", "Daily-Omni", "LibriSpeech WER", "Response latency"],
+      "metric_specs": [{"unit": "%", "higher": true, "decimals": 1}, {"unit": "%", "higher": true, "decimals": 1}, {"unit": "%", "higher": true, "decimals": 1}, {"unit": "%", "higher": false, "decimals": 2, "scale": 100}, {"unit": "s", "higher": false, "decimals": 3}],
+      "source_ids": ["duplexomni"],
+      "notes": "Full DuplexOmni configuration uses Gemini-3.1-Flash-Lite as its external thinking backend (Section 4.1), not only the open interaction checkpoint. Daily-Omni uses streaming mode. ToR is the authors' aggregate, not a per-scenario v1.5 resume score or FDB-v3 tool metric. Response latency has no harmonized endpoint/hardware definition. Gemini Flash-Lite is a thinking-only reference, not a realtime voice competitor. Missing source dashes are NR; WER fractions are displayed as percentages.",
+      "rows": [
+        {"model": "DuplexOmni + Gemini-3.1-Flash-Lite", "role": "selected", "source": "duplexomni", "source_values": [72.6, 77.2, 53.8, 0.1192, 0.506], "scale": 1, "decimals": 1},
+        {"model": "MiniCPM-o 4.5", "role": "representative", "source": "duplexomni", "source_values": [36.3, 36.0, 80.2, null, 0.502], "scale": 1, "decimals": 1},
+        {"model": "Doubao", "role": "closed_voice", "source": "duplexomni", "source_values": [27.8, 47.9, null, null, 1.82], "scale": 1, "decimals": 1},
+        {"model": "Qwen3-Omni-Realtime-Flash", "role": "api_comparator", "source": "duplexomni", "source_values": [25.2, 32.1, 76.2, 0.013, 1.28], "scale": 1, "decimals": 1},
+        {"model": "Qwen3.5-Omni-Realtime-Flash", "role": "api_comparator", "source": "duplexomni", "source_values": [26.4, 35.0, 81.8, 0.011, 1.25], "scale": 1, "decimals": 1},
+        {"model": "Gemini-3.1-Flash-Live", "role": "closed_voice", "source": "duplexomni", "source_values": [24.1, 57.9, null, 0.041, 2.57], "scale": 1, "decimals": 1},
+        {"model": "Gemini-3.1-Flash-Lite (thinking only)", "role": "backend_only", "source": "duplexomni", "source_values": [null, 58.9, 59.0, 0.038, null], "scale": 1, "decimals": 1}
+      ]
+    },
+    {
+      "id": "voicechat_fdb3",
+      "benchmark": "VoiceChat study: Full-Duplex-Bench v3",
+      "protocol": "Table 4: tool selection F1 / argument accuracy / pass@1; imported closed baselines",
+      "metric_labels": ["Tool F1", "Argument accuracy", "Pass@1"],
+      "source_ids": ["voicechat", "fdb_original", "fdb_venus"],
+      "notes": "VoiceChat and Gemini numbers are from VoiceChat Table 4; its Gemini references are imported from the original benchmark. GPT-Realtime is added as the original benchmark's leading closed context reference, not as a model evaluated by the VoiceChat authors. Venus Omni is a representative open frontend from its separate system report. These are source-reported points, not a common rerun. Tool execution currently prevents user barge-in; tool-call accuracy does not establish correction-safe concurrent listening.",
+      "rows": [
+        {"model": "NemotronLabs VoiceChat", "role": "selected", "source": "voicechat", "source_values": [82.5, 42.2, 33.0], "scale": 1, "decimals": 1},
+        {"model": "Gemini Live 2.5", "role": "closed_voice", "source": "voicechat", "source_values": [78.6, 59.3, 49.0], "scale": 1, "decimals": 1},
+        {"model": "Gemini Live 3.1", "role": "closed_voice", "source": "voicechat", "source_values": [81.7, 58.8, 54.0], "scale": 1, "decimals": 1},
+        {"model": "GPT-Realtime", "role": "closed_voice", "source": "fdb_original", "source_values": [0.876, 0.68, 0.6], "scale": 100, "decimals": 1, "configuration": "Original benchmark Table 2 reference; not included in VoiceChat Table 4.", "best_closed": true},
+        {"model": "Realtime-Venus-Omni", "role": "representative", "source": "fdb_venus", "source_values": [86.0, 53.1, 43.0], "scale": 1, "decimals": 1, "configuration": "Venus system report Table 7; not evaluated by the VoiceChat authors."}
+      ]
+    }
+  ],
   "domain_metric_labels": ["Airline", "Retail", "Telecom"],
   "text_controls": [
     {
@@ -692,6 +745,23 @@
       "srqa": "not_located",
       "tauvoice": "not_located",
       "fdb3": "reported_both_frontends",
+      "echochain": "not_located",
+      "mpe": "not_located"
+    },
+    {
+      "system": "DuplexOmni",
+      "srqa": "not_located",
+      "tauvoice": "not_located",
+      "fdb3": "not_located",
+      "echochain": "not_located",
+      "mpe": "not_located",
+      "note": "Study-specific DuplexBench v1.5 aggregate, audio/omni understanding, ASR and latency are shown separately; no FDB-v3 score."
+    },
+    {
+      "system": "NemotronLabs VoiceChat",
+      "srqa": "not_located",
+      "tauvoice": "not_located",
+      "fdb3": "reported",
       "echochain": "not_located",
       "mpe": "not_located"
     }

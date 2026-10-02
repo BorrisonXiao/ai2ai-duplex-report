@@ -120,6 +120,56 @@
       "crop_units": "PDF points; top-left origin",
       "modifications": "Page-margin/surrounding-prose crop only; original diagram retained",
       "credit": "Reproduced from the cited paper; copyright remains with its original rights holders."
+    },
+    {
+      "id": "duplexomni",
+      "arxiv": "2606.09186",
+      "version": "v1",
+      "page": 3,
+      "figure": "2",
+      "crop": [
+        70,
+        72,
+        525,
+        430
+      ],
+      "source_url": "https://arxiv.org/pdf/2606.09186v1",
+      "image": "figures/papers/duplexomni.png",
+      "dpi": 300,
+      "pixels": [
+        1897,
+        1492
+      ],
+      "pdf_sha256": "41a9da0d830cecb5764af82fd0cf7d8c67f4c831444b8fa36e26228551866c0a",
+      "image_sha256": "b58f8e5b65b7525210933c90607ec5a21e6fc102cd92ddafdeec381d062155e9",
+      "crop_units": "PDF points; top-left origin",
+      "modifications": "Page-margin/surrounding-prose crop only; original diagram retained",
+      "credit": "Reproduced from the cited paper; copyright remains with its original rights holders."
+    },
+    {
+      "id": "voicechat",
+      "arxiv": "2609.21967",
+      "version": "v1",
+      "page": 2,
+      "figure": "1",
+      "crop": [
+        83,
+        95,
+        555,
+        430
+      ],
+      "source_url": "https://arxiv.org/pdf/2609.21967v1",
+      "image": "figures/papers/voicechat.png",
+      "dpi": 300,
+      "pixels": [
+        1968,
+        1397
+      ],
+      "pdf_sha256": "b3f6b81779e31b5454d108cf01abf760571349e283823509d9c196fc32fadf80",
+      "image_sha256": "abb254f9f32ef6a4731e39d79176c20451368a895f20810caaaa4c25c25dd290",
+      "crop_units": "PDF points; top-left origin",
+      "modifications": "Page-margin/surrounding-prose crop only; original diagram retained",
+      "credit": "Reproduced from the cited paper; copyright remains with its original rights holders."
     }
   ]
 }
