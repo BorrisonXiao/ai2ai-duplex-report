@@ -5,6 +5,7 @@ This checks document availability, not implementation correctness or all weight 
 Run explicitly when refreshing the review; the site build itself is entirely offline.
 """
 from concurrent.futures import ThreadPoolExecutor
+import argparse
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 import json
@@ -62,6 +63,23 @@ def check(url):
     return result
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--add-url', action='append', help='Check only these URLs and merge into the existing audit, preserving older checks')
+    args = parser.parse_args()
+    if args.add_url:
+        path = ROOT / 'research' / 'source-audit.json'
+        audit = json.loads(path.read_text())
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            results = list(pool.map(check, args.add_url))
+        assert all(result['status'] == 'reachable' for result in results), results
+        checked = datetime.now(timezone.utc).isoformat()
+        for result in results:
+            result['checked_at'] = checked
+        audit['sources'] = [source for source in audit['sources'] if source['url'] not in args.add_url] + results
+        audit['updated_at'] = checked
+        path.write_text(json.dumps(audit, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+        print(f'Merged {len(results)} reachable primary links; earlier checks retain their original dates.')
+        return 0
     links = urls()
     with ThreadPoolExecutor(max_workers=8) as pool:
         results = list(pool.map(check, links))

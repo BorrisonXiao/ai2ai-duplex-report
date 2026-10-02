@@ -1,20 +1,20 @@
 {
-  "revision_date": "2026-10-01",
+  "revision_date": "2026-10-02",
   "evidence_cutoff": "2026-09-30",
-  "data_sha256": "91f7d89757ca118e0928bec29f2b2b09897bde4672062f3dd3c4c343f350d4ce",
+  "data_sha256": "cc96f7b1ee1e51d7f8a6af14f5802c5ef8ef7eb67e0b3cea545c0513ef1345a0",
   "convention": "Radars use raw 0–100 percentages. No polygon-area ranking, normalization to a reference, imputation or cross-protocol averaging. Mixed units and fewer than three metrics use separate bar axes. No error bars: these are source-reported point estimates, not independent reruns.",
   "coverage": {
     "pdf": {
       "file": "figures/performance/coverage.pdf",
-      "sha256": "fede469e42950d605e246e8ae354ef468d7bb5e700a13394bb090fce6b18c000"
+      "sha256": "c627a3df11d171902ffa13928eb94249d7f183b7ef89992819825fc51290da28"
     },
     "svg": {
       "file": "figures/performance/coverage.svg",
-      "sha256": "2b7d2d98a448336be2d17fe2c50a8c54a9508dbbfd3159e5fd834b9b359f0f2a"
+      "sha256": "9d522ee9714c77d57a780fb17803c3d693eb1332d9ac381191be1e00c4ae2ed0"
     },
     "png": {
       "file": "figures/performance/coverage.png",
-      "sha256": "2a7f95ddc0d9222ef579151a4829904fe4259a982cef5c11a87c086c5fdee48e"
+      "sha256": "b1b937d8d24b54edf636de3577e50acc4db66a388e17541d9ce8d97d6aeed43d"
     }
   },
   "profiles": [
@@ -59,11 +59,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/twl.pdf",
-          "sha256": "2851d411de81e54f0ec01026c1b634fbadc42d11b99312d07589a95b23cb1d60"
+          "sha256": "b54a4256dc2936c9c0c20f3f59141b50ba6418577bd25a3e4cf02681f56663de"
         },
         "svg": {
           "file": "figures/performance/twl.svg",
-          "sha256": "36b61e68af239161a674a73ce10848cc8a09713cab55bf936f60301e84b7177c"
+          "sha256": "bc9175d2dce5d17650a6858531ac9ebb0def1010129fbc45daf5c5478a42d375"
         },
         "png": {
           "file": "figures/performance/twl.png",
@@ -165,11 +165,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/flair-qa.pdf",
-          "sha256": "d24c15b44cfe1129a4ae236aa1bedb18c4a576dd0da289d322e9a226aff55bc5"
+          "sha256": "b39d52a867e55f2029d9d9bb606b9b5f0964429bfa33480390cd82cfb7dc40fb"
         },
         "svg": {
           "file": "figures/performance/flair-qa.svg",
-          "sha256": "7aa5bfa8b58afe157d3f6df6cb7723623310a72b7b586b97ca9feace7b7a79f5"
+          "sha256": "7c756c373e7d4cd1be96798d10ef0a70fd2d963fa51049c37e85a3b3070a46bb"
         },
         "png": {
           "file": "figures/performance/flair-qa.png",
@@ -262,11 +262,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/flair-interaction.pdf",
-          "sha256": "0496c95e41954a8cf06cc51d37440da0862c159b97eb4caf114c349064084409"
+          "sha256": "fee574b7dde83148121ac75ce4e15c44cebb9abed7ed95cf596f391acace1ee4"
         },
         "svg": {
           "file": "figures/performance/flair-interaction.svg",
-          "sha256": "d9583ab82149fe45ee3f76f6c0c12205a66f2e469cd0151e27e371b0daf4df15"
+          "sha256": "26112260be6522dfc2e5b1fa6793df8049ee68b3457c596bad520ca7769a38ce"
         },
         "png": {
           "file": "figures/performance/flair-interaction.png",
@@ -349,11 +349,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/step3.pdf",
-          "sha256": "af42800c6d495e9836d2653c8750f5cc42a9e549d814ebf5f419a729ecaffa12"
+          "sha256": "1efded13e1cfa51419e9e3afef1f944f0e592fa7b1c652baa7323669bbc9c57c"
         },
         "svg": {
           "file": "figures/performance/step3.svg",
-          "sha256": "0c5901b42189034c09a34da3f271732e6fe04ab32c6aeec8cc5b4bccd76dac5c"
+          "sha256": "025252ac22cd2e7aa3c9b6448c5bb1a708ed2b0985dd4fcbedcb8706263c4f76"
         },
         "png": {
           "file": "figures/performance/step3.png",
@@ -451,11 +451,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/venus.pdf",
-          "sha256": "6e34e1571f7c49225d41d06549a14a861a8554e54a1c2046ee67ca2c29497069"
+          "sha256": "3384f7cf3c2b09eaccc9df3e689e649bd00d01d8a7450b1958ff70a5da59af53"
         },
         "svg": {
           "file": "figures/performance/venus.svg",
-          "sha256": "3149f417f25b36b2e4ba715273566f4efa932ebc4539448be6212fe7d8726be4"
+          "sha256": "7b4566db25f0dbfc3d1b3ee9bd6db68971bb644dcec4c13db457625e26f7fb46"
         },
         "png": {
           "file": "figures/performance/venus.png",
@@ -531,11 +531,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/minicpm.pdf",
-          "sha256": "250d8700ab63561ea71b6915a6b78a1858d751b1592cebd4bd0fb06fe1327d65"
+          "sha256": "6c84ac59a781d431da2ebd3aacd74d74956dcbd76fd45924fd0fc1e740a92f63"
         },
         "svg": {
           "file": "figures/performance/minicpm.svg",
-          "sha256": "7e5bd8c7ca59e56edfb6f83cf3c6db90fa804c01533aa7ca7348a8d2c72eafba"
+          "sha256": "bd233385afe65a45bfe1e144409b6a24f81725a67d249ce827fc0286f3803dd8"
         },
         "png": {
           "file": "figures/performance/minicpm.png",
@@ -625,11 +625,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/duplexomni.pdf",
-          "sha256": "517c8eb42f3c1106b53054014b935849bc5a6cee94003ddd6e05a60e12718a30"
+          "sha256": "f0070b6151418a74a57e77fcc66ae4ec45eb84060dda2da964a6e035d312502f"
         },
         "svg": {
           "file": "figures/performance/duplexomni.svg",
-          "sha256": "b7fc47faf7717b322cbf488c7cf78b1c01ecb11ef0556f10a9f67067fc7b84f8"
+          "sha256": "7e4b83e310c029799519c3a61eed05e22752fa4c0cb73e3d3a9d05601abca505"
         },
         "png": {
           "file": "figures/performance/duplexomni.png",
@@ -775,11 +775,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/voicechat.pdf",
-          "sha256": "72066136ba050d8c5ba1368b19988e78820b2a038431b6dbb0b4c98f64278a5b"
+          "sha256": "936b31386ed000f587524e0ff95e39eabf216133c94a3b871e223b5d2128c372"
         },
         "svg": {
           "file": "figures/performance/voicechat.svg",
-          "sha256": "70a92874f04ed71cc99637c6cc1c92d711f1f0055c702d67951484e28cf6b93a"
+          "sha256": "cbd6a75ccf431df5ab09a113860b8307649d7a907fc99435e2b57812eb208380"
         },
         "png": {
           "file": "figures/performance/voicechat.png",
@@ -834,7 +834,7 @@
       "group": "tau_original",
       "title": "Original τ-Voice: closed voice references",
       "kind": "facets",
-      "note": "Original benchmark Table 6 All row; clean and realistic conditions remain separate. None of the seven selected systems is evaluated here. GPT-5's text control is not plotted as a voice competitor.",
+      "note": "Original benchmark Table 6 All row; clean and realistic conditions remain separate. None of the eight selected designs is evaluated here. GPT-5's text control is not plotted as a voice competitor.",
       "takeaway": "All three voice systems perform worse under realistic audio conditions in this source comparison; later τ-Voice implementations are separate evidence.",
       "sources": [
         {
@@ -855,11 +855,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/tau-original.pdf",
-          "sha256": "374b69fe23da2044c09b60b9454f6e5c9f2008650294f9062fbe0e82935582ca"
+          "sha256": "50072a4c29b65592413d007e31c9a814f01e156e1f13ac8fffd1dfcc84d7b262"
         },
         "svg": {
           "file": "figures/performance/tau-original.svg",
-          "sha256": "835e8468124a671100827ad4b0fe911b51c67d75737731727a23f1f19f39d514"
+          "sha256": "108a4587f7c39981d7eaa5f6e957b6a4c51d4fe5c88a6b24da5d176f31375354"
         },
         "png": {
           "file": "figures/performance/tau-original.png",
@@ -895,7 +895,7 @@
       "group": "echo",
       "title": "EchoChain: closed voice references",
       "kind": "facets",
-      "note": "Paper Table 1, across 200 interrupted conversations. MPR requires every criterion in a conversation to pass; MCP scores individual criteria. None of the seven selected systems is evaluated here.",
+      "note": "Paper Table 1, across 200 interrupted conversations. MPR requires every criterion in a conversation to pass; MCP scores individual criteria. None of the eight selected designs is evaluated here.",
       "takeaway": "Passing many individual criteria does not guarantee complete conversation success. Even the strongest reported voice reference passes fewer than half of conversations.",
       "sources": [
         {
@@ -916,11 +916,11 @@
       "artifacts": {
         "pdf": {
           "file": "figures/performance/echochain.pdf",
-          "sha256": "c975638fa90a7eb25c457e781a4741139dd9b1f8566390f3fc4eef90b763bb60"
+          "sha256": "c3c0eb9767d2a0cf79db49041505d6fa5754fe63de30ef73265cf522cf538816"
         },
         "svg": {
           "file": "figures/performance/echochain.svg",
-          "sha256": "0fca5e5b6fa7a02a88890da3571a4f7de2d93e0b4e60bf06c45df8c90304ac62"
+          "sha256": "169e85de2b1c613d0beed2531c9e772e80d05171fb9fed58e572d69884f7a625"
         },
         "png": {
           "file": "figures/performance/echochain.png",
@@ -954,6 +954,184 @@
           "scores": [
             16.5,
             64.8
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thinkaloud-timing",
+      "group": "thinkaloud_timing",
+      "title": "Think-Aloud SLM: reasoning silence vs speech overhang",
+      "kind": "facets",
+      "note": "Table 3, v1; Spoken-MQA. Lsil is cumulative silence while reasoning continues; Loh is extra delay when progress speech outlasts answer readiness. Neither is first-audio or first-correct-answer latency. An active utterance finishes before final-response generation; only pending unsynthesized updates are canceled. Rates denote reasoning generation, not a shared hardware test. Source dashes stay NR. No implemented interruption test.",
+      "takeaway": "At 40 tok/s, dynamic balance reduces cumulative reasoning silence from 12.82 s for serial CoT to 0.36 s, but adds 4.34 s speech overhang. Raising generation speed further reduces silence while overhang is non-monotonic. Masked silence is not evidence of an earlier correct answer.",
+      "sources": [
+        {
+          "cite": "thinkaloud",
+          "url": "https://arxiv.org/pdf/2609.26488v1",
+          "local_pdf": "arxiv.org_pdf_2609.26488.pdf",
+          "version": "arXiv v1, 22 September 2026",
+          "pages": [
+            9
+          ],
+          "tables": [
+            "2",
+            "3"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-thinkaloud_timing.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/thinkaloud-timing.pdf",
+          "sha256": "dab9ed2d13d3a21af091da2e9a0c5aebd7b084cd0e21ea0369b95b00594de1be"
+        },
+        "svg": {
+          "file": "figures/performance/thinkaloud-timing.svg",
+          "sha256": "98311bc37ec71fec70e540cd6bffc9135e25aed7cb1040ff90da833d7949a3de"
+        },
+        "png": {
+          "file": "figures/performance/thinkaloud-timing.png",
+          "sha256": "06f5732082846398e5bce7cb89a6b6ff82348db67d8701b72d58c70e35d9de93"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "Think-Aloud: 40 tok/s",
+          "scores": [
+            91.6,
+            83.6,
+            0.36,
+            4.34
+          ]
+        },
+        {
+          "model": "Think-Aloud: 80 tok/s",
+          "scores": [
+            91.6,
+            84.2,
+            0.05,
+            4.16
+          ]
+        },
+        {
+          "model": "Think-Aloud: 160 tok/s",
+          "scores": [
+            91.8,
+            84.3,
+            0.03,
+            5.66
+          ]
+        },
+        {
+          "model": "Think-Aloud without dynamic balance",
+          "scores": [
+            90.7,
+            84.5,
+            1.03,
+            19.92
+          ]
+        },
+        {
+          "model": "Serial CoT (Think-Aloud study)",
+          "scores": [
+            91.3,
+            85.6,
+            12.82,
+            null
+          ]
+        },
+        {
+          "model": "Direct baseline (Think-Aloud study)",
+          "scores": [
+            86.0,
+            63.0,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thinkaloud-qa",
+      "group": "thinkaloud_qa",
+      "title": "Think-Aloud SLM: spoken QA accuracy",
+      "kind": "facets",
+      "note": "Table 2, S2S block only; two raw accuracy axes. The redundant average is not plotted. GPT-4o-Realtime is the paper's sole closed reference, with unspecified API revision; Moshi and VITA-Audio are imported context references, not a common rerun. These scores are not FLAIR's QA protocol or SRQA. Speech-to-text results remain separate. This framework does not demonstrate listen-while-speaking.",
+      "takeaway": "Think-Aloud is close to its serial CoT baseline on these two tasks but below the reported GPT-4o-Realtime and VITA-Audio references. Point estimates without uncertainty do not establish statistical equivalence or a current global ranking.",
+      "sources": [
+        {
+          "cite": "thinkaloud",
+          "url": "https://arxiv.org/pdf/2609.26488v1",
+          "local_pdf": "arxiv.org_pdf_2609.26488.pdf",
+          "version": "arXiv v1, 22 September 2026",
+          "pages": [
+            9
+          ],
+          "tables": [
+            "2",
+            "3"
+          ],
+          "status": "primary_pdf_checked"
+        }
+      ],
+      "table": "tables/performance-thinkaloud_qa.tex",
+      "artifacts": {
+        "pdf": {
+          "file": "figures/performance/thinkaloud-qa.pdf",
+          "sha256": "ee62f6476e385e57fdd738f8076dceaf888b07ca780797d2dad9b88078a861f4"
+        },
+        "svg": {
+          "file": "figures/performance/thinkaloud-qa.svg",
+          "sha256": "4f304e5ec1121ba8959fbcc754821c38abff5e58873e5f7a8929280eb9d6035c"
+        },
+        "png": {
+          "file": "figures/performance/thinkaloud-qa.png",
+          "sha256": "66b85f4a4af3c88743c7a552cc047df5be2f382c35e17b3da71ee9e71203b6df"
+        }
+      },
+      "table_rows": [
+        {
+          "model": "Think-Aloud SLM (Ao et al.)",
+          "scores": [
+            40.3,
+            38.7
+          ]
+        },
+        {
+          "model": "Serial CoT (Think-Aloud study)",
+          "scores": [
+            40.3,
+            39.2
+          ]
+        },
+        {
+          "model": "Direct baseline (Think-Aloud study)",
+          "scores": [
+            32.1,
+            36.1
+          ]
+        },
+        {
+          "model": "Moshi",
+          "scores": [
+            9.2,
+            7.3
+          ]
+        },
+        {
+          "model": "VITA-Audio",
+          "scores": [
+            41.7,
+            42.7
+          ]
+        },
+        {
+          "model": "GPT-4o-Realtime",
+          "scores": [
+            51.6,
+            69.7
           ]
         }
       ]

@@ -237,7 +237,7 @@ def build_html():
         '<a class="skip-link" href="#main">Skip to review</a>',
         '<header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="#literature-review" aria-current="page">Literature review</a></nav></div></header>',
         '<main id="main"><div class="container">',
-        '<header id="literature-review" class="hero"><p class="eyebrow">Research landscape · September 2026</p><h1>Reasoning while listening, revising while speaking.</h1><p class="lede">A literature review of modern full-duplex speech architectures, open releases, training resources and evaluations for incremental, speaker-aware reasoning.</p><p class="meta">Revised 1 October 2026 · Evidence cutoff 30 September 2026 · Author-reported results, not a reproduced leaderboard</p><div class="button-row">' + link('Explore system designs','#systems','button primary') + link('Model performance','#reported-performance','button') + link('Detailed PDF','report/build/detailed-report.pdf','button') + link('Source repository','https://github.com/BorrisonXiao/ai2ai-duplex-report','button') + '</div></header>',
+        '<header id="literature-review" class="hero"><p class="eyebrow">Research landscape · September 2026</p><h1>Reasoning while listening, revising while speaking.</h1><p class="lede">A literature review of modern full-duplex speech architectures, open releases, training resources and evaluations for incremental, speaker-aware reasoning.</p><p class="meta">Revised 2 October 2026 · Evidence cutoff 30 September 2026 · Author-reported results, not a reproduced leaderboard</p><div class="button-row">' + link('Explore system designs','#systems','button primary') + link('Model performance','#reported-performance','button') + link('Detailed PDF','report/build/detailed-report.pdf','button') + link('Source repository','https://github.com/BorrisonXiao/ai2ai-duplex-report','button') + '</div></header>',
         section('overview','What changed since the original proposal',overview),
         section('systems','System designs',architectures,N['architecture_lead']),
         section('availability','What is actually open?',releases,N['availability_lead']),
@@ -303,7 +303,7 @@ def performance_markdown():
 
 def main():
     digest = dict(instruction=data.INSTRUCTION, date=data.DATE, scope=data.SCOPE, sub_questions=data.QUESTIONS, papers=list(PAPERS.values()), themes=data.THEMES, gaps=data.GAPS, systems=SYSTEMS, benchmarks=BENCHMARKS, datasets=DATASETS, training_recipes=data.RECIPES, methodology=N['methodology'], limitations=N['limitations'], source_audit='source-audit.json')
-    digest.update(revision_date='2026-10-01', reported_performance='../report/research/reported-performance.json', performance_plots='../report/research/performance-plots.json', supplemental_source_audit='../report/research/source-audit.json')
+    digest.update(revision_date='2026-10-02', reported_performance='../report/research/reported-performance.json', performance_plots='../report/research/performance-plots.json', supplemental_source_audit='../report/research/source-audit.json')
     (ROOT / 'index.html').write_text(build_html(),encoding='utf-8')
     (ROOT / 'research/LITERATURE.md').write_text(build_markdown(),encoding='utf-8')
     (ROOT / 'research/literature.json').write_text(json.dumps(digest,ensure_ascii=False,indent=2) + '\n',encoding='utf-8')

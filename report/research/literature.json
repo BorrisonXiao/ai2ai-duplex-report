@@ -1,13 +1,13 @@
 {
   "date": "2026-09-30",
-  "scope": "Original streaming/revision/speaker-aware reasoning proposal; seven system architectures, five resources in each other category",
+  "scope": "Original streaming/revision/speaker-aware reasoning proposal; eight system/design anchors, five resources in each other category",
   "selection": "Purposive relevance selection, unranked; not an exhaustive or independently reproduced survey",
   "categories": [
     {
       "id": "systems",
       "title": "Reasoning and system designs",
       "label": "tab:systems",
-      "selection": "Seven anchors span explicit and latent listening-time reasoning, timed text-backbone speech, concurrent formulation/articulation, two asynchronous interaction/thinking designs, and native parallel text/function heads. Moshi is compared separately in the synchronization shortlist. The other three categories retain five entries each.",
+      "selection": "Eight anchors span listening-time reasoning, timed text-backbone speech, concurrent formulation/articulation, asynchronous interaction/thinking, native parallel text/function heads, and progress speech during reasoning. Think-Aloud SLM is a think-while-speaking framework, not a demonstrated full-duplex model. Moshi is compared separately in the synchronization shortlist. The other three categories retain five entries each.",
       "headers": [
         "System / paper",
         "Reasoning, backbone and speech path",
@@ -133,6 +133,21 @@
             [
               "Weights",
               "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B"
+            ]
+          ]
+        },
+        {
+          "name": "Think-Aloud SLM (Ao et al.)",
+          "cite": "thinkaloud",
+          "cells": [
+            "Qwen2.5-Omni-7B thinker/audio encoder + Qwen2.5-0.5B progress module + CosyVoice 2 talker/decoder. Playback-driven scheduling cancels pending updates but finishes active speech before the final answer. No implemented listen-while-speaking or interruption evaluation.",
+            "Study-specific code/weights not located as of 2 October 2026; released base models are not this checkpoint.",
+            "~200K dialogues / ~5,000 h, proprietary; prompts published, corpus explicitly not releasable."
+          ],
+          "links": [
+            [
+              "Author listing",
+              "https://liuxubo717.github.io/"
             ]
           ]
         }
@@ -861,6 +876,52 @@
       ]
     },
     {
+      "key": "thinkaloud",
+      "id": "2609.26488",
+      "title": "Spoken Language Models that Think Aloud",
+      "authors": [
+        "Ao, Junyi",
+        "Peng, Kainan",
+        "Ma, Mingbo",
+        "Zhang, Shun",
+        "Tang, Zhenyu",
+        "Ma, Xutai",
+        "Li, Xiang",
+        "Li, Yinghao",
+        "Wang, Yuancheng",
+        "Wu, Zhizheng",
+        "Li, Haizhou",
+        "He, Qing",
+        "Liu, Xubo"
+      ],
+      "date": "2026-09-22",
+      "venue": "Preprint / technical report",
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.26488",
+      "publisher_source": null,
+      "problem": "Serial reasoning causes audible silence; progress feedback must track evolving reasoning without delaying the final answer excessively.",
+      "method": "Qwen2.5-Omni-7B thinker/frozen audio encoder, Qwen2.5-0.5B-Instruct progress module and CosyVoice 2.0 unified talker/decoder. A playback-driven scheduler triggers updates, cancels pending unsynthesized speech and finishes the active utterance before the final response.",
+      "results": "Spoken-MQA Table 3 reports single-/multi-step accuracy, cumulative reasoning silence and extra articulation delay; Table 2 gives S2S QA with an imported GPT-4o-Realtime reference. Shared audited plots retain units, configurations and missing values; not independently reproduced.",
+      "relevance": "Close think-while-speaking synchronization prior: short task-grounded progress utterances, not raw CoT read aloud. Lower audible silence must be distinguished from earlier correct final answers.",
+      "limitations": "Explicitly not demonstrated full duplex: barge-in is future-use illustration, not implemented/evaluated. Proprietary ~200K-dialogue/~5,000-hour corpus cannot be released; prompts are public. Study-specific code/weights not located as of 2 October. No controlled generic-filler comparison or interactive user evaluation.",
+      "focused_notes": [
+        {
+          "resource": "Think-Aloud SLM (Ao et al.)",
+          "comparison": [
+            "Qwen2.5-Omni-7B thinker/audio encoder + Qwen2.5-0.5B progress module + CosyVoice 2 talker/decoder. Playback-driven scheduling cancels pending updates but finishes active speech before the final answer. No implemented listen-while-speaking or interruption evaluation.",
+            "Study-specific code/weights not located as of 2 October 2026; released base models are not this checkpoint.",
+            "~200K dialogues / ~5,000 h, proprietary; prompts published, corpus explicitly not releasable."
+          ],
+          "artifacts": [
+            [
+              "Author listing",
+              "https://liuxubo717.github.io/"
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "key": "syncllm",
       "id": "2409.15594",
       "title": "Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents",
@@ -1274,11 +1335,12 @@
   "gaps": [
     {
       "id": "G1",
-      "text": "Jointly measure evidence age, correct useful audible response time, and unsafe commitment under late corrections.",
+      "text": "Jointly measure evidence age, correct useful audible response time, and unsafe commitment under late corrections. Reduced reasoning silence from progress speech is not an earlier correct final answer.",
       "closest": [
         "thinklisten",
         "echochain",
-        "mindpaced"
+        "mindpaced",
+        "thinkaloud"
       ]
     },
     {
@@ -1351,9 +1413,10 @@
         "mindpaced",
         "step3",
         "adapt",
-        "echochain"
+        "echochain",
+        "thinkaloud"
       ],
-      "distinction": "Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound."
+      "distinction": "Dual-process reasoning, bounded lead and playback-driven progress speech already exist. Think-Aloud reduces cumulative reasoning silence but introduces speech overhang; its interruption illustration is not implemented. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound."
     },
     {
       "id": "RQ3",
@@ -1386,9 +1449,10 @@
         "minicpm",
         "duplexsla",
         "adapt",
-        "tauvoice"
+        "tauvoice",
+        "thinkaloud"
       ],
-      "distinction": "Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient."
+      "distinction": "Fixed clocks, adaptive windows, action alignment and playback-driven progress scheduling already exist. Think-Aloud evaluates different reasoning speeds, but not new user evidence during speech. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient."
     },
     {
       "id": "RQ5",

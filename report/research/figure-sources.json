@@ -106,6 +106,16 @@
       "source_figures": [
         "1"
       ]
+    },
+    {
+      "id": "thinkaloud",
+      "file": "figures/papers/thinkaloud.png",
+      "paper_keys": [
+        "thinkaloud"
+      ],
+      "source_figures": [
+        "2"
+      ]
     }
   ],
   "timing_parameters": [
@@ -141,6 +151,6 @@
     }
   ],
   "architecture_provenance": "figures/papers/manifest.json",
-  "copyright_scope": "Seven attributed architecture screenshots in the detailed report; the meeting brief retains its original five. Crop margins/prose and select StepAudio panel B. Labels/arrows are not edited; rights remain with original holders. Conceptual trace and timing plot are original. Full papers/private proposal are not redistributed.",
+  "copyright_scope": "Eight attributed architecture screenshots in the detailed report; the meeting brief retains its original five. Crop margins/prose and select StepAudio panel B. Labels/arrows are not edited; rights remain with original holders. Conceptual trace and timing plot are original. Full papers/private proposal are not redistributed.",
   "omissions": "StepAudio Figure 7A (adaptive routing) omitted, explicitly labeled. Method details, losses and mixtures remain in detailed-report.pdf and original papers."
 }

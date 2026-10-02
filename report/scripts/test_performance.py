@@ -47,6 +47,26 @@ class PerformanceTests(unittest.TestCase):
         self.assertEqual(by_model["Realtime-Venus-Omni"], "fdb_venus")
         self.assertEqual(len(self.groups), len(PROFILES))
 
+    def test_thinkaloud_latency_endpoints_and_missing_values(self):
+        group = self.groups["thinkaloud_timing"]
+        self.assertEqual(scores(group, group["rows"][0]), [91.6, 83.6, 0.36, 4.34])
+        self.assertEqual(group["metric_specs"][2]["unit"], "s")
+        self.assertFalse(group["metric_specs"][3]["higher"])
+        self.assertIsNone(group["rows"][-2]["source_values"][3])
+        self.assertEqual(group["rows"][-1]["source_values"][2:], [None, None])
+        self.assertIn("cumulative", group["notes"])
+        self.assertIn("not time to first audio", group["notes"])
+
+    def test_thinkaloud_qa_is_s2s_not_s2t_or_a_radar(self):
+        group = self.groups["thinkaloud_qa"]
+        spec = next(profile for profile in PROFILES if profile["group"] == group["id"])
+        self.assertEqual(spec["kind"], "facets")
+        self.assertEqual(group["rows"][0]["source_values"], [40.3, 38.7])
+        closed = [row for row in group["rows"] if row["role"] == "closed_voice"]
+        self.assertEqual([row["model"] for row in closed], ["GPT-4o-Realtime"])
+        self.assertEqual(closed[0]["source_values"], [51.6, 69.7])
+        self.assertIn("S2S block", group["protocol"])
+
 
 if __name__ == "__main__":
     unittest.main()

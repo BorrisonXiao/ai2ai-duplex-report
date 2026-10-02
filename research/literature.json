@@ -1224,6 +1224,45 @@
       }
     },
     {
+      "id": "2609.26488",
+      "title": "Spoken Language Models that Think Aloud",
+      "authors": "Junyi Ao, Kainan Peng, Mingbo Ma, Shun Zhang, Zhenyu Tang, Xutai Ma, Xiang Li, Yinghao Li, Yuancheng Wang, Zhizheng Wu, Haizhou Li, Qing He, Xubo Liu",
+      "author_list": [
+        "Junyi Ao",
+        "Kainan Peng",
+        "Mingbo Ma",
+        "Shun Zhang",
+        "Zhenyu Tang",
+        "Xutai Ma",
+        "Xiang Li",
+        "Yinghao Li",
+        "Yuancheng Wang",
+        "Zhizheng Wu",
+        "Haizhou Li",
+        "Qing He",
+        "Xubo Liu"
+      ],
+      "year": 2026,
+      "date": "2026-09-22",
+      "venue": "Preprint; accepted at SLT 2026 per arXiv comments",
+      "arxiv_id": "2609.26488",
+      "doi": null,
+      "status": "verified",
+      "source": "https://arxiv.org/abs/2609.26488",
+      "problem": "Direct think-while-speaking prior for synchronization: masking reasoning silence and accelerating a correct final answer are different objectives. Figure 2 and two source-specific comparisons are included.",
+      "method": "Qwen2.5-Omni-7B thinker/audio encoder + Qwen2.5-0.5B-Instruct progress module After the user query, a private reasoning stream feeds a small asynchronous module that generates one-sentence, task-grounded progress speech; completed utterances enter final-answer context. CosyVoice 2.0 unified talker + streaming flow-matching decoder, conditioned on projected thinker or progress-module hidden states. Playback-driven dynamic balance: trigger updates when speech ends; cancel pending unsynthesized updates when reasoning finishes, but finish the active utterance before the final response.",
+      "results": "At 40 tok/s, Spoken-MQA Table 3 reports 91.6% single-step / 83.6% multi-step accuracy, 0.36 s cumulative reasoning silence and 4.34 s speech overhang. QA Table 2: 40.3% WebQuestions / 38.7% TriviaQA, below its GPT-4o-Realtime reference.",
+      "relevance": "Direct think-while-speaking prior for synchronization: masking reasoning silence and accelerating a correct final answer are different objectives. Figure 2 and two source-specific comparisons are included.",
+      "limitations": "Not demonstrated full duplex: the interruption example is a future-use illustration, not an implemented/evaluated feature. No controlled generic-filler comparison or interactive user study. Study-specific code/weights not located as of 2 October 2026; upstream releases are not this checkpoint.",
+      "artifacts": {
+        "code": null,
+        "weights": null,
+        "training": "Joint thinker/progress/talker objectives with frozen audio encoder; Appendix A supplies data-construction prompts, not a runnable training release",
+        "data": "~200,000 dialogues / ~5,000 h; proprietary corpus explicitly cannot be released. DeepSeek-R1 annotations and single-speaker in-house TTS",
+        "license": "Study checkpoint/data terms not established; component licenses do not imply a study release"
+      }
+    },
+    {
       "id": "2609.29217",
       "title": "AdaptDuplex: from static to adaptive full-duplex spoken dialogue",
       "authors": "Zhiyang Zhou, Yingxin Shang, Zhou Wang, Hongwei Cai, Weixu Wang, Shuran Zhou, Shuofeng Zhao, Wenke Fan, Qingxiang Guo, Dawei Yang, Lin Yang, Yang Song",
@@ -1404,6 +1443,37 @@
     }
   ],
   "systems": [
+    {
+      "id": "2609.26488",
+      "name": "Think-Aloud SLM (Ao et al.)",
+      "title": "Spoken Language Models that Think Aloud",
+      "authors": "Junyi Ao, Kainan Peng, Mingbo Ma et al.",
+      "date": "2026-09-22",
+      "venue": "Preprint; accepted at SLT 2026 per arXiv comments",
+      "family": "Think while speaking",
+      "backbone": "Qwen2.5-Omni-7B thinker/audio encoder + Qwen2.5-0.5B-Instruct progress module",
+      "stream": "After the user query, a private reasoning stream feeds a small asynchronous module that generates one-sentence, task-grounded progress speech; completed utterances enter final-answer context.",
+      "decoder": "CosyVoice 2.0 unified talker + streaming flow-matching decoder, conditioned on projected thinker or progress-module hidden states.",
+      "control": "Playback-driven dynamic balance: trigger updates when speech ends; cancel pending unsynthesized updates when reasoning finishes, but finish the active utterance before the final response.",
+      "result": "At 40 tok/s, Spoken-MQA Table 3 reports 91.6% single-step / 83.6% multi-step accuracy, 0.36 s cumulative reasoning silence and 4.34 s speech overhang. QA Table 2: 40.3% WebQuestions / 38.7% TriviaQA, below its GPT-4o-Realtime reference.",
+      "relevance": "Direct think-while-speaking prior for synchronization: masking reasoning silence and accelerating a correct final answer are different objectives. Figure 2 and two source-specific comparisons are included.",
+      "limitation": "Not demonstrated full duplex: the interruption example is a future-use illustration, not an implemented/evaluated feature. No controlled generic-filler comparison or interactive user study. Study-specific code/weights not located as of 2 October 2026; upstream releases are not this checkpoint.",
+      "code": null,
+      "weights": null,
+      "training": "Joint thinker/progress/talker objectives with frozen audio encoder; Appendix A supplies data-construction prompts, not a runnable training release",
+      "data": "~200,000 dialogues / ~5,000 h; proprietary corpus explicitly cannot be released. DeepSeek-R1 annotations and single-speaker in-house TTS",
+      "license": "Study checkpoint/data terms not established; component licenses do not imply a study release",
+      "extra": [
+        [
+          "Version-pinned PDF",
+          "https://arxiv.org/pdf/2609.26488v1"
+        ],
+        [
+          "Author publication listing (paper only)",
+          "https://liuxubo717.github.io/"
+        ]
+      ]
+    },
     {
       "id": "2609.14005",
       "name": "StepAudio 3 Realtime",
@@ -2303,6 +2373,13 @@
   ],
   "training_recipes": [
     [
+      "Think-Aloud SLM (Ao et al.)",
+      "~200K dialogues / ~5,000 h. DeepSeek-R1 selects reasoning turns and progress triggers, writes single-sentence updates and conditions final-answer rewrites; in-house TTS resynthesizes one speaker.",
+      "Proprietary corpus explicitly cannot be released. Appendix A publishes construction prompts; study code/weights not located as of 2 October. Released Qwen/CosyVoice components are not the study checkpoint.",
+      "https://arxiv.org/abs/2609.26488",
+      null
+    ],
+    [
       "Moshi / PersonaPlex",
       "Text/speech pretraining plus real and TTS-generated two-channel dialogues; PersonaPlex adds paired role/voice prompts.",
       "Released models and inference; Moshi has a fine-tuning package. Full final dialogue mixtures not located.",
@@ -2341,7 +2418,7 @@
   "methodology": "Search angles covered native multi-stream models, serialized LLM decoders, codec-free text backbones, asynchronous delegation, reasoning under partial speech, interaction benchmarks, and natural/synthetic conversational data. Paper existence was verified through arXiv or publisher/venue pages; substantive descriptions use primary manuscripts. Availability was checked against official repositories and model/dataset cards. Repository release notes and cards can change after this date. No training, benchmarks, model downloads or provider calls were run.",
   "limitations": "This is a focused architecture and resource review, not an exhaustive survey or an independently reproduced leaderboard. Some newly posted papers have no located release; some code packages expose inference or fine-tuning rather than foundation training. Unknown authors/venues and artifact status remain explicit. Closed realtime APIs appear as comparators in benchmark papers, but their private internal architecture cannot be inferred from those results.",
   "source_audit": "source-audit.json",
-  "revision_date": "2026-10-01",
+  "revision_date": "2026-10-02",
   "reported_performance": "../report/research/reported-performance.json",
   "performance_plots": "../report/research/performance-plots.json",
   "supplemental_source_audit": "../report/research/source-audit.json"

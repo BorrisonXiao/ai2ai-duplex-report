@@ -84,7 +84,7 @@ def validate():
         actual = [int(match.group(1)) for text in parser.labels if (match := re.match(kind + r' (\d+)\.',text))]
         if actual != list(range(1,count+1)): errors.append('Missing or non-sequential ' + kind + ' captions')
     if len(parser.tables) != 6 + len(PROFILES): errors.append('Expected six landscape tables and one table per performance profile')
-    if parser.figures != 9 + len(PROFILES): errors.append('Expected a taxonomy, seven paper screenshots, coverage and profile plots')
+    if parser.figures != 2 + len(json.loads((ROOT / 'report/figures/papers/manifest.json').read_text())['sources']) + len(PROFILES): errors.append('Expected a taxonomy, selected paper screenshots, coverage and profile plots')
     for ident in parser.filters:
         for required in (ident,ident+'-filter',ident+'-count',ident+'-empty'):
             if required not in parser.ids: errors.append('Missing filter component: ' + required)
@@ -153,4 +153,4 @@ if __name__ == '__main__':
     if errors:
         for error in errors: print('ERROR:',error)
         raise SystemExit(1)
-    print(f'Validation passed: one project tab, {6+len(PROFILES)} tables, {9+len(PROFILES)} labeled figures, {len(digest["papers"])} verified papers, complete local links/citations, natural text wrapping.')
+    print(f'Validation passed: one project tab, {6+len(PROFILES)} tables, {10+len(PROFILES)} labeled figures, {len(digest["papers"])} verified papers, complete local links/citations, natural text wrapping.')

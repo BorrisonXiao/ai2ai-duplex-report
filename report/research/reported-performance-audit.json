@@ -2,7 +2,7 @@
   "status": "passed",
   "checked": "2026-10-01",
   "evidence_cutoff": "2026-09-30",
-  "data_sha256": "91f7d89757ca118e0928bec29f2b2b09897bde4672062f3dd3c4c343f350d4ce",
+  "data_sha256": "cc96f7b1ee1e51d7f8a6af14f5802c5ef8ef7eb67e0b3cea545c0513ef1345a0",
   "sources": {
     "duplexomni": {
       "cite": "duplexomni",
@@ -137,6 +137,21 @@
       ],
       "status": "primary_pdf_checked",
       "pdf_sha256": "9f242ccd76a57d2d08525c9ea27b90cdc8f45b301c4aefc6ae9ab4dfca06b24f"
+    },
+    "thinkaloud": {
+      "cite": "thinkaloud",
+      "url": "https://arxiv.org/pdf/2609.26488v1",
+      "local_pdf": "arxiv.org_pdf_2609.26488.pdf",
+      "version": "arXiv v1, 22 September 2026",
+      "pages": [
+        9
+      ],
+      "tables": [
+        "2",
+        "3"
+      ],
+      "status": "primary_pdf_checked",
+      "pdf_sha256": "1c4117705a08648bc55f48f3f79870b6c4a8ce7b91fe9b8da9e6c2e05cfda7a9"
     },
     "mpe": {
       "cite": "mpe",
@@ -713,6 +728,126 @@
         86.0,
         53.1,
         43.0
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_timing",
+      "model": "Think-Aloud: 40 tok/s",
+      "source_values": [
+        91.6,
+        83.6,
+        0.36,
+        4.34
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_timing",
+      "model": "Think-Aloud: 80 tok/s",
+      "source_values": [
+        91.6,
+        84.2,
+        0.05,
+        4.16
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_timing",
+      "model": "Think-Aloud: 160 tok/s",
+      "source_values": [
+        91.8,
+        84.3,
+        0.03,
+        5.66
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_timing",
+      "model": "Think-Aloud without dynamic balance",
+      "source_values": [
+        90.7,
+        84.5,
+        1.03,
+        19.92
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_timing",
+      "model": "Serial CoT (Think-Aloud study)",
+      "source_values": [
+        91.3,
+        85.6,
+        12.82,
+        null
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_timing",
+      "model": "Direct baseline (Think-Aloud study)",
+      "source_values": [
+        86.0,
+        63.0,
+        null,
+        null
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_qa",
+      "model": "Think-Aloud SLM (Ao et al.)",
+      "source_values": [
+        40.3,
+        38.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_qa",
+      "model": "Serial CoT (Think-Aloud study)",
+      "source_values": [
+        40.3,
+        39.2
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_qa",
+      "model": "Direct baseline (Think-Aloud study)",
+      "source_values": [
+        32.1,
+        36.1
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_qa",
+      "model": "Moshi",
+      "source_values": [
+        9.2,
+        7.3
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_qa",
+      "model": "VITA-Audio",
+      "source_values": [
+        41.7,
+        42.7
+      ],
+      "status": "matches_primary_pdf"
+    },
+    {
+      "group": "thinkaloud_qa",
+      "model": "GPT-4o-Realtime",
+      "source_values": [
+        51.6,
+        69.7
       ],
       "status": "matches_primary_pdf"
     },

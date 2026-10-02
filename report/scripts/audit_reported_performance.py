@@ -25,6 +25,23 @@ def numbers(text):
 
 def extract(group, row, pages):
     name = row["model"]
+    if group in {"thinkaloud_timing", "thinkaloud_qa"}:
+        if group == "thinkaloud_timing":
+            text = after(pages[9], "Table 3")
+            aliases = {"Direct baseline (Think-Aloud study)": "Baseline", "Serial CoT (Think-Aloud study)": "Baseline + CoT", "Think-Aloud without dynamic balance": "Proposed Model w/o DB Stgy."}
+            if name.startswith("Think-Aloud:"):
+                text = after(text, "Proposed Model (varying generation speed)")
+                marker = name.split(": ")[1].split()[0]
+                text = re.split(r"(?m)^" + re.escape(marker) + r"\s*$", text, maxsplit=1)[1]
+            else:
+                text = after(text, aliases[name])
+            cells = re.findall(r"(?m)^\s*(\d+(?:\.\d+)?|-)\s*$", text)[:4]
+        else:
+            text = after(pages[9], "Speech-to-Speech (S2S)").split("Speech-to-Text (S2T)")[0]
+            aliases = {"Think-Aloud SLM (Ao et al.)": "Baseline + Think-Aloud CoT (ours)", "Serial CoT (Think-Aloud study)": "Baseline + CoT", "Direct baseline (Think-Aloud study)": "Baseline"}
+            text = after(text, aliases.get(name, name))
+            cells = re.findall(r"(?m)^\s*(\d+(?:\.\d+)?|-)\s*$", text)[:2]
+        return [None if value == "-" else float(value) for value in cells]
     if group == "duplexomni":
         aliases = {"DuplexOmni + Gemini-3.1-Flash-Lite": "DuplexOmni", "Gemini-3.1-Flash-Lite (thinking only)": "Gemini-3.1-Flash-Lite"}
         text = after(pages[8], aliases.get(name, name))
@@ -133,7 +150,7 @@ def main():
             actual = [numbers(after(block, "gemini-live-2.5"))[0]]
         assert actual == row["source_values"], (row["model"], actual)
         checks.append({"group": row["benchmark"], "model": row["model"], "source_values": actual, "status": "matches_primary_pdf"})
-    result = {"status": "passed", "checked": "2026-10-01", "evidence_cutoff": data["evidence_cutoff"], "data_sha256": hashlib.sha256((ROOT / "research" / "reported-performance.json").read_bytes()).hexdigest(), "sources": sources, "checks": checks, "scope": "Primary PDF table-value verification; not experimental reproduction. Raster evidence-page renders remain private and are not packaged."}
+    result = {"status": "passed", "checked": "2026-10-02", "evidence_cutoff": data["evidence_cutoff"], "data_sha256": hashlib.sha256((ROOT / "research" / "reported-performance.json").read_bytes()).hexdigest(), "sources": sources, "checks": checks, "scope": "Primary PDF table-value verification; not experimental reproduction. Raster evidence-page renders remain private and are not packaged."}
     (ROOT / "research" / "reported-performance-audit.json").write_text(json.dumps(result, indent=2) + "\n")
     print(f"PASS: {len(checks)} reported model/configuration vectors matched to {len(sources)} primary PDF sources.")
 

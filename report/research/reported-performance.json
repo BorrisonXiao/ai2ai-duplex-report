@@ -1,7 +1,7 @@
 {
-  "revision_date": "2026-10-01",
+  "revision_date": "2026-10-02",
   "evidence_cutoff": "2026-09-30",
-  "scope": "Five selected benchmark families, plus separately labeled FLAIR, DuplexOmni and VoiceChat study evaluations; seven selected architectures and representative references, not current global best.",
+  "scope": "Five selected benchmark families, plus separately labeled FLAIR, DuplexOmni, VoiceChat and Think-Aloud study evaluations; eight selected designs (Think-Aloud is not demonstrated full duplex) and representative references, not current global best.",
   "provenance": "Reported numbers, not reproduced experiments. Original benchmark tables and later system-report evaluations are separated.",
   "unit": "Units and directions are explicit per metric. Fraction-valued accuracy and WER scores are multiplied by 100; source values are retained. Token latency is stored separately, never converted into runtime seconds.",
   "sources": {
@@ -114,6 +114,15 @@
       "version": "arXiv v5, 4 June 2026",
       "pages": [7, 8],
       "tables": ["1", "3"],
+      "status": "primary_pdf_checked"
+    },
+    "thinkaloud": {
+      "cite": "thinkaloud",
+      "url": "https://arxiv.org/pdf/2609.26488v1",
+      "local_pdf": "arxiv.org_pdf_2609.26488.pdf",
+      "version": "arXiv v1, 22 September 2026",
+      "pages": [9],
+      "tables": ["2", "3"],
       "status": "primary_pdf_checked"
     },
     "mpe": {
@@ -653,6 +662,41 @@
       ]
     }
   ],
+  "thinkaloud_groups": [
+    {
+      "id": "thinkaloud_timing",
+      "benchmark": "Think-Aloud study: Spoken-MQA accuracy and timing",
+      "protocol": "Table 3: single-/multi-step accuracy, cumulative audible silence during reasoning (Lsil), and extra articulation delay after answer readiness (Loh)",
+      "metric_labels": ["Single-step", "Multi-step", "Reasoning silence", "Speech overhang"],
+      "metric_specs": [{"unit": "%", "higher": true, "decimals": 1}, {"unit": "%", "higher": true, "decimals": 1}, {"unit": "s", "higher": false, "decimals": 2}, {"unit": "s", "higher": false, "decimals": 2}],
+      "source_ids": ["thinkaloud"],
+      "notes": "Lsil is cumulative silence while reasoning is ongoing, not time to first audio or correct final answer. Loh is extra delay when progress speech outlasts answer readiness. An active utterance finishes before final-response generation. Source dashes remain NR, not zero. Rates are reasoning-generation settings, not a harmonized hardware comparison. The direct and serial baselines share the study's initialization. No implemented full-duplex interruption test.",
+      "rows": [
+        {"model": "Think-Aloud: 40 tok/s", "role": "selected", "source": "thinkaloud", "source_values": [91.6, 83.6, 0.36, 4.34], "scale": 1, "decimals": 1},
+        {"model": "Think-Aloud: 80 tok/s", "role": "selected", "source": "thinkaloud", "source_values": [91.6, 84.2, 0.05, 4.16], "scale": 1, "decimals": 1},
+        {"model": "Think-Aloud: 160 tok/s", "role": "selected", "source": "thinkaloud", "source_values": [91.8, 84.3, 0.03, 5.66], "scale": 1, "decimals": 1},
+        {"model": "Think-Aloud without dynamic balance", "role": "ablation", "source": "thinkaloud", "source_values": [90.7, 84.5, 1.03, 19.92], "scale": 1, "decimals": 1},
+        {"model": "Serial CoT (Think-Aloud study)", "role": "representative", "source": "thinkaloud", "source_values": [91.3, 85.6, 12.82, null], "scale": 1, "decimals": 1},
+        {"model": "Direct baseline (Think-Aloud study)", "role": "representative", "source": "thinkaloud", "source_values": [86.0, 63.0, null, null], "scale": 1, "decimals": 1}
+      ]
+    },
+    {
+      "id": "thinkaloud_qa",
+      "benchmark": "Think-Aloud study: spoken QA, speech-to-speech",
+      "protocol": "Table 2, S2S block only: answer accuracy on WebQuestions and TriviaQA",
+      "metric_labels": ["WebQuestions", "TriviaQA"],
+      "source_ids": ["thinkaloud"],
+      "notes": "Only the speech-to-speech block is used. Imported external-model results are not a common rerun; API revision for GPT-4o-Realtime is unspecified. It is the paper's sole closed reference, not a current global leader. Omit the derived average as a redundant plot axis. The study's speech-to-text results are separate and not used. This evaluation is not FLAIR's QA protocol or SRQA.",
+      "rows": [
+        {"model": "Think-Aloud SLM (Ao et al.)", "role": "selected", "source": "thinkaloud", "source_values": [40.3, 38.7], "scale": 1, "decimals": 1},
+        {"model": "Serial CoT (Think-Aloud study)", "role": "representative", "source": "thinkaloud", "source_values": [40.3, 39.2], "scale": 1, "decimals": 1},
+        {"model": "Direct baseline (Think-Aloud study)", "role": "representative", "source": "thinkaloud", "source_values": [32.1, 36.1], "scale": 1, "decimals": 1},
+        {"model": "Moshi", "role": "foundation", "source": "thinkaloud", "source_values": [9.2, 7.3], "scale": 1, "decimals": 1},
+        {"model": "VITA-Audio", "role": "representative", "source": "thinkaloud", "source_values": [41.7, 42.7], "scale": 1, "decimals": 1},
+        {"model": "GPT-4o-Realtime", "role": "closed_voice", "source": "thinkaloud", "source_values": [51.6, 69.7], "scale": 1, "decimals": 1, "best_closed": true}
+      ]
+    }
+  ],
   "domain_metric_labels": ["Airline", "Retail", "Telecom"],
   "text_controls": [
     {
@@ -764,6 +808,15 @@
       "fdb3": "reported",
       "echochain": "not_located",
       "mpe": "not_located"
+    },
+    {
+      "system": "Think-Aloud SLM (Ao et al.)",
+      "srqa": "not_located",
+      "tauvoice": "not_located",
+      "fdb3": "not_located",
+      "echochain": "not_located",
+      "mpe": "not_located",
+      "note": "Spoken-MQA and speech-to-speech QA are separate study protocols. Framework does not implement/evaluate listen-while-speaking or interruption handling."
     }
   ],
   "interpretation": "Coverage is sparse, and tool success, selective participation and revision robustness are different targets. These numbers motivate evaluation gaps, not a cross-benchmark winner."

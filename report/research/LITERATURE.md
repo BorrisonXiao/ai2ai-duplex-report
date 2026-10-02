@@ -1,10 +1,10 @@
 # Focused duplex literature review
 
-Review cutoff: 2026-09-30. Seven system architectures; five resources in each other category. Rows are not ranked.
+Review cutoff: 2026-09-30. Eight system/design anchors; five resources in each other category. Rows are not ranked.
 
 ## Reasoning and system designs
 
-Seven anchors span explicit and latent listening-time reasoning, timed text-backbone speech, concurrent formulation/articulation, two asynchronous interaction/thinking designs, and native parallel text/function heads. Moshi is compared separately in the synchronization shortlist. The other three categories retain five entries each.
+Eight anchors span listening-time reasoning, timed text-backbone speech, concurrent formulation/articulation, asynchronous interaction/thinking, native parallel text/function heads, and progress speech during reasoning. Think-Aloud SLM is a think-while-speaking framework, not a demonstrated full-duplex model. Moshi is compared separately in the synchronization shortlist. The other three categories retain five entries each.
 
 | System / paper | Reasoning, backbone and speech path | Code / weights | Training release |
 | --- | --- | --- | --- |
@@ -15,6 +15,7 @@ Seven anchors span explicit and latent listening-time reasoning, timed text-back
 | [Realtime-Venus](https://arxiv.org/abs/2609.13814) | MiniCPM-o 4.5-derived 9B Audio/Omni frontend; causal 1 s chunks, persistent context, and an asynchronous backend. A harness returns backend text to the speaking frontend. | Inference/harness + Audio/Omni weights; Apache-2.0. Demo integration is Omni-based. | Methods; complete training package/mixture not located. |
 | [DuplexOmni](https://arxiv.org/abs/2606.09186) | Qwen3-Omni Thinker/Talker interaction model; 480 ms slices and persistent speech context. A separate pluggable thinking layer returns streaming feedback and can be stopped. Reported full configuration uses Gemini-3.1-Flash-Lite. | Inference, training and data-pipeline code; weights released. Source Apache-2.0; upstream terms apply. | Writer-Director metadata + one generated shard; not the full ~9 TB corpus. |
 | [NemotronLabs VoiceChat](https://arxiv.org/abs/2609.21967) | 11B system: Nemotron Nano 9B v2 + 80 ms FastConformer features; parallel text/function heads, auxiliary RNN-T and separately trained streaming TTS. No user ASR transcript fed into the LLM. Tool execution currently disables barge-in. | NeMo runtime branch + weights; OpenMDW-1.1 weights. Not a Moshi decoder. | Training methods and sources; full pipeline and mixture not established. |
+| [Think-Aloud SLM (Ao et al.)](https://arxiv.org/abs/2609.26488) | Qwen2.5-Omni-7B thinker/audio encoder + Qwen2.5-0.5B progress module + CosyVoice 2 talker/decoder. Playback-driven scheduling cancels pending updates but finishes active speech before the final answer. No implemented listen-while-speaking or interruption evaluation. | Study-specific code/weights not located as of 2 October 2026; released base models are not this checkpoint. | ~200K dialogues / ~5,000 h, proprietary; prompts published, corpus explicitly not releasable. |
 
 ## Synchronization and temporal interfaces
 
@@ -54,7 +55,7 @@ Five natural conversational resources are chosen for channel separation, tempora
 
 ## Synthesis and open gaps
 
-G1: Jointly measure evidence age, correct useful audible response time, and unsafe commitment under late corrections.
+G1: Jointly measure evidence age, correct useful audible response time, and unsafe commitment under late corrections. Reduced reasoning silence from progress speech is not an earlier correct final answer.
 G2: Maintain speaker-owned hypothesis versions across concurrent capture, reasoning, synthesis and playback.
 G3: Establish causal end-to-end consistency across corrected frontend state, pending tools and output queues, beyond cancellation alone; distinguish VoiceChat's tool-execution listening restriction.
 G4: Validate adaptive temporal interfaces against real wall-clock deadlines and compute contention, not only virtual-clock task scores.
@@ -80,7 +81,7 @@ Hypothesis: Evidence-tagged output queues and a bounded playback lead reduce sta
 
 Small experiment: Deliver a correction before generation, during synthesis, while queued, or after playback; compare unrestricted lead, fixed-duration lead and evidence-aware admission.
 
-Prior-work distinction: Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.
+Prior-work distinction: Dual-process reasoning, bounded lead and playback-driven progress speech already exist. Think-Aloud reduces cumulative reasoning silence but introduces speech overhang; its interruption illustration is not implemented. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.
 
 ### RQ3: Listen while speaking
 
@@ -100,7 +101,7 @@ Hypothesis: A scheduler observing evidence age and audio-buffer duration has few
 
 Small experiment: Replay identical dialogues across speech-rate, jitter and compute-contention conditions; compare fixed 80 ms/1 s interfaces where implementable with a two- or three-level adaptive controller.
 
-Prior-work distinction: Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.
+Prior-work distinction: Fixed clocks, adaptive windows, action alignment and playback-driven progress scheduling already exist. Think-Aloud evaluates different reasoning speeds, but not new user evidence during speech. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.
 
 ### RQ5: Revise while delegating
 
@@ -121,6 +122,7 @@ Prior-work distinction: AdaptDuplex cancels jobs and suppresses stale results; D
 - [Realtime-Venus: A full-duplex interaction system with asynchronous delegation](https://arxiv.org/abs/2609.13814). Ant Group. Preprint / technical report; 2026-09-12.
 - [DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction](https://arxiv.org/abs/2606.09186). Huang, Muye, Zhang, Lingling, Yu, Xingyu, Shi, Lei, Ma, Zhanyu, Xu, Jun, Gao, Jiuchong, Hao, Jinghua, He, Renqing, Liu, Jun. Preprint / technical report; 2026-06-08.
 - [NemotronLabs VoiceChat: An Open Full-duplex Speech-to-Speech Model with Tool Calling Capabilities](https://arxiv.org/abs/2609.21967). Balam, Jagadeesh, Bartley, Travis, Casanova, Edresson, Chauhan, Sanjay, Chen, Chen, Chen, Zhehuai, Chen, Zijia, Ciannella, Francesco, Deng, Slyne, Desta, Mikyas, Dubey, Harishchandra, Essid, Slim, Ferchichi, Nourchene, Ginsburg, Boris, Fuenmayor, Mariana Graterol, Habibi, Negar, Hu, Kevin, Joseph, Anand, Karandikar, Viraj, Kim, Myungjong, Klimkov, Viacheslav, Narasimhan, Seelan Lakshmi, Lee, Lily, Li, Jason, Long, Eileen, Mahabaleshwarkar, Ameya, Malte, Aditya, Margolin, Adi, Meister, Sasha, Mendelev, Valentin, Olabiyi, Oluwatobi, Pasad, Ankita, Peng, Yifan, Rastorgueva, Elena, Ritchie, Jayda, Roche, Jason, Srihari, Nikhil, Su, Yuanhang, Suhara, Yoshi, Trinh, Viet Anh, Wang, Jinhan, Zelasko, Piotr, Wang, Hui, Meng, Puhui, Zhang, Chaosen, Liu, Yunsheng, Wang, Shawn, Li, Wenjing, He, Zhonglei. Preprint / technical report; 2026-09-18.
+- [Spoken Language Models that Think Aloud](https://arxiv.org/abs/2609.26488). Ao, Junyi, Peng, Kainan, Ma, Mingbo, Zhang, Shun, Tang, Zhenyu, Ma, Xutai, Li, Xiang, Li, Yinghao, Wang, Yuancheng, Wu, Zhizheng, Li, Haizhou, He, Qing, Liu, Xubo. Preprint / technical report; 2026-09-22.
 - [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594). Veluri, Bandhav, Peloquin, Benjamin N, Yu, Bokai, Gong, Hongyu, Gollakota, Shyamnath. EMNLP 2024; 2024-09-23.
 - [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037). Défossez, Alexandre, Mazaré, Laurent, Orsini, Manu, Royer, Amélie, Pérez, Patrick, Jégou, Hervé, Grave, Edouard, Zeghidour, Neil. Preprint / technical report; 2024-09-17.
 - [DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action](https://arxiv.org/abs/2605.20755). Zhang, Haoyang, Chen, Jun, Wu, Donghang, Li, Yuxin, Zhang, Yuxin, Zhang, Xiangyu Tony, Liu, Che, Lin, Qingjian, Peng, Yizhou, Liu, Hexin, Chng, Eng Siong, Yan, Chao, Wu, Boyong, Huang, Yechang, Yang, Xuerui, Tian, Fei. Preprint / technical report; 2026-05-20.
@@ -218,6 +220,18 @@ Results: Table 4 reports FDB-v3 tool F1, argument accuracy and pass@1; the share
 Relevance: An open text-backbone alternative to Moshi and serialized action tokens; exposes separate speech, transcription and native function channels.
 
 Limitations: User ASR transcript is not the LLM input. Tool execution substitutes silence during training, predefined acknowledgments at runtime, and currently prevents barge-in. Approximately two-minute context, limited tool composition and background-speech robustness; complete assembled training mixture not established.
+
+### Spoken Language Models that Think Aloud
+
+Problem: Serial reasoning causes audible silence; progress feedback must track evolving reasoning without delaying the final answer excessively.
+
+Method: Qwen2.5-Omni-7B thinker/frozen audio encoder, Qwen2.5-0.5B-Instruct progress module and CosyVoice 2.0 unified talker/decoder. A playback-driven scheduler triggers updates, cancels pending unsynthesized speech and finishes the active utterance before the final response.
+
+Results: Spoken-MQA Table 3 reports single-/multi-step accuracy, cumulative reasoning silence and extra articulation delay; Table 2 gives S2S QA with an imported GPT-4o-Realtime reference. Shared audited plots retain units, configurations and missing values; not independently reproduced.
+
+Relevance: Close think-while-speaking synchronization prior: short task-grounded progress utterances, not raw CoT read aloud. Lower audible silence must be distinguished from earlier correct final answers.
+
+Limitations: Explicitly not demonstrated full duplex: barge-in is future-use illustration, not implemented/evaluated. Proprietary ~200K-dialogue/~5,000-hour corpus cannot be released; prompts are public. Study-specific code/weights not located as of 2 October. No controlled generic-filler comparison or interactive user evaluation.
 
 ### Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents
 

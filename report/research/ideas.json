@@ -74,8 +74,8 @@
       "proposed_method": "Admit task-specific output only while its evidence dependencies remain valid. Separate private formulation from articulation, annotate queued output with evidence/state dependencies, revalidate unplayed output and repair already audible claims.",
       "minimal_experiment": "Inject corrections at generation, synthesis, queue and playback stages; compare the same model with and without playback revalidation.",
       "contribution_type": "method",
-      "novelty_rationale": "Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.",
-      "closest_prior_work": "Wu, Donghang et al., 2025 — Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models (https://arxiv.org/abs/2510.09592); Lin, Bin et al., 2026 — StepAudio 3 Realtime Technical Report (https://arxiv.org/abs/2609.14005); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Modi, Smit Nautambhai et al., 2026 — EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions (https://arxiv.org/abs/2604.16456)",
+      "novelty_rationale": "Dual-process reasoning, bounded lead and playback-driven progress speech already exist. Think-Aloud reduces cumulative reasoning silence but introduces speech overhang; its interruption illustration is not implemented. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.",
+      "closest_prior_work": "Wu, Donghang et al., 2025 — Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models (https://arxiv.org/abs/2510.09592); Lin, Bin et al., 2026 — StepAudio 3 Realtime Technical Report (https://arxiv.org/abs/2609.14005); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Modi, Smit Nautambhai et al., 2026 — EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions (https://arxiv.org/abs/2604.16456); Ao, Junyi et al., 2026 — Spoken Language Models that Think Aloud (https://arxiv.org/abs/2609.26488)",
       "closest_prior_work_records": [
         {
           "key": "mindpaced",
@@ -226,6 +226,27 @@
           ],
           "year": "2026",
           "url": "https://arxiv.org/abs/2604.16456"
+        },
+        {
+          "key": "thinkaloud",
+          "title": "Spoken Language Models that Think Aloud",
+          "authors": [
+            "Ao, Junyi",
+            "Peng, Kainan",
+            "Ma, Mingbo",
+            "Zhang, Shun",
+            "Tang, Zhenyu",
+            "Ma, Xutai",
+            "Li, Xiang",
+            "Li, Yinghao",
+            "Wang, Yuancheng",
+            "Wu, Zhizheng",
+            "Li, Haizhou",
+            "He, Qing",
+            "Liu, Xubo"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.26488"
         }
       ],
       "feasibility": {
@@ -251,8 +272,8 @@
       "proposed_method": "Adapt unplayed speech duration to correction risk rather than a token-count limit. Separate private formulation from articulation, annotate queued output with evidence/state dependencies, revalidate unplayed output and repair already audible claims.",
       "minimal_experiment": "Sweep fixed-duration queue caps against a risk-aware cap on matched interrupted dialogues; report stale seconds, underruns and repair quality.",
       "contribution_type": "method",
-      "novelty_rationale": "Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.",
-      "closest_prior_work": "Wu, Donghang et al., 2025 — Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models (https://arxiv.org/abs/2510.09592); Lin, Bin et al., 2026 — StepAudio 3 Realtime Technical Report (https://arxiv.org/abs/2609.14005); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Modi, Smit Nautambhai et al., 2026 — EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions (https://arxiv.org/abs/2604.16456)",
+      "novelty_rationale": "Dual-process reasoning, bounded lead and playback-driven progress speech already exist. Think-Aloud reduces cumulative reasoning silence but introduces speech overhang; its interruption illustration is not implemented. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.",
+      "closest_prior_work": "Wu, Donghang et al., 2025 — Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models (https://arxiv.org/abs/2510.09592); Lin, Bin et al., 2026 — StepAudio 3 Realtime Technical Report (https://arxiv.org/abs/2609.14005); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Modi, Smit Nautambhai et al., 2026 — EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions (https://arxiv.org/abs/2604.16456); Ao, Junyi et al., 2026 — Spoken Language Models that Think Aloud (https://arxiv.org/abs/2609.26488)",
       "closest_prior_work_records": [
         {
           "key": "mindpaced",
@@ -403,6 +424,27 @@
           ],
           "year": "2026",
           "url": "https://arxiv.org/abs/2604.16456"
+        },
+        {
+          "key": "thinkaloud",
+          "title": "Spoken Language Models that Think Aloud",
+          "authors": [
+            "Ao, Junyi",
+            "Peng, Kainan",
+            "Ma, Mingbo",
+            "Zhang, Shun",
+            "Tang, Zhenyu",
+            "Ma, Xutai",
+            "Li, Xiang",
+            "Li, Yinghao",
+            "Wang, Yuancheng",
+            "Wu, Zhizheng",
+            "Li, Haizhou",
+            "He, Qing",
+            "Liu, Xubo"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.26488"
         }
       ],
       "feasibility": {
@@ -562,8 +604,8 @@
       "proposed_method": "Adapt chunk duration using evidence age, playback budget and compute deadlines. Expose input watermarks, deadlines and predicted audio lead to the controller; adapt ingestion/generation quantum without using future speech or privileging one arm's compute.",
       "minimal_experiment": "Replay identical speech under controlled jitter/rates/contention using the same backbone and feature extractor; compare fixed and two/three-level scheduling.",
       "contribution_type": "method",
-      "novelty_rationale": "Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.",
-      "closest_prior_work": "Veluri, Bandhav et al., 2024 — Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents (https://arxiv.org/abs/2409.15594); Défossez, Alexandre et al., 2024 — Moshi: a speech-text foundation model for real-time dialogue (https://arxiv.org/abs/2410.00037); Cui, Junbo et al., 2026 — MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction (https://arxiv.org/abs/2604.27393); Zhang, Haoyang et al., 2026 — DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action (https://arxiv.org/abs/2605.20755); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686)",
+      "novelty_rationale": "Fixed clocks, adaptive windows, action alignment and playback-driven progress scheduling already exist. Think-Aloud evaluates different reasoning speeds, but not new user evidence during speech. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.",
+      "closest_prior_work": "Veluri, Bandhav et al., 2024 — Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents (https://arxiv.org/abs/2409.15594); Défossez, Alexandre et al., 2024 — Moshi: a speech-text foundation model for real-time dialogue (https://arxiv.org/abs/2410.00037); Cui, Junbo et al., 2026 — MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction (https://arxiv.org/abs/2604.27393); Zhang, Haoyang et al., 2026 — DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action (https://arxiv.org/abs/2605.20755); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686); Ao, Junyi et al., 2026 — Spoken Language Models that Think Aloud (https://arxiv.org/abs/2609.26488)",
       "closest_prior_work_records": [
         {
           "key": "syncllm",
@@ -693,6 +735,27 @@
           ],
           "year": "2026",
           "url": "https://arxiv.org/abs/2603.13686"
+        },
+        {
+          "key": "thinkaloud",
+          "title": "Spoken Language Models that Think Aloud",
+          "authors": [
+            "Ao, Junyi",
+            "Peng, Kainan",
+            "Ma, Mingbo",
+            "Zhang, Shun",
+            "Tang, Zhenyu",
+            "Ma, Xutai",
+            "Li, Xiang",
+            "Li, Yinghao",
+            "Wang, Yuancheng",
+            "Wu, Zhizheng",
+            "Li, Haizhou",
+            "He, Qing",
+            "Liu, Xubo"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.26488"
         }
       ],
       "feasibility": {
@@ -884,8 +947,8 @@
       "proposed_method": "Compare identical task traces under virtual replay and physical inference/playback time. Expose input watermarks, deadlines and predicted audio lead to the controller; adapt ingestion/generation quantum without using future speech or privileging one arm's compute.",
       "minimal_experiment": "Replay the same deterministic tasks and model traces with virtual advancement versus measured physical time; isolate runtime/provider confounds.",
       "contribution_type": "diagnostic",
-      "novelty_rationale": "Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.",
-      "closest_prior_work": "Veluri, Bandhav et al., 2024 — Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents (https://arxiv.org/abs/2409.15594); Défossez, Alexandre et al., 2024 — Moshi: a speech-text foundation model for real-time dialogue (https://arxiv.org/abs/2410.00037); Cui, Junbo et al., 2026 — MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction (https://arxiv.org/abs/2604.27393); Zhang, Haoyang et al., 2026 — DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action (https://arxiv.org/abs/2605.20755); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686)",
+      "novelty_rationale": "Fixed clocks, adaptive windows, action alignment and playback-driven progress scheduling already exist. Think-Aloud evaluates different reasoning speeds, but not new user evidence during speech. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.",
+      "closest_prior_work": "Veluri, Bandhav et al., 2024 — Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents (https://arxiv.org/abs/2409.15594); Défossez, Alexandre et al., 2024 — Moshi: a speech-text foundation model for real-time dialogue (https://arxiv.org/abs/2410.00037); Cui, Junbo et al., 2026 — MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction (https://arxiv.org/abs/2604.27393); Zhang, Haoyang et al., 2026 — DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action (https://arxiv.org/abs/2605.20755); Zhou, Zhiyang et al., 2026 — AdaptDuplex: from static to adaptive full-duplex spoken dialogue (https://arxiv.org/abs/2609.29217); Ray, Soham et al., 2026 — τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains (https://arxiv.org/abs/2603.13686); Ao, Junyi et al., 2026 — Spoken Language Models that Think Aloud (https://arxiv.org/abs/2609.26488)",
       "closest_prior_work_records": [
         {
           "key": "syncllm",
@@ -1015,6 +1078,27 @@
           ],
           "year": "2026",
           "url": "https://arxiv.org/abs/2603.13686"
+        },
+        {
+          "key": "thinkaloud",
+          "title": "Spoken Language Models that Think Aloud",
+          "authors": [
+            "Ao, Junyi",
+            "Peng, Kainan",
+            "Ma, Mingbo",
+            "Zhang, Shun",
+            "Tang, Zhenyu",
+            "Ma, Xutai",
+            "Li, Xiang",
+            "Li, Yinghao",
+            "Wang, Yuancheng",
+            "Wu, Zhizheng",
+            "Li, Haizhou",
+            "He, Qing",
+            "Liu, Xubo"
+          ],
+          "year": "2026",
+          "url": "https://arxiv.org/abs/2609.26488"
         }
       ],
       "feasibility": {

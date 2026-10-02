@@ -44,7 +44,7 @@ Research question: RQ2.
 
 **Contribution type:** method
 
-**Novelty rationale:** Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.
+**Novelty rationale:** Dual-process reasoning, bounded lead and playback-driven progress speech already exist. Think-Aloud reduces cumulative reasoning silence but introduces speech overhang; its interruption illustration is not implemented. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.
 
 **Risk:** medium
 
@@ -52,7 +52,7 @@ Research question: RQ2.
 
 **Expected outcome:** Quantify whether queue-level revalidation reduces stale audible claims.
 
-**Closest prior work:** [Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models](https://arxiv.org/abs/2510.09592), [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456)
+**Closest prior work:** [Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models](https://arxiv.org/abs/2510.09592), [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456), [Spoken Language Models that Think Aloud](https://arxiv.org/abs/2609.26488)
 
 **Feasibility:** Pilot estimate, not measured: 8--20 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment. 200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out. medium Instrument text, synthesis and playback queues and dependency tags.
 
@@ -72,7 +72,7 @@ Research question: RQ2.
 
 **Contribution type:** method
 
-**Novelty rationale:** Dual-process reasoning and bounded lead already exist. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.
+**Novelty rationale:** Dual-process reasoning, bounded lead and playback-driven progress speech already exist. Think-Aloud reduces cumulative reasoning silence but introduces speech overhang; its interruption illustration is not implemented. Test an explicit causal playback commitment boundary, rather than merely producing a faster first sound.
 
 **Risk:** medium
 
@@ -80,7 +80,7 @@ Research question: RQ2.
 
 **Expected outcome:** A commitment/latency/fluency Pareto curve, including negative results.
 
-**Closest prior work:** [Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models](https://arxiv.org/abs/2510.09592), [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456)
+**Closest prior work:** [Mind-Paced Speaking: A Dual-Brain Approach to Real-Time Reasoning in Spoken Language Models](https://arxiv.org/abs/2510.09592), [StepAudio 3 Realtime Technical Report](https://arxiv.org/abs/2609.14005), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [EchoChain: A Full-Duplex Benchmark for State-Update Reasoning Under Interruptions](https://arxiv.org/abs/2604.16456), [Spoken Language Models that Think Aloud](https://arxiv.org/abs/2609.26488)
 
 **Feasibility:** Pilot estimate, not measured: 8--20 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment. 200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out. medium Duration estimator plus two- or three-level queue cap.
 
@@ -156,7 +156,7 @@ Research question: RQ4.
 
 **Contribution type:** method
 
-**Novelty rationale:** Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.
+**Novelty rationale:** Fixed clocks, adaptive windows, action alignment and playback-driven progress scheduling already exist. Think-Aloud evaluates different reasoning speeds, but not new user evidence during speech. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.
 
 **Risk:** high
 
@@ -164,7 +164,7 @@ Research question: RQ4.
 
 **Expected outcome:** Measure robustness boundaries rather than claiming universal adaptivity.
 
-**Closest prior work:** [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594), [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037), [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393), [DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action](https://arxiv.org/abs/2605.20755), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686)
+**Closest prior work:** [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594), [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037), [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393), [DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action](https://arxiv.org/abs/2605.20755), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686), [Spoken Language Models that Think Aloud](https://arxiv.org/abs/2609.26488)
 
 **Feasibility:** Pilot estimate, not measured: 8--24 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment. 200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out. high Controller around a released streaming runtime; fixed feature extractors.
 
@@ -212,7 +212,7 @@ Research question: RQ4.
 
 **Contribution type:** diagnostic
 
-**Novelty rationale:** Fixed clocks, adaptive windows and action alignment already exist. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.
+**Novelty rationale:** Fixed clocks, adaptive windows, action alignment and playback-driven progress scheduling already exist. Think-Aloud evaluates different reasoning speeds, but not new user evidence during speech. The target is a causal consistency/robustness claim under heterogeneous clocks; virtual-time results alone are insufficient.
 
 **Risk:** low
 
@@ -220,7 +220,7 @@ Research question: RQ4.
 
 **Expected outcome:** Expose which conclusions survive real deadlines and which are simulator artifacts.
 
-**Closest prior work:** [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594), [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037), [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393), [DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action](https://arxiv.org/abs/2605.20755), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686)
+**Closest prior work:** [Beyond Turn-Based Interfaces: Synchronous LLMs as Full-Duplex Dialogue Agents](https://arxiv.org/abs/2409.15594), [Moshi: a speech-text foundation model for real-time dialogue](https://arxiv.org/abs/2410.00037), [MiniCPM-o 4.5: Towards Real-Time Full-Duplex Omni-Modal Interaction](https://arxiv.org/abs/2604.27393), [DuplexSLA: A Full-Duplex Spoken Language Model with Synchronized Speech, Language, and Action](https://arxiv.org/abs/2605.20755), [AdaptDuplex: from static to adaptive full-duplex spoken dialogue](https://arxiv.org/abs/2609.29217), [τ-Voice: Benchmarking Full-Duplex Voice Agents on Real-World Domains](https://arxiv.org/abs/2603.13686), [Spoken Language Models that Think Aloud](https://arxiv.org/abs/2609.26488)
 
 **Feasibility:** Pilot estimate, not measured: 4--12 GPU-hours; one A100 80 GB for a released 7--9B inference baseline, subject to runtime profiling. Estimates are per candidate, not a sum or training commitment. 200--500 paired controlled short dialogues; use synthetic causal-prefix pilot first, then licensed/gated recordings only after access approval. Keep benchmark test sets held out. medium Timestamped trace harness, controlled delay and queue instrumentation.
 

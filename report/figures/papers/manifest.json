@@ -1,5 +1,5 @@
 {
-  "created": "2026-10-01",
+  "created": "2026-10-02",
   "sources": [
     {
       "id": "moshi",
@@ -167,6 +167,31 @@
       ],
       "pdf_sha256": "b3f6b81779e31b5454d108cf01abf760571349e283823509d9c196fc32fadf80",
       "image_sha256": "abb254f9f32ef6a4731e39d79176c20451368a895f20810caaaa4c25c25dd290",
+      "crop_units": "PDF points; top-left origin",
+      "modifications": "Page-margin/surrounding-prose crop only; original diagram retained",
+      "credit": "Reproduced from the cited paper; copyright remains with its original rights holders."
+    },
+    {
+      "id": "thinkaloud",
+      "arxiv": "2609.26488",
+      "version": "v1",
+      "page": 3,
+      "figure": "2",
+      "crop": [
+        100,
+        65,
+        514,
+        290
+      ],
+      "source_url": "https://arxiv.org/pdf/2609.26488v1",
+      "image": "figures/papers/thinkaloud.png",
+      "dpi": 300,
+      "pixels": [
+        1726,
+        939
+      ],
+      "pdf_sha256": "1c4117705a08648bc55f48f3f79870b6c4a8ce7b91fe9b8da9e6c2e05cfda7a9",
+      "image_sha256": "e93e018903f6758944b51ee78440d0248c0869307b1833c625968ef1f926bcb4",
       "crop_units": "PDF points; top-left origin",
       "modifications": "Page-margin/surrounding-prose crop only; original diagram retained",
       "credit": "Reproduced from the cited paper; copyright remains with its original rights holders."

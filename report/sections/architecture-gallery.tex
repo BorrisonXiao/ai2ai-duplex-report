@@ -1,6 +1,6 @@
 \clearpage
 \subsection{Original-paper architecture views: Moshi and MiniCPM-o}
-The seven screenshots in Figures~\ref{fig:detailed-moshi}--\ref{fig:detailed-voicechat} preserve the source labels, arrows and legends. They show the main architecture choices, not a shared timing scale or an experimentally established ranking. The system and availability distinctions in Table~\ref{tab:systems} still apply.
+The eight screenshots in Figures~\ref{fig:detailed-moshi}--\ref{fig:detailed-thinkaloud} preserve the source labels, arrows and legends. They show the main architecture choices, not a shared timing scale or an experimentally established ranking. Think-Aloud SLM is a speaking-during-reasoning framework, not a demonstrated full-duplex system. The system and availability distinctions in Table~\ref{tab:systems} still apply.
 \begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{figures/papers/moshi.png}
@@ -53,4 +53,18 @@ The interaction model consumes the preceding slice's audio/video and backend fee
 \end{figure}
 \paragraph{Parallel outputs are not unrestricted parallel interaction.}
 The 11B system uses 80 ms audio features and separately trained persistent TTS. Native function tokens run alongside agent text, instead of sharing a serialized action/text output channel. During tool calls, training replaces user audio with silence; runtime uses predefined acknowledgment text. User barge-in is currently unavailable while a tool executes. This is an especially concrete listening-synchronization boundary to instrument: a new correction may be physically spoken without reaching the task state before tool completion. Approximately two-minute context, weak multi-tool composition and competing speech are further reported limitations \citep{voicechat}.
+\clearpage
+\subsection{Original-paper architecture view: Spoken Language Models that Think Aloud}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/papers/thinkaloud.png}
+\caption{\textbf{Think-Aloud SLM (Ao et al.).} Reproduced from \citet{thinkaloud}, v1, Fig.~2 (PDF p.~3). The reasoning thinker passes hidden states to a small think-aloud module, which generates brief progress updates; a unified talker renders both progress speech and the final answer. Copy arrows and the original legend are preserved. This is think-while-speaking after a user query, not evaluated listen-while-speaking.}
+\label{fig:detailed-thinkaloud}
+\end{figure}
+\paragraph{Three components, two asynchronous text streams, one speech path.}
+The frozen audio encoder and reasoning thinker are initialized from Qwen2.5-Omni-7B, the progress module from Qwen2.5-0.5B-Instruct, and the talker/streaming waveform decoder from CosyVoice 2.0. Hidden-state projections condition progress generation and speech. The first progress trigger follows query processing; later triggers accompany reasoning milestones. One-sentence updates summarize task-grounded progress rather than reading raw chain-of-thought aloud. Completed updates are appended to the reasoning context before the final response to keep it consistent with prior audible content \citep{thinkaloud}.
+\paragraph{The synchronization trade-off is silence versus answer overhang.}
+When playback finishes and reasoning continues, dynamic balance requests another eligible progress update. When reasoning finishes, it cancels pending not-yet-synthesized updates but lets active speech finish before generating the final response. At 40 reasoning tokens/s, Table~3 reports 0.36 s cumulative silence during reasoning versus 12.82 s for serial CoT, but 4.34 s extra articulation delay after the answer is ready. These are distinct endpoints, not first-audio or first-correct-answer latency. The profile pages preserve this trade-off and the 80/160 tok/s variants rather than declaring the framework globally faster.
+\paragraph{Access and duplex boundary.}
+Training uses about 200,000 dialogues / 5,000 speech hours with DeepSeek-R1-generated annotations and in-house single-speaker TTS. The corpus is proprietary and explicitly cannot be released; Appendix A exposes construction prompts. Study-specific code/weights were not located in the paper or the checked author listing as of 2 October. The paper's correction/interruption example is a future-use illustration: barge-in is not implemented or quantitatively evaluated. A controlled generic-filler comparison is also left open. For our proposal, this is close prior work for reasoning/playback coordination, not evidence that incoming corrections can revise reasoning or audible commitments \citep{thinkaloud}.
 \clearpage

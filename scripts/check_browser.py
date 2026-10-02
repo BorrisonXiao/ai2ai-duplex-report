@@ -38,26 +38,26 @@ def main():
             assert all(url.startswith(('file:', 'data:')) for url in requests), requests
             dimensions = page.evaluate("({viewport: innerWidth, document: document.documentElement.scrollWidth, figures: document.querySelectorAll('figure').length, images: document.images.length, tables: document.querySelectorAll('table').length, projectTabs: document.querySelectorAll('[aria-label=\"Project tabs\"] a').length, background: getComputedStyle(document.body).backgroundColor})")
             assert dimensions['document'] <= width, dimensions
-            assert (dimensions['figures'], dimensions['images'], dimensions['tables'], dimensions['projectTabs']) == (9+len(PROFILES), 8+len(PROFILES), 6+len(PROFILES), 1), dimensions
+            assert (dimensions['figures'], dimensions['images'], dimensions['tables'], dimensions['projectTabs']) == (10+len(PROFILES), 9+len(PROFILES), 6+len(PROFILES), 1), dimensions
             page.screenshot(path=str(args.output / ('web-' + name + '.png')))
-            for ident, suffix in [('architecture-minicpm', 'architecture'), ('profile-step3', 'performance'), ('profile-minicpm', 'multiparty'), ('architecture-duplexomni', 'duplexomni-architecture'), ('architecture-voicechat', 'voicechat-architecture'), ('profile-duplexomni', 'duplexomni-results'), ('profile-voicechat', 'voicechat-results')]:
+            for ident, suffix in [('architecture-minicpm', 'architecture'), ('profile-step3', 'performance'), ('profile-minicpm', 'multiparty'), ('architecture-duplexomni', 'duplexomni-architecture'), ('architecture-voicechat', 'voicechat-architecture'), ('profile-duplexomni', 'duplexomni-results'), ('profile-voicechat', 'voicechat-results'), ('architecture-thinkaloud', 'thinkaloud-architecture'), ('profile-thinkaloud-timing', 'thinkaloud-timing'), ('profile-thinkaloud-qa', 'thinkaloud-qa')]:
                 target = page.locator('#' + ident)
                 target.scroll_into_view_if_needed()
                 target.screenshot(path=str(args.output / ('web-' + name + '-' + suffix + '.png')), style='.site-nav { visibility: hidden !important; }')
             field = page.locator('#systems-table-filter')
             field.fill('FLAIR')
-            assert page.locator('#systems-table-count').inner_text() == '1 of 20 entries'
+            assert page.locator('#systems-table-count').inner_text() == '1 of 21 entries'
             field.fill('not-a-real-model-012345')
             assert page.locator('#systems-table-empty').is_visible()
             field.fill('')
-            assert page.locator('#systems-table-count').inner_text() == '20 of 20 entries'
+            assert page.locator('#systems-table-count').inner_text() == '21 of 21 entries'
             details = page.locator('#paper-notes details').first
             details.locator('summary').click()
             assert details.get_attribute('open') is not None
             details.locator('summary').click()
             assert details.get_attribute('open') is None
             scrollable = page.locator('.plot-scroll').evaluate_all('(items) => items.filter(item => item.scrollWidth > item.clientWidth).length')
-            assert scrollable == (8+len(PROFILES) if name == 'mobile' else 0), scrollable
+            assert scrollable == (9+len(PROFILES) if name == 'mobile' else 0), scrollable
             checks.append({'view': name, **dimensions, 'plot_regions_with_horizontal_pan': scrollable, 'filter_and_paper_notes': 'passed', 'javascript_errors': errors, 'external_requests': 0})
             context.close()
         browser.close()

@@ -36,7 +36,7 @@ def main():
     digest = json.loads((ROOT / "research" / "literature.json").read_text())
     ideas = json.loads((ROOT / "research" / "ideas.json").read_text())
     audit = json.loads((ROOT / "research" / "source-audit.json").read_text())
-    check(len(digest["categories"]) == 4 and all(len(c["rows"]) == (7 if c["id"] == "systems" else 5) for c in digest["categories"]), "Seven systems and five entries in each other category")
+    check(len(digest["categories"]) == 4 and all(len(c["rows"]) == (8 if c["id"] == "systems" else 5) for c in digest["categories"]), "Eight system/design anchors and five entries in each other category")
     check(len(digest["research_questions"]) == 5, "Five major research questions")
     check(len(ideas["ideas"]) == 8 and len(ideas["removed"]) == 2, "Eight unranked, grounded candidates; duplicate/infeasible exclusions recorded")
     check(all(i["risk"] in {"low", "medium", "high"} and i["contribution_type"] in {"empirical", "method", "theory", "diagnostic"} for i in ideas["ideas"]), "Candidate schema and risk labels")
@@ -48,14 +48,14 @@ def main():
     all_tex = tex + "\n" + (ROOT / "detailed-report.tex").read_text() + "\n" + "\n".join(p.read_text() for folder in ("tables", "figures", "sections") for p in (ROOT / folder).glob("*.tex"))
     keys = set(re.findall(r"@\w+\{([^,]+),", (ROOT / "references.bib").read_text()))
     citations = {key for match in re.findall(r"\\cite[tp]?\{([^}]+)\}", all_tex) for key in match.split(",")}
-    check(citations <= keys and len(keys) == 23, "All citation keys resolve to 23 documented bibliography entries")
+    check(citations <= keys and len(keys) == 24, "All citation keys resolve to 24 documented bibliography entries")
     compact_bib = (ROOT / "brief-references.tex").read_text()
     compact_keys = set(re.findall(r"\\bibitem\[[^]]+\]\{([^}]+)\}", compact_bib))
     compact_tex = tex + "\n" + "\n".join(p.read_text() for p in (ROOT / "tables").glob("brief-*.tex"))
     compact_citations = {key for match in re.findall(r"\\cite[tp]?\{([^}]+)\}", compact_tex) for key in match.split(",")}
     check(compact_citations == compact_keys and len(compact_keys) == 20, "All 20 brief references cited and all brief citations resolve")
     check(compact_bib.count(r"\href{") == 20, "Every compact reference links to its primary document or dataset card")
-    check(len(digest["papers"]) == 18 and all(p["status"] == "verified" and p["title"] and p["authors"] for p in digest["papers"]), "All 18 paper entries have verified primary bibliographic metadata")
+    check(len(digest["papers"]) == 19 and all(p["status"] == "verified" and p["title"] and p["authors"] for p in digest["papers"]), "All 19 paper entries have verified primary bibliographic metadata")
     for category in data.CATEGORIES:
         table = (ROOT / "tables" / (category["id"] + ".tex")).read_text()
         check(table.count(r"\par\citep{") == len(category["rows"]) and category["label"] in table, "Correct labeled generated rows: " + category["id"])
@@ -68,7 +68,7 @@ def main():
     check(len(figures["figures"][:5]) == 5 and all(f["paper_keys"] and f["source_figures"] for f in figures["figures"][:5]), "Five architecture screenshots traced to primary figure/method evidence")
     manifest = json.loads((ROOT / "figures" / "papers" / "manifest.json").read_text())
     screenshots = {record["image"]: record for record in manifest["sources"]}
-    check(len(screenshots) == 7 and tex.count("Reproduced from") == 5 and len(figures["detailed_only_figures"]) == 2, "Seven original-paper screenshots; meeting brief keeps its five")
+    check(len(screenshots) == 8 and tex.count("Reproduced from") == 5 and len(figures["detailed_only_figures"]) == 3, "Eight original-paper screenshots; meeting brief keeps its five")
     for figure in figures["figures"] + figures["detailed_only_figures"]:
         path = ROOT / figure["file"]
         if path.suffix == ".png":
@@ -88,7 +88,7 @@ def main():
     performance = json.loads(performance_path.read_text())
     performance_audit = json.loads((ROOT / "research" / "reported-performance-audit.json").read_text())
     check(len(performance["groups"]) == 6 and {group["id"] for group in performance["groups"]} == {"srqa", "tau_original", "tau_aa", "fdb3", "echo", "mpe"}, "Five benchmark families, with original and AA tau-Voice protocols kept separate")
-    check(len(performance["coverage"]) == 7 and {row["system"] for row in performance["coverage"]} == {row["name"] for row in data.CATEGORIES[0]["rows"]}, "Coverage records match all seven selected architectures")
+    check(len(performance["coverage"]) == 8 and {row["system"] for row in performance["coverage"]} == {row["name"] for row in data.CATEGORIES[0]["rows"]}, "Coverage records match all eight selected designs")
     check(performance_audit["status"] == "passed" and performance_audit["data_sha256"] == hashlib.sha256(performance_path.read_bytes()).hexdigest(), "Reported-results audit matches the current structured data")
     source_rows = []
     for group in all_groups(performance):
@@ -97,10 +97,10 @@ def main():
             if "domain_scores" in row:
                 source_rows.append({"group": "tau_aa_domains", "model": row["model"], "source_values": row["domain_scores"], "status": "matches_primary_pdf"})
     source_rows += [{"group": row["benchmark"], "model": row["model"], "source_values": row["source_values"], "status": "matches_primary_pdf"} for row in performance["text_controls"]]
-    check(performance_audit["checks"] == source_rows and len(source_rows) == 55, "All 55 model/configuration vectors match primary PDF table evidence")
-    check(len(performance_audit["sources"]) == 10 and all(re.fullmatch(r"[0-9a-f]{64}", source["pdf_sha256"]) for source in performance_audit["sources"].values()), "Ten primary result sources have version, table, page and PDF-hash provenance")
+    check(performance_audit["checks"] == source_rows and len(source_rows) == 67, "All 67 model/configuration vectors match primary PDF table evidence")
+    check(len(performance_audit["sources"]) == 11 and all(re.fullmatch(r"[0-9a-f]{64}", source["pdf_sha256"]) for source in performance_audit["sources"].values()), "Eleven primary result sources have version, table, page and PDF-hash provenance")
     plots = json.loads((ROOT / "research/performance-plots.json").read_text())
-    check(plots["data_sha256"] == performance_audit["data_sha256"] and len(plots["profiles"]) == len(PROFILES), "Ten model/benchmark profiles generated from the current audited data")
+    check(plots["data_sha256"] == performance_audit["data_sha256"] and len(plots["profiles"]) == len(PROFILES), "Twelve model/benchmark profiles generated from the current audited data")
     artifacts = [plots["coverage"]] + [profile["artifacts"] for profile in plots["profiles"]]
     for asset in artifacts:
         for extension, record in asset.items():
@@ -159,7 +159,7 @@ def main():
     with zipfile.ZipFile(ROOT / "build" / "duplex-report-source.zip") as archive:
         members = set(archive.namelist())
         check({"duplex-report.tex", "detailed-report.tex", "brief-references.tex", "research/figure-sources.json", "references.bib", "iclr2026_conference.sty", "iclr2026_conference.bst", "README.md"} <= members, "Source ZIP has both versions, bibliographies, figure evidence and official styles")
-        check(all(figure["file"] in members for figure in figures["figures"] + figures["detailed_only_figures"]) and "figures/papers/manifest.json" in members, "Source ZIP includes seven screenshots, two native figures and screenshot provenance")
+        check(all(figure["file"] in members for figure in figures["figures"] + figures["detailed_only_figures"]) and "figures/papers/manifest.json" in members, "Source ZIP includes eight screenshots, two native figures and screenshot provenance")
         check({"research/reported-performance.json", "research/reported-performance-audit.json", "tables/brief-performance.tex", "tables/performance-macros.tex"} <= members, "Source ZIP includes reported-score data, primary-value audit and generated table/macros")
         check(archive.read("research/reported-performance.json") == performance_path.read_bytes(), "Packaged result data matches the current source-checked values")
         check({"archived-report.tex", "sections/architecture-gallery.tex", "sections/performance.tex", "research/performance-plots.json"} <= members, "Source ZIP includes the updated detailed sections, plot evidence and archived source")
@@ -180,9 +180,9 @@ def main():
             fresh_log = (args.source_check_dir / (stem + '.log')).read_text()
             check(not re.search(r'Overfull \\[hv]box|undefined|LaTeX Error|Missing character|Font Warning', fresh_log, re.I), 'Fresh source-ZIP compilation has no overflow, missing glyphs or unresolved references: ' + stem)
             independent.append({'source': stem + '.tex', 'pages': len(fresh), 'content_matches': True})
-    result = {"status": "passed", "pages": len(document), "discussion_pages": 5, "detailed_report_pages": len(detailed), "archived_report_pages": len(archived), "extractable_discussion_words": word_count, "detailed_pre_reference_words": old_word_count, "word_count_scope": "PDF-extractable text; raster architecture screenshot labels excluded. Brief count is its first five pages; availability/reference appendix is separate.", "architecture_screenshots": len(screenshots), "brief_architecture_screenshots": 5, "native_trace_and_plot": 2, "figures": 7, "detailed_figures": detailed_figures, "performance_plots": len(artifacts), "detailed_tables": detailed_tables, "categories": 4, "entries_per_category": {c["id"]: len(c["rows"]) for c in data.CATEGORIES}, "major_research_questions": 5, "performance_protocols": 6, "supplementary_flair_protocols": 2, "additional_system_protocols": len(performance["additional_system_groups"]), "performance_benchmarks": 5, "primary_reported_score_vectors": len(source_rows), "primary_performance_sources": len(performance_audit["sources"]), "brief_references": len(compact_keys), "full_references": len(keys), "primary_links": len(audit["sources"]), "pdf_sha256": hashlib.sha256((ROOT / "build" / "duplex-report.pdf").read_bytes()).hexdigest(), "detailed_pdf_sha256": hashlib.sha256((ROOT / "build" / "detailed-report.pdf").read_bytes()).hexdigest(), "source_zip_sha256": hashlib.sha256((ROOT / "build" / "duplex-report-source.zip").read_bytes()).hexdigest(), "independent_source_compilation": independent, "checks": sorted(set(checks))}
+    result = {"status": "passed", "pages": len(document), "discussion_pages": 5, "detailed_report_pages": len(detailed), "archived_report_pages": len(archived), "extractable_discussion_words": word_count, "detailed_pre_reference_words": old_word_count, "word_count_scope": "PDF-extractable text; raster architecture screenshot labels excluded. Brief count is its first five pages; availability/reference appendix is separate.", "architecture_screenshots": len(screenshots), "brief_architecture_screenshots": 5, "native_trace_and_plot": 2, "figures": 7, "detailed_figures": detailed_figures, "performance_plots": len(artifacts), "detailed_tables": detailed_tables, "categories": 4, "entries_per_category": {c["id"]: len(c["rows"]) for c in data.CATEGORIES}, "major_research_questions": 5, "performance_protocols": 6, "supplementary_flair_protocols": 2, "additional_system_protocols": len(performance["additional_system_groups"]), "thinkaloud_protocols": len(performance["thinkaloud_groups"]), "performance_benchmarks": 5, "primary_reported_score_vectors": len(source_rows), "primary_performance_sources": len(performance_audit["sources"]), "brief_references": len(compact_keys), "full_references": len(keys), "primary_links": len(audit["sources"]), "pdf_sha256": hashlib.sha256((ROOT / "build" / "duplex-report.pdf").read_bytes()).hexdigest(), "detailed_pdf_sha256": hashlib.sha256((ROOT / "build" / "detailed-report.pdf").read_bytes()).hexdigest(), "source_zip_sha256": hashlib.sha256((ROOT / "build" / "duplex-report-source.zip").read_bytes()).hexdigest(), "independent_source_compilation": independent, "checks": sorted(set(checks))}
     (ROOT / "build" / "validation.json").write_text(json.dumps(result, indent=2) + "\n")
-    print(f"PASS: unchanged six-page brief; {len(detailed)}-page detailed report; seven architecture screenshots; ten score profiles; five RQs; no overflow or unresolved citations.")
+    print(f"PASS: unchanged six-page brief; {len(detailed)}-page detailed report; eight architecture screenshots; twelve score profiles; five RQs; no overflow or unresolved citations.")
 
 if __name__ == "__main__":
     main()

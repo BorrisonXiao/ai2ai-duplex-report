@@ -18,6 +18,7 @@ SOURCES = [
     {"id": "venus", "arxiv": "2609.13814", "page": 5, "figure": "3", "crop": [76, 284, 536, 482]},
     {"id": "duplexomni", "arxiv": "2606.09186", "version": "v1", "page": 3, "figure": "2", "crop": [70, 72, 525, 430]},
     {"id": "voicechat", "arxiv": "2609.21967", "version": "v1", "page": 2, "figure": "1", "crop": [83, 95, 555, 430]},
+    {"id": "thinkaloud", "arxiv": "2609.26488", "version": "v1", "page": 3, "figure": "2", "crop": [100, 65, 514, 290]},
 ]
 
 def main():
@@ -46,7 +47,7 @@ def main():
         modifications = "Selected original panel B; panel A (adaptive routing) omitted" if source["id"] == "step3" else "Page-margin/surrounding-prose crop only; original diagram retained"
         records.append({**source, "source_url": "https://arxiv.org/pdf/" + source["arxiv"] + source.get("version", ""), "image": str(path.relative_to(ROOT)), "dpi": args.dpi, "pixels": [pixmap.width, pixmap.height], "pdf_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest(), "image_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "crop_units": "PDF points; top-left origin", "modifications": modifications, "credit": "Reproduced from the cited paper; copyright remains with its original rights holders."})
         document.close()
-    (target / "manifest.json").write_text(json.dumps({"created": "2026-10-01", "sources": records}, indent=2) + "\n")
+    (target / "manifest.json").write_text(json.dumps({"created": "2026-10-02", "sources": records}, indent=2) + "\n")
     print(f"Recorded {len(records)} original-paper architecture screenshots at {args.dpi} dpi.")
 
 if __name__ == "__main__":
