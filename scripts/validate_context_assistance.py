@@ -25,7 +25,7 @@ def validate():
         current=re.search(r'<a[^>]*href="([^"]+)"[^>]*aria-current="page"',tabs[1])[1]
         assert urlsplit(current).path == filename
         project=re.search(r'<nav[^>]*aria-label="Project tabs"[^>]*>(.*?)</nav>',text,re.S)
-        assert project and project[1].count('<a ') == 1 and '>Literature review</a>' in project[1]
+        assert project and project[1].count('<a ') == 2 and '>Literature review</a>' in project[1] and '>Experiments</a>' in project[1]
         assert all(n == 1 for n in Counter(parser.ids).values())
         assert parser.viewport and parser.title and not parser.images_missing_alt
         for m in re.finditer(r'<(p|h[1-6]|td|th|dd|dt)\b[^>]*>(.*?)</\1>',text,re.S):

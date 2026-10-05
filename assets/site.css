@@ -12,7 +12,8 @@ a:focus-visible, input:focus-visible, summary:focus-visible { outline:3px solid 
 .nav-inner { width:min(1100px,calc(100% - 40px)); min-height:64px; margin:auto; display:flex; align-items:center; flex-wrap:wrap; gap:12px 24px; padding:10px 0; }
 .brand { margin-right:auto; color:var(--text); font-weight:730; letter-spacing:-.02em; text-decoration:none; }
 .nav-links { display:flex; align-items:center; gap:20px; }
-.nav-links a { padding:5px 0; font-size:14px; font-weight:650; text-decoration:none; border-bottom:2px solid var(--accent); }
+.nav-links a { padding:5px 0; font-size:14px; font-weight:650; text-decoration:none; border-bottom:2px solid transparent; }
+.nav-links a[aria-current="page"] { border-color:var(--accent); }
 .container { width:min(1100px,calc(100% - 40px)); margin:auto; }
 .review-tabs { display:flex; flex-wrap:wrap; gap:8px 24px; padding:20px 0 12px; border-bottom:1px solid var(--border); font-size:14px; }
 .review-tabs a { padding:7px 0; text-decoration:none; color:var(--muted); border-bottom:3px solid transparent; }
