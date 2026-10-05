@@ -1,0 +1,817 @@
+{
+  "review_cutoff": "2026-10-04",
+  "scope": "Primary pages, bibliographic metadata and artifact links. No model or corpus download; a reachable landing page does not prove completeness or reproduction.",
+  "sources": [
+    {
+      "url": "https://aclanthology.org/2021.naacl-main.472/",
+      "checked_at": "2026-10-05T00:05:00.943286+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2021.naacl-main.472/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization"
+        ],
+        "citation_author": [
+          "Ming Zhong",
+          "Da Yin",
+          "Tao Yu",
+          "Ahmad Zaidi",
+          "Mutethia Mutuma",
+          "Rahul Jha",
+          "Ahmed Hassan",
+          "Asli Celikyilmaz",
+          "Yang Liu",
+          "Xipeng Qiu (邱锡鹏)",
+          "Dragomir Radev"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+        ],
+        "citation_publication_date": [
+          "2021/6"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2021.naacl-main.472.pdf"
+        ],
+        "citation_firstpage": [
+          "5905"
+        ],
+        "citation_lastpage": [
+          "5921"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2021.naacl-main.472"
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2024.findings-emnlp.106/",
+      "checked_at": "2026-10-05T00:05:00.945439+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2024.findings-emnlp.106/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Efficient Data Generation for Source-grounded Information-seeking Dialogs: A Use Case for Meeting Transcripts"
+        ],
+        "citation_author": [
+          "Lotem Golany",
+          "Filippo Galgani",
+          "Maya Mamo",
+          "Nimrod Parasol",
+          "Omer Vandsburger",
+          "Nadav Bar",
+          "Ido Dagan"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: EMNLP 2024"
+        ],
+        "citation_publication_date": [
+          "2024/11"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2024.findings-emnlp.106.pdf"
+        ],
+        "citation_firstpage": [
+          "1908"
+        ],
+        "citation_lastpage": [
+          "1925"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2024.findings-emnlp.106"
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2025.coling-main.28/",
+      "checked_at": "2026-10-05T00:05:00.946982+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.coling-main.28/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "ELITR-Bench: A Meeting Assistant Benchmark for Long-Context Language Models"
+        ],
+        "citation_author": [
+          "Thibaut Thonet",
+          "Laurent Besacier",
+          "Jos Rozen"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 31st International Conference on Computational Linguistics"
+        ],
+        "citation_publication_date": [
+          "2025/1"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.coling-main.28.pdf"
+        ],
+        "citation_firstpage": [
+          "407"
+        ],
+        "citation_lastpage": [
+          "428"
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2025.emnlp-main.1289/",
+      "checked_at": "2026-10-05T00:05:00.948384+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.emnlp-main.1289/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Proactive Hearing Assistants that Isolate Egocentric Conversations"
+        ],
+        "citation_author": [
+          "Guilin Hu",
+          "Malek Itani",
+          "Tuochao Chen",
+          "Shyamnath Gollakota"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing"
+        ],
+        "citation_publication_date": [
+          "2025/11"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.emnlp-main.1289.pdf"
+        ],
+        "citation_firstpage": [
+          "25366"
+        ],
+        "citation_lastpage": [
+          "25383"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.emnlp-main.1289"
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2025.findings-acl.470/",
+      "checked_at": "2026-10-05T00:05:00.949887+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.findings-acl.470/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models"
+        ],
+        "citation_author": [
+          "Heeseung Kim",
+          "Che Hyun Lee",
+          "Sangkwon Park",
+          "Jiheum Yeom",
+          "Nohil Park",
+          "Sangwon Yu",
+          "Sungroh Yoon"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: ACL 2025"
+        ],
+        "citation_publication_date": [
+          "2025/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.findings-acl.470.pdf"
+        ],
+        "citation_firstpage": [
+          "8984"
+        ],
+        "citation_lastpage": [
+          "9014"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.findings-acl.470"
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2025.findings-acl.71/",
+      "checked_at": "2026-10-05T00:05:00.952115+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.findings-acl.71/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Data-Centric Improvements for Enhancing Multi-Modal Understanding in Spoken Conversation Modeling"
+        ],
+        "citation_author": [
+          "Maximillian Chen",
+          "Ruoxi Sun",
+          "Sercan O Arik"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: ACL 2025"
+        ],
+        "citation_publication_date": [
+          "2025/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.findings-acl.71.pdf"
+        ],
+        "citation_firstpage": [
+          "1366"
+        ],
+        "citation_lastpage": [
+          "1387"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.findings-acl.71"
+        ]
+      }
+    },
+    {
+      "url": "https://aclanthology.org/2026.findings-acl.1479/",
+      "checked_at": "2026-10-05T00:05:00.953982+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2026.findings-acl.1479/",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "ProMediate: A Simulation Testbed for Evaluating Proactive Mediation in Multi-Party Negotiation"
+        ],
+        "citation_author": [
+          "Ziyi Liu",
+          "Bahareh Sarrafzadeh",
+          "Pei Zhou",
+          "Longqi Yang",
+          "Jieyu Zhao",
+          "Ashish Sharma"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: ACL 2026"
+        ],
+        "citation_publication_date": [
+          "2026/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2026.findings-acl.1479.pdf"
+        ],
+        "citation_firstpage": [
+          "29570"
+        ],
+        "citation_lastpage": [
+          "29598"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2026.findings-acl.1479"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2412.04036",
+      "checked_at": "2026-10-05T00:05:00.955566+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2412.04036",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "SocialMind: LLM-based Proactive AR Social Assistive System with Human-like Perception for In-situ Live Interactions"
+        ],
+        "citation_author": [
+          "Yang, Bufang",
+          "Guo, Yunqi",
+          "Xu, Lilin",
+          "Yan, Zhenyu",
+          "Chen, Hongkai",
+          "Xing, Guoliang",
+          "Jiang, Xiaofan"
+        ],
+        "citation_date": [
+          "2024/12/05"
+        ],
+        "citation_online_date": [
+          "2024/12/05"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2412.04036"
+        ],
+        "citation_arxiv_id": [
+          "2412.04036"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.11409",
+      "checked_at": "2026-10-05T00:05:01.105479+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2603.11409",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Speak or Stay Silent: Context-Aware Turn-Taking in Multi-Party Dialogue"
+        ],
+        "citation_author": [
+          "Bhagtani, Kratika",
+          "Anand, Mrinal",
+          "Xu, Yu Chen",
+          "Yadav, Amit Kumar Singh"
+        ],
+        "citation_date": [
+          "2026/03/12"
+        ],
+        "citation_online_date": [
+          "2026/03/12"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2603.11409"
+        ],
+        "citation_arxiv_id": [
+          "2603.11409"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2605.14498",
+      "checked_at": "2026-10-05T00:05:01.127968+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2605.14498",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations"
+        ],
+        "citation_author": [
+          "Yang, Jingbo",
+          "Lai, Kwei-Herng",
+          "Wang, Xiaowen",
+          "Chang, Shiyu",
+          "Harari, Yaar",
+          "Gabrilovich, Evgeniy"
+        ],
+        "citation_date": [
+          "2026/05/14"
+        ],
+        "citation_online_date": [
+          "2026/05/16"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2605.14498"
+        ],
+        "citation_arxiv_id": [
+          "2605.14498"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.23217",
+      "checked_at": "2026-10-05T00:05:01.133968+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.23217",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MuPPET: A Benchmark for Contextual Privacy of LLM Assistants in Multi-Party Conversations"
+        ],
+        "citation_author": [
+          "Ruzzetti, Elena Sofia",
+          "Emde, Cornelius",
+          "Yun, Sangdoo",
+          "Oh, Seong Joon",
+          "Gubri, Martin"
+        ],
+        "citation_date": [
+          "2026/06/22"
+        ],
+        "citation_online_date": [
+          "2026/06/22"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2606.23217"
+        ],
+        "citation_arxiv_id": [
+          "2606.23217"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.13076",
+      "checked_at": "2026-10-05T00:05:01.146053+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.13076",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant"
+        ],
+        "citation_author": [
+          "Shih, Yi-Jen",
+          "Kuan, Shih-Yun Shan",
+          "Lin, Guan-Ting",
+          "Chang, Kai-Wei",
+          "Arora, Siddhant",
+          "Yang, Shu-wen",
+          "Mohamed, Abdelrahman",
+          "Watanabe, Shinji",
+          "Lee, Hung-yi",
+          "Harwath, David"
+        ],
+        "citation_date": [
+          "2026/09/11"
+        ],
+        "citation_online_date": [
+          "2026/09/11"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.13076"
+        ],
+        "citation_arxiv_id": [
+          "2609.13076"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.24812",
+      "checked_at": "2026-10-05T00:05:01.150771+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.24812",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MSI-Bench: Evaluating Multi-Speaker Voice Interaction for Collaborative AI Agents"
+        ],
+        "citation_author": [
+          "Xiong, Chenxu",
+          "Shen, Dongming",
+          "Tang, Yuzhi",
+          "Ma, Wentao",
+          "Li, Mu",
+          "Smola, Alex"
+        ],
+        "citation_date": [
+          "2026/09/21"
+        ],
+        "citation_online_date": [
+          "2026/09/21"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.24812"
+        ],
+        "citation_arxiv_id": [
+          "2609.24812"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.31948",
+      "checked_at": "2026-10-05T00:05:01.174493+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.31948",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "Duplex-MPE: Benchmarking Multi-Party Interaction in Full-Duplex Dialogue"
+        ],
+        "citation_author": [
+          "Ma, Chengqian",
+          "Feng, Wenhao",
+          "Jin, Weixuan",
+          "Dai, Gaole",
+          "Xie, Tianyu",
+          "Ma, Yuexiao",
+          "Kang, Zhaolu",
+          "Zhao, Xiangyu",
+          "Zheng, Xiawu",
+          "Chao, Fei"
+        ],
+        "citation_date": [
+          "2026/09/25"
+        ],
+        "citation_online_date": [
+          "2026/09/25"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.31948"
+        ],
+        "citation_arxiv_id": [
+          "2609.31948"
+        ]
+      }
+    },
+    {
+      "url": "https://arxiv.org/abs/2609.36903",
+      "checked_at": "2026-10-05T00:05:01.179670+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.36903",
+      "content_type": "text/html; charset=utf-8",
+      "metadata": {
+        "citation_title": [
+          "MultiTalk: Scaling Full-Duplex Speech Models to Long, Multi-Party, Bilingual Conversation"
+        ],
+        "citation_author": [
+          "Wang, Ke",
+          "Ren, Houxing",
+          "Lu, Zimu",
+          "Yang, Yunqiao",
+          "Zong, Zhuofan",
+          "Zhan, Mingjie",
+          "Li, Hongsheng"
+        ],
+        "citation_date": [
+          "2026/09/29"
+        ],
+        "citation_online_date": [
+          "2026/09/29"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.36903"
+        ],
+        "citation_arxiv_id": [
+          "2609.36903"
+        ]
+      }
+    },
+    {
+      "url": "https://contextdialog.github.io/",
+      "checked_at": "2026-10-05T00:05:01.196737+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://contextdialog.github.io/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/MeiqiGuo/AKBC2021-Abg-CoQA",
+      "checked_at": "2026-10-05T00:05:01.212121+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/MeiqiGuo/AKBC2021-Abg-CoQA",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/UCSB-NLP-Chang/GroupMemBench",
+      "checked_at": "2026-10-05T00:05:01.233522+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/UCSB-NLP-Chang/GroupMemBench",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/Yale-LILY/QMSum",
+      "checked_at": "2026-10-05T00:05:01.250135+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/Yale-LILY/QMSum",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/atosystem/MP-Bench",
+      "checked_at": "2026-10-05T00:05:01.265439+00:00",
+      "status": "lookup_failure",
+      "error": "HTTP Error 404: Not Found",
+      "http_status": 404
+    },
+    {
+      "url": "https://github.com/boson-ai/MSI-Bench",
+      "checked_at": "2026-10-05T00:05:01.279556+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/boson-ai/MSI-Bench",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/elenasofia98/MuPPET",
+      "checked_at": "2026-10-05T00:05:01.281472+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/elenasofia98/MuPPET",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/google-research-datasets/MISeD",
+      "checked_at": "2026-10-05T00:05:01.386760+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/google-research-datasets/MISeD",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/guilinhu/proactive_hearing_assistant",
+      "checked_at": "2026-10-05T00:05:01.432237+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/guilinhu/proactive_hearing_assistant",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/ishikilabsinc/context_aware_modeling/tree/main",
+      "checked_at": "2026-10-05T00:05:01.460297+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/ishikilabsinc/context_aware_modeling/tree/main",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/microsoft/ProMediate-Eval",
+      "checked_at": "2026-10-05T00:05:01.574823+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/microsoft/ProMediate-Eval",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://github.com/multitalk-ai/MultiTalk",
+      "checked_at": "2026-10-05T00:05:01.576439+00:00",
+      "status": "lookup_failure",
+      "error": "HTTP Error 404: Not Found",
+      "http_status": 404
+    },
+    {
+      "url": "https://github.com/utter-project/ELITR-Bench",
+      "checked_at": "2026-10-05T00:05:01.606078+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/utter-project/ELITR-Bench",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://groups.inf.ed.ac.uk/ami/",
+      "checked_at": "2026-10-05T00:05:01.615772+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://groups.inf.ed.ac.uk/ami/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://groups.inf.ed.ac.uk/ami/download/",
+      "checked_at": "2026-10-05T00:05:01.672330+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://groups.inf.ed.ac.uk/ami/download/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://groups.inf.ed.ac.uk/ami/icsi/",
+      "checked_at": "2026-10-05T00:05:01.749885+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://groups.inf.ed.ac.uk/ami/icsi/",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/api/models/ishiki-labs/qwen3-8b-ami",
+      "checked_at": "2026-10-05T00:05:01.766958+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/api/models/ishiki-labs/qwen3-8b-ami",
+      "content_type": "application/json; charset=utf-8",
+      "model_manifest_at_check": {
+        "id": "ishiki-labs/qwen3-8b-ami",
+        "sha": "173460f4aaac86ccbab8926fe47a07a431f72be6",
+        "private": false,
+        "gated": false,
+        "library_name": "peft",
+        "config": {
+          "peft": {
+            "base_model_name_or_path": "Qwen/Qwen3-8B",
+            "task_type": "CAUSAL_LM"
+          }
+        },
+        "files": [
+          ".gitattributes",
+          "README.md",
+          "adapter_config.json",
+          "adapter_model.safetensors",
+          "optimizer.bin",
+          "pytorch_model_fsdp.bin",
+          "rng_state_0.pth",
+          "rng_state_1.pth",
+          "rng_state_2.pth",
+          "rng_state_3.pth",
+          "rng_state_4.pth",
+          "rng_state_5.pth",
+          "rng_state_6.pth",
+          "rng_state_7.pth",
+          "scheduler.pt",
+          "trainer_state.json",
+          "training_args.bin"
+        ]
+      }
+    },
+    {
+      "url": "https://huggingface.co/api/models?author=MultiTalk",
+      "checked_at": "2026-10-05T00:05:01.823538+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/api/models?author=MultiTalk",
+      "content_type": "application/json; charset=utf-8",
+      "model_ids_at_check": []
+    },
+    {
+      "url": "https://huggingface.co/datasets/ContextDialog/ContextDialog",
+      "checked_at": "2026-10-05T00:05:01.833514+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/ContextDialog/ContextDialog",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/IVLLab/MultiDialog",
+      "checked_at": "2026-10-05T00:05:01.883969+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/IVLLab/MultiDialog",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/M2cha4l1124/MSI-Bench",
+      "checked_at": "2026-10-05T00:05:01.926019+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/M2cha4l1124/MSI-Bench",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/MultiTalk/MultiTalkBench",
+      "checked_at": "2026-10-05T00:05:01.927891+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/MultiTalk/MultiTalkBench",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/MultiTalk/MultiTalkFT",
+      "checked_at": "2026-10-05T00:05:01.939152+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/MultiTalk/MultiTalkFT",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/MultiTalk/MultiTalkPT",
+      "checked_at": "2026-10-05T00:05:01.971677+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/MultiTalk/MultiTalkPT",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/guilinhu/libri_conversation",
+      "checked_at": "2026-10-05T00:05:01.973383+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/guilinhu/libri_conversation",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/ishiki-labs/multi-party-dialogue",
+      "checked_at": "2026-10-05T00:05:01.996387+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/ishiki-labs/multi-party-dialogue",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/datasets/kimperyang/GroupMemBench",
+      "checked_at": "2026-10-05T00:05:02.055774+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/kimperyang/GroupMemBench",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://huggingface.co/ishiki-labs/qwen3-8b-ami",
+      "checked_at": "2026-10-05T00:05:02.074441+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/ishiki-labs/qwen3-8b-ami",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/utter-project/ELITR-Bench/main/LICENSE-CODE.txt",
+      "checked_at": "2026-10-05T00:05:02.125223+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/utter-project/ELITR-Bench/main/LICENSE-CODE.txt",
+      "content_type": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/utter-project/ELITR-Bench/main/LICENSE-DATA.txt",
+      "checked_at": "2026-10-05T00:05:02.126816+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/utter-project/ELITR-Bench/main/LICENSE-DATA.txt",
+      "content_type": "text/plain; charset=utf-8"
+    }
+  ]
+}

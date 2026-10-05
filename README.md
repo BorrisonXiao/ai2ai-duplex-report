@@ -8,7 +8,9 @@ The only project tab is Literature review. Revised on 2 October 2026 with an evi
 
 The focused architecture gallery now has eight original-paper screenshots: TWL/Moshi, FLAIR, StepAudio 3, Realtime-Venus, MiniCPM-o, [DuplexOmni](https://arxiv.org/pdf/2606.09186v1), [NemotronLabs VoiceChat](https://arxiv.org/pdf/2609.21967v1) and [Spoken Language Models that Think Aloud](https://arxiv.org/pdf/2609.26488v1), using its Figure 2. Twelve model/benchmark profiles include a coverage matrix, within-protocol radars, unit-preserving bar plots, and exact-value tables with representative models and closed source leaders where reported. The plots and tables share one audited data source; 67 model/configuration vectors match eleven primary PDFs. DuplexOmni's scores include its Gemini thinking backend; VoiceChat's tool-execution barge-in restriction is explicit. Think-Aloud is a think-while-speaking framework, not demonstrated full duplex; its two plots distinguish cumulative reasoning silence from speech overhang and show S2S QA with the paper's GPT-4o-Realtime reference. Its proprietary corpus cannot be released, and study code/weights were not located as of 2 October. Missing scores are NR, never zero. Incompatible protocols, mixed units and text-only controls are not combined into a global ranking.
 
-The updated [29-page detailed LaTeX report](report/build/detailed-report.pdf) has the same figures and scores, eight system/design anchors, five entries in each other literature category, synchronization-centered research questions, equations and pilot plans. See its [rendered preview](report/preview/detailed/contact-sheet.png) and [report documentation](report/README.md). The separate [six-page meeting brief](report/build/duplex-report.pdf) remains unchanged ([preview](report/preview/contact-sheet.png)); the [original nine-page report](report/build/archived-report.pdf) is preserved. The [Overleaf-ready source ZIP](report/build/duplex-report-source.zip) contains all three editable sources. These additions keep the webpage's single-tab structure.
+The updated [29-page detailed LaTeX report](report/build/detailed-report.pdf) has the same figures and scores, eight system/design anchors, five entries in each other literature category, synchronization-centered research questions, equations and pilot plans. See its [rendered preview](report/preview/detailed/contact-sheet.png) and [report documentation](report/README.md). The separate [six-page meeting brief](report/build/duplex-report.pdf) remains unchanged ([preview](report/preview/contact-sheet.png)); the [original nine-page report](report/build/archived-report.pdf) is preserved. The [Overleaf-ready source ZIP](report/build/duplex-report-source.zip) contains all three editable sources. The top-level Literature review collection now contains two sub-tabs; the existing landscape and PDF URLs are unchanged.
+
+The new [Context-aware assistance webpage](https://borrisonxiao.github.io/ai2ai-duplex-report/context-assistance.html) reviews the tentative 4 October scope: use authorized multi-party conversation context to disambiguate a later assistant-directed request, clarifying when needed. It covers 15 verified papers, five close resources (MSI-Bench, GroupMemBench, MultiTalk, ASK-QA and MISeD), five system designs, nine complementary benchmarks and eight training resources/ingredients. Three original-paper screenshots and three source-specific result plots accompany exact-value tables. Broad multi-party context use is already studied; causal speech synchronization, clarification and context-dependent requests define a more specific candidate direction. Unsolicited intervention remains a separate optional extension. No new experiments or training annotations were created, and the existing LaTeX reports retain their earlier scope.
 
 The visual design follows [JSALT 2026 Downsampling](https://borrisonxiao.github.io/jsalt26-downsampling/). Text wraps naturally in the browser; comparison tables scroll on narrow displays. Search fields filter table entries, and paper notes expand for detail. No external JavaScript, fonts, model calls or analytics are loaded.
 
@@ -26,14 +28,22 @@ Publishing preference (1 October 2026): after a validated webpage update, commit
 - `report/research/reported-performance.json`: version-pinned score vectors, units, conversion rules and primary-table locators.
 - `report/scripts/build_performance.py`: shared PDF/SVG/PNG figures and exact-value LaTeX tables; requires Matplotlib and NumPy.
 - `scripts/check_browser.py`: desktop/mobile/theme rendering and interaction checks; requires Playwright and Chromium.
+- `research/context-assistance/review_data.py`: editable evidence and synthesis for the narrowed scope; its Markdown/JSON digests and primary-source audit are stored alongside it.
+- `scripts/build_context_assistance.py`: offline focused sub-tab/digest generator; optional `--paper-dir` renders the three documented screenshot crops from a private PDF cache.
+- `scripts/verify_context_sources.py`: explicit primary-page and artifact-link audit, without corpus/model downloads.
+- `scripts/validate_context_assistance.py`: focused-page structure, bibliography, scores and wrapping checks.
+- `scripts/check_context_browser.py`: both sub-tab routes, desktop/mobile/dark rendering, filtering and expandable figures.
 
 Rebuild and validate:
 
 ```bash
 python report/scripts/build_performance.py
 python scripts/build_site.py
+python scripts/build_context_assistance.py
 python scripts/validate_site.py
+python scripts/validate_context_assistance.py
 python scripts/check_browser.py
+python scripts/check_context_browser.py
 python -m http.server 8000
 ```
 
@@ -46,3 +56,5 @@ python scripts/validate_site.py
 ```
 
 Availability means the specific artifact inspected as of the review date. “Not located” does not mean an artifact cannot exist. Reported corpus sizes include gated, reconstructed and partially released data, labeled separately. No experiments were run and no model weights or training datasets were downloaded.
+
+The focused review uses its own 4 October evidence snapshot; it does not silently change the broader review's September cutoff. Refresh it with `python scripts/verify_context_sources.py` followed by `python scripts/build_context_assistance.py`. Link reachability is not proof of a complete, reproducible release. Unspecified reuse terms are not described as open licences, and benchmark test cases must stay out of training.

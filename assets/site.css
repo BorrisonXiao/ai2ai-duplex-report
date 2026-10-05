@@ -14,6 +14,20 @@ a:focus-visible, input:focus-visible, summary:focus-visible { outline:3px solid 
 .nav-links { display:flex; align-items:center; gap:20px; }
 .nav-links a { padding:5px 0; font-size:14px; font-weight:650; text-decoration:none; border-bottom:2px solid var(--accent); }
 .container { width:min(1100px,calc(100% - 40px)); margin:auto; }
+.review-tabs { display:flex; flex-wrap:wrap; gap:8px 24px; padding:20px 0 12px; border-bottom:1px solid var(--border); font-size:14px; }
+.review-tabs a { padding:7px 0; text-decoration:none; color:var(--muted); border-bottom:3px solid transparent; }
+.review-tabs a[aria-current="page"] { color:var(--accent); border-color:var(--accent); font-weight:750; }
+.context-example { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.context-example .card { box-shadow:none; }
+.context-chart { width:100%; height:auto; display:block; color:var(--text); }
+.context-chart text { fill:currentColor; font:14px ui-sans-serif,sans-serif; }
+.context-chart .chart-label { font-size:16px; font-weight:650; }
+.context-chart .chart-bar { fill:var(--accent); }
+.context-chart .chart-reference { fill:var(--blue); }
+.context-chart .chart-axis { stroke:var(--border); }
+.context-results table { min-width:0; }
+.context-paper-gallery { display:grid; gap:22px; padding-top:20px; }
+@media (max-width:700px) { .context-example { grid-template-columns:minmax(0,1fr); } .context-chart { min-width:680px; } }
 .hero { padding:72px 0 42px; border-bottom:1px solid var(--border); }
 .eyebrow { margin:0 0 12px; color:var(--accent); font-size:12px; font-weight:760; letter-spacing:.12em; text-transform:uppercase; }
 h1,h2,h3 { line-height:1.18; letter-spacing:-.025em; }

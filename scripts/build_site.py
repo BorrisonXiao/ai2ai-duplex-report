@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import sys
 from report_content import verified_sources, architecture_gallery, performance_section, evidence, all_groups
+from site_navigation import review_tabs
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'research'))
@@ -237,6 +238,7 @@ def build_html():
         '<a class="skip-link" href="#main">Skip to review</a>',
         '<header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="#literature-review" aria-current="page">Literature review</a></nav></div></header>',
         '<main id="main"><div class="container">',
+        review_tabs('landscape'),
         '<header id="literature-review" class="hero"><p class="eyebrow">Research landscape · September 2026</p><h1>Reasoning while listening, revising while speaking.</h1><p class="lede">A literature review of modern full-duplex speech architectures, open releases, training resources and evaluations for incremental, speaker-aware reasoning.</p><p class="meta">Revised 2 October 2026 · Evidence cutoff 30 September 2026 · Author-reported results, not a reproduced leaderboard</p><div class="button-row">' + link('Explore system designs','#systems','button primary') + link('Model performance','#reported-performance','button') + link('Detailed PDF','report/build/detailed-report.pdf','button') + link('Source repository','https://github.com/BorrisonXiao/ai2ai-duplex-report','button') + '</div></header>',
         section('overview','What changed since the original proposal',overview),
         section('systems','System designs',architectures,N['architecture_lead']),

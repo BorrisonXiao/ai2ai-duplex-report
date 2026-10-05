@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-04",
+  "sources": [
+    {
+      "id": "msi",
+      "file": "msi-overview.png",
+      "pdf": "msi.pdf",
+      "page": 3,
+      "clip": [
+        63,
+        63,
+        552,
+        455
+      ],
+      "original": "Figure 1",
+      "alt": "Six MSI-Bench examples distinguish background speech retrieval, scope tracking, disclosure, speaker authority and interleaved constraints.",
+      "source_url": "https://arxiv.org/pdf/2609.24812v1",
+      "pdf_sha256": "d0e76a7fb1d4c9fecc5f999913d62af23c71308b4ab8d6406e9d7c22e87e8bc2",
+      "dpi": 300,
+      "extraction": "Original vector/image figure rendered with PyMuPDF and a documented page-coordinate crop; the skill extractor found no usable complete figures."
+    },
+    {
+      "id": "groupmem",
+      "file": "groupmem-overview.png",
+      "pdf": "groupmem.pdf",
+      "page": 2,
+      "clip": [
+        108,
+        70,
+        504,
+        266
+      ],
+      "original": "Figure 1",
+      "alt": "GroupMemBench contrasts multi-party workplace threads and speaker-dependent vocabulary with dyadic memory.",
+      "source_url": "https://arxiv.org/pdf/2605.14498v2",
+      "pdf_sha256": "66a2fe21698f22654a95d0ea9a7f02746d1ad3c62bca39482e5e92f8208d0155",
+      "dpi": 300,
+      "extraction": "Original vector/image figure rendered with PyMuPDF and a documented page-coordinate crop; the skill extractor found no usable complete figures."
+    },
+    {
+      "id": "multitalk",
+      "file": "multitalk-benchmark.png",
+      "pdf": "multitalk.pdf",
+      "page": 6,
+      "clip": [
+        108,
+        75,
+        504,
+        270
+      ],
+      "original": "Figure 3",
+      "alt": "MultiTalkBench replaces a target meeting participant with a model and scores responses, multi-party behavior, roles and participation.",
+      "source_url": "https://arxiv.org/pdf/2609.36903v1",
+      "pdf_sha256": "c32969dca813872821863f6a791925cd36bb2c939bf79760181af29492f235e2",
+      "dpi": 300,
+      "extraction": "Original vector/image figure rendered with PyMuPDF and a documented page-coordinate crop; the skill extractor found no usable complete figures."
+    }
+  ]
+}
