@@ -5,6 +5,7 @@ No experiment outputs or third-party speech are copied into the public site.
 The template embeds the demo so the viewer also opens directly from disk.
 """
 import base64
+import hashlib
 import io
 import json
 import math
@@ -14,6 +15,13 @@ import wave
 from site_navigation import project_tabs
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def version_assets(page):
+    for asset in ("assets/site.css", "assets/trajectory/viewer.css", "assets/trajectory/viewer.js"):
+        version = hashlib.sha256((ROOT / asset).read_bytes()).hexdigest()[:12]
+        page = page.replace('"../' + asset + '"', '"../' + asset + '?v=' + version + '"')
+    return page
 
 
 def tone(media_id, label, anchor, frequency, role):
@@ -73,13 +81,13 @@ def main():
     payload = json.dumps(trace, ensure_ascii=False).replace("<", "\\u003c")
     page = (ROOT / "scripts/templates/trajectory.html.in").read_text()
     page = page.replace("{{NAV}}", project_tabs("experiments", "../")).replace("{{DEMO}}", payload)
-    (ROOT / "experiments/trajectory.html").write_text(page)
+    (ROOT / "experiments/trajectory.html").write_text(version_assets(page))
     (ROOT / "assets/trajectory/demo.json").write_text(json.dumps(trace, indent=2, ensure_ascii=False) + "\n")
     collection = '''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interactive tools for inspecting audio-only duplex experiments."><title>Experiments · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"></head>
 <body><a class="skip-link" href="#main">Skip to experiments</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>{{NAV}}</div></header><main id="main"><div class="container"><header class="hero"><p class="eyebrow">Experiments · Audio only</p><h1>Inspect the conversation as it unfolds.</h1><p class="lede">Tools for checking model decisions, background reasoning, feedback and generated audio on a shared timeline.</p><p class="meta">5 October 2026 · Local experiment files stay in your browser</p></header><section class="section" aria-labelledby="tools"><h2 id="tools">Inspection tools</h2><div class="card-grid"><article class="card"><span class="tag">Trajectory viewer</span><h3>Aligned layers and audio</h3><p>Replay client request spans, System-2 stream progress and command delivery. Listen to available clips with a linked cursor, inspect event details and import a portable run trace.</p><p><a class="button primary" href="trajectory.html">Open trajectory viewer</a></p></article><article class="card"><span class="tag amber">Evidence boundary</span><h3>Demo first, measured traces when available</h3><p>The hosted demo uses invented timestamps and synthetic tones. The DuplexOmni baseline and local System-2 tests were still queued when this tool was published; completed earlier smoke tests lack detailed event timestamps.</p><p>A real trace records client-observed events. The tool makes no claims about word alignment, GPU kernel overlap or live conversation latency.</p></article></div></section><footer class="site-footer"><p>AI2AI Duplex · <a href="../index.html">Literature review</a> · <a href="trajectory.html">Trajectory viewer</a></p></footer></div></main></body></html>
 '''.replace("{{NAV}}", project_tabs("experiments", "../"))
-    (ROOT / "experiments/index.html").write_text(collection)
+    (ROOT / "experiments/index.html").write_text(version_assets(collection))
     print("Built Experiments collection, trajectory viewer and synthetic demo.")
 
 

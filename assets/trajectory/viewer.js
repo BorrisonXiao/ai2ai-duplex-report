@@ -114,7 +114,7 @@
     const lanes = trace.lanes.filter(lane => $('warmup').checked || lane.id !== 'startup');
     if (media.some(m => m.anchor != null)) lanes.push({id: 'audition', label: 'Browser audition · replay'});
     width = Math.max(1000, $('timeline-scroll').clientWidth) * Number($('zoom').value);
-    plotRight = width - 24; height = 62 + lanes.length * 60;
+    plotRight = width - 24; height = Math.max(110, 62 + lanes.length * 60);
     const root = $('timeline');
     root.setAttribute('viewBox', `0 0 ${width} ${height}`);
     root.setAttribute('width', width); root.setAttribute('height', height);
