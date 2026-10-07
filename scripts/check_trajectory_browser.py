@@ -173,6 +173,8 @@ def main():
                 assert "1816185" in page.locator("#run-title").inner_text()
                 page.locator("#load-native").click()
                 assert "1816647" in page.locator("#run-title").inner_text()
+                assert page.locator('#timeline-scroll').evaluate('el=>el.scrollLeft')>0
+                assert page.locator('#timeline .lane-label-overlay').count()==1
                 assert page.locator("#clip-select option").count()==2
                 assert "generated Talker speech only" in page.locator("#audition-scope").inner_text()
                 assert "S2 exhausted" in page.locator("#audition-scope").inner_text()
@@ -197,6 +199,7 @@ def main():
                 page.evaluate("document.querySelector('#clip-player').pause()")
                 page.evaluate("async()=>await document.fonts.load('16px DuplexTraceCJK','稍等')")
                 page.wait_for_function("document.fonts.check('16px DuplexTraceCJK','稍等')")
+                assert page.locator('#timeline text').first.evaluate("el=>getComputedStyle(el).fontFamily").startswith('DuplexTraceCJK')
                 page.screenshot(path=str(args.output/f"{name}-full-native-loop.png"),full_page=False)
                 page.locator("#load-real").click()
                 assert not errors, errors

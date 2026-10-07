@@ -94,6 +94,7 @@
     $('selection-title').textContent = 'Click a bar or event marker.';
     $('event-detail').textContent = 'No event selected.';
     renderTimeline(true); renderLedger();
+    if (finite(trace.metadata?.focus_seconds)) setCursor(trace.metadata.focus_seconds);
   }
 
   function range() {
@@ -156,7 +157,7 @@
           const cls = event.kind === 'guidance_state' ? 'guidance' : event.kind === 'input_condition' || event.kind === 'absence' ? 'absence' : event.kind === 'service_check' ? 'service-check' : event.kind === 'incomplete' ? 'incomplete' : lane.id === 'system2' ? 'request s2' : 'request';
           svg('rect', {x: x(event.start), y: y - 17, width: Math.max(3, x(event.end) - x(event.start)), height: 44, rx: 5, class: cls + (event.id === selected ? ' selected' : '')}, group);
           const room = x(event.end) - x(event.start);
-          if (room > 45) blockText(group, x(event.start)+6, y-4, room-12, eventContent(event));
+          if (room > 25) blockText(group, x(event.start)+6, y-4, room-12, eventContent(event));
           actionable(group, event);
         } else {
           const jitter = event.kind === 'reasoning_progress' ? -5 : event.kind === 'final_delta' ? 7 : 0;
@@ -178,6 +179,10 @@
         actionable(group, {id: `media-${item.id}`, label: `Audition: ${item.label || item.id}`, start: item.anchor, end: item.anchor + (item.duration || 0), lane: 'audition', kind: 'audition', details: {media_id: item.id, note: 'Replay schedule; not measured playback'}});
       });
     });
+    const labelOverlay=svg('g',{class:'lane-label-overlay'},root);
+    svg('rect',{x:0,y:46,width:plotLeft-8,height:height-46,fill:'var(--surface)'},labelOverlay);
+    root.querySelectorAll('.lane-label,.progress-scale').forEach(node=>labelOverlay.appendChild(node));
+    labelOverlay.setAttribute('transform',`translate(${$('timeline-scroll').scrollLeft},0)`);
     svg('line', {id: 'cursor-line', x1: x(cursor), x2: x(cursor), y1: 25, y2: height - 15, class: 'cursor'}, root);
     if (!events.length) svg('text', {x: plotLeft + 20, y: 70}, root, 'No aligned events captured. Use Audio audition below.');
     renderStats(); setCursor(cursor);
@@ -205,6 +210,14 @@
   }
   function blockText(parent,left,top,room,text) {
     const size = room < 70 ? 10 : 12;
+    if (/[\u3000-\u9fff]/.test(String(text)) || String(text)==='(silent)') {
+      const charWidth=String(text)==='(silent)'?size*.58:size;
+      const limit=Math.max(1,Math.floor(room/charWidth)), characters=Array.from(String(text)), lines=[];
+      for(let i=0;i<characters.length;i+=limit) lines.push(characters.slice(i,i+limit).join(''));
+      const node=svg('text',{x:left,y:top},parent);node.style.fontSize=size+'px';
+      lines.slice(0,3).forEach((value,i)=>svg('tspan',{x:left,dy:i?13:0},node,i===2&&lines.length>3?value.slice(0,-1)+'…':value));
+      return;
+    }
     const limit = Math.max(4,Math.floor(room/(size*.58)));
     const words = String(text).split(/\s+/), lines=[];
     let line='';
@@ -230,6 +243,11 @@
     $('scrub').value = cursor; $('time-label').textContent = `${fmt(cursor)} s · selected trace clock`;
     const line = $('cursor-line');
     if (line) { line.setAttribute('x1', x(cursor)); line.setAttribute('x2', x(cursor)); }
+    const scroll=$('timeline-scroll'), position=x(cursor);
+    if(position<scroll.scrollLeft+plotLeft || position>scroll.scrollLeft+scroll.clientWidth-24)
+      scroll.scrollLeft=Math.max(0,position-plotLeft-scroll.clientWidth*.35);
+    const labelOverlay=$('timeline').querySelector('.lane-label-overlay');
+    if(labelOverlay)labelOverlay.setAttribute('transform',`translate(${scroll.scrollLeft},0)`);
     const active = visible.filter(e => ['request', 'incomplete', 'service_check'].includes(e.kind) && e.end > e.start && e.start <= cursor && e.end > cursor);
     $('active-layers').textContent = active.length ? `In progress: ${active.map(e => e.label).join(' · ')}` : 'No active requests at this cursor.';
     const received = events.filter(e => e.end <= cursor);
@@ -328,6 +346,10 @@
   $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id));
   $('load-native').addEventListener('click', () => load(example.native_trace, 'Native acknowledgment · ' + example.native_trace.metadata.job_id));
   $('load-full').addEventListener('click', () => load(example.full_loop_trace, 'Full native loop · ' + example.full_loop_trace.metadata.job_id));
+  $('timeline-scroll').addEventListener('scroll',()=>{
+    const overlay=$('timeline').querySelector('.lane-label-overlay');
+    if(overlay)overlay.setAttribute('transform',`translate(${$('timeline-scroll').scrollLeft},0)`);
+  });
   async function readFile(file) {
     if (!file) return;
     try {

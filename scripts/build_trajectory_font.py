@@ -10,7 +10,7 @@ site=Path(__file__).resolve().parents[1]
 source=site.parent/'cache/report_fonts/NotoSansCJKsc-Regular.otf'
 text=(site/'research/trajectory-example.json').read_text()
 characters={c for c in text if ord(c)>=0x2e80}
-font=TTFont(source)
+font=TTFont(source,recalcTimestamp=False)
 options=subset.Options()
 options.flavor='woff2'
 options.hinting=False
@@ -29,6 +29,7 @@ block=('/* BEGIN EMBEDDED NATIVE CJK — Noto subset, SIL OFL 1.1; see Noto-font
        '@font-face{font-family:DuplexTraceCJK;font-style:normal;font-weight:400 800;font-display:swap;'
        'src:url(data:font/woff2;base64,'+data+') format("woff2");}\n'
        'body{font-family:DuplexTraceCJK,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}\n'
+       '#timeline text{font-family:DuplexTraceCJK,ui-sans-serif,sans-serif;}\n'
        'pre{font-family:DuplexTraceCJK,ui-monospace,SFMono-Regular,monospace;}\n'
        '/* END EMBEDDED NATIVE CJK */\n')
 css=site/'assets/trajectory/viewer.css'
