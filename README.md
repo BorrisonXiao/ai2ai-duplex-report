@@ -74,3 +74,6 @@ Rebuild with `python scripts/build_trajectory.py`; validate the full site with t
 
 
 The input clip is a public DailyTalk excerpt (Keon Lee, Kyumin Park, Daeyoung Kim; Kyutai stereo adaptation), extracted as the right channel’s first 10 seconds and supplied under CC BY-SA 4.0. It is not a private user recording. `research/audio-provenance.json` verifies the original against its public LFS SHA-256 and verifies exact excerpt samples. Generated decoder clips are labeled separately.
+
+
+The [interaction reproduction and evidence review](experiments/interaction-review.html) documents complete paced DailyTalk input, bounded Code2Wav decoding, the A100/H100 experiment grid and remaining response-quality failures. The [trajectory viewer](experiments/trajectory.html) defaults to measured clocked software PCM replay; lossless embedded FLAC retains waiting gaps and decodes to the exact recorded PCM.

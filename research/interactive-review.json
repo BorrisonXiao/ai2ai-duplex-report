@@ -1,0 +1,1148 @@
+{
+  "date": "2026-10-07",
+  "rows": [
+    {
+      "key": "1026380_dailytalk_10s_stock",
+      "job_id": "1026380",
+      "hardware": "A100 80 GB",
+      "gpus": 2,
+      "thinker_tp": 1,
+      "decoder": "stock reset",
+      "name": "dailytalk_10s_stock",
+      "status": "completed_content_review_required",
+      "turns": 69,
+      "input_seconds": 10.08,
+      "wall_seconds": 97.5980914690299,
+      "input_packet_rtf": 2.9468022786542845,
+      "mean_s1_seconds": 1.358031025100702,
+      "p95_s1_seconds": 1.4019074397627262,
+      "mean_talker_seconds": 0.357058453246229,
+      "max_input_queue_delay_seconds": 62.618774718022905,
+      "first_tts_seconds": 7.3744928410160355,
+      "first_nonsilent_audio_seconds": 7.6765631070011295,
+      "first_audio_before_user_recording_ends": true,
+      "first_requested_speech_audio_seconds": 7.6765631070011295,
+      "question_terms_in_asr": {
+        "working_on": false,
+        "budget": true,
+        "money": true
+      },
+      "generated_asr": "Um.What budget?How much money ",
+      "generated_tts": "Hi there, color can be tricky. For example, Magenta with White can give you a light purple, and Cyan with Yellow makes a pastel Oh, you mean the budget for the project? Let's focus on the color composition and 捯步budget later.",
+      "unrelated_color_topic": true,
+      "captured_audio_samples": 756585,
+      "nominal_codec_samples": 794880,
+      "codec_duration_loss_seconds": 1.595625,
+      "silent_playback_fraction": 0.8568218954248366,
+      "playback_gaps_ge_100ms": [
+        {
+          "start": 0.0,
+          "seconds": 9.96
+        },
+        {
+          "start": 10.42,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 11.540000000000001,
+          "seconds": 0.2
+        },
+        {
+          "start": 11.86,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 13.3,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 14.74,
+          "seconds": 0.46
+        },
+        {
+          "start": 15.620000000000001,
+          "seconds": 1.04
+        },
+        {
+          "start": 17.14,
+          "seconds": 0.96
+        },
+        {
+          "start": 18.44,
+          "seconds": 1.1
+        },
+        {
+          "start": 20.04,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 21.48,
+          "seconds": 0.46
+        },
+        {
+          "start": 22.44,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 23.88,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 25.32,
+          "seconds": 0.46
+        },
+        {
+          "start": 26.28,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 27.72,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 29.16,
+          "seconds": 0.46
+        },
+        {
+          "start": 30.12,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 31.560000000000002,
+          "seconds": 4.84
+        },
+        {
+          "start": 36.86,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 38.24,
+          "seconds": 0.52
+        },
+        {
+          "start": 39.26,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 40.7,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 41.96,
+          "seconds": 0.86
+        },
+        {
+          "start": 43.1,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 44.54,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 45.980000000000004,
+          "seconds": 0.46
+        },
+        {
+          "start": 46.94,
+          "seconds": 0.96
+        },
+        {
+          "start": 48.36,
+          "seconds": 0.98
+        },
+        {
+          "start": 49.84,
+          "seconds": 0.46
+        },
+        {
+          "start": 50.78,
+          "seconds": 0.96
+        },
+        {
+          "start": 52.24,
+          "seconds": 0.46
+        },
+        {
+          "start": 53.08,
+          "seconds": 1.06
+        },
+        {
+          "start": 54.18,
+          "seconds": 43.74
+        }
+      ],
+      "dropped_audio_chunks": 2,
+      "speech_quality_requires_content_review": true,
+      "independent_output_transcript": "Hi there, color can be tricky. Example, magenta with white can give you a light purple and cyan with yellow makes a pastel. Oh, you mean the budget for the project? Let's focus on the color composition and debaugh budget later. you"
+    },
+    {
+      "key": "1026380_dailytalk_full_stock",
+      "job_id": "1026380",
+      "hardware": "A100 80 GB",
+      "gpus": 2,
+      "thinker_tp": 1,
+      "decoder": "stock reset",
+      "name": "dailytalk_full_stock",
+      "status": "completed_content_review_required",
+      "turns": 100,
+      "input_seconds": 24.96,
+      "wall_seconds": 140.3830286510056,
+      "input_packet_rtf": 2.924646430229283,
+      "mean_s1_seconds": 1.3825333388888976,
+      "p95_s1_seconds": 1.553027491888497,
+      "mean_talker_seconds": 0.36607949270342943,
+      "max_input_queue_delay_seconds": 90.5917443310027,
+      "first_tts_seconds": 4.210590101021808,
+      "first_nonsilent_audio_seconds": 4.519869089999702,
+      "first_audio_before_user_recording_ends": true,
+      "first_requested_speech_audio_seconds": 4.519869089999702,
+      "question_terms_in_asr": {
+        "working_on": false,
+        "budget": true,
+        "money": true
+      },
+      "generated_asr": "Um.What budget?How much money can you spend?Why only three hundred dollars?For what?Your budget as a good idea.",
+      "generated_tts": "你好，我理解你在用AI写文章。好的，我来推荐合适的工具。预算多少？你具体需要什么功能？因为这个预算下选择比较多，比如For what? 我是说对于文章生成来说，这个预算可以考虑一些AI写作工具。你的预算可以接受？那太好了。我们可以先从创意切入点开始。",
+      "unrelated_color_topic": false,
+      "captured_audio_samples": 1096500,
+      "nominal_codec_samples": 1152000,
+      "codec_duration_loss_seconds": 2.3125,
+      "silent_playback_fraction": 0.8314846416382252,
+      "playback_gaps_ge_100ms": [
+        {
+          "start": 0.0,
+          "seconds": 4.9
+        },
+        {
+          "start": 5.32,
+          "seconds": 0.46
+        },
+        {
+          "start": 5.98,
+          "seconds": 1.26
+        },
+        {
+          "start": 7.72,
+          "seconds": 0.96
+        },
+        {
+          "start": 9.18,
+          "seconds": 0.46
+        },
+        {
+          "start": 10.14,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 11.58,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 12.72,
+          "seconds": 0.14
+        },
+        {
+          "start": 13.02,
+          "seconds": 2.7600000000000002
+        },
+        {
+          "start": 15.9,
+          "seconds": 0.46
+        },
+        {
+          "start": 16.86,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 18.3,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 19.740000000000002,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 21.18,
+          "seconds": 0.96
+        },
+        {
+          "start": 22.6,
+          "seconds": 0.5
+        },
+        {
+          "start": 23.12,
+          "seconds": 0.16
+        },
+        {
+          "start": 23.6,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 25.04,
+          "seconds": 2.2600000000000002
+        },
+        {
+          "start": 27.44,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 28.88,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 30.32,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 31.76,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 32.8,
+          "seconds": 10.18
+        },
+        {
+          "start": 43.300000000000004,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 44.74,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 46.18,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 47.62,
+          "seconds": 0.96
+        },
+        {
+          "start": 49.06,
+          "seconds": 0.96
+        },
+        {
+          "start": 50.52,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 51.96,
+          "seconds": 0.46
+        },
+        {
+          "start": 52.92,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 53.980000000000004,
+          "seconds": 1.32
+        },
+        {
+          "start": 55.34,
+          "seconds": 0.2
+        },
+        {
+          "start": 55.800000000000004,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 57.24,
+          "seconds": 1.44
+        },
+        {
+          "start": 59.160000000000004,
+          "seconds": 0.96
+        },
+        {
+          "start": 60.6,
+          "seconds": 0.96
+        },
+        {
+          "start": 62.06,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 63.480000000000004,
+          "seconds": 1.44
+        },
+        {
+          "start": 65.42,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 66.86,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 68.3,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 69.74,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 71.18,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 72.62,
+          "seconds": 0.96
+        },
+        {
+          "start": 74.06,
+          "seconds": 0.96
+        },
+        {
+          "start": 75.08,
+          "seconds": 0.22
+        },
+        {
+          "start": 75.52,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 76.96000000000001,
+          "seconds": 1.42
+        },
+        {
+          "start": 78.88,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 80.32000000000001,
+          "seconds": 0.96
+        },
+        {
+          "start": 81.76,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 83.2,
+          "seconds": 0.96
+        },
+        {
+          "start": 84.66,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 86.10000000000001,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 87.54,
+          "seconds": 1.42
+        },
+        {
+          "start": 89.46000000000001,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 90.9,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 92.32000000000001,
+          "seconds": 48.32
+        }
+      ],
+      "dropped_audio_chunks": 1,
+      "speech_quality_requires_content_review": true,
+      "independent_output_transcript": "你好,我理解你在用AI寫文章。好的,我來推薦合適的工具,預算多少。你具體需要什麼功能?因為這個預算下選擇比較多,比如for what?我是說對於文章生成來說,這個預算可以考慮一些AI寫作工具。你的預算 算可以接受,那太好了,我們可以先從創意切入點開始。"
+    },
+    {
+      "key": "1026406_dailytalk_full_context",
+      "job_id": "1026406",
+      "hardware": "A100 80 GB",
+      "gpus": 2,
+      "thinker_tp": 1,
+      "decoder": "bounded_context",
+      "name": "dailytalk_full_context",
+      "status": "completed_content_review_required",
+      "turns": 100,
+      "input_seconds": 24.96,
+      "wall_seconds": 139.24043452501064,
+      "input_packet_rtf": 2.9008423859377217,
+      "mean_s1_seconds": 1.3715906928596087,
+      "p95_s1_seconds": 1.5770706172654172,
+      "mean_talker_seconds": 0.3575421424896922,
+      "max_input_queue_delay_seconds": 89.57995657698484,
+      "first_tts_seconds": 4.235609848983586,
+      "first_nonsilent_audio_seconds": 4.552733246004209,
+      "first_audio_before_user_recording_ends": true,
+      "first_requested_speech_audio_seconds": 4.552733246004209,
+      "question_terms_in_asr": {
+        "working_on": false,
+        "budget": true,
+        "money": true
+      },
+      "generated_asr": "Um.What budget?How much money can you spend?Why only three hundred dollars?For what?Your budget is a good idea.",
+      "generated_tts": "Hi there, color can be tricky. For example, Magenta with White can give you a light purple, and Cyan with Yellow makes a pastel I'm an AI, I don't have a budget. But I can help you You just asked about mixing colors. Are Let me clarify, which paint Alright, for acrylics, I'd recommend Liquitex Basics, available at art stores or online.",
+      "unrelated_color_topic": true,
+      "captured_audio_samples": 1151445,
+      "nominal_codec_samples": 1152000,
+      "codec_duration_loss_seconds": 0.023125,
+      "silent_playback_fraction": 0.8416380297823597,
+      "playback_gaps_ge_100ms": [
+        {
+          "start": 0.0,
+          "seconds": 4.84
+        },
+        {
+          "start": 5.3,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 6.38,
+          "seconds": 0.24
+        },
+        {
+          "start": 6.74,
+          "seconds": 0.46
+        },
+        {
+          "start": 7.7,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 9.14,
+          "seconds": 0.46
+        },
+        {
+          "start": 10.08,
+          "seconds": 0.98
+        },
+        {
+          "start": 11.08,
+          "seconds": 0.1
+        },
+        {
+          "start": 11.540000000000001,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 12.98,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 14.42,
+          "seconds": 0.96
+        },
+        {
+          "start": 15.88,
+          "seconds": 0.46
+        },
+        {
+          "start": 16.84,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 18.28,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 19.72,
+          "seconds": 0.46
+        },
+        {
+          "start": 20.68,
+          "seconds": 0.96
+        },
+        {
+          "start": 22.12,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 23.56,
+          "seconds": 0.46
+        },
+        {
+          "start": 24.52,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 25.96,
+          "seconds": 5.34
+        },
+        {
+          "start": 31.740000000000002,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 33.18,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 34.62,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 36.06,
+          "seconds": 0.46
+        },
+        {
+          "start": 37.02,
+          "seconds": 1.0
+        },
+        {
+          "start": 38.480000000000004,
+          "seconds": 3.88
+        },
+        {
+          "start": 42.800000000000004,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 44.24,
+          "seconds": 0.98
+        },
+        {
+          "start": 45.68,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 47.12,
+          "seconds": 0.46
+        },
+        {
+          "start": 48.08,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 49.120000000000005,
+          "seconds": 1.6600000000000001
+        },
+        {
+          "start": 50.96,
+          "seconds": 0.96
+        },
+        {
+          "start": 52.42,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 53.86,
+          "seconds": 0.46
+        },
+        {
+          "start": 54.82,
+          "seconds": 1.42
+        },
+        {
+          "start": 56.74,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 57.74,
+          "seconds": 4.48
+        },
+        {
+          "start": 62.5,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 63.940000000000005,
+          "seconds": 0.96
+        },
+        {
+          "start": 65.06,
+          "seconds": 0.22
+        },
+        {
+          "start": 65.4,
+          "seconds": 1.42
+        },
+        {
+          "start": 67.32000000000001,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 68.76,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 70.16,
+          "seconds": 0.98
+        },
+        {
+          "start": 71.64,
+          "seconds": 0.96
+        },
+        {
+          "start": 73.08,
+          "seconds": 0.98
+        },
+        {
+          "start": 74.54,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 75.98,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 77.42,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 78.86,
+          "seconds": 0.98
+        },
+        {
+          "start": 80.3,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 81.74,
+          "seconds": 0.96
+        },
+        {
+          "start": 83.18,
+          "seconds": 0.96
+        },
+        {
+          "start": 84.34,
+          "seconds": 55.34
+        }
+      ],
+      "dropped_audio_chunks": 4,
+      "speech_quality_requires_content_review": true,
+      "independent_output_transcript": "Hi there, color can be tricky. For example, magenta with white can give you a light purple and cyan with yellow makes a pastel. I'm an AI, I don't have a budget, but I can help you just ask about mixing colors. Or wait me clarify which paint. Alright, for acrylics I'd recommend liquid text basics available at artstores or online."
+    },
+    {
+      "key": "1026406_dailytalk_full_english_context",
+      "job_id": "1026406",
+      "hardware": "A100 80 GB",
+      "gpus": 2,
+      "thinker_tp": 1,
+      "decoder": "bounded_context",
+      "name": "dailytalk_full_english_context",
+      "status": "completed_content_review_required",
+      "turns": 100,
+      "input_seconds": 24.96,
+      "wall_seconds": 135.65251583000645,
+      "input_packet_rtf": 2.826094079791801,
+      "mean_s1_seconds": 1.3360209039924666,
+      "p95_s1_seconds": 1.5404414364922558,
+      "mean_talker_seconds": 0.3505527631554287,
+      "max_input_queue_delay_seconds": 86.04165040299995,
+      "first_tts_seconds": 4.048807049985044,
+      "first_nonsilent_audio_seconds": 1.5679409579606727,
+      "first_audio_before_user_recording_ends": true,
+      "first_requested_speech_audio_seconds": 4.341519490990322,
+      "question_terms_in_asr": {
+        "working_on": true,
+        "budget": true,
+        "money": true
+      },
+      "generated_asr": "What are you working on?Um.What budget?How much money can you spend?Why only three hundred dollars?For what?Your budget is a good idea.",
+      "generated_tts": "I'm currently processing a request for information.Let me check the budget. 我正在查预算呢。I'm checking the budget database and it containsThe budget is fixed for now. For now, until I check with the finance team. For now.I can check with finance to see if we can adjust the budget.",
+      "unrelated_color_topic": false,
+      "captured_audio_samples": 1151445,
+      "nominal_codec_samples": 1152000,
+      "codec_duration_loss_seconds": 0.023125,
+      "silent_playback_fraction": 0.8560717436048221,
+      "playback_gaps_ge_100ms": [
+        {
+          "start": 0.0,
+          "seconds": 2.04
+        },
+        {
+          "start": 2.38,
+          "seconds": 0.54
+        },
+        {
+          "start": 3.38,
+          "seconds": 1.42
+        },
+        {
+          "start": 5.3,
+          "seconds": 0.46
+        },
+        {
+          "start": 6.26,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 7.7,
+          "seconds": 0.46
+        },
+        {
+          "start": 8.66,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 10.1,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 11.540000000000001,
+          "seconds": 0.46
+        },
+        {
+          "start": 12.5,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 13.58,
+          "seconds": 1.74
+        },
+        {
+          "start": 15.4,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 16.84,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 18.28,
+          "seconds": 0.46
+        },
+        {
+          "start": 19.0,
+          "seconds": 0.14
+        },
+        {
+          "start": 19.18,
+          "seconds": 1.08
+        },
+        {
+          "start": 20.28,
+          "seconds": 0.12
+        },
+        {
+          "start": 20.68,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 22.12,
+          "seconds": 0.46
+        },
+        {
+          "start": 23.080000000000002,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 24.12,
+          "seconds": 6.94
+        },
+        {
+          "start": 31.26,
+          "seconds": 0.46
+        },
+        {
+          "start": 32.22,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 33.660000000000004,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 35.1,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 36.54,
+          "seconds": 0.46
+        },
+        {
+          "start": 37.5,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 38.58,
+          "seconds": 4.3
+        },
+        {
+          "start": 43.28,
+          "seconds": 0.46
+        },
+        {
+          "start": 44.24,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 45.68,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 47.12,
+          "seconds": 0.46
+        },
+        {
+          "start": 48.06,
+          "seconds": 1.5
+        },
+        {
+          "start": 50.0,
+          "seconds": 0.46
+        },
+        {
+          "start": 50.96,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 52.4,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 53.84,
+          "seconds": 0.96
+        },
+        {
+          "start": 55.28,
+          "seconds": 0.96
+        },
+        {
+          "start": 56.74,
+          "seconds": 1.42
+        },
+        {
+          "start": 58.5,
+          "seconds": 1.16
+        },
+        {
+          "start": 59.68,
+          "seconds": 0.16
+        },
+        {
+          "start": 60.1,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 61.5,
+          "seconds": 1.02
+        },
+        {
+          "start": 62.980000000000004,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 64.42,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 65.86,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 67.3,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 68.74,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 70.18,
+          "seconds": 0.96
+        },
+        {
+          "start": 71.64,
+          "seconds": 0.9400000000000001
+        },
+        {
+          "start": 73.02,
+          "seconds": 63.02
+        }
+      ],
+      "dropped_audio_chunks": 0,
+      "speech_quality_requires_content_review": true,
+      "independent_output_transcript": "What are you I'm currently processing a request for information. Let me check the budget. I'm checking the budget database and it contains. The budget is fixed for now. For now, until I check with the finance team, for now I can check with finance to see if we can adjust the budget budget."
+    },
+    {
+      "key": "1026490_dailytalk_full_english_capabilities_context",
+      "job_id": "1026490",
+      "hardware": "H100 SXM 80 GB",
+      "gpus": 2,
+      "thinker_tp": 1,
+      "decoder": "bounded_context",
+      "name": "dailytalk_full_english_capabilities_context",
+      "status": "completed_content_review_required",
+      "turns": 100,
+      "input_seconds": 24.96,
+      "wall_seconds": 49.011740435962565,
+      "input_packet_rtf": 1.0210779257492202,
+      "mean_s1_seconds": 0.24578083397471345,
+      "p95_s1_seconds": 0.30585771361365915,
+      "mean_talker_seconds": 0.27088813374983145,
+      "max_input_queue_delay_seconds": 0.00026722904294729233,
+      "first_tts_seconds": 1.1659066420979798,
+      "first_nonsilent_audio_seconds": 0.40188744105398655,
+      "first_audio_before_user_recording_ends": true,
+      "first_requested_speech_audio_seconds": 1.404547011014074,
+      "question_terms_in_asr": {
+        "working_on": true,
+        "budget": true,
+        "money": true
+      },
+      "generated_asr": "What are you working on?Um.What budget?How much money can you spend?Why only 300?For what?Your budget is a good idea.",
+      "generated_tts": "I'm an AI assistant. Perfect for helping you plan I can I need your income and expenses. Any questions?I can help youallocate I was using standard ratios. For Let me recalculate based Thank you! Remember, you lead the budget decisions. I'm here to help.",
+      "unrelated_color_topic": false,
+      "captured_audio_samples": 1151445,
+      "nominal_codec_samples": 1152000,
+      "codec_duration_loss_seconds": 0.023125,
+      "silent_playback_fraction": 0.6610032362459547,
+      "playback_gaps_ge_100ms": [
+        {
+          "start": 0.0,
+          "seconds": 0.86
+        },
+        {
+          "start": 2.68,
+          "seconds": 0.16
+        },
+        {
+          "start": 4.36,
+          "seconds": 0.22
+        },
+        {
+          "start": 8.42,
+          "seconds": 0.12
+        },
+        {
+          "start": 9.540000000000001,
+          "seconds": 1.62
+        },
+        {
+          "start": 12.02,
+          "seconds": 3.48
+        },
+        {
+          "start": 17.96,
+          "seconds": 0.16
+        },
+        {
+          "start": 18.52,
+          "seconds": 0.16
+        },
+        {
+          "start": 19.72,
+          "seconds": 2.5
+        },
+        {
+          "start": 23.1,
+          "seconds": 0.1
+        },
+        {
+          "start": 25.82,
+          "seconds": 0.32
+        },
+        {
+          "start": 27.12,
+          "seconds": 22.32
+        }
+      ],
+      "dropped_audio_chunks": 10,
+      "speech_quality_requires_content_review": true,
+      "independent_output_transcript": "What are you and AI assistant perfect for helping you plan? I can opt-als, I need your income and expenses. Any questions? I can help you allocate Kate. I was using standard ratios for let me recalculate based... Thank you. Remember you lead the budget decisions. I'm here to help."
+    },
+    {
+      "key": "1026490_dailytalk_full_english_tp2_graph_context",
+      "job_id": "1026490",
+      "hardware": "H100 SXM 80 GB",
+      "gpus": 2,
+      "thinker_tp": 1,
+      "decoder": "bounded_context",
+      "name": "dailytalk_full_english_tp2_graph_context",
+      "status": "completed_content_review_required",
+      "turns": 100,
+      "input_seconds": 24.96,
+      "wall_seconds": 49.517413583933376,
+      "input_packet_rtf": 1.031612782998612,
+      "mean_s1_seconds": 0.25778340191580357,
+      "p95_s1_seconds": 0.31476527223712764,
+      "mean_talker_seconds": 0.27645412950660103,
+      "max_input_queue_delay_seconds": 0.3056478969519958,
+      "first_tts_seconds": 1.16663679596968,
+      "first_nonsilent_audio_seconds": 0.43410615797620267,
+      "first_audio_before_user_recording_ends": true,
+      "first_requested_speech_audio_seconds": 1.4341739099472761,
+      "question_terms_in_asr": {
+        "working_on": true,
+        "budget": true,
+        "money": true
+      },
+      "generated_asr": "Hey, what are you working on?Um...What budget?How much money can you spend?Why only three hundred dollars?For what?Your budget is a good idea.",
+      "generated_tts": "Just listening to you. How can I help today?I can't pull up the budget info right now, but I can transfer you to I don't have a specific budget assigned to me. You should ask Because the system limits it automatically, so For support tasks. But It's not a good idea, you just said you have no budget. Which one is correct?",
+      "unrelated_color_topic": false,
+      "captured_audio_samples": 1151445,
+      "nominal_codec_samples": 1152000,
+      "codec_duration_loss_seconds": 0.023125,
+      "silent_playback_fraction": 0.6109775641025641,
+      "playback_gaps_ge_100ms": [
+        {
+          "start": 0.0,
+          "seconds": 0.48
+        },
+        {
+          "start": 0.7000000000000001,
+          "seconds": 0.14
+        },
+        {
+          "start": 0.98,
+          "seconds": 0.46
+        },
+        {
+          "start": 3.44,
+          "seconds": 0.2
+        },
+        {
+          "start": 4.76,
+          "seconds": 1.3800000000000001
+        },
+        {
+          "start": 9.200000000000001,
+          "seconds": 0.1
+        },
+        {
+          "start": 10.1,
+          "seconds": 1.48
+        },
+        {
+          "start": 14.42,
+          "seconds": 0.48
+        },
+        {
+          "start": 15.38,
+          "seconds": 0.68
+        },
+        {
+          "start": 19.72,
+          "seconds": 0.96
+        },
+        {
+          "start": 20.88,
+          "seconds": 0.14
+        },
+        {
+          "start": 21.16,
+          "seconds": 0.46
+        },
+        {
+          "start": 21.7,
+          "seconds": 1.12
+        },
+        {
+          "start": 24.46,
+          "seconds": 0.1
+        },
+        {
+          "start": 27.18,
+          "seconds": 0.12
+        },
+        {
+          "start": 28.54,
+          "seconds": 21.38
+        }
+      ],
+      "dropped_audio_chunks": 2,
+      "speech_quality_requires_content_review": true,
+      "independent_output_transcript": "What are you just listening to you? How can I help today? I can't pull up the budget info right now, but I can transfer you to. I don't have a specific budget assigned to me. You should ask, because the system limits it automatically, so for support tasks. But it's not a good idea. You just said you have no budget. which one is correct?"
+    }
+  ],
+  "evidence_status": "Measured runs and independent CPU transcripts; no answer-quality pass inferred from transport"
+}

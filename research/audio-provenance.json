@@ -24,7 +24,7 @@
     "model": "MuyeHuang/DuplexOmni",
     "revision": "b8a5ff6395ae51460d0402424fbd3359614a901a",
     "job_id": "1816643",
-    "source": "Actual generated stock Talker chunks 51\u201367; not a source training waveform",
+    "source": "Actual generated stock Talker chunks 51–67; not a source training waveform",
     "sha256": "3b4fef7a71ce4165e0181ef2e8a138d9d64e2ff97a4fac4bd25ff963d4050d2f",
     "seconds": 7.766875,
     "source_user_data": "Public MuyeHuang/DuplexOmni-Data, row 2 user PCM, revision 69cf73e3eaf779fc62417e889c722158b1cfa5f7; source waveform not published here",
@@ -45,5 +45,10 @@
       "s2": "Qwen3-4B-Instruct-2507",
       "scope": "Full local interaction replay; public clips are returned chunks, not user-plus-Talker recording"
     }
-  ]
+  ],
+  "interactive_user_channel": {
+    "transformation": "Complete right channel of the same verified public data_stereo/0.wav; resampled to 24 kHz, native noise gate and 480 ms padding. No reference assistant waveform/text entered the model.",
+    "license": "CC-BY-SA-4.0",
+    "scope": "Clocked stereo replay is an adaptation with model-generated speech on the right; physical speaker playback was not recorded."
+  }
 }

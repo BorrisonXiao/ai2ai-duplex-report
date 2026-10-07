@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-07",
+  "depth": "standard",
+  "scope": "Published audition plus six representative local cases and source native-loop evidence",
+  "claims": [
+    {
+      "claim": "Older audition is interactive and handles later questions",
+      "verdict": "refuted",
+      "evidence_status": "Evidence-backed",
+      "evidence": [
+        "audio_turn_system2_1816185/continuous_summary.json",
+        "scripts/system2_continuous.py"
+      ],
+      "finding": "Initial ten-second whole audio request followed by silent packets; third question truncated."
+    },
+    {
+      "claim": "Repeated decoder restart loses audio duration",
+      "verdict": "confirmed",
+      "evidence_status": "Evidence-backed",
+      "evidence": [
+        "reports/interactive_1026380_audit.json",
+        "reports/interactive_1026406_audit.json"
+      ],
+      "finding": "100 chunks: 2.3125-second loss becomes 0.023125 seconds with bounded context."
+    },
+    {
+      "claim": "Adding two A100s alone solves processing speed",
+      "verdict": "refuted",
+      "evidence_status": "Evidence-backed",
+      "evidence": [
+        "reports/interactive_1026380_audit.json"
+      ],
+      "finding": "Mean S1 1.38 seconds, packet RTF 2.92; speech mean 0.36 seconds."
+    },
+    {
+      "claim": "The H100/CUDA-graph configuration keeps up with paced input",
+      "verdict": "confirmed",
+      "evidence_status": "Evidence-backed",
+      "evidence": [
+        "reports/interactive_1026490_audit.json"
+      ],
+      "finding": "Mean S1 0.245781 s; p95 0.305858 s; maximum queue delay 0.000267 s."
+    },
+    {
+      "claim": "Recovered question terms prove good answers",
+      "verdict": "refuted",
+      "evidence_status": "Evidence-backed",
+      "evidence": [
+        "site/research/interactive-review.json"
+      ],
+      "finding": "Generic prompt invents finance access; capability control gives incomplete responses and unsupported standard-ratio claims."
+    }
+  ],
+  "derived_metrics": {
+    "speed_ratio_joint_hardware_graph_prompt_config": 5.625065699920019,
+    "first_requested_speech_seconds": 1.404547011014074,
+    "max_queue_delay_seconds": 0.00026722904294729233
+  },
+  "failure_taxonomy": [
+    {
+      "mode": "Whole-file input and clipped final question",
+      "layer": "Test harness / input design",
+      "kind": "Design failure"
+    },
+    {
+      "mode": "Repeated convolution warmup loss",
+      "layer": "Serving decoder",
+      "kind": "Implementation failure"
+    },
+    {
+      "mode": "Eager Thinker processing slower than packet clock",
+      "layer": "Runtime configuration / hardware",
+      "kind": "Performance limitation"
+    },
+    {
+      "mode": "Invented access and partial budget replies",
+      "layer": "Model response and prompting",
+      "kind": "Unresolved quality failure"
+    }
+  ],
+  "observations": {
+    "cases": 6,
+    "question_terms_all_three": 3,
+    "unrelated_color_topic_cases": 2
+  },
+  "inferences": [
+    {
+      "evidence_status": "Inferred",
+      "finding": "The remaining silence reflects listening states and buffer underruns as well as codec outputs. Fraction attributable to each mechanism is not established by a single amplitude threshold."
+    }
+  ],
+  "open_questions": [
+    {
+      "evidence_status": "Open question",
+      "finding": "How much of the speed gain comes from H100 hardware versus CUDA graphs? They changed together."
+    },
+    {
+      "evidence_status": "Open question",
+      "finding": "Can the same configuration sustain real microphone interaction beyond this recorded software-transport test?"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": 1,
+      "action": "Use paced complete input, bounded decoding and warmed graph-enabled fast configuration",
+      "success_criterion": "S1 processing below 480 ms and no accumulating input queue; preserve measured replay gaps."
+    },
+    {
+      "priority": 2,
+      "action": "Evaluate per-question grounded replies and acoustic speech, including STOP behavior",
+      "success_criterion": "All requests receive complete relevant audible responses with no invented external capabilities."
+    }
+  ]
+}

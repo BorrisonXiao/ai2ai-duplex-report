@@ -41,7 +41,7 @@
     for (const item of data.media) {
       if (typeof item.id !== 'string' || mediaIDs.has(item.id)) throw new Error('Invalid or duplicate media ID.');
       mediaIDs.add(item.id);
-      if (typeof item.data_uri !== 'string' || !/^data:audio\/(wav|x-wav);base64,[A-Za-z0-9+/=]+$/.test(item.data_uri)) throw new Error('Audio must be an embedded WAV; external URLs are unsupported.');
+      if (typeof item.data_uri !== 'string' || !/^data:audio\/(wav|x-wav|flac);base64,[A-Za-z0-9+/=]+$/.test(item.data_uri)) throw new Error('Audio must be embedded WAV or lossless FLAC; external URLs are unsupported.');
       if (item.anchor != null && (!finite(item.anchor) || item.anchor < 0)) throw new Error('Invalid audio anchor.');
       if (item.duration != null && (!finite(item.duration) || item.duration < 0)) throw new Error('Invalid audio duration.');
       if (item.waveform && (!Array.isArray(item.waveform) || item.waveform.length > 5000 || item.waveform.some(v => !finite(v) || v < 0 || v > 1.001))) throw new Error('Invalid waveform envelope.');
@@ -346,6 +346,15 @@
   $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id));
   $('load-native').addEventListener('click', () => load(example.native_trace, 'Native acknowledgment · ' + example.native_trace.metadata.job_id));
   $('load-full').addEventListener('click', () => load(example.full_loop_trace, 'Full native loop · ' + example.full_loop_trace.metadata.job_id));
+  if ($('interactive-case') && example.interactive_traces) {
+    for (const [key, value] of Object.entries(example.interactive_traces)) {
+      const option = document.createElement('option'); option.value = key;
+      option.textContent = `${value.metadata.gpus} × ${value.metadata.gpu_type} · ${value.metadata.case} · ${value.metadata.job_id}`;
+      $('interactive-case').appendChild(option);
+    }
+    $('interactive-case').value = example.interactive_default;
+    $('interactive-case').addEventListener('change', () => load(example.interactive_traces[$('interactive-case').value], 'Measured interaction case'));
+  }
   $('timeline-scroll').addEventListener('scroll',()=>{
     const overlay=$('timeline').querySelector('.lane-label-overlay');
     if(overlay)overlay.setAttribute('transform',`translate(${$('timeline-scroll').scrollLeft},0)`);
@@ -426,5 +435,10 @@
     chunkTimer = setInterval(() => { renderChunk(chunkIndex + 1); if (chunkIndex === replyCase.turns.length - 1) stopChunks(); }, 480);
   });
   loadCase(replyCase.id);
-  load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id); requestAnimationFrame(animate);
+  if (example.interactive_traces && example.interactive_default) {
+    load(example.interactive_traces[example.interactive_default], 'Measured interaction reproduction');
+  } else {
+    load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id);
+  }
+  requestAnimationFrame(animate);
 })();
