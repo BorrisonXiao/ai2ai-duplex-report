@@ -4390,6 +4390,18 @@
         }
       },
       {
+        "id": "silent-replay-feeder",
+        "lane": "input",
+        "kind": "input_condition",
+        "start": 19.2,
+        "end": 110.64457315951586,
+        "label": "Replay feeder · silent packets after source ended",
+        "details": {
+          "text": "(silent)",
+          "note": "The replay feeder sent digital silence after the source recording ended. S1 can still be processing earlier queued speech; this is a test-input condition, not acoustic word alignment."
+        }
+      },
+      {
         "id": "event-61",
         "label": "Native control/text event",
         "lane": "control",
@@ -10488,6 +10500,18 @@
         "details": {
           "chunk": 35,
           "tts": "我这边"
+        }
+      },
+      {
+        "id": "silent-replay-feeder",
+        "lane": "input",
+        "kind": "input_condition",
+        "start": 52.32,
+        "end": 193.7342035062611,
+        "label": "Replay feeder · silent packets after source ended",
+        "details": {
+          "text": "(silent)",
+          "note": "The replay feeder sent digital silence after the source recording ended. S1 can still be processing earlier queued speech; this is a test-input condition, not acoustic word alignment."
         }
       },
       {
