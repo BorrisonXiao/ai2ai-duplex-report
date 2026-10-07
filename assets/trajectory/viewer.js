@@ -61,6 +61,7 @@
     media = trace.media;
     $('run-title').textContent = trace.title || 'Imported trajectory';
     $('run-metadata').textContent = JSON.stringify(trace.metadata || {}, null, 2);
+    $('zoom').value = trace.metadata?.content_blocks ? (trace.events.filter(e=>e.lane==='thinker'&&e.kind==='request').length>10?'5':'3') : '1';
     $('clock-note').textContent = trace.metadata?.clock || 'Client seconds since driver start; see trace metadata.';
     $('warmup').disabled = !trace.lanes.some(lane => lane.id === 'startup');
     if ($('warmup').disabled) $('warmup').checked = false;
@@ -115,10 +116,12 @@
     range();
     if (rewind) cursor = minimum;
     cursor = Math.min(maximum, Math.max(minimum, cursor));
-    const lanes = trace.lanes.filter(lane => $('warmup').checked || lane.id !== 'startup');
-    if (media.some(m => m.anchor != null)) lanes.push({id: 'audition', label: 'Browser audition · replay'});
+    const order = ['input', 'thinker', 'system2', 'talker', 'reasoning', 'control', 'audio', 'startup'];
+    const rank = lane => order.includes(lane.id) ? order.indexOf(lane.id) : 99;
+    const lanes = trace.lanes.filter(lane => $('warmup').checked || lane.id !== 'startup').sort((a,b) => rank(a)-rank(b));
+    if (media.some(m => m.anchor != null && m.role !== 'input')) lanes.push({id: 'audition', label: 'Audio audition · replay'});
     width = Math.max(1000, $('timeline-scroll').clientWidth) * Number($('zoom').value);
-    plotRight = width - 24; height = Math.max(110, 62 + lanes.length * 60);
+    plotRight = width - 24; height = Math.max(110, 62 + lanes.length * 80);
     const root = $('timeline');
     root.setAttribute('viewBox', `0 0 ${width} ${height}`);
     root.setAttribute('width', width); root.setAttribute('height', height);
@@ -134,9 +137,9 @@
       svg('text', {x: x(at), y: 18, 'text-anchor': i === 8 ? 'end' : 'middle'}, root, `${at.toFixed(2)} s`);
     }
     lanes.forEach((lane, index) => {
-      const y = 54 + index * 60;
+      const y = 54 + index * 80;
       svg('text', {x: 12, y: y + 10, class: 'lane-label'}, root, lane.label);
-      svg('line', {x1: 0, x2: width, y1: y + 34, y2: y + 34, class: 'axis'}, root);
+      svg('line', {x1: 0, x2: width, y1: y + 48, y2: y + 48, class: 'axis'}, root);
       const progress = visible.filter(e => e.lane === lane.id && e.kind === 'reasoning_progress');
       const maxChars = Math.max(1, ...progress.map(e => e.details?.characters || 0));
       const progressY = e => y + 20 - (e.details?.characters || 0) / maxChars * 32;
@@ -148,10 +151,10 @@
       for (const event of visible.filter(e => e.lane === lane.id)) {
         const group = svg('g', {'data-event': event.id}, root);
         if (event.end > event.start) {
-          const cls = event.kind === 'absence' ? 'absence' : event.kind === 'service_check' ? 'service-check' : event.kind === 'incomplete' ? 'incomplete' : lane.id === 'system2' ? 'request s2' : 'request';
-          svg('rect', {x: x(event.start), y: y - 9, width: Math.max(3, x(event.end) - x(event.start)), height: 27, rx: 5, class: cls + (event.id === selected ? ' selected' : '')}, group);
+          const cls = event.kind === 'guidance_state' ? 'guidance' : event.kind === 'input_condition' || event.kind === 'absence' ? 'absence' : event.kind === 'service_check' ? 'service-check' : event.kind === 'incomplete' ? 'incomplete' : lane.id === 'system2' ? 'request s2' : 'request';
+          svg('rect', {x: x(event.start), y: y - 17, width: Math.max(3, x(event.end) - x(event.start)), height: 44, rx: 5, class: cls + (event.id === selected ? ' selected' : '')}, group);
           const room = x(event.end) - x(event.start);
-          if (room > 85) svg('text', {x: x(event.start) + 7, y: y + 9}, group, event.label.slice(0, Math.floor((room - 14) / 7)));
+          if (room > 45) blockText(group, x(event.start)+6, y-4, room-12, eventContent(event));
           actionable(group, event);
         } else {
           const jitter = event.kind === 'reasoning_progress' ? -5 : event.kind === 'final_delta' ? 7 : 0;
@@ -159,7 +162,14 @@
           actionable(group, event);
         }
       }
-      if (lane.id === 'audition') media.filter(m => m.anchor != null).forEach((item, i) => {
+      if (lane.id === 'input') media.filter(m => m.anchor != null && m.role === 'input').forEach(item => {
+        const group = svg('g', {}, root);
+        const room = Math.max(3, x(item.anchor+(item.duration||0))-x(item.anchor));
+        svg('rect', {x:x(item.anchor),y:y-17,width:room,height:44,fill:'url(#hatch)',stroke:'var(--blue)',rx:5},group);
+        if (room>45) blockText(group,x(item.anchor)+6,y-4,room-12,item.text || 'User audio');
+        actionable(group,{id:`media-${item.id}`,lane:'input',kind:'audition',start:item.anchor,end:item.anchor+(item.duration||0),label:item.label,details:{media_id:item.id,text:item.text,text_scope:item.text_scope,note:'Recording content duration; browser audition anchored at submission, not measured live microphone speech.'}});
+      });
+      if (lane.id === 'audition') media.filter(m => m.anchor != null && m.role !== 'input').forEach((item, i) => {
         const group = svg('g', {}, root);
         const yy = y - 11 + (i % 2) * 16;
         svg('rect', {x: x(item.anchor), y: yy, width: Math.max(3, x(item.anchor + (item.duration || 0)) - x(item.anchor)), height: 14, fill: 'url(#hatch)', stroke: 'var(--blue)', rx: 3}, group);
@@ -177,7 +187,35 @@
     if (typeof text !== 'string') text = JSON.stringify(text);
     return text;
   }
+  function eventContent(event) {
+    const details = event.details || {};
+    if (event.lane === 'thinker') {
+      if (event.kind === 'absence') return '(silent · no S1 call)';
+      const fields = s1Fields(details);
+      return fields ? fields.tts?.trim() || '(silent)' : '(speech text not recorded)';
+    }
+    if (event.lane === 'system2' && event.kind === 'request') return 'thinking / streaming guidance…';
+    if (event.lane === 'talker') {
+      const text = details.tts ?? details.source_tts;
+      return typeof text === 'string' ? text.trim() || '(silent)' : '(spoken text unverified)';
+    }
+    return details.command || details.text?.trim() || event.label;
+  }
+  function blockText(parent,left,top,room,text) {
+    const size = room < 70 ? 10 : 12;
+    const limit = Math.max(4,Math.floor(room/(size*.58)));
+    const words = String(text).split(/\s+/), lines=[];
+    let line='';
+    for (let word of words) {
+      if (word.length>limit) word=word.slice(0,limit-1)+'…';
+      if ((line+' '+word).trim().length>limit && line) {lines.push(line);line=word;} else line=(line+' '+word).trim();
+    }
+    if (line) lines.push(line);
+    const node=svg('text',{x:left,y:top},parent);node.style.fontSize=size+'px';
+    lines.slice(0,3).forEach((value,i)=>svg('tspan',{x:left,dy:i?13:0},node,i===2 && lines.length>3 ? value.slice(0,limit-1)+'…':value));
+  }
   function s1Fields(details) {
+    if (details.fields && typeof details.fields === 'object') return details.fields;
     if (typeof details.tts === 'string' || typeof details.asr === 'string') return details;
     const raw = details.response?.choices?.[0]?.message?.content;
     if (typeof raw === 'string') {
@@ -204,6 +242,8 @@
     $('reasoning-progress').textContent = counts.size ? [...counts].map(([id, count]) => `${requestNames.get(id) || id}: ${count} received characters`).join(' · ') : 'No received reasoning deltas.';
     const final = received.filter(e => e.kind === 'final_delta').at(-1);
     $('s2-text').textContent = final ? final.details?.text || final.details?.delta || '' : 'Not received yet.';
+    const delivered = received.filter(e => e.kind === 'command_forwarded').at(-1);
+    $('s2-delivered').textContent = delivered ? delivered.details?.command || '' : 'No guidance delivered to S1 yet. Partial streamed text stays in the orchestrator buffer.';
     const control = received.filter(e => e.lane === 'control').at(-1);
     $('control-text').textContent = control ? `${control.label}: ${control.details?.command || control.details?.system2_control || control.details?.status || ''}` : 'None.';
   }
@@ -252,6 +292,8 @@
     $('clip-select').value = clip.id;
     player.src = clip.data_uri;
     $('clip-note').textContent = `${clip.duration == null ? 'Duration not recorded' : fmt(clip.duration) + ' s of audio'} · ${clip.anchor == null ? 'No measured timing anchor; cursor is not linked.' : 'Audition anchor: ' + fmt(clip.anchor) + ' s; cursor follows anchor + clip position.'}`;
+    if (clip.text_scope) $('clip-note').textContent += ' ' + clip.text_scope + '.';
+    if (clip.automatic_transcript) $('clip-note').textContent += ' Automatic audio transcript: “' + clip.automatic_transcript + '”.';
     const peaks = clip.waveform || [];
     peaks.forEach((peak, i) => svg('line', {x1: i / peaks.length * 800, x2: i / peaks.length * 800, y1: 45 - peak * 40, y2: 45 + peak * 40, 'stroke-width': Math.max(1, 800 / peaks.length * .65)}, $('waveform')));
     if (!peaks.length) svg('text', {x: 15, y: 48, fill: 'currentColor'}, $('waveform'), 'No waveform envelope recorded; audio remains playable.');
@@ -281,7 +323,7 @@
   player.addEventListener('timeupdate', () => { if (!player.paused && clip?.anchor != null) setCursor(clip.anchor + player.currentTime); });
   player.addEventListener('seeking', () => { if (clip?.anchor != null) { pause(); setCursor(clip.anchor + player.currentTime); } });
   $('load-demo').addEventListener('click', () => load(demo, 'Hosted demo'));
-  $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded S2 wait · 1815810'));
+  $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id));
   async function readFile(file) {
     if (!file) return;
     try {
@@ -318,7 +360,7 @@
     $('chunk-detail').textContent = `Chunk ${chunkIndex} · ${turn.request_seconds.toFixed(3)} s request + tensor RPC (measured separately from input duration).`;
     $('chunk-fields').textContent = JSON.stringify({asr: turn.asr, tts: turn.tts, tts_control: turn.tts_control, system2_control: turn.system2_control}, null, 2);
     $('answer-status').textContent = joined.includes(replyCase.command) ? 'The complete supplied S2 answer is present in S1’s generated text.' : 'The supplied answer is not complete at this chunk.';
-    for (const node of $('chunk-grid').children) {
+    for (const node of $('chunk-grid').querySelectorAll('[data-chunk]')) {
       const active = Number(node.dataset.chunk) === chunkIndex;
       node.classList.toggle('selected', active); node.setAttribute('aria-pressed', String(active));
     }
@@ -328,14 +370,19 @@
     $('reply-command').textContent = replyCase.command;
     $('case-note').textContent = replyCase.counterfactual ? 'Diagnostic intervention: assistant control state, system prompt or supplied S2 text was edited. This does not demonstrate automatic delegation.' : 'Captured original history and S2 command. S1 did not issue THINK; delegation was forced in the source functional test.';
     clear($('chunk-grid'));
-    for (const turn of replyCase.turns) {
-      const button = document.createElement('button'); button.type = 'button';
-      button.className = 'chunk ' + turn.role; button.dataset.chunk = turn.chunk;
-      button.setAttribute('aria-label', `Chunk ${turn.chunk}, ${turn.audio_end_seconds.toFixed(2)} seconds of input, ${turn.tts.trim() || 'empty tts'}`);
-      const label = document.createElement('span'); label.className = 'chunk-time'; label.textContent = `#${turn.chunk} · ${turn.audio_end_seconds.toFixed(2)} s`;
-      const text = document.createElement('span'); text.textContent = turn.tts.trim() || '∅ empty';
-      button.append(label, text); button.addEventListener('click', () => { stopChunks(); renderChunk(turn.chunk); });
-      $('chunk-grid').appendChild(button);
+    for (const [row,title] of [['user','User input'],['s1','S1 output'],['s2','S2 guidance (replayed)'],['talker','Talker']]) {
+      const header=document.createElement('div');header.className='matrix-label';header.textContent=title;$('chunk-grid').appendChild(header);
+      for (const turn of replyCase.turns) {
+        const button = document.createElement('button'); button.type = 'button';
+        button.className = 'chunk ' + (row==='s1'?turn.role:row==='s2' && turn.chunk===0?'answer':'empty');
+        button.dataset.chunk = turn.chunk; button.dataset.row=row;
+        const content=row==='user'?'(silent)':row==='s1'?turn.tts.trim()||'(silent)':row==='s2'?(turn.chunk===0?replyCase.command:'(no new guidance)'):'(not run · no audio)';
+        button.setAttribute('aria-label', `${title}, chunk ${turn.chunk}, ${content}`);
+        const label = document.createElement('span'); label.className = 'chunk-time'; label.textContent = `#${turn.chunk} · ${turn.audio_end_seconds.toFixed(2)} s`;
+        const text = document.createElement('span'); text.textContent = content;
+        button.append(label, text); button.addEventListener('click', () => { stopChunks(); renderChunk(turn.chunk); });
+        $('chunk-grid').appendChild(button);
+      }
     }
     renderChunk(replyCase.turns.length - 1);
   }
@@ -353,5 +400,5 @@
     chunkTimer = setInterval(() => { renderChunk(chunkIndex + 1); if (chunkIndex === replyCase.turns.length - 1) stopChunks(); }, 480);
   });
   loadCase(replyCase.id);
-  load(example.waiting_trace, 'Recorded S2 wait · 1815810'); requestAnimationFrame(animate);
+  load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id); requestAnimationFrame(animate);
 })();

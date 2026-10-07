@@ -1,0 +1,16 @@
+{
+  "status": "verified_public_dataset_excerpt",
+  "not_private_user_recording": true,
+  "dataset": "kyutai/DailyTalkContiguous",
+  "revision": "33e1b501f725a6f4ed4ded95e16cd7f66b9d4bdc",
+  "public_source_url": "https://huggingface.co/datasets/kyutai/DailyTalkContiguous/blob/33e1b501f725a6f4ed4ded95e16cd7f66b9d4bdc/data_stereo/0.wav",
+  "official_dataset_url": "https://github.com/keonlee9420/DailyTalk",
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source_sha256": "ef849a94cb1b302d81ae5b228d84fd4f322b68522ef4cd2e2de4953cf1a80c0d",
+  "public_lfs_sha256": "ef849a94cb1b302d81ae5b228d84fd4f322b68522ef4cd2e2de4953cf1a80c0d",
+  "excerpt_sha256": "90ac94c7f3508590db61c5bf9dc5d0aa7d43b6819760ad0ab0f6f08c702d3fac",
+  "transformation": "right stereo channel, first 441000 samples (10 seconds), PCM16 at 44100 Hz",
+  "exact_samples_match_public_source": true,
+  "scope": "Public downloaded DailyTalk speech used in the user-requested experimental example; no private user voice."
+}

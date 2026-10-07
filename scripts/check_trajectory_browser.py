@@ -52,24 +52,44 @@ def main():
                 page.wait_for_function("document.querySelectorAll('#timeline [data-event]').length > 0")
                 assert page.locator('[aria-label="Project tabs"] [aria-current="page"]').inner_text() == "Experiments"
                 assert "Measured" in page.locator("#evidence-note").inner_text()
-                assert "1815810" in page.locator("#run-title").inner_text()
-                assert page.locator("#chunk-grid button").count() == 24
+                assert "1816185" in page.locator("#run-title").inner_text()
+                assert page.locator('#chunk-grid [data-row="s1"]').count() == 24
                 assert "personal projects" in page.locator("#chunk-transcript").inner_text()
-                page.locator("#scrub").evaluate("el => {el.value=32; el.dispatchEvent(new Event('input'));}")
+                page.locator("#scrub").evaluate("el => {el.value=14; el.dispatchEvent(new Event('input'));}")
                 assert "Empty tts" in page.locator("#s1-text").inner_text()
-                assert "What are you working on?" in page.locator("#s1-asr").inner_text()
-                assert "S2 audio-derived context" in page.locator("#active-layers").inner_text()
-                assert "S1" not in page.locator("#active-layers").inner_text()
+                assert page.locator("#s1-asr").inner_text() != "Not received yet."
+                assert "S2 background request" in page.locator("#active-layers").inner_text()
+                assert "No new S1" not in page.locator("#active-layers").inner_text()
                 assert page.locator("#timeline .absence").count() == 1
                 assert page.locator("#timeline polyline").count() == 1
+                assert page.locator("#clip-select option").count() == 3
+                assert page.locator("#timeline .lane-label").all_text_contents()[:4] == ["User · recorded audio", "S1 · text · GPU 0", "S2 · guidance · GPU 0", "Talker · audio · GPU 0"]
+                assert "(silent)" in page.locator("#timeline").text_content()
+                assert "No guidance delivered" in page.locator("#s2-delivered").inner_text()
+                page.locator("#scrub").evaluate("el=>{el.value=16.728;el.dispatchEvent(new Event('input'));}")
+                assert "【" in page.locator("#s2-text").inner_text()
+                assert "No guidance delivered" in page.locator("#s2-delivered").inner_text()
+                page.locator("#scrub").evaluate("el=>{el.value=18.1;el.dispatchEvent(new Event('input'));}")
+                assert "information and tasks" in page.locator("#s2-delivered").inner_text()
+                page.locator("#clip-select").select_option("user")
+                page.evaluate("async()=>await document.querySelector('#clip-player').play()")
+                page.wait_for_function("document.querySelector('#clip-player').currentTime>0.1")
+                assert abs(page.evaluate("document.querySelector('#clip-player').duration")-10)<0.01
+                page.evaluate("document.querySelector('#clip-player').pause()")
                 assert "selected trace clock" in page.locator("#time-label").inner_text()
+                page.locator("#clip-select").select_option("response")
+                page.evaluate("async()=>await document.querySelector('#clip-player').play()")
+                page.wait_for_function("document.querySelector('#clip-player').currentTime>0.1")
+                assert abs(page.evaluate("document.querySelector('#clip-player').duration")-13.70625)<0.01
+                assert "Automatic audio transcript" in page.locator("#clip-note").inner_text()
+                page.evaluate("document.querySelector('#clip-player').pause()")
                 page.locator("#timeline-title").scroll_into_view_if_needed()
                 page.screenshot(path=str(args.output / (name + "-recorded-wait.png")))
                 page.locator("#chunk-reset").click()
                 assert "No generated speech text yet" in page.locator("#chunk-transcript").inner_text()
-                page.locator('#chunk-grid [data-chunk="3"]').click()
+                page.locator('#chunk-grid [data-row="s1"][data-chunk="3"]').click()
                 assert page.locator("#chunk-fragment").inner_text() == "I see."
-                page.locator('#chunk-grid [data-chunk="11"]').click()
+                page.locator('#chunk-grid [data-row="s1"][data-chunk="11"]').click()
                 assert "complete supplied S2 answer" in page.locator("#answer-status").inner_text()
                 assert "What budget" not in page.locator("#chunk-transcript").inner_text()
                 page.locator("#reply-case").select_option("prior_THINK_plaintext_contrast")
@@ -81,7 +101,7 @@ def main():
                 page.wait_for_function("Number(document.querySelector('#chunk-cursor').value) >= 1")
                 page.locator("#chunk-play").click()
                 assert page.locator("#chunk-play").inner_text() == "Replay text chunks"
-                page.locator('#chunk-grid [data-chunk="23"]').click()
+                page.locator('#chunk-grid [data-row="s1"][data-chunk="23"]').click()
                 page.locator("#continuation-title").scroll_into_view_if_needed()
                 page.screenshot(path=str(args.output / (name + "-recorded-reply.png")))
                 page.locator('figure').filter(has=page.locator('#chunk-grid')).screenshot(path=str(args.output / (name + '-chunks.png')))
@@ -136,7 +156,7 @@ def main():
                     assert page.locator("#clip-select option").count() > 0
                     assert page.locator("#event-rows tr").count() == 0
                 page.locator("#load-real").click()
-                assert "1815810" in page.locator("#run-title").inner_text()
+                assert "1816185" in page.locator("#run-title").inner_text()
                 assert not errors, errors
                 assert all(url.startswith(("file:", "data:")) for url in requests), requests
                 results.append(dict(view=name, width=width, theme=theme, recorded_wait="passed", separate_asr_tts="passed", s1_idle_interval="passed", recorded_chunks="passed", changed_answer_control="passed", chunk_replay="passed", timing_replay="passed", audio_cursor="passed", local_import="passed", rejected_remote_audio="passed", safe_text="passed", page_overflow=False, external_requests=0, javascript_errors=errors))

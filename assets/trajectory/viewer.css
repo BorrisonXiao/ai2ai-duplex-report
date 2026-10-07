@@ -26,6 +26,7 @@ select { padding:6px 8px; border:1px solid var(--border); background:var(--surfa
 #timeline .request { fill:var(--accent-soft); stroke:var(--accent); }
 #timeline .s2 { fill:var(--blue-soft); stroke:var(--blue); }
 #timeline .absence { fill:var(--surface-2); stroke:var(--muted); stroke-dasharray:5 4; }
+#timeline .guidance { fill:var(--accent-soft); stroke:var(--accent); stroke-dasharray:3 2; }
 #timeline .service-check { fill:var(--surface-2); stroke:var(--border); }
 #timeline .incomplete { fill:var(--amber-soft); stroke:var(--amber); stroke-dasharray:5 3; }
 #timeline .dot { fill:var(--accent); stroke:var(--surface); stroke-width:1; }
@@ -74,3 +75,8 @@ pre { margin:0; padding:12px; border-radius:8px; background:var(--surface-2); ov
 .trajectory-figure { scroll-margin-top:90px; }
 @media (max-width:700px) { .example-cards { grid-template-columns:minmax(0,1fr); } .chunk-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .case-toolbar label { width:100%; } .scrub-label:has(#chunk-cursor) { flex-wrap:wrap; } }
 @media (max-width:700px) { .inspector-grid { grid-template-columns:minmax(0,1fr); } .transport output { margin-left:0; } .load-panel { padding:14px; } }
+
+.chunk-matrix-scroll {overflow-x:auto;border:1px solid var(--border);border-radius:10px;padding:8px;}
+.chunk-grid {grid-template-columns:150px repeat(24,145px);gap:8px;width:max-content;}
+.matrix-label {position:sticky;left:0;z-index:1;display:flex;align-items:center;padding:12px;background:var(--surface);font-weight:700;font-size:14px;border-radius:8px;box-shadow:4px 0 4px var(--surface);}
+@media(max-width:700px){.chunk-grid{grid-template-columns:110px repeat(24,130px);} .matrix-label{font-size:13px;}}
