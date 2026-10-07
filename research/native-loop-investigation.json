@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-07",
+  "decoder": {
+    "gpus": 0,
+    "codec_frames": 144,
+    "chunk_count": 24,
+    "stock_seconds": 10.965,
+    "context_seconds": 11.496875,
+    "lost_samples_when_resetting": 12765,
+    "prefix_max_abs_change": 3.507011570036411e-08,
+    "wall_seconds": 36.51569878309965
+  },
+  "decoder_job": "1816644",
+  "decoder_slurm_seconds": 138,
+  "decoder_result": "Both reference variants contain recognizable acknowledgment; exact pronunciation and intelligibility improvement are not established.",
+  "native_job": "1816643",
+  "native_status": "partial results captured; failed during the added GPU full-history decoder comparison",
+  "native_gpus": 1,
+  "native_gpu_type": "A100 80 GB",
+  "native_layout": "Thinker, Talker/MTP/Code2Wav and Qwen3-4B Thinking S2 share GPU 0 through private MPS",
+  "audit_job": "1816645",
+  "audit_gpus": 0,
+  "audit_dependency": "completed CPU audit of captured partial data",
+  "maximum_gpus": 1,
+  "followup_job": "1816647",
+  "followup_status": "completed: natural THINK and audible waiting acknowledgment; S2 exhausted 2048 output tokens with no final guidance",
+  "followup_audit_job": "1816649",
+  "native_observations": [
+    "DailyTalk: unrelated color response; no THINK or S2 request.",
+    "Prime/title example: original primes 101, 103, 107, 109 and 113 were audible; S1 acknowledged the correction. It omitted the title and never delivered the revised prime list before the diagnostic failed. No S2 request was made."
+  ],
+  "instruct_job": "1816658",
+  "instruct_audit_job": "1816659",
+  "instruct_status": "completed; delivered S2 clause appears in S1 text and actual Talker audio, but factual answer quality is unreliable",
+  "instruct_model": "Qwen3-4B-Instruct-2507",
+  "instruct_turns": 133,
+  "instruct_audio_seconds": 60.764375,
+  "instruct_s2_seconds": 0.7873457707464695,
+  "instruct_rtf": 3.0346836388825364,
+  "instruct_sampled_gpu_mib": 78946
+}

@@ -12,5 +12,38 @@
   "excerpt_sha256": "90ac94c7f3508590db61c5bf9dc5d0aa7d43b6819760ad0ab0f6f08c702d3fac",
   "transformation": "right stereo channel, first 441000 samples (10 seconds), PCM16 at 44100 Hz",
   "exact_samples_match_public_source": true,
-  "scope": "Public downloaded DailyTalk speech used in the user-requested experimental example; no private user voice."
+  "scope": "Public downloaded DailyTalk speech used in the user-requested experimental example; no private user voice.",
+  "combined_adaptation": {
+    "sha256": "b2df89732e4d6d5facbae703aeb57a1a5277c13b4e24f794cd3f48ef308aceda",
+    "transformation": "Resample public 10 s mono input to 24 kHz, place left; place all 30 generated Talker chunks right at assumed playback starts based on measured availability; retain waiting gaps. PCM16 stereo.",
+    "seconds": 46.29329166666667,
+    "license": "CC-BY-SA-4.0",
+    "scope": "Reconstructed audition; actual speaker playback was not recorded."
+  },
+  "generated_correction_acknowledgment": {
+    "model": "MuyeHuang/DuplexOmni",
+    "revision": "b8a5ff6395ae51460d0402424fbd3359614a901a",
+    "job_id": "1816643",
+    "source": "Actual generated stock Talker chunks 51\u201367; not a source training waveform",
+    "sha256": "3b4fef7a71ce4165e0181ef2e8a138d9d64e2ff97a4fac4bd25ff963d4050d2f",
+    "seconds": 7.766875,
+    "source_user_data": "Public MuyeHuang/DuplexOmni-Data, row 2 user PCM, revision 69cf73e3eaf779fc62417e889c722158b1cfa5f7; source waveform not published here",
+    "scope": "S1 acknowledged a user correction, with S2 service loaded but never invoked; not acknowledgment during S2 reasoning."
+  },
+  "native_generated_audio": [
+    {
+      "job_id": "1816647",
+      "type": "Stock Talker output / acknowledgment after THINK",
+      "source": "Model-generated output from public row-8 user PCM; original user waveform not included in public export",
+      "s2": "Qwen3-4B-Thinking-2507",
+      "scope": "Natural acknowledgment while S2 was active; no final S2 guidance"
+    },
+    {
+      "job_id": "1816658",
+      "type": "Stock Talker output / acknowledgment before guidance",
+      "source": "Model-generated output from public row-8 user PCM; original user waveform not included in public export",
+      "s2": "Qwen3-4B-Instruct-2507",
+      "scope": "Full local interaction replay; public clips are returned chunks, not user-plus-Talker recording"
+    }
+  ]
 }

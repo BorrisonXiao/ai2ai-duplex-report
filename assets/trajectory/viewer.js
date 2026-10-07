@@ -6,6 +6,7 @@
   const example = JSON.parse($('recorded-example').textContent);
   const svgNS = 'http://www.w3.org/2000/svg';
   const player = $('clip-player');
+  const defaultAuditionScope = $('audition-scope').textContent;
   let trace, events = [], visible = [], media = [], selected = null, clip = null;
   let minimum = 0, maximum = 10, cursor = 0, playing = false, lastFrame = 0;
   let width = 1000, plotLeft = 215, plotRight = 980, height = 550;
@@ -61,7 +62,8 @@
     media = trace.media;
     $('run-title').textContent = trace.title || 'Imported trajectory';
     $('run-metadata').textContent = JSON.stringify(trace.metadata || {}, null, 2);
-    $('zoom').value = trace.metadata?.content_blocks ? (trace.events.filter(e=>e.lane==='thinker'&&e.kind==='request').length>10?'5':'3') : '1';
+    $('zoom').value = trace.metadata?.recommended_zoom || (trace.metadata?.content_blocks ? (trace.events.filter(e=>e.lane==='thinker'&&e.kind==='request').length>10?'5':'3') : '1');
+    $('audition-scope').textContent = trace.metadata?.audition_description || defaultAuditionScope;
     $('clock-note').textContent = trace.metadata?.clock || 'Client seconds since driver start; see trace metadata.';
     $('warmup').disabled = !trace.lanes.some(lane => lane.id === 'startup');
     if ($('warmup').disabled) $('warmup').checked = false;
@@ -324,6 +326,8 @@
   player.addEventListener('seeking', () => { if (clip?.anchor != null) { pause(); setCursor(clip.anchor + player.currentTime); } });
   $('load-demo').addEventListener('click', () => load(demo, 'Hosted demo'));
   $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id));
+  $('load-native').addEventListener('click', () => load(example.native_trace, 'Native acknowledgment · ' + example.native_trace.metadata.job_id));
+  $('load-full').addEventListener('click', () => load(example.full_loop_trace, 'Full native loop · ' + example.full_loop_trace.metadata.job_id));
   async function readFile(file) {
     if (!file) return;
     try {

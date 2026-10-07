@@ -62,7 +62,21 @@ def main():
                 assert "No new S1" not in page.locator("#active-layers").inner_text()
                 assert page.locator("#timeline .absence").count() == 1
                 assert page.locator("#timeline polyline").count() == 1
-                assert page.locator("#clip-select option").count() == 3
+                assert page.locator("#clip-select option").count() == 5
+                page.locator("#clip-select").select_option("combined")
+                page.evaluate("async()=>await document.querySelector('#clip-player').play()")
+                page.wait_for_function("document.querySelector('#clip-player').currentTime>0.1")
+                assert abs(page.evaluate("document.querySelector('#clip-player').duration")-46.293292)<0.01
+                assert "Left channel" in page.locator("#clip-note").inner_text()
+                assert "Assumed playback" in page.locator("#clip-note").inner_text()
+                page.evaluate("document.querySelector('#clip-player').pause()")
+                page.locator("#clip-select").select_option("correction_ack")
+                page.evaluate("async()=>await document.querySelector('#clip-player').play()")
+                page.wait_for_function("document.querySelector('#clip-player').currentTime>0.1")
+                assert abs(page.evaluate("document.querySelector('#clip-player').duration")-7.766875)<0.01
+                assert "S2 was never invoked" in page.locator("#clip-note").inner_text()
+                assert "No measured timing anchor" in page.locator("#clip-note").inner_text()
+                page.evaluate("document.querySelector('#clip-player').pause()")
                 assert page.locator("#timeline .lane-label").all_text_contents()[:4] == ["User · recorded audio", "S1 · text · GPU 0", "S2 · guidance · GPU 0", "Talker · audio · GPU 0"]
                 assert "(silent)" in page.locator("#timeline").text_content()
                 assert "No guidance delivered" in page.locator("#s2-delivered").inner_text()
@@ -157,6 +171,34 @@ def main():
                     assert page.locator("#event-rows tr").count() == 0
                 page.locator("#load-real").click()
                 assert "1816185" in page.locator("#run-title").inner_text()
+                page.locator("#load-native").click()
+                assert "1816647" in page.locator("#run-title").inner_text()
+                assert page.locator("#clip-select option").count()==2
+                assert "generated Talker speech only" in page.locator("#audition-scope").inner_text()
+                assert "S2 exhausted" in page.locator("#audition-scope").inner_text()
+                assert page.locator("#timeline .lane-label").all_text_contents()[:4]==["User · spoken request","S1 · text · GPU 0","S2 · background · GPU 0","Talker · audio · GPU 0"]
+                assert page.locator("#timeline polyline").count()==1
+                page.locator("#clip-select").select_option("native_waiting")
+                page.evaluate("async()=>await document.querySelector('#clip-player').play()")
+                page.wait_for_function("document.querySelector('#clip-player').currentTime>0.1")
+                assert "S2 exhausted" in page.locator("#clip-note").inner_text()
+                page.evaluate("document.querySelector('#clip-player').pause()")
+                page.locator("#load-real").click()
+                page.locator("#load-full").click()
+                assert "1816658" in page.locator("#run-title").inner_text()
+                assert "five chunks" in page.locator("#audition-scope").inner_text()
+                assert page.locator("#timeline .guidance").count()==1
+                assert page.locator("#timeline polyline").count()==0
+                page.locator("#clip-select").select_option("native_response")
+                page.evaluate("async()=>await document.querySelector('#clip-player').play()")
+                page.wait_for_function("document.querySelector('#clip-player').currentTime>0.1")
+                assert abs(page.evaluate("document.querySelector('#clip-player').duration")-60.764375)<.01
+                assert "我帮你查" in page.locator("#clip-note").inner_text()
+                page.evaluate("document.querySelector('#clip-player').pause()")
+                page.evaluate("async()=>await document.fonts.load('16px DuplexTraceCJK','稍等')")
+                page.wait_for_function("document.fonts.check('16px DuplexTraceCJK','稍等')")
+                page.screenshot(path=str(args.output/f"{name}-full-native-loop.png"),full_page=False)
+                page.locator("#load-real").click()
                 assert not errors, errors
                 assert all(url.startswith(("file:", "data:")) for url in requests), requests
                 results.append(dict(view=name, width=width, theme=theme, recorded_wait="passed", separate_asr_tts="passed", s1_idle_interval="passed", recorded_chunks="passed", changed_answer_control="passed", chunk_replay="passed", timing_replay="passed", audio_cursor="passed", local_import="passed", rejected_remote_audio="passed", safe_text="passed", page_overflow=False, external_requests=0, javascript_errors=errors))
