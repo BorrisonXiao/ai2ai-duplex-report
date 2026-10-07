@@ -1,0 +1,1796 @@
+{
+  "schema": "duplex-html-example/v1",
+  "date": "2026-10-06",
+  "waiting_trace": {
+    "schema": "duplex-trajectory/v1",
+    "title": "A · S2 reasoning wait · job 1815810",
+    "evidence": "measured",
+    "media": [],
+    "lanes": [
+      {
+        "id": "thinker",
+        "label": "S1 Thinker · GPU 0"
+      },
+      {
+        "id": "system2",
+        "label": "S2 reasoning · GPU 1"
+      },
+      {
+        "id": "reasoning",
+        "label": "S2 received characters"
+      },
+      {
+        "id": "control",
+        "label": "Control / S2 delivery"
+      },
+      {
+        "id": "talker",
+        "label": "Talker + codec · GPU 1"
+      }
+    ],
+    "events": [
+      {
+        "id": "thinker-initial",
+        "lane": "thinker",
+        "kind": "request",
+        "label": "S1 audio-conditioned turn",
+        "start": 6.002001464366913e-05,
+        "end": 15.43144995905459,
+        "details": {
+          "asr": "What are you working on? ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        }
+      },
+      {
+        "id": "service-check",
+        "lane": "control",
+        "kind": "service_check",
+        "label": "S2 arithmetic service check",
+        "start": 17.18425303325057,
+        "end": 24.456587543711066,
+        "details": {
+          "note": "Separate sanity check before the audio-context S2 request."
+        }
+      },
+      {
+        "id": "s1-wait-absence",
+        "lane": "thinker",
+        "kind": "absence",
+        "label": "No new S1 request / speech text",
+        "start": 24.46286435984075,
+        "end": 38.63459009118378,
+        "details": {
+          "tts": "",
+          "asr": "What are you working on? ",
+          "new_s1_requests": 0,
+          "note": "S1 was not called during S2 reasoning. No filler text was generated."
+        }
+      },
+      {
+        "id": "system2_audio_context",
+        "lane": "system2",
+        "kind": "request",
+        "label": "S2 audio-derived context",
+        "start": 24.46286435984075,
+        "end": 38.63459009118378,
+        "details": {
+          "allocation_gpu": 1,
+          "reasoning_characters": 3016,
+          "final_text": "\n\n【I don't have personal projects—I'm here to help with your questions.】"
+        }
+      },
+      {
+        "id": "talker-foreground_response.wav",
+        "lane": "talker",
+        "kind": "request",
+        "label": "Talker · earlier empty-tts payload",
+        "start": 24.46474206633866,
+        "end": 28.557785095646977,
+        "details": {
+          "allocation_gpu": 1,
+          "output_seconds": 0.456875,
+          "source_tts": "",
+          "speech_expected": false,
+          "note": "Earlier payload decoded during S2 wait; no verified transcript for the waveform."
+        }
+      },
+      {
+        "id": "event-384",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 24.50954337604344,
+        "end": 24.50954337604344,
+        "details": {
+          "characters": 4,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-409",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 24.958812465891242,
+        "end": 24.958812465891242,
+        "details": {
+          "characters": 92,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-436",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 25.44969216734171,
+        "end": 25.44969216734171,
+        "details": {
+          "characters": 221,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-464",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 25.95537288673222,
+        "end": 25.95537288673222,
+        "details": {
+          "characters": 366,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-492",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 26.45820732973516,
+        "end": 26.45820732973516,
+        "details": {
+          "characters": 504,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-519",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 26.949884930625558,
+        "end": 26.949884930625558,
+        "details": {
+          "characters": 637,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-547",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 27.4594183024019,
+        "end": 27.4594183024019,
+        "details": {
+          "characters": 766,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-574",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 27.957149423658848,
+        "end": 27.957149423658848,
+        "details": {
+          "characters": 872,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-601",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 28.454368399456143,
+        "end": 28.454368399456143,
+        "details": {
+          "characters": 958,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-631",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 28.958760337904096,
+        "end": 28.958760337904096,
+        "details": {
+          "characters": 1089,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-659",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 29.457709211856127,
+        "end": 29.457709211856127,
+        "details": {
+          "characters": 1214,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-687",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 29.958975479006767,
+        "end": 29.958975479006767,
+        "details": {
+          "characters": 1321,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-715",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 30.46035574749112,
+        "end": 30.46035574749112,
+        "details": {
+          "characters": 1441,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-742",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 30.9519469011575,
+        "end": 30.9519469011575,
+        "details": {
+          "characters": 1542,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-771",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 31.452609699219465,
+        "end": 31.452609699219465,
+        "details": {
+          "characters": 1645,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-801",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 31.959507830440998,
+        "end": 31.959507830440998,
+        "details": {
+          "characters": 1764,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-830",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 32.44659588299692,
+        "end": 32.44659588299692,
+        "details": {
+          "characters": 1878,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-859",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 32.948904514312744,
+        "end": 32.948904514312744,
+        "details": {
+          "characters": 1984,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-886",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 33.44597034342587,
+        "end": 33.44597034342587,
+        "details": {
+          "characters": 2118,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-914",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 33.95568015426397,
+        "end": 33.95568015426397,
+        "details": {
+          "characters": 2265,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-942",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 34.45990909077227,
+        "end": 34.45990909077227,
+        "details": {
+          "characters": 2374,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-969",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 34.94545918889344,
+        "end": 34.94545918889344,
+        "details": {
+          "characters": 2433,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-997",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 35.44964953511953,
+        "end": 35.44964953511953,
+        "details": {
+          "characters": 2494,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1025",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 35.95471421442926,
+        "end": 35.95471421442926,
+        "details": {
+          "characters": 2602,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1053",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 36.45870275050402,
+        "end": 36.45870275050402,
+        "details": {
+          "characters": 2669,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1081",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 36.961141934618354,
+        "end": 36.961141934618354,
+        "details": {
+          "characters": 2717,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1108",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 37.4453924074769,
+        "end": 37.4453924074769,
+        "details": {
+          "characters": 2822,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1136",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 37.94959105551243,
+        "end": 37.94959105551243,
+        "details": {
+          "characters": 2934,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1154",
+        "lane": "reasoning",
+        "kind": "reasoning_progress",
+        "label": "Reasoning delta received",
+        "start": 38.274464186280966,
+        "end": 38.274464186280966,
+        "details": {
+          "characters": 3016,
+          "request": "system2_audio_context"
+        }
+      },
+      {
+        "id": "event-1155",
+        "lane": "system2",
+        "kind": "final_delta",
+        "label": "Final text delta received",
+        "start": 38.31053931079805,
+        "end": 38.31053931079805,
+        "details": {
+          "request": "system2_audio_context",
+          "text": "\n\n"
+        }
+      },
+      {
+        "id": "event-1172",
+        "lane": "system2",
+        "kind": "final_delta",
+        "label": "Final text delta received",
+        "start": 38.616050282493234,
+        "end": 38.616050282493234,
+        "details": {
+          "request": "system2_audio_context",
+          "text": "\n\n【I don't have personal projects—I'm here to help with your questions.】"
+        }
+      },
+      {
+        "id": "event-1173",
+        "lane": "control",
+        "kind": "command_ready",
+        "label": "S2 final command queued",
+        "start": 38.616076931357384,
+        "end": 38.616076931357384,
+        "details": {
+          "request": "system2_audio_context",
+          "command": "【I don't have personal projects—I'm here to help with your questions.】"
+        }
+      },
+      {
+        "id": "event-1175",
+        "lane": "control",
+        "kind": "command_forwarded",
+        "label": "S2 final command forwarded to S1",
+        "start": 38.639590034261346,
+        "end": 38.639590034261346,
+        "details": {
+          "command": "【I don't have personal projects—I'm here to help with your questions.】"
+        }
+      },
+      {
+        "id": "thinker-feedback",
+        "lane": "thinker",
+        "kind": "request",
+        "label": "S1 feedback turn",
+        "start": 38.65532704629004,
+        "end": 40.99367604777217,
+        "details": {
+          "from_s2": "【I don't have personal projects—I'm here to help with your questions.】",
+          "asr": "",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": "",
+          "note": "Only one 480 ms feedback turn was tested in this run."
+        }
+      }
+    ],
+    "metadata": {
+      "job_id": "1815810",
+      "gpus": 2,
+      "gpu_type": "2 × A100 80 GB",
+      "layout": "GPU 0: S1 Thinker; GPU 1: Talker/MTP/Code2Wav + Qwen3-4B S2, sharing via MPS",
+      "clock": "Measured client seconds after the whole user recording was submitted; startup excluded",
+      "source_time_offset_seconds": 700.8784361816943,
+      "delegation": "Forced for a functional smoke test",
+      "status": "S2 final reply delivered; single feedback chunk was incomplete"
+    },
+    "limitations": [
+      "Recorded phase A and continuation phase B are separate jobs; they do not share one wall clock.",
+      "No new S1 Thinker call occurred during the 14.172 s S2 wait; its earlier tts was empty.",
+      "Talker returned a waveform from the earlier payload, but its spoken content was not verified.",
+      "Only selected request events and sampled received reasoning counts are shown; no private reasoning text or audio is published.",
+      "Client request overlap is not a GPU kernel-concurrency measurement."
+    ]
+  },
+  "waiting": {
+    "s1_asr": "What are you working on?",
+    "s1_tts": "",
+    "new_s1_requests_during_s2": 0,
+    "s2_seconds": 14.171733072027564,
+    "s2_reasoning_characters": 3016,
+    "request_overlap_seconds": 4.09304334782064,
+    "s2_answer": "I don't have personal projects—I'm here to help with your questions."
+  },
+  "continuation": {
+    "job_id": "1816006",
+    "gpus": 1,
+    "gpu_type": "A100 80 GB",
+    "layout": "GPU 0: S1 Thinker only; saved S2 reply replayed; no Talker or live S2 model",
+    "clock": "480 ms input-audio chunks after S2 feedback, not request wall time or speech timing",
+    "chunk_seconds": 0.48,
+    "steps_per_case": 24,
+    "cases": [
+      {
+        "id": "original_continuation",
+        "counterfactual": false,
+        "command": "I don't have personal projects—I'm here to help with your questions.",
+        "tts_joined": "I see.  I don't have personal projects—I'm here to help with your questions. What budget are you asking about?",
+        "turns": [
+          {
+            "chunk": 0,
+            "audio_end_seconds": 0.48,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 3.0905471201986074
+          },
+          {
+            "chunk": 1,
+            "audio_end_seconds": 0.96,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.5566276051104069
+          },
+          {
+            "chunk": 2,
+            "audio_end_seconds": 1.44,
+            "tts": "",
+            "asr": "Um, what budget? How much money ",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.5840714629739523
+          },
+          {
+            "chunk": 3,
+            "audio_end_seconds": 1.92,
+            "tts": "I see.  ",
+            "asr": "",
+            "role": "prefix",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 2.635939696803689
+          },
+          {
+            "chunk": 4,
+            "audio_end_seconds": 2.4,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1158044841140509
+          },
+          {
+            "chunk": 5,
+            "audio_end_seconds": 2.88,
+            "tts": "I ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.19756100140512
+          },
+          {
+            "chunk": 6,
+            "audio_end_seconds": 3.36,
+            "tts": "don't have personal ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.352871336042881
+          },
+          {
+            "chunk": 7,
+            "audio_end_seconds": 3.84,
+            "tts": "projects—",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2983326688408852
+          },
+          {
+            "chunk": 8,
+            "audio_end_seconds": 4.32,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1443345062434673
+          },
+          {
+            "chunk": 9,
+            "audio_end_seconds": 4.8,
+            "tts": "I'm here ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3509932309389114
+          },
+          {
+            "chunk": 10,
+            "audio_end_seconds": 5.279999999999999,
+            "tts": "to help ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2993758916854858
+          },
+          {
+            "chunk": 11,
+            "audio_end_seconds": 5.76,
+            "tts": "with your questions. ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3938609194010496
+          },
+          {
+            "chunk": 12,
+            "audio_end_seconds": 6.24,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1642421893775463
+          },
+          {
+            "chunk": 13,
+            "audio_end_seconds": 6.72,
+            "tts": "What ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2646153718233109
+          },
+          {
+            "chunk": 14,
+            "audio_end_seconds": 7.199999999999999,
+            "tts": "budget ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2703497894108295
+          },
+          {
+            "chunk": 15,
+            "audio_end_seconds": 7.68,
+            "tts": "are you ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3119029123336077
+          },
+          {
+            "chunk": 16,
+            "audio_end_seconds": 8.16,
+            "tts": "asking ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2361810524016619
+          },
+          {
+            "chunk": 17,
+            "audio_end_seconds": 8.64,
+            "tts": "about?",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2378313038498163
+          },
+          {
+            "chunk": 18,
+            "audio_end_seconds": 9.12,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1450894866138697
+          },
+          {
+            "chunk": 19,
+            "audio_end_seconds": 9.6,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1397430151700974
+          },
+          {
+            "chunk": 20,
+            "audio_end_seconds": 10.08,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1381913423538208
+          },
+          {
+            "chunk": 21,
+            "audio_end_seconds": 10.559999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1729528289288282
+          },
+          {
+            "chunk": 22,
+            "audio_end_seconds": 11.04,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1556798331439495
+          },
+          {
+            "chunk": 23,
+            "audio_end_seconds": 11.52,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1293200869113207
+          }
+        ]
+      },
+      {
+        "id": "prior_THINK_bracketed",
+        "counterfactual": true,
+        "command": "I don't have personal projects—I'm here to help with your questions.",
+        "tts_joined": "I don't have personal projects—I'm here to help with your questions. What budget are you asking about?",
+        "turns": [
+          {
+            "chunk": 0,
+            "audio_end_seconds": 0.48,
+            "tts": "I ",
+            "asr": "Um, what budget? How much money ",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.690784802660346
+          },
+          {
+            "chunk": 1,
+            "audio_end_seconds": 0.96,
+            "tts": "don't have ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3269000016152859
+          },
+          {
+            "chunk": 2,
+            "audio_end_seconds": 1.44,
+            "tts": "personal ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.280826572328806
+          },
+          {
+            "chunk": 3,
+            "audio_end_seconds": 1.92,
+            "tts": "projects—",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2748197373002768
+          },
+          {
+            "chunk": 4,
+            "audio_end_seconds": 2.4,
+            "tts": "I'm here ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2982452493160963
+          },
+          {
+            "chunk": 5,
+            "audio_end_seconds": 2.88,
+            "tts": "to help ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2691630851477385
+          },
+          {
+            "chunk": 6,
+            "audio_end_seconds": 3.36,
+            "tts": "with your ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2908351998776197
+          },
+          {
+            "chunk": 7,
+            "audio_end_seconds": 3.84,
+            "tts": "questions. ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2552831079810858
+          },
+          {
+            "chunk": 8,
+            "audio_end_seconds": 4.32,
+            "tts": "What ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2050751205533743
+          },
+          {
+            "chunk": 9,
+            "audio_end_seconds": 4.8,
+            "tts": "budget ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.213567353785038
+          },
+          {
+            "chunk": 10,
+            "audio_end_seconds": 5.279999999999999,
+            "tts": "are you ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2523065023124218
+          },
+          {
+            "chunk": 11,
+            "audio_end_seconds": 5.76,
+            "tts": "asking ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2133736312389374
+          },
+          {
+            "chunk": 12,
+            "audio_end_seconds": 6.24,
+            "tts": "about?",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2052197512239218
+          },
+          {
+            "chunk": 13,
+            "audio_end_seconds": 6.72,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1175185572355986
+          },
+          {
+            "chunk": 14,
+            "audio_end_seconds": 7.199999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1336296200752258
+          },
+          {
+            "chunk": 15,
+            "audio_end_seconds": 7.68,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.14115128852427
+          },
+          {
+            "chunk": 16,
+            "audio_end_seconds": 8.16,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1619563046842813
+          },
+          {
+            "chunk": 17,
+            "audio_end_seconds": 8.64,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.155541593208909
+          },
+          {
+            "chunk": 18,
+            "audio_end_seconds": 9.12,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1680323462933302
+          },
+          {
+            "chunk": 19,
+            "audio_end_seconds": 9.6,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1238340437412262
+          },
+          {
+            "chunk": 20,
+            "audio_end_seconds": 10.08,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1755924746394157
+          },
+          {
+            "chunk": 21,
+            "audio_end_seconds": 10.559999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1339146792888641
+          },
+          {
+            "chunk": 22,
+            "audio_end_seconds": 11.04,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1539527922868729
+          },
+          {
+            "chunk": 23,
+            "audio_end_seconds": 11.52,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1464984118938446
+          }
+        ]
+      },
+      {
+        "id": "prior_THINK_plaintext",
+        "counterfactual": true,
+        "command": "I don't have personal projects—I'm here to help with your questions.",
+        "tts_joined": "I don't have personal projects—I'm here to help with your questions. What can I do for you?",
+        "turns": [
+          {
+            "chunk": 0,
+            "audio_end_seconds": 0.48,
+            "tts": "I don't ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2936002761125565
+          },
+          {
+            "chunk": 1,
+            "audio_end_seconds": 0.96,
+            "tts": "have personal ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.264432093128562
+          },
+          {
+            "chunk": 2,
+            "audio_end_seconds": 1.44,
+            "tts": "projects—",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3023834396153688
+          },
+          {
+            "chunk": 3,
+            "audio_end_seconds": 1.92,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.156333526596427
+          },
+          {
+            "chunk": 4,
+            "audio_end_seconds": 2.4,
+            "tts": "I'm here ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3091258145868778
+          },
+          {
+            "chunk": 5,
+            "audio_end_seconds": 2.88,
+            "tts": "to help ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2527217213064432
+          },
+          {
+            "chunk": 6,
+            "audio_end_seconds": 3.36,
+            "tts": "with your questions. ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3433199431747198
+          },
+          {
+            "chunk": 7,
+            "audio_end_seconds": 3.84,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1197364162653685
+          },
+          {
+            "chunk": 8,
+            "audio_end_seconds": 4.32,
+            "tts": "What ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.204747051000595
+          },
+          {
+            "chunk": 9,
+            "audio_end_seconds": 4.8,
+            "tts": "can I do ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3067355807870626
+          },
+          {
+            "chunk": 10,
+            "audio_end_seconds": 5.279999999999999,
+            "tts": "for you?",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.253315083682537
+          },
+          {
+            "chunk": 11,
+            "audio_end_seconds": 5.76,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1236625518649817
+          },
+          {
+            "chunk": 12,
+            "audio_end_seconds": 6.24,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1251261979341507
+          },
+          {
+            "chunk": 13,
+            "audio_end_seconds": 6.72,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1210339777171612
+          },
+          {
+            "chunk": 14,
+            "audio_end_seconds": 7.199999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1164579670876265
+          },
+          {
+            "chunk": 15,
+            "audio_end_seconds": 7.68,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1402630358934402
+          },
+          {
+            "chunk": 16,
+            "audio_end_seconds": 8.16,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1707049645483494
+          },
+          {
+            "chunk": 17,
+            "audio_end_seconds": 8.64,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1255355272442102
+          },
+          {
+            "chunk": 18,
+            "audio_end_seconds": 9.12,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1308914422988892
+          },
+          {
+            "chunk": 19,
+            "audio_end_seconds": 9.6,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1329934485256672
+          },
+          {
+            "chunk": 20,
+            "audio_end_seconds": 10.08,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1247507967054844
+          },
+          {
+            "chunk": 21,
+            "audio_end_seconds": 10.559999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1391373630613089
+          },
+          {
+            "chunk": 22,
+            "audio_end_seconds": 11.04,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1326713468879461
+          },
+          {
+            "chunk": 23,
+            "audio_end_seconds": 11.52,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.140475157648325
+          }
+        ]
+      },
+      {
+        "id": "prior_THINK_plaintext_contrast",
+        "counterfactual": true,
+        "command": "I'm working on an audio-only speech assistant project.",
+        "tts_joined": "I'm working on an audio-only speech assistant project. What budget are you thinking?",
+        "turns": [
+          {
+            "chunk": 0,
+            "audio_end_seconds": 0.48,
+            "tts": "I'm working ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "[THINK]",
+            "request_seconds": 1.4617253206670284
+          },
+          {
+            "chunk": 1,
+            "audio_end_seconds": 0.96,
+            "tts": "on an ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2499403562396765
+          },
+          {
+            "chunk": 2,
+            "audio_end_seconds": 1.44,
+            "tts": "audio-",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2344347350299358
+          },
+          {
+            "chunk": 3,
+            "audio_end_seconds": 1.92,
+            "tts": "only speech ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2755850590765476
+          },
+          {
+            "chunk": 4,
+            "audio_end_seconds": 2.4,
+            "tts": "assistant ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2276644371449947
+          },
+          {
+            "chunk": 5,
+            "audio_end_seconds": 2.88,
+            "tts": "project. ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2679595928639174
+          },
+          {
+            "chunk": 6,
+            "audio_end_seconds": 3.36,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1213843878358603
+          },
+          {
+            "chunk": 7,
+            "audio_end_seconds": 3.84,
+            "tts": "What ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2362593989819288
+          },
+          {
+            "chunk": 8,
+            "audio_end_seconds": 4.32,
+            "tts": "budget ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2333467714488506
+          },
+          {
+            "chunk": 9,
+            "audio_end_seconds": 4.8,
+            "tts": "are you ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.297556396573782
+          },
+          {
+            "chunk": 10,
+            "audio_end_seconds": 5.279999999999999,
+            "tts": "thinking?",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.25058582611382
+          },
+          {
+            "chunk": 11,
+            "audio_end_seconds": 5.76,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1682072188705206
+          },
+          {
+            "chunk": 12,
+            "audio_end_seconds": 6.24,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1637516748160124
+          },
+          {
+            "chunk": 13,
+            "audio_end_seconds": 6.72,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.160775700584054
+          },
+          {
+            "chunk": 14,
+            "audio_end_seconds": 7.199999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1730302721261978
+          },
+          {
+            "chunk": 15,
+            "audio_end_seconds": 7.68,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.151549443602562
+          },
+          {
+            "chunk": 16,
+            "audio_end_seconds": 8.16,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1705657225102186
+          },
+          {
+            "chunk": 17,
+            "audio_end_seconds": 8.64,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1657604593783617
+          },
+          {
+            "chunk": 18,
+            "audio_end_seconds": 9.12,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1648324597626925
+          },
+          {
+            "chunk": 19,
+            "audio_end_seconds": 9.6,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1685495264828205
+          },
+          {
+            "chunk": 20,
+            "audio_end_seconds": 10.08,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.13176354393363
+          },
+          {
+            "chunk": 21,
+            "audio_end_seconds": 10.559999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1668263152241707
+          },
+          {
+            "chunk": 22,
+            "audio_end_seconds": 11.04,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1285699754953384
+          },
+          {
+            "chunk": 23,
+            "audio_end_seconds": 11.52,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1379773076623678
+          }
+        ]
+      },
+      {
+        "id": "native_prompt_prior_THINK_plaintext",
+        "counterfactual": true,
+        "command": "I don't have personal projects—I'm here to help with your questions.",
+        "tts_joined": "I don't have personal projects—I'm here to help with your questions. What can I do for you?",
+        "turns": [
+          {
+            "chunk": 0,
+            "audio_end_seconds": 0.48,
+            "tts": "I ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.238026712089777
+          },
+          {
+            "chunk": 1,
+            "audio_end_seconds": 0.96,
+            "tts": "don't have personal ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3611373584717512
+          },
+          {
+            "chunk": 2,
+            "audio_end_seconds": 1.44,
+            "tts": "projects—",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.291145360097289
+          },
+          {
+            "chunk": 3,
+            "audio_end_seconds": 1.92,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1680159457027912
+          },
+          {
+            "chunk": 4,
+            "audio_end_seconds": 2.4,
+            "tts": "I'm here ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.349047476425767
+          },
+          {
+            "chunk": 5,
+            "audio_end_seconds": 2.88,
+            "tts": "to help ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.301573196426034
+          },
+          {
+            "chunk": 6,
+            "audio_end_seconds": 3.36,
+            "tts": "with your questions. ",
+            "asr": "",
+            "role": "answer",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.37930541113019
+          },
+          {
+            "chunk": 7,
+            "audio_end_seconds": 3.84,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1711450051516294
+          },
+          {
+            "chunk": 8,
+            "audio_end_seconds": 4.32,
+            "tts": "What ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2356031406670809
+          },
+          {
+            "chunk": 9,
+            "audio_end_seconds": 4.8,
+            "tts": "can I do ",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.3182759992778301
+          },
+          {
+            "chunk": 10,
+            "audio_end_seconds": 5.279999999999999,
+            "tts": "for you?",
+            "asr": "",
+            "role": "followup",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.2862123176455498
+          },
+          {
+            "chunk": 11,
+            "audio_end_seconds": 5.76,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.161630392074585
+          },
+          {
+            "chunk": 12,
+            "audio_end_seconds": 6.24,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1577506121248007
+          },
+          {
+            "chunk": 13,
+            "audio_end_seconds": 6.72,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1597270052880049
+          },
+          {
+            "chunk": 14,
+            "audio_end_seconds": 7.199999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.14555854909122
+          },
+          {
+            "chunk": 15,
+            "audio_end_seconds": 7.68,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.150980643928051
+          },
+          {
+            "chunk": 16,
+            "audio_end_seconds": 8.16,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1593416649848223
+          },
+          {
+            "chunk": 17,
+            "audio_end_seconds": 8.64,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1795401833951473
+          },
+          {
+            "chunk": 18,
+            "audio_end_seconds": 9.12,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1845219992101192
+          },
+          {
+            "chunk": 19,
+            "audio_end_seconds": 9.6,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1828985437750816
+          },
+          {
+            "chunk": 20,
+            "audio_end_seconds": 10.08,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1825835928320885
+          },
+          {
+            "chunk": 21,
+            "audio_end_seconds": 10.559999999999999,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1622134242206812
+          },
+          {
+            "chunk": 22,
+            "audio_end_seconds": 11.04,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.179303117096424
+          },
+          {
+            "chunk": 23,
+            "audio_end_seconds": 11.52,
+            "tts": "",
+            "asr": "",
+            "role": "empty",
+            "tts_control": "",
+            "system2_control": "",
+            "request_seconds": 1.1900034733116627
+          }
+        ]
+      }
+    ],
+    "audio_generated": false
+  },
+  "source_hashes": {
+    "audio_turn_system2_1815810/trajectory.json": "14ecea9000657ae9883d44d977c441e0d0859dca34316ccf838d98699479fbf7",
+    "audio_turn_system2_1815810/initial_s1.json": "9fa090869a2f25a877fea041fbee55d24fd72690f89804af66c6329338b80a87",
+    "audio_turn_system2_1815810/system2_summary.json": "0c1d63eb10a0b59ccda7ba07f09c8a54d3cee241f9c38cd3374676ad702d037f",
+    "s1_text_1816006/summary.json": "3a7a59816636746ed231daa8ed38fc2e7ce64c6ffbe37c5dcc4f3172c8d08c6f"
+  }
+}

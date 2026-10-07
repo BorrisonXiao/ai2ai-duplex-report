@@ -23,7 +23,8 @@ file with no remote audio dependencies. Local files are read in the browser.
 ## Event clock
 
 `start` and `end` are finite, nonnegative seconds since one shared monotonic
-driver origin. A zero-length event is a received observation. Request intervals
+origin named in `metadata.clock` (driver start by default; the reviewed example
+rebases to whole-input submission). A zero-length event is a received observation. Request intervals
 end when their client receives a response. Missing request endings are
 `incomplete`; their displayed end is the last captured event, not a measured
 completion. Threaded foreground synthesis and asynchronous S2 use the same clock.
@@ -63,3 +64,20 @@ not copy local absolute paths, GPU UUIDs or configuration secrets into the
 portable trace. It imposes a 25 MB clip limit; browser imports have a 100 MB
 file limit. Published demo tones are generated deterministically by
 `site/scripts/build_trajectory.py`; they contain no dataset or private speech.
+
+
+## Recorded example update (6 October 2026)
+
+The hosted example uses `research/trajectory-example.json`, a reviewed
+`duplex-html-example/v1` manifest. Its `waiting_trace` retains the v1 trace
+shape with client timestamps rebased to whole-input submission. An event
+kind `absence` annotates a period with no S1 request, verified against the
+request inventory; it is not an active request or measured generation.
+The `reasoning` lane plots received character counts sampled at half-second
+bins. No internal reasoning or audio is published.
+
+The separate `continuation` payload has cases and per-turn generated tts,
+asr/control fields, 480 ms input-audio progress and measured request-plus-RPC
+durations. Its chunk axis is not a wall clock or acoustic alignment. There
+is no fabricated time bridge between the two jobs. S1 transcription and
+speech text are displayed separately, including empty tts fields.

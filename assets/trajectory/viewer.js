@@ -3,6 +3,7 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const demo = JSON.parse($('demo-trace').textContent);
+  const example = JSON.parse($('recorded-example').textContent);
   const svgNS = 'http://www.w3.org/2000/svg';
   const player = $('clip-player');
   let trace, events = [], visible = [], media = [], selected = null, clip = null;
@@ -60,6 +61,9 @@
     media = trace.media;
     $('run-title').textContent = trace.title || 'Imported trajectory';
     $('run-metadata').textContent = JSON.stringify(trace.metadata || {}, null, 2);
+    $('clock-note').textContent = trace.metadata?.clock || 'Client seconds since driver start; see trace metadata.';
+    $('warmup').disabled = !trace.lanes.some(lane => lane.id === 'startup');
+    if ($('warmup').disabled) $('warmup').checked = false;
     const labels = {illustrative: 'Illustrative demo', measured: 'Measured client events', summary_only: 'Summary only · no aligned event timing'};
     const descriptions = {
       illustrative: 'Invented timings and synthetic tones demonstrate the viewer. These are not local inference measurements.',
@@ -120,7 +124,7 @@
     root.setAttribute('width', width); root.setAttribute('height', height);
     clear(root);
     svg('title', {id: 'svg-title'}, root, 'Time-aligned layer events');
-    svg('desc', {id: 'svg-description'}, root, 'Requests and received observations, followed by optional browser audition schedules.');
+    svg('desc', {id: 'svg-description'}, root, 'Requests and received observations, an annotated S1 idle interval, and optional browser audition schedules.');
     const defs = svg('defs', {}, root);
     const pattern = svg('pattern', {id: 'hatch', width: 8, height: 8, patternUnits: 'userSpaceOnUse'}, defs);
     svg('path', {d: 'M-2 2L2 -2M0 8L8 0M6 10L10 6', stroke: 'var(--blue)', 'stroke-width': 1, opacity: 0.5}, pattern);
@@ -133,17 +137,25 @@
       const y = 54 + index * 60;
       svg('text', {x: 12, y: y + 10, class: 'lane-label'}, root, lane.label);
       svg('line', {x1: 0, x2: width, y1: y + 34, y2: y + 34, class: 'axis'}, root);
+      const progress = visible.filter(e => e.lane === lane.id && e.kind === 'reasoning_progress');
+      const maxChars = Math.max(1, ...progress.map(e => e.details?.characters || 0));
+      const progressY = e => y + 20 - (e.details?.characters || 0) / maxChars * 32;
+      if (lane.id === 'reasoning' && progress.length) {
+        svg('text', {x: 12, y: y + 26, class: 'progress-scale'}, root, `0 → ${maxChars.toLocaleString()} characters`);
+        svg('polyline', {points: progress.map(e => `${x(e.start)},${progressY(e)}`).join(' '),
+          fill: 'none', stroke: 'var(--blue)', 'stroke-width': 2}, root);
+      }
       for (const event of visible.filter(e => e.lane === lane.id)) {
         const group = svg('g', {'data-event': event.id}, root);
         if (event.end > event.start) {
-          const cls = event.kind === 'incomplete' ? 'incomplete' : lane.id === 'system2' ? 'request s2' : 'request';
+          const cls = event.kind === 'absence' ? 'absence' : event.kind === 'service_check' ? 'service-check' : event.kind === 'incomplete' ? 'incomplete' : lane.id === 'system2' ? 'request s2' : 'request';
           svg('rect', {x: x(event.start), y: y - 9, width: Math.max(3, x(event.end) - x(event.start)), height: 27, rx: 5, class: cls + (event.id === selected ? ' selected' : '')}, group);
           const room = x(event.end) - x(event.start);
           if (room > 85) svg('text', {x: x(event.start) + 7, y: y + 9}, group, event.label.slice(0, Math.floor((room - 14) / 7)));
           actionable(group, event);
         } else {
           const jitter = event.kind === 'reasoning_progress' ? -5 : event.kind === 'final_delta' ? 7 : 0;
-          svg('circle', {cx: x(event.start), cy: y + jitter, r: 5, class: 'dot' + (lane.id === 'system2' ? ' reason-dot' : '') + (event.id === selected ? ' selected' : '')}, group);
+          svg('circle', {cx: x(event.start), cy: lane.id === 'reasoning' ? progressY(event) : y + jitter, r: 5, class: 'dot' + (lane.id === 'system2' || lane.id === 'reasoning' ? ' reason-dot' : '') + (event.id === selected ? ' selected' : '')}, group);
           actionable(group, event);
         }
       }
@@ -165,20 +177,31 @@
     if (typeof text !== 'string') text = JSON.stringify(text);
     return text;
   }
+  function s1Fields(details) {
+    if (typeof details.tts === 'string' || typeof details.asr === 'string') return details;
+    const raw = details.response?.choices?.[0]?.message?.content;
+    if (typeof raw === 'string') {
+      try { return JSON.parse(raw); } catch (_) { return null; }
+    }
+    return null;
+  }
   function setCursor(value) {
     cursor = Math.min(maximum, Math.max(minimum, value));
-    $('scrub').value = cursor; $('time-label').textContent = `${fmt(cursor)} s since driver start`;
+    $('scrub').value = cursor; $('time-label').textContent = `${fmt(cursor)} s · selected trace clock`;
     const line = $('cursor-line');
     if (line) { line.setAttribute('x1', x(cursor)); line.setAttribute('x2', x(cursor)); }
-    const active = visible.filter(e => e.kind !== 'audition' && e.end > e.start && e.start <= cursor && e.end > cursor);
+    const active = visible.filter(e => ['request', 'incomplete', 'service_check'].includes(e.kind) && e.end > e.start && e.start <= cursor && e.end > cursor);
     $('active-layers').textContent = active.length ? `In progress: ${active.map(e => e.label).join(' · ')}` : 'No active requests at this cursor.';
     const received = events.filter(e => e.end <= cursor);
-    const s1 = received.filter(e => e.lane === 'thinker' && messageText(e.details || {})).at(-1);
-    $('s1-text').textContent = s1 ? messageText(s1.details || {}) : 'Not received yet.';
+    const s1 = received.filter(e => e.lane === 'thinker' && e.kind !== 'absence' && (s1Fields(e.details || {}) || messageText(e.details || {}))).at(-1);
+    const fields = s1 ? s1Fields(s1.details || {}) : null;
+    $('s1-asr').textContent = fields ? fields.asr?.trim() || 'Empty asr field.' : s1 ? 'Structured transcription unavailable; inspect the raw response.' : 'Not received yet.';
+    $('s1-text').textContent = fields ? fields.tts?.trim() || 'Empty tts field — no speech text returned.' : s1 ? 'Structured speech text unavailable; inspect the raw response.' : 'Not received yet.';
     const progress = received.filter(e => e.kind === 'reasoning_progress');
     const counts = new Map();
     for (const e of progress) counts.set(e.details?.request || 'S2', e.details?.characters || 0);
-    $('reasoning-progress').textContent = counts.size ? [...counts].map(([id, count]) => `${id}: ${count} received characters`).join(' · ') : 'No received reasoning deltas.';
+    const requestNames = new Map(events.map(e => [e.id, e.label]));
+    $('reasoning-progress').textContent = counts.size ? [...counts].map(([id, count]) => `${requestNames.get(id) || id}: ${count} received characters`).join(' · ') : 'No received reasoning deltas.';
     const final = received.filter(e => e.kind === 'final_delta').at(-1);
     $('s2-text').textContent = final ? final.details?.text || final.details?.delta || '' : 'Not received yet.';
     const control = received.filter(e => e.lane === 'control').at(-1);
@@ -195,7 +218,7 @@
   }
   function renderStats() {
     clear($('stats'));
-    const requests = events.filter(e => e.kind === 'request');
+    const requests = events.filter(e => ['request', 'service_check'].includes(e.kind));
     const reasonChars = Math.max(0, ...events.filter(e => e.kind === 'reasoning_progress').map(e => e.details?.characters || 0));
     for (const [number, label] of [[String(events.length), 'Captured events'], [String(requests.length), 'Completed request spans'], [fmt(maximum - minimum) + ' s', 'Visible replay window'], [String(reasonChars), 'Largest S2 character count']]) {
       const box = document.createElement('div'); box.className = 'stat';
@@ -258,6 +281,7 @@
   player.addEventListener('timeupdate', () => { if (!player.paused && clip?.anchor != null) setCursor(clip.anchor + player.currentTime); });
   player.addEventListener('seeking', () => { if (clip?.anchor != null) { pause(); setCursor(clip.anchor + player.currentTime); } });
   $('load-demo').addEventListener('click', () => load(demo, 'Hosted demo'));
+  $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded S2 wait · 1815810'));
   async function readFile(file) {
     if (!file) return;
     try {
@@ -272,5 +296,62 @@
   zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('dragging'); readFile(e.dataTransfer.files[0]); });
   let resizeTimer;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => renderTimeline(), 120); });
-  load(demo, 'Hosted demo'); requestAnimationFrame(animate);
+  // Phase B is a separate run. Its cursor is an input-chunk index, never a
+  // fabricated continuation of phase A's measured request clock.
+  const caseLabels = {
+    original_continuation: 'Original history · no added THINK',
+    prior_THINK_bracketed: 'Added THINK · bracketed S2 text',
+    prior_THINK_plaintext: 'Added THINK · plain S2 text',
+    prior_THINK_plaintext_contrast: 'Changed S2 answer · diagnostic control',
+    native_prompt_prior_THINK_plaintext: 'Native prompt · added THINK · plain S2 text'
+  };
+  let replyCase = example.continuation.cases[0], chunkIndex = 23, chunkTimer = null;
+  function stopChunks() { clearInterval(chunkTimer); chunkTimer = null; $('chunk-play').textContent = 'Replay text chunks'; }
+  function renderChunk(index) {
+    chunkIndex = Math.max(0, Math.min(replyCase.turns.length - 1, Number(index)));
+    const turn = replyCase.turns[chunkIndex];
+    const joined = replyCase.turns.slice(0, chunkIndex + 1).map(t => t.tts).join('');
+    $('chunk-cursor').value = chunkIndex;
+    $('chunk-label').textContent = `#${chunkIndex} · ${turn.audio_end_seconds.toFixed(2)} s input`;
+    $('chunk-fragment').textContent = turn.tts.trim() || 'Empty tts field.';
+    $('chunk-transcript').textContent = joined.trim() || 'No generated speech text yet.';
+    $('chunk-detail').textContent = `Chunk ${chunkIndex} · ${turn.request_seconds.toFixed(3)} s request + tensor RPC (measured separately from input duration).`;
+    $('chunk-fields').textContent = JSON.stringify({asr: turn.asr, tts: turn.tts, tts_control: turn.tts_control, system2_control: turn.system2_control}, null, 2);
+    $('answer-status').textContent = joined.includes(replyCase.command) ? 'The complete supplied S2 answer is present in S1’s generated text.' : 'The supplied answer is not complete at this chunk.';
+    for (const node of $('chunk-grid').children) {
+      const active = Number(node.dataset.chunk) === chunkIndex;
+      node.classList.toggle('selected', active); node.setAttribute('aria-pressed', String(active));
+    }
+  }
+  function loadCase(id) {
+    stopChunks(); replyCase = example.continuation.cases.find(c => c.id === id);
+    $('reply-command').textContent = replyCase.command;
+    $('case-note').textContent = replyCase.counterfactual ? 'Diagnostic intervention: assistant control state, system prompt or supplied S2 text was edited. This does not demonstrate automatic delegation.' : 'Captured original history and S2 command. S1 did not issue THINK; delegation was forced in the source functional test.';
+    clear($('chunk-grid'));
+    for (const turn of replyCase.turns) {
+      const button = document.createElement('button'); button.type = 'button';
+      button.className = 'chunk ' + turn.role; button.dataset.chunk = turn.chunk;
+      button.setAttribute('aria-label', `Chunk ${turn.chunk}, ${turn.audio_end_seconds.toFixed(2)} seconds of input, ${turn.tts.trim() || 'empty tts'}`);
+      const label = document.createElement('span'); label.className = 'chunk-time'; label.textContent = `#${turn.chunk} · ${turn.audio_end_seconds.toFixed(2)} s`;
+      const text = document.createElement('span'); text.textContent = turn.tts.trim() || '∅ empty';
+      button.append(label, text); button.addEventListener('click', () => { stopChunks(); renderChunk(turn.chunk); });
+      $('chunk-grid').appendChild(button);
+    }
+    renderChunk(replyCase.turns.length - 1);
+  }
+  for (const item of example.continuation.cases) {
+    const option = document.createElement('option'); option.value = item.id; option.textContent = caseLabels[item.id] || item.id;
+    $('reply-case').appendChild(option);
+  }
+  $('reply-case').addEventListener('change', () => loadCase($('reply-case').value));
+  $('chunk-cursor').addEventListener('input', () => { stopChunks(); renderChunk($('chunk-cursor').value); });
+  $('chunk-reset').addEventListener('click', () => { stopChunks(); renderChunk(0); });
+  $('chunk-play').addEventListener('click', () => {
+    if (chunkTimer) { stopChunks(); return; }
+    if (chunkIndex === replyCase.turns.length - 1) renderChunk(0);
+    $('chunk-play').textContent = 'Pause chunks';
+    chunkTimer = setInterval(() => { renderChunk(chunkIndex + 1); if (chunkIndex === replyCase.turns.length - 1) stopChunks(); }, 480);
+  });
+  loadCase(replyCase.id);
+  load(example.waiting_trace, 'Recorded S2 wait · 1815810'); requestAnimationFrame(animate);
 })();

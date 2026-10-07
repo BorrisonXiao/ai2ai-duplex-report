@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build the static trajectory tool and a deterministic, illustrative audio demo.
+"""Build the trajectory tool with a reviewed real example and optional demo.
 
-No experiment outputs or third-party speech are copied into the public site.
-The template embeds the demo so the viewer also opens directly from disk.
+The public manifest contains selected text/timing, no raw audio or reasoning.
+Both payloads are embedded so the viewer opens directly from disk.
 """
 import base64
 import hashlib
@@ -12,6 +12,7 @@ import math
 from pathlib import Path
 import struct
 import wave
+from html import escape
 from site_navigation import project_tabs
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,16 +80,22 @@ def main():
     (ROOT / "experiments").mkdir(exist_ok=True)
     trace = demo()
     payload = json.dumps(trace, ensure_ascii=False).replace("<", "\\u003c")
+    example = json.loads((ROOT / "research/trajectory-example.json").read_text())
+    waiting = example["waiting"]
+    intro = f'''<section class="section" aria-labelledby="example-title"><h2 id="example-title">Recorded example · meaningful text verified</h2><p class="section-intro">S1’s complete generated reply contains the supplied S2 answer. Changing the supplied answer also changes S1’s core sentence. Audio playback and automatic delegation are not demonstrated by the continuation test.</p><blockquote class="example-answer">{escape(waiting['s2_answer'])}</blockquote><div class="example-cards"><article class="card"><span class="tag blue">Before S2</span><h3>S1 transcribed the user</h3><p>ASR: “{escape(waiting['s1_asr'])}”</p><p>Speech text: <code>tts = ""</code>. The source smoke test forced S2 to start; S1 had not issued THINK.</p></article><article class="card"><span class="tag amber">While S2 reasoned</span><h3>No new S1 text was generated</h3><p>{waiting['s2_seconds']:.3f} s of S2 processing; {waiting['s2_reasoning_characters']:,} received reasoning characters. S1 Thinker was not called during that interval.</p><p>Talker processed the earlier payload for {waiting['request_overlap_seconds']:.3f} s concurrently. Its waveform has no verified spoken transcript; this is not evidence of filler speech.</p></article><article class="card"><span class="tag">After S2 feedback</span><h3>Continue beyond chunk zero</h3><p>The original history’s first chunk was empty. The separate continuation replay recovered the complete S2 answer in chunks 5–11, followed by a budget question.</p><p>Figure 1 shows the wait. Figure 2 shows the actual generated text across the continued chunks.</p></article></div><p class="meta">Phase A: job 1815810, 2 × A100 80 GB; GPU 0 Thinker, GPU 1 Talker/MTP/Code2Wav + Qwen3-4B S2. Phase B: job 1816006, 1 × A100 80 GB; GPU 0 Thinker only, saved S2 reply replayed. The jobs did not overlap; maximum allocation was 2 GPUs.</p><div class="callout amber"><strong>Two recordings, two time axes</strong><p>These phases were recorded in different jobs. They are shown separately, with no invented continuous wall clock. Phase B has no generated waveform or spoken-word timing.</p></div></section>'''
     page = (ROOT / "scripts/templates/trajectory.html.in").read_text()
     page = page.replace("{{NAV}}", project_tabs("experiments", "../")).replace("{{DEMO}}", payload)
+    page = page.replace("{{EXAMPLE}}", json.dumps(example, ensure_ascii=False).replace("<", "\\u003c")).replace("{{EXAMPLE_INTRO}}", intro)
+    page = page.replace('The hosted demo contains no dataset speech, private paths, model checkpoints or live inference endpoint.', 'The hosted measured example publishes reviewed text and timing only. It contains no audio, private paths, model checkpoints or private reasoning. The optional synthetic demo uses invented timings and tones.')
     (ROOT / "experiments/trajectory.html").write_text(version_assets(page))
     (ROOT / "assets/trajectory/demo.json").write_text(json.dumps(trace, indent=2, ensure_ascii=False) + "\n")
     collection = '''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interactive tools for inspecting audio-only duplex experiments."><title>Experiments · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"></head>
 <body><a class="skip-link" href="#main">Skip to experiments</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>{{NAV}}</div></header><main id="main"><div class="container"><header class="hero"><p class="eyebrow">Experiments · Audio only</p><h1>Inspect the conversation as it unfolds.</h1><p class="lede">Tools for checking model decisions, background reasoning, feedback and generated audio on a shared timeline.</p><p class="meta">5 October 2026 · Local experiment files stay in your browser</p></header><section class="section" aria-labelledby="tools"><h2 id="tools">Inspection tools</h2><div class="card-grid"><article class="card"><span class="tag">Trajectory viewer</span><h3>Aligned layers and audio</h3><p>Replay client request spans, System-2 stream progress and command delivery. Listen to available clips with a linked cursor, inspect event details and import a portable run trace.</p><p><a class="button primary" href="trajectory.html">Open trajectory viewer</a></p></article><article class="card"><span class="tag amber">Evidence boundary</span><h3>Demo first, measured traces when available</h3><p>The hosted demo uses invented timestamps and synthetic tones. The DuplexOmni baseline and local System-2 tests were still queued when this tool was published; completed earlier smoke tests lack detailed event timestamps.</p><p>A real trace records client-observed events. The tool makes no claims about word alignment, GPU kernel overlap or live conversation latency.</p></article></div></section><footer class="site-footer"><p>AI2AI Duplex · <a href="../index.html">Literature review</a> · <a href="trajectory.html">Trajectory viewer</a></p></footer></div></main></body></html>
 '''.replace("{{NAV}}", project_tabs("experiments", "../"))
+    collection = collection.replace('5 October 2026', '6 October 2026').replace('Aligned layers and audio', 'S2 wait and S1’s full reply').replace('Replay client request spans, System-2 stream progress and command delivery. Listen to available clips with a linked cursor, inspect event details and import a portable run trace.', 'Inspect the real S2 wait and the continued S1 text response. See exactly what S1 generated in each input chunk, compare a changed S2 answer, or import a local audio trace.').replace('Demo first, measured traces when available', 'Meaningful S1 text verified').replace('The hosted demo uses invented timestamps and synthetic tones. The DuplexOmni baseline and local System-2 tests were still queued when this tool was published; completed earlier smoke tests lack detailed event timestamps.', 'The real example includes a 14.172 s S2 wait and a separate 24-chunk S1 replay that produces the full supplied answer. No new S1 text was generated while S2 waited in the source run. Audio output and automatic delegation are still unverified for the continuation test.')
     (ROOT / "experiments/index.html").write_text(version_assets(collection))
-    print("Built Experiments collection, trajectory viewer and synthetic demo.")
+    print("Built Experiments collection, recorded S2 wait, S1 chunk visualization and optional synthetic demo.")
 
 
 if __name__ == "__main__":

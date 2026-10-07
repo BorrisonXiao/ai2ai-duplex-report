@@ -51,6 +51,42 @@ def main():
                 page.wait_for_url("**/trajectory.html")
                 page.wait_for_function("document.querySelectorAll('#timeline [data-event]').length > 0")
                 assert page.locator('[aria-label="Project tabs"] [aria-current="page"]').inner_text() == "Experiments"
+                assert "Measured" in page.locator("#evidence-note").inner_text()
+                assert "1815810" in page.locator("#run-title").inner_text()
+                assert page.locator("#chunk-grid button").count() == 24
+                assert "personal projects" in page.locator("#chunk-transcript").inner_text()
+                page.locator("#scrub").evaluate("el => {el.value=32; el.dispatchEvent(new Event('input'));}")
+                assert "Empty tts" in page.locator("#s1-text").inner_text()
+                assert "What are you working on?" in page.locator("#s1-asr").inner_text()
+                assert "S2 audio-derived context" in page.locator("#active-layers").inner_text()
+                assert "S1" not in page.locator("#active-layers").inner_text()
+                assert page.locator("#timeline .absence").count() == 1
+                assert page.locator("#timeline polyline").count() == 1
+                assert "selected trace clock" in page.locator("#time-label").inner_text()
+                page.locator("#timeline-title").scroll_into_view_if_needed()
+                page.screenshot(path=str(args.output / (name + "-recorded-wait.png")))
+                page.locator("#chunk-reset").click()
+                assert "No generated speech text yet" in page.locator("#chunk-transcript").inner_text()
+                page.locator('#chunk-grid [data-chunk="3"]').click()
+                assert page.locator("#chunk-fragment").inner_text() == "I see."
+                page.locator('#chunk-grid [data-chunk="11"]').click()
+                assert "complete supplied S2 answer" in page.locator("#answer-status").inner_text()
+                assert "What budget" not in page.locator("#chunk-transcript").inner_text()
+                page.locator("#reply-case").select_option("prior_THINK_plaintext_contrast")
+                assert "audio-only speech assistant project" in page.locator("#chunk-transcript").inner_text()
+                assert "personal projects" not in page.locator("#chunk-transcript").inner_text()
+                assert "Diagnostic intervention" in page.locator("#case-note").inner_text()
+                page.locator("#reply-case").select_option("original_continuation")
+                page.locator("#chunk-play").click()
+                page.wait_for_function("Number(document.querySelector('#chunk-cursor').value) >= 1")
+                page.locator("#chunk-play").click()
+                assert page.locator("#chunk-play").inner_text() == "Replay text chunks"
+                page.locator('#chunk-grid [data-chunk="23"]').click()
+                page.locator("#continuation-title").scroll_into_view_if_needed()
+                page.screenshot(path=str(args.output / (name + "-recorded-reply.png")))
+                page.locator('figure').filter(has=page.locator('#chunk-grid')).screenshot(path=str(args.output / (name + '-chunks.png')))
+                assert page.evaluate("document.documentElement.scrollWidth") <= width
+                page.locator("#load-demo").click()
                 assert "Illustrative" in page.locator("#evidence-note").inner_text()
                 assert page.evaluate("document.documentElement.scrollWidth") <= width
                 page.locator("#scrub").evaluate("el => {el.value=4.85; el.dispatchEvent(new Event('input'));}")
@@ -99,12 +135,11 @@ def main():
                     assert page.locator("#play").is_disabled()
                     assert page.locator("#clip-select option").count() > 0
                     assert page.locator("#event-rows tr").count() == 0
-                page.locator("#load-demo").click()
-                page.locator("#timeline-title").scroll_into_view_if_needed()
-                page.screenshot(path=str(args.output / (name + ".png")))
+                page.locator("#load-real").click()
+                assert "1815810" in page.locator("#run-title").inner_text()
                 assert not errors, errors
                 assert all(url.startswith(("file:", "data:")) for url in requests), requests
-                results.append(dict(view=name, width=width, theme=theme, timing_replay="passed", audio_cursor="passed", local_import="passed", rejected_remote_audio="passed", safe_text="passed", page_overflow=False, external_requests=0, javascript_errors=errors))
+                results.append(dict(view=name, width=width, theme=theme, recorded_wait="passed", separate_asr_tts="passed", s1_idle_interval="passed", recorded_chunks="passed", changed_answer_control="passed", chunk_replay="passed", timing_replay="passed", audio_cursor="passed", local_import="passed", rejected_remote_audio="passed", safe_text="passed", page_overflow=False, external_requests=0, javascript_errors=errors))
                 context.close()
             browser.close()
     (args.output / "browser-validation.json").write_text(json.dumps(dict(status="passed", checks=results), indent=2) + "\n")

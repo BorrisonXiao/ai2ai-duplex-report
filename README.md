@@ -61,9 +61,10 @@ The focused review uses its own 4 October evidence snapshot; it does not silentl
 
 ## Experiment trajectory tool (5 October 2026)
 
-The [Experiments collection](experiments/) contains the [trajectory viewer](experiments/trajectory.html). It adds replay timing, layer tracks, reasoning character-count progress, command events, a searchable event ledger and cursor-linked audio audition. Import a portable local `trajectory.json`; files never upload. The hosted example uses invented timings and synthetic tones, with no dataset speech or private experiment data. Older run exports with no captured event timing are labeled `summary_only`.
+The [Experiments collection](experiments/) contains the [trajectory viewer](experiments/trajectory.html). Updated 6 October with the recorded S2 wait (1815810) and a separate S1 continuation replay (1816006). During the source S2 wait, S1 had empty speech text and no new Thinker call; no filler speech is claimed. Continuing 24 input chunks produces the full S2 answer, and a changed-answer control changes S1's core text. The interactive chunk view keeps input-audio progress separate from phase A's measured wall clock. The published manifest contains reviewed text/timing, no audio, private paths or internal reasoning. Audio/full live integration and automatic delegation are unverified in the replay. The optional synthetic demo remains clearly labeled; local trace files never upload. Older exports with no captured event timing are labeled `summary_only`.
 
-- `scripts/build_trajectory.py`: deterministic offline generator of the collection, viewer and synthetic demo.
+- `research/trajectory-example.json`: reviewed public text/timing manifest with source-file hashes; no raw audio or private reasoning. The workspace exporter is `../scripts/export_html_trajectory_example.py`.
+- `scripts/build_trajectory.py`: deterministic offline generator of the collection, measured example, interactive chunk view and optional synthetic demo.
 - `scripts/templates/trajectory.html.in`: viewer markup source.
 - `assets/trajectory/viewer.js`, `viewer.css`: local interaction and layout assets.
 - `research/trajectory-schema.md`: versioned JSON schema and timing semantics.
