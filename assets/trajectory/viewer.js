@@ -77,7 +77,7 @@
     };
     clear($('evidence-note'));
     const strong = document.createElement('strong'); strong.textContent = labels[trace.evidence];
-    const p = document.createElement('p'); p.textContent = descriptions[trace.evidence];
+    const p = document.createElement('p'); p.textContent = descriptions[trace.evidence] + (trace.metadata?.behavior_finding ? ' ' + trace.metadata.behavior_finding : '');
     $('evidence-note').append(strong, p);
     $('evidence-note').classList.toggle('amber', trace.evidence !== 'measured');
     $('load-status').textContent = `${source} · ${events.length} events · ${media.length} embedded audio clips · no upload`;

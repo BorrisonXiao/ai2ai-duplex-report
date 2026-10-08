@@ -1,18 +1,65 @@
 {
   "schema": "duplex-controlled-study/v1",
   "date": "2026-10-08",
-  "checked_at_utc": "2026-10-08T06:16:36.166692+00:00",
-  "status": "queued",
-  "gpu_job_id": "1029543",
-  "cpu_followup_job_id": "1029544",
-  "requested_gpus": 2,
+  "checked_at_utc": "2026-10-08T17:40:07.460004+00:00",
+  "status": "completed_with_behavior_failures",
+  "gpu_job_id": "1030269",
+  "cpu_followup_job_id": "1030270",
+  "requested_gpus": 3,
   "gpu_type": "H100 SXM 80 GB",
-  "primary_layout": "GPU 0: TP1 Thinker; GPU 1: Talker/MTP/Code2Wav and S2 TP1",
+  "primary_layout": "Thinker TP1 on GPU(s) [0]; Talker TP1/MTP/Code2Wav on GPU 1; System-2 TP1 on GPU 2 dedicated",
   "conditional_fallback_layout": "3 H100s: Thinker 0; speech 1; S2 2",
   "maximum_active_gpus": 3,
   "gpu_jobs_sequential": true,
   "system2_model": "Qwen/Qwen3-4B-Thinking-2507",
-  "qualification": null,
+  "qualification": {
+    "qualified": true,
+    "status": "qualified",
+    "baseline": {
+      "s1_samples": 27,
+      "talker_samples": 27,
+      "mean_s1_seconds": 0.18076307537396336,
+      "p95_s1_seconds": 0.20634704791009426,
+      "p95_talker_seconds": 0.26406104795169083,
+      "max_input_queue_delay_seconds": 0.000213138060644269,
+      "max_speech_queue_delay_seconds": 0.010118060046806931,
+      "p95_playback_scheduler_lateness_seconds": 0.0010724614840000868
+    },
+    "with_s2_load": {
+      "s1_samples": 27,
+      "talker_samples": 27,
+      "mean_s1_seconds": 0.17780064478844265,
+      "p95_s1_seconds": 0.19300022021634503,
+      "p95_talker_seconds": 0.2558968002675101,
+      "max_input_queue_delay_seconds": 0.00017611298244446516,
+      "max_speech_queue_delay_seconds": 0.009889811975881457,
+      "p95_playback_scheduler_lateness_seconds": 0.0010607864009216427
+    },
+    "relative_latency_ratios": {
+      "p95_s1_seconds": 0.9353185430616654,
+      "p95_talker_seconds": 0.9690819689329024
+    },
+    "s2_load_interval_fraction": 0.999999467230401,
+    "criteria": {
+      "skip_initial_turns": 4,
+      "min_samples": 20,
+      "max_p95_s1_seconds": 0.384,
+      "max_p95_talker_seconds": 0.384,
+      "max_queue_delay_seconds": 0.48,
+      "max_playback_scheduler_p95_seconds": 0.04,
+      "max_relative_extra_latency": 0.25,
+      "max_absolute_extra_latency_seconds": 0.03,
+      "min_s2_load_fraction": 0.8
+    },
+    "baseline_pass": true,
+    "loaded_absolute_pass": true,
+    "overhead_pass": true,
+    "load_coverage_pass": true,
+    "job_id": "1030269",
+    "gpus": 3,
+    "s2_gpu": 2,
+    "scope": "Matched client-observed S1/speech timing under bounded synthetic S2 load; no behavioral pass."
+  },
   "qualification_criteria": {
     "skip_initial_turns": 4,
     "min_samples": 20,
@@ -34,9 +81,38 @@
       "source_user_requests": 1,
       "correction": null,
       "s2_policy": "off",
-      "status": "queued",
-      "job_id": "1029543",
-      "metrics": null
+      "status": "behavior_failed",
+      "job_id": "1030269",
+      "metrics": {
+        "name": "single_request_s2_off",
+        "id": "E1a",
+        "display_name": "Single request · S2 off",
+        "experiment_group": "handoff",
+        "status": "completed_content_review_required",
+        "s2_policy": "off",
+        "response_format_repairs": 28,
+        "s2_requests": 0,
+        "s2_statuses": [],
+        "complete_guidance_deliveries": 0,
+        "s1_calls_while_s2_pending": 0,
+        "generated_asr": "Do you know any easy recipes for homemade bread?",
+        "generated_tts": "Hello, this is your voice assistant. How can I help you today?",
+        "tts_after_first_guidance": "",
+        "mean_s1_seconds": 0.19576424869592302,
+        "p95_s1_seconds": 0.283171463618055,
+        "max_input_queue_delay_seconds": 0.0002817409113049507,
+        "max_speech_queue_delay_seconds": 0.014475490897893906,
+        "mean_deserialize_seconds": 0.0013252404718918519,
+        "first_requested_playback_seconds": 0.4203995669959113,
+        "played_requested_speech_seconds": 2.32,
+        "s2_guidance_dispatch_delays_seconds": [],
+        "s2_guidance": [],
+        "s2_final_answers": [],
+        "tts_control_events": [],
+        "content_review_required": true
+      },
+      "verdict": "Failed: no task answer",
+      "finding": "S1 recognized the request but spoke only a generic greeting, with no recipe or pet suggestions."
     },
     {
       "id": "E1b",
@@ -47,9 +123,42 @@
       "source_user_requests": 1,
       "correction": null,
       "s2_policy": "force_once_after_input",
-      "status": "queued",
-      "job_id": "1029543",
-      "metrics": null
+      "status": "behavior_failed",
+      "job_id": "1030269",
+      "metrics": {
+        "name": "single_request_s2_forced",
+        "id": "E1b",
+        "display_name": "Single request · S2 forced",
+        "experiment_group": "handoff",
+        "status": "completed_content_review_required",
+        "s2_policy": "force_once_after_input",
+        "response_format_repairs": 20,
+        "s2_requests": 1,
+        "s2_statuses": [
+          "no_guidance_token_limit"
+        ],
+        "complete_guidance_deliveries": 0,
+        "s1_calls_while_s2_pending": 14,
+        "generated_asr": "Do you know any easy recipes for homemade bread?",
+        "generated_tts": "Hello, this is your voice assistant. How can I help you today?Let me check that for you. Give me a moment.",
+        "tts_after_first_guidance": "",
+        "mean_s1_seconds": 0.20334720409947396,
+        "p95_s1_seconds": 0.2810186853574123,
+        "max_input_queue_delay_seconds": 0.0006356890080496669,
+        "max_speech_queue_delay_seconds": 0.04952199698891491,
+        "mean_deserialize_seconds": 0.0011869890570071423,
+        "first_requested_playback_seconds": 0.4209104400360957,
+        "played_requested_speech_seconds": 4.0600000000000005,
+        "s2_guidance_dispatch_delays_seconds": [],
+        "s2_guidance": [],
+        "s2_final_answers": [
+          "\n\n【Simple no-knead bread recipe"
+        ],
+        "tts_control_events": [],
+        "content_review_required": true
+      },
+      "verdict": "Failed: S2 guidance incomplete",
+      "finding": "S2 used all 1536 completion tokens in 6.973 s, stopping before the first closing guidance bracket. No clause reached S1; no recipe was spoken."
     },
     {
       "id": "E2a",
@@ -60,9 +169,38 @@
       "source_user_requests": 1,
       "correction": null,
       "s2_policy": "off",
-      "status": "queued",
-      "job_id": "1029543",
-      "metrics": null
+      "status": "behavior_failed",
+      "job_id": "1030269",
+      "metrics": {
+        "name": "pet_no_interruption_s2_off",
+        "id": "E2a",
+        "display_name": "No interruption · S2 off",
+        "experiment_group": "interruption",
+        "status": "completed_content_review_required",
+        "s2_policy": "off",
+        "response_format_repairs": 35,
+        "s2_requests": 0,
+        "s2_statuses": [],
+        "complete_guidance_deliveries": 0,
+        "s1_calls_while_s2_pending": 0,
+        "generated_asr": "Please suggest a few pets.",
+        "generated_tts": "Hello, this is your voice assistant. How can I help you today?",
+        "tts_after_first_guidance": "",
+        "mean_s1_seconds": 0.19503448739123996,
+        "p95_s1_seconds": 0.2755768794042524,
+        "max_input_queue_delay_seconds": 0.0003091018879786134,
+        "max_speech_queue_delay_seconds": 0.013429568032734096,
+        "mean_deserialize_seconds": 0.0012961639920831658,
+        "first_requested_playback_seconds": 0.4204554100288078,
+        "played_requested_speech_seconds": 2.3000000000000003,
+        "s2_guidance_dispatch_delays_seconds": [],
+        "s2_guidance": [],
+        "s2_final_answers": [],
+        "tts_control_events": [],
+        "content_review_required": true
+      },
+      "verdict": "Failed: no task answer",
+      "finding": "S1 recognized the request but spoke only a generic greeting, with no recipe or pet suggestions."
     },
     {
       "id": "E2b",
@@ -73,9 +211,53 @@
       "source_user_requests": 1,
       "correction": "Stop, no fish. Please suggest a small mammal instead.",
       "s2_policy": "off",
-      "status": "queued",
-      "job_id": "1029543",
-      "metrics": null
+      "status": "behavior_failed",
+      "job_id": "1030269",
+      "metrics": {
+        "name": "pet_interruption_s2_off",
+        "id": "E2b",
+        "display_name": "User correction · S2 off",
+        "experiment_group": "interruption",
+        "status": "completed_content_review_required",
+        "s2_policy": "off",
+        "response_format_repairs": 26,
+        "s2_requests": 0,
+        "s2_statuses": [],
+        "complete_guidance_deliveries": 0,
+        "s1_calls_while_s2_pending": 0,
+        "generated_asr": "Please suggest a few pets.Stop.",
+        "generated_tts": "Hello, this is your voice assistant. How can I help you today?Sure, I'll stop. Let me know if you need anything else.",
+        "tts_after_first_guidance": "",
+        "mean_s1_seconds": 0.20621353813621682,
+        "p95_s1_seconds": 0.28073159166960976,
+        "max_input_queue_delay_seconds": 0.00043426896445453167,
+        "max_speech_queue_delay_seconds": 0.01252287405077368,
+        "mean_deserialize_seconds": 0.0011350554719683713,
+        "first_requested_playback_seconds": 0.42044391203671694,
+        "played_requested_speech_seconds": 4.54,
+        "s2_guidance_dispatch_delays_seconds": [],
+        "s2_guidance": [],
+        "s2_final_answers": [],
+        "tts_control_events": [],
+        "content_review_required": true,
+        "interruption": {
+          "status": "triggered_during_playback",
+          "required_nonsilent_playback_seconds": 0.6,
+          "input_packet": 7,
+          "start_seconds": 300.5997706960188,
+          "played_speech_seconds": 1.8400000000000012,
+          "epoch_before_input": 0,
+          "expected_packets": 10,
+          "processed_packets": 10,
+          "stop_count_after_input": 0,
+          "first_stop_delay_from_first_correction_packet_seconds": null,
+          "obsolete_epoch_playback_packets_after_stop": 0,
+          "obsolete_synthesis_discarded_chunks": 0,
+          "scope": "Correction onset is the first input packet, including crop silence; STOP/PCM timing is software-buffer evidence. Semantic answer review remains separate."
+        }
+      },
+      "verdict": "Failed: correction not fulfilled",
+      "finding": "All 10 correction packets were processed. S1 transcribed only Stop, spoke an acknowledgment, emitted no STOP control and gave no small-mammal answer. Graceful interruption is not demonstrated."
     }
   ],
   "attempts": [
@@ -95,10 +277,17 @@
     },
     {
       "job_id": "1029543",
-      "status": "queued",
+      "status": "blocked by qualification",
+      "stage": "Shared speech/S2 GPU",
+      "finding": "Talker p95 0.678 s and speech queue 1.662 s under S2 load; behavioral cases skipped",
+      "allocated_gpu_hours": 0.10055555555555555
+    },
+    {
+      "job_id": "1030269",
+      "status": "completed_with_behavior_failures",
       "stage": "Current attempt",
-      "finding": "Runtime qualification precedes E1/E2 behavior",
-      "allocated_gpu_hours": null
+      "finding": "Runtime qualified; four behavioral cases failed their task criteria",
+      "allocated_gpu_hours": 0.285
     }
   ],
   "source": {
@@ -116,5 +305,76 @@
     "model_values_preserved": true,
     "input_validation": "Independent CPU transcription passed",
     "gpu_behavior": "Requires completed run and review"
+  },
+  "behavior_review": {
+    "runtime_verdict": "passed",
+    "behavior_verdict": "failed",
+    "behavioral_passes": 0,
+    "behavioral_cases": 4,
+    "uncertainty": [
+      "The causal reason for S1 choosing only its greeting is not isolated; prompt/history behavior needs a controlled probe.",
+      "No STOP event was emitted, so stop latency and stale-audio protection were not exercised by this real model case.",
+      "Automatic transcripts on the final all-silent block hallucinate a trailing you; this is not another user request."
+    ],
+    "recommendations": [
+      {
+        "priority": 1,
+        "action": "Ensure S2 closes a final guidance clause within its completion budget",
+        "criterion": "At least one complete clause delivered and a relevant complete recipe spoken"
+      },
+      {
+        "priority": 2,
+        "action": "Probe S1 request uptake and correction handling on the qualified three-GPU layout",
+        "criterion": "Answer both base requests and fulfill the no-fish/small-mammal correction with appropriate native control"
+      }
+    ]
+  },
+  "shared_gpu_qualification": {
+    "qualified": false,
+    "status": "s2_contention",
+    "baseline": {
+      "s1_samples": 27,
+      "talker_samples": 27,
+      "mean_s1_seconds": 0.18088239693962452,
+      "p95_s1_seconds": 0.20611526319989934,
+      "p95_talker_seconds": 0.2564865067601204,
+      "max_input_queue_delay_seconds": 0.00021769606973975897,
+      "max_speech_queue_delay_seconds": 0.01082108193077147,
+      "p95_playback_scheduler_lateness_seconds": 0.0010954888421110809
+    },
+    "with_s2_load": {
+      "s1_samples": 27,
+      "talker_samples": 27,
+      "mean_s1_seconds": 0.17762364065964464,
+      "p95_s1_seconds": 0.19252649249974638,
+      "p95_talker_seconds": 0.6776707844808698,
+      "max_input_queue_delay_seconds": 0.00024734996259212494,
+      "max_speech_queue_delay_seconds": 1.6620143540203571,
+      "p95_playback_scheduler_lateness_seconds": 0.0010306787444278598
+    },
+    "relative_latency_ratios": {
+      "p95_s1_seconds": 0.9340719823986349,
+      "p95_talker_seconds": 2.6421303523567534
+    },
+    "s2_load_interval_fraction": 0.9999994963305177,
+    "criteria": {
+      "skip_initial_turns": 4,
+      "min_samples": 20,
+      "max_p95_s1_seconds": 0.384,
+      "max_p95_talker_seconds": 0.384,
+      "max_queue_delay_seconds": 0.48,
+      "max_playback_scheduler_p95_seconds": 0.04,
+      "max_relative_extra_latency": 0.25,
+      "max_absolute_extra_latency_seconds": 0.03,
+      "min_s2_load_fraction": 0.8
+    },
+    "baseline_pass": true,
+    "loaded_absolute_pass": false,
+    "overhead_pass": false,
+    "load_coverage_pass": true,
+    "job_id": "1029543",
+    "gpus": 2,
+    "s2_gpu": 1,
+    "scope": "Matched client-observed S1/speech timing under bounded synthetic S2 load; no behavioral pass."
   }
 }

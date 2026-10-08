@@ -32,7 +32,9 @@ def viewer(group,filename,title,description):
         intro+='<p>Exactly one complete user request is supplied in both conditions. E1a disables S2. E1b invokes S2 once after the request, while S1 continues processing. This is a controlled handoff test.</p>'
     else:
         intro+='<p>Both conditions use one initial request with S2 disabled. E2b adds one correction while S1 is speaking: <strong>'+escape(rows[1]['correction'])+'</strong> E2a provides the matched uninterrupted control.</p>'
-    intro+='<div class="callout"><strong>Current attempt · '+escape(study['status'])+'</strong><p>GPU job '+study['gpu_job_id']+' · CPU audit '+study['cpu_followup_job_id']+'. Input previews are available now. Audited model playback appears when available. <a href="controlled-study.html">See execution status and pass criteria</a>.</p></div></section>'
+    verdicts=' '.join(r['id']+': '+r['finding'] for r in rows if r.get('finding'))
+    message=verdicts or 'Input previews are available now. Audited model playback appears when available.'
+    intro+='<div class="callout amber"><strong>Current attempt · '+escape(study['status'].replace('_',' '))+'</strong><p>GPU job '+study['gpu_job_id']+' · CPU audit '+study['cpu_followup_job_id']+'. '+escape(message)+' <a href="controlled-study.html">See execution status and pass criteria</a>.</p></div></section>'
     replacements={'TITLE':title,'DESCRIPTION':description,'NAV':project_tabs('experiments','../'),
        'EXAMPLE_INTRO':intro,'EXAMPLE':json.dumps(bundle,ensure_ascii=False).replace('<','\\u003c'),
        'DATA_URL':f'../research/current-{group}.json',
@@ -49,14 +51,16 @@ def overview(study):
           'running':'The corrected run is executing; audited results are pending.',
           'failed':'The current attempt failed; inspect the attempt record before interpreting behavior.',
           'blocked':'Runtime qualification blocked the behavioral cases.',
-          'completed':'The run completed; inspect the audit and played audio before declaring a behavioral pass.'}[status]
+          'completed':'The run completed; inspect the audit and played audio before declaring a behavioral pass.',
+          'completed_with_behavior_failures':'The three-GPU layout passed runtime qualification. All four cases ran, but no task-level behavioral pass was demonstrated.'}[status]
     body=hk.hero('Current study · 8 October 2026','E1 handoff and E2 interruption',lede)
     body+=hk.section('1 · Current status',body='<p><a href="index.html">All experiments</a> · <a href="trajectory.html">E1 · Single-request handoff</a> · <a href="interruption.html">E2 · S1 interruption</a> · <a href="archive.html">Historical archive</a></p><p>Current GPU job <b>'+study['gpu_job_id']+'</b>, CPU follow-up <b>'+study['cpu_followup_job_id']+'</b>. '+escape(study['primary_layout'])+'. The job selects the smallest qualifying layout before running the behavioral cases. A measured contention failure permits the sequential three-H100 layout, with S2 on GPU 2; maximum three GPUs and no GPU overlap.</p>')
     rows=[]
     for c in study['conditions']:
         metric=c.get('metrics') or {}
         finding=('S2 requests: '+str(metric['s2_requests'])+'; guidance delivered: '+str(metric['complete_guidance_deliveries'])+'; content review required') if metric else 'Model results pending'
-        rows.append((c['id'],c['name'],c['status'],finding))
+        finding=c.get('finding',finding)
+        rows.append((c['id'],c['name'],c.get('verdict',c['status']),finding))
     body+=hk.section('2 · Conditions and results',body=hk.labeled_asset(table(['ID','Condition','Execution state','Observed result'],rows),'Table',1,'E1a/E1b share one bread request. E2a/E2b share one pet request; E2b adds an explicit user correction. Job identifiers name attempts rather than experiments.'))
     q=study['qualification'];criteria=study['qualification_criteria']
     if q:
@@ -67,6 +71,9 @@ def overview(study):
         qr=[('Without S2 load','Pending','Pending','Pending'),('With S2 load','Pending','Pending','Pending')]
         note='Runtime qualification is pending. Behavioral interpretation waits for a qualified layout.'
     body+=hk.section('3 · Runtime qualification',body=hk.labeled_asset(table(['Matched condition','S1 p95 (s)','Talker p95 (s)','Absolute gates pass'],qr),'Table',2,note)+'<p>Required: p95 S1 and Talker latency at most 0.384 seconds; input/speech queues at most 0.480 seconds; added p95 latency at most the larger of 30 ms or 25% of the baseline. At least 20 samples and 80% S2 request coverage are required. Warmup, CUDA graphs, bounded decoding and CPU thread limits are fixed across the controls.</p>')
+    if study.get('shared_gpu_qualification'):
+        shared=study['shared_gpu_qualification']
+        body+=hk.section('Why the third GPU was needed',body='<p>On two H100s, S2 shared the speech GPU. Talker p95 rose from '+f"{shared['baseline']['p95_talker_seconds']:.3f}"+' to '+f"{shared['with_s2_load']['p95_talker_seconds']:.3f}"+' seconds under sustained S2 load, with a '+f"{shared['with_s2_load']['max_speech_queue_delay_seconds']:.3f}"+'-second speech queue. Those cases were blocked before behavior was interpreted. Moving S2 to GPU 2 kept Talker p95 near 0.256 seconds and its queue below 10 ms in the loaded calibration.</p>')
     attempts=[(a['job_id'],a['status'],a['stage'],a['finding'],'Pending' if a['allocated_gpu_hours'] is None else f"{a['allocated_gpu_hours']:.4f}") for a in study['attempts']]
     body+=hk.section('4 · Attempt history',body=hk.labeled_asset(table(['Job','State','Stage','Finding','GPU hours'],attempts),'Table',3,'Failed or superseded attempts are retained once here. They are not selectable current examples or successful experiment results.'))
     body+=hk.section('5 · Validation and source',body='<p>The observed malformed S1 field key now has a narrow, audited recovery path. Twenty-five parser checks preserve speech/control values and reject incomplete or unsafe repairs; the paced CPU regression also checks handoff, THINK history retention, STOP invalidation and provider failures.</p><p>The authored input uses the same Flite synthetic voice in all conditions, with complete prompts and fixed margins. Independent CPU transcription verifies each request. The input contains no reference assistant reply. <a href="../research/flite/COPYING">Flite attribution</a> · <a href="../research/current-study.json">Exact study record</a>.</p><p>Software PCM replay and client request timing do not establish physical microphone/loudspeaker latency. Forced S2 tests handoff rather than autonomous delegation. Correct answers and graceful interruption require review of actual played speech.</p>')
