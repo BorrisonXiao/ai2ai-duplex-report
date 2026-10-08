@@ -1,0 +1,120 @@
+{
+  "schema": "duplex-controlled-study/v1",
+  "date": "2026-10-08",
+  "checked_at_utc": "2026-10-08T06:16:36.166692+00:00",
+  "status": "queued",
+  "gpu_job_id": "1029543",
+  "cpu_followup_job_id": "1029544",
+  "requested_gpus": 2,
+  "gpu_type": "H100 SXM 80 GB",
+  "primary_layout": "GPU 0: TP1 Thinker; GPU 1: Talker/MTP/Code2Wav and S2 TP1",
+  "conditional_fallback_layout": "3 H100s: Thinker 0; speech 1; S2 2",
+  "maximum_active_gpus": 3,
+  "gpu_jobs_sequential": true,
+  "system2_model": "Qwen/Qwen3-4B-Thinking-2507",
+  "qualification": null,
+  "qualification_criteria": {
+    "skip_initial_turns": 4,
+    "min_samples": 20,
+    "max_p95_s1_seconds": 0.384,
+    "max_p95_talker_seconds": 0.384,
+    "max_queue_delay_seconds": 0.48,
+    "max_playback_scheduler_p95_seconds": 0.04,
+    "max_relative_extra_latency": 0.25,
+    "max_absolute_extra_latency_seconds": 0.03,
+    "min_s2_load_fraction": 0.8
+  },
+  "conditions": [
+    {
+      "id": "E1a",
+      "name": "Single request · S2 off",
+      "experiment_group": "handoff",
+      "raw_case": "single_request_s2_off",
+      "initial_request": "Do you know any easy recipes for homemade bread?",
+      "source_user_requests": 1,
+      "correction": null,
+      "s2_policy": "off",
+      "status": "queued",
+      "job_id": "1029543",
+      "metrics": null
+    },
+    {
+      "id": "E1b",
+      "name": "Single request · S2 forced",
+      "experiment_group": "handoff",
+      "raw_case": "single_request_s2_forced",
+      "initial_request": "Do you know any easy recipes for homemade bread?",
+      "source_user_requests": 1,
+      "correction": null,
+      "s2_policy": "force_once_after_input",
+      "status": "queued",
+      "job_id": "1029543",
+      "metrics": null
+    },
+    {
+      "id": "E2a",
+      "name": "No interruption · S2 off",
+      "experiment_group": "interruption",
+      "raw_case": "pet_no_interruption_s2_off",
+      "initial_request": "Please suggest a few pets.",
+      "source_user_requests": 1,
+      "correction": null,
+      "s2_policy": "off",
+      "status": "queued",
+      "job_id": "1029543",
+      "metrics": null
+    },
+    {
+      "id": "E2b",
+      "name": "User correction · S2 off",
+      "experiment_group": "interruption",
+      "raw_case": "pet_interruption_s2_off",
+      "initial_request": "Please suggest a few pets.",
+      "source_user_requests": 1,
+      "correction": "Stop, no fish. Please suggest a small mammal instead.",
+      "s2_policy": "off",
+      "status": "queued",
+      "job_id": "1029543",
+      "metrics": null
+    }
+  ],
+  "attempts": [
+    {
+      "job_id": "1027597",
+      "status": "failed",
+      "stage": "Initial calibration",
+      "finding": "Malformed S1 key quote; no behavioral cases ran",
+      "allocated_gpu_hours": 0.09055555555555556
+    },
+    {
+      "job_id": "1029415",
+      "status": "superseded",
+      "stage": "Before allocation",
+      "finding": "Replaced by authored inputs shared with the public demo",
+      "allocated_gpu_hours": 0
+    },
+    {
+      "job_id": "1029543",
+      "status": "queued",
+      "stage": "Current attempt",
+      "finding": "Runtime qualification precedes E1/E2 behavior",
+      "allocated_gpu_hours": null
+    }
+  ],
+  "source": {
+    "source": "Authored controlled speech prompts",
+    "source_url": "https://github.com/festvox/flite/tree/v2.2",
+    "license": "Project-authored prompts; Flite synthetic voice, see Flite COPYING",
+    "generator": "Flite v2.2",
+    "voice": "slt",
+    "date": "2026-10-08",
+    "release_archive_sha256": "ab1555fe5adc3f99f1d4a1a0eb1596d329fd6d74f1464a0097c81f53c0cf9e5c"
+  },
+  "preparation": {
+    "parser_checks": 25,
+    "exact_failed_response_recovered": true,
+    "model_values_preserved": true,
+    "input_validation": "Independent CPU transcription passed",
+    "gpu_behavior": "Requires completed run and review"
+  }
+}

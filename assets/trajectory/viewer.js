@@ -2,7 +2,6 @@
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
-  const demo = JSON.parse($('demo-trace').textContent);
   const example = JSON.parse($('recorded-example').textContent);
   const svgNS = 'http://www.w3.org/2000/svg';
   const player = $('clip-player');
@@ -67,11 +66,14 @@
     $('clock-note').textContent = trace.metadata?.clock || 'Client seconds since driver start; see trace metadata.';
     $('warmup').disabled = !trace.lanes.some(lane => lane.id === 'startup');
     if ($('warmup').disabled) $('warmup').checked = false;
-    const labels = {illustrative: 'Illustrative demo', measured: 'Measured client events', summary_only: 'Summary only · no aligned event timing'};
+    const inputOnly = Boolean(trace.metadata?.input_only);
+    $('timeline-section').hidden = inputOnly;
+    $('events-section').hidden = inputOnly;
+    const labels = {illustrative: 'Illustrative demo', measured: 'Measured client events', summary_only: inputOnly ? 'Complete input preview' : 'Summary only · no aligned event timing'};
     const descriptions = {
       illustrative: 'Invented timings and synthetic tones demonstrate the viewer. These are not local inference measurements.',
       measured: 'Request spans and stream observations use the driver’s shared monotonic clock. Audio audition is a browser replay; GPU kernel execution and acoustic word timing are not measured.',
-      summary_only: 'This archive has no captured event timestamps. Audio can be auditioned, but a timeline cannot be reconstructed from its total duration.'
+      summary_only: inputOnly ? 'This is the complete authored input. Model request events and responses appear after execution and audit.' : 'No aligned client events were captured for this record.'
     };
     clear($('evidence-note'));
     const strong = document.createElement('strong'); strong.textContent = labels[trace.evidence];
@@ -342,19 +344,13 @@
   player.addEventListener('play', () => { pause(); if (clip?.anchor != null) setCursor(clip.anchor + player.currentTime); });
   player.addEventListener('timeupdate', () => { if (!player.paused && clip?.anchor != null) setCursor(clip.anchor + player.currentTime); });
   player.addEventListener('seeking', () => { if (clip?.anchor != null) { pause(); setCursor(clip.anchor + player.currentTime); } });
-  $('load-demo').addEventListener('click', () => load(demo, 'Hosted demo'));
-  $('load-real').addEventListener('click', () => load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id));
-  $('load-native').addEventListener('click', () => load(example.native_trace, 'Native acknowledgment · ' + example.native_trace.metadata.job_id));
-  $('load-full').addEventListener('click', () => load(example.full_loop_trace, 'Full native loop · ' + example.full_loop_trace.metadata.job_id));
-  if ($('interactive-case') && example.interactive_traces) {
-    for (const [key, value] of Object.entries(example.interactive_traces)) {
-      const option = document.createElement('option'); option.value = key;
-      option.textContent = `${value.metadata.gpus} × ${value.metadata.gpu_type} · ${value.metadata.case} · ${value.metadata.job_id}`;
-      $('interactive-case').appendChild(option);
-    }
-    $('interactive-case').value = example.interactive_default;
-    $('interactive-case').addEventListener('change', () => load(example.interactive_traces[$('interactive-case').value], 'Measured interaction case'));
+  for (const [key, value] of Object.entries(example.traces)) {
+    const option = document.createElement('option'); option.value = key;
+    option.textContent = `${value.metadata.condition_id} · ${value.metadata.display_name}`;
+    $('interactive-case').appendChild(option);
   }
+  $('interactive-case').value = example.default_case;
+  $('interactive-case').addEventListener('change', () => load(example.traces[$('interactive-case').value], 'Current controlled condition'));
   $('timeline-scroll').addEventListener('scroll',()=>{
     const overlay=$('timeline').querySelector('.lane-label-overlay');
     if(overlay)overlay.setAttribute('transform',`translate(${$('timeline-scroll').scrollLeft},0)`);
@@ -363,7 +359,8 @@
     if (!file) return;
     try {
       if (file.size > 100_000_000) throw new Error('Trace exceeds the 100 MB browser import limit.');
-      load(JSON.parse(await file.text()), `Local file: ${file.name}`);
+      const data = JSON.parse(await file.text());
+      load(data.schema === 'duplex-viewer-examples/v2' ? data.traces[data.default_case] : data, `Local file: ${file.name}`);
     } catch (error) { $('load-status').textContent = `Could not load trace: ${error.message}. Current trace retained.`; }
   }
   $('trace-file').addEventListener('change', e => readFile(e.target.files[0]));
@@ -373,72 +370,6 @@
   zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('dragging'); readFile(e.dataTransfer.files[0]); });
   let resizeTimer;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => renderTimeline(), 120); });
-  // Phase B is a separate run. Its cursor is an input-chunk index, never a
-  // fabricated continuation of phase A's measured request clock.
-  const caseLabels = {
-    original_continuation: 'Original history · no added THINK',
-    prior_THINK_bracketed: 'Added THINK · bracketed S2 text',
-    prior_THINK_plaintext: 'Added THINK · plain S2 text',
-    prior_THINK_plaintext_contrast: 'Changed S2 answer · diagnostic control',
-    native_prompt_prior_THINK_plaintext: 'Native prompt · added THINK · plain S2 text'
-  };
-  let replyCase = example.continuation.cases[0], chunkIndex = 23, chunkTimer = null;
-  function stopChunks() { clearInterval(chunkTimer); chunkTimer = null; $('chunk-play').textContent = 'Replay text chunks'; }
-  function renderChunk(index) {
-    chunkIndex = Math.max(0, Math.min(replyCase.turns.length - 1, Number(index)));
-    const turn = replyCase.turns[chunkIndex];
-    const joined = replyCase.turns.slice(0, chunkIndex + 1).map(t => t.tts).join('');
-    $('chunk-cursor').value = chunkIndex;
-    $('chunk-label').textContent = `#${chunkIndex} · ${turn.audio_end_seconds.toFixed(2)} s input`;
-    $('chunk-fragment').textContent = turn.tts.trim() || 'Empty tts field.';
-    $('chunk-transcript').textContent = joined.trim() || 'No generated speech text yet.';
-    $('chunk-detail').textContent = `Chunk ${chunkIndex} · ${turn.request_seconds.toFixed(3)} s request + tensor RPC (measured separately from input duration).`;
-    $('chunk-fields').textContent = JSON.stringify({asr: turn.asr, tts: turn.tts, tts_control: turn.tts_control, system2_control: turn.system2_control}, null, 2);
-    $('answer-status').textContent = joined.includes(replyCase.command) ? 'The complete supplied S2 answer is present in S1’s generated text.' : 'The supplied answer is not complete at this chunk.';
-    for (const node of $('chunk-grid').querySelectorAll('[data-chunk]')) {
-      const active = Number(node.dataset.chunk) === chunkIndex;
-      node.classList.toggle('selected', active); node.setAttribute('aria-pressed', String(active));
-    }
-  }
-  function loadCase(id) {
-    stopChunks(); replyCase = example.continuation.cases.find(c => c.id === id);
-    $('reply-command').textContent = replyCase.command;
-    $('case-note').textContent = replyCase.counterfactual ? 'Diagnostic intervention: assistant control state, system prompt or supplied S2 text was edited. This does not demonstrate automatic delegation.' : 'Captured original history and S2 command. S1 did not issue THINK; delegation was forced in the source functional test.';
-    clear($('chunk-grid'));
-    for (const [row,title] of [['user','User input'],['s1','S1 output'],['s2','S2 guidance (replayed)'],['talker','Talker']]) {
-      const header=document.createElement('div');header.className='matrix-label';header.textContent=title;$('chunk-grid').appendChild(header);
-      for (const turn of replyCase.turns) {
-        const button = document.createElement('button'); button.type = 'button';
-        button.className = 'chunk ' + (row==='s1'?turn.role:row==='s2' && turn.chunk===0?'answer':'empty');
-        button.dataset.chunk = turn.chunk; button.dataset.row=row;
-        const content=row==='user'?'(silent)':row==='s1'?turn.tts.trim()||'(silent)':row==='s2'?(turn.chunk===0?replyCase.command:'(no new guidance)'):'(not run · no audio)';
-        button.setAttribute('aria-label', `${title}, chunk ${turn.chunk}, ${content}`);
-        const label = document.createElement('span'); label.className = 'chunk-time'; label.textContent = `#${turn.chunk} · ${turn.audio_end_seconds.toFixed(2)} s`;
-        const text = document.createElement('span'); text.textContent = content;
-        button.append(label, text); button.addEventListener('click', () => { stopChunks(); renderChunk(turn.chunk); });
-        $('chunk-grid').appendChild(button);
-      }
-    }
-    renderChunk(replyCase.turns.length - 1);
-  }
-  for (const item of example.continuation.cases) {
-    const option = document.createElement('option'); option.value = item.id; option.textContent = caseLabels[item.id] || item.id;
-    $('reply-case').appendChild(option);
-  }
-  $('reply-case').addEventListener('change', () => loadCase($('reply-case').value));
-  $('chunk-cursor').addEventListener('input', () => { stopChunks(); renderChunk($('chunk-cursor').value); });
-  $('chunk-reset').addEventListener('click', () => { stopChunks(); renderChunk(0); });
-  $('chunk-play').addEventListener('click', () => {
-    if (chunkTimer) { stopChunks(); return; }
-    if (chunkIndex === replyCase.turns.length - 1) renderChunk(0);
-    $('chunk-play').textContent = 'Pause chunks';
-    chunkTimer = setInterval(() => { renderChunk(chunkIndex + 1); if (chunkIndex === replyCase.turns.length - 1) stopChunks(); }, 480);
-  });
-  loadCase(replyCase.id);
-  if (example.interactive_traces && example.interactive_default) {
-    load(example.interactive_traces[example.interactive_default], 'Measured interaction reproduction');
-  } else {
-    load(example.waiting_trace, 'Recorded run · ' + example.waiting_trace.metadata.job_id);
-  }
+  load(example.traces[example.default_case], 'Current controlled study');
   requestAnimationFrame(animate);
 })();

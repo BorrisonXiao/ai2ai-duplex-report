@@ -1,7 +1,7 @@
 {
   "date": "2026-10-07",
   "checked_at_utc": "2026-10-08T02:25:24.908525+00:00",
-  "status": "queued_no_gpu_results",
+  "status": "superseded",
   "gpu_job_id": "1027597",
   "cpu_followup_job_id": "1027598",
   "currently_allocated_gpus": 0,
@@ -93,5 +93,8 @@
       }
     ]
   },
-  "scope": "Single-request forced handoff and playback-aligned S1-only correction controls. Recorded user audio, simulated PCM transport. GPU behavioral results pending; no autonomous delegation or physical device claim."
+  "scope": "Single-request forced handoff and playback-aligned S1-only correction controls. Recorded user audio, simulated PCM transport. GPU behavioral results pending; no autonomous delegation or physical device claim.",
+  "original_status": "queued_no_gpu_results",
+  "superseded_by": "current-study.json",
+  "note": "Historical setup snapshot for job 1027597; current E1/E2 study is in current-study.json."
 }

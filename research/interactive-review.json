@@ -174,7 +174,8 @@
       ],
       "dropped_audio_chunks": 2,
       "speech_quality_requires_content_review": true,
-      "independent_output_transcript": "Hi there, color can be tricky. Example, magenta with white can give you a light purple and cyan with yellow makes a pastel. Oh, you mean the budget for the project? Let's focus on the color composition and debaugh budget later. you"
+      "independent_output_transcript": "Hi there, color can be tricky. Example, magenta with white can give you a light purple and cyan with yellow makes a pastel. Oh, you mean the budget for the project? Let's focus on the color composition and debaugh budget later. you",
+      "display_name": "A01 · Short input · A100 · Reset decoder"
     },
     {
       "key": "1026380_dailytalk_full_stock",
@@ -449,7 +450,8 @@
       ],
       "dropped_audio_chunks": 1,
       "speech_quality_requires_content_review": true,
-      "independent_output_transcript": "你好,我理解你在用AI寫文章。好的,我來推薦合適的工具,預算多少。你具體需要什麼功能?因為這個預算下選擇比較多,比如for what?我是說對於文章生成來說,這個預算可以考慮一些AI寫作工具。你的預算 算可以接受,那太好了,我們可以先從創意切入點開始。"
+      "independent_output_transcript": "你好,我理解你在用AI寫文章。好的,我來推薦合適的工具,預算多少。你具體需要什麼功能?因為這個預算下選擇比較多,比如for what?我是說對於文章生成來說,這個預算可以考慮一些AI寫作工具。你的預算 算可以接受,那太好了,我們可以先從創意切入點開始。",
+      "display_name": "A02 · Complete input · A100 · Reset decoder"
     },
     {
       "key": "1026406_dailytalk_full_context",
@@ -708,7 +710,8 @@
       ],
       "dropped_audio_chunks": 4,
       "speech_quality_requires_content_review": true,
-      "independent_output_transcript": "Hi there, color can be tricky. For example, magenta with white can give you a light purple and cyan with yellow makes a pastel. I'm an AI, I don't have a budget, but I can help you just ask about mixing colors. Or wait me clarify which paint. Alright, for acrylics I'd recommend liquid text basics available at artstores or online."
+      "independent_output_transcript": "Hi there, color can be tricky. For example, magenta with white can give you a light purple and cyan with yellow makes a pastel. I'm an AI, I don't have a budget, but I can help you just ask about mixing colors. Or wait me clarify which paint. Alright, for acrylics I'd recommend liquid text basics available at artstores or online.",
+      "display_name": "A03 · Complete input · A100 · Bounded decoder"
     },
     {
       "key": "1026406_dailytalk_full_english_context",
@@ -951,7 +954,8 @@
       ],
       "dropped_audio_chunks": 0,
       "speech_quality_requires_content_review": true,
-      "independent_output_transcript": "What are you I'm currently processing a request for information. Let me check the budget. I'm checking the budget database and it contains. The budget is fixed for now. For now, until I check with the finance team, for now I can check with finance to see if we can adjust the budget budget."
+      "independent_output_transcript": "What are you I'm currently processing a request for information. Let me check the budget. I'm checking the budget database and it contains. The budget is fixed for now. For now, until I check with the finance team, for now I can check with finance to see if we can adjust the budget budget.",
+      "display_name": "A04 · English prompt · A100 · Bounded decoder"
     },
     {
       "key": "1026490_dailytalk_full_english_capabilities_context",
@@ -1038,7 +1042,8 @@
       ],
       "dropped_audio_chunks": 10,
       "speech_quality_requires_content_review": true,
-      "independent_output_transcript": "What are you and AI assistant perfect for helping you plan? I can opt-als, I need your income and expenses. Any questions? I can help you allocate Kate. I was using standard ratios for let me recalculate based... Thank you. Remember you lead the budget decisions. I'm here to help."
+      "independent_output_transcript": "What are you and AI assistant perfect for helping you plan? I can opt-als, I need your income and expenses. Any questions? I can help you allocate Kate. I was using standard ratios for let me recalculate based... Thank you. Remember you lead the budget decisions. I'm here to help.",
+      "display_name": "A05 · Capability prompt · H100 graphs"
     },
     {
       "key": "1026490_dailytalk_full_english_tp2_graph_context",
@@ -1141,8 +1146,10 @@
       ],
       "dropped_audio_chunks": 2,
       "speech_quality_requires_content_review": true,
-      "independent_output_transcript": "What are you just listening to you? How can I help today? I can't pull up the budget info right now, but I can transfer you to. I don't have a specific budget assigned to me. You should ask, because the system limits it automatically, so for support tasks. But it's not a good idea. You just said you have no budget. which one is correct?"
+      "independent_output_transcript": "What are you just listening to you? How can I help today? I can't pull up the budget info right now, but I can transfer you to. I don't have a specific budget assigned to me. You should ask, because the system limits it automatically, so for support tasks. But it's not a good idea. You just said you have no budget. which one is correct?",
+      "display_name": "A06 · English prompt · H100 graphs"
     }
   ],
-  "evidence_status": "Measured runs and independent CPU transcripts; no answer-quality pass inferred from transport"
+  "evidence_status": "Measured runs and independent CPU transcripts; no answer-quality pass inferred from transport",
+  "archive_status": "Superseded diagnostics; current controlled results are in current-study.json."
 }
