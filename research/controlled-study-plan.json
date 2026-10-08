@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-07",
+  "checked_at_utc": "2026-10-08T02:25:24.908525+00:00",
+  "status": "queued_no_gpu_results",
+  "gpu_job_id": "1027597",
+  "cpu_followup_job_id": "1027598",
+  "currently_allocated_gpus": 0,
+  "requested_gpus": 2,
+  "gpu_type": "H100 SXM 80 GB",
+  "primary_layout": "GPU 0: TP1 Thinker; GPU 1: Talker/MTP/Code2Wav and S2 TP1",
+  "conditional_fallback_layout": "3 H100s: GPU 0 Thinker; GPU 1 speech; GPU 2 S2",
+  "maximum_active_gpus": 3,
+  "gpu_jobs_sequential": true,
+  "thinker_cuda_graphs": true,
+  "s2_cuda_graphs": true,
+  "system2_model": "Qwen/Qwen3-4B-Thinking-2507",
+  "system2_revision": "768f209d9ea81521153ed38c47d515654e938aea",
+  "cases": [
+    {
+      "name": "single_request_s2_off",
+      "s2_policy": "off",
+      "initial_text": "Do you know any easy recipes for homemade bread?",
+      "interrupt_text": null
+    },
+    {
+      "name": "single_request_s2_forced",
+      "s2_policy": "force_once_after_input",
+      "initial_text": "Do you know any easy recipes for homemade bread?",
+      "interrupt_text": null
+    },
+    {
+      "name": "pet_no_interruption_s2_off",
+      "s2_policy": "off",
+      "initial_text": "Got any advice on a low-maintenance pet?",
+      "interrupt_text": null
+    },
+    {
+      "name": "pet_interruption_s2_off",
+      "s2_policy": "off",
+      "initial_text": "Got any advice on a low-maintenance pet?",
+      "interrupt_text": "No fish, please. Any small animals instead?"
+    }
+  ],
+  "qualification_criteria": {
+    "skip_initial_turns": 4,
+    "min_samples": 20,
+    "max_p95_s1_seconds": 0.384,
+    "max_p95_talker_seconds": 0.384,
+    "max_queue_delay_seconds": 0.48,
+    "max_playback_scheduler_p95_seconds": 0.04,
+    "max_relative_extra_latency": 0.25,
+    "max_absolute_extra_latency_seconds": 0.03,
+    "min_s2_load_fraction": 0.8
+  },
+  "validation": {
+    "independent_input_transcription": "all words present in all three crops",
+    "processor_audio_items": 40,
+    "processor_prompt_tokens": 3348,
+    "processor_prompt_plus_response_tokens": 3604,
+    "model_context_tokens": 4096,
+    "cpu_regression": {
+      "status": "pass",
+      "gpus": 0,
+      "forced_s2_requests": 1,
+      "guidance_deliveries": 2,
+      "s1_calls_while_s2_pending": 45,
+      "interrupt_input_packets": 10,
+      "old_audio_after_stop": false,
+      "think_state_survived_history_trim": true,
+      "provider_failure_propagated": true
+    }
+  },
+  "source": {
+    "dataset": "pengyizhou/FD-Bench-Audio-Input",
+    "url": "https://huggingface.co/datasets/pengyizhou/FD-Bench-Audio-Input",
+    "license": "NTUitive",
+    "license_url": "https://huggingface.co/datasets/pengyizhou/FD-Bench-Audio-Input/blob/main/LICENSE",
+    "cases": [
+      {
+        "conversation": 35,
+        "turn": 0,
+        "sha256": "fac8698ea305553799e02722758bba602c2addbb8cb99cd8b6d088dd1fed691a"
+      },
+      {
+        "conversation": 48,
+        "turn": 0,
+        "sha256": "85f445c30c84ee3ef64cd592851291d33a4a3210f54883c364302d436effdfc0"
+      },
+      {
+        "conversation": 48,
+        "turn": 1,
+        "sha256": "2a7427cd1cd2f9dafd73d3ebd7febaf71d77f218aa16b9d01326d4b5fd2a87d9"
+      }
+    ]
+  },
+  "scope": "Single-request forced handoff and playback-aligned S1-only correction controls. Recorded user audio, simulated PCM transport. GPU behavioral results pending; no autonomous delegation or physical device claim."
+}

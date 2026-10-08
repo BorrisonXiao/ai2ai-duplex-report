@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Controlled S2 handoff and S1 interruption study</title><style>.study-table-scroll{max-width:100%;overflow-x:auto}.study-table-scroll table{min-width:650px}.study-table-scroll th,.study-table-scroll td{text-align:left!important}</style></head><body><style>
+:root{color-scheme:light;--surface-0:#f6f5f1;--surface-1:#fcfcfb;--surface-2:#edebe3;
+--border:#dfdcd1;--border-strong:#c7c3b5;--text-primary:#1c1b17;--text-secondary:#55524a;
+--text-muted:#8a8677;--series-sed:#2a78d6;--series-asr:#178a17;--series-speaker:#d55187;
+--pair-sed-asr:#e0692c;--pair-sed-speaker:#5647b0;--diverge-neg:#d83a3a;--grid:#e4e1d6;
+--w-muted:#9b9686;--band:rgba(90,88,78,.07);--ok:#178a17;--bad:#d83a3a;}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme=light])){color-scheme:dark;
+--surface-0:#141311;--surface-1:#1a1a19;--surface-2:#232120;--border:#38362f;
+--border-strong:#4a473d;--text-primary:#f3f1ea;--text-secondary:#c2beb0;--text-muted:#8f8c7e;
+--series-sed:#4a97ee;--series-asr:#3ec03e;--series-speaker:#e06a9c;--pair-sed-asr:#ec8148;
+--pair-sed-speaker:#8878e6;--diverge-neg:#ec6a6a;--grid:#322f29;--w-muted:#6f6c60;
+--band:rgba(200,197,186,.06);--ok:#3ec03e;--bad:#ec6a6a;}}
+:root[data-theme=dark]{color-scheme:dark;--surface-0:#141311;--surface-1:#1a1a19;
+--surface-2:#232120;--border:#38362f;--border-strong:#4a473d;--text-primary:#f3f1ea;
+--text-secondary:#c2beb0;--text-muted:#8f8c7e;--series-sed:#4a97ee;--series-asr:#3ec03e;
+--series-speaker:#e06a9c;--pair-sed-asr:#ec8148;--pair-sed-speaker:#8878e6;
+--diverge-neg:#ec6a6a;--grid:#322f29;--w-muted:#6f6c60;--band:rgba(200,197,186,.06);
+--ok:#3ec03e;--bad:#ec6a6a;}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:var(--surface-0);color:var(--text-primary);font-size:16px;line-height:1.55;
+font-family:Palatino,"Palatino Linotype","Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.hero{padding:44px 0 12px}
+h1{font-size:30px;line-height:1.15;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--text-secondary);font-size:16px}
+.kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);
+font-family:inherit;margin-bottom:10px}
+section{padding:22px 0;border-top:1px solid var(--border)}
+h2{font-size:21px;margin:0 0 4px;text-wrap:balance}
+.lead{color:var(--text-secondary);margin:0 0 16px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:6px 0 4px}
+.tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.tile .l{font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--text-muted)}
+.tile .v{font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px}
+.tile .s{font-size:12.5px;color:var(--text-secondary);margin-top:2px}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin:14px 0}
+.card h3{margin:0 0 8px;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.chart{width:100%;height:auto;display:block}
+.grid{stroke:var(--grid);stroke-width:1}
+.vmark{stroke:var(--text-muted);stroke-width:1.4;stroke-dasharray:4 4}
+text{fill:var(--text-secondary);font-family:inherit}
+.ax-y{font-size:10.5px;text-anchor:end}.ax-x{font-size:10.5px;text-anchor:middle}
+.ax-title{font-size:11px;text-anchor:middle;fill:var(--text-muted)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:8px 2px 2px;font-size:13px;color:var(--text-secondary)}
+.lg{display:inline-flex;align-items:center;gap:6px}.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.finding{border-left:3px solid var(--diverge-neg);background:var(--band);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:15px}
+.finding.ok{border-left-color:var(--ok)}.finding b{font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0}
+th,td{text-align:right;padding:6px 10px;border-bottom:1px solid var(--border)}
+th:first-child,td:first-child{text-align:left}
+thead th{color:var(--text-muted);font-weight:500;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+.fig{width:100%;border-radius:8px;display:block;border:1px solid var(--border)}
+.cap{font-size:13px;color:var(--text-secondary);margin:6px 2px 2px}.cap .mono{color:var(--text-primary)}
+.asset-label{margin:12px 2px 5px;color:var(--text-muted);font-size:12px;font-weight:600;
+letter-spacing:.06em;text-transform:uppercase}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;border:1px solid var(--border-strong)}
+.muted{color:var(--text-muted)}
+footer{padding:26px 0 60px;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border)}
+.equation{overflow-x:auto;margin:14px 0;padding:14px 16px;border-radius:9px;
+background:var(--surface-2)}
+.equation mjx-container[display="true"]{margin:0!important}
+mjx-container{max-width:100%}
+</style><div class="wrap"><header class="hero"><div class="kicker">Controlled experiment setup · 7 October 2026</div><h1>Separate S2 handoff from S1 interruption</h1><p class="sub">Four matched conditions isolate system handoff and interruption behavior. CPU preparation checks passed; the GPU study is queued and has no behavioral results yet.</p></header><section><h2>1 · Study status</h2><p><a href="index.html">All experiments</a> · <a href="trajectory.html">Previous measured trajectory grid</a> · <a href="interaction-review.html">Previous evidence audit</a> · <a href="../research/controlled-study-plan.json">Exact setup record</a></p><div class="finding">GPU job <b>1027597</b> is queued for <b>2 × H100 SXM 80 GB</b>. CPU follow-up <b>1027598</b> waits for it to finish. At the recorded status check, zero GPUs were allocated. Queue status is a dated snapshot.</div></section><section><h2>2 · Matched controls</h2><div class="card"><div class="asset-label">Table 1</div><div class="study-table-scroll"><table><thead><tr><th>Condition</th><th>User input</th><th>Purpose</th></tr></thead><tbody><tr><td>Single request, S2 disabled</td><td>Do you know any easy recipes for homemade bread?</td><td>No S2 requests; reference for S1 response.</td></tr><tr><td>Same request, S2 forced once</td><td>Do you know any easy recipes for homemade bread?</td><td>Start S2 after the complete request; verify guidance delivery, continuous S1 activity and audible answer uptake.</td></tr><tr><td>S1 without interruption</td><td>Got any advice on a low-maintenance pet?</td><td>S2 disabled; reference for the ongoing answer.</td></tr><tr><td>S1 with user correction</td><td>Got any advice on a low-maintenance pet? Then: No fish, please. Any small animals instead?</td><td>S2 disabled. Begin correction after 0.6 s of requested nonquiet playback, while speech is still playing. Check STOP, obsolete audio and the updated answer.</td></tr></tbody></table></div><p class="cap"><b>Table 1.</b> Four conditions share the same S1 prompt, temperature, decoding and warmed service configuration. The two interruption conditions share the observation horizon. Forced delegation is an explicit test intervention.</p></div><p>S2 uses Qwen/Qwen3-4B-Thinking-2507. A forced THINK state is recorded separately from the model output and retained in bounded history. Only completed final-answer clauses reach S1; private reasoning is counted. For S1-only conditions, S2 dispatch is disabled in the controller.</p></section><section><h2>3 · Qualify infrastructure before behavior</h2><p>Compare the same paced request with and without a bounded background S2 load. Keep Thinker TP1, warm lazy kernels separately, enable Thinker/S2 CUDA graphs, reuse bounded decoder context, and cap CPU thread pools. Measure RPC, deserialization, queueing and playback scheduling separately. Complete clauses are dispatched on the next S1 tick, without the randomized presentation cooldown.</p><div class="card"><div class="asset-label">Table 2</div><div class="study-table-scroll"><table><thead><tr><th>Check</th><th>Required criterion</th></tr></thead><tbody><tr><td>S1 client latency, p95</td><td>At most 0.384 s</td></tr><tr><td>Talker client latency, p95</td><td>At most 0.384 s</td></tr><tr><td>Input and speech queue delay</td><td>At most 0.480 s</td></tr><tr><td>Added p95 latency during S2 load</td><td>At most the larger of 30 ms or 25% of the matched baseline</td></tr><tr><td>S2 request interval coverage</td><td>At least 80% of the measured interval</td></tr><tr><td>Calibration samples</td><td>At least 20 S1 and 20 Talker samples after four initial ticks</td></tr><tr><td>Playback scheduler lateness, p95</td><td>At most 40 ms; playback uses 20 ms packets</td></tr></tbody></table></div><p class="cap"><b>Table 2.</b> The 480 ms input cadence defines the latency budget. These gates qualify the tested allocation before the four behavioral conditions execute; they do not score answer correctness.</p></div><p>If the two-GPU baseline passes but S2 contention violates the criteria, the CPU follow-up submits a sequential three-H100 retry with S2 on GPU 2. A failed baseline, provider error or incomplete calibration is retained for diagnosis. Behavioral tests remain blocked until a layout qualifies. Maximum allocation is three GPUs, with no overlap between GPU jobs.</p></section><section><h2>4 · Preparation evidence</h2><div class="card"><div class="asset-label">Table 3</div><div class="study-table-scroll"><table><thead><tr><th>Check</th><th>Evidence</th></tr></thead><tbody><tr><td>Independent input transcription</td><td>All reference words present in three complete crops; 0 GPUs</td></tr><tr><td>Real processor preflight</td><td>40 audio items; 3604 tokens including response allowance, below 4096</td></tr><tr><td>Forced/disabled S2 scheduling</td><td>Mocked transport: 1 S2 request, 2 complete clauses, 45 S1 calls while S2 was pending</td></tr><tr><td>Interrupted playback</td><td>Mocked transport: all 10 correction packets processed; obsolete audio rejected after STOP</td></tr><tr><td>Failure and history handling</td><td>Provider errors propagate; forced THINK survives bounded-history trimming</td></tr><tr><td>GPU behavior</td><td>Pending; speech content and answer correctness require independent review</td></tr></tbody></table></div><p class="cap"><b>Table 3.</b> CPU checks verify input integrity, processing and controller behavior under mocks. They establish no GPU throughput or model-quality result.</p></div><p>For the real run, review S2 completion and guidance uptake, played audio, interruption-to-STOP timing, stale audio rejection, recognition and the new answer. Transcription and control fields provide complementary evidence; complete relevant speech remains the behavioral criterion.</p></section><section><h2>5 · Audio provenance and scope</h2><p>User clips are cropped from FD-Bench CosyVoice2 easy conversations 35 and 48, preserving complete requests and margins. No source assistant answer is fed to a model. These event-aligned controls adapt the source recordings rather than report an official benchmark score. Attribution: <a href="https://huggingface.co/datasets/pengyizhou/FD-Bench-Audio-Input">FD-Bench Audio Input</a>, <a href="https://huggingface.co/datasets/pengyizhou/FD-Bench-Audio-Input/blob/main/LICENSE">NTUitive license</a>. Crop hashes and source turn identifiers are in the setup record.</p><p>The planned replay captures software PCM queues and measured client events. Physical microphone/loudspeaker behavior and autonomous S2 delegation need separate validation.</p></section></div></body></html>

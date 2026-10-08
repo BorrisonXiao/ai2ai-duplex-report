@@ -2,6 +2,8 @@
 
 [Project webpage](https://borrisonxiao.github.io/ai2ai-duplex-report/)
 
+Experiments: [measured replay grid](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/trajectory.html), [evidence audit](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/interaction-review.html), and [controlled S2/interruption study setup](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/controlled-study.html). The new four-condition study is queued as job `1027597`, with runtime qualification before behavioral tests; it has no GPU results yet. Rebuild the setup from `research/controlled-study-plan.json` using `scripts/build_controlled_study.py`.
+
 The project webpage is live on GitHub Pages. It deploys the rendered static files from **main → / (root)**; no separate build service is required. A successful Git push is followed by a deployment/content check before an update is called live.
 
 The only project tab is Literature review. Revised on 2 October 2026 with an evidence cutoff of 30 September 2026, it compares duplex system architectures, code/weight/training availability, benchmarks, natural and generated training data, and implications for incremental, revision-aware, speaker-aware reasoning. It uses primary papers, official repositories and dataset/model cards, with reported results kept separate from this review’s synthesis.
