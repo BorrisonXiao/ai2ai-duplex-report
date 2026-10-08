@@ -38,9 +38,11 @@ def viewer(group,filename,title,description):
     replacements={'TITLE':title,'DESCRIPTION':description,'NAV':project_tabs('experiments','../'),
        'EXAMPLE_INTRO':intro,'EXAMPLE':json.dumps(bundle,ensure_ascii=False).replace('<','\\u003c'),
        'DATA_URL':f'../research/current-{group}.json',
-       'OTHER_EXPERIMENT':'<a href="interruption.html">E2 · S1 interruption</a>' if group=='handoff' else '<a href="trajectory.html">E1 · Single-request handoff</a>'}
+       'OTHER_EXPERIMENT':'<a href="interruption.html">E2 · S1 interruption</a>' if group=='handoff' else '<a href="handoff.html">E1 · Single-request handoff</a>'}
     page=(ROOT/'scripts/templates/current_trajectory.html.in').read_text()
     for key,value in replacements.items():page=page.replace('{{'+key+'}}',value)
+    if (ROOT/'research/current-s1.json').exists():
+        page=page.replace('Current controlled study ·','Earlier controlled study ·').replace('Current attempt ·','Earlier attempt ·')
     assert '{{' not in page
     (ROOT/'experiments'/filename).write_text(version_assets(page))
 
@@ -53,7 +55,7 @@ def overview(study):
           'blocked':'Runtime qualification blocked the behavioral cases.',
           'completed':'The run completed; inspect the audit and played audio before declaring a behavioral pass.',
           'completed_with_behavior_failures':'The three-GPU layout passed runtime qualification. All four cases ran, but no task-level behavioral pass was demonstrated.'}[status]
-    body=hk.hero('Current study · 8 October 2026','E1 handoff and E2 interruption',lede)
+    body=hk.hero('Earlier study · 8 October 2026','E1 handoff and E2 interruption',lede)
     body+=hk.section('1 · Current status',body='<p><a href="index.html">All experiments</a> · <a href="trajectory.html">E1 · Single-request handoff</a> · <a href="interruption.html">E2 · S1 interruption</a> · <a href="archive.html">Historical archive</a></p><p>Current GPU job <b>'+study['gpu_job_id']+'</b>, CPU follow-up <b>'+study['cpu_followup_job_id']+'</b>. '+escape(study['primary_layout'])+'. The job selects the smallest qualifying layout before running the behavioral cases. A measured contention failure permits the sequential three-H100 layout, with S2 on GPU 2; maximum three GPUs and no GPU overlap.</p>')
     rows=[]
     for c in study['conditions']:
@@ -96,9 +98,18 @@ def collection():
 
 def main():
     study=json.loads((ROOT/'research/current-study.json').read_text())
-    viewer('handoff','trajectory.html','E1 · Single-request handoff','One complete bread question, with S2 disabled or forced once.')
-    viewer('interruption','interruption.html','E2 · S1 interruption','One pet request and a correction during speech; S2 remains disabled.')
+    viewer('handoff','handoff.html','E1 · Earlier single-request handoff','One complete bread question, with S2 disabled or forced once; earlier failed study.')
+    viewer('interruption','interruption.html','E2 · Earlier S1 interruption','One pet request and a correction during speech; earlier failed study, S2 disabled.')
     overview(study);collection()
+    if (ROOT/'research/current-s1.json').exists():
+        from build_s1_baseline import main as build_s1
+        build_s1()
+        page=ROOT/'experiments/controlled-study.html'
+        page.write_text(page.read_text().replace('href="trajectory.html">E1','href="handoff.html">E1').replace('Current GPU job','Earlier GPU job'))
+        archive=ROOT/'experiments/archive.html'
+        text=archive.read_text().replace('The current examples are E1 and E2.','The current S1-only baseline is separate. Earlier E1/E2 controls and the budget diagnostics remain here as historical evidence.')
+        text=text.replace('<h2>Earlier evidence</h2>','<h2>Earlier evidence</h2><p><a href="handoff.html">E1 · Earlier bread/S2 replay</a> · <a href="interruption.html">E2 · Earlier interruption replay</a> · <a href="controlled-study.html">Earlier E1/E2 review</a></p>')
+        archive.write_text(text)
     print('Built current E1/E2 viewers, study status, collection and archive.')
 
 

@@ -61,6 +61,7 @@
     media = trace.media;
     $('run-title').textContent = trace.title || 'Imported trajectory';
     $('run-metadata').textContent = JSON.stringify(trace.metadata || {}, null, 2);
+    if ($('current-request')) $('current-request').textContent = trace.metadata?.initial_request || 'See the imported trace for its input request.';
     $('zoom').value = trace.metadata?.recommended_zoom || (trace.metadata?.content_blocks ? (trace.events.filter(e=>e.lane==='thinker'&&e.kind==='request').length>10?'5':'3') : '1');
     $('audition-scope').textContent = trace.metadata?.audition_description || defaultAuditionScope;
     $('clock-note').textContent = trace.metadata?.clock || 'Client seconds since driver start; see trace metadata.';

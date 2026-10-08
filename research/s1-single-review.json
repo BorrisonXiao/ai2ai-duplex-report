@@ -1,0 +1,729 @@
+{
+  "scope": "Standard audit of the completed S1 diagnostic phase, with all four author-harness audio cases reviewed.",
+  "job_id": "1034130",
+  "gpus": 1,
+  "gpu_type": "NVIDIA A100-SXM4-80GB",
+  "layout": "Thinker TP1 on GPU(s) [0]; Talker TP1/MTP/Code2Wav on GPU 0; Thinker and the full speech pipeline share allocation GPU 0",
+  "s2_loaded": false,
+  "startup_seconds": 145.1189576430479,
+  "driver_wall_seconds": 234.4736476369435,
+  "sampled_peak_memory_gib": 68.240234375,
+  "cases": [
+    {
+      "case": "bread_author_reference",
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "generated_tts": "",
+      "turns": 40,
+      "s2_controls": [],
+      "s2_requests": 0,
+      "prompt_override": null,
+      "temperature": 0.3,
+      "one_request": true,
+      "no_self_introduction_in_tts": true,
+      "source_input_seconds": 3.485,
+      "mean_s1_seconds": 0.30672715467517264,
+      "p95_s1_seconds": 0.36482213996350765,
+      "max_s1_seconds": 0.3708849899703637,
+      "max_input_clock_lag_seconds": 0,
+      "actual_played_seconds": 19.879,
+      "nonquiet_seconds": 0.0,
+      "played_transcript": "",
+      "spoken_basic_answer_verified": false,
+      "verdict": "failed_silent_answer"
+    },
+    {
+      "case": "repeat_author_reference",
+      "asr": "Please say exactly the sky is blue. ",
+      "generated_tts": "",
+      "turns": 40,
+      "s2_controls": [],
+      "s2_requests": 0,
+      "prompt_override": null,
+      "temperature": 0.3,
+      "one_request": true,
+      "no_self_introduction_in_tts": true,
+      "source_input_seconds": 3.39,
+      "mean_s1_seconds": 0.3025294332939666,
+      "p95_s1_seconds": 0.3485008079558611,
+      "max_s1_seconds": 0.3663365161046386,
+      "max_input_clock_lag_seconds": 0,
+      "actual_played_seconds": 19.870833333333334,
+      "nonquiet_seconds": 0.0,
+      "played_transcript": "",
+      "spoken_basic_answer_verified": false,
+      "verdict": "failed_silent_answer"
+    },
+    {
+      "case": "repeat_native_prompt",
+      "asr": "Please say exactly the sky is blue.",
+      "generated_tts": "The sky is blue.",
+      "turns": 40,
+      "s2_controls": [],
+      "s2_requests": 0,
+      "prompt_override": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "temperature": 0,
+      "one_request": true,
+      "no_self_introduction_in_tts": true,
+      "source_input_seconds": 3.39,
+      "mean_s1_seconds": 0.3048961446795147,
+      "p95_s1_seconds": 0.3638897171593271,
+      "max_s1_seconds": 0.3734985750634223,
+      "max_input_clock_lag_seconds": 0,
+      "actual_played_seconds": 19.899041666666665,
+      "nonquiet_seconds": 1.3800000000000001,
+      "played_transcript": "The sky is blue.",
+      "first_nonquiet_seconds": 3.18,
+      "last_nonquiet_seconds": 4.62,
+      "response_window_start_seconds": 3.03,
+      "response_window_seconds": 1.74,
+      "spoken_basic_answer_verified": true,
+      "verdict": "spoken_single_request_pass"
+    },
+    {
+      "case": "sky_native_prompt",
+      "asr": "What color is the sky on a clear day?",
+      "generated_tts": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+      "turns": 40,
+      "s2_controls": [],
+      "s2_requests": 0,
+      "prompt_override": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "temperature": 0,
+      "one_request": true,
+      "no_self_introduction_in_tts": true,
+      "source_input_seconds": 2.885,
+      "mean_s1_seconds": 0.33124981499568096,
+      "p95_s1_seconds": 0.36888817247818223,
+      "max_s1_seconds": 0.38584480399731547,
+      "max_input_clock_lag_seconds": 0,
+      "actual_played_seconds": 19.915166666666668,
+      "nonquiet_seconds": 8.02,
+      "played_transcript": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+      "first_nonquiet_seconds": 2.64,
+      "last_nonquiet_seconds": 10.98,
+      "response_window_start_seconds": 2.49,
+      "response_window_seconds": 8.64,
+      "spoken_basic_answer_verified": true,
+      "verdict": "spoken_single_request_pass"
+    }
+  ],
+  "diagnostic_cases": [
+    {
+      "job": "1034073",
+      "case": "baseline_json_custom",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "Hello, this is your voice assistant. How can I help you today?",
+      "temperature": 0,
+      "history": "json",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "failed"
+    },
+    {
+      "job": "1034073",
+      "case": "raw_custom",
+      "steps": 40,
+      "asr": "",
+      "tts": "Hello, this is your voice assistant. How can I help you today?",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "failed"
+    },
+    {
+      "job": "1034073",
+      "case": "native_raw",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "failed"
+    },
+    {
+      "job": "1034073",
+      "case": "native_raw_temp03",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0.3,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "failed"
+    },
+    {
+      "job": "1034073",
+      "case": "native_raw_non_thinking_prefix",
+      "steps": 1,
+      "asr": "",
+      "tts": "您好，",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "failed"
+    },
+    {
+      "job": "1034085",
+      "case": "author_simulation_parameters",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0.3,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034085",
+      "case": "native_raw_initial_silence",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034085",
+      "case": "wait_raw",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034085",
+      "case": "whole_request_native_raw",
+      "steps": 40,
+      "asr": "",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "whole",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034085",
+      "case": "whole_request_wait_raw",
+      "steps": 40,
+      "asr": "",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "whole",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034085",
+      "case": "simple_instruction_native_raw",
+      "steps": 40,
+      "asr": "Please say exactly the sky is blue.",
+      "tts": "The sky is blue.",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034085",
+      "case": "simple_instruction_wait_raw",
+      "steps": 40,
+      "asr": "Please say exactly the sky is blue. ",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": true,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034117",
+      "case": "native_raw",
+      "steps": 40,
+      "asr": "Hey, do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": false,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034117",
+      "case": "simple_instruction_custom",
+      "steps": 40,
+      "asr": "",
+      "tts": "Hello, this is your voice assistant. How can I help you today?",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": false,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034117",
+      "case": "sky_native_raw",
+      "steps": 40,
+      "asr": "What color is this sky on a clear day?",
+      "tts": "On a clear day, the sky is blue.",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": false,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034117",
+      "case": "sky_task_opening",
+      "steps": 40,
+      "asr": "What color is this sky on a clear day?",
+      "tts": "On a clear day, the sky is typically blue due to Rayleigh scattering.",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": false,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034117",
+      "case": "bread_task_opening",
+      "steps": 40,
+      "asr": "Hey, do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0,
+      "history": "raw",
+      "prefix_caching": false,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    },
+    {
+      "job": "1034117",
+      "case": "bread_json_native",
+      "steps": 40,
+      "asr": "Do you know any easy recipes for homemade bread? ",
+      "tts": "",
+      "temperature": 0,
+      "history": "json",
+      "prefix_caching": false,
+      "mode": "chunks",
+      "status": "completed_content_review_required"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "S1 cannot answer any single user request.",
+      "tier": "primary_evidence",
+      "verdict": "refuted",
+      "evidence": "Two native-prompt author-harness cases contain nonquiet generated speech independently transcribed with sky and blue.",
+      "evidence_label": "Evidence-backed",
+      "evidence_artifacts": [
+        "exp/inference/duplexomni/audio_turn_single_gpu_1034130/sky_native_prompt/speech_audit.json",
+        "exp/inference/duplexomni/audio_turn_single_gpu_1034130/repeat_native_prompt/speech_audit.json"
+      ]
+    },
+    {
+      "claim": "The custom prompt is compatible with the released inference policy.",
+      "tier": "primary_evidence",
+      "verdict": "unsupported",
+      "evidence": "Custom-prompt bread and repeat controls produce a startup greeting; native-shaped prompts produce responsive speech on the repeat and factual controls.",
+      "evidence_label": "Evidence-backed",
+      "evidence_artifacts": [
+        "exp/diagnostics/s1_single_1034073/summary.json",
+        "exp/diagnostics/s1_single_1034085/summary.json",
+        "exp/diagnostics/s1_single_1034117/summary.json",
+        "exp/inference/duplexomni/audio_turn_single_gpu_1034130/bread_author_reference/native_summary.json"
+      ]
+    },
+    {
+      "claim": "Changing history serialization alone fixes the bread failure.",
+      "tier": "primary_evidence",
+      "verdict": "refuted",
+      "evidence": "Raw and canonical history controls both fail to provide a bread answer.",
+      "evidence_label": "Evidence-backed",
+      "evidence_artifacts": [
+        "exp/diagnostics/s1_single_1034073/summary.json",
+        "exp/diagnostics/s1_single_1034085/summary.json",
+        "exp/diagnostics/s1_single_1034117/summary.json",
+        "exp/inference/duplexomni/audio_turn_single_gpu_1034130/bread_author_reference/native_summary.json"
+      ]
+    },
+    {
+      "claim": "The bread silence is caused by a slow service or input backlog.",
+      "tier": "primary_evidence",
+      "verdict": "not_supported_by_this_run",
+      "evidence": "Author-harness bread case recognizes the full question, has no input-clock backlog, and runs below the 480 ms tick budget.",
+      "evidence_label": "Evidence-backed",
+      "evidence_artifacts": [
+        "exp/diagnostics/s1_single_1034073/summary.json",
+        "exp/diagnostics/s1_single_1034085/summary.json",
+        "exp/diagnostics/s1_single_1034117/summary.json",
+        "exp/inference/duplexomni/audio_turn_single_gpu_1034130/bread_author_reference/native_summary.json"
+      ]
+    },
+    {
+      "claim": "The exact underlying cause of bread-specific silence is known.",
+      "tier": "open_question",
+      "verdict": "unresolved",
+      "evidence": "It persists under source simulation parameters, native/task prompts, initial silence, raw/canonical histories and a cache-disabled control. No native THINK control is produced.",
+      "evidence_label": "Open question",
+      "evidence_artifacts": [
+        "exp/diagnostics/s1_single_1034073/summary.json",
+        "exp/diagnostics/s1_single_1034085/summary.json",
+        "exp/diagnostics/s1_single_1034117/summary.json",
+        "exp/inference/duplexomni/audio_turn_single_gpu_1034130/bread_author_reference/native_summary.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "Toy authored synthetic inputs; not a benchmark or evidence of robust S1 instruction following.",
+    "The main reference run is one A100 80 GB with all S1 components sharing GPU 0; S2 is absent, so S1/S2 contention cannot cause these results.",
+    "Text diagnostic loops are unpaced. Their timing is not a realtime benchmark.",
+    "The reference loop retains stock websocket chunk stretching; independent replay retains actual packet arrivals rather than source small-jitter stitching.",
+    "Automatic speech transcript is from one contiguous nonquiet response window, preserving its internal gaps; full played PCM remains unchanged.",
+    "Independent Whisper input checks confuse synthetic sky/the with similar sounds. They are review-required; S1 itself recovers both complete instructions.",
+    "Prompt effects are supported across controls; individual style, language, sampling and cache contributions are not all isolated in the audio run.",
+    "Complete-file audio controls produce no ASR or answer. The model is trained for 480 ms packets; these controls do not establish general whole-file capability."
+  ],
+  "recommendations": [
+    "Use the native patience/short-clear system prompt and raw assistant history for the S1-only single-question baseline; do not add greeting or wait directives.",
+    "Keep the sky question as the current audible S1-only control, with the repeat instruction as a second control.",
+    "Do not resume S2 or interruption studies until this baseline is stable; keep bread silence separately marked unresolved.",
+    "Use immutable launch-config snapshots and record the exact config loaded by each job."
+  ],
+  "audit_wall_seconds": 2.8165319599211216,
+  "spoken_passes": 2,
+  "allocation_seconds": 241,
+  "allocation_gpu_hours": 0.06694444444444445,
+  "runtime_settings": {
+    "gpus": 1,
+    "audio_limit": 49,
+    "max_model_len": 4096,
+    "max_num_batched_tokens": 1024,
+    "thinker_kv_cache_memory_bytes": 536870912,
+    "talker_kv_cache_memory_bytes": 268435456,
+    "thinker_gpu_memory_utilization": 0.8,
+    "talker_gpu_memory_utilization": 0.15,
+    "sequential_startup": true,
+    "talker_max_model_len": 8192,
+    "streaming_decoder": "bounded_context",
+    "decoder_context_frames": 25,
+    "thinker_tp": 1,
+    "thinker_cuda_graphs": true,
+    "name": "s1_author_reference_one_gpu",
+    "gpu_type": "A100/H100 SXM 80 GB; actual allocation recorded in gpu_runtime"
+  },
+  "depth": "standard",
+  "evidence_artifacts": [
+    "reports/s1_single_1034130_review.json",
+    "reports/s1_single_runtime_1034130.json",
+    "exp/inference/duplexomni/audio_turn_single_gpu_1034130/summary.json",
+    ".migration/updates/2026-10-08-s1-single/allocation-cost.json",
+    ".migration/updates/2026-10-08-s1-single/regression.json"
+  ],
+  "qualitative_examples": [
+    {
+      "id": "sky_native_prompt",
+      "artifact": "exp/inference/duplexomni/audio_turn_single_gpu_1034130/sky_native_prompt/native_summary.json",
+      "context": "What color is the sky on a clear day?",
+      "expected": "A complete spoken answer identifying blue.",
+      "actual_tts": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+      "actual_spoken_transcript": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+      "steps": [
+        {
+          "chunk": 1,
+          "asr": "What ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 2,
+          "asr": "color is the ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 3,
+          "asr": "sky on a ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 4,
+          "asr": "clear ",
+          "tts": "On a clear ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 5,
+          "asr": "day?",
+          "tts": "day, ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 6,
+          "asr": "",
+          "tts": "the sky ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 7,
+          "asr": "",
+          "tts": "is ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 8,
+          "asr": "",
+          "tts": "blue ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 9,
+          "asr": "",
+          "tts": "because ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 10,
+          "asr": "",
+          "tts": "of Rayleigh ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 11,
+          "asr": "",
+          "tts": "scattering. ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 13,
+          "asr": "",
+          "tts": "The ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 14,
+          "asr": "",
+          "tts": "blue light ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 15,
+          "asr": "",
+          "tts": "is scattered ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 16,
+          "asr": "",
+          "tts": "more ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 17,
+          "asr": "",
+          "tts": "than other ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 18,
+          "asr": "",
+          "tts": "colors, ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 19,
+          "asr": "",
+          "tts": "so ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 20,
+          "asr": "",
+          "tts": "we see ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 21,
+          "asr": "",
+          "tts": "it.",
+          "system2_control": ""
+        }
+      ],
+      "interpretation": "Correct basic answer in both text and actual generated speech.",
+      "evidence_label": "Evidence-backed"
+    },
+    {
+      "id": "repeat_native_prompt",
+      "artifact": "exp/inference/duplexomni/audio_turn_single_gpu_1034130/repeat_native_prompt/native_summary.json",
+      "context": "Please say exactly: The sky is blue.",
+      "expected": "The sky is blue.",
+      "actual_tts": "The sky is blue.",
+      "actual_spoken_transcript": "The sky is blue.",
+      "steps": [
+        {
+          "chunk": 1,
+          "asr": "Please ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 2,
+          "asr": "say ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 3,
+          "asr": "exactly the ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 4,
+          "asr": "sky is ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 5,
+          "asr": "",
+          "tts": "The sky ",
+          "system2_control": ""
+        },
+        {
+          "chunk": 6,
+          "asr": "blue.",
+          "tts": "is blue.",
+          "system2_control": ""
+        }
+      ],
+      "interpretation": "Correct basic answer in both text and actual generated speech.",
+      "evidence_label": "Evidence-backed"
+    },
+    {
+      "id": "bread_author_reference",
+      "artifact": "exp/inference/duplexomni/audio_turn_single_gpu_1034130/bread_author_reference/native_summary.json",
+      "context": "Do you know any easy recipes for homemade bread?",
+      "expected": "A useful bread-recipe reply or explicit clarification.",
+      "actual_tts": "",
+      "actual_spoken_transcript": "",
+      "steps": [
+        {
+          "chunk": 1,
+          "asr": "Do you know ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 3,
+          "asr": "any easy ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 4,
+          "asr": "recipes ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 5,
+          "asr": "for homemade ",
+          "tts": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 6,
+          "asr": "bread? ",
+          "tts": "",
+          "system2_control": ""
+        }
+      ],
+      "interpretation": "Complete user ASR, empty tts and quiet PCM despite input pacing headroom.",
+      "evidence_label": "Evidence-backed"
+    }
+  ],
+  "failure_taxonomy": [
+    {
+      "pattern": "Premature startup greeting",
+      "examples": [
+        "baseline_json_custom",
+        "raw_custom",
+        "simple_instruction_custom"
+      ],
+      "layer": "Prompt-conditioned S1 policy",
+      "evidence_label": "Evidence-backed",
+      "root_cause_status": "Observed under the custom prompt; exact language/style contributions remain incompletely isolated."
+    },
+    {
+      "pattern": "Silent recognized request",
+      "examples": [
+        "bread_author_reference",
+        "repeat_author_reference"
+      ],
+      "layer": "S1 reply policy",
+      "evidence_label": "Evidence-backed",
+      "root_cause_status": "Present in the author loop too; no input backlog or native THINK. Bread cause unresolved."
+    },
+    {
+      "pattern": "Whole-file ASR disappears",
+      "examples": [
+        "whole_request_native_raw",
+        "whole_request_wait_raw"
+      ],
+      "layer": "Input contract / distribution",
+      "evidence_label": "Evidence-backed",
+      "root_cause_status": "The 480 ms training contract makes whole-file inference an unsupported generalization; no specific encoder defect proven."
+    },
+    {
+      "pattern": "S2-required metadata blocks S1-only replay",
+      "examples": [
+        "CPU no-S2 regression"
+      ],
+      "layer": "Local harness implementation",
+      "evidence_label": "Evidence-backed",
+      "root_cause_status": "cfg[repo] assumption fixed; final CPU regression passes."
+    }
+  ],
+  "failure_mode_synthesis": {
+    "prevalence": "Among four completed main audio controls, two have complete verified speech and two remain quiet. These selected toy controls do not estimate population success rate.",
+    "root_cause_clustering": "Prompt/history/input contracts affect observed policy. Raw history alone does not repair bread. More than one failure mechanism is therefore plausible.",
+    "design_vs_implementation": "Assuming arbitrary prompt prose and whole-file audio would behave like the trained 480 ms interface was a harness design assumption. Requiring S2 metadata for an S1-only run was an implementation defect, now fixed. Bread-specific silence remains an open model/policy question.",
+    "collective_assessment": "Basic S1 speech works on the native baseline. The previous failure cannot be generalized to all single requests; robust task following and bread recipes remain unproven.",
+    "evidence_label": "Inferred"
+  },
+  "prioritized_recommendations": [
+    {
+      "priority": 0,
+      "action": "Keep the native-prompt/raw-history/S2-absent baseline as the current control.",
+      "addresses": "Premature startup greeting and S2-required harness assumptions",
+      "success_criterion": "Complete independently transcribed S1 answer on the factual and repeat controls, no introduction and no S2 service or dispatch.",
+      "prerequisites": "Pinned models and exact frozen run configuration",
+      "status": "Verified on the author-harness audio run."
+    },
+    {
+      "priority": 1,
+      "action": "Investigate bread-specific silence with matched direct-versus-indirect recipe instructions before any new S2 or interruption study.",
+      "addresses": "Silent recognized request",
+      "success_criterion": "A grounded useful recipe or clarification while input remains fully recognized and the 480 ms clock has headroom.",
+      "prerequisites": "Retain the working S1 baseline; separate prompt/sampling/cache factors",
+      "status": "Recommendation; not executed or claimed fixed."
+    }
+  ]
+}

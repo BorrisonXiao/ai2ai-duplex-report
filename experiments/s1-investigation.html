@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S1-only single-request investigation</title><link rel="stylesheet" href="../assets/site.css"><style>.study-table-scroll{max-width:100%;overflow-x:auto}.study-table-scroll table{min-width:650px}</style></head><body><style>
+:root{color-scheme:light;--surface-0:#f6f5f1;--surface-1:#fcfcfb;--surface-2:#edebe3;
+--border:#dfdcd1;--border-strong:#c7c3b5;--text-primary:#1c1b17;--text-secondary:#55524a;
+--text-muted:#8a8677;--series-sed:#2a78d6;--series-asr:#178a17;--series-speaker:#d55187;
+--pair-sed-asr:#e0692c;--pair-sed-speaker:#5647b0;--diverge-neg:#d83a3a;--grid:#e4e1d6;
+--w-muted:#9b9686;--band:rgba(90,88,78,.07);--ok:#178a17;--bad:#d83a3a;}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme=light])){color-scheme:dark;
+--surface-0:#141311;--surface-1:#1a1a19;--surface-2:#232120;--border:#38362f;
+--border-strong:#4a473d;--text-primary:#f3f1ea;--text-secondary:#c2beb0;--text-muted:#8f8c7e;
+--series-sed:#4a97ee;--series-asr:#3ec03e;--series-speaker:#e06a9c;--pair-sed-asr:#ec8148;
+--pair-sed-speaker:#8878e6;--diverge-neg:#ec6a6a;--grid:#322f29;--w-muted:#6f6c60;
+--band:rgba(200,197,186,.06);--ok:#3ec03e;--bad:#ec6a6a;}}
+:root[data-theme=dark]{color-scheme:dark;--surface-0:#141311;--surface-1:#1a1a19;
+--surface-2:#232120;--border:#38362f;--border-strong:#4a473d;--text-primary:#f3f1ea;
+--text-secondary:#c2beb0;--text-muted:#8f8c7e;--series-sed:#4a97ee;--series-asr:#3ec03e;
+--series-speaker:#e06a9c;--pair-sed-asr:#ec8148;--pair-sed-speaker:#8878e6;
+--diverge-neg:#ec6a6a;--grid:#322f29;--w-muted:#6f6c60;--band:rgba(200,197,186,.06);
+--ok:#3ec03e;--bad:#ec6a6a;}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:var(--surface-0);color:var(--text-primary);font-size:16px;line-height:1.55;
+font-family:Palatino,"Palatino Linotype","Iowan Old Style",Georgia,serif;-webkit-font-smoothing:antialiased}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.mono{font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.hero{padding:44px 0 12px}
+h1{font-size:30px;line-height:1.15;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--text-secondary);font-size:16px}
+.kicker{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);
+font-family:inherit;margin-bottom:10px}
+section{padding:22px 0;border-top:1px solid var(--border)}
+h2{font-size:21px;margin:0 0 4px;text-wrap:balance}
+.lead{color:var(--text-secondary);margin:0 0 16px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:6px 0 4px}
+.tile{background:var(--surface-1);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.tile .l{font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--text-muted)}
+.tile .v{font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:2px}
+.tile .s{font-size:12.5px;color:var(--text-secondary);margin-top:2px}
+.card{background:var(--surface-1);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin:14px 0}
+.card h3{margin:0 0 8px;font-size:15.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+.chart{width:100%;height:auto;display:block}
+.grid{stroke:var(--grid);stroke-width:1}
+.vmark{stroke:var(--text-muted);stroke-width:1.4;stroke-dasharray:4 4}
+text{fill:var(--text-secondary);font-family:inherit}
+.ax-y{font-size:10.5px;text-anchor:end}.ax-x{font-size:10.5px;text-anchor:middle}
+.ax-title{font-size:11px;text-anchor:middle;fill:var(--text-muted)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:8px 2px 2px;font-size:13px;color:var(--text-secondary)}
+.lg{display:inline-flex;align-items:center;gap:6px}.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.finding{border-left:3px solid var(--diverge-neg);background:var(--band);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:15px}
+.finding.ok{border-left-color:var(--ok)}.finding b{font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0}
+th,td{text-align:right;padding:6px 10px;border-bottom:1px solid var(--border)}
+th:first-child,td:first-child{text-align:left}
+thead th{color:var(--text-muted);font-weight:500;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+.fig{width:100%;border-radius:8px;display:block;border:1px solid var(--border)}
+.cap{font-size:13px;color:var(--text-secondary);margin:6px 2px 2px}.cap .mono{color:var(--text-primary)}
+.asset-label{margin:12px 2px 5px;color:var(--text-muted);font-size:12px;font-weight:600;
+letter-spacing:.06em;text-transform:uppercase}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;border:1px solid var(--border-strong)}
+.muted{color:var(--text-muted)}
+footer{padding:26px 0 60px;color:var(--text-muted);font-size:13px;border-top:1px solid var(--border)}
+.equation{overflow-x:auto;margin:14px 0;padding:14px 16px;border-radius:9px;
+background:var(--surface-2)}
+.equation mjx-container[display="true"]{margin:0!important}
+mjx-container{max-width:100%}
+</style><div class="wrap"><header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="../index.html">Literature review</a><a href="../experiments/index.html" aria-current="page">Experiments</a></nav></div></header><header class="hero"><div class="kicker">Investigation · 8 October 2026</div><h1>S1 answers basic single requests.</h1><p class="sub">The earlier blanket failure claim was too broad. Two basic spoken controls now pass; the bread-recipe silence remains unresolved.</p></header><section><h2>What went wrong</h2><p>The failed example was a 480 ms streaming test. Its custom English prompt caused a startup greeting on the first packet, while the user was asking the question. The greeting was actual model output. The controlled harness also rewrote assistant replies into JSON, unlike the author harness, which retains raw replies. Changing history serialization alone does not repair the bread failure.</p><p>The authors provide <a href="https://github.com/MuyeHuang/DuplexOmni/blob/main/inference_framework/realtime_serving/simulate_v8.py">an offline simulation harness</a> and <a href="https://github.com/MuyeHuang/DuplexOmni/blob/main/inference_framework/realtime_serving/omni_realtime_server.py">a realtime server</a>. Their current source is commit 33bfba1, matching our local checkout. We ran the actual simulation loop and orchestrator, with S2 dispatch disabled and the local audio-only runtime. Stock simulation settings still give silence on the bread and repeat requests. A native patience/short-clear prompt with temperature 0 gives responsive speech for the repeat and factual controls.</p><p>That configuration fixes the two basic controls. The audio comparison changes prompt and temperature together; it does not isolate every causal contribution. S1 cannot yet be described as robust, and recipe generation has not been fixed.</p></section><section><h2>Observed results</h2><div class="card"><div class="asset-label">Table 1</div><div class="study-table-scroll"><table><thead><tr><th>Control</th><th>Result</th><th>Generated answer</th><th>p95 S1 request</th></tr></thead><tbody><tr><td>Bread · stock simulation settings</td><td>Silent answer</td><td>No speech text; actual output quiet</td><td>0.365 s</td></tr><tr><td>Repeat · stock simulation settings</td><td>Silent answer</td><td>No speech text; actual output quiet</td><td>0.349 s</td></tr><tr><td>Repeat · native baseline</td><td>Spoken answer verified</td><td>The sky is blue.</td><td>0.364 s</td></tr><tr><td>Factual question · native baseline</td><td>Spoken answer verified</td><td>On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.</td><td>0.369 s</td></tr></tbody></table></div><p class="cap"><b>Table 1.</b> Four completed author-harness controls. All use one user request, raw history and no S2. Positive answers are independently transcribed from actual generated audio.</p></div></section><section><h2>Qualitative evidence</h2><div class="card-grid"><article class="card"><h3>Factual question</h3><p><b>S1 heard:</b> What color is the sky on a clear day?</p><p><b>Generated speech text:</b> On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.</p><p><b>Independent spoken transcript:</b> On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.</p></article><article class="card"><h3>Repeat instruction</h3><p><b>S1 heard:</b> Please say exactly the sky is blue.</p><p><b>Generated speech text:</b> The sky is blue.</p><p><b>Independent spoken transcript:</b> The sky is blue.</p></article><article class="card"><h3>Remaining failure</h3><p><b>S1 heard:</b> Do you know any easy recipes for homemade bread? </p><p><b>Generated speech text:</b> (empty)</p><p><b>Independent spoken transcript:</b> (no nonquiet speech)</p></article></div><p><a class="button" href="trajectory.html">Listen to full replay and model-only audio</a></p></section><section><h2>Why this is not a speed failure</h2><p>Job 1034130 completed on one A100 SXM 80 GB. Thinker, Talker, MTP and Code2Wav share GPU 0; S2 is absent. All four main cases have zero measured input-clock backlog, and their S1 request p95 values range from 0.349 to 0.369 s under the 0.480 s tick. The bread case recognizes the complete question and remains silent despite that timing headroom.</p><p>Startup took 145.1 s, followed by a separate silent warmup session. Allocation lasted 241 s (0.06694 GPU hours); sampled peak device memory was 68.24 GiB. Three preceding Thinker-only diagnostic jobs also ran sequentially. No experiment GPU remains active. This is the smallest tested S1 layout and it meets this input clock; it does not test S1/S2 contention.</p></section><section><h2>Local correction and remaining work</h2><p>The local S1-only configuration removes the S2 service, uses the native prompt below, and keeps raw assistant replies in history. The controller suppresses S2 dispatch independently from the saved model history. CPU regressions cover disabled dispatch, raw history, STOP handling, guidance and provider failures. Do not add the previous greeting/wait instructions: the tested wait directive made even the repeat control silent.</p><pre>你是有用的助手
+你的助手风格是：耐心。
+你的开场方式要求：短句清晰。</pre><p>The exact cause of the bread-specific silence remains open. It persists under native and task-opening prompts, startup silence, raw and canonical history, and a cache-disabled control. No native THINK request is produced. Complete-file controls also lose ASR; the released model expects 480 ms packets, so those controls are not a valid general whole-file success test.</p><p>S2 and interruption experiments remain outside this baseline. <a href="controlled-study.html">Earlier E1/E2 failures</a> · <a href="handoff.html">Earlier bread/S2 replay</a> · <a href="archive.html">Older diagnostics</a>.</p></section><section><h2>Evidence limits and exact records</h2><ul><li>Toy authored synthetic inputs; not a benchmark or evidence of robust S1 instruction following.</li><li>The main reference run is one A100 80 GB with all S1 components sharing GPU 0; S2 is absent, so S1/S2 contention cannot cause these results.</li><li>Text diagnostic loops are unpaced. Their timing is not a realtime benchmark.</li><li>The reference loop retains stock websocket chunk stretching; independent replay retains actual packet arrivals rather than source small-jitter stitching.</li><li>Automatic speech transcript is from one contiguous nonquiet response window, preserving its internal gaps; full played PCM remains unchanged.</li><li>Independent Whisper input checks confuse synthetic sky/the with similar sounds. They are review-required; S1 itself recovers both complete instructions.</li><li>Prompt effects are supported across controls; individual style, language, sampling and cache contributions are not all isolated in the audio run.</li><li>Complete-file audio controls produce no ASR or answer. The model is trained for 480 ms packets; these controls do not establish general whole-file capability.</li></ul><p><a href="../research/s1-single-review.json">Download the evidence review</a> · <a href="../research/current-s1.json">Download the two audio traces</a> · <a href="index.html">All experiments</a>.</p></section></div></body></html>
