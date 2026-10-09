@@ -122,6 +122,9 @@ def main():
         build_natural()
         from build_s1_reproduction import main as build_reproduction
         build_reproduction()
+    if (ROOT/'research/s2-single-study.json').exists():
+        from build_s2_single_study import main as build_s2
+        build_s2()
     print('Built current E1/E2 viewers, study status, collection and archive.')
 
 

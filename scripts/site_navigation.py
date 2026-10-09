@@ -12,6 +12,7 @@ def review_tabs(current):
 def experiment_subtabs(current):
     items = [('overview', 'All experiments', 'index.html'),
              ('replay', 'Current replay', 'interruption.html'),
+             ('s2', 'Single-request S2', 's2-single.html'),
              ('reproduction', 'S1 reproduction report', 's1-reproduction.html'),
              ('evidence', 'Interruption evidence', 'natural-study.html')]
     return '<nav class="review-tabs" aria-label="Experiment sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
