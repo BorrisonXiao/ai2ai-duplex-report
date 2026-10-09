@@ -1,0 +1,626 @@
+{
+  "job_id": "1035079",
+  "depth": "standard",
+  "status": "basic_natural_interruption_demonstrated",
+  "gpus": 1,
+  "gpu_type": "NVIDIA H100 80GB HBM3",
+  "layout": "Thinker TP1 on GPU(s) [0]; Talker TP1/MTP/Code2Wav on GPU 0; Thinker and the full speech pipeline share allocation GPU 0",
+  "s2_loaded": false,
+  "startup_seconds": 80.05080579999958,
+  "driver_seconds": 126.78185478600062,
+  "runtime_qualification": {
+    "qualified": true,
+    "status": "qualified",
+    "baseline": {
+      "s1_samples": 36,
+      "talker_samples": 36,
+      "mean_s1_seconds": 0.19365888052774002,
+      "p95_s1_seconds": 0.20566150474951428,
+      "p95_talker_seconds": 0.2622540534998734,
+      "max_input_queue_delay_seconds": 0.00018963500042445958,
+      "max_speech_queue_delay_seconds": 0.010768186000859714,
+      "p95_playback_scheduler_lateness_seconds": 0.0010730768377470667
+    },
+    "criteria": {
+      "skip_initial_turns": 4,
+      "min_samples": 20,
+      "max_p95_s1_seconds": 0.384,
+      "max_p95_talker_seconds": 0.384,
+      "max_queue_delay_seconds": 0.48,
+      "max_playback_scheduler_p95_seconds": 0.04
+    },
+    "s2_loaded": false,
+    "job_id": "1035079",
+    "gpus": 1,
+    "scope": "Measured S1-only pacing before interruption; no S2 service and no behavioral pass inferred."
+  },
+  "cases": [
+    {
+      "name": "natural_outlet_control",
+      "id": "N2a",
+      "temperature": 0,
+      "status": "completed_content_review_required",
+      "generated_asr": "Um, what's the difference between an outlet and a regular store?",
+      "generated_tts": "An outlet is a store that sells products at a discount, often with a different layout and selection than a regular store. The main difference is the pricing strategy.",
+      "s2_requests": 0,
+      "model_think_count": 0,
+      "model_stop_count": 0,
+      "p95_s1_seconds": 0.20637711499930447,
+      "max_input_queue_delay_seconds": 0.00025548399935360067,
+      "played_transcript": "An outlet is a store that sells products at a discount often with a different layout and selection than a regular store. The main difference is the pricing strategy.",
+      "actual_nonquiet_seconds": 9.700000000000001,
+      "source_user_requests": 1,
+      "source_user_interruptions": 0,
+      "evidence_artifact": "exp/inference/duplexomni/native_loop_1035079/natural_outlet_control/native_summary.json",
+      "response_window_start_seconds": 5.27,
+      "response_window_seconds": 10.72
+    },
+    {
+      "name": "natural_outlet_interruption",
+      "id": "N2b",
+      "temperature": 0,
+      "status": "completed_content_review_required",
+      "generated_asr": "Um, what's the difference between an outlet and a regular store?Faulty products?",
+      "generated_tts": "An outlet is a store No, not faulty products. Outlets sell genuine items at discounted prices.",
+      "s2_requests": 0,
+      "model_think_count": 0,
+      "model_stop_count": 1,
+      "p95_s1_seconds": 0.20978678789915647,
+      "max_input_queue_delay_seconds": 0.0001775069995346712,
+      "played_transcript": "An outlet is a... No, not faulty products. Outlets sell genuine items at discounted prices.",
+      "actual_nonquiet_seconds": 6.1000000000000005,
+      "source_user_requests": 1,
+      "source_user_interruptions": 1,
+      "evidence_artifact": "exp/inference/duplexomni/native_loop_1035079/natural_outlet_interruption/native_summary.json",
+      "response_window_start_seconds": 5.19,
+      "response_window_seconds": 8.26,
+      "interruption": {
+        "status": "triggered_during_playback",
+        "expected_packets": 3,
+        "processed_packets": 3,
+        "actual_user_model_overlap_seconds": 0.4,
+        "stop_delay_from_packet_seconds": 0.6907457090001117,
+        "old_epoch_nonquiet_packets_after_stop": 0,
+        "post_clarification_tts": "a store No, not faulty products. Outlets sell genuine items at discounted prices.",
+        "post_clarification_audio_transcript": "No not faulty products. Outlets sell genuine items at discounted prices.",
+        "first_correction_packet_seconds": 5.760826072000782,
+        "first_nonquiet_user_correction_seconds": 5.96,
+        "stop_chunk": 13,
+        "cleared_buffer_bytes": 13440,
+        "genuine_barge_in": true,
+        "stop_delay_from_nonquiet_user_onset_seconds": 0.4915717810008937
+      }
+    }
+  ],
+  "scope": "Human-recorded scripted DailyTalk utterances, with adapted clarification timing. Per-case actual PCM and all returned fields inspected; no physical device or benchmark-score claim.",
+  "limitations": [
+    "One human-recorded scripted dialogue; original barge-in timing is adapted, not naturally occurring.",
+    "Only original user channel is supplied; source counterpart responses are excluded.",
+    "All waiting gaps and queued-audio decisions remain in full PCM replay. ASR uses one contiguous audible window; no concatenation or time compression.",
+    "STOP timing is from the first correction packet; actual nonquiet user onset is reported separately and is not acoustic word alignment.",
+    "S2 is absent. A model THINK request is logged separately from an actual S2 dispatch.",
+    "Forty-tick capture avoids the identified late rolling-history cache issue; longer streams remain unqualified.",
+    "Automatic speech transcripts and lexical flags require semantic content review; no robust benchmark success rate is implied.",
+    "The clarification response is too categorical about outlet-product quality; interaction success does not imply a complete factual evaluation."
+  ],
+  "audit_seconds": 3.712649680208415,
+  "paired_prefix_identical": true,
+  "paired_prefix_ticks": 12,
+  "behavioral_verdict": "Native stop, queued-audio invalidation and spoken clarification response verified in one controlled human-audio example.",
+  "allocation_seconds": 130,
+  "allocation_gpu_hours": 0.03611111111111111,
+  "maximum_gpus_active": 1,
+  "source_manifest": {
+    "source": "DailyTalk human-recorded scripted dialogue",
+    "source_repo": "kyutai/DailyTalkContiguous",
+    "revision": "33e1b501f725a6f4ed4ded95e16cd7f66b9d4bdc",
+    "source_url": "https://huggingface.co/datasets/kyutai/DailyTalkContiguous",
+    "original_dataset_url": "https://github.com/keonlee9420/DailyTalk",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "DailyTalk dataset authors; stereo packaging by Kyutai",
+    "speaker_id": 1,
+    "wave_channel": 1,
+    "transcript_repo": "eustlb/dailytalk",
+    "transcript_revision": "355a6ad31d62d7404c1fce8b2a26a182cb48d4f2",
+    "adaptation": "One human-recorded question and one same-speaker clarification, cropped/resampled and scheduled during actual model speech. Original conversational timing is adapted; source counterpart audio is excluded.",
+    "conversation_id": 656,
+    "source_sample_rate": 44100,
+    "source_sha256": "db9cb70ba9779031701f0eb4abfa49348ed4cdfee4cf793c7ce7d3b08371500f",
+    "clips": [
+      {
+        "name": "outlet_request",
+        "turn_id": 2,
+        "text": "Umm what's the difference between an outlet and a regular store?",
+        "file": "data/benchmarks/natural_dailytalk_outlet/outlet_request.wav",
+        "seconds": 5.020041666666667,
+        "source_user_requests": 1,
+        "is_correction": false,
+        "source_sample_start": 454230,
+        "source_sample_end": 675612,
+        "sha256": "0a28b1b2822dd55ae8f65b614c9721b73d92decb093c2f58e0111fb3f05da044"
+      },
+      {
+        "name": "faulty_correction",
+        "turn_id": 4,
+        "text": "Faulty products?",
+        "file": "data/benchmarks/natural_dailytalk_outlet/faulty_correction.wav",
+        "seconds": 1.44,
+        "source_user_requests": 0,
+        "is_correction": true,
+        "source_sample_start": 1022238,
+        "source_sample_end": 1085742,
+        "sha256": "b928a5c5801ef131373bda2130db1d885e7bebf476d38719c277810a686d7223"
+      }
+    ]
+  },
+  "attempts": [
+    {
+      "job": "1034587",
+      "gpu_count": 1,
+      "gpu_type": "A100-SXM4-80GB",
+      "allocation_seconds": 152,
+      "gpu_hours": 0.042222222222222223,
+      "result": "Dinner request fully transcribed, no answer; late history trim creates cache/pacing spikes. Interruption withheld."
+    },
+    {
+      "job": "1035064",
+      "gpu_count": 1,
+      "gpu_type": "H100 SXM 80 GB",
+      "allocation_seconds": 206,
+      "gpu_hours": 0.05722222222222222,
+      "result": "Greedy human outlet baseline answers; temperature 0.8 interruption issues STOP but greets and requests unavailable S2, then stalls."
+    },
+    {
+      "job": "1035079",
+      "gpu_count": 1,
+      "gpu_type": "H100 SXM 80 GB",
+      "allocation_seconds": 130,
+      "gpu_hours": 0.03611111111111111,
+      "result": "Matched greedy human-audio pair; native STOP and spoken clarification response verified."
+    }
+  ],
+  "total_investigation_gpu_hours": 0.13555555555555557,
+  "claims": [
+    {
+      "claim": "The user input is human-recorded, not TTS.",
+      "verdict": "confirmed",
+      "evidence_label": "Evidence-backed",
+      "evidence": "DailyTalk original recording provenance; exact source hash/channel/crop bounds in source_manifest."
+    },
+    {
+      "claim": "Exactly one initial request and one clarification are fed in the interrupted case.",
+      "verdict": "confirmed",
+      "evidence_label": "Evidence-backed",
+      "evidence": "source_manifest.clips plus input_parts; exactly 3 correction packets and no source counterpart channel."
+    },
+    {
+      "claim": "The clarification occurs while the model is audibly speaking.",
+      "verdict": "confirmed",
+      "evidence_label": "Evidence-backed",
+      "evidence": "Actual input/model PCM overlap: 0.40 s, computed on 20 ms frames."
+    },
+    {
+      "claim": "S1 emits a native STOP and obsolete audio is removed.",
+      "verdict": "confirmed",
+      "evidence_label": "Evidence-backed",
+      "evidence": "native_summary.turns[13].tts_control; stop_events epoch 0→1, 13440 cleared bytes; zero old-epoch nonquiet packets after STOP."
+    },
+    {
+      "claim": "S1 responds to the clarification aloud.",
+      "verdict": "confirmed_for_this_case",
+      "evidence_label": "Evidence-backed",
+      "evidence": "speech_audit: actual model audio independently transcribed as No not faulty products. Outlets sell genuine items at discounted prices."
+    },
+    {
+      "claim": "This establishes robust interruption handling or accurate retail advice.",
+      "verdict": "unsupported",
+      "evidence_label": "Open question",
+      "evidence": "One scripted human example. Categorical No not faulty products is simplistic; factual thoroughness and robustness are separate from the demonstrated interaction."
+    }
+  ],
+  "qualitative_examples": [
+    {
+      "id": "natural_outlet_control",
+      "artifact": "exp/inference/duplexomni/native_loop_1035079/natural_outlet_control/native_summary.json",
+      "expected": "Answer the initial question.",
+      "actual": "An outlet is a store that sells products at a discount often with a different layout and selection than a regular store. The main difference is the pricing strategy.",
+      "steps": [
+        {
+          "chunk": 2,
+          "asr": "Um, ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 3,
+          "asr": "what's the ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 4,
+          "asr": "difference ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 5,
+          "asr": "between an ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 6,
+          "asr": "outlet ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 7,
+          "asr": "and ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 8,
+          "asr": "a regular ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 10,
+          "asr": "store?",
+          "tts": "An outlet ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 11,
+          "asr": "",
+          "tts": "is ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 12,
+          "asr": "",
+          "tts": "a store ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 13,
+          "asr": "",
+          "tts": "that sells ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 14,
+          "asr": "",
+          "tts": "products ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 15,
+          "asr": "",
+          "tts": "at a discount, ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 17,
+          "asr": "",
+          "tts": "often ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 18,
+          "asr": "",
+          "tts": "with ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 19,
+          "asr": "",
+          "tts": "a different ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 20,
+          "asr": "",
+          "tts": "layout ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 21,
+          "asr": "",
+          "tts": "and selection ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 22,
+          "asr": "",
+          "tts": "than ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 23,
+          "asr": "",
+          "tts": "a regular ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 24,
+          "asr": "",
+          "tts": "store. ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 26,
+          "asr": "",
+          "tts": "The main ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 27,
+          "asr": "",
+          "tts": "difference ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 28,
+          "asr": "",
+          "tts": "is the pricing ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 29,
+          "asr": "",
+          "tts": "strategy.",
+          "tts_control": "",
+          "system2_control": ""
+        }
+      ],
+      "evidence_label": "Evidence-backed"
+    },
+    {
+      "id": "natural_outlet_interruption",
+      "artifact": "exp/inference/duplexomni/native_loop_1035079/natural_outlet_interruption/native_summary.json",
+      "expected": "Yield from the old explanation and respond to Faulty products?",
+      "actual": "An outlet is a... No, not faulty products. Outlets sell genuine items at discounted prices.",
+      "steps": [
+        {
+          "chunk": 2,
+          "asr": "Um, ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 3,
+          "asr": "what's the ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 4,
+          "asr": "difference ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 5,
+          "asr": "between an ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 6,
+          "asr": "outlet ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 7,
+          "asr": "and ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 8,
+          "asr": "a regular ",
+          "tts": "",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 10,
+          "asr": "store?",
+          "tts": "An outlet ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 11,
+          "asr": "",
+          "tts": "is ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 12,
+          "asr": "",
+          "tts": "a store ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 13,
+          "asr": "Faulty ",
+          "tts": "",
+          "tts_control": "[STOP]",
+          "system2_control": ""
+        },
+        {
+          "chunk": 14,
+          "asr": "products?",
+          "tts": "No, ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 15,
+          "asr": "",
+          "tts": "not ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 16,
+          "asr": "",
+          "tts": "faulty ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 17,
+          "asr": "",
+          "tts": "products. ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 19,
+          "asr": "",
+          "tts": "Outlets ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 20,
+          "asr": "",
+          "tts": "sell ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 21,
+          "asr": "",
+          "tts": "genuine ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 22,
+          "asr": "",
+          "tts": "items ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 23,
+          "asr": "",
+          "tts": "at ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 24,
+          "asr": "",
+          "tts": "discounted ",
+          "tts_control": "",
+          "system2_control": ""
+        },
+        {
+          "chunk": 25,
+          "asr": "",
+          "tts": "prices.",
+          "tts_control": "",
+          "system2_control": ""
+        }
+      ],
+      "evidence_label": "Evidence-backed"
+    },
+    {
+      "id": "1035064-temperature-0.8",
+      "artifact": "exp/inference/duplexomni/native_loop_1035064/natural_outlet_interruption/native_summary.json",
+      "expected": "Answer/clarify with S2 absent.",
+      "actual": "Hello, how can I help you today? Let me check that. Let me verify that too. Explode one moment.",
+      "model_think_count": 2,
+      "native_stop_count": 1,
+      "interpretation": "STOP works, while task reply stalls behind requested but disabled S2. Stochastic startup greeting also reappears.",
+      "evidence_label": "Evidence-backed"
+    }
+  ],
+  "failure_taxonomy": [
+    {
+      "pattern": "Silence on a recognized social proposal",
+      "examples": [
+        "1034587 dinner baseline"
+      ],
+      "layer": "S1 response policy",
+      "cause_status": "Open question; no-response begins before later history stalls."
+    },
+    {
+      "pattern": "Rolling history invalidates cached prefix",
+      "examples": [
+        "1034587 ticks 40–45"
+      ],
+      "layer": "Harness history/cache behavior",
+      "cause_status": "Inferred from code plus aligned latency spikes; avoided by this bounded test, not generally fixed."
+    },
+    {
+      "pattern": "Stochastic greeting and unavailable S2 request",
+      "examples": [
+        "1035064 temperature-0.8 barge-in"
+      ],
+      "layer": "S1 sampling/delegation policy",
+      "cause_status": "Evidence-backed; selected greedy policy avoids it in the final matched example."
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": 0,
+      "action": "Keep the native prompt and greedy S1-only policy for this human-audio control.",
+      "success_criterion": "Identical pre-interruption fields, genuine overlap, native STOP and independently verified new spoken reply.",
+      "status": "Demonstrated in 1035079."
+    },
+    {
+      "priority": 1,
+      "action": "Test more explicit corrections/backchannels and repeated runs before declaring robustness.",
+      "success_criterion": "Separate false stops, stop delays and semantic uptake across varied cases.",
+      "status": "Not executed; next experiment recommendation."
+    },
+    {
+      "priority": 1,
+      "action": "Optimize bounded-history compaction/prefix caching before longer streams.",
+      "success_criterion": "No repeat-prefill backlog after tick 40 under sustained speech.",
+      "status": "Open; 40-tick test does not resolve the longer-stream issue."
+    }
+  ]
+}

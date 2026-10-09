@@ -99,7 +99,7 @@ def collection():
 def main():
     study=json.loads((ROOT/'research/current-study.json').read_text())
     viewer('handoff','handoff.html','E1 · Earlier single-request handoff','One complete bread question, with S2 disabled or forced once; earlier failed study.')
-    viewer('interruption','interruption.html','E2 · Earlier S1 interruption','One pet request and a correction during speech; earlier failed study, S2 disabled.')
+    viewer('interruption','archive-interruption.html' if (ROOT/'research/current-natural.json').exists() else 'interruption.html','E2 · Earlier S1 interruption','One pet request and a correction during speech; earlier failed study, S2 disabled.')
     overview(study);collection()
     if (ROOT/'research/current-s1.json').exists():
         from build_s1_baseline import main as build_s1
@@ -110,6 +110,16 @@ def main():
         text=archive.read_text().replace('The current examples are E1 and E2.','The current S1-only baseline is separate. Earlier E1/E2 controls and the budget diagnostics remain here as historical evidence.')
         text=text.replace('<h2>Earlier evidence</h2>','<h2>Earlier evidence</h2><p><a href="handoff.html">E1 · Earlier bread/S2 replay</a> · <a href="interruption.html">E2 · Earlier interruption replay</a> · <a href="controlled-study.html">Earlier E1/E2 review</a></p>')
         archive.write_text(text)
+    if (ROOT/'research/current-natural.json').exists():
+        basic=ROOT/'experiments/single-request.html'
+        basic.write_text((ROOT/'experiments/trajectory.html').read_text())
+        for name in ['handoff.html','controlled-study.html','archive.html','s1-investigation.html']:
+            page=ROOT/'experiments'/name
+            page.write_text(page.read_text().replace('href="interruption.html"','href="archive-interruption.html"'))
+        page=ROOT/'experiments/s1-investigation.html'
+        page.write_text(page.read_text().replace('href="trajectory.html"','href="single-request.html"'))
+        from build_natural_interruption import main as build_natural
+        build_natural()
     print('Built current E1/E2 viewers, study status, collection and archive.')
 
 
