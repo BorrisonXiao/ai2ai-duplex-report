@@ -23,10 +23,12 @@ The visual design follows [JSALT 2026 Downsampling](https://borrisonxiao.github.
 The [single-request S2 study](experiments/s2-single.html) adds the observed human
 outlet-store handoff, matched controls, real model playback, the initial
 arithmetic token-limit failure and provider diagnostics. The follow-up compares
-dialogue/user-ASR context and forced/model-triggered S2. Its generator is
+dialogue/user-ASR context and forced/model-triggered S2, and verifies a spoken
+391 without forced delegation. Its generator is
 `scripts/build_s2_single_study.py`; the workspace exporter is
 `../scripts/export_s2_single_site.py`, and its evidence/audio bundle is
-`research/s2-single-study.json`. Pending follow-up results are labeled explicitly.
+`research/s2-single-study.json`. Both full audio trials and the provider controls
+are complete; the original failure remains documented as a diagnostic attempt.
 
 The [S1 reproduction report](experiments/s1-reproduction.html) is an Experiments
 sub-tab comparing the working native/greedy S1 runs with earlier failed controls.
