@@ -24,7 +24,10 @@ The [S1 reproduction report](experiments/s1-reproduction.html) is an Experiments
 sub-tab comparing the working native/greedy S1 runs with earlier failed controls.
 It quotes source code directly, links line-numbered snapshots, and includes the
 minimal one-H100 batch command, output checks and the independent author-harness
-recipe. Generate it with `python scripts/build_current_experiments.py` from this
+recipe. A [second appendix](experiments/s1-reproduction.html#inference-loop)
+walks through packet preparation, the paced input loop, history and model calls,
+concurrent speech/playback, and shutdown, with a clickable task diagram.
+Generate it with `python scripts/build_current_experiments.py` from this
 site checkout in the migrated workspace; `scripts/build_s1_reproduction.py`
 checks all frozen inference source/config/input hashes before rendering. The
 source manifest is `research/s1-reproduction/manifest.json`. Published launcher

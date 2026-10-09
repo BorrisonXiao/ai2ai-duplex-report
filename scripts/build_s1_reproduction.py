@@ -71,6 +71,11 @@ STYLE = '''<style>
 .source-line{display:block;width:max-content;min-width:100%;scroll-margin-top:30px}.source-line:target{background:rgba(234,179,8,.18)}
 .source-line a{display:inline-block;width:4em;margin-right:1em;text-align:right;text-decoration:none;color:var(--muted,#586477)}
 </style>'''
+LOOP_STYLE = '''<style>
+.loop-diagram-scroll{max-width:100%;overflow-x:auto}.loop-diagram{display:block;width:100%;min-width:800px;height:auto;color:var(--text)}
+.loop-diagram rect{fill:var(--surface);stroke:var(--border);stroke-width:2}.loop-diagram text{fill:currentColor;font-size:15px;font-family:inherit}
+.loop-diagram .loop-name{font-size:18px;font-weight:700}.loop-diagram .loop-arrow{fill:none;stroke:var(--muted);stroke-width:2}.loop-diagram .loop-label{font-size:13px;fill:var(--muted)}
+</style>'''
 
 
 def sha(data):
@@ -137,7 +142,7 @@ class Listings:
         n = len(self.items)+1
         self.items.append({'listing':n,'source':key,'start_line':index+1,
                            'end_line':index+count,'text':snippet})
-        return '<div class="listing"><p class="listing-caption">Listing '+str(n)+'. '+escape(title)+' Source: '+link_source(self.sources,key,index+1)+'.</p><pre><code>'+escape(snippet)+'</code></pre></div>'
+        return '<div class="listing" id="listing-'+str(n)+'"><p class="listing-caption">Listing '+str(n)+'. '+escape(title)+' Source: '+link_source(self.sources,key,index+1)+'.</p><pre><code>'+escape(snippet)+'</code></pre></div>'
 
 
 def section(anchor, title, body):
@@ -157,6 +162,92 @@ def paragraphs(*texts):
     return ''.join('<p>'+text+'</p>' for text in texts)
 
 
+def inference_diagram():
+    return '''<figure><div class="loop-diagram-scroll"><svg class="loop-diagram" viewBox="0 0 1000 405" role="img" aria-labelledby="loop-diagram-title loop-diagram-desc"><title id="loop-diagram-title">How the input, model and playback tasks communicate</title><desc id="loop-diagram-desc">The feeder puts packets on an input queue. The S1 loop sends audio and history to Thinker and receives fields and tensors. A speech queue sends work to Talker. Its audio enters a buffer read by the playback loop. STOP clears and invalidates old audio.</desc><defs><marker id="loop-arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="var(--muted)"></path></marker></defs>
+<a href="#inference-feeder"><rect x="15" y="40" width="180" height="100" rx="10"></rect><text x="30" y="69" class="loop-name">Input feeder</text><text x="30" y="97">while running</text><text x="30" y="121">480 ms input clock</text></a>
+<rect x="235" y="40" width="130" height="100" rx="10"></rect><text x="250" y="82">Input queue</text><text x="250" y="108">FIFO packets</text>
+<a href="#inference-model"><rect x="405" y="40" width="220" height="100" rx="10"></rect><text x="420" y="69" class="loop-name">S1 request loop</text><text x="420" y="97">for range(max_turns)</text><text x="420" y="121">History and controls</text></a>
+<a href="#inference-model"><rect x="710" y="40" width="260" height="100" rx="10"></rect><text x="725" y="69" class="loop-name">Thinker model</text><text x="725" y="97">Text and control fields</text><text x="725" y="121">GPU 0</text></a>
+<a href="#inference-playback"><rect x="15" y="225" width="180" height="100" rx="10"></rect><text x="30" y="254" class="loop-name">Playback loop</text><text x="30" y="282">while running</text><text x="30" y="306">Record 20 ms blocks</text></a>
+<rect x="235" y="225" width="130" height="100" rx="10"></rect><text x="250" y="266">Audio buffer</text><text x="250" y="293">Version tags</text>
+<rect x="405" y="225" width="140" height="100" rx="10"></rect><text x="420" y="265">Speech queue</text><text x="420" y="293">FIFO requests</text>
+<a href="#inference-playback"><rect x="625" y="225" width="345" height="100" rx="10"></rect><text x="640" y="254" class="loop-name">Speech worker → Talker</text><text x="640" y="282">while True · requests stay in order</text><text x="640" y="306">Talker, MTP and Code2Wav on GPU 0</text></a>
+<path class="loop-arrow" d="M195 90 H232" marker-end="url(#loop-arrowhead)"></path><path class="loop-arrow" d="M365 90 H402" marker-end="url(#loop-arrowhead)"></path>
+<path class="loop-arrow" d="M625 72 H707" marker-end="url(#loop-arrowhead)"></path><text class="loop-label" x="642" y="57">Request</text><path class="loop-arrow" d="M710 114 H628" marker-end="url(#loop-arrowhead)"></path><text class="loop-label" x="648" y="134">Reply</text>
+<path class="loop-arrow" d="M515 140 V182 H475 V222" marker-end="url(#loop-arrowhead)"></path><text class="loop-label" x="531" y="182">Queue speech work</text>
+<path class="loop-arrow" d="M430 140 V185 H300 V222" stroke-dasharray="5 4" marker-end="url(#loop-arrowhead)"></path><text class="loop-label" x="184" y="175">STOP cancels old audio</text>
+<path class="loop-arrow" d="M545 275 H622" marker-end="url(#loop-arrowhead)"></path><path class="loop-arrow" d="M798 325 V375 H300 V328" marker-end="url(#loop-arrowhead)"></path><text class="loop-label" x="485" y="365">Accepted PCM after synthesis</text><path class="loop-arrow" d="M235 275 H198" marker-end="url(#loop-arrowhead)"></path>
+</svg></div><figcaption class="source-note"><span class="asset-label">Figure 1.</span> The logical tasks in the current harness. Thinker and speech generation share one GPU, while software queues separate input, model calls and playback. Arrows show data flow; the dashed arrow is the STOP action. Click a task to jump to its explanation. On a phone, scroll the diagram sideways.</figcaption></figure>'''
+
+
+def inference_appendix(sources, q):
+    def line(key, marker):
+        matches = [i for i,text in enumerate(sources[key]['lines'],1) if marker in text]
+        assert len(matches)==1,(key,marker,matches)
+        return link_source(sources,key,matches[0])
+
+    body = paragraphs(
+        'The core loop repeatedly gives S1 a short piece of incoming audio, together with the conversation so far. S1 returns its current transcription, speech text and control commands. A separate worker turns that response into audio while the input and playback tasks continue running. Figure 1 shows how those tasks connect.',
+        'There are two different kinds of streaming to keep in mind. At the application level, audio arrives in packets and produces a sequence of model calls. Inside each call, the model generates its response tokens. This harness waits for the complete response to that packet before sending the next S1 request; it does not insert new audio samples into a model call that is already running.',
+        'The walkthrough below describes the local harness used for N2a and N2b. It replays a saved WAV rather than reading a physical microphone. All S1 components share one H100 SXM GPU with 80 GB of memory, and S2 is absent. Explaining this loop does not require a new GPU run.')
+    body += inference_diagram()
+    body += '<h3 id="inference-input">1 · Load the recording and prepare audio packets</h3>'+paragraphs(
+        'The WAV is read into memory before the conversation starts. The harness checks that it is mono, resamples it to 24 kHz if needed, and divides it into 11,520-sample pieces. At 24,000 samples per second, each piece represents 480 milliseconds. The last piece is padded with zeros if it is shorter.',
+        'Each piece is then converted to signed 16-bit PCM bytes and passed through the authors’ noise gate, which zeros samples below its threshold. A packet therefore contains 23,040 bytes: 11,520 samples with two bytes per sample. Listing 16 is the actual preparation code. The gradual behavior comes from releasing these prepared packets on a clock, not from repeatedly reopening or extending the file.')
+    body += q.quote('loop',"x, sr = sf.read(root / case['audio']",7,'Read the WAV once, normalize its sample rate, and prepare the fixed-size audio packets.')
+    body += '<h3 id="inference-feeder">2 · The while loop releases one packet at a time</h3>'+paragraphs(
+        'The input feeder starts with packet index <code>i = 0</code>. As long as <code>running</code> is true, it chooses the next packet from the recording. Once those packets are exhausted, it supplies a packet of zero-valued samples. It continues sending silence because S1 may still be speaking, listening for a clarification, or deciding what to do next.',
+        'In the interrupted condition, the feeder can replace those silent packets with the clarification recording. That happens only after the initial request has been supplied and while model speech is actually playing, using the checks shown in <a href="#listing-10">Listing 10</a>. It is the same input queue and the same S1 conversation; the clarification does not start a new model session.')
+    body += q.quote('loop','async def feeder():',7,'Choose the next initial-audio packet, or silence after the initial recording ends.')
+    body += paragraphs(
+        'The feeder puts four items on the queue: the packet number, its audio bytes, the time it was supplied, and a label saying whether it belongs to the initial request, silence or the interruption. The queue keeps them in the order they arrived. After enqueueing a packet, the feeder advances <code>i</code> and waits for the next scheduled boundary.',
+        'The timing expression in Listing 18 is based on the original start time. Packet 0 is due near time 0, packet 1 near 0.48 seconds, packet 2 near 0.96 seconds, and so on. It does not add another 480-millisecond delay after an S1 request finishes. If the feeder itself is late, the remaining wait becomes zero and it catches up with the clock.')
+    body += q.quote('loop','await queue.put((i,packet',3,'Enqueue the packet and sleep only until the next boundary on the input clock.')
+    body += paragraphs('Both <code>await queue.get()</code> and <code>await asyncio.sleep(...)</code> let other tasks run while this task is waiting. They are not busy-waiting loops. The input queue here is unbounded, so it does not discard packets when S1 is slow; instead, a backlog can grow. That is why the experiment measures how long each packet waits before inference.')
+    body += '<h3 id="inference-model">3 · The S1 loop takes a packet and builds the next model request</h3>'+paragraphs(
+        'The model-request loop is separate from the feeder. In this short experiment it is a <code>for</code> loop limited to 40 steps, rather than an indefinite <code>while</code> loop. At each step it waits for the next queued packet at '+line('loop','packet_index,packet,submitted,part = await queue.get()')+'. If a packet is already waiting, it can proceed immediately; otherwise, it yields until the feeder supplies one.',
+        'It then appends a new user message to the conversation history. Listing 19 shows the exact message format. The PCM packet is wrapped in a WAV header and base64-encoded for transport as <code>input_audio</code>. The surrounding text gives it the released <code>audio_input</code> and <code>from_s2</code> structure. In this S1-only run, <code>from_s2</code> is empty because the disabled reasoner returns no guidance.',
+        'The model receives audio directly. There is no Whisper transcription step in front of S1; Whisper is used later to audit the experiment. On the model server, the request’s audio is decoded and prepared as multimodal input rather than treated as a base64 text string.')
+    body += q.quote('loop',"messages.append({'role':'user','content':[",4,'Add the current audio packet and any available S2 guidance as the next user message.')
+    body += paragraphs(
+        'The request contains the whole retained <code>messages</code> list: the system prompt, earlier audio packets, the original assistant replies to those packets, and the new audio packet. S1 is therefore not answering each 480-millisecond piece as an unrelated conversation. It can use the preceding words and its own earlier responses.',
+        'Listing 20 sends that history to the local Thinker server on port 21991. The same <code>session_id</code> is used throughout the case. Temperature is 0 and <code>max_new_tokens</code> is 256 in the saved configuration. That token limit is an upper bound on the response to one packet; it is not an audio duration or an instruction to finish the entire conversation.')
+    body += q.quote('loop',"response = await asyncio.to_thread(requests.post,'http://127.0.0.1:21991/internal/chat_turn'",4,'Call the resident S1 Thinker with the accumulated history and the selected generation settings.')
+    backend = 'https://github.com/MuyeHuang/DuplexOmni/blob/'+UPSTREAM+'/inference_framework/realtime_serving/serving_core/server_thinker.py'
+    body += paragraphs(
+        'The Thinker model is loaded when its server starts, not reloaded for each packet. In the authors’ <a href="'+backend+'#L931">_run_chat_turn</a>, the server converts the messages to the model’s chat template and audio inputs, then asks the existing vLLM engine to generate a response. The engine has prefix caching enabled, and the session ID is used as a cache salt. Caching can reuse earlier computation, but the application still explicitly sends its retained history on every request; a session ID alone does not supply that history.',
+        'This local endpoint returns the response text together with tensors used by Talker, serialized as a binary payload. Listing 21 decodes that payload and parses the model’s fields. A single response may contain a few recognized words, a piece of speech, a control command, or empty speech text. The harness does not require a complete user sentence before it starts making model calls.')
+    body += q.quote('loop','internal = await asyncio.to_thread(torch.load,',4,'Decode the binary Thinker response and extract the current transcription, speech and control fields.')
+    body += paragraphs(
+        'The original response is appended to assistant history using <a href="#listing-4">Listing 4</a>. The controller acts on a separate copy of its fields. A <code>[STOP]</code> clears and invalidates old queued speech; an S2 request remains visible in the raw trace but is suppressed by the S1-only policy. The original binary payload is placed on the speech queue with its current audio version, as shown in <a href="#listing-15">Listing 15</a>. The S1 loop can then take the next input packet without waiting for that speech to finish playing.',
+        'S1 calls are sequential within this loop: the current Thinker response is awaited before the next Thinker call begins. However, <code>asyncio.to_thread</code> keeps the blocking HTTP request out of the event loop. During that wait, the feeder can supply new input and the playback task can continue emitting old response audio. If inference takes longer than the 480-millisecond input interval repeatedly, the input queue grows and the model’s view of the user becomes delayed.')
+    body += '<h3 id="inference-playback">4 · Speech generation and playback continue alongside S1</h3>'+paragraphs(
+        'The speech worker has its own <code>while True</code> loop. It waits for work on the speech queue and sends the original Thinker payload to Talker on port 21992. Requests stay in order. Talker, MTP and Code2Wav produce the waveform, which is accepted only if its version has not been canceled by STOP.',
+        'Every processed S1 step queues this handoff, even if the returned <code>tts</code> text is empty. Queuing a Talker request therefore does not prove that the model said anything useful. The report’s response checks use audible playback and the returned speech text as evidence.')
+    body += q.quote('loop',"response = await asyncio.to_thread(requests.post,f'http://127.0.0.1:21992/internal/talker/turn/",2,'Ask Talker to synthesize the next response using the Thinker’s unchanged internal payload.')
+    body += paragraphs(
+        'The returned WAV is converted to PCM and normalized by the released <code>stretch_pcm_to_chunk</code> helper into a 480-millisecond block before it enters the tagged audio buffer. That helper trims a longer block and interpolates a shorter one to the target length. This is a transport step in the current harness, separate from the bounded Code2Wav decoder. Its implementation is at '+line('native-controller','def stretch_pcm_to_chunk(')+'.',
+        'Playback has another <code>while running</code> loop, shown at '+line('loop','async def playback():')+'. It takes 20 milliseconds of PCM from the buffer at a time and records the result. If there is no queued audio, the buffer supplies zeros. Playback therefore continues on its own clock while Thinker and Talker are working, and recorded silence remains part of the replay.',
+        'This is how the test can accept a user interruption while an earlier reply is playing: the input feeder and S1 loop remain active during playback. Once S1 recognizes the interruption and emits STOP, the buffer version changes. Both queued and unfinished audio from the old version are rejected, as explained in the <a href="#code">main code discussion</a>.')
+    body += '<h3>5 · The capture ends after the configured number of S1 steps</h3>'+paragraphs(
+        'Reaching the end of the input WAV does not end the feeder. In this experiment, the S1 loop ends after 40 processed packets. That is roughly 19.2 seconds of packet time, with startup and the final audio drain taking additional wall time.',
+        'After the last S1 step, the harness sends <code>None</code> to the speech queue. The speech worker treats that as its end marker, finishes previously queued work and returns. The main task then waits until the playback buffer is empty, so the recorded replay includes the remaining response rather than cutting it at the last input step. Listing 23 shows this shutdown order.')
+    body += q.quote('loop','await speech_queue.put(None)',6,'Finish queued speech work and drain playback before marking the capture complete.')
+    body += paragraphs(
+        'Finally, the cleanup block sets <code>running = False</code> and cancels any tasks that are still waiting, at '+line('loop','running = False')+'. The feeder may have queued additional packets during the final drain, but those are not extra S1 steps: only packets consumed by the 40-step model loop are processed.',
+        'The 40-step bound also keeps this case out of the longer-history trimming path discussed earlier. It is a deliberate limit on this capture, not a general repair for indefinitely long conversations.')
+    rows = [
+        ('Input feeder · while running','The next 480 ms boundary on the input clock','Chooses an initial, silent or clarification packet and puts it on the input queue.','The main task sets running to false or cancels it during cleanup.'),
+        ('S1 request loop · for range(max_turns)','An input packet and then the current Thinker response','Appends audio to history, calls S1, records the reply, applies controls and queues the Talker payload.','Forty processed steps in this configuration, or an error.'),
+        ('Speech worker · while True','The next speech-queue item and then its Talker response','Synthesizes in order and accepts only audio whose version is still current.','It reads the None marker after previously queued work.'),
+        ('Playback · while running','The next 20 ms playback boundary','Reads tagged PCM or silence from the audio buffer and records what was emitted.','The main task drains the buffer, then ends or cancels the playback task.')]
+    body += labeled_table(5,['Loop','What it waits for','What it does','How it ends'],rows,'Each row is a software task or loop. Waiting yields control to the other tasks; it does not mean that all GPU requests are running simultaneously.')
+    body += '<h3>How this relates to the authors’ live while loop</h3>'+paragraphs(
+        'The authors’ live websocket implementation uses a <code>while self.running</code> loop in '+line('native-controller','async def _process_loop(self):')+'. Its inner loop collects incoming PCM until it has one complete 480-millisecond chunk; if input does not arrive within its timeout, it fills the remainder with silence. It then appends that chunk to the same conversation history and calls S1. The model-facing structure is similar to the replay harness, but the source of bytes is a live input queue rather than a preloaded recording.',
+        'The local replay makes that structure easier to inspect: one task controls when each recorded packet arrives, one task processes those packets with the model, and separate tasks handle speech synthesis and playback. That separation is what allows the system to keep listening while a response is audible.')
+    return section('inference-loop','Appendix 2 · How the core inference loop works',body)
+
+
 def main():
     prepared = json.loads((PROJECT/LAUNCH/'prepared.json').read_text())
     for name, digest in prepared['files'].items():
@@ -171,7 +262,7 @@ def main():
     body += '<header class="hero"><p class="eyebrow">Reproduction notes · 8 October 2026</p><h1>S1 reproduction report</h1><p class="lede">The current example answers a human question, stops when the speaker interrupts, and responds to the clarification. This report explains how we got there, what went wrong in earlier attempts, and how to run the experiment yourself.</p>'+paragraphs(
         'We now have a working example of DuplexOmni’s S1 speech system without the separate S2 reasoning backend. Getting it to work involved finding a prompt and sampling setup that produced useful replies, preserving the model’s original conversation history, and checking that canceled speech really stayed out of playback. Some other requests still leave the model silent, so the result should be read as a successful example rather than a general solution to S1 reliability.',
         'Here, <b>S1</b> means the system that listens and speaks as audio arrives. <b>S2</b> is the optional reasoning service that S1 can ask for help. The component named <b>Thinker</b> belongs to S1; it is not the separate S2 service. The test harness is the code that feeds recorded user speech into these components and records their responses.')+'<p><a class="button" href="interruption.html">Listen to the two conditions</a> · <a href="single-request.html">Listen to the earlier single-request checks</a> · <a href="index.html">All experiments</a></p></header>'
-    body += '<nav class="toc" aria-label="Report sections">'+''.join('<a href="#'+a+'">'+b+'</a>' for a,b in [('working','Working result'),('comparison','Failed vs. working'),('code','Key code'),('source-map','Source files'),('limits','What remains open'),('appendix','Appendix · run manually')])+'</nav>'
+    body += '<nav class="toc" aria-label="Report sections">'+''.join('<a href="#'+a+'">'+b+'</a>' for a,b in [('working','Working result'),('comparison','Failed vs. working'),('code','Key code'),('source-map','Source files'),('limits','What remains open'),('appendix','Appendix · run manually'),('inference-loop','Appendix · inference loop')])+'</nav>'
     interrupted = next(c for c in review['cases'] if c['id']=='N2b')
     metric = interrupted['interruption']
     rows = [('N2a · no interruption', review['cases'][0]['played_transcript']),
@@ -323,9 +414,10 @@ bash jobs/duplexomni_smoke.sbatch \\
     appendix += paragraphs(
         'This saved configuration runs separate cases using the default author prompt and the patient, short-clear prompt. Each case after warmup contains one user request. The earlier run answered the factual and repeat requests, while the bread failure remained unresolved, so that same distinction should guide your review.',
         'Reference job 1034130 held one GPU for 241 seconds, or 0.06694 GPU hours. A repeat may have different wall time and numerical outputs. Run this check separately from the outlet experiment, keeping at most one GPU active throughout the reproduction sequence.')
-    body += section('appendix','Appendix · Run the experiment manually',appendix)
+    body += section('appendix','Appendix 1 · Run the experiment manually',appendix)
+    body += inference_appendix(sources,q)
     body += '<footer class="site-footer"><p><a href="index.html">All experiments</a> · <a href="interruption.html">Current replay</a> · <a href="natural-study.html">Interaction evidence</a></p></footer>'
-    page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="S1 working and failed harnesses, exact source code and manual reproduction commands."><title>S1 reproduction report · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css">'+STYLE+'</head><body><a class="skip-link" href="#main">Skip to report</a>'+top+'<main id="main"><div class="container reproduction">'+body+'</div></main></body></html>'
+    page = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="S1 working and failed harnesses, exact source code and manual reproduction commands."><title>S1 reproduction report · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css">'+STYLE+LOOP_STYLE+'</head><body><a class="skip-link" href="#main">Skip to report</a>'+top+'<main id="main"><div class="container reproduction">'+body+'</div></main></body></html>'
     PAGE.write_text(version_assets(page))
     manifest = {'report':'experiments/s1-reproduction.html','evidence_job':'1035079',
                 'author_commit':UPSTREAM,'frozen_launch':LAUNCH,

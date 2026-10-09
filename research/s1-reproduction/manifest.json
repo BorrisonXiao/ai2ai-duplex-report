@@ -292,6 +292,62 @@
       "start_line": 422,
       "end_line": 423,
       "text": "                await speech_queue.put((index,response.content,fields,time.monotonic()-capture.origin,\n                                        controller.playback_buffer.epoch if controlled else 0))"
+    },
+    {
+      "listing": 16,
+      "source": "loop",
+      "start_line": 59,
+      "end_line": 65,
+      "text": "        x, sr = sf.read(root / case['audio'], dtype='float32')\n        if x.ndim != 1:\n            raise ValueError('Native input must be mono')\n        if sr != 24000:\n            x = librosa.resample(x, orig_sr=sr, target_sr=24000)\n        frames = [np.pad(x[i:i+11520], (0, max(0,11520-len(x[i:i+11520])))) for i in range(0,len(x),11520)]\n        gated = [native.apply_noise_gate((np.clip(f,-1,1)*32767).astype('<i2').tobytes(), native.SILENCE_THRESHOLD) for f in frames]"
+    },
+    {
+      "listing": 17,
+      "source": "loop",
+      "start_line": 227,
+      "end_line": 233,
+      "text": "        async def feeder():\n            nonlocal input_content_end\n            i = 0\n            correction_index = None\n            while running:\n                part = 'initial' if i < len(gated) else 'silence'\n                packet = gated[i] if i < len(gated) else bytes(23040)"
+    },
+    {
+      "listing": 18,
+      "source": "loop",
+      "start_line": 250,
+      "end_line": 252,
+      "text": "                await queue.put((i,packet,now-capture.origin,part))\n                i += 1\n                await asyncio.sleep(max(0,origin+i*.480-time.monotonic()))"
+    },
+    {
+      "listing": 19,
+      "source": "loop",
+      "start_line": 351,
+      "end_line": 354,
+      "text": "                messages.append({'role':'user','content':[\n                    {'type':'text','text':\"{'audio_input': '\"},\n                    {'type':'input_audio','input_audio':{'data':native.pcm_to_b64_wav(packet),'format':'wav'}},\n                    {'type':'text','text':\"', 'from_s2': \"+repr(command)+\"}\"}]})"
+    },
+    {
+      "listing": 20,
+      "source": "loop",
+      "start_line": 370,
+      "end_line": 373,
+      "text": "                response = await asyncio.to_thread(requests.post,'http://127.0.0.1:21991/internal/chat_turn',timeout=600,\n                    json={'model':str(root/'models/duplexomni'),'session_id':session_id,'messages':messages,\n                          'max_tokens':config['native_loop'].get('max_new_tokens',999),\n                          'temperature':case.get('temperature',config['native_loop'].get('temperature',.8))})"
+    },
+    {
+      "listing": 21,
+      "source": "loop",
+      "start_line": 376,
+      "end_line": 379,
+      "text": "                internal = await asyncio.to_thread(torch.load,io.BytesIO(response.content),map_location='cpu',weights_only=False) if controlled else torch.load(io.BytesIO(response.content),map_location='cpu',weights_only=False)\n                raw = internal['response']['choices'][0]['message']['content']\n                try:\n                    fields, parser_audit = parse_s1_with_audit(raw)"
+    },
+    {
+      "listing": 22,
+      "source": "loop",
+      "start_line": 295,
+      "end_line": 296,
+      "text": "                response = await asyncio.to_thread(requests.post,f'http://127.0.0.1:21992/internal/talker/turn/{session_id}',\n                    data=blob,headers={'content-type':'application/octet-stream'},timeout=600)"
+    },
+    {
+      "listing": 23,
+      "source": "loop",
+      "start_line": 426,
+      "end_line": 431,
+      "text": "            await speech_queue.put(None)\n            await tasks[2]\n            # Capture the remaining simulated playback instead of truncating it.\n            while await controller.playback_buffer.bytes_len():\n                await asyncio.sleep(.480)\n            result['status'] = 'completed_content_review_required'"
     }
   ]
 }
