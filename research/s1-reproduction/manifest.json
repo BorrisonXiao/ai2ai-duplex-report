@@ -1,0 +1,297 @@
+{
+  "report": "experiments/s1-reproduction.html",
+  "evidence_job": "1035079",
+  "author_commit": "33bfba1a821b09c5aa66790944f9098584979d34",
+  "frozen_launch": ".migration/updates/2026-10-08-natural-interruption/launch-04",
+  "all_frozen_hashes_verified": true,
+  "new_inference_gpus": 0,
+  "sources": {
+    "loop": {
+      "local_path": "scripts/native_interaction.py",
+      "original_sha256": "045c021139f554639e8861e0be4d01e2b121e13f8d631b5a8c0a4106849125d4",
+      "published_sha256": "045c021139f554639e8861e0be4d01e2b121e13f8d631b5a8c0a4106849125d4",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/native_interaction.py.html",
+      "raw": "research/s1-reproduction/source/scripts/native_interaction.py"
+    },
+    "control": {
+      "local_path": "scripts/controlled_runtime.py",
+      "original_sha256": "479afdf0f174f31c85b9c04b0c91d2dfafa7f4a5f5df9fff64e95397a28b7cf4",
+      "published_sha256": "479afdf0f174f31c85b9c04b0c91d2dfafa7f4a5f5df9fff64e95397a28b7cf4",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/controlled_runtime.py.html",
+      "raw": "research/s1-reproduction/source/scripts/controlled_runtime.py"
+    },
+    "runner": {
+      "local_path": "scripts/smoke_duplexomni.py",
+      "original_sha256": "60a2c23159118565468115eba6543dfca2bba9dbd14e67a54ba1bde94edfa78b",
+      "published_sha256": "60a2c23159118565468115eba6543dfca2bba9dbd14e67a54ba1bde94edfa78b",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/smoke_duplexomni.py.html",
+      "raw": "research/s1-reproduction/source/scripts/smoke_duplexomni.py"
+    },
+    "server": {
+      "local_path": "scripts/duplex_server_smoke.py",
+      "original_sha256": "55c714d6c9cee7218285ad752c429826fdee35fc43bee6f95bf4a476cb4d0374",
+      "published_sha256": "55c714d6c9cee7218285ad752c429826fdee35fc43bee6f95bf4a476cb4d0374",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/duplex_server_smoke.py.html",
+      "raw": "research/s1-reproduction/source/scripts/duplex_server_smoke.py"
+    },
+    "gpu": {
+      "local_path": "scripts/with_gpu_runtime.py",
+      "original_sha256": "4fefba80ffa4c7f83f21d7264e53c2f4fffb0cbab016734b3932c73e7d69a6ae",
+      "published_sha256": "4fefba80ffa4c7f83f21d7264e53c2f4fffb0cbab016734b3932c73e7d69a6ae",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/with_gpu_runtime.py.html",
+      "raw": "research/s1-reproduction/source/scripts/with_gpu_runtime.py"
+    },
+    "decoder": {
+      "local_path": "scripts/streaming_code2wav.py",
+      "original_sha256": "3823bcea58be0ff132e3246c3ce5652861d7d79e928315bd157ec081f30a4223",
+      "published_sha256": "3823bcea58be0ff132e3246c3ce5652861d7d79e928315bd157ec081f30a4223",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/streaming_code2wav.py.html",
+      "raw": "research/s1-reproduction/source/scripts/streaming_code2wav.py"
+    },
+    "parser": {
+      "local_path": "scripts/s1_response_parser.py",
+      "original_sha256": "126d557167f4c6767ebc16b1825f79f617f51b9fe19292e24ea6894800d130fb",
+      "published_sha256": "126d557167f4c6767ebc16b1825f79f617f51b9fe19292e24ea6894800d130fb",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/s1_response_parser.py.html",
+      "raw": "research/s1-reproduction/source/scripts/s1_response_parser.py"
+    },
+    "shim": {
+      "local_path": "scripts/runtime_shims/sitecustomize.py",
+      "original_sha256": "a71e5227682c253ed355b75bbcbfeb99a9afb152239f852efae548dc6b101978",
+      "published_sha256": "a71e5227682c253ed355b75bbcbfeb99a9afb152239f852efae548dc6b101978",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/runtime_shims/sitecustomize.py.html",
+      "raw": "research/s1-reproduction/source/scripts/runtime_shims/sitecustomize.py"
+    },
+    "audio-shim": {
+      "local_path": "scripts/runtime_shims/audio_only_thinker.py",
+      "original_sha256": "6b6bb45cee26d470169fe400b71507efd230b7f5b9b2c7c73b125a28cd946437",
+      "published_sha256": "6b6bb45cee26d470169fe400b71507efd230b7f5b9b2c7c73b125a28cd946437",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/scripts/runtime_shims/audio_only_thinker.py.html",
+      "raw": "research/s1-reproduction/source/scripts/runtime_shims/audio_only_thinker.py"
+    },
+    "author-caller": {
+      "local_path": "scripts/run_s1_author_reference.py",
+      "original_sha256": "105e7218711847d97932758992dad2d514e13edeff677630025ede36e795dabb",
+      "published_sha256": "105e7218711847d97932758992dad2d514e13edeff677630025ede36e795dabb",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/scripts/run_s1_author_reference.py.html",
+      "raw": "research/s1-reproduction/source/scripts/run_s1_author_reference.py"
+    },
+    "inputs": {
+      "local_path": "scripts/prepare_natural_dailytalk.py",
+      "original_sha256": "f7a30f453dec5e9ff2b463455ae300285a0e0361f7e3da7ea4d83350bbf48d82",
+      "published_sha256": "f7a30f453dec5e9ff2b463455ae300285a0e0361f7e3da7ea4d83350bbf48d82",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/scripts/prepare_natural_dailytalk.py.html",
+      "raw": "research/s1-reproduction/source/scripts/prepare_natural_dailytalk.py"
+    },
+    "audit": {
+      "local_path": "scripts/audit_natural_interruption.py",
+      "original_sha256": "71636a245e2b34374c98e69d2ace86d58df9e02474624ef14fccf79404d7fffe",
+      "published_sha256": "71636a245e2b34374c98e69d2ace86d58df9e02474624ef14fccf79404d7fffe",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/scripts/audit_natural_interruption.py.html",
+      "raw": "research/s1-reproduction/source/scripts/audit_natural_interruption.py"
+    },
+    "cluster": {
+      "local_path": "scripts/cluster_runtime.sh",
+      "original_sha256": "65f8c97bd051ec67addfd41261d4ed6db85e4edeea09dbd2518a2a2486b0d621",
+      "published_sha256": "65f8c97bd051ec67addfd41261d4ed6db85e4edeea09dbd2518a2a2486b0d621",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/scripts/cluster_runtime.sh.html",
+      "raw": "research/s1-reproduction/source/scripts/cluster_runtime.sh"
+    },
+    "batch": {
+      "local_path": "jobs/duplexomni_natural_interruption.sbatch",
+      "original_sha256": "20849af577843a4c824c3e7cc2305264e385dcf9222443037e03a2c21565fca4",
+      "published_sha256": "4f1c242ab2f2b78ccd239b96afb24c5464f1821d8cb33e8ff690f89c476b708b",
+      "redacted": true,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/jobs/duplexomni_natural_interruption.sbatch.html",
+      "raw": "research/s1-reproduction/source/jobs/duplexomni_natural_interruption.sbatch"
+    },
+    "smoke-batch": {
+      "local_path": "jobs/duplexomni_smoke.sbatch",
+      "original_sha256": "2c299d34e197221c5417dad9dd504360181bd080858df03c3b9fa12af9f5da8a",
+      "published_sha256": "ea4948acf8053fa88ffa88168766070d0e14cd1f27ebd414721fa68e4dd48b20",
+      "redacted": true,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/jobs/duplexomni_smoke.sbatch.html",
+      "raw": "research/s1-reproduction/source/jobs/duplexomni_smoke.sbatch"
+    },
+    "config": {
+      "local_path": ".migration/updates/2026-10-08-natural-interruption/launch-04/config.json",
+      "original_sha256": "4b2b9f7e0139cf8d8a509d3eaed81a7c7e519610f75e43c29efa762932989c5e",
+      "published_sha256": "4b2b9f7e0139cf8d8a509d3eaed81a7c7e519610f75e43c29efa762932989c5e",
+      "redacted": false,
+      "matches_frozen_launch": true,
+      "view": "research/s1-reproduction/source/configs/n2-greedy-executed.json.html",
+      "raw": "research/s1-reproduction/source/configs/n2-greedy-executed.json"
+    },
+    "legacy-config": {
+      "local_path": "configs/duplexomni_controlled_3h100.json",
+      "original_sha256": "8477754babd72f8ccca29354571b5efbb70b3efafbf67b42474d040e6cb80a90",
+      "published_sha256": "8477754babd72f8ccca29354571b5efbb70b3efafbf67b42474d040e6cb80a90",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/configs/duplexomni_controlled_3h100.json.html",
+      "raw": "research/s1-reproduction/source/configs/duplexomni_controlled_3h100.json"
+    },
+    "author-config": {
+      "local_path": ".migration/updates/2026-10-08-s1-single/executed-reference-config.json",
+      "original_sha256": "76afad5ff9e38032897737149337bccf57779720bdb76e6c17737d383996163f",
+      "published_sha256": "76afad5ff9e38032897737149337bccf57779720bdb76e6c17737d383996163f",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/configs/s1-author-executed.json.html",
+      "raw": "research/s1-reproduction/source/configs/s1-author-executed.json"
+    },
+    "native-controller": {
+      "local_path": "external/duplexomni/inference_framework/realtime_serving/omni_realtime_server.py",
+      "original_sha256": "c1cb3609c03a60b95778e70930b119965adf24e2fc1f065dd98925b3535773da",
+      "published_sha256": "c1cb3609c03a60b95778e70930b119965adf24e2fc1f065dd98925b3535773da",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/external/duplexomni/inference_framework/realtime_serving/omni_realtime_server.py.html",
+      "raw": "research/s1-reproduction/source/external/duplexomni/inference_framework/realtime_serving/omni_realtime_server.py"
+    },
+    "author-loop": {
+      "local_path": "external/duplexomni/inference_framework/realtime_serving/simulate_v8.py",
+      "original_sha256": "391622095057ce331cdfe67bd4a52a18a8150fedc937003543cf62c849bacbe3",
+      "published_sha256": "391622095057ce331cdfe67bd4a52a18a8150fedc937003543cf62c849bacbe3",
+      "redacted": false,
+      "matches_frozen_launch": false,
+      "view": "research/s1-reproduction/source/external/duplexomni/inference_framework/realtime_serving/simulate_v8.py.html",
+      "raw": "research/s1-reproduction/source/external/duplexomni/inference_framework/realtime_serving/simulate_v8.py"
+    }
+  },
+  "listings": [
+    {
+      "listing": 1,
+      "source": "config",
+      "start_line": 19,
+      "end_line": 26,
+      "text": "    \"history_turns\": 40,\n    \"history_serialization\": \"raw\",\n    \"warmup_turns\": 4,\n    \"temperature\": 0,\n    \"max_new_tokens\": 256,\n    \"playback_packet_seconds\": 0.02,\n    \"save_every_n_turns\": 8,\n    \"cases\": ["
+    },
+    {
+      "listing": 2,
+      "source": "config",
+      "start_line": 32,
+      "end_line": 35,
+      "text": "        \"system_prompt\": \"你是有用的助手\\n你的助手风格是：耐心。\\n你的开场方式要求：短句清晰。\",\n        \"s2_policy\": \"off\",\n        \"temperature\": 0,\n        \"id\": \"N2a\","
+    },
+    {
+      "listing": 3,
+      "source": "author-caller",
+      "start_line": 78,
+      "end_line": 86,
+      "text": "            sim=author.OfflineSimulator(str(directory/'input.wav'))\n            client=sim.s1_client\n            async def create(**kwargs):\n                if case.get('system_prompt'):\n                    kwargs['messages'][0]['content']=case['system_prompt']\n                if 'temperature' in case:\n                    kwargs['temperature']=case['temperature']\n                before=time.monotonic()\n                response=await client.chat.completions.create(**kwargs)"
+    },
+    {
+      "listing": 4,
+      "source": "loop",
+      "start_line": 408,
+      "end_line": 409,
+      "text": "                history_raw = raw if config['native_loop'].get('history_serialization','json') == 'raw' else effective_raw\n                messages.append({'role':'assistant','content':history_raw})"
+    },
+    {
+      "listing": 5,
+      "source": "author-loop",
+      "start_line": 780,
+      "end_line": 780,
+      "text": "                s1_messages.append({\"role\": \"assistant\", \"content\": s1_response_text})"
+    },
+    {
+      "listing": 6,
+      "source": "control",
+      "start_line": 99,
+      "end_line": 101,
+      "text": "    effective = dict(fields)\n    effective[\"system2_control\"] = \"[THINK]\" if policy == \"force_once_after_input\" and chunk == final_input_chunk else \"\"\n    return effective"
+    },
+    {
+      "listing": 7,
+      "source": "loop",
+      "start_line": 163,
+      "end_line": 163,
+      "text": "        controller.s2_agent = DisabledReasoner() if policy == 'off' else Reasoner()"
+    },
+    {
+      "listing": 8,
+      "source": "loop",
+      "start_line": 249,
+      "end_line": 252,
+      "text": "                source_parts.append(part)\n                await queue.put((i,packet,now-capture.origin,part))\n                i += 1\n                await asyncio.sleep(max(0,origin+i*.480-time.monotonic()))"
+    },
+    {
+      "listing": 9,
+      "source": "loop",
+      "start_line": 321,
+      "end_line": 321,
+      "text": "        tasks = [asyncio.create_task(feeder()),asyncio.create_task(playback()),asyncio.create_task(speech())]"
+    },
+    {
+      "listing": 10,
+      "source": "loop",
+      "start_line": 235,
+      "end_line": 241,
+      "text": "                    can_finish_correction = i+len(correction)+case.get('min_post_interrupt_chunks',16) <= processing_bound\n                    if correction_index is None and can_finish_correction and spoken_seconds >= case.get('interrupt_after_speech_seconds',.6) and time.monotonic()-last_speech_played < .12:\n                        correction_index = 0\n                        result['interruption'].update(status='triggered_during_playback',input_packet=i,\n                            start_seconds=time.monotonic()-capture.origin,played_speech_seconds=spoken_seconds,\n                            epoch_before_input=controller.playback_buffer.epoch)\n                        capture.mark('input','user_interruption','User correction begins during requested speech playback',result['interruption'])"
+    },
+    {
+      "listing": 11,
+      "source": "native-controller",
+      "start_line": 585,
+      "end_line": 590,
+      "text": "            if \"[STOP]\" in str(tts_ctrl):\n                self.drop_agent_audio = True\n                await self.playback_buffer.clear()\n            if tts:\n                self.s2_agent.add_context(\"Agent\", tts)\n                self.drop_agent_audio = False"
+    },
+    {
+      "listing": 12,
+      "source": "control",
+      "start_line": 122,
+      "end_line": 135,
+      "text": "    async def clear(self):\n        async with self.lock:\n            dropped = sum(len(data) for data, _ in self.blocks)\n            self.clear_events.append({\"old_epoch\": self.epoch, \"new_epoch\": self.epoch + 1, \"dropped_bytes\": dropped})\n            self.epoch += 1\n            self.blocks.clear()\n\n    async def push_tagged(self, data, epoch, chunk):\n        async with self.lock:\n            if epoch != self.epoch:\n                return False\n            data = data[:len(data) - len(data) % 2]\n            if data:\n                self.blocks.append((bytes(data), {\"epoch\": epoch, \"chunk\": chunk}))"
+    },
+    {
+      "listing": 13,
+      "source": "loop",
+      "start_line": 286,
+      "end_line": 292,
+      "text": "                chunk, blob, fields, queued_at, epoch = item\n                if controlled and epoch != controller.playback_buffer.epoch:\n                    result['audio_chunks'].append({'chunk':chunk,'tts':fields.get('tts',''),'epoch':epoch,\n                        'queued_seconds':queued_at,'start_seconds':time.monotonic()-capture.origin,\n                        'end_seconds':time.monotonic()-capture.origin,'dropped_by_STOP':True,'status':'obsolete_queued_work_skipped'})\n                    continue\n                span = f'talker-{chunk}'"
+    },
+    {
+      "listing": 14,
+      "source": "loop",
+      "start_line": 302,
+      "end_line": 302,
+      "text": "                          'epoch':epoch,'dropped_by_STOP':controller.drop_agent_audio or (controlled and epoch != controller.playback_buffer.epoch)}"
+    },
+    {
+      "listing": 15,
+      "source": "loop",
+      "start_line": 422,
+      "end_line": 423,
+      "text": "                await speech_queue.put((index,response.content,fields,time.monotonic()-capture.origin,\n                                        controller.playback_buffer.epoch if controlled else 0))"
+    }
+  ]
+}

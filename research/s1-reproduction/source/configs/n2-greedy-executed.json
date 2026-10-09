@@ -1,0 +1,62 @@
+{
+  "gpus": 1,
+  "audio_limit": 49,
+  "max_model_len": 4096,
+  "max_num_batched_tokens": 1024,
+  "thinker_kv_cache_memory_bytes": 536870912,
+  "talker_kv_cache_memory_bytes": 268435456,
+  "thinker_gpu_memory_utilization": 0.8,
+  "talker_gpu_memory_utilization": 0.15,
+  "sequential_startup": true,
+  "talker_max_model_len": 8192,
+  "streaming_decoder": "bounded_context",
+  "decoder_context_frames": 25,
+  "thinker_tp": 1,
+  "thinker_cuda_graphs": true,
+  "name": "natural_outlet_interruption_greedy",
+  "gpu_type": "H100 SXM 80 GB",
+  "native_loop": {
+    "history_turns": 40,
+    "history_serialization": "raw",
+    "warmup_turns": 4,
+    "temperature": 0,
+    "max_new_tokens": 256,
+    "playback_packet_seconds": 0.02,
+    "save_every_n_turns": 8,
+    "cases": [
+      {
+        "name": "natural_outlet_control",
+        "audio": "data/benchmarks/natural_dailytalk_outlet/outlet_request.wav",
+        "silent_tail_chunks": 40,
+        "max_turns": 40,
+        "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+        "s2_policy": "off",
+        "temperature": 0,
+        "id": "N2a",
+        "experiment_group": "natural_interruption",
+        "qualify_s1_runtime": true
+      },
+      {
+        "name": "natural_outlet_interruption",
+        "audio": "data/benchmarks/natural_dailytalk_outlet/outlet_request.wav",
+        "silent_tail_chunks": 40,
+        "max_turns": 40,
+        "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+        "s2_policy": "off",
+        "temperature": 0,
+        "id": "N2b",
+        "experiment_group": "natural_interruption",
+        "interrupt_audio": "data/benchmarks/natural_dailytalk_outlet/faulty_correction.wav",
+        "interrupt_after_speech_seconds": 0.2
+      }
+    ]
+  },
+  "s1_runtime_qualification": {
+    "skip_initial_turns": 4,
+    "min_samples": 20,
+    "max_p95_s1_seconds": 0.384,
+    "max_p95_talker_seconds": 0.384,
+    "max_queue_delay_seconds": 0.48,
+    "max_playback_scheduler_p95_seconds": 0.04
+  }
+}

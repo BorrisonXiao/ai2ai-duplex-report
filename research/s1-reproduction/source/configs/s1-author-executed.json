@@ -1,0 +1,52 @@
+{
+  "gpus": 1,
+  "audio_limit": 49,
+  "max_model_len": 4096,
+  "max_num_batched_tokens": 1024,
+  "thinker_kv_cache_memory_bytes": 536870912,
+  "talker_kv_cache_memory_bytes": 268435456,
+  "thinker_gpu_memory_utilization": 0.8,
+  "talker_gpu_memory_utilization": 0.15,
+  "sequential_startup": true,
+  "talker_max_model_len": 8192,
+  "streaming_decoder": "bounded_context",
+  "decoder_context_frames": 25,
+  "thinker_tp": 1,
+  "thinker_cuda_graphs": true,
+  "name": "s1_author_reference_one_gpu",
+  "gpu_type": "A100/H100 SXM 80 GB; actual allocation recorded in gpu_runtime",
+  "author_reference": {
+    "cases": [
+      {
+        "name": "warmup",
+        "audio": "data/benchmarks/authored_controls/warmup_silence.wav",
+        "steps": 3,
+        "is_warmup": true
+      },
+      {
+        "name": "bread_author_reference",
+        "audio": "data/benchmarks/authored_controls/bread_request.wav",
+        "steps": 40
+      },
+      {
+        "name": "repeat_author_reference",
+        "audio": "data/benchmarks/authored_controls/repeat_instruction.wav",
+        "steps": 40
+      },
+      {
+        "name": "repeat_native_prompt",
+        "audio": "data/benchmarks/authored_controls/repeat_instruction.wav",
+        "steps": 40,
+        "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+        "temperature": 0
+      },
+      {
+        "name": "sky_native_prompt",
+        "audio": "data/benchmarks/authored_controls/sky_question.wav",
+        "steps": 40,
+        "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+        "temperature": 0
+      }
+    ]
+  }
+}

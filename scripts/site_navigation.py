@@ -7,3 +7,11 @@ def project_tabs(current, prefix=""):
 def review_tabs(current):
     items = [('landscape', 'Duplex landscape', 'index.html#literature-review'), ('context', 'Context-aware assistance', 'context-assistance.html')]
     return '<nav class="review-tabs" aria-label="Literature review sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
+
+
+def experiment_subtabs(current):
+    items = [('overview', 'All experiments', 'index.html'),
+             ('replay', 'Current replay', 'interruption.html'),
+             ('reproduction', 'S1 reproduction report', 's1-reproduction.html'),
+             ('evidence', 'Interruption evidence', 'natural-study.html')]
+    return '<nav class="review-tabs" aria-label="Experiment sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'

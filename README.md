@@ -20,6 +20,16 @@ The visual design follows [JSALT 2026 Downsampling](https://borrisonxiao.github.
 
 ## Review sources and maintenance
 
+The [S1 reproduction report](experiments/s1-reproduction.html) is an Experiments
+sub-tab comparing the working native/greedy S1 runs with earlier failed controls.
+It quotes source code directly, links line-numbered snapshots, and includes the
+minimal one-H100 batch command, output checks and the independent author-harness
+recipe. Generate it with `python scripts/build_current_experiments.py` from this
+site checkout in the migrated workspace; `scripts/build_s1_reproduction.py`
+checks all frozen inference source/config/input hashes before rendering. The
+source manifest is `research/s1-reproduction/manifest.json`. Published launcher
+views substitute private workspace/account names and are labeled accordingly.
+
 Publishing preference (1 October 2026): after a validated webpage update, commit and push the relevant page/report changes to `origin/main` by default. Do not ask for publication confirmation again unless the user requests local-only work or the destination/scope changes. Exclude private proposals, downloaded papers, secrets and unrelated edits.
 
 - `research/review_data.py`: curated facts, artifact statuses and synthesis; the editable source.

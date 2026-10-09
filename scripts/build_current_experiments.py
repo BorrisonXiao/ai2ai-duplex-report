@@ -120,6 +120,8 @@ def main():
         page.write_text(page.read_text().replace('href="trajectory.html"','href="single-request.html"'))
         from build_natural_interruption import main as build_natural
         build_natural()
+        from build_s1_reproduction import main as build_reproduction
+        build_reproduction()
     print('Built current E1/E2 viewers, study status, collection and archive.')
 
 
