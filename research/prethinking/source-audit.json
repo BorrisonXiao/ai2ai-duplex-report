@@ -1,0 +1,993 @@
+{
+  "date": "2026-10-10",
+  "scope": "Primary metadata, manuscripts and release cards; no corpus/weight download or GPU inference.",
+  "sources": [
+    {
+      "id": "proactive",
+      "url": "https://arxiv.org/abs/2607.03093v1",
+      "checked_at": "2026-10-10T23:54:33.421918+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2607.03093v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "f8d3f38c0504c077d864798c19ef6a988a112dd382f569eac89f3164d3687402",
+      "metadata": {
+        "citation_title": [
+          "Don't Wait to Reply: Towards Responsive yet Thoughtful Dialogue through Proactive Thinking"
+        ],
+        "citation_author": [
+          "Wang, Ante",
+          "Fu, Jiaqi",
+          "Chen, Xuanyi",
+          "Ma, Ruotian",
+          "Tu, Zhaopeng",
+          "Ma, Weizhi",
+          "Liu, Yang"
+        ],
+        "citation_date": [
+          "2026/07/03"
+        ],
+        "citation_online_date": [
+          "2026/07/03"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2607.03093"
+        ],
+        "citation_arxiv_id": [
+          "2607.03093"
+        ],
+        "citation_abstract": [
+          "Thinking has emerged as a critical capability for Large Language Models (LLMs) tackling complex tasks. However, its reactive nature, where reasoning is passively triggered only upon receiving a user response, inevitably introduces latency that compromises conversational fluidity. This stands in sharp contrast to human dialogue, where speakers proactively anticipate and plan future content during natural pauses to ensure seamless interaction. To bridge this gap, we propose Proactive Thinking, a framework that empowers models to pre-compute potential response elements during conversational downtime instead of waiting idly for the next input. We then introduce a training-free baseline that can think ahead by anticipating future states, balancing efficiency and quality through speculative continual thinking. To evaluate this approach in practice, we adapt three benchmarks of varying complexity into time-aware environments that simulate real-time conversational flow. We demonstrate that proactive thinking effectively improves interaction efficiency without compromising performance. Ultimately, this work advocates for a fundamental shift toward more intelligent, anticipatory, and real-time conversational AI."
+        ]
+      }
+    },
+    {
+      "id": "lts",
+      "url": "https://arxiv.org/abs/2601.19952v1",
+      "checked_at": "2026-10-10T23:54:33.423138+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2601.19952v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "7a747da0ae3112cdf6a9f8b63d28860a633d3ddc78802529031f59ef811a6f6f",
+      "metadata": {
+        "citation_title": [
+          "LTS-VoiceAgent: A Listen-Think-Speak Framework for Efficient Streaming Voice Interaction via Semantic Triggering and Incremental Reasoning"
+        ],
+        "citation_author": [
+          "Zou, Wenhao",
+          "Miao, Yuwei",
+          "Ma, Zhanyu",
+          "Xu, Jun",
+          "Gao, Jiuchong",
+          "Hao, Jinghua",
+          "He, Renqing",
+          "Xu, Jingwen"
+        ],
+        "citation_date": [
+          "2026/01/26"
+        ],
+        "citation_online_date": [
+          "2026/01/26"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2601.19952"
+        ],
+        "citation_arxiv_id": [
+          "2601.19952"
+        ],
+        "citation_abstract": [
+          "Real-time voice agents face a dilemma: end-to-end models often lack deep reasoning, while cascaded pipelines incur high latency by executing ASR, LLM reasoning, and TTS strictly in sequence, unlike human conversation where listeners often start thinking before the speaker finishes. Since cascaded architectures remain the dominant choice for complex tasks, existing cascaded streaming strategies attempt to reduce this latency via mechanical segmentation (e.g., fixed chunks, VAD-based splitting) or speculative generation, but they frequently either break semantic units or waste computation on predictions that must be rolled back. To address these challenges, we propose LTS-VoiceAgent, a Listen-Think-Speak framework that explicitly separates when to think from how to reason incrementally. It features a Dynamic Semantic Trigger to detect meaningful prefixes, and a Dual-Role Stream Orchestrator that coordinates a background Thinker (for state maintenance) and a foreground Speaker (for speculative solving). This parallel design enables \"thinking while speaking\" without blocking responses. We also introduce a Pause-and-Repair benchmark containing natural disfluencies to stress-test streaming robustness. Experiments across VERA, Spoken-MQA, BigBenchAudio, and our benchmark show that LTS-VoiceAgent achieves a stronger accuracy-latency-efficiency trade-off than serial cascaded baselines and existing streaming strategies."
+        ]
+      }
+    },
+    {
+      "id": "asyncio",
+      "url": "https://arxiv.org/abs/2605.13360v1",
+      "checked_at": "2026-10-10T23:54:33.423542+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2605.13360v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "c82f53e50f41ff213b71748823c2cc8fb80c39527da61010003a053416070096",
+      "metadata": {
+        "citation_title": [
+          "Building Interactive Real-Time Agents with Asynchronous I/O and Speculative Tool Calling"
+        ],
+        "citation_author": [
+          "Hooper, Coleman",
+          "Kang, Minwoo",
+          "Moon, Suhong",
+          "Lee, Nicholas",
+          "Wen, Eric",
+          "Wawrzynek, John",
+          "Mahoney, Michael W.",
+          "Shao, Yakun Sophia",
+          "Gholami, Amir",
+          "Keutzer, Kurt"
+        ],
+        "citation_date": [
+          "2026/05/13"
+        ],
+        "citation_online_date": [
+          "2026/05/13"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2605.13360"
+        ],
+        "citation_arxiv_id": [
+          "2605.13360"
+        ],
+        "citation_abstract": [
+          "There is a growing demand for agentic AI technologies for a range of downstream applications like customer service and personal assistants. For applications where the agent needs to interact with a person, real-time low-latency responsiveness is required; for example, with voice-controlled applications, under 1 second of latency is typically required for the interaction to feel seamless. However, if we want the LLM to reason and execute an agentic workflow with tool calling, this can add can add several seconds or more of latency, which is prohibitive for real-time latency-sensitive applications. In our work, we aim to enable real-time interaction even for agents with complex multi-turn tool calling. We propose Asynchronous I/O, which decouples the core agent reason-and-act thread from waiting for additional information from either the user or environment, thereby allowing for overlapping agentic processing while waiting on external delays. We also propose Speculative Tool Calling as a method to manage task execution when the agent is still unsure if it has received the full information or if additional user information may later be provided. For strong cloud models, our method can be applied out-of-the-box to existing real-time cloud APIs, providing 1.3-1.7$\\times$ speedups with minor accuracy loss. To enable real-time interaction with small edge-scale models, we also present a clock-based training methodology that adapts the model to handle streaming inputs and asynchronous responses, and demonstrate a synthetic data generation strategy for SFT. Altogether, this approach provides 1.6-2.2$\\times$ speedups with the Qwen2.5-3B-Instruct and Llama-3.2-3B-Instruct models across multiple tool calling benchmarks."
+        ]
+      }
+    },
+    {
+      "id": "duplex",
+      "url": "https://arxiv.org/abs/2606.09186v1",
+      "checked_at": "2026-10-10T23:54:33.423837+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.09186v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "94030e2529a1ad5d200aef1e38d78fff77b9df53529fb5c039a2030864f31dda",
+      "metadata": {
+        "citation_title": [
+          "DuplexOmni: Real-Time Listening, Seeing, Thinking, and Speaking for Full-Duplex Interaction"
+        ],
+        "citation_author": [
+          "Huang, Muye",
+          "Zhang, Lingling",
+          "Yu, Xingyu",
+          "Shi, Lei",
+          "Ma, Zhanyu",
+          "Xu, Jun",
+          "Gao, Jiuchong",
+          "Hao, Jinghua",
+          "He, Renqing",
+          "Liu, Jun"
+        ],
+        "citation_date": [
+          "2026/06/08"
+        ],
+        "citation_online_date": [
+          "2026/06/08"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2606.09186"
+        ],
+        "citation_arxiv_id": [
+          "2606.09186"
+        ],
+        "citation_abstract": [
+          "Human interaction is continuous, multimodal, and full-duplex by nature. Although recent omni models have made substantial progress in unified speech, vision, and text modeling, combining seamless real-time interaction with complex reasoning and tool use remains challenging. We present DuplexOmni, a method for real-time multimodal full-duplex interaction. DuplexOmni separates model capability into an interaction layer and a thinking layer, which collaborate asynchronously in parallel. The interaction layer is implemented by the DuplexOmni model, an end-to-end system that processes streaming audio and video inputs while generating text and speech responses in real time. The thinking layer is a pluggable module that provides complex reasoning and tool-use capabilities. To support this method, we further develop a Writer-Director pipeline for constructing continuous-interaction training data. Experiments show that DuplexOmni achieves strong performance on multiple public benchmarks and exhibits natural full-duplex interaction ability."
+        ]
+      }
+    },
+    {
+      "id": "talker",
+      "url": "https://arxiv.org/abs/2410.08328v1",
+      "checked_at": "2026-10-10T23:54:33.494009+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.08328v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "a2e40255d2c9a682c21f6f11bc814b51c44f30c4be16e613b893e46da97fe34d",
+      "metadata": {
+        "citation_title": [
+          "Agents Thinking Fast and Slow: A Talker-Reasoner Architecture"
+        ],
+        "citation_author": [
+          "Christakopoulou, Konstantina",
+          "Mourad, Shibl",
+          "Matarić, Maja"
+        ],
+        "citation_date": [
+          "2024/10/10"
+        ],
+        "citation_online_date": [
+          "2024/10/10"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2410.08328"
+        ],
+        "citation_arxiv_id": [
+          "2410.08328"
+        ],
+        "citation_abstract": [
+          "Large language models have enabled agents of all kinds to interact with users through natural conversation. Consequently, agents now have two jobs: conversing and planning/reasoning. Their conversational responses must be informed by all available information, and their actions must help to achieve goals. This dichotomy between conversing with the user and doing multi-step reasoning and planning can be seen as analogous to the human systems of \"thinking fast and slow\" as introduced by Kahneman. Our approach is comprised of a \"Talker\" agent (System 1) that is fast and intuitive, and tasked with synthesizing the conversational response; and a \"Reasoner\" agent (System 2) that is slower, more deliberative, and more logical, and is tasked with multi-step reasoning and planning, calling tools, performing actions in the world, and thereby producing the new agent state. We describe the new Talker-Reasoner architecture and discuss its advantages, including modularity and decreased latency. We ground the discussion in the context of a sleep coaching agent, in order to demonstrate real-world relevance."
+        ]
+      }
+    },
+    {
+      "id": "convfill",
+      "url": "https://arxiv.org/abs/2511.07397v3",
+      "checked_at": "2026-10-10T23:54:33.506936+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.07397v3",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "9cf9d690403c200fa9168341d8305606ac768eefeb32c67ed11d4e83def08066",
+      "metadata": {
+        "citation_title": [
+          "Thinking While Speaking: Inference-Time Knowledge Transfer for Responsive and Intelligent Conversational Voice Agents"
+        ],
+        "citation_author": [
+          "Srinivas, Vidya",
+          "Englhardt, Zachary",
+          "Iyer, Vikram",
+          "Patel, Shwetak"
+        ],
+        "citation_date": [
+          "2025/11/10"
+        ],
+        "citation_online_date": [
+          "2026/07/01"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2511.07397"
+        ],
+        "citation_arxiv_id": [
+          "2511.07397"
+        ],
+        "citation_abstract": [
+          "Voice agents face a fundamental tension: the reasoning, retrieval, and tool use that make foundation models capable are iterative and slow, while conversational interaction demands responses on a millisecond timescale. Smaller, real-time models meet the latency bar but cannot match foundation models on complex tasks, leaving current voice agents to trade away either responsiveness or capability. We introduce conversational infill, where a small talker model both immediately generates contextually grounded responses to hide the latency of an external reasoner model and fluently integrates streamed reasoner knowledge into its responses during inference. We curate a 290,571-example synthetic dataset spanning six domains and demonstrate that this task is learnable across seven widely used small language models ranging from 135M to 1.7B parameters. Our system implementation, ConvFill, sustains millisecond-level time-to-first-response while closing the accuracy gap to within 6.3% of the corresponding frontier reasoner performance. In a live user study (n=18) with talker deployments running on an Apple M2 SoC, participants rank ConvFill on par with frontier models overall, prefer it for retrieval-heavy tasks, and rate it significantly more responsive. These results show that conversational infill unlocks a new point on the latency-capability Pareto frontier, offering a practical path toward voice agents that are both responsive and highly capable. Code, models, and datasets are available at https://github.com/vysri/conversational-infill."
+        ]
+      }
+    },
+    {
+      "id": "multitalk",
+      "url": "https://arxiv.org/abs/2609.36903v1",
+      "checked_at": "2026-10-10T23:54:33.512904+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.36903v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "0cd109793d9cb0115518c1b040dd2b05769298c6dff61e61d30a5a1f707a6f58",
+      "metadata": {
+        "citation_title": [
+          "MultiTalk: Scaling Full-Duplex Speech Models to Long, Multi-Party, Bilingual Conversation"
+        ],
+        "citation_author": [
+          "Wang, Ke",
+          "Ren, Houxing",
+          "Lu, Zimu",
+          "Yang, Yunqiao",
+          "Zong, Zhuofan",
+          "Zhan, Mingjie",
+          "Li, Hongsheng"
+        ],
+        "citation_date": [
+          "2026/09/29"
+        ],
+        "citation_online_date": [
+          "2026/09/29"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.36903"
+        ],
+        "citation_arxiv_id": [
+          "2609.36903"
+        ],
+        "citation_abstract": [
+          "End-to-end full-duplex speech models have brought open-source machine conversation closer to human-like interaction, yet existing systems remain limited in two intertwined dimensions: long-context robustness and multi-party interaction. Real-world scenarios such as meetings, group lessons, and social-robot reception require a single model to track, contextualize, and respond to multiple speakers over extended durations. Progress is constrained by both data and evaluation: open multi-party speech corpora remain small and are not designed for codec-frame-level full-duplex modeling, while existing long-audio benchmarks focus on passive listening and speech-to-speech benchmarks are mostly short and dyadic. We extend the Moshi paradigm jointly along the long-horizon and multi-party axes in English and Chinese. First, we release 57.6k hours of synthetic training data ($\\href{https://huggingface.co/datasets/MultiTalk/MultiTalkPT}{MultiTalkPT}$ and $\\href{https://huggingface.co/datasets/MultiTalk/MultiTalkFT}{MultiTalkFT}$) for long-form, multi-party, English-Chinese full-duplex dialogue, with controllable length, participant count, turn-taking, overlap, backchannels, interruptions, addressee shifts, and long-range coreference. Second, we introduce $\\href{https://huggingface.co/datasets/MultiTalk/MultiTalkBench}{MultiTalkBench}$, built from real human recordings, for evaluating long-form, multi-party, bilingual full-duplex dialogue. Conversations average 32.6 minutes and include probes for long-range entity tracking, topic coherence, and addressee selection. Third, we train a bilingual Moshi-style model that sustains coherent multi-party English-Chinese conversations over extended durations and substantially outperforms open-source baselines including Moshi, MiniCPM-o-4.5, and Qwen3-Omni-30B-A3B-Instruct on MultiTalkBench."
+        ]
+      }
+    },
+    {
+      "id": "groupmem",
+      "url": "https://arxiv.org/abs/2605.14498v2",
+      "checked_at": "2026-10-10T23:54:33.515390+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2605.14498v2",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "c7e471e4d82a93381f5883ffc789a9c29551d4bb436f7318bf3108d072c1fa32",
+      "metadata": {
+        "citation_title": [
+          "GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations"
+        ],
+        "citation_author": [
+          "Yang, Jingbo",
+          "Lai, Kwei-Herng",
+          "Wang, Xiaowen",
+          "Chang, Shiyu",
+          "Harari, Yaar",
+          "Gabrilovich, Evgeniy"
+        ],
+        "citation_date": [
+          "2026/05/14"
+        ],
+        "citation_online_date": [
+          "2026/05/16"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2605.14498"
+        ],
+        "citation_arxiv_id": [
+          "2605.14498"
+        ],
+        "citation_abstract": [
+          "Large Language Model (LLM) agents increasingly serve as personal assistants and workplace collaborators, where their utility depends on memory systems that extract, retrieve, and apply information across long-running conversations. However, both existing memory systems and benchmarks are built around the dyadic, single-user setup, even though real deployments routinely span groups and channels with multiple users interacting with the agent and with each other. This mismatch leaves three properties of group memory unmeasured: (i) group dynamics that go beyond concatenated one-on-one chats, (ii) speaker-grounded belief tracking, where the per-user memory modeling is needed, and (iii) audience-adapted language, where Theory-of-Mind shifts produce role-specific vocabulary. We introduce GroupMemBench, a benchmark that exposes all three. A graph-grounded synthesis pipeline produces multi-party conversations with controllable reply structure and conditions each message on per-user personas and target audiences. An adversarial query pipeline then binds every question to a specific asker across six categories, spanning multi-hop reasoning, knowledge update, term ambiguity, user-implicit reasoning, temporal reasoning, and abstention, and iteratively searches challenging, realistic queries that reflect comprehensive memory capability. Benchmarking leading memory systems exposes a sharp collapse: the strongest one reaches only 46.0% average accuracy, with knowledge update at 27.1% and term ambiguity at 37.7%, while a simple BM25 baseline matches or exceeds most agent memory systems. This indicates current memory ingestion erases the structural and lexical features group memory depends on, leaving multi-user memory far from solved."
+        ]
+      }
+    },
+    {
+      "id": "msi",
+      "url": "https://arxiv.org/abs/2609.24812v1",
+      "checked_at": "2026-10-10T23:54:33.538604+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2609.24812v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "a52cd888c8c637ef49fdbd5ed83cb5370639a0cf3e31ef47bdc0b01f630a2932",
+      "metadata": {
+        "citation_title": [
+          "MSI-Bench: Evaluating Multi-Speaker Voice Interaction for Collaborative AI Agents"
+        ],
+        "citation_author": [
+          "Xiong, Chenxu",
+          "Shen, Dongming",
+          "Tang, Yuzhi",
+          "Ma, Wentao",
+          "Li, Mu",
+          "Smola, Alex"
+        ],
+        "citation_date": [
+          "2026/09/21"
+        ],
+        "citation_online_date": [
+          "2026/09/21"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2609.24812"
+        ],
+        "citation_arxiv_id": [
+          "2609.24812"
+        ],
+        "citation_abstract": [
+          "Voice provides a natural and immediate interface for AI agents. Many settings in which voice agents could be useful, including meetings, households, and collaborative work, are inherently multi-speaker. Supporting these settings introduces challenges that are largely absent from one-on-one interaction. We introduce the Multi-Speaker Interaction Benchmark (MSI-Bench) for evaluating multi-speaker voice interaction. Each test case is a short multi-party multi-turn audio scene with participant context, expected tool calls, and atomic rubrics. The benchmark targets three capability families: multi-speaker memory, multi-speaker instruction following, and multi-speaker reasoning. It comprises 1,152 test cases, evenly split between Mandarin Chinese and English (576 each). The strongest configuration on each split passes all rubrics on only 66.8% of English and 54.5% of Mandarin cases, and the strongest open-weight configuration on 34.0% and 19.3%. Failure analysis separates perception from reasoning: open-weight models are bottlenecked by the multi-speaker audio front-end, while frontier systems still fail speaker-scoped decision making on clean transcripts---and models across the board often respond when no one has addressed them. These results identify speaker-grounded perception, speaker-scoped decision making, and conversational restraint as concrete targets for future voice agents."
+        ]
+      }
+    },
+    {
+      "id": "ask",
+      "url": "https://aclanthology.org/2025.findings-acl.71/",
+      "checked_at": "2026-10-10T23:54:33.557435+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2025.findings-acl.71/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "7af338a9210de9b7d5078fcef51a86145786f8ad06bba475e4a166b28e0e6f1c",
+      "metadata": {
+        "citation_title": [
+          "Data-Centric Improvements for Enhancing Multi-Modal Understanding in Spoken Conversation Modeling"
+        ],
+        "citation_author": [
+          "Maximillian Chen",
+          "Ruoxi Sun",
+          "Sercan O Arik"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: ACL 2025"
+        ],
+        "citation_publication_date": [
+          "2025/7"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2025.findings-acl.71.pdf"
+        ],
+        "citation_firstpage": [
+          "1366"
+        ],
+        "citation_lastpage": [
+          "1387"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2025.findings-acl.71"
+        ]
+      }
+    },
+    {
+      "id": "mised",
+      "url": "https://aclanthology.org/2024.findings-emnlp.106/",
+      "checked_at": "2026-10-10T23:54:33.569886+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2024.findings-emnlp.106/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "8bc313175786b299ed180a16bfb3929be7a3f63b1323d04e433027c8b0f9d8af",
+      "metadata": {
+        "citation_title": [
+          "Efficient Data Generation for Source-grounded Information-seeking Dialogs: A Use Case for Meeting Transcripts"
+        ],
+        "citation_author": [
+          "Lotem Golany",
+          "Filippo Galgani",
+          "Maya Mamo",
+          "Nimrod Parasol",
+          "Omer Vandsburger",
+          "Nadav Bar",
+          "Ido Dagan"
+        ],
+        "citation_conference_title": [
+          "Findings of the Association for Computational Linguistics: EMNLP 2024"
+        ],
+        "citation_publication_date": [
+          "2024/11"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2024.findings-emnlp.106.pdf"
+        ],
+        "citation_firstpage": [
+          "1908"
+        ],
+        "citation_lastpage": [
+          "1925"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2024.findings-emnlp.106"
+        ]
+      }
+    },
+    {
+      "id": "qmsum",
+      "url": "https://aclanthology.org/2021.naacl-main.472/",
+      "checked_at": "2026-10-10T23:54:33.570549+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://aclanthology.org/2021.naacl-main.472/",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "5ee8b59dd388de5f4aec62e9146fb43caf53e2dffcf9c1073f0a10478126292d",
+      "metadata": {
+        "citation_title": [
+          "QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization"
+        ],
+        "citation_author": [
+          "Ming Zhong",
+          "Da Yin",
+          "Tao Yu",
+          "Ahmad Zaidi",
+          "Mutethia Mutuma",
+          "Rahul Jha",
+          "Ahmed Hassan",
+          "Asli Celikyilmaz",
+          "Yang Liu",
+          "Xipeng Qiu (邱锡鹏)",
+          "Dragomir Radev"
+        ],
+        "citation_conference_title": [
+          "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies"
+        ],
+        "citation_publication_date": [
+          "2021/6"
+        ],
+        "citation_pdf_url": [
+          "https://aclanthology.org/2021.naacl-main.472.pdf"
+        ],
+        "citation_firstpage": [
+          "5905"
+        ],
+        "citation_lastpage": [
+          "5921"
+        ],
+        "citation_doi": [
+          "10.18653/v1/2021.naacl-main.472"
+        ]
+      }
+    },
+    {
+      "id": "speak",
+      "url": "https://arxiv.org/abs/2603.11409v1",
+      "checked_at": "2026-10-10T23:54:33.585530+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2603.11409v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "36ed2325adfea87b444b881f69913702feb693db339f6ad21ef5846298d2a430",
+      "metadata": {
+        "citation_title": [
+          "Speak or Stay Silent: Context-Aware Turn-Taking in Multi-Party Dialogue"
+        ],
+        "citation_author": [
+          "Bhagtani, Kratika",
+          "Anand, Mrinal",
+          "Xu, Yu Chen",
+          "Yadav, Amit Kumar Singh"
+        ],
+        "citation_date": [
+          "2026/03/12"
+        ],
+        "citation_online_date": [
+          "2026/03/12"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2603.11409"
+        ],
+        "citation_arxiv_id": [
+          "2603.11409"
+        ],
+        "citation_abstract": [
+          "Existing voice AI assistants treat every detected pause as an invitation to speak. This works in dyadic dialogue, but in multi-party settings, where an AI assistant participates alongside multiple speakers, pauses are abundant and ambiguous. An assistant that speaks on every pause becomes disruptive rather than useful. In this work, we formulate context-aware turn-taking: at every detected pause, given the full conversation context, our method decides whether the assistant should speak or stay silent. We introduce a benchmark of over 120K labeled conversations spanning three multi-party corpora. Evaluating eight recent large language models, we find that they consistently fail at context-aware turn-taking under zero-shot prompting. We then propose a supervised fine-tuning approach with reasoning traces, improving balanced accuracy by up to 23 percentage points. Our findings suggest that context-aware turn-taking is not an emergent capability; it must be explicitly trained."
+        ]
+      }
+    },
+    {
+      "id": "muppet",
+      "url": "https://arxiv.org/abs/2606.23217v1",
+      "checked_at": "2026-10-10T23:54:33.631395+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2606.23217v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "d03af0759fd2fb98f74346d953ecbcab1b6a08d97cb718b31c0c5518e09c5260",
+      "metadata": {
+        "citation_title": [
+          "MuPPET: A Benchmark for Contextual Privacy of LLM Assistants in Multi-Party Conversations"
+        ],
+        "citation_author": [
+          "Ruzzetti, Elena Sofia",
+          "Emde, Cornelius",
+          "Yun, Sangdoo",
+          "Oh, Seong Joon",
+          "Gubri, Martin"
+        ],
+        "citation_date": [
+          "2026/06/22"
+        ],
+        "citation_online_date": [
+          "2026/06/22"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2606.23217"
+        ],
+        "citation_arxiv_id": [
+          "2606.23217"
+        ],
+        "citation_abstract": [
+          "LLM agents are increasingly deployed in multi-party environments, handling sensitive personal data on behalf of individual users, for instance in group chats. When such an agent discloses private information, it reaches every group member at once. This risk is structurally harder to control than in one-to-one settings, as every piece of private information must be appropriate for every recipient in the group. Yet all existing contextual privacy benchmarks consider only single-interlocutor settings, leaving multi-party privacy risks unmeasured. We introduce MuPPET (Multi-Party Privacy Exposure Testing), a benchmark for contextual privacy in multi-party conversations. Our experiments show that models leak substantially more in multi-party settings than one-to-one evaluations suggest. Frontier models are vulnerable, and smaller open-weights models, often preferred for local deployment with sensitive data, even more so. Existing contextual privacy defences offer only partial protection, degrade utility, and do not resolve the underlying party-tracking problem."
+        ]
+      }
+    },
+    {
+      "id": "longmem",
+      "url": "https://arxiv.org/abs/2410.10813",
+      "checked_at": "2026-10-10T23:54:33.679749+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2410.10813",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "99daea50e12f2d4b626df58da79690c50a0893bbbe0b58fea0f00c98a1a22ddb",
+      "metadata": {
+        "citation_title": [
+          "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory"
+        ],
+        "citation_author": [
+          "Wu, Di",
+          "Wang, Hongwei",
+          "Yu, Wenhao",
+          "Zhang, Yuwei",
+          "Chang, Kai-Wei",
+          "Yu, Dong"
+        ],
+        "citation_date": [
+          "2024/10/14"
+        ],
+        "citation_online_date": [
+          "2025/03/04"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2410.10813"
+        ],
+        "citation_arxiv_id": [
+          "2410.10813"
+        ],
+        "citation_abstract": [
+          "Recent large language model (LLM)-driven chat assistant systems have integrated memory components to track user-assistant chat histories, enabling more accurate and personalized responses. However, their long-term memory capabilities in sustained interactions remain underexplored. We introduce LongMemEval, a comprehensive benchmark designed to evaluate five core long-term memory abilities of chat assistants: information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention. With 500 meticulously curated questions embedded within freely scalable user-assistant chat histories, LongMemEval presents a significant challenge to existing long-term memory systems, with commercial chat assistants and long-context LLMs showing a 30% accuracy drop on memorizing information across sustained interactions. We then present a unified framework that breaks down the long-term memory design into three stages: indexing, retrieval, and reading. Built upon key experimental insights, we propose several memory design optimizations including session decomposition for value granularity, fact-augmented key expansion for indexing, and time-aware query expansion for refining the search scope. Extensive experiments show that these optimizations greatly improve both memory recall and downstream question answering on LongMemEval. Overall, our study provides valuable resources and guidance for advancing the long-term memory capabilities of LLM-based chat assistants, paving the way toward more personalized and reliable conversational AI. Our benchmark and code are publicly available at https://github.com/xiaowu0162/LongMemEval."
+        ]
+      }
+    },
+    {
+      "id": "proactive-full",
+      "url": "https://arxiv.org/html/2607.03093v1",
+      "checked_at": "2026-10-10T23:54:33.710764+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2607.03093v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "a1362e05c5117922734df9107d4d32918722457ab2cc80c618e0c4e8cc8abace",
+      "metadata": {}
+    },
+    {
+      "id": "lts-full",
+      "url": "https://arxiv.org/html/2601.19952v1",
+      "checked_at": "2026-10-10T23:54:33.723790+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2601.19952v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "6427375895922e0ba15148740da153ca7b1ced429d924af82b97f7d38bd17b7b",
+      "metadata": {}
+    },
+    {
+      "id": "asyncio-full",
+      "url": "https://arxiv.org/html/2605.13360v1",
+      "checked_at": "2026-10-10T23:54:33.724466+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2605.13360v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "55b17f9d1c385f7014a18e095cb3cad6e052d8c8e78fca966bbe58742ad39ae3",
+      "metadata": {}
+    },
+    {
+      "id": "duplex-full",
+      "url": "https://arxiv.org/html/2606.09186v1",
+      "checked_at": "2026-10-10T23:54:33.756021+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2606.09186v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "2cd2908b4d3717e190186eea54c16883a4c3d8b1017e8849d2f153ba7f191630",
+      "metadata": {}
+    },
+    {
+      "id": "talker-full",
+      "url": "https://arxiv.org/html/2410.08328v1",
+      "checked_at": "2026-10-10T23:54:33.779183+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2410.08328v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "8b0a245375a1c331f9ecb9bc51ee44d25bf9630c7479173a0f5639ae75a4fc83",
+      "metadata": {}
+    },
+    {
+      "id": "convfill-full",
+      "url": "https://arxiv.org/html/2511.07397v3",
+      "checked_at": "2026-10-10T23:54:33.826042+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2511.07397v3",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "c7b771851c143df7e3c56cc9f8cf56fd5857dbb8dd292595410b80b42d220684",
+      "metadata": {}
+    },
+    {
+      "id": "multitalk-full",
+      "url": "https://arxiv.org/html/2609.36903v1",
+      "checked_at": "2026-10-10T23:54:33.883609+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.36903v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "cf63112cd53af173a4077eb78f4be776391f4789a78a06f779249e2eac301ebf",
+      "metadata": {}
+    },
+    {
+      "id": "groupmem-full",
+      "url": "https://arxiv.org/html/2605.14498v2",
+      "checked_at": "2026-10-10T23:54:33.884380+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2605.14498v2",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "900930457a2486d761cd14ff9d94f978567cc082ac792302408ac80921b25947",
+      "metadata": {}
+    },
+    {
+      "id": "msi-full",
+      "url": "https://arxiv.org/html/2609.24812v1",
+      "checked_at": "2026-10-10T23:54:33.909405+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2609.24812v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "76ffc1f539919604f82d87e37af53de64ece1c8b6b72b01024d3e25ff5f74066",
+      "metadata": {}
+    },
+    {
+      "id": "speak-full",
+      "url": "https://arxiv.org/html/2603.11409v1",
+      "checked_at": "2026-10-10T23:54:34.084185+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2603.11409v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "4190631140cf057efa502c0ddeb8fefdaf885d5efc913a6c065ff7a95b6aceb9",
+      "metadata": {}
+    },
+    {
+      "id": "muppet-full",
+      "url": "https://arxiv.org/html/2606.23217v1",
+      "checked_at": "2026-10-10T23:54:34.094783+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2606.23217v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "b7f20573fc9c9d4c545af5861d4a472b86711d57dfd0d3cadef3a99e66f34f0c",
+      "metadata": {}
+    },
+    {
+      "id": "longmem-full",
+      "url": "https://arxiv.org/html/2410.10813",
+      "checked_at": "2026-10-10T23:54:34.209652+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2410.10813",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "da4c3fa52b22496cb9b13b5a4e41b01a44f4542256a0e21a5bef094f18111053",
+      "metadata": {}
+    },
+    {
+      "id": "multitalk-ft",
+      "url": "https://huggingface.co/datasets/MultiTalk/MultiTalkFT",
+      "checked_at": "2026-10-10T23:54:34.210982+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/MultiTalk/MultiTalkFT",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "387c526dd08a5ac3ac0c66638c4ad8e30f80e2b6b01a4ddc049643f984d91088",
+      "metadata": {}
+    },
+    {
+      "id": "multitalk-tree",
+      "url": "https://huggingface.co/api/datasets/MultiTalk/MultiTalkFT/tree/main?recursive=false&limit=100",
+      "checked_at": "2026-10-10T23:54:34.295058+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/api/datasets/MultiTalk/MultiTalkFT/tree/main?recursive=false&limit=100",
+      "content_type": "application/json; charset=utf-8",
+      "sha256": "c1ea35555524e92d649fbd6c14fc4c5989425198db81828031f2f1a8ff90d134",
+      "metadata": {}
+    },
+    {
+      "id": "multitalk-code",
+      "url": "https://github.com/multitalk-ai/MultiTalk",
+      "checked_at": "2026-10-10T23:54:34.334570+00:00",
+      "status": "unreachable",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "id": "duplex-pipeline",
+      "url": "https://raw.githubusercontent.com/MuyeHuang/DuplexOmni/main/data_pipeline/README.md",
+      "checked_at": "2026-10-10T23:54:34.380851+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/MuyeHuang/DuplexOmni/main/data_pipeline/README.md",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "d584f7075e191e166bfac74fbc3ed437336b2a35fa936712e015e27c861b4deb",
+      "metadata": {}
+    },
+    {
+      "id": "duplex-data",
+      "url": "https://huggingface.co/datasets/MuyeHuang/DuplexOmni-Data",
+      "checked_at": "2026-10-10T23:54:34.432256+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/MuyeHuang/DuplexOmni-Data",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "d781521e2487cb4e7c4e5fc26b2ca6becac35d33314fce6b9c2afaebd8e8c0e5",
+      "metadata": {}
+    },
+    {
+      "id": "mised-code",
+      "url": "https://github.com/google-research-datasets/MISeD",
+      "checked_at": "2026-10-10T23:54:34.433088+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/google-research-datasets/MISeD",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "1c5bbe635193318ea093b55be66931886f20c51829343ac40770d461fcef668a",
+      "metadata": {}
+    },
+    {
+      "id": "qmsum-code",
+      "url": "https://github.com/Yale-LILY/QMSum",
+      "checked_at": "2026-10-10T23:54:34.494513+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/Yale-LILY/QMSum",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "3494e5b909188d3a3c695f2876c5c78a23c1b441a953c4de170d19d0f47991f8",
+      "metadata": {}
+    },
+    {
+      "id": "abg-coqa",
+      "url": "https://github.com/MeiqiGuo/AKBC2021-Abg-CoQA",
+      "checked_at": "2026-10-10T23:54:34.550433+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/MeiqiGuo/AKBC2021-Abg-CoQA",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "b9e0f2cadc69f7b8cfa5206f202227a0c4d7e51b2bb4e78646d68dddd0415285",
+      "metadata": {}
+    },
+    {
+      "id": "audio-kd",
+      "url": "https://arxiv.org/abs/2509.18579v2",
+      "checked_at": "2026-10-11T00:02:14.477292+00:00",
+      "status": "unreachable",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "id": "audio-kd-full",
+      "url": "https://arxiv.org/html/2509.18579v2",
+      "checked_at": "2026-10-11T00:02:14.624361+00:00",
+      "status": "unreachable",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "id": "audio-opd",
+      "url": "https://arxiv.org/abs/2607.21550v1",
+      "checked_at": "2026-10-11T00:02:14.739965+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2607.21550v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "c114d007cbaab9b77e75d4bfbab15dc3d301cb185c947c09c58530be93d9d9c5",
+      "metadata": {
+        "citation_title": [
+          "X$^3$-OPD: Distilling Reasoning into Large Audio-Language Models via On-Policy Alignment"
+        ],
+        "citation_author": [
+          "Fu, Dongjie",
+          "Cao, Di",
+          "Cheng, Xize",
+          "Zhang, Zihan",
+          "Jia, Wenxu",
+          "Chen, Yifu",
+          "Ji, Shengpeng",
+          "Zhang, Yu",
+          "Jin, Tao"
+        ],
+        "citation_date": [
+          "2026/07/23"
+        ],
+        "citation_online_date": [
+          "2026/07/23"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2607.21550"
+        ],
+        "citation_arxiv_id": [
+          "2607.21550"
+        ],
+        "citation_abstract": [
+          "While large audio-language models have achieved remarkable progress in auditory perception, they still lag behind text-based large language models in deep logical reasoning, primarily due to the scarcity of high-quality audio reasoning data. To bridge this gap, we propose X$^3$-OPD, a cross-modal on-policy distillation framework that transfers reasoning capabilities from a powerful text teacher to an audio-language student. During training, the student generates reasoning trajectories conditioned on its own acoustic perception, while the teacher provides token-level guidance using matched textual inputs and verified answers. We further construct a three-tier symmetric corpus covering textual reasoning rendered into speech, audio-event reasoning grounded in complex acoustic scenes, and spoken-dialogue reasoning involving paralinguistic cues. This design extends cross-modal distillation beyond textually recoverable content to reasoning grounded in non-linguistic events, prosody, and conversational context. Experiments on MMSU, MMAU, BIG Bench Audio, and MMAR demonstrate that X$^3$-OPD substantially improves audio-grounded reasoning and chain-of-thought quality while largely preserving the model's existing capabilities under domain shift."
+        ]
+      }
+    },
+    {
+      "id": "audio-opd-full",
+      "url": "https://arxiv.org/html/2607.21550v1",
+      "checked_at": "2026-10-11T00:02:14.781791+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2607.21550v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "c855b4a2b8961be4007fe7aba1aa5c4fdaf19edc40ca37ba338b86ba27dc799a",
+      "metadata": {}
+    },
+    {
+      "id": "step-r1",
+      "url": "https://arxiv.org/abs/2511.15848v1",
+      "checked_at": "2026-10-11T00:02:14.867618+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2511.15848v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "cf31e60898355408cf116feb4fe1026c342f698ceeec5af0d26573222692b905",
+      "metadata": {
+        "citation_title": [
+          "Step-Audio-R1 Technical Report"
+        ],
+        "citation_author": [
+          "Tian, Fei",
+          "Zhang, Xiangyu Tony",
+          "Zhang, Yuxin",
+          "Zhang, Haoyang",
+          "Li, Yuxin",
+          "Liu, Daijiao",
+          "Deng, Yayue",
+          "Wu, Donghang",
+          "Chen, Jun",
+          "Zhao, Liang",
+          "Yao, Chengyuan",
+          "Liu, Hexin",
+          "Chng, Eng Siong",
+          "Yang, Xuerui",
+          "Zhang, Xiangyu",
+          "Jiang, Daxin",
+          "Yu, Gang"
+        ],
+        "citation_date": [
+          "2025/11/19"
+        ],
+        "citation_online_date": [
+          "2025/11/19"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2511.15848"
+        ],
+        "citation_arxiv_id": [
+          "2511.15848"
+        ],
+        "citation_abstract": [
+          "Recent advances in reasoning models have demonstrated remarkable success in text and vision domains through extended chain-of-thought deliberation. However, a perplexing phenomenon persists in audio language models: they consistently perform better with minimal or no reasoning, raising a fundamental question - can audio intelligence truly benefit from deliberate thinking? We introduce Step-Audio-R1, the first audio reasoning model that successfully unlocks reasoning capabilities in the audio domain. Through our proposed Modality-Grounded Reasoning Distillation (MGRD) framework, Step-Audio-R1 learns to generate audio-relevant reasoning chains that genuinely ground themselves in acoustic features rather than hallucinating disconnected deliberations. Our model exhibits strong audio reasoning capabilities, surpassing Gemini 2.5 Pro and achieving performance comparable to the state-of-the-art Gemini 3 Pro across comprehensive audio understanding and reasoning benchmarks spanning speech, environmental sounds, and music. These results demonstrate that reasoning is a transferable capability across modalities when appropriately anchored, transforming extended deliberation from a liability into a powerful asset for audio intelligence. By establishing the first successful audio reasoning model, Step-Audio-R1 opens new pathways toward building truly multimodal reasoning systems that think deeply across all sensory modalities."
+        ]
+      }
+    },
+    {
+      "id": "step-r1-full",
+      "url": "https://arxiv.org/html/2511.15848v1",
+      "checked_at": "2026-10-11T00:02:14.900191+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2511.15848v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "0c15757af38906c2877e19ef28903e80eea183b8cf8519baa737e50f9e2ac802",
+      "metadata": {}
+    },
+    {
+      "id": "audio-kd",
+      "url": "https://arxiv.org/abs/2509.18579v1",
+      "checked_at": "2026-10-11T00:06:14.540332+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/abs/2509.18579v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "35fe999bc3f5e7e1b6d00941f3b7ee6c6ef23f78ab5ce327962f45db87b7e413",
+      "metadata": {
+        "citation_title": [
+          "Teaching Audio Models to Reason: A Unified Framework for Source- and Layer-wise Distillation"
+        ],
+        "citation_author": [
+          "Yang, Runyan",
+          "Si, Yuke",
+          "Gao, Yingying",
+          "Feng, Junlan",
+          "Deng, Chao",
+          "Zhang, Shilei"
+        ],
+        "citation_date": [
+          "2025/09/23"
+        ],
+        "citation_online_date": [
+          "2025/09/23"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2509.18579"
+        ],
+        "citation_arxiv_id": [
+          "2509.18579"
+        ],
+        "citation_abstract": [
+          "While large audio language models excel at tasks like ASR and emotion recognition, they still struggle with complex reasoning due to the modality gap between audio and text as well as the lack of structured intermediate supervision. To address this, we propose a unified knowledge distillation framework to transfer reasoning capabilities from a high-capacity textual teacher model to a student audio models while preserving its acoustic competence. Our method introduces two key dimensions: source-wise distillation, which leverages both textual and acoustic teachers to provide complementary modality-specific supervision; and layer-wise distillation, which aligns teacher signals with appropriate student layers to improve transfer efficiency. This dual-dimensional strategy enables fine-grained control over the distillation process, effectively bridging the gap between symbolic reasoning and speech representations. Experimental results show significant improvements in audio reasoning performance, demonstrating the effectiveness of our framework as a reasoning transfer solution for audio modeling."
+        ]
+      }
+    },
+    {
+      "id": "audio-kd-full",
+      "url": "https://arxiv.org/html/2509.18579v1",
+      "checked_at": "2026-10-11T00:06:14.591264+00:00",
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://arxiv.org/html/2509.18579v1",
+      "content_type": "text/html; charset=utf-8",
+      "sha256": "b30b42b6b02b1433050acd39efd400280dd5493b17540b06b60dba593241f90f",
+      "metadata": {}
+    }
+  ],
+  "bundled_mathjax": {
+    "version": "3.2.2",
+    "renderer_source": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js",
+    "license_source": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/LICENSE",
+    "license": "Apache-2.0",
+    "files": {
+      "assets/vendor/mathjax/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "assets/vendor/mathjax/tex-svg.js": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882"
+    }
+  }
+}

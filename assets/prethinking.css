@@ -1,0 +1,13 @@
+.proposal-demo { margin:28px 0; padding:24px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
+.proposal-demo label { display:block; margin:15px 0 8px; font-weight:650; }
+.proposal-demo input[type=range] { width:100%; max-width:500px; accent-color:var(--accent); }
+.proposal-demo select { max-width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; background:var(--surface-2); color:var(--text); font:inherit; }
+.proposal-demo ol { padding-left:24px; }
+.proposal-demo li { padding:5px 0; }
+.proposal-demo .active { color:var(--accent); font-weight:650; }
+.proposal-code { max-width:100%; overflow-x:auto; margin:18px 0; padding:18px; background:var(--surface-2); border:1px solid var(--border); border-radius:8px; }
+.proposal-code pre { margin:0; font-size:13px; line-height:1.6; }
+.equation { overflow-x:auto; margin:18px 0; padding:18px; border-radius:9px; background:var(--surface-2); }
+.equation mjx-container[display="true"] { margin:0 !important; }
+mjx-container { max-width:100%; }
+@media(max-width:700px) { .proposal-demo { padding:16px; } .equation { padding:12px; } }

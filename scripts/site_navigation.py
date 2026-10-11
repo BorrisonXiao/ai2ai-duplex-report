@@ -5,7 +5,7 @@ def project_tabs(current, prefix=""):
 
 
 def review_tabs(current):
-    items = [('landscape', 'Duplex landscape', 'index.html#literature-review'), ('context', 'Context-aware assistance', 'context-assistance.html')]
+    items = [('landscape', 'Duplex landscape', 'index.html#literature-review'), ('context', 'Context-aware assistance', 'context-assistance.html'), ('prethinking', 'Pre-thinking proposal', 'prethinking.html')]
     return '<nav class="review-tabs" aria-label="Literature review sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
 
 

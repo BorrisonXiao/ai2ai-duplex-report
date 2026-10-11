@@ -21,7 +21,7 @@ def validate():
         parser.feed(text)
         pages[filename]=(text,parser)
         tabs=re.search(r'<nav[^>]*aria-label="Literature review sub-tabs"[^>]*>(.*?)</nav>',text,re.S)
-        assert tabs and tabs[1].count('<a ') == 2 and tabs[1].count('aria-current="page"') == 1
+        assert tabs and tabs[1].count('<a ') == 3 and tabs[1].count('aria-current="page"') == 1
         current=re.search(r'<a[^>]*href="([^"]+)"[^>]*aria-current="page"',tabs[1])[1]
         assert urlsplit(current).path == filename
         project=re.search(r'<nav[^>]*aria-label="Project tabs"[^>]*>(.*?)</nav>',text,re.S)
@@ -77,7 +77,7 @@ def validate():
     assert 'context-assistance.html)' in (ROOT/'README.md').read_text()
     manifest=json.loads((ROOT/'assets/context-assistance/manifest.json').read_text())
     assert len(manifest['sources'])==3 and all(len(x['pdf_sha256'])==64 for x in manifest['sources'])
-    print('PASS: two stable sub-tab routes; 15 verified papers; 6 tables / 7 figures; all local links, exact score/SVG values and natural wrapping.')
+    print('PASS: three literature sub-tabs; existing focused review preserves 15 verified papers and 6 tables / 7 figures; local links, score/SVG values and natural wrapping.')
 
 if __name__ == '__main__':
     validate()
