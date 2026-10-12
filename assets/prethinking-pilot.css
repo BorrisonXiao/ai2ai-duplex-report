@@ -1,0 +1,18 @@
+.pilot-controls { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:15px; margin:18px 0; }
+.pilot-controls label { font-size:14px; font-weight:650; }
+.pilot-controls select,#pilot-chunk { display:block; width:100%; max-width:100%; padding:10px; margin-top:8px; background:var(--surface); color:var(--text); border:1px solid var(--border); border-radius:6px; font:inherit; }
+.pilot-figure { margin:24px 0; padding:22px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
+.pilot-plot-scroll { overflow-x:auto; margin:18px 0; }
+#pilot-svg { display:block; width:100%; min-width:760px; color:var(--text); }
+#pilot-svg text { fill:currentColor; font:14px system-ui,sans-serif; }
+#pilot-svg .speaker-A { fill:var(--accent); }
+#pilot-svg .speaker-B { fill:var(--blue); }
+#pilot-svg .speaker-C { fill:var(--amber); }
+#pilot-svg .budget-band { fill:var(--accent-soft); stroke:var(--accent); stroke-width:1; }
+#pilot-svg .axis { stroke:var(--border); }
+#pilot-svg .chunk { cursor:pointer; }
+#pilot-svg .chunk:focus { stroke:var(--text); stroke-width:3; }
+.pilot-audio { margin:24px 0; padding:20px; border:1px solid var(--border); border-radius:10px; }
+.pilot-audio audio { display:block; width:100%; margin:12px 0; }
+.container p { overflow-wrap:anywhere; }
+@media(max-width:700px) { .pilot-controls { grid-template-columns:repeat(2,minmax(0,1fr)); } .pilot-figure { padding:14px; } }
