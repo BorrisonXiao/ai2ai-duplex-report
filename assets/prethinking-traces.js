@@ -1,105 +1,207 @@
 'use strict';
 (() => {
-  const element=document.getElementById('teacher-trace-data');
-  if(!element)return;
-  const calls=JSON.parse(element.textContent).calls;
-  const chunks=JSON.parse(document.getElementById('pilot-data').textContent).chunks;
-  const byCall=new Map(calls.map(c=>[c.index,c])), byChunk=new Map(chunks.map(c=>[c.id,c]));
-  const history=document.getElementById('thinking-history'),seed=document.getElementById('thinking-seed');
-  const windowSelect=document.getElementById('thinking-window'),focus=document.getElementById('thinking-call');
-  const cursor=document.getElementById('thinking-cursor'),svg=document.getElementById('thinking-svg');
-  const encoder=new TextEncoder(),bytes=new Map(),ns='http://www.w3.org/2000/svg',xhtml='http://www.w3.org/1999/xhtml';
-  let selected={type:'thought',call:50,rate:60,projected:false};
-  calls.forEach(c=>{const o=document.createElement('option');o.value=String(c.index);o.textContent='Call '+c.index+' · '+c.at.toFixed(2)+' s · '+c.variant+' / '+c.history_mode;focus.append(o);});
-  function node(tag,attrs,text){const el=document.createElementNS(ns,tag);Object.entries(attrs||{}).forEach(([k,v])=>el.setAttribute(k,String(v)));if(text!==undefined)el.textContent=text;return el;}
-  function prefix(c,n){if(n<=0)return '';if(!bytes.has(c.index))bytes.set(c.index,encoder.encode(c.generated_text));return new TextDecoder().decode(bytes.get(c.index).subarray(0,c.token_byte_ends[n-1]),{stream:true});}
-  function nextTime(c){return c.next_arrival??chunks.find(x=>x.available>c.at+1e-7)?.available??c.at+20;}
-  function counts(c,rate,time){const deadline=nextTime(c),capacity=Math.floor(rate*Math.max(0,deadline-c.at-.5)+1e-9);const effective=Math.min(c.output_tokens,capacity);const emitted=Math.min(effective,Math.floor(rate*Math.max(0,time-c.at-.5)+1e-9));return {deadline,capacity,effective,emitted,start:c.at+.5,end:c.at+.5+effective/rate};}
-  function rows(){
-    if(focus.value!=='sequence'){
-      const c=byCall.get(Number(focus.value));
-      if(c.stage==='scout')return [10,60,30,100].map(rate=>({rate,calls:[c],projected:true,label:'projected scout '+c.index}));
-      const matched=rate=>calls.filter(x=>x.stage==='rate_replay'&&x.at===c.at&&x.seed===c.seed&&x.history_mode===c.history_mode&&x.rate===rate);
-      return [{rate:10,calls:matched(10),projected:false,label:'archived output'},{rate:60,calls:matched(60),projected:false,label:'archived output'},...[30,100].map(rate=>({rate,calls:matched(60),projected:true,label:'projected 60-rate trace'}))];
+  const element = document.getElementById('teacher-trace-data');
+  if (!element) return;
+  const calls = JSON.parse(element.textContent).calls;
+  const chunks = JSON.parse(document.getElementById('pilot-data').textContent).chunks;
+  const byCall = new Map(calls.map(c => [c.index, c]));
+  const byChunk = new Map(chunks.map(c => [c.id, c]));
+  const focus = document.getElementById('thinking-call');
+  const windowSelect = document.getElementById('thinking-window');
+  const cursor = document.getElementById('thinking-cursor');
+  const svg = document.getElementById('thinking-svg');
+  const scroll = document.querySelector('.thinking-scroll');
+  const encoder = new TextEncoder(), bytes = new Map(), ns = 'http://www.w3.org/2000/svg';
+  const rates = [10, 30, 60, 100], left = 130, setup = 0.5;
+  let axisWidth = 1000, right = 940;
+  let selectedRate = 60;
+  calls.forEach(c => {
+    const o = document.createElement('option');
+    o.value = String(c.index);
+    o.textContent = 'Call ' + c.index + ' · ' + c.at.toFixed(2) + ' s · ' + c.history_mode + ' · seed ' + c.seed + ' · original ' + (c.rate ? c.rate + '-rate budget' : 'scout');
+    focus.append(o);
+  });
+  focus.value = '54';
+  function node(tag, attrs, text) {
+    const el = document.createElementNS(ns, tag);
+    Object.entries(attrs || {}).forEach(([k, v]) => el.setAttribute(k, String(v)));
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+  function html(tag, cls, text) {
+    const el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+  function prefix(c, n) {
+    if (n <= 0) return '';
+    if (!bytes.has(c.index)) bytes.set(c.index, encoder.encode(c.generated_text));
+    return new TextDecoder().decode(bytes.get(c.index).subarray(0, c.token_byte_ends[n - 1]), {stream: true});
+  }
+  function nextTime(c) {
+    return c.next_arrival ?? chunks.find(x => x.available > c.at + 1e-7)?.available ?? c.at + 20;
+  }
+  function counts(c, rate, time) {
+    const deadline = nextTime(c);
+    const capacity = Math.floor(rate * Math.max(0, deadline - c.at - setup) + 1e-9);
+    const effective = Math.min(c.output_tokens, capacity);
+    const emitted = Math.min(effective, Math.floor(rate * Math.max(0, time - c.at - setup) + 1e-9));
+    return {deadline, capacity, effective, emitted, start: c.at + setup, end: c.at + setup + effective / rate};
+  }
+  function bounds(c) {
+    const incoming = c.new_ids.map(id => byChunk.get(id));
+    const earliest = Math.min(c.at, ...incoming.map(x => x.start));
+    return [Math.floor(Math.max(0, (windowSelect.value === 'thinking' ? c.at : earliest) - 1) * 100) / 100, Math.ceil((nextTime(c) + 1) * 100) / 100];
+  }
+  function openCall(index, prompt = false) {
+    const detail = document.getElementById('appendix-call-' + index);
+    // A link should remain usable even after filtering the appendix.
+    if (detail.hidden) {document.getElementById('appendix-filter').value = ''; document.getElementById('appendix-filter').dispatchEvent(new Event('input'));}
+    detail.open = true;
+    if (prompt) detail.querySelector('.trace-prompt-details').open = true;
+    detail.scrollIntoView({behavior: 'auto', block: 'start'});
+  }
+  function inspect(c, time) {
+    const box = document.getElementById('thinking-inspector'), n = counts(c, selectedRate, time);
+    box.replaceChildren();
+    box.append(html('h3', '', 'Selected output: call ' + c.index + ' at ' + selectedRate + ' tokens/s'));
+    box.append(html('p', '', 'At ' + time.toFixed(2) + ' s, ' + n.emitted + ' tokens have been emitted. By the next update at ' + n.deadline.toFixed(2) + ' s, ' + n.effective + ' of ' + c.output_tokens + ' captured tokens fit (' + n.capacity + ' tokens of available capacity). Every rate uses this same call.'));
+    const link = html('a', '', 'Full captured thinking, original history and exact prompt');
+    link.href = '#appendix-call-' + c.index;
+    link.addEventListener('click', event => {event.preventDefault(); openCall(c.index, true);});
+    box.append(link);
+  }
+  function eventLines(target, x, c, now, height, labels = false) {
+    for (const [t, cls, label] of [[c.at, 'trace-delivery-line', 'Input delivered'], [c.at + setup, 'trace-start-line', 'S2 starts'], [nextTime(c), 'trace-update-line', 'Next input']]) {
+      target.append(node('line', {x1: x(t), x2: x(t), y1: labels ? 48 : 12, y2: height, class: cls}));
+      if (labels) {
+        const offset = label === 'S2 starts' ? 41 : 21;
+        target.append(node('text', {x: x(t) + (label === 'Next input' ? -7 : 7), y: offset, 'text-anchor': label === 'Next input' ? 'end' : 'start', class: 'trace-event-label'}, label + ' ' + t.toFixed(2) + ' s'));
+      }
     }
-    const matched=rate=>calls.filter(c=>c.stage==='rate_replay'&&c.history_mode===history.value&&c.seed===Number(seed.value)&&c.rate===rate);
-    return [{rate:10,calls:matched(10),projected:false,label:'archived output'},{rate:60,calls:matched(60),projected:false,label:'archived output'},...[30,100].map(rate=>({rate,calls:matched(60),projected:true,label:'projected 60-rate trace'}))];
+    target.append(node('line', {x1: x(now), x2: x(now), y1: labels ? 48 : 12, y2: height, class: 'trace-time-cursor'}));
   }
-  function openCall(index,prompt=false){const detail=document.getElementById('appendix-call-'+index);detail.open=true;if(prompt)detail.querySelector('.trace-prompt-details').open=true;detail.scrollIntoView({behavior:'auto',block:'start'});}
-  function inspect(time){
-    const box=document.getElementById('thinking-inspector');box.replaceChildren();
-    if(selected.type==='chunk'){
-      const c=byChunk.get(selected.chunk),h=document.createElement('h3'),p=document.createElement('p'),clock=document.createElement('p');
-      h.textContent=c.id+' · speaker '+c.speaker;p.textContent=c.text;clock.textContent='Speech '+c.start.toFixed(2)+'–'+c.end.toFixed(2)+' s ('+(c.end-c.start).toFixed(2)+' s); transcript available '+c.available.toFixed(2)+' s.';box.append(h,p,clock);return;
+  function renderTranscripts(c, x, lo, hi, now) {
+    const incoming = c.new_ids.map(id => byChunk.get(id)).sort((a, b) => a.start - b.start || a.end - b.end || a.id.localeCompare(b.id));
+    const cards = document.getElementById('thinking-transcripts');
+    cards.replaceChildren(); cards.style.setProperty('--input-count', String(incoming.length));
+    document.getElementById('thinking-input-label').textContent = 'New input for call ' + c.index + ': ' + incoming.length + ' transcript chunks delivered together at ' + c.at.toFixed(2) + ' s';
+    incoming.forEach((chunk, i) => {
+      const card = html('article', 'trace-transcript-card speaker-' + chunk.speaker);
+      card.dataset.chunk = chunk.id;
+      card.append(html('h5', '', '#' + (i + 1) + ' · Speaker ' + chunk.speaker + ' · ' + chunk.id));
+      card.append(html('p', 'trace-chunk-clock', chunk.start.toFixed(2) + '–' + chunk.end.toFixed(2) + ' s · duration ' + (chunk.end - chunk.start).toFixed(2) + ' s'));
+      card.append(html('p', 'trace-chunk-text', chunk.text));
+      card.append(html('p', 'trace-chunk-release', 'Transcript available ' + chunk.available.toFixed(2) + ' s → batch ' + c.at.toFixed(2) + ' s'));
+      cards.append(card);
+    });
+    svg.setAttribute('viewBox', '0 0 ' + axisWidth + ' 240');
+    svg.replaceChildren(node('title', {id: 'thinking-title'}, 'Speech durations for this input update; numbered text cards above'));
+    for (let i = 0; i <= 6; i++) {
+      const t = lo + (hi - lo) * i / 6;
+      svg.append(node('line', {x1: x(t), x2: x(t), y1: 50, y2: 210, class: 'axis'}));
+      svg.append(node('text', {x: x(t), y: 232, 'text-anchor': 'middle'}, t.toFixed(2) + ' s'));
     }
-    const c=byCall.get(selected.call);if(!c)return;
-    const n=counts(c,selected.rate,time),h=document.createElement('h3'),info=document.createElement('p'),text=document.createElement('pre');
-    h.textContent='Call '+c.index+' · '+selected.rate+' tokens/s · '+(selected.projected?'fixed-trace projection':'archived budgeted generation');
-    info.textContent='Input delivered '+c.at.toFixed(2)+' s; new chunks '+c.new_ids.join(', ')+'. At '+time.toFixed(2)+' s: '+n.emitted+' captured tokens emitted. Before next update '+n.deadline.toFixed(2)+' s: '+n.effective+' of '+c.output_tokens+' captured tokens fit; potential capacity '+n.capacity+'.';
-    text.className='trace-prefix';text.textContent=n.emitted?prefix(c,n.emitted):'No thinking tokens emitted at this cursor time.';
-    const note=document.createElement('p');note.textContent=n.capacity>c.output_tokens?'The captured output ends at its recorded cap. Additional capacity is unrecorded; no continuation is invented.':'Tokens beyond the next update are hidden in this timing view; the appendix preserves the entire captured output.';
-    const link=document.createElement('a');link.href='#appendix-call-'+c.index;link.textContent='Full captured thinking and exact prompt';link.addEventListener('click',event=>{event.preventDefault();openCall(c.index,true);});box.append(h,info,text,note,link);
-  }
-  function card(parent,x,y,width,height,cls,title,text,onClick){
-    const obj=node('foreignObject',{x,y,width:Math.max(3,width),height});const div=document.createElementNS(xhtml,'div');div.className=cls;div.tabIndex=0;div.setAttribute('role','button');div.title=title;
-    const label=document.createElementNS(xhtml,'strong');label.textContent=title;const body=document.createElementNS(xhtml,'span');body.textContent=text;div.append(label,body);div.addEventListener('click',onClick);div.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onClick();}});obj.append(div);parent.append(obj);
-  }
-  function render(){
-    const [lo,hi]=windowSelect.value.split(',').map(Number),time=Number(cursor.value),viewRows=rows();
-    cursor.min=String(lo);cursor.max=String(hi);if(time<lo||time>hi)cursor.value=String((lo+hi)/2);
-    const now=Number(cursor.value),x=t=>180+(t-lo)/(hi-lo)*1380;
-    document.getElementById('thinking-cursor-label').textContent=now.toFixed(2)+' s';
-    document.getElementById('thinking-method').textContent=focus.value!=='sequence'&&byCall.get(Number(focus.value)).stage==='scout'?'Single-scout projection: all rows display prefixes of the same captured output under different assumed rates. The scout was not generated as a timed causal replay.':'10/60 rows are actual separately budgeted generations with simulated uniform emission times. 30/100 rows are projections of recorded 60-rate outputs; their prompts retain original 60-rate history, so these are not new causal histories.';
-    svg.replaceChildren(node('title',{id:'thinking-title'},'Transcript spans and actual captured thinking aligned to time'));
-    for(let i=0;i<=5;i++){const t=lo+(hi-lo)*i/5;svg.append(node('line',{x1:x(t),x2:x(t),y1:25,y2:635,class:'axis'}));svg.append(node('text',{x:x(t)-16,y:661},t.toFixed(1)+' s'));}
-    const transcriptY={A:35,B:115,C:195};
-    Object.entries(transcriptY).forEach(([s,y])=>svg.append(node('text',{x:8,y:y+30},'Transcript '+s)));
-    chunks.filter(c=>c.end>=lo&&c.start<=hi).forEach(c=>{
-      const xx=x(Math.max(lo,c.start)),ww=x(Math.min(hi,c.end))-xx;
-      card(svg,xx,transcriptY[c.speaker],ww,68,'trace-transcript-card speaker-'+c.speaker,c.id+' · '+(c.end-c.start).toFixed(2)+' s',c.text,()=>{selected={type:'chunk',chunk:c.id};inspect(Number(cursor.value));});
+    const laneY = {A: 82, B: 133, C: 184};
+    Object.entries(laneY).forEach(([speaker, y]) => svg.append(node('text', {x: 12, y: y + 5}, 'Speaker ' + speaker)));
+    incoming.forEach((chunk, i) => {
+      if (chunk.end < lo || chunk.start > hi) return;
+      const start = Math.max(lo, chunk.start), end = Math.min(hi, chunk.end), y = laneY[chunk.speaker];
+      const bar = node('rect', {x: x(start), y, width: x(end) - x(start), height: 15, class: 'trace-speech-span speaker-' + chunk.speaker, 'data-chunk': chunk.id, 'data-start': start, 'data-end': end});
+      bar.append(node('title', {}, '#' + (i + 1) + ' · ' + chunk.id + ': ' + chunk.text));
+      svg.append(bar);
+      svg.append(node('text', {x: x((start + end) / 2), y: y - 6, 'text-anchor': 'middle', class: 'trace-chunk-number'}, '#' + (i + 1)));
     });
-    const stats=document.getElementById('thinking-counts');stats.replaceChildren();
-    viewRows.forEach((row,i)=>{
-      const y=285+i*90;svg.append(node('text',{x:8,y:y+22},'S2 '+row.rate+' tokens/s'));svg.append(node('text',{x:8,y:y+43,class:'trace-row-kind'},row.projected?'Projection':'Archived output'));
-      let emitted=0,fit=0,captured=0,displayed=0;
-      row.calls.forEach(c=>{
-        const n=counts(c,row.rate,now);if(n.deadline<lo||n.start>hi)return;displayed++;emitted+=n.emitted;fit+=n.effective;captured+=c.output_tokens;
-        const start=Math.max(lo,n.start),end=Math.min(hi,n.end);if(end<=start)return;
-        svg.append(node('rect',{x:x(start),y,width:x(end)-x(start),height:72,class:'trace-capture '+(row.projected?'projected':'archived'),rx:5,'data-call':c.index,'data-rate':row.rate,'data-emitted':n.emitted,'data-fits':n.effective}));
-        const progress=Math.min(end,n.start+n.emitted/row.rate);if(progress>start)svg.append(node('rect',{x:x(start),y,width:x(progress)-x(start),height:72,class:'trace-emitted',rx:5}));
-        const body=n.emitted?prefix(c,n.emitted):'Not emitted at cursor.';
-        const inputLabel=c.new_ids.length===1?c.new_ids[0]:c.new_ids[0]+'…'+c.new_ids.at(-1);
-        card(svg,x(start)+2,y+2,x(end)-x(start)-4,68,'trace-thinking-card','Call '+c.index+' ← '+inputLabel+' · '+n.emitted+'/'+n.effective+' tokens',body,()=>{selected={type:'thought',call:c.index,rate:row.rate,projected:row.projected};inspect(Number(cursor.value));});
-        const stride=Math.max(1,Math.ceil(row.rate*(hi-lo)/1380*3));
-        for(let j=1;j<=n.effective;j+=stride){
-          const when=n.start+j/row.rate;if(when<lo||when>hi)continue;
-          const tick=node('line',{x1:x(when),x2:x(when),y1:y+72,y2:y+79,class:'trace-token-tick','data-token':j,'data-token-id':c.generated_token_ids[j-1]});
-          tick.append(node('title',{},'Call '+c.index+' token '+j+' · ID '+c.generated_token_ids[j-1]+' · emission '+when.toFixed(3)+' s'));svg.append(tick);
-          if(1380/(hi-lo)/row.rate>=20&&j<=n.emitted){const word=prefix(c,j).slice(prefix(c,j-1).length);svg.append(node('text',{x:x(when-1/row.rate)+2,y:y+85,class:'trace-token-label'},word.replace(/\n/g,'↵')));}
-        }
-        svg.append(node('line',{x1:x(c.at),x2:x(c.at),y1:270,y2:y,class:'trace-delivery-line'}));
-      });
-      const tile=document.createElement('div');tile.className='trace-count';tile.dataset.rate=String(row.rate);tile.dataset.projected=String(row.projected);tile.dataset.emitted=String(emitted);tile.dataset.fits=String(fit);tile.dataset.captured=String(captured);
-      tile.textContent=row.rate+' tokens/s · '+(row.projected?'projection':'archived')+': '+emitted+' emitted at cursor; '+fit+'/'+captured+' captured tokens fit before updates'+(displayed?'':'; no recorded calls in this view')+'.';stats.append(tile);
+    eventLines(svg, x, c, now, 211, true);
+  }
+  function render() {
+    const c = byCall.get(Number(focus.value)), [lo, hi] = bounds(c);
+    axisWidth = Math.max(1000, scroll.clientWidth); right = axisWidth - 60;
+    scroll.style.setProperty('--thinking-axis-width', axisWidth + 'px');
+    scroll.style.setProperty('--thinking-readable-width', scroll.clientWidth + 'px');
+    scroll.style.setProperty('--thinking-card-columns', String(scroll.clientWidth >= 900 ? 3 : scroll.clientWidth >= 560 ? 2 : 1));
+    cursor.min = String(lo); cursor.max = String(hi);
+    const now = Math.min(hi, Math.max(lo, Number(cursor.value))), x = t => left + (t - lo) / (hi - lo) * (right - left);
+    cursor.value = String(now);
+    document.getElementById('thinking-cursor-label').textContent = now.toFixed(2) + ' s';
+    document.getElementById('thinking-method').textContent = 'Fixed source: call ' + c.index + ', ' + c.output_tokens + ' captured tokens, ' + c.history_mode + ', seed ' + c.seed + '. All four rates display prefixes of these identical token IDs. Window ' + lo.toFixed(2) + '–' + hi.toFixed(2) + ' s (' + (hi - lo).toFixed(2) + ' s). Setup: 0.5 s. ' + (c.stage === 'scout' ? 'This scout was not generated as a consecutive timed replay. Its next transcript release supplies the illustrative deadline.' : 'Input delivery and the next batch time are from the recorded replay.') + ' The original prompt/history stay fixed; this view does not regenerate subsequent history under a different rate.';
+    renderTranscripts(c, x, lo, hi, now);
+    const rows = document.getElementById('thinking-rate-rows'), stats = document.getElementById('thinking-counts');
+    rows.replaceChildren(); stats.replaceChildren();
+    rates.forEach(rate => {
+      const n = counts(c, rate, now), row = html('section', 'thinking-rate-row');
+      row.dataset.call = String(c.index); row.dataset.rate = String(rate);
+      const heading = html('h4', '', 'S2 ' + rate + ' tokens/s');
+      const summary = html('span', 'trace-row-summary', n.emitted + ' tokens at cursor · ' + n.effective + '/' + c.output_tokens + ' fit before next input');
+      heading.append(summary); row.append(heading);
+      const band = node('svg', {viewBox: '0 0 ' + axisWidth + ' 62', class: 'thinking-rate-band', role: 'img', 'aria-label': rate + ' tokens/s, starts ' + n.start.toFixed(2) + ' s, stops ' + n.end.toFixed(2) + ' s'});
+      band.append(node('line', {x1: left, x2: right, y1: 25, y2: 25, class: 'axis'}));
+      const capture = node('rect', {x: x(n.start), y: 15, width: x(n.end) - x(n.start), height: 20, class: 'trace-capture', 'data-call': c.index, 'data-rate': rate, 'data-emitted': n.emitted, 'data-fits': n.effective});
+      band.append(capture);
+      if (n.emitted) band.append(node('rect', {x: x(n.start), y: 15, width: x(n.start + n.emitted / rate) - x(n.start), height: 20, class: 'trace-emitted'}));
+      const stride = Math.max(1, Math.ceil(rate * (hi - lo) / (right - left) * 3));
+      for (let j = 1; j <= n.effective; j += stride) {
+        const t = n.start + j / rate;
+        const tick = node('line', {x1: x(t), x2: x(t), y1: 35, y2: 41, class: 'trace-token-tick', 'data-token': j, 'data-token-id': c.generated_token_ids[j - 1]});
+        tick.append(node('title', {}, 'Same source call ' + c.index + ': token ' + j + ', ID ' + c.generated_token_ids[j - 1] + ', emission ' + t.toFixed(3) + ' s'));
+        band.append(tick);
+      }
+      band.append(node('text', {x: x(n.end), y: 58, 'text-anchor': 'end'}, n.effective + ' tokens · stop ' + n.end.toFixed(2) + ' s'));
+      eventLines(band, x, c, now, 42); row.append(band);
+      const output = html('pre', 'trace-prefix trace-row-prefix', n.emitted ? prefix(c, n.emitted) : 'No thinking tokens emitted at this cursor time.');
+      output.dataset.call = String(c.index); output.dataset.rate = String(rate); output.dataset.tokens = String(n.emitted);
+      output.tabIndex = 0; output.setAttribute('aria-label', 'Exact captured prefix at ' + rate + ' tokens/s; scroll to read all emitted text');
+      row.append(output);
+      const limit = n.capacity > c.output_tokens ? 'Captured output ends at ' + n.end.toFixed(2) + ' s; extra capacity is unrecorded.' : 'At the next input, the view truncates after token ' + n.effective + '.';
+      row.append(html('p', 'trace-row-note', limit + ' Read the complete prefix in the scrollable text panel; inspect the original full call below.'));
+      const inspectButton = html('button', 'trace-inspect-button', 'Inspect call ' + c.index + ' at ' + rate + ' tokens/s');
+      inspectButton.addEventListener('click', () => {selectedRate = rate; inspect(c, Number(cursor.value));});
+      row.append(inspectButton); rows.append(row);
+      const tile = html('div', 'trace-count', rate + ' tokens/s: ' + n.emitted + ' emitted at cursor; ' + n.effective + '/' + c.output_tokens + ' captured tokens fit. Available capacity: ' + n.capacity + '.');
+      Object.assign(tile.dataset, {rate: String(rate), call: String(c.index), emitted: String(n.emitted), fits: String(n.effective), captured: String(c.output_tokens)});
+      stats.append(tile);
     });
-    svg.append(node('line',{x1:x(now),x2:x(now),y1:20,y2:639,class:'trace-time-cursor'}));inspect(now);
+    inspect(c, now);
+    const sequence = calls.filter(v => v.stage === c.stage && v.history_mode === c.history_mode && v.seed === c.seed && v.rate === c.rate && v.variant === c.variant);
+    const position = sequence.findIndex(v => v.index === c.index);
+    document.getElementById('thinking-previous').disabled = position <= 0;
+    document.getElementById('thinking-next').disabled = position >= sequence.length - 1;
   }
-  function focusCall(index){
-    const c=byCall.get(index);focus.value=String(index);history.value=c.history_mode;seed.value=String(c.seed);
-    const incoming=c.new_ids.map(id=>byChunk.get(id)),lo=Math.floor(Math.max(0,Math.min(c.at-5,...incoming.map(x=>x.start))-1)*100)/100,hi=Math.ceil((nextTime(c)+3)*100)/100;
-    let option=windowSelect.querySelector('option[data-custom]');if(!option){option=document.createElement('option');option.dataset.custom='true';windowSelect.append(option);}option.value=lo+','+hi;option.textContent='Call '+index+' input and next-update window';windowSelect.value=option.value;cursor.min=String(lo);cursor.max=String(hi);cursor.value=String(Math.min(hi,c.at+5));
-    selected={type:'thought',call:index,rate:c.rate||60,projected:c.stage==='scout'};render();
+  function focusCall(index) {
+    const c = byCall.get(index); focus.value = String(index); selectedRate = 60;
+    const [lo, hi] = bounds(c); cursor.min = String(lo); cursor.max = String(hi); cursor.value = String(nextTime(c));
+    render();
   }
-  cursor.addEventListener('input',render);windowSelect.addEventListener('change',()=>{const [a,b]=windowSelect.value.split(',').map(Number);cursor.value=String((a+b)/2);render();});
-  [history,seed].forEach(el=>el.addEventListener('change',()=>{focus.value='sequence';const c=calls.find(x=>x.stage==='rate_replay'&&x.rate===60&&x.seed===Number(seed.value)&&x.history_mode===history.value);selected={type:'thought',call:c.index,rate:60,projected:false};render();}));
-  focus.addEventListener('change',()=>{if(focus.value==='sequence')render();else focusCall(Number(focus.value));});
-  document.querySelectorAll('a.trace-link').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();openCall(Number(link.hash.replace('#appendix-call-','')),true);}));
-  document.querySelectorAll('a.trace-focus-link').forEach(link=>link.addEventListener('click',e=>{e.preventDefault();focusCall(Number(link.closest('.trace-record').dataset.call));document.getElementById('thinking-timeline').scrollIntoView({block:'start'});}));
-  const filter=document.getElementById('appendix-filter'),records=[...document.querySelectorAll('.trace-record')];
-  filter.addEventListener('input',()=>{const query=filter.value.trim().toLowerCase();records.forEach(r=>r.hidden=!r.dataset.search.toLowerCase().includes(query));document.getElementById('appendix-count').textContent=records.filter(r=>!r.hidden).length+' of 64 calls';});
-  document.getElementById('appendix-open-all').addEventListener('click',()=>records.filter(r=>!r.hidden).forEach(r=>r.open=true));
-  document.getElementById('appendix-open-prompts').addEventListener('click',()=>records.filter(r=>!r.hidden).forEach(r=>{r.open=true;r.querySelector('.trace-prompt-details').open=true;}));
-  document.getElementById('appendix-close-all').addEventListener('click',()=>records.forEach(r=>r.open=false));
-  document.querySelectorAll('audio[data-source-start]').forEach(audio=>audio.addEventListener('timeupdate',()=>{const at=Number(audio.dataset.sourceStart)+audio.currentTime,[lo,hi]=windowSelect.value.split(',').map(Number);if(at>=lo&&at<=hi){cursor.value=String(at);render();}}));
+  cursor.addEventListener('input', () => {const position = scroll.scrollLeft; render(); scroll.scrollLeft = position;});
+  windowSelect.addEventListener('change', render);
+  window.addEventListener('resize', render);
+  focus.addEventListener('change', () => focusCall(Number(focus.value)));
+  for (const [id, delta] of [['thinking-previous', -1], ['thinking-next', 1]]) document.getElementById(id).addEventListener('click', () => {
+    const c = byCall.get(Number(focus.value));
+    const sequence = calls.filter(v => v.stage === c.stage && v.history_mode === c.history_mode && v.seed === c.seed && v.rate === c.rate && v.variant === c.variant);
+    const position = sequence.findIndex(v => v.index === c.index);
+    if (sequence[position + delta]) focusCall(sequence[position + delta].index);
+  });
+  document.getElementById('thinking-pan-left').addEventListener('click', () => scroll.scrollTo({left: 0, behavior: 'auto'}));
+  document.getElementById('thinking-pan-right').addEventListener('click', () => scroll.scrollTo({left: scroll.scrollWidth, behavior: 'auto'}));
+  document.querySelectorAll('a.trace-link').forEach(link => link.addEventListener('click', e => {e.preventDefault(); openCall(Number(link.hash.replace('#appendix-call-', '')), true);}));
+  document.querySelectorAll('a.trace-focus-link').forEach(link => link.addEventListener('click', e => {
+    e.preventDefault(); focusCall(Number(link.closest('.trace-record').dataset.call));
+    document.getElementById('thinking-timeline').scrollIntoView({block: 'start'});
+  }));
+  const filter = document.getElementById('appendix-filter'), records = [...document.querySelectorAll('.trace-record')];
+  filter.addEventListener('input', () => {
+    const query = filter.value.trim().toLowerCase();
+    records.forEach(r => r.hidden = !r.dataset.search.toLowerCase().includes(query));
+    document.getElementById('appendix-count').textContent = records.filter(r => !r.hidden).length + ' of 64 calls';
+  });
+  document.getElementById('appendix-open-all').addEventListener('click', () => records.filter(r => !r.hidden).forEach(r => r.open = true));
+  document.getElementById('appendix-open-prompts').addEventListener('click', () => records.filter(r => !r.hidden).forEach(r => {r.open = true; r.querySelector('.trace-prompt-details').open = true;}));
+  document.getElementById('appendix-close-all').addEventListener('click', () => records.forEach(r => r.open = false));
+  document.querySelectorAll('audio[data-source-start]').forEach(audio => audio.addEventListener('timeupdate', () => {
+    const at = Number(audio.dataset.sourceStart) + audio.currentTime, [lo, hi] = bounds(byCall.get(Number(focus.value)));
+    if (at >= lo && at <= hi) {cursor.value = String(at); render();}
+  }));
   render();
 })();
