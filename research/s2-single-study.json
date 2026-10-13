@@ -1171,6 +1171,123 @@
       "source_user_interruptions": 0,
       "final_guidance": [],
       "s2_reasoning_characters": 0,
+      "alignment": {
+        "clock": "seconds from first submitted user audio packet",
+        "user_audio_seconds": 5.02,
+        "user_text": "Umm what's the difference between an outlet and a regular store?",
+        "speech": [
+          {
+            "chunk": 10,
+            "text": "An outlet",
+            "start_seconds": 5.342,
+            "end_seconds": 5.742
+          },
+          {
+            "chunk": 11,
+            "text": "is",
+            "start_seconds": 5.742,
+            "end_seconds": 6.223
+          },
+          {
+            "chunk": 12,
+            "text": "a store",
+            "start_seconds": 6.223,
+            "end_seconds": 6.703
+          },
+          {
+            "chunk": 13,
+            "text": "that sells",
+            "start_seconds": 6.703,
+            "end_seconds": 7.183
+          },
+          {
+            "chunk": 14,
+            "text": "products",
+            "start_seconds": 7.183,
+            "end_seconds": 7.663
+          },
+          {
+            "chunk": 15,
+            "text": "at a discount,",
+            "start_seconds": 7.663,
+            "end_seconds": 8.143
+          },
+          {
+            "chunk": 17,
+            "text": "often",
+            "start_seconds": 8.625,
+            "end_seconds": 9.105
+          },
+          {
+            "chunk": 18,
+            "text": "with",
+            "start_seconds": 9.145,
+            "end_seconds": 9.585
+          },
+          {
+            "chunk": 19,
+            "text": "a different",
+            "start_seconds": 9.585,
+            "end_seconds": 10.065
+          },
+          {
+            "chunk": 20,
+            "text": "layout",
+            "start_seconds": 10.065,
+            "end_seconds": 10.545
+          },
+          {
+            "chunk": 21,
+            "text": "and selection",
+            "start_seconds": 10.545,
+            "end_seconds": 11.025
+          },
+          {
+            "chunk": 22,
+            "text": "than",
+            "start_seconds": 11.025,
+            "end_seconds": 11.505
+          },
+          {
+            "chunk": 23,
+            "text": "a regular",
+            "start_seconds": 11.505,
+            "end_seconds": 11.985
+          },
+          {
+            "chunk": 24,
+            "text": "store.",
+            "start_seconds": 11.985,
+            "end_seconds": 12.465
+          },
+          {
+            "chunk": 26,
+            "text": "The main",
+            "start_seconds": 13.125,
+            "end_seconds": 13.425
+          },
+          {
+            "chunk": 27,
+            "text": "difference",
+            "start_seconds": 13.425,
+            "end_seconds": 13.905
+          },
+          {
+            "chunk": 28,
+            "text": "is the pricing",
+            "start_seconds": 13.905,
+            "end_seconds": 14.345
+          },
+          {
+            "chunk": 29,
+            "text": "strategy.",
+            "start_seconds": 14.385,
+            "end_seconds": 14.865
+          }
+        ],
+        "s2": [],
+        "handoffs": []
+      },
       "finding": "Complete spoken outlet explanation."
     },
     {
@@ -1209,6 +1326,99 @@
         "【Outlet stores sell discounted items; regular stores sell products at full price.】"
       ],
       "s2_reasoning_characters": 1559,
+      "alignment": {
+        "clock": "seconds from first submitted user audio packet",
+        "user_audio_seconds": 5.02,
+        "user_text": "Umm what's the difference between an outlet and a regular store?",
+        "speech": [
+          {
+            "chunk": 10,
+            "text": "An outlet",
+            "start_seconds": 5.342,
+            "end_seconds": 5.722
+          },
+          {
+            "chunk": 11,
+            "text": "is",
+            "start_seconds": 5.722,
+            "end_seconds": 6.202
+          },
+          {
+            "chunk": 12,
+            "text": "a store",
+            "start_seconds": 6.202,
+            "end_seconds": 6.682
+          },
+          {
+            "chunk": 13,
+            "text": "that sells",
+            "start_seconds": 6.682,
+            "end_seconds": 7.162
+          },
+          {
+            "chunk": 14,
+            "text": "discounted",
+            "start_seconds": 7.162,
+            "end_seconds": 7.642
+          },
+          {
+            "chunk": 15,
+            "text": "items.",
+            "start_seconds": 7.642,
+            "end_seconds": 8.122
+          },
+          {
+            "chunk": 17,
+            "text": "A regular",
+            "start_seconds": 8.602,
+            "end_seconds": 9.082
+          },
+          {
+            "chunk": 18,
+            "text": "store",
+            "start_seconds": 9.082,
+            "end_seconds": 9.562
+          },
+          {
+            "chunk": 19,
+            "text": "sells",
+            "start_seconds": 9.562,
+            "end_seconds": 10.042
+          },
+          {
+            "chunk": 20,
+            "text": "products",
+            "start_seconds": 10.042,
+            "end_seconds": 10.522
+          },
+          {
+            "chunk": 21,
+            "text": "at full",
+            "start_seconds": 10.522,
+            "end_seconds": 10.982
+          },
+          {
+            "chunk": 22,
+            "text": "price.",
+            "start_seconds": 11.002,
+            "end_seconds": 11.482
+          }
+        ],
+        "s2": [
+          {
+            "start_seconds": 4.993,
+            "end_seconds": 6.53,
+            "completion_tokens": 336,
+            "reasoning_character_count": 1559
+          }
+        ],
+        "handoffs": [
+          {
+            "at_seconds": 6.721,
+            "command": "Outlet stores sell discounted items; regular stores sell products at full price."
+          }
+        ]
+      },
       "finding": "Complete guidance and matching spoken answer observed.",
       "s1_calls_during_s2": 3,
       "s2_seconds": 1.5363372800020443,
@@ -1239,6 +1449,69 @@
       "source_user_interruptions": 0,
       "final_guidance": [],
       "s2_reasoning_characters": 0,
+      "alignment": {
+        "clock": "seconds from first submitted user audio packet",
+        "user_audio_seconds": 3.835,
+        "user_text": "Please calculate seventeen times twenty-three.",
+        "speech": [
+          {
+            "chunk": 6,
+            "text": "Sure,",
+            "start_seconds": 3.422,
+            "end_seconds": 3.822
+          },
+          {
+            "chunk": 7,
+            "text": "let",
+            "start_seconds": 3.822,
+            "end_seconds": 4.302
+          },
+          {
+            "chunk": 8,
+            "text": "me work",
+            "start_seconds": 4.302,
+            "end_seconds": 4.782
+          },
+          {
+            "chunk": 9,
+            "text": "that out.",
+            "start_seconds": 4.782,
+            "end_seconds": 5.262
+          },
+          {
+            "chunk": 11,
+            "text": "Give me",
+            "start_seconds": 6.042,
+            "end_seconds": 6.222
+          },
+          {
+            "chunk": 12,
+            "text": "a sec",
+            "start_seconds": 6.222,
+            "end_seconds": 6.702
+          },
+          {
+            "chunk": 13,
+            "text": "to double-",
+            "start_seconds": 6.702,
+            "end_seconds": 7.182
+          },
+          {
+            "chunk": 14,
+            "text": "check",
+            "start_seconds": 7.182,
+            "end_seconds": 7.662
+          },
+          {
+            "chunk": 15,
+            "text": "the numbers.",
+            "start_seconds": 7.662,
+            "end_seconds": 8.142
+          }
+        ],
+        "s2": [],
+        "handoffs": []
+      },
       "finding": "Acknowledgment only; S2 requests are suppressed."
     },
     {
@@ -1275,6 +1548,105 @@
         "【17 × 23 = 391】"
       ],
       "s2_reasoning_characters": 4604,
+      "alignment": {
+        "clock": "seconds from first submitted user audio packet",
+        "user_audio_seconds": 3.835,
+        "user_text": "Please calculate seventeen times twenty-three.",
+        "speech": [
+          {
+            "chunk": 6,
+            "text": "Sure,",
+            "start_seconds": 3.382,
+            "end_seconds": 3.802
+          },
+          {
+            "chunk": 7,
+            "text": "let",
+            "start_seconds": 3.802,
+            "end_seconds": 4.282
+          },
+          {
+            "chunk": 8,
+            "text": "me work",
+            "start_seconds": 4.282,
+            "end_seconds": 4.762
+          },
+          {
+            "chunk": 9,
+            "text": "that out.",
+            "start_seconds": 4.762,
+            "end_seconds": 5.242
+          },
+          {
+            "chunk": 11,
+            "text": "Give me",
+            "start_seconds": 5.922,
+            "end_seconds": 6.203
+          },
+          {
+            "chunk": 12,
+            "text": "a sec",
+            "start_seconds": 6.203,
+            "end_seconds": 6.683
+          },
+          {
+            "chunk": 13,
+            "text": "to double-",
+            "start_seconds": 6.703,
+            "end_seconds": 7.163
+          },
+          {
+            "chunk": 14,
+            "text": "check",
+            "start_seconds": 7.163,
+            "end_seconds": 7.643
+          },
+          {
+            "chunk": 15,
+            "text": "the numbers.",
+            "start_seconds": 7.683,
+            "end_seconds": 8.123
+          },
+          {
+            "chunk": 23,
+            "text": "Alright,",
+            "start_seconds": 11.703,
+            "end_seconds": 11.983
+          },
+          {
+            "chunk": 24,
+            "text": "the result",
+            "start_seconds": 11.983,
+            "end_seconds": 12.463
+          },
+          {
+            "chunk": 25,
+            "text": "is",
+            "start_seconds": 12.463,
+            "end_seconds": 12.943
+          },
+          {
+            "chunk": 26,
+            "text": "391.",
+            "start_seconds": 12.943,
+            "end_seconds": 13.423
+          }
+        ],
+        "s2": [
+          {
+            "start_seconds": 3.551,
+            "end_seconds": 9.703,
+            "completion_tokens": 1376,
+            "reasoning_character_count": 4604
+          }
+        ],
+        "handoffs": [
+          {
+            "at_seconds": 10.081,
+            "command": "17 × 23 = 391"
+          }
+        ]
+      },
       "finding": "Complete guidance and matching spoken answer observed.",
       "s1_calls_during_s2": 13,
       "s2_seconds": 6.151741774985567,
@@ -1315,6 +1687,69 @@
         "【391】"
       ],
       "s2_reasoning_characters": 652,
+      "alignment": {
+        "clock": "seconds from first submitted user audio packet",
+        "user_audio_seconds": 3.835,
+        "user_text": "Please calculate seventeen times twenty-three.",
+        "speech": [
+          {
+            "chunk": 6,
+            "text": "Sure,",
+            "start_seconds": 3.402,
+            "end_seconds": 3.802
+          },
+          {
+            "chunk": 7,
+            "text": "let",
+            "start_seconds": 3.802,
+            "end_seconds": 4.282
+          },
+          {
+            "chunk": 8,
+            "text": "me work",
+            "start_seconds": 4.282,
+            "end_seconds": 4.762
+          },
+          {
+            "chunk": 9,
+            "text": "that out.",
+            "start_seconds": 4.762,
+            "end_seconds": 5.242
+          },
+          {
+            "chunk": 11,
+            "text": "The result",
+            "start_seconds": 5.982,
+            "end_seconds": 6.202
+          },
+          {
+            "chunk": 12,
+            "text": "is",
+            "start_seconds": 6.202,
+            "end_seconds": 6.682
+          },
+          {
+            "chunk": 13,
+            "text": "391.",
+            "start_seconds": 6.722,
+            "end_seconds": 7.182
+          }
+        ],
+        "s2": [
+          {
+            "start_seconds": 3.551,
+            "end_seconds": 4.887,
+            "completion_tokens": 296,
+            "reasoning_character_count": 652
+          }
+        ],
+        "handoffs": [
+          {
+            "at_seconds": 5.281,
+            "command": "391"
+          }
+        ]
+      },
       "finding": "Complete guidance and matching spoken answer observed.",
       "s1_calls_during_s2": 3,
       "s2_seconds": 1.3359891530126333,
@@ -1355,6 +1790,69 @@
         "【391】"
       ],
       "s2_reasoning_characters": 652,
+      "alignment": {
+        "clock": "seconds from first submitted user audio packet",
+        "user_audio_seconds": 3.835,
+        "user_text": "Please calculate seventeen times twenty-three.",
+        "speech": [
+          {
+            "chunk": 6,
+            "text": "Sure,",
+            "start_seconds": 3.422,
+            "end_seconds": 3.802
+          },
+          {
+            "chunk": 7,
+            "text": "let",
+            "start_seconds": 3.802,
+            "end_seconds": 4.282
+          },
+          {
+            "chunk": 8,
+            "text": "me work",
+            "start_seconds": 4.282,
+            "end_seconds": 4.762
+          },
+          {
+            "chunk": 9,
+            "text": "that out.",
+            "start_seconds": 4.762,
+            "end_seconds": 5.242
+          },
+          {
+            "chunk": 11,
+            "text": "The result",
+            "start_seconds": 5.862,
+            "end_seconds": 6.202
+          },
+          {
+            "chunk": 12,
+            "text": "is",
+            "start_seconds": 6.202,
+            "end_seconds": 6.682
+          },
+          {
+            "chunk": 13,
+            "text": "391.",
+            "start_seconds": 6.682,
+            "end_seconds": 7.162
+          }
+        ],
+        "s2": [
+          {
+            "start_seconds": 3.551,
+            "end_seconds": 4.888,
+            "completion_tokens": 296,
+            "reasoning_character_count": 652
+          }
+        ],
+        "handoffs": [
+          {
+            "at_seconds": 5.28,
+            "command": "391"
+          }
+        ]
+      },
       "finding": "Complete guidance and matching spoken answer observed.",
       "s1_calls_during_s2": 3,
       "s2_seconds": 1.336290803970769,
