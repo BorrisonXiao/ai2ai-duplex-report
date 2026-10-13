@@ -1,4 +1,4 @@
-"""Check the study bundle, timing model, privacy boundary and source labels."""
+"""Check timing, source labels and exact requested Qwen trace publication."""
 from collections import Counter
 import json
 import math
@@ -29,8 +29,8 @@ def main():
         assert not any(k in row for k in ['private_reasoning','generated_text','generated_token_ids','prompt','input_payload'])
     text=(ROOT/'experiments/prethinking-pilot.html').read_text();parser=Parser();parser.feed(text)
     assert parser.viewport and parser.title and all(n==1 for n in Counter(parser.ids).values())
-    assert len(parser.tables)==6 and parser.figures==4
-    for kind,count in [('Table',6),('Figure',4)]:
+    assert len(parser.tables)==6 and parser.figures==5
+    for kind,count in [('Table',6),('Figure',5)]:
         labels=[int(m[1]) for value in parser.labels if (m:=re.match(kind+r' (\d+)\.',value))]
         assert labels==list(range(1,count+1)),labels
     for tag,url in parser.links:
@@ -42,10 +42,18 @@ def main():
         if parts.fragment:
             p=Parser();p.feed(target.read_text());assert parts.fragment in p.ids,url
     for m in re.finditer(r'<(p|h[1-6]|td|th|dd|dt)\b[^>]*>(.*?)</\1>',text,re.S):
-        assert '\n' not in m[2] and not re.search(r'<br\b|&nbsp;|\u00a0',m[2])
+        prose=re.sub(r'<pre\b.*?</pre>','',m[2],flags=re.S)
+        assert '\n' not in prose and not re.search(r'<br\b|&nbsp;|\u00a0',prose)
     assert text.count('class="equation"')==3
     assert 'median of 17' in text and '19.7%' in text
     assert 'prethinking-pilot.html)' in (ROOT/'README.md').read_text()
-    print('PASS: 650 causal chunks, 48 timing scenarios, 12 authored categories, 6 tables/4 figures/3 equations; private CoT excluded from public call records.')
+    traces=json.loads((ROOT/'research/prethinking-pilot/traces.json').read_text())['calls']
+    assert len(traces)==64 and all('appendix-call-'+str(c['index']) in parser.ids for c in traces)
+    assert len(d['trace_examples'])==8
+    for item in d['trace_examples']:
+        c=traces[item['call_index']]
+        assert c['private_reasoning'][item['cot_start']:item['cot_end']]==item['cot_excerpt']
+        assert all(next(x for x in chunks if x['id']==i)['available']<=c['at'] for i in item['transcript_chunk_ids'])
+    print('PASS: causal data/timing, 8 verbatim example pairs, all 64 trace records, 6 tables/5 figures/3 equations; summaries remain separate from the full requested appendix.')
 
 if __name__=='__main__':main()

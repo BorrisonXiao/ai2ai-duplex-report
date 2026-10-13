@@ -8666,5 +8666,124 @@
     "license_url": "https://groups.inf.ed.ac.uk/ami/corpus/license.shtml",
     "adaptations": "Selected mono excerpts in lossless FLAC; sentence/prefix chunking and assumed release delay. No audio synthesis.",
     "source_sha256": "008bc0cc470f33e81eaad8c4167c7a24852e85ac3a577fc1edf9865cc7339d64"
+  },
+  "trace_examples": [
+    {
+      "id": "commitment",
+      "category": "Commitment and deadline",
+      "transcript_chunk_ids": [
+        "chunk-0026",
+        "chunk-0031"
+      ],
+      "call_index": 5,
+      "cot_start": 1465,
+      "cot_end": 1687,
+      "cot_excerpt": "Deductions:\n   - From chunk-0023, A identified the \"call for abstracts\" as a task that is overdue.\n   - From chunk-0026, A volunteered to do it.\n   - Now, in chunk-0031, A specifies the deadline: \"by the end of the week\".\n",
+      "assessment": "Useful linking of A’s volunteer statement to A’s end-of-week deadline. The full trace remains cap-limited.",
+      "status": "useful_partial"
+    },
+    {
+      "id": "reference",
+      "category": "Reference resolution and uncertain quantity",
+      "transcript_chunk_ids": [
+        "chunk-0171",
+        "chunk-0172"
+      ],
+      "call_index": 6,
+      "cot_start": 590,
+      "cot_end": 757,
+      "cot_excerpt": "So in chunk-0171, A says they have a list of post-graduates (which they maintain) and then in chunk-0172, A states that there are \"probably about thirty\" on that list.",
+      "assessment": "Useful resolution of “there” to A’s maintained list; the quantity stays approximate. Later in this same trace the model makes unsupported undergraduate/postgraduate assumptions.",
+      "status": "useful_partial"
+    },
+    {
+      "id": "schedule",
+      "category": "A proposed schedule",
+      "transcript_chunk_ids": [
+        "chunk-0518"
+      ],
+      "call_index": 7,
+      "cot_start": 957,
+      "cot_end": 1062,
+      "cot_excerpt": "A is proposing a deadline structure:\n1. 10 days to submit titles\n2. 1 week after that to submit abstracts",
+      "assessment": "Useful extraction of two sequential proposed intervals. This is a proposal, not an agreed calendar date; other calendar inferences in the trace need separate checking.",
+      "status": "useful_partial"
+    },
+    {
+      "id": "arithmetic",
+      "category": "Conditional arithmetic",
+      "transcript_chunk_ids": [
+        "chunk-0518"
+      ],
+      "call_index": 7,
+      "cot_start": 3347,
+      "cot_end": 3446,
+      "cot_excerpt": "This means the total time from when the call is sent out to the abstract deadline would be 17 days.",
+      "assessment": "Useful 10 + 7 = 17 calculation if the proposed intervals are adopted. The source says “something like” and “whatever,” so this is not an exact settled deadline.",
+      "status": "useful_partial"
+    },
+    {
+      "id": "ownership",
+      "category": "Suggestion versus task ownership",
+      "transcript_chunk_ids": [
+        "chunk-0026",
+        "chunk-0124"
+      ],
+      "call_index": 60,
+      "cot_start": 1040,
+      "cot_end": 1181,
+      "cot_excerpt": "C also has a commitment from earlier:\n- chunk-0124: C says \"I w well let's send out the call as soon as possible, see what reactions we get.\"",
+      "assessment": "Failure example: C’s collective “let’s” suggestion is treated as a personal commitment even though A volunteered earlier.",
+      "status": "failure"
+    },
+    {
+      "id": "updates",
+      "category": "Current update versus retained history",
+      "transcript_chunk_ids": [
+        "chunk-0180",
+        "chunk-0181"
+      ],
+      "call_index": 62,
+      "cot_start": 0,
+      "cot_end": 482,
+      "cot_excerpt": "Let me analyze the transcript chunks and the provided private analysis to prepare for participant C. I need to focus only on the new chunks (0174-0179) and the prior evidence.\n\nNew chunks:\n- chunk-0174: B: \"No.\"\n- chunk-0175: A: \"Um but a good number of them are first-years, and I don't know I mean just to get an idea, are you planning on talking?\"\n- chunk-0176: A: \"No.\"\n- chunk-0177: C: \"No.\"\n- chunk-0178: A: \"Are you planning, Robert?\"\n- chunk-0179: A: \"And I'm probably not.\"",
+      "assessment": "Failure example: the current call receives 0180/0181, but the model labels the older 0174–0179 set as new.",
+      "status": "failure"
+    },
+    {
+      "id": "term",
+      "category": "Unverified acronym expansion",
+      "transcript_chunk_ids": [
+        "chunk-0099"
+      ],
+      "call_index": 3,
+      "cot_start": 216,
+      "cot_end": 380,
+      "cot_excerpt": "1. The group is planning a postgraduate conference for linguistics and related fields (PPSL - probably \"Postgraduate Programme in Linguistics and Related Studies\").",
+      "assessment": "Failure example: the expansion is generated speculation, not a definition supplied in the transcript.",
+      "status": "failure"
+    },
+    {
+      "id": "gate",
+      "category": "Relevance and effort allocation",
+      "transcript_chunk_ids": [
+        "chunk-0000",
+        "chunk-0001",
+        "chunk-0002",
+        "chunk-0003"
+      ],
+      "call_index": 0,
+      "cot_start": 864,
+      "cot_end": 1195,
+      "cot_excerpt": "  Note: \"no n okay\" might be a typo or shorthand. It could be \"no, okay\" or perhaps \"no, and okay\" but that doesn't make sense. Alternatively, it might be \"no\" and then \"okay\" as two separate things? Or it could be a typo for \"no, okay\" meaning \"no (tick) and then okay (tick)\"? But the context is about ticking a box or something.",
+      "assessment": "Failure/effort example: an unclear peripheral procedure draws extensive speculation. This is actual output, not a desirable training target.",
+      "status": "failure"
+    }
+  ],
+  "trace_appendix": {
+    "json": "research/prethinking-pilot/traces.json",
+    "jsonl": "research/prethinking-pilot/teacher_calls.jsonl",
+    "scope": "All 64 Qwen prompts/private outputs, explicitly requested by the user; original local records unchanged.",
+    "new_inference_gpus": 0
   }
 }
