@@ -1,5 +1,6 @@
 """Build the preliminary teacher/timing study from exported, reviewed evidence."""
 from html import escape
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -95,6 +96,9 @@ def main():
     body='\n'.join(['<a class="skip-link" href="#main">Skip to study</a>','<header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>'+project_tabs('experiments','../')+'</div></header>','<main id="main"><div class="container">',experiment_subtabs('prethinking'),hero,nav]+[section(i,title,b) for i,title,b in sections]+['<footer class="site-footer"><p>'+link('All experiments','index.html')+' · '+link('Pre-thinking proposal','../prethinking.html')+'</p></footer>','</div></main>'])
     cfg=r"window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{enableMenu:false}};"
     html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="Real transcript/thinking examples, complete Qwen prompt and private-output appendix, and time-aligned token-rate views."><title>Pre-thinking Pilot · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"><link rel="stylesheet" href="../assets/prethinking.css"><link rel="stylesheet" href="../assets/prethinking-pilot.css"><script>'+cfg+'</script><script id="MathJax-script" defer src="../assets/vendor/mathjax/tex-svg.js"></script><script defer src="../assets/site.js"></script><script defer src="../assets/prethinking-pilot.js"></script><script defer src="../assets/prethinking-traces.js"></script></head><body>\n'+body+'\n<script id="pilot-data" type="application/json">'+json.dumps(d,ensure_ascii=False).replace('<','\\u003c')+'</script><script id="teacher-trace-data" type="application/json">'+json.dumps(timeline_data(traces),ensure_ascii=False).replace('<','\\u003c')+'</script></body></html>\n'
+    for asset in ['assets/prethinking-pilot.css','assets/prethinking-pilot.js','assets/prethinking-traces.js']:
+        digest=hashlib.sha256((ROOT/asset).read_bytes()).hexdigest()[:12]
+        html=html.replace('"../'+asset+'"','"../'+asset+'?v='+digest+'"')
     (ROOT/'experiments/prethinking-pilot.html').write_text(html)
     # Keep shared navigation current without regenerating historical experiment content.
     for path in (ROOT/'experiments').glob('*.html'):
