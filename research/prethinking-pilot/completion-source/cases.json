@@ -1,0 +1,9 @@
+{
+  "single_round": {"id": "participation", "at": 640, "new_ids": ["chunk-0174", "chunk-0175", "chunk-0176", "chunk-0177", "chunk-0178", "chunk-0179"], "next_arrival": 650},
+  "two_round": [
+    {"id": "commitment", "rounds": [{"at": 100.69, "new_ids": ["chunk-0026"]}, {"at": 115.67, "new_ids": ["chunk-0027", "chunk-0028", "chunk-0029", "chunk-0030", "chunk-0031"]}], "review_question": "Does A retain ownership of the call for titles/abstracts, and does the new end-of-week deadline enter the analysis without inventing a date or assigning the task to C?"},
+    {"id": "deadline", "rounds": [{"at": 1795.87, "new_ids": ["chunk-0511", "chunk-0512"]}, {"at": 1829.92, "new_ids": ["chunk-0513", "chunk-0514", "chunk-0515", "chunk-0516", "chunk-0517", "chunk-0518"]}], "review_question": "Does the analysis register A's rejection of a whole month and the proposed mid-March/title/abstract sequence, distinguish proposals from agreement, and avoid assigning organizational duties to C?"}
+  ],
+  "modes": ["conditioned", "prefill_continuation", "reset_control"],
+  "causality": "Only transcript whose available timestamp is at or before the current round enters that round; history contains actual outputs from the immediately earlier round of that sample. This is an offline full-completion quality study, without a real-time inter-round budget."
+}

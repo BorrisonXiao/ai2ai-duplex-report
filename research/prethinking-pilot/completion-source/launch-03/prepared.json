@@ -1,0 +1,14 @@
+{
+  "files": {
+    "scripts/run_prethinking_completion.py": "0c3364b3c948bacc06575a1c6705a4dadb2c0e4ca68d23013835e68d33165d16",
+    "scripts/preflight_prethinking_completion.py": "5620e49a6182d126d7a061ba22838dc02011d4163210df67fb695dccb4e605f9",
+    "jobs/prethinking_completion_a100.sbatch": "599e7392825d8d8fbbf6d9c266a14cbc3699851fc5be4fa0d9df2c1600e89416",
+    "research/prethinking_pilot/completion_cases.json": "4f603b03212bd9943496088897c4a5a485cb2133173691bde4bb44988b51e289",
+    "research/prethinking_pilot/prompts.json": "801343de5ea7b78424d2afd61357a53c62eeaab85b2653933a4bfcee34048a58",
+    "exp/prethinking_pilot/data/chunks.json": "47afa34a1e799fb351922fb2d27a4d187e5ffb18b4ccba5aee1c3c3f9c699342",
+    "exp/prethinking_pilot/teacher_1071792/private_calls.jsonl": "179c4ce6258b6be76a6ea99c077b1d767de017dc6c506b48611624eca59bfd23",
+    ".migration/updates/2026-10-12-prethinking-completion/launch-03/config.json": "8baef585ffadd70c00648a9ba76dd4d21f0e33aac1eb1541637529079f23242d",
+    "exp/prethinking_pilot/completion_1074192/private_calls.jsonl": "69e91797ae7e16b31165022c7f3442211054db6df3f59c8a7e38f67950b4b2c9",
+    "exp/prethinking_pilot/completion_1074192/summary.json": "5520c7ca39a42d5d8c3445b0ea3ca8049de0f059f15f62cc0ab6d69fd992de6d"
+  }
+}

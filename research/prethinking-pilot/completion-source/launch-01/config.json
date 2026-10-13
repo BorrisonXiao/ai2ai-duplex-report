@@ -1,0 +1,22 @@
+{
+  "repo": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+  "revision": "144afc2f379b542fdd4e85a1fcd5e1f79112d95d",
+  "model": "models/prethinking-teacher-qwen3-30b",
+  "prompts": "research/prethinking_pilot/prompts.json",
+  "chunks": "exp/prethinking_pilot/data/chunks.json",
+  "cases": "research/prethinking_pilot/completion_cases.json",
+  "original_calls": "exp/prethinking_pilot/teacher_1071792/private_calls.jsonl",
+  "max_model_len": 49152,
+  "max_new_tokens": 32768,
+  "kv_cache_memory_bytes": 6442450944,
+  "gpus": 1,
+  "gpu_type": "A100-SXM4 80 GB",
+  "roles": "Teacher alone on GPU 0; no other model services",
+  "dependencies": ["Completed pinned model download", "CPU tokenizer/causality/preflight", "No other experiment GPU job"],
+  "max_gpus_active": 1,
+  "automatic_fallback": false,
+  "eager": true,
+  "prefix_caching": false,
+  "explicit_warmup_calls": 2,
+  "warmup_output_cap": 64
+}

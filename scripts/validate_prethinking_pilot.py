@@ -29,8 +29,10 @@ def main():
         assert not any(k in row for k in ['private_reasoning','generated_text','generated_token_ids','prompt','input_payload'])
     text=(ROOT/'experiments/prethinking-pilot.html').read_text();parser=Parser();parser.feed(text)
     assert parser.viewport and parser.title and all(n==1 for n in Counter(parser.ids).values())
-    assert len(parser.tables)==6 and parser.figures==5
-    for kind,count in [('Table',6),('Figure',5)]:
+    completed=(ROOT/'research/prethinking-pilot/completion.json').exists()
+    table_count=9 if completed else 6
+    assert len(parser.tables)==table_count and parser.figures==5
+    for kind,count in [('Table',table_count),('Figure',5)]:
         labels=[int(m[1]) for value in parser.labels if (m:=re.match(kind+r' (\d+)\.',value))]
         assert labels==list(range(1,count+1)),labels
     for tag,url in parser.links:
@@ -44,7 +46,7 @@ def main():
     for m in re.finditer(r'<(p|h[1-6]|td|th|dd|dt)\b[^>]*>(.*?)</\1>',text,re.S):
         prose=re.sub(r'<pre\b.*?</pre>','',m[2],flags=re.S)
         assert '\n' not in prose and not re.search(r'<br\b|&nbsp;|\u00a0',prose)
-    assert text.count('class="equation"')==3
+    assert text.count('class="equation"')==(5 if completed else 3)
     assert 'median of 17' in text and '19.7%' in text
     assert 'prethinking-pilot.html)' in (ROOT/'README.md').read_text()
     traces=json.loads((ROOT/'research/prethinking-pilot/traces.json').read_text())['calls']
@@ -54,6 +56,14 @@ def main():
         c=traces[item['call_index']]
         assert c['private_reasoning'][item['cot_start']:item['cot_end']]==item['cot_excerpt']
         assert all(next(x for x in chunks if x['id']==i)['available']<=c['at'] for i in item['transcript_chunk_ids'])
-    print('PASS: causal data/timing, 8 verbatim example pairs, all 64 trace records, 6 tables/5 figures/3 equations; summaries remain separate from the full requested appendix.')
+    if completed:
+        bundle=json.loads((ROOT/'research/prethinking-pilot/completion.json').read_text());assert len(bundle['calls'])==10
+        assert bundle['review']['completion_passes']==9 and bundle['review']['normal_response_stops']==10
+        assert bundle['accounting']['maximum_gpus_active']==1 and bundle['accounting']['sequential_verified']
+        assert bundle['calls'][0]['retained_history_entries']==0 and bundle['calls'][0]['private_token_count']==4660
+        assert all('completion-call-'+str(c['index']) in parser.ids for c in bundle['calls'])
+        for f in bundle['review']['qualitative_findings']:
+            c=bundle['calls'][f['call_index']];assert c['private_reasoning'][f['cot_start']:f['cot_end']]==f['cot_excerpt']
+    print('PASS: causal data/timing, 8 verbatim example pairs, all 64 trace records, numbered tables/5 figures/rendered equations including new completed-run evidence; summaries remain separate from the full requested appendix.')
 
 if __name__=='__main__':main()

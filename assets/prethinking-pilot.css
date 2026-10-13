@@ -83,3 +83,7 @@
 .trace-row-summary { display:block; margin:4px 0 0; }
 
 @media(min-width:1200px) { #thinking-timeline { width:min(1600px,calc(100vw - 80px)); margin-left:calc((1100px - min(1600px,calc(100vw - 80px))) / 2); } }
+.completion-record { scroll-margin-top:95px; padding:18px; margin:18px 0; border:1px solid var(--border); border-radius:10px; background:var(--surface); }
+.completion-record>summary { font-weight:700; }
+.completion-record h3 { margin-top:20px; }
+.trace-cot-end { stroke:var(--blue); stroke-width:2; }

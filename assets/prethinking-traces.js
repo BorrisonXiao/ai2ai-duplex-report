@@ -2,7 +2,8 @@
 (() => {
   const element = document.getElementById('teacher-trace-data');
   if (!element) return;
-  const calls = JSON.parse(element.textContent).calls;
+  const traceData = JSON.parse(element.textContent);
+  const calls = traceData.calls;
   const chunks = JSON.parse(document.getElementById('pilot-data').textContent).chunks;
   const byCall = new Map(calls.map(c => [c.index, c]));
   const byChunk = new Map(chunks.map(c => [c.id, c]));
@@ -18,10 +19,10 @@
   calls.forEach(c => {
     const o = document.createElement('option');
     o.value = String(c.index);
-    o.textContent = 'Call ' + c.index + ' · ' + c.at.toFixed(2) + ' s · ' + c.history_mode + ' · seed ' + c.seed + ' · original ' + (c.rate ? c.rate + '-rate budget' : 'scout');
+    o.textContent = callName(c) + ' · ' + c.at.toFixed(2) + ' s · ' + c.history_mode + ' · seed ' + c.seed + ' · original ' + (c.source_job ? 'completion study' : c.rate ? c.rate + '-rate budget' : 'scout');
     focus.append(o);
   });
-  focus.value = '54';
+  focus.value = String(traceData.default_plot_index ?? 54);
   function node(tag, attrs, text) {
     const el = document.createElementNS(ns, tag);
     Object.entries(attrs || {}).forEach(([k, v]) => el.setAttribute(k, String(v)));
@@ -34,6 +35,9 @@
     if (text !== undefined) el.textContent = text;
     return el;
   }
+  function callName(c) {return c.source_job ? 'New call ' + c.source_index + ' · ' + c.sample + ' / round ' + (c.round + 1) : 'Archived call ' + c.index;}
+  function referenceEnd(c) {return c.at + setup + c.output_tokens / 10;}
+  function deadline(c) {return windowSelect.value === 'full' ? referenceEnd(c) : nextTime(c);}
   function prefix(c, n) {
     if (n <= 0) return '';
     if (!bytes.has(c.index)) bytes.set(c.index, encoder.encode(c.generated_text));
@@ -43,19 +47,21 @@
     return c.next_arrival ?? chunks.find(x => x.available > c.at + 1e-7)?.available ?? c.at + 20;
   }
   function counts(c, rate, time) {
-    const deadline = nextTime(c);
-    const capacity = Math.floor(rate * Math.max(0, deadline - c.at - setup) + 1e-9);
+    const limit = deadline(c);
+    const capacity = Math.floor(rate * Math.max(0, limit - c.at - setup) + 1e-9);
     const effective = Math.min(c.output_tokens, capacity);
     const emitted = Math.min(effective, Math.floor(rate * Math.max(0, time - c.at - setup) + 1e-9));
-    return {deadline, capacity, effective, emitted, start: c.at + setup, end: c.at + setup + effective / rate};
+    return {deadline: limit, capacity, effective, emitted, start: c.at + setup, end: c.at + setup + effective / rate};
   }
   function bounds(c) {
     const incoming = c.new_ids.map(id => byChunk.get(id));
     const earliest = Math.min(c.at, ...incoming.map(x => x.start));
+    if (windowSelect.value === 'full') return [Math.max(0, c.at - 1), Math.ceil((referenceEnd(c) + 1) * 100) / 100];
     return [Math.floor(Math.max(0, (windowSelect.value === 'thinking' ? c.at : earliest) - 1) * 100) / 100, Math.ceil((nextTime(c) + 1) * 100) / 100];
   }
   function openCall(index, prompt = false) {
-    const detail = document.getElementById('appendix-call-' + index);
+    const c = byCall.get(index);
+    const detail = document.getElementById(c.appendix_id ?? 'appendix-call-' + index);
     // A link should remain usable even after filtering the appendix.
     if (detail.hidden) {document.getElementById('appendix-filter').value = ''; document.getElementById('appendix-filter').dispatchEvent(new Event('input'));}
     detail.open = true;
@@ -65,19 +71,19 @@
   function inspect(c, time) {
     const box = document.getElementById('thinking-inspector'), n = counts(c, selectedRate, time);
     box.replaceChildren();
-    box.append(html('h3', '', 'Selected output: call ' + c.index + ' at ' + selectedRate + ' tokens/s'));
-    box.append(html('p', '', 'At ' + time.toFixed(2) + ' s, ' + n.emitted + ' tokens have been emitted. By the next update at ' + n.deadline.toFixed(2) + ' s, ' + n.effective + ' of ' + c.output_tokens + ' captured tokens fit (' + n.capacity + ' tokens of available capacity). Every rate uses this same call.'));
+    box.append(html('h3', '', 'Selected output: ' + callName(c) + ' at ' + selectedRate + ' tokens/s'));
+    box.append(html('p', '', 'At ' + time.toFixed(2) + ' s, ' + n.emitted + ' tokens have been emitted. By the view cutoff at ' + n.deadline.toFixed(2) + ' s, ' + n.effective + ' of ' + c.output_tokens + ' captured tokens fit (' + n.capacity + ' tokens of available capacity). Every rate uses this same call.'));
     const link = html('a', '', 'Full captured thinking, original history and exact prompt');
-    link.href = '#appendix-call-' + c.index;
+    link.href = '#' + (c.appendix_id ?? 'appendix-call-' + c.index);
     link.addEventListener('click', event => {event.preventDefault(); openCall(c.index, true);});
     box.append(link);
   }
   function eventLines(target, x, c, now, height, labels = false) {
-    for (const [t, cls, label] of [[c.at, 'trace-delivery-line', 'Input delivered'], [c.at + setup, 'trace-start-line', 'S2 starts'], [nextTime(c), 'trace-update-line', 'Next input']]) {
+    for (const [t, cls, label] of [[c.at, 'trace-delivery-line', 'Input delivered'], [c.at + setup, 'trace-start-line', 'S2 starts'], [deadline(c), 'trace-update-line', windowSelect.value === 'full' ? 'Reference end' : 'Next input']]) {
       target.append(node('line', {x1: x(t), x2: x(t), y1: labels ? 48 : 12, y2: height, class: cls}));
       if (labels) {
         const offset = label === 'S2 starts' ? 41 : 21;
-        target.append(node('text', {x: x(t) + (label === 'Next input' ? -7 : 7), y: offset, 'text-anchor': label === 'Next input' ? 'end' : 'start', class: 'trace-event-label'}, label + ' ' + t.toFixed(2) + ' s'));
+        target.append(node('text', {x: x(t) + ((label === 'Next input' || label === 'Reference end') ? -7 : 7), y: offset, 'text-anchor': (label === 'Next input' || label === 'Reference end') ? 'end' : 'start', class: 'trace-event-label'}, label + ' ' + t.toFixed(2) + ' s'));
       }
     }
     target.append(node('line', {x1: x(now), x2: x(now), y1: labels ? 48 : 12, y2: height, class: 'trace-time-cursor'}));
@@ -86,7 +92,7 @@
     const incoming = c.new_ids.map(id => byChunk.get(id)).sort((a, b) => a.start - b.start || a.end - b.end || a.id.localeCompare(b.id));
     const cards = document.getElementById('thinking-transcripts');
     cards.replaceChildren(); cards.style.setProperty('--input-count', String(incoming.length));
-    document.getElementById('thinking-input-label').textContent = 'New input for call ' + c.index + ': ' + incoming.length + ' transcript chunks delivered together at ' + c.at.toFixed(2) + ' s';
+    document.getElementById('thinking-input-label').textContent = 'Input for ' + callName(c) + ': ' + incoming.length + ' transcript chunks delivered together at ' + c.at.toFixed(2) + ' s';
     incoming.forEach((chunk, i) => {
       const card = html('article', 'trace-transcript-card speaker-' + chunk.speaker);
       card.dataset.chunk = chunk.id;
@@ -125,7 +131,8 @@
     const now = Math.min(hi, Math.max(lo, Number(cursor.value))), x = t => left + (t - lo) / (hi - lo) * (right - left);
     cursor.value = String(now);
     document.getElementById('thinking-cursor-label').textContent = now.toFixed(2) + ' s';
-    document.getElementById('thinking-method').textContent = 'Fixed source: call ' + c.index + ', ' + c.output_tokens + ' captured tokens, ' + c.history_mode + ', seed ' + c.seed + '. All four rates display prefixes of these identical token IDs. Window ' + lo.toFixed(2) + '–' + hi.toFixed(2) + ' s (' + (hi - lo).toFixed(2) + ' s). Setup: 0.5 s. ' + (c.stage === 'scout' ? 'This scout was not generated as a consecutive timed replay. Its next transcript release supplies the illustrative deadline.' : 'Input delivery and the next batch time are from the recorded replay.') + ' The original prompt/history stay fixed; this view does not regenerate subsequent history under a different rate.';
+    document.getElementById('thinking-heading').textContent = c.stage === 'two_round' ? 'Two-round sample: selected round ' + (c.round + 1) : c.stage === 'single_round' ? 'Single-round example: transcript above, generated thinking below' : 'Archived single-update view: transcript above, generated thinking below';
+    document.getElementById('thinking-method').textContent = 'Fixed source: ' + callName(c) + ', ' + c.output_tokens + ' captured tokens, ' + c.history_mode + ', seed ' + c.seed + '. All four rates display prefixes of these identical token IDs. Window ' + lo.toFixed(2) + '–' + hi.toFixed(2) + ' s (' + (hi - lo).toFixed(2) + ' s). Setup: 0.5 s. ' + (c.stage === 'scout' ? 'This scout was not generated as a consecutive timed replay. Its next transcript release supplies the illustrative deadline.' : c.source_job ? (c.natural_response_complete ? 'Natural response completion was captured. The short view applies a timing cutoff; the whole-output view holds this input fixed.' : 'This candidate reaches EOS without closing its thinking block. It is a recorded continuation failure, not a completed CoT.') : 'Input delivery and the next batch time are from the recorded replay.') + ' Original prompt/history stay fixed; this view does not regenerate subsequent history under a different rate.';
     renderTranscripts(c, x, lo, hi, now);
     const rows = document.getElementById('thinking-rate-rows'), stats = document.getElementById('thinking-counts');
     rows.replaceChildren(); stats.replaceChildren();
@@ -133,7 +140,7 @@
       const n = counts(c, rate, now), row = html('section', 'thinking-rate-row');
       row.dataset.call = String(c.index); row.dataset.rate = String(rate);
       const heading = html('h4', '', 'S2 ' + rate + ' tokens/s');
-      const summary = html('span', 'trace-row-summary', n.emitted + ' tokens at cursor · ' + n.effective + '/' + c.output_tokens + ' fit before next input');
+      const summary = html('span', 'trace-row-summary', n.emitted + ' tokens at cursor · ' + n.effective + '/' + c.output_tokens + ' fit before cutoff' + (c.private_token_count !== undefined ? ' · CoT ' + (!c.thinking_closed && c.source_job ? 'no closing marker captured' : n.emitted > c.private_token_count ? 'closed' : 'unfinished at cursor') : ''));
       heading.append(summary); row.append(heading);
       const band = node('svg', {viewBox: '0 0 ' + axisWidth + ' 62', class: 'thinking-rate-band', role: 'img', 'aria-label': rate + ' tokens/s, starts ' + n.start.toFixed(2) + ' s, stops ' + n.end.toFixed(2) + ' s'});
       band.append(node('line', {x1: left, x2: right, y1: 25, y2: 25, class: 'axis'}));
@@ -147,15 +154,20 @@
         tick.append(node('title', {}, 'Same source call ' + c.index + ': token ' + j + ', ID ' + c.generated_token_ids[j - 1] + ', emission ' + t.toFixed(3) + ' s'));
         band.append(tick);
       }
-      band.append(node('text', {x: x(n.end), y: 58, 'text-anchor': 'end'}, n.effective + ' tokens · stop ' + n.end.toFixed(2) + ' s'));
+      band.append(node('text', {x: x(n.end), y: 58, 'text-anchor': 'end'}, n.effective + ' tokens · ' + (n.effective === c.output_tokens && c.natural_response_complete ? 'response complete ' : c.source_job && c.finish_reason === 'stop' && n.effective === c.output_tokens ? 'undelimited EOS ' : 'cutoff ') + n.end.toFixed(2) + ' s'));
+      if (c.private_token_count !== undefined && n.effective > c.private_token_count) {
+        const at = n.start + (c.private_token_count + 1) / rate;
+        const marker = node('line', {x1: x(at), x2: x(at), y1: 10, y2: 42, class: 'trace-cot-end'});
+        marker.append(node('title', {}, 'Private CoT closes at ' + at.toFixed(3) + ' s; final notes follow'));band.append(marker);
+      }
       eventLines(band, x, c, now, 42); row.append(band);
       const output = html('pre', 'trace-prefix trace-row-prefix', n.emitted ? prefix(c, n.emitted) : 'No thinking tokens emitted at this cursor time.');
       output.dataset.call = String(c.index); output.dataset.rate = String(rate); output.dataset.tokens = String(n.emitted);
       output.tabIndex = 0; output.setAttribute('aria-label', 'Exact captured prefix at ' + rate + ' tokens/s; scroll to read all emitted text');
       row.append(output);
-      const limit = n.capacity > c.output_tokens ? 'Captured output ends at ' + n.end.toFixed(2) + ' s; extra capacity is unrecorded.' : 'At the next input, the view truncates after token ' + n.effective + '.';
+      const limit = n.effective === c.output_tokens ? (c.natural_response_complete ? 'The captured response completes naturally at ' : c.source_job && c.finish_reason === 'stop' ? 'Response reaches EOS without a closing thinking marker at ' : 'The archived capture hits its recorded cap at ') + n.end.toFixed(2) + ' s.' : 'At the view cutoff, the captured response is truncated after token ' + n.effective + '.';
       row.append(html('p', 'trace-row-note', limit + ' Read the complete prefix in the scrollable text panel; inspect the original full call below.'));
-      const inspectButton = html('button', 'trace-inspect-button', 'Inspect call ' + c.index + ' at ' + rate + ' tokens/s');
+      const inspectButton = html('button', 'trace-inspect-button', 'Inspect ' + callName(c) + ' at ' + rate + ' tokens/s');
       inspectButton.addEventListener('click', () => {selectedRate = rate; inspect(c, Number(cursor.value));});
       row.append(inspectButton); rows.append(row);
       const tile = html('div', 'trace-count', rate + ' tokens/s: ' + n.emitted + ' emitted at cursor; ' + n.effective + '/' + c.output_tokens + ' captured tokens fit. Available capacity: ' + n.capacity + '.');
@@ -165,20 +177,25 @@
     inspect(c, now);
     const sequence = calls.filter(v => v.stage === c.stage && v.history_mode === c.history_mode && v.seed === c.seed && v.rate === c.rate && v.variant === c.variant);
     const position = sequence.findIndex(v => v.index === c.index);
-    document.getElementById('thinking-previous').disabled = position <= 0;
-    document.getElementById('thinking-next').disabled = position >= sequence.length - 1;
+    document.getElementById('thinking-previous').disabled = c.stage === 'two_round' ? c.round === 0 : position <= 0;
+    document.getElementById('thinking-next').disabled = c.stage === 'two_round' ? c.round !== 0 : position >= sequence.length - 1;
   }
   function focusCall(index) {
     const c = byCall.get(index); focus.value = String(index); selectedRate = 60;
-    const [lo, hi] = bounds(c); cursor.min = String(lo); cursor.max = String(hi); cursor.value = String(nextTime(c));
+    if (c.stage === 'two_round') windowSelect.value = 'full';
+    const [lo, hi] = bounds(c); cursor.min = String(lo); cursor.max = String(hi); cursor.value = String(deadline(c));
     render();
   }
   cursor.addEventListener('input', () => {const position = scroll.scrollLeft; render(); scroll.scrollLeft = position;});
-  windowSelect.addEventListener('change', render);
+  windowSelect.addEventListener('change', () => {cursor.min = String(bounds(byCall.get(Number(focus.value)))[0]);cursor.max = String(bounds(byCall.get(Number(focus.value)))[1]);cursor.value = String(deadline(byCall.get(Number(focus.value))));render();});
   window.addEventListener('resize', render);
   focus.addEventListener('change', () => focusCall(Number(focus.value)));
   for (const [id, delta] of [['thinking-previous', -1], ['thinking-next', 1]]) document.getElementById(id).addEventListener('click', () => {
     const c = byCall.get(Number(focus.value));
+    if (c.stage === 'two_round') {
+      const target = delta < 0 ? byCall.get(c.previous_plot_index) : calls.find(v => v.stage === 'two_round' && v.sample === c.sample && v.round === 1 && v.history_mode === 'conditioned');
+      if (target) focusCall(target.index);return;
+    }
     const sequence = calls.filter(v => v.stage === c.stage && v.history_mode === c.history_mode && v.seed === c.seed && v.rate === c.rate && v.variant === c.variant);
     const position = sequence.findIndex(v => v.index === c.index);
     if (sequence[position + delta]) focusCall(sequence[position + delta].index);
@@ -190,6 +207,8 @@
     e.preventDefault(); focusCall(Number(link.closest('.trace-record').dataset.call));
     document.getElementById('thinking-timeline').scrollIntoView({block: 'start'});
   }));
+  document.querySelectorAll('a.completion-link').forEach(link => link.addEventListener('click', e => {e.preventDefault();openCall(100 + Number(link.hash.replace('#completion-call-', '')), true);}));
+  document.querySelectorAll('a.completion-focus-link').forEach(link => link.addEventListener('click', e => {e.preventDefault();focusCall(Number(link.closest('.completion-record').dataset.call));document.getElementById('thinking-timeline').scrollIntoView({block: 'start'});}));
   const filter = document.getElementById('appendix-filter'), records = [...document.querySelectorAll('.trace-record')];
   filter.addEventListener('input', () => {
     const query = filter.value.trim().toLowerCase();
