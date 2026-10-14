@@ -7,11 +7,57 @@ complete resulting sources and diffs are saved before each real launch.
 import difflib
 import hashlib
 import json
+import os
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FROZEN = ROOT/'.migration/updates/2026-10-08-natural-interruption/launch-04/prepared.json'
+
+
+def open_private_reasoning_trace(root, case_name, request_index, model):
+    """Open a mode-restricted local file for raw streamed S2 reasoning."""
+    job_id = os.environ.get('SLURM_JOB_ID', f'local-{os.getpid()}')
+    private_root = Path(root)/'exp'/'private_s2_reasoning'
+    private_root.mkdir(parents=True, exist_ok=True, mode=0o700)
+    os.chmod(private_root, 0o700)
+    run_dir = private_root/job_id
+    run_dir.mkdir(exist_ok=True, mode=0o700)
+    os.chmod(run_dir, 0o700)
+    case_dir = run_dir/case_name
+    case_dir.mkdir(exist_ok=True, mode=0o700)
+    os.chmod(case_dir, 0o700)
+    path = case_dir/f'request-{request_index:02d}.jsonl'
+    fd = os.open(path, os.O_WRONLY|os.O_CREAT|os.O_EXCL, 0o600)
+    os.fchmod(fd, 0o600)
+    stream = os.fdopen(fd, 'w', encoding='utf-8')
+    stream.write(json.dumps({'type':'request','job_id':job_id,'case':case_name,
+        'request_index':request_index,'model':model},ensure_ascii=False)+'\n')
+    stream.flush()
+    return {'path':path,'stream':stream,'chunk_index':0}
+
+
+def write_private_reasoning_chunk(trace, text, monotonic_seconds):
+    """Persist a raw reasoning delta without echoing it to logs or stdout."""
+    if trace is None:
+        return
+    trace['stream'].write(json.dumps({'type':'reasoning_chunk','index':trace['chunk_index'],
+        'monotonic_seconds':monotonic_seconds,'text':text},ensure_ascii=False)+'\n')
+    trace['stream'].flush()
+    trace['chunk_index'] += 1
+
+
+def close_private_reasoning_trace(trace, status, character_count, finish_reason):
+    if trace is None:
+        return
+    stream = trace['stream']
+    stream.write(json.dumps({'type':'end','stream_status':status,
+        'finish_reason':finish_reason,'reasoning_characters':character_count,
+        'reasoning_chunks':trace['chunk_index'],'complete':status in {
+            'completed_with_guidance','completed_without_guidance','no_guidance_token_limit'}},ensure_ascii=False)+'\n')
+    stream.flush()
+    os.fsync(stream.fileno())
+    stream.close()
 
 
 def forced_history(raw, fields, effective, policy, index, final_input, serialization):
@@ -78,14 +124,28 @@ def sources():
         "                context_policy = case.get('s2_context_policy',cfg.get('context_policy','native'))\n"
         "                reasoner_messages = s2_messages(self.history,result['turns'],context_policy)")
     native=replace_once(native,
+        "result['s2_requests'].append(request)\n                span = f's2-{number}'",
+        "result['s2_requests'].append(request)\n"
+        "                private_trace = open_private_reasoning_trace(root,name,number,cfg['repo'])\n"
+        "                span = f's2-{number}'")
+    native=replace_once(native,
         "'reasoning_characters': 0, 'commands': [], 'final_text': '', 'model': cfg['repo']}",
         "'reasoning_characters': 0, 'commands': [], 'final_text': '', 'model': cfg['repo'], 'input_messages':reasoner_messages, 'context_policy':context_policy}")
+    native=replace_once(native,
+        "request['reasoning_characters'] += len(thought)",
+        "write_private_reasoning_chunk(private_trace,thought,time.monotonic()-capture.origin)\n"
+        "                            request['reasoning_characters'] += len(thought)")
     native=replace_once(native,'messages=self.history,','messages=reasoner_messages,')
     native=replace_once(native,"extra_body={'top_k':20}, max_tokens=cfg['max_tokens'])",
         "extra_body={'top_k':20}, top_p=cfg.get('top_p',1.0), seed=cfg.get('seed'), max_tokens=cfg['max_tokens'])")
     native=replace_once(native,
         "if not qualification['qualified']:\n                return results\n        for case",
         "if not qualification['qualified']:\n                return results\n            if not calibration_speech_gate(results,out):\n                return results\n        for case")
+    native=replace_once(native,
+        "request.update(final_text=full,end_seconds=time.monotonic()-capture.origin)",
+        "close_private_reasoning_trace(private_trace,request.get('status','failed'),\n"
+        "                        request['reasoning_characters'],request.get('finish_reason'))\n"
+        "                    request.update(final_text=full,end_seconds=time.monotonic()-capture.origin)")
     smoke=original['scripts/smoke_duplexomni.py']
     smoke=replace_once(smoke,'speech_gpu = 0 if config["gpus"] == 1 else thinker_tp',
         'speech_gpu = int(config.get("speech_gpu",0 if config["gpus"] == 1 else thinker_tp))\nassert 0 <= speech_gpu < config["gpus"]')
