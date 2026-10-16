@@ -45,12 +45,35 @@ def build():
     counts = DATA['counts']
     hours = DATA['audio_total_seconds'] / 3600
     examples = '<div class="context-example mpbench-examples">' + ''.join(cards) + '</div>'
+    reference = DATA['text_reference']
+    result_rows = [
+        ('Understanding accuracy (all questions)', 'understanding_overall_accuracy', 'All 543 understanding tasks'),
+        ('Speaker-name accuracy (subset)', 'speaker_name_accuracy', '33.3% random baseline: three possible speakers'),
+        ('Discussion turn-taking accuracy', 'discussion_turn_taking_accuracy', 'All Discussion behavior tasks expect a response'),
+        ('Discussion appropriateness accuracy', 'discussion_appropriateness_accuracy', 'Logical consistency; factual correctness is not required'),
+        ('Turn-based turn-taking accuracy', 'turnbased_turn_taking_accuracy', '50% random baseline: speak/stay-silent labels are balanced'),
+        ('Turn-based appropriateness accuracy', 'turnbased_appropriateness_accuracy', 'Requires the correct turn and a game-rule-compliant reply'),
+    ]
+    result_rows_html = ''.join(
+        '<tr><th scope="row">' + e(label) + '</th>'
+        + '<td>' + f'{reference["results_percent"][key]["asr_only"]:.2f}%' + '</td>'
+        + '<td>' + f'{reference["results_percent"][key]["spkd_asr"]:.2f}%' + '</td>'
+        + '<td>' + e(note) + '</td></tr>'
+        for label, key, note in result_rows
+    )
+    reference_table = (
+        '<div class="mpbench-results-scroll" role="region" aria-label="Text-only Gemini reference results" tabindex="0">'
+        '<table class="mpbench-results"><caption>Table 1. Text-only reference scores from paper Table 3 (accuracy %)</caption>'
+        '<thead><tr><th scope="col">Metric</th><th scope="col">ASR-only</th>'
+        '<th scope="col">SpkD-ASR</th><th scope="col">Baseline or scoring note</th></tr></thead>'
+        '<tbody>' + result_rows_html + '</tbody></table></div>'
+    )
     return '''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Listen to three attributed MP-Bench multiparty voice task samples and read their upstream ASR transcripts; see the task mix and evaluation labels.">
+<meta name="description" content="Listen to three attributed MP-Bench multiparty voice task samples, read their upstream ASR transcripts, and inspect the task mix and paper-reported text-only LLM references.">
 <meta name="color-scheme" content="light dark">
 <title>MP-Bench Preview — AI2AI Duplex</title>
 <link rel="stylesheet" href="assets/site.css?v=''' + css + '''">
@@ -62,6 +85,12 @@ def build():
 .mpbench-card .mpbench-transcript { color:var(--text); overflow-wrap:anywhere; }
 .mpbench-card .mpbench-source { margin-top:auto; padding-top:14px; font-size:12px; }
 .mpbench-license { overflow-wrap:anywhere; }
+.mpbench-results-scroll { overflow-x:auto; margin:20px 0; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
+.mpbench-results { width:100%; min-width:720px; border-collapse:collapse; }
+.mpbench-results caption { padding:16px; color:var(--muted); font-weight:700; text-align:left; }
+.mpbench-results th, .mpbench-results td { padding:13px 16px; border-top:1px solid var(--border); text-align:left; vertical-align:top; }
+.mpbench-results th[scope="row"] { min-width:210px; }
+.mpbench-results td:nth-child(2), .mpbench-results td:nth-child(3) { white-space:nowrap; font-variant-numeric:tabular-nums; }
 </style>
 </head>
 <body>
@@ -71,9 +100,9 @@ def build():
 <header class="hero" id="mpbench-review"><p class="eyebrow">Literature review · Dataset preview</p>
 <h1>MP-Bench: listening for the right moment to participate</h1>
 <p class="lede">Three complete task clips let you hear the benchmark’s discussion, speaker-identification, and turn-taking settings. Each player is paired with its upstream input transcript and the task’s label.</p>
-<p class="meta">14 October 2026 · Original benchmark audio · No model evaluation was run for this preview</p>
+<p class="meta">15 October 2026 · Original benchmark audio · Published paper references are identified separately from local model evaluation</p>
 <div class="button-row"><a class="button primary" href="#previews">Listen to the examples</a><a class="button" href="#task-design">What the benchmark measures</a><a class="button" href="''' + e(DATA['repository']) + '''">Official repository</a></div></header>
-<nav class="jump-links" aria-label="MP-Bench sections"><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#previews">Audio and transcripts</a><a href="#scoring">Scoring protocol</a><a href="#attribution">Attribution and license</a></nav>
+<nav class="jump-links" aria-label="MP-Bench sections"><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#previews">Audio and transcripts</a><a href="#scoring">Scoring protocol</a><a href="#text-reference">Text-only references</a><a href="#attribution">Attribution and license</a></nav>
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MP-Bench evaluates a voice agent as a participant in a four-person spoken conversation: three simulated humans and the agent. The official task set has two scenarios and 927 tasks.</p>
 <div class="stat-grid"><div class="stat"><strong>''' + str(counts['tasks']) + '''</strong><span>audio tasks</span></div>
@@ -96,7 +125,18 @@ def build():
 </section>
 <section class="section" id="scoring"><h2>Protocol and interpretation</h2>
 <div class="prose"><p>The authors’ protocol appends 30 seconds of silence after each task’s input audio and records through that tail so the system can respond. Their transcription script uses Parakeet TDT; the README recommends a batch size of one because larger batches changed transcripts in the reported check.</p>
-<p>These samples illustrate task formats, not system performance. They do not measure DuplexOmni or any other model. The task labels, sample clips, and scoring definitions follow the upstream release.</p></div>
+<p>The clips illustrate task formats. Published reference results below are from the paper and were not rerun locally; they do not measure DuplexOmni. The task labels, sample clips, and scoring definitions follow the upstream release.</p></div>
+</section>
+<section class="section" id="text-reference"><h2>Text-only LLM reference: transcript versus speaker labels</h2>
+<p class="section-intro">The paper uses Gemini-3.1-Pro as a text baseline. It receives transcript text rather than audio and returns a text answer, so no response latency is reported. In <strong>ASR-only</strong>, the input is the paper’s ground-truth ASR transcript without per-turn speaker labels. In <strong>SpkD-ASR</strong>, the same transcript also includes the ground-truth anonymized speaker ID on every turn, approximating a cascaded system with perfect diarization.</p>
+<div class="card-grid">
+<article class="card"><span class="tag">ASR-only</span><h3>Transcript, no diarization</h3><p>Tests what a strong LLM can answer when the transcript is available but who-spoke-which-turn labels are not supplied.</p></article>
+<article class="card"><span class="tag blue">SpkD-ASR</span><h3>Transcript plus oracle speaker IDs</h3><p>Adds the correct anonymized speaker label for each turn. This is an upper-bound reference for the diarization component, not the output of a practical diarization system.</p></article>
+</div>
+''' + reference_table + '''
+<div class="callout"><h3>What the comparison suggests</h3><p>Adding oracle speaker IDs raises speaker-name accuracy from 27.27%—below the 33.3% three-speaker chance baseline—to 93.94%. Turn-based turn-taking rises from 49.22%, essentially the 50% balanced-label baseline, to 98.44%. This supports the authors’ diagnosis that speaker attribution is a major bottleneck for this model on these tasks; it does not show that a real ASR-plus-diarization pipeline will attain the oracle score.</p>
+<p>Table 3’s overall understanding accuracy moves from 4.79% to 87.48% (+82.69 percentage points). The paper’s separate 66.67-point comparison (93.94 minus 27.27) is for the speaker-name subset. Discussion turn-taking is 100% in both text settings because every Discussion behavior item explicitly requires a reply. Discussion appropriateness is 75.00% versus 89.06%, but its rubric checks logical consistency with the debate, not factual truth; that score alone is not evidence of robust speaker-aware comprehension.</p></div>
+<p class="meta">These are the authors’ Table 3 results, not local experiments. The text-only reference is Gemini-3.1-Pro; it is distinct from the LLM judge used to score outputs and from the separately evaluated GPT-Realtime audio model. See <a href="''' + e(reference['source']) + '''">paper Table 3 and Sections 5.1–5.2</a> and the repository’s <a href="''' + e(DATA['readme']) + '''">scoring instructions</a>.</p>
 </section>
 <section class="section" id="attribution"><h2>Attribution and license</h2>
 <p class="mpbench-license"><strong>MP-Bench</strong> by Yi-Jen Shih, Shih-Yun Shan Kuan, Guan-Ting Lin, Kai-Wei Chang, Siddhant Arora, Shu-wen Yang, Abdelrahman Mohamed, Shinji Watanabe, Hung-yi Lee, and David Harwath (2026), “MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant,” <a href="''' + e(DATA['paper']) + '''">arXiv:2609.13076</a>. Source repository: <a href="''' + e(DATA['readme']) + '''">atosystem/MP-Bench at the pinned commit</a>; audio: <a href="''' + e(DATA['audio_source']) + '''">official task audio archive</a>. Licensed under <a href="''' + e(DATA['license_url']) + '''">CC BY-NC 4.0</a>.</p>

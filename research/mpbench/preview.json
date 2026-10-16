@@ -22,6 +22,43 @@
   "audio_channels": 1,
   "audio_sample_width_bits": 16,
   "transcript_note": "The displayed text is copied verbatim from the upstream examples/*/all_stitched.json ASR transcript files; it is a transcript sample, not a human-verified reference.",
+  "text_reference": {
+    "model": "Gemini-3.1-Pro",
+    "source": "https://arxiv.org/pdf/2609.13076#page=7",
+    "source_label": "Table 3, page 7; Sections 5.1–5.2",
+    "reproduced_locally": false,
+    "latency_reported": false,
+    "configurations": {
+      "asr_only": "Ground-truth ASR transcript of the input audio, without speaker labels; generates a text response.",
+      "spkd_asr": "Same transcript plus the ground-truth anonymized speaker label for each turn; generates a text response. This emulates perfect speaker diarization."
+    },
+    "results_percent": {
+      "understanding_overall_accuracy": {
+        "asr_only": 4.79,
+        "spkd_asr": 87.48
+      },
+      "speaker_name_accuracy": {
+        "asr_only": 27.27,
+        "spkd_asr": 93.94
+      },
+      "discussion_turn_taking_accuracy": {
+        "asr_only": 100.0,
+        "spkd_asr": 100.0
+      },
+      "discussion_appropriateness_accuracy": {
+        "asr_only": 75.0,
+        "spkd_asr": 89.06
+      },
+      "turnbased_turn_taking_accuracy": {
+        "asr_only": 49.22,
+        "spkd_asr": 98.44
+      },
+      "turnbased_appropriateness_accuracy": {
+        "asr_only": 49.22,
+        "spkd_asr": 98.44
+      }
+    }
+  },
   "examples": [
     {
       "task_dir": "scenario_argument-diag_1001-tier_1-task_1868",
