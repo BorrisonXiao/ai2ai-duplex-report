@@ -17,6 +17,19 @@
     "turnbased_should_speak": 128,
     "turnbased_should_stay_silent": 128
   },
+  "task_structure": {
+    "mean_duration_seconds": 45.6,
+    "duration_standard_deviation_seconds": 11.5,
+    "mean_conversation_turns": 8.4,
+    "turn_standard_deviation": 2.1,
+    "source": "https://arxiv.org/pdf/2609.13076#page=12"
+  },
+  "scoring_sources": {
+    "metrics": "https://github.com/atosystem/MP-Bench/blob/44da1feca5e87ade5c1ac46e52b1d9cdb7a6a61a/mpbench_eval/metrics.py",
+    "timestamps": "https://github.com/atosystem/MP-Bench/blob/44da1feca5e87ade5c1ac46e52b1d9cdb7a6a/mpbench_eval/transcripts.py",
+    "understanding_judge": "https://github.com/atosystem/MP-Bench/blob/44da1feca5e87ade5c1ac46e52b1d9cdb7a6a/prompts/understanding.txt",
+    "turnbased_judge": "https://github.com/atosystem/MP-Bench/blob/44da1feca5e87ade5c1ac46e52b1d9cdb7a6a/prompts/turnbased.txt"
+  },
   "audio_total_seconds": 42221.818,
   "audio_sample_rate_hz": 16000,
   "audio_channels": 1,
@@ -28,6 +41,8 @@
     "source_label": "Table 3, page 7; Sections 5.1–5.2",
     "reproduced_locally": false,
     "latency_reported": false,
+    "text_turn_taking_mapping_reported": false,
+    "turn_taking_method_note": "The paper reports turn-taking scores for text-only Gemini but does not specify how text output is mapped to a speak/stay-silent label. Its word-timestamp rule is defined for audio output.",
     "configurations": {
       "asr_only": "Ground-truth ASR transcript of the input audio, without speaker labels; generates a text response.",
       "spkd_asr": "Same transcript plus the ground-truth anonymized speaker label for each turn; generates a text response. This emulates perfect speaker diarization."
