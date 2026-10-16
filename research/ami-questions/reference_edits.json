@@ -1,0 +1,29 @@
+[
+  {
+    "id": "curated-instruct-packets-W4-deadlines",
+    "source_id": "instruct-packets_v4-W4-1",
+    "question_unchanged": true,
+    "answer": "The title deadline is Monday the seventh, and the abstract deadline is Monday the fourteenth.",
+    "claims": [
+      {
+        "text": "The title deadline is Monday the seventh.",
+        "evidence_ids": [
+          "chunk-0564"
+        ]
+      },
+      {
+        "text": "The abstract deadline is Monday the fourteenth.",
+        "evidence_ids": [
+          "chunk-0568"
+        ]
+      }
+    ],
+    "evidence_ids": [
+      "chunk-0564",
+      "chunk-0568"
+    ],
+    "history_reason": "Both final deadline facts predate the last minute and supersede earlier alternatives.",
+    "review_note": "Question is verbatim local Instruct output. The assistant removed the unrequested Cedric sentence, narrowed the claim/evidence union, and replaced an unfilled rationale placeholder. The reference now answers only the question; this is an assisted reference edit, not an unchanged model pass.",
+    "intent_group": "webpage_current_deadlines"
+  }
+]

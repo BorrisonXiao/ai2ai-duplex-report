@@ -1,0 +1,249 @@
+{
+  "date": "2026-10-16",
+  "status": "content_review_complete",
+  "scope": "One meeting, four development prefixes; text synthesis and reader diagnostics, no speech-model evaluation or generalization claim.",
+  "candidates": 49,
+  "raw_candidates": 48,
+  "accepted": 9,
+  "raw_accepted": 8,
+  "reference_edited": 1,
+  "reviews": 49,
+  "raw_reviews": 48,
+  "groups": {
+    "assistant_authored / authored": {
+      "candidates": 8,
+      "expected_candidates": 8,
+      "generation_calls": 0,
+      "truncated_calls": 0,
+      "unparseable_calls": 0,
+      "schema_valid": 8,
+      "decisions": {
+        "reject": 2,
+        "accept": 6
+      },
+      "generation_tokens": 0,
+      "generation_wall_seconds": 0
+    },
+    "instruct / direct_v1": {
+      "candidates": 4,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 2,
+      "unparseable_calls": 2,
+      "schema_valid": 2,
+      "decisions": {
+        "reject": 2,
+        "revise": 2
+      },
+      "generation_tokens": 5520,
+      "generation_wall_seconds": 65.31895073107444
+    },
+    "instruct / evidence_v2": {
+      "candidates": 6,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 1,
+      "unparseable_calls": 1,
+      "schema_valid": 6,
+      "decisions": {
+        "reject": 6
+      },
+      "generation_tokens": 5432,
+      "generation_wall_seconds": 64.24239896098152
+    },
+    "instruct / packets_v4": {
+      "candidates": 2,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 0,
+      "unparseable_calls": 2,
+      "schema_valid": 2,
+      "decisions": {
+        "reject": 1,
+        "revise": 1
+      },
+      "generation_tokens": 1015,
+      "generation_wall_seconds": 4.6817136311437935
+    },
+    "instruct / review_v3": {
+      "candidates": 8,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 0,
+      "unparseable_calls": 0,
+      "schema_valid": 4,
+      "decisions": {
+        "reject": 8
+      },
+      "generation_tokens": 6505,
+      "generation_wall_seconds": 34.77744797850028
+    },
+    "thinking / direct_v1": {
+      "candidates": 8,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 0,
+      "unparseable_calls": 0,
+      "schema_valid": 6,
+      "decisions": {
+        "reject": 6,
+        "revise": 1,
+        "accept": 1
+      },
+      "generation_tokens": 15506,
+      "generation_wall_seconds": 474.74611891736276
+    },
+    "thinking / evidence_v2": {
+      "candidates": 4,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 2,
+      "unparseable_calls": 2,
+      "schema_valid": 4,
+      "decisions": {
+        "reject": 3,
+        "accept": 1
+      },
+      "generation_tokens": 23768,
+      "generation_wall_seconds": 727.9353133467957
+    },
+    "thinking / review_v3": {
+      "candidates": 8,
+      "expected_candidates": 8,
+      "generation_calls": 4,
+      "truncated_calls": 0,
+      "unparseable_calls": 0,
+      "schema_valid": 6,
+      "decisions": {
+        "reject": 8
+      },
+      "generation_tokens": 34104,
+      "generation_wall_seconds": 204.4310330238659
+    }
+  },
+  "reader_calls": 496,
+  "completed_jobs": [
+    "1110768",
+    "1110785",
+    "1111068"
+  ],
+  "resources": {
+    "gpus_per_job": 1,
+    "gpu_type": "H100 SXM 80 GB",
+    "gpu_0": "Sequential 4B generation, 30B generation, 4B reading",
+    "shared": "One text model at a time; no S1/ASR/TTS.",
+    "dependencies": "1110785 afterok:1110768; 1111068 afterok:1110785; internal stages sequential",
+    "max_gpus_active": 1,
+    "per_job": {
+      "1110768": "4B Instruct generator, 30B Thinking generator and 4B reader sequentially on GPU 0",
+      "1110785": "4B Instruct generator, 30B Thinking generator and 4B reader sequentially on GPU 0",
+      "1111068": "4B Instruct packet generator and reader reuse one GPU 0 vLLM engine sequentially; no 30B model"
+    }
+  },
+  "accounting": {
+    "status": "collected_after_optional_job",
+    "jobs": [
+      {
+        "job_id": "1110768",
+        "state": "COMPLETED",
+        "elapsed_seconds": 1664,
+        "gpu_count": 1,
+        "gpu_type": "H100 SXM 80 GB",
+        "gpu_role": "4B/30B text generators and 4B reader sequentially, GPU 0",
+        "gpu_hours": 0.4622222222222222,
+        "node": "gh116",
+        "start": "2026-10-16T11:09:49",
+        "end": "2026-10-16T11:37:33"
+      },
+      {
+        "job_id": "1110785",
+        "state": "COMPLETED",
+        "elapsed_seconds": 546,
+        "gpu_count": 1,
+        "gpu_type": "H100 SXM 80 GB",
+        "gpu_role": "4B/30B text generators and 4B reader sequentially, GPU 0",
+        "gpu_hours": 0.15166666666666667,
+        "node": "gh116",
+        "start": "2026-10-16T11:37:52",
+        "end": "2026-10-16T11:46:58"
+      },
+      {
+        "job_id": "1111068",
+        "state": "COMPLETED",
+        "elapsed_seconds": 198,
+        "gpu_count": 1,
+        "gpu_type": "H100 SXM 80 GB",
+        "gpu_role": "4B Instruct packet generation then reader, GPU 0",
+        "gpu_hours": 0.055,
+        "node": "gh110",
+        "start": "2026-10-16T11:57:35",
+        "end": "2026-10-16T12:00:53"
+      }
+    ],
+    "total_gpu_hours": 0.668888888888889,
+    "max_gpus_active": 1,
+    "dependencies": "1110768 -> 1110785 -> 1111068, sequential; CPU accounting afterany final GPU job"
+  },
+  "limitations": [
+    "Same-model reading of 4B questions is flagged; no LLM reader is an oracle.",
+    "Assistant review is not independent human annotation.",
+    "Prompt refinement and selection share these development prefixes.",
+    "EN2003a has no formal metadata roles.",
+    "Sentence-release timing conservatively withholds incomplete utterances.",
+    "No TTS or live streaming behavior was evaluated."
+  ],
+  "reader_diagnostics": {
+    "1110768": {
+      "calls": 120,
+      "unparsed": 16,
+      "token_limited": 16,
+      "invalid_citations": 1
+    },
+    "1110785": {
+      "calls": 184,
+      "unparsed": 25,
+      "token_limited": 25,
+      "invalid_citations": 3
+    },
+    "1111068": {
+      "calls": 192,
+      "unparsed": 0,
+      "token_limited": 0,
+      "invalid_citations": 15
+    }
+  },
+  "pending_optional_job": null,
+  "accepted_intent_groups": 7,
+  "generation_throughput": {
+    "1110768/instruct": {
+      "output_tokens": 10952,
+      "wall_seconds": 129.56134969205596,
+      "tokens_per_second": 84.53138243797966,
+      "note": "Measured generation calls, including prefill; Thinking token totals include private reasoning. Prompts/lengths/settings differ across jobs."
+    },
+    "1110768/thinking": {
+      "output_tokens": 39274,
+      "wall_seconds": 1202.6814322641585,
+      "tokens_per_second": 32.65536404437797,
+      "note": "Measured generation calls, including prefill; Thinking token totals include private reasoning. Prompts/lengths/settings differ across jobs."
+    },
+    "1110785/instruct": {
+      "output_tokens": 6505,
+      "wall_seconds": 34.77744797850028,
+      "tokens_per_second": 187.0465022051488,
+      "note": "Measured generation calls, including prefill; Thinking token totals include private reasoning. Prompts/lengths/settings differ across jobs."
+    },
+    "1110785/thinking": {
+      "output_tokens": 34104,
+      "wall_seconds": 204.4310330238659,
+      "tokens_per_second": 166.82398702167004,
+      "note": "Measured generation calls, including prefill; Thinking token totals include private reasoning. Prompts/lengths/settings differ across jobs."
+    },
+    "1111068/instruct": {
+      "output_tokens": 1015,
+      "wall_seconds": 4.6817136311437935,
+      "tokens_per_second": 216.80095793300893,
+      "note": "Measured generation calls, including prefill; Thinking token totals include private reasoning. Prompts/lengths/settings differ across jobs."
+    }
+  }
+}

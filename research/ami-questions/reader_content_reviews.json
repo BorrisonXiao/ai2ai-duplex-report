@@ -1,0 +1,96 @@
+{
+  "status": "final_reader_content_review_complete",
+  "cases": [
+    {
+      "id": "authored-W1-2",
+      "reader_job": "1111068",
+      "full_prefix_content": "core facts recovered, with unnecessary hedging of intended timing",
+      "recent_content": "Partial: sender and rationale recovered, today-or-tomorrow timing absent.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Uses an earlier end-of-week commitment and omits the tighter timing.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "authored-W2-1",
+      "reader_job": "1111068",
+      "full_prefix_content": "incorrect: says posters did not reduce the thirty-six-talk maximum",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Still asserts thirty-six and no reduction; factual failure.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "authored-W3-1",
+      "reader_job": "1111068",
+      "full_prefix_content": "incorrect: assigns Psychology and Informatics to A, omitting C-to-Claire and B-to-Informatics",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Conflates ownership and does not supply the correct map.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "authored-W3-2",
+      "reader_job": "1111068",
+      "full_prefix_content": "incorrect/internally inconsistent audience comparison; also cites outside visible context",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Attributes Philosophy language/logic guidance to Claire and revives the warning.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "authored-W4-1",
+      "reader_job": "1111068",
+      "full_prefix_content": "core facts recovered: title seventh, abstract fourteenth, technology requirements",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Invents the seventeenth and extra topic/relevance requirements from earlier proposals.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "authored-W4-2",
+      "reader_job": "1111068",
+      "full_prefix_content": "core facts recovered: advance technical preparation and grouping talks by setup",
+      "recent_content": "Abstains.",
+      "question_only_content": "Gives a generic unsupported design/resource answer, without the recorded same-setup talk-grouping fact; also cites outside empty context.",
+      "evidence_removed_content": "Broader preparation answer survives, but the original same-setup scheduling link is missing.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "thinking-direct_v1-W4-2",
+      "reader_job": "1111068",
+      "full_prefix_content": "core facts recovered: title seventh, abstract fourteenth",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Mixes earlier relative-date proposals and the eleventh with settled dates.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "thinking-evidence_v2-W4-1",
+      "reader_job": "1111068",
+      "full_prefix_content": "core facts recovered: title seventh, abstract fourteenth",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Uses old relative-deadline proposals instead of the settled dates.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    },
+    {
+      "id": "curated-instruct-packets-W4-deadlines",
+      "reader_job": "1111068",
+      "full_prefix_content": "core facts recovered: title seventh, abstract fourteenth",
+      "recent_content": "Abstains.",
+      "question_only_content": "Abstains.",
+      "evidence_removed_content": "Redundant evidence still yields the two dates, with an added month; removal is not guaranteed unanswerable.",
+      "reviewer": "primary_assistant",
+      "scope": "Actual answer content compared with the source-backed reference; self-reported answerability is not a correctness label. W3 uses its original generation/reader cutoff. For the edited Instruct reference the question is unchanged, so source-question readback applies."
+    }
+  ],
+  "note": "Question validity is assessed from source evidence; an accepted question can expose reader failure. These are development diagnostics, not official benchmark accuracy."
+}

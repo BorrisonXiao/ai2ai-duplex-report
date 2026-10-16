@@ -1,0 +1,21 @@
+{
+  "observations": [
+    "The completed pilot contains 48 parsed drafts: 40 local-model drafts and eight assistant-authored drafts. All were reviewed. The final set has nine variants: six authored questions, two unchanged 30B deadline paraphrases of one intent, and one verbatim Instruct question with its reference pruned by the assistant. The table counts only raw draft decisions; the edited reference is a separate curated record, not an unchanged model pass.",
+    "The initial 16 generation calls requested 32 questions but returned 22 parsed candidates. Three 4B calls and two 30B calls hit their output cap. Higher-cap v3 returned all 16 requested questions without truncation; none passed the strong-history review. Increasing the cap solved completion in this run and did not solve its semantic defects.",
+    "The graph-enabled v3 measured 187.05 output tokens/s for 4B Instruct and 166.82 for 30B Thinking across its generation calls; initial eager runs measured about 84.53 and 32.66. Output lengths, prompts and allowances also differ, so these are observed call rates rather than a controlled speedup estimate. Thinking output counts include private reasoning.",
+    "Assistant-selected evidence packets reduced generator inputs to at most 925 tokens. The 4B model returned only one question per call instead of two; two outputs were malformed JSON. Their final text is preserved and inspected, without silent repair. One parsed deadline question was retained with a reference-only edit removing unrequested technical-helper content. This setting did not establish reliable automatic question generation.",
+    "The final 1,024-token bounded-citation reader parsed all 192 responses, eliminating the earlier JSON truncation problem. It still gives a wrong capacity-revision answer and confuses outreach ownership/audiences despite declaring those answers answerable. The webpage pairs each accepted question with an explicit content review of its reader response; question validity is grounded in source evidence rather than reader success. Fifteen final reader responses cite IDs outside their supplied context; those remain explicit validation flags.",
+    "Two authored drafts were excluded after checking short-history sufficiency. Retained questions need case-specific earlier facts, but one question-only technical-requirements answer is generic and unsupported rather than an abstention. Required answer facts and paraphrase guidance are separated from optional reference detail. The two 30B deadline questions and edited Instruct question are paraphrases of one intent, not independent benchmark samples.",
+    "All three GPU jobs completed sequentially on one H100 SXM 80 GB at a time: 1110768 and 1110785 load 4B/30B generators and a 4B reader; 1111068 uses only 4B generation/reading on GPU 0. CPU audit 1111132 uses zero GPUs. Actual combined allocation is 0.668889 GPU hours. No experiment GPU remains active. No TTS or speech-model replay was run; source roles are inferred from prior speech, not formal EN2003a metadata."
+  ],
+  "gpu_jobs": [
+    "1110768",
+    "1110785",
+    "1111068"
+  ],
+  "cpu_audit": "1111132",
+  "total_gpu_hours": 0.668888888888889,
+  "raw_drafts": 48,
+  "curated_reference_edits": 1,
+  "accepted_variants": 9
+}

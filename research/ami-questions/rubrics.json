@@ -1,0 +1,132 @@
+{
+  "status": "Assistant-authored semantic scoring guidance; not independent human validation or an automatic answer judge.",
+  "general": [
+    "Accept paraphrases and written/spoken number variants.",
+    "Score only the facts requested by the question; do not require every optional detail in the example reference.",
+    "For a compound request, record partial coverage of required slots rather than forcing all-or-nothing scoring.",
+    "Do not accept a contradicted current state, unsupported speaker ownership, invented calendar dates or proposed actions stated as completed.",
+    "Reference-answer TTS is optional; waveform similarity is not a factual correctness metric."
+  ],
+  "questions": {
+    "authored-W1-2": {
+      "required_slots": [
+        "A sends the main linguistics call",
+        "Intended timing is today or tomorrow",
+        "At least one supported reason for Claire handling Psychology: knows the correct email address, has a relevant Psychology address, or recipients know her"
+      ],
+      "optional": [
+        "More than one supported reason"
+      ],
+      "reject": [
+        "C or B is assigned to send the main call",
+        "Claire is said to have already sent it"
+      ]
+    },
+    "authored-W2-1": {
+      "required_slots": [
+        "Earlier maximum was 36 talks",
+        "Later working allocation was 30 talks",
+        "A morning or afternoon is allocated to posters"
+      ],
+      "optional": [
+        "Expressly calls the counts planning capacities"
+      ],
+      "reject": [
+        "36 remains the talk allocation with the same dedicated poster block",
+        "Talk counts are described as confirmed bookings"
+      ]
+    },
+    "authored-W2-2": {
+      "required_slots": [
+        "Second- and third-year students were proposed for top priority",
+        "If too many choose posters or more talks are needed, some may be asked to consider a talk instead, particularly second- and third-years"
+      ],
+      "reject": [
+        "First-years have top priority",
+        "All poster applicants must switch to talks",
+        "The conditional policy is described as already executed"
+      ]
+    },
+    "authored-W3-1": {
+      "required_slots": [
+        "A sends the Linguistics/English Language main call",
+        "C contacts Claire, who can reach Psychology",
+        "B handles Informatics and Philosophy"
+      ],
+      "reject": [
+        "Claire is assigned Informatics or Philosophy",
+        "B is claimed to have sent the messages already"
+      ]
+    },
+    "authored-W3-2": {
+      "required_slots": [
+        "Adapt A's call for Philosophy students with an interest in language",
+        "Make relevance clear in the subject line",
+        "Claire can likewise adapt the original/main call to make its relevance clear for Psychology"
+      ],
+      "reject": [
+        "An earlier logic-warning suggestion is imposed as current required wording",
+        "A new invitation or topic restriction is invented"
+      ]
+    },
+    "authored-W4-1": {
+      "required_slots": [
+        "Titles: Monday the seventh",
+        "Abstracts: Monday the fourteenth",
+        "Include intended technology requirements with the abstract"
+      ],
+      "optional": [
+        "Dates apply across the invited groups"
+      ],
+      "reject": [
+        "The fourth or eleventh is presented as the final current title deadline",
+        "The abstract deadline is changed to the title deadline",
+        "An unsupported month or full calendar date is added"
+      ]
+    },
+    "authored-W4-2": {
+      "required_slots": [
+        "Technical support needs advance information to prepare equipment/setup",
+        "Group talks with the same computer setup to avoid repeated changes"
+      ],
+      "optional": [
+        "Cedric is the named technical helper",
+        "Linux/Windows switching as an example"
+      ],
+      "reject": [
+        "Unrecorded equipment is asserted to be booked",
+        "C is asserted to be the technical helper instead of Cedric"
+      ]
+    },
+    "thinking-direct_v1-W4-2": {
+      "required_slots": [
+        "Title deadline: Monday the seventh",
+        "Abstract deadline: Monday the fourteenth"
+      ],
+      "reject": [
+        "An earlier fourth/eleventh option is treated as the final current deadline",
+        "An unsupported month or full calendar date is invented"
+      ]
+    },
+    "thinking-evidence_v2-W4-1": {
+      "required_slots": [
+        "Title deadline: Monday the seventh",
+        "Abstract deadline: Monday the fourteenth"
+      ],
+      "reject": [
+        "An earlier fourth/eleventh option is treated as the final current deadline",
+        "An unsupported month or full calendar date is invented"
+      ]
+    },
+    "curated-instruct-packets-W4-deadlines": {
+      "required_slots": [
+        "Title deadline: Monday the seventh",
+        "Abstract deadline: Monday the fourteenth"
+      ],
+      "reject": [
+        "An earlier fourth/eleventh option is treated as the final current deadline",
+        "An unsupported month or full calendar date is invented"
+      ]
+    }
+  }
+}

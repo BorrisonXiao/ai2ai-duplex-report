@@ -1,0 +1,29 @@
+{
+  "files": {
+    "LITERATURE.md": "e3b8009f6f854df83364f1ee78305cd610778913a6326cc4496df6e795b541ff",
+    "PROTOCOL.md": "99e98184a57b5a94ed87331eeebf6775f370d1dbc2d5a25e53204202563c7be3",
+    "requests.jsonl": "3c08150be8260520993744241d1fa1594b33eb0a4a0278389c0e75a2db4e9546",
+    "source-ami_question_packets.py": "11466877b147dff0c61fb42b0b5ace327be335839e8775da214a6b82c6e4f2fc",
+    "replay_windows.json": "467d2a7896740968eece63d6b340e1c178c65e9866b55cb1747c3827d17fda92",
+    "source-ami_question_pilot.py": "6e050763287e7d89fb09f280700ad830f3d70044245a1427f5c4381d539f884d",
+    "audit.json": "58caf21ce901d56f812803c6273e6897955cda5447f7fba050da749dc73c4005",
+    "generation_windows.json": "9044a12c8d4f4a762c7e2ae13daefa5d20ae22fea0fd52f6a284818c53879f6f",
+    "source-audit_ami_questions.py": "5adc8602ed3e024048f95a9b9daf36d9660e1e57715a7a0b6102b5cff5caa564",
+    "literature.json": "5bd0af902c8a423b20eb31e58f3c10470c1cce5e5494a253f45cd1fa56632926",
+    "model_provenance.json": "f9204fd2406b1a965de03356a0f621ea40c0233b53e31f00f6d97f0dd2621f4a",
+    "source-check_ami_questions.py": "f0f8466f4aaa346149a150429f58c6c68f0f99809a798c2bb2531311aad92f57",
+    "reader_content_reviews.json": "7742a5beab4742c219a7938ba91d81e3afc3be6dbbec501df16d0401443e5dcc",
+    "source-ami_question_refinement.py": "70befac8b6ae7a33a535df25956e4fac106091319f68eeabe8a9c7de3717fe95",
+    "prompts.json": "9d960239d270f3b2fefde2aa83758685a553372e73de6e7b0331adfa2986607c",
+    "findings.json": "f97653ad0f52e9481418531a2a867121db94d413db8d4b43ce2b59947755b90d",
+    "generation_calls.json": "874f25de63bbe00dc19f1efef0bcbbcda70a13198df5018c00418b52b27c4c4a",
+    "references.jsonl": "1c99bec924a5f12891380d666a7b9f330a56a639375c752cb03aa1e64f7687b5",
+    "packet_generation_failures.json": "de5b9b5b1622eda49fc6bbfd4ab29b0acb34b3114faa564ea832defc54e64b8a",
+    "rubrics.json": "8c6ecaebc5e2db4decd3d7aa9939145cc73cac3363f2a89801f1c247012f3500",
+    "evidence_packets.json": "fc1fe9e4e91499ff7aeae3be1b3d4c7cbaccbd28a325b91e2b781a345131a161",
+    "all_candidates.json": "bf25f58c32a672112de04583f34d7341c2bb457264f8746e7a08238d9d6a22fe",
+    "accepted.json": "d27e3214ce0258720aad472f850a872816aad3e1712ee4068faedf7a5b7a8bfd",
+    "reference_edits.json": "bbd8851dfd03adc3fbab606f6c6c6bf13fd8dff6a28c9c6587abce983a0e2fb7"
+  },
+  "scope": "Synthetic final questions and proposed references with source evidence and review; no private model reasoning, no model inputs containing reference labels."
+}

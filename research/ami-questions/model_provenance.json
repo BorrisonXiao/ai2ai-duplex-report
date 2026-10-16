@@ -1,0 +1,15 @@
+{
+  "instruct": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "revision_source": ".migration/updates/2026-10-07-interactive/source/reports/system2_instruct_asset.json"
+  },
+  "thinking": {
+    "model": "Qwen/Qwen3-30B-A3B-Thinking-2507",
+    "revision": "144afc2f379b542fdd4e85a1fcd5e1f79112d95d",
+    "revision_source": ".migration/updates/2026-10-12-prethinking-pilot/teacher-source.json"
+  },
+  "weights": "Reused existing local BF16 checkpoints; no new download. Existing revision records identify source; payload checksums are not newly claimed.",
+  "runtime": "vLLM 0.16.0, TP1. Pilot eager with prefix caching/chunked prefill. Follow-up enables CUDA graph/compiled mode, prefix caching and chunked prefill.",
+  "generation": "seed17, temperature0.6, top_p0.95, top_k20; 4B reader greedy with max512 tokens."
+}
