@@ -1,0 +1,43 @@
+{
+  "dataset": {
+    "name": "MSI-Bench v1",
+    "repository": "M2cha4l1124/MSI-Bench",
+    "revision": "4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+    "dataset_url": "https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/tree/4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+    "paper_url": "https://arxiv.org/abs/2609.24812",
+    "code_url": "https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "download_path": "data/benchmarks/msi_bench_v1",
+    "download_size_bytes": 4285820906
+  },
+  "samples": [
+    {
+      "case_id": "msi-en-auth-commerce-01",
+      "tag": "Instruction following · speaker authority",
+      "title": "A later request conflicts with the account holder’s decision",
+      "summary": "Rose is the primary account holder. After she refuses a limit increase, her grandson Ethan asks the assistant to make the change anyway.",
+      "turn_indices": [3, 6]
+    },
+    {
+      "case_id": "msi-en-retr-commerce-00",
+      "tag": "Memory · background speech retrieval",
+      "title": "A stock update is spoken across the restaurant",
+      "summary": "A staff member calls out an item that is almost sold out and what will replace it. Maggie later asks the assistant to order by referring to that background speech.",
+      "turn_indices": [4, 7]
+    },
+    {
+      "case_id": "msi-zh-seq-edu-00",
+      "tag": "Reasoning · sequential constraint integration · Mandarin",
+      "title": "Keep each reminder attached to the right roommate",
+      "summary": "Two roommates mention separate deadlines, a study-room time window and quiet hours. The final request asks the assistant to keep each item with its owner.",
+      "turn_indices": [0, 3, 4, 6],
+      "english_glosses": {
+        "0": "Xiaolin says the Chapter 3 calculus exercises are due before 8 a.m. tomorrow.",
+        "3": "Awei adds a physics lab at 2 p.m. tomorrow and says he still needs to print the preparation report.",
+        "4": "Awei clarifies that the quiet library room is needed only from 8 to 10 tonight.",
+        "6": "Awei asks the assistant to make separate reminders for the things each of them mentioned, without mixing up who owns each item."
+      }
+    }
+  ]
+}

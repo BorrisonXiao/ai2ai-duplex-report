@@ -1,0 +1,23 @@
+{
+  "status": "upstream_manifest_mismatch",
+  "source_repo": "M2cha4l1124/MSI-Bench",
+  "source_revision": "4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+  "release_files_in_checksum_manifest": 11163,
+  "verified_files": 11162,
+  "missing": [],
+  "extra": [],
+  "mismatched": [
+    {
+      "path": "README.md",
+      "expected_sha256": "7b0a220df54c8aee067d96aac37a959d459056564d25ca7c52f5be4a78e6dc13",
+      "actual_sha256": "b7251cbe4c194c553efc19599f280e10dd24f225208afa75a11823f2e80e9ed3",
+      "note": "The live README at this commit is updated, but CHECKSUMS.sha256 retains the previous README hash."
+    }
+  ],
+  "transport_metadata_excluded": [
+    ".cache/huggingface",
+    ".gitattributes"
+  ],
+  "hash_evidence": "Fresh full SHA-256 pass: all 11,162 other listed files match; no missing or extra release files.",
+  "sample_audio": "All eight preview WAVs match their release checksums and their copied site hashes."
+}

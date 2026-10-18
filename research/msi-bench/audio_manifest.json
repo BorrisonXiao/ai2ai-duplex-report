@@ -1,0 +1,94 @@
+{
+  "source_dataset": "https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/tree/4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+  "source_revision": "4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+  "audio_files": [
+    {
+      "case_id": "msi-en-auth-commerce-01",
+      "turn_index_zero_based": 3,
+      "source_file": "data/en/auth/commerce/msi-en-auth-commerce-01/lines/03.wav",
+      "site_file": "assets/msi-bench/msi-en-auth-commerce-01-03.wav",
+      "sha256": "700cea8b72ebbbe2c180b7823d8fb95365cf198243a0473fdf141d1389fbac60",
+      "duration_seconds": 8.64,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-en-auth-commerce-01",
+      "turn_index_zero_based": 6,
+      "source_file": "data/en/auth/commerce/msi-en-auth-commerce-01/lines/06.wav",
+      "site_file": "assets/msi-bench/msi-en-auth-commerce-01-06.wav",
+      "sha256": "25892b6fcb7b23f62e286c3a37a3f1fae2b9178aa5ec9ee58071d8649a6c7b70",
+      "duration_seconds": 10.32,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-en-retr-commerce-00",
+      "turn_index_zero_based": 4,
+      "source_file": "data/en/retr/commerce/msi-en-retr-commerce-00/lines/04.wav",
+      "site_file": "assets/msi-bench/msi-en-retr-commerce-00-04.wav",
+      "sha256": "b97d6ff3120468b499759dddbfde3784aedc50750d3a8457766c88cca6dc38e6",
+      "duration_seconds": 10.68,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-en-retr-commerce-00",
+      "turn_index_zero_based": 7,
+      "source_file": "data/en/retr/commerce/msi-en-retr-commerce-00/lines/07.wav",
+      "site_file": "assets/msi-bench/msi-en-retr-commerce-00-07.wav",
+      "sha256": "da1548f11d9221cef40309b1002cf16fd77c5e0043aee968818f0fb6a25620c1",
+      "duration_seconds": 14.2,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-zh-seq-edu-00",
+      "turn_index_zero_based": 0,
+      "source_file": "data/zh/seq/edu/msi-zh-seq-edu-00/lines/00.wav",
+      "site_file": "assets/msi-bench/msi-zh-seq-edu-00-00.wav",
+      "sha256": "f1ee3c2eebcecf6df626e96269fe630b300a9d5490bde7964cf654ee6a636106",
+      "duration_seconds": 13.2,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-zh-seq-edu-00",
+      "turn_index_zero_based": 3,
+      "source_file": "data/zh/seq/edu/msi-zh-seq-edu-00/lines/03.wav",
+      "site_file": "assets/msi-bench/msi-zh-seq-edu-00-03.wav",
+      "sha256": "e64975618ac028ae44ac7f48095e0ccb98b0a22fc4cbdf1bc00b45f88dfe47d3",
+      "duration_seconds": 13.84,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-zh-seq-edu-00",
+      "turn_index_zero_based": 4,
+      "source_file": "data/zh/seq/edu/msi-zh-seq-edu-00/lines/04.wav",
+      "site_file": "assets/msi-bench/msi-zh-seq-edu-00-04.wav",
+      "sha256": "3a5d45cb4fbfb32db3e8bfdcebcb128beae8698bab90e7db9c555f192dccf919",
+      "duration_seconds": 13.32,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    },
+    {
+      "case_id": "msi-zh-seq-edu-00",
+      "turn_index_zero_based": 6,
+      "source_file": "data/zh/seq/edu/msi-zh-seq-edu-00/lines/06.wav",
+      "site_file": "assets/msi-bench/msi-zh-seq-edu-00-06.wav",
+      "sha256": "bca2ba15c412a42999d8a0c4ca9956a29067523256b3cd8d189ac90abfb7e72f",
+      "duration_seconds": 9.72,
+      "sample_rate_hz": 24000,
+      "channels": 1,
+      "sample_width_bytes": 2
+    }
+  ]
+}

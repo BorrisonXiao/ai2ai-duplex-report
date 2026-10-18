@@ -1,0 +1,39 @@
+{
+  "source_dataset": "https://huggingface.co/datasets/M2cha4l1124/MSI-Bench/tree/4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+  "source_revision": "4cd1dd209b75a0c253eb3e8650d3d460b635ea4c",
+  "case_count": 1152,
+  "languages": {
+    "en": 576,
+    "zh": 576
+  },
+  "patterns": {
+    "background_speech_retrieval": 192,
+    "constraint_prioritization": 192,
+    "scope_tracking": 192,
+    "selective_disclosure": 192,
+    "sequential_constraint_integration": 192,
+    "speaker_authority_constraint": 192
+  },
+  "scenes": {
+    "commerce_service": 144,
+    "domestic_household": 144,
+    "education_learning": 144,
+    "healthcare_caregiving_accessibility": 144,
+    "leisure_media_social": 144,
+    "mobility_transport": 144,
+    "public_civic": 144,
+    "work_professional": 144
+  },
+  "speakers_per_case": {
+    "2": 576,
+    "3": 576
+  },
+  "wav_backed_human_turns": 8849,
+  "mean_wav_backed_turns_per_case": 7.681423611111111,
+  "minimum_wav_backed_turns_per_case": 5,
+  "maximum_wav_backed_turns_per_case": 12,
+  "speak_probe_rows": 1152,
+  "speak_probe_audio_files": 1152,
+  "hear_probe_rows": 384,
+  "total_wav_files": 10001
+}
