@@ -202,6 +202,69 @@ def render_expected_calls(case):
     )
 
 
+def render_model_prompt_details(case, dataset):
+    """Show how the pinned runner exposes tools and normalizes a model reply."""
+    eval_data = case["eval"]
+    available_functions = eval_data.get("available_functions", [])
+    catalog_lines = ["- Available functions for this conversation:"]
+    for function in available_functions:
+        if not isinstance(function, dict) or not isinstance(function.get("name"), str):
+            continue
+        arguments = function.get("arguments")
+        if isinstance(arguments, dict) and arguments:
+            rendered_arguments = ", ".join(
+                f"{name}: {value}" for name, value in sorted(arguments.items())
+            )
+        else:
+            rendered_arguments = "arguments_from_spoken_evidence"
+        catalog_lines.append(
+            f"  - {function['name']} arguments: {rendered_arguments}"
+        )
+    validation = eval_data.get("tool_validation", {})
+    example_calls = []
+    for call in validation.get("required_calls", []):
+        example_calls.append(
+            {
+                "name": call["name"],
+                "arguments": {
+                    name: exact_argument_value(spec)
+                    for name, spec in call.get("arguments", {}).items()
+                },
+            }
+        )
+    example_output = {
+        "predicted_action": "respond",
+        "answer_text": eval_data.get("standard_answer", ""),
+        "tool_calls": example_calls,
+    }
+
+    code_base = dataset["code_url"].replace("/tree/", "/blob/")
+    model_prompt_url = f"{code_base}/src/ib/llm/templates/understanding/system.j2"
+    assembly_url = f"{code_base}/src/ib/scoring/multiturn_audio.py"
+    catalog_url = f"{code_base}/src/ib/scoring/tool_catalog.py"
+    native_url = f"{code_base}/src/ib/scoring/native_tool_schema.py"
+    return (
+        '<details class="msi-full-case msi-prompt-details"><summary>Inspect the model prompt, tool menu and normalized output</summary>'
+        '<div class="msi-prompt-content"><h4>What the task prompt tells the model</h4>'
+        '<p>This is a plain-language summary of the pinned turn-based prompt template. It directs the model to decide whether the latest speaker is addressing the assistant; answer or stay silent accordingly; use only available functions for supported external actions; and pair any calls with a brief spoken pre-action sentence that does not claim success. It asks for a structured response. The prompt does not ask the model to expose private reasoning. For this case, setup identifies the classroom-assistant role and date (May 25, 2026). The template says to bind <code>S1</code>/<code>S2</code> to voices by first appearance when no participant map is supplied; in this dialogue, Xiaolin speaks first and Awei second. The runner sends human WAVs as separate chronological audio messages rather than concatenating them into one clip.</p>'
+        '<h4>Available functions for this roommate case</h4>'
+        '<p>The <code>prompt_json</code> path inserts this function catalog into the setup instruction. It lists all four candidate functions and argument types, including unused distractors. The surrounding instruction says to use only these names and ground arguments in the conversation; it does not expose the gold calls or reference answer.</p>'
+        '<pre class="msi-json-example msi-function-menu"><code>'
+        + e("\n".join(catalog_lines))
+        + '</code></pre><h4>Normalized prediction record</h4>'
+        '<p>The normalized fields are <code>predicted_action</code> (<code>respond</code> or <code>silent</code>), <code>answer_text</code> (text or null) and <code>tool_calls</code> (a list of function names and argument objects). This format illustration uses the dataset reference answer and gold calls; it is not an evaluated model output. In <code>prompt_json</code> mode the model emits this one JSON object. In native-tool mode, the adapter combines the model’s text/action JSON with tool calls returned on the provider’s separate function-call channel.</p>'
+        '<pre class="msi-json-example"><code>'
+        + e(json.dumps(example_output, ensure_ascii=False, indent=2))
+        + '</code></pre><p>The harness records and validates the proposed calls; for these fixed benchmark cases it does not execute restaurant or reminder actions and feed tool results back to the model.</p>'
+        '<p class="msi-rubric">Exact source: '
+        + f'<a href="{e(model_prompt_url)}">model prompt template</a>, '
+        + f'<a href="{e(assembly_url)}">case prompt/audio assembly</a>, '
+        + f'<a href="{e(catalog_url)}">text tool catalog</a> and '
+        + f'<a href="{e(native_url)}">native function schema adapter</a>. '
+        + 'The full-duplex adapters use their own live prompt and event collectors; this example describes the turn-based path.</p></div></details>'
+    )
+
+
 def render_atomic_rubric(rubric_row):
     criteria = rubric_row.get("atomic_criteria", [])
     if not criteria:
@@ -366,6 +429,11 @@ def build():
             raise ValueError(f"Audio example is not a tool-call case: {sample['case_id']}")
         call_markup = render_expected_calls(case)
         atomic_rubric_markup = render_atomic_rubric(rubric_rows[case["case_id"]])
+        model_prompt_markup = (
+            render_model_prompt_details(case, dataset)
+            if case["case_id"] == "msi-zh-seq-edu-00"
+            else ""
+        )
         case_json_url = (
             f"https://huggingface.co/datasets/{e(dataset['repository'])}/blob/"
             f"{e(dataset['revision'])}/{e(case['path'])}/case.json"
@@ -405,6 +473,7 @@ def build():
             + e(eval_data.get("rubric", ""))
             + "</p>"
             + atomic_rubric_markup
+            + model_prompt_markup
             + "</div></article>"
         )
 
@@ -487,7 +556,7 @@ def build():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Listen to MSI-Bench source conversations and inspect complete cases whose scoring target is a spoken response with no required tool call.">
+<meta name="description" content="Listen to MSI-Bench conversations and inspect its model prompt, normalized tool-call output and judge scoring inputs.">
 <meta name="color-scheme" content="light dark">
 <title>MSI-Bench Preview — AI2AI Duplex</title>
 <link rel="stylesheet" href="assets/site.css?v={css_digest}">
@@ -513,6 +582,7 @@ def build():
 .msi-bar-outline {{ fill:none; stroke:var(--border); stroke-width:1.5; }}
 .msi-file-figure figcaption {{ margin-top:10px; color:var(--muted); font-size:13px; }}
 .msi-examples {{ align-items:stretch; }}
+.msi-examples > *,.msi-example {{ min-width:0; }}
 .msi-example {{ display:flex; flex-direction:column; gap:8px; }}
 .msi-example h3 {{ margin-bottom:0; }}
 .msi-example-tags {{ display:flex; flex-wrap:wrap; gap:7px; }}
@@ -527,7 +597,7 @@ def build():
 .msi-full-case {{ margin-top:12px; border:1px solid var(--border); border-radius:10px; padding:11px 13px; background:var(--surface); }}
 .msi-full-case summary {{ cursor:pointer; color:var(--accent); font-weight:700; }}
 .msi-context-turn {{ background:color-mix(in srgb, var(--surface) 80%, var(--border)); border-radius:8px; padding:10px; }}
-.msi-reference {{ margin-top:14px; border-left:3px solid var(--accent); padding:8px 13px; background:var(--surface); border-radius:0 10px 10px 0; }}
+.msi-reference {{ min-width:0; max-width:100%; box-sizing:border-box; margin-top:14px; border-left:3px solid var(--accent); padding:8px 13px; background:var(--surface); border-radius:0 10px 10px 0; }}
 .msi-reference h4 {{ margin:0 0 6px; }}
 .msi-reference p {{ margin:7px 0; }}
 .msi-rubric {{ color:var(--muted); font-size:13px; }}
@@ -535,6 +605,11 @@ def build():
 .msi-tool-calls > li,.msi-rubric-criteria > li {{ margin:10px 0; }}
 .msi-tool-calls ul {{ margin:4px 0; padding-left:22px; }}
 .msi-rubric-criteria p {{ margin:5px 0; }}
+.msi-reference code,.msi-rubric-criteria p,.msi-case-id {{ overflow-wrap:anywhere; word-break:break-word; }}
+.msi-reference li,.msi-rubric-criteria li,.msi-prompt-content {{ min-width:0; max-width:100%; }}
+.msi-json-example {{ box-sizing:border-box; max-width:100%; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; word-break:break-word; }}
+.msi-json-example code {{ white-space:inherit; overflow-wrap:anywhere; word-break:break-word; }}
+.msi-judge-details {{ min-width:0; }}
 .msi-source-list {{ padding-left:22px; }}
 .msi-source-list li {{ margin:9px 0; }}
 .msi-license {{ overflow-wrap:anywhere; }}
@@ -570,13 +645,14 @@ def build():
 </section>
 <section class="section" id="no-tool-responses"><h2>Cases scored on the spoken response</h2>
 <p class="section-intro">{stats['no_tool_case_count']:,} of {stats['case_count']:,} cases have the dataset’s <code>no_calls</code> tool policy and expect the assistant to respond: {stats['no_tool_cases_by_pattern']['speaker_authority_constraint']} speaker-authority cases, {stats['no_tool_cases_by_pattern']['selective_disclosure']} selective-disclosure cases and {stats['no_tool_cases_by_pattern']['background_speech_retrieval']} background-speech retrieval cases. The three examples below cover refusal, keeping information private and answering from overlapping speech.</p>
-<div class="callout"><h3>What the page shows</h3><p>Each card contains the complete case timeline, the dataset’s reference response and expandable atomic scoring criteria. A turn without a released WAV is shown as text context. These are dataset targets, not outputs from a model run. Some case records list candidate functions in their metadata, while their tool policy is explicitly <code>no_calls</code>. This dataset preview does not specify how any model adapter presents function definitions or private reasoning layers.</p></div>
+<div class="callout"><h3>What the page shows</h3><p>Each card contains the complete case timeline, the dataset’s reference response and expandable atomic scoring criteria. A turn without a released WAV is shown as text context. These are dataset targets, not outputs from a model run. Some case records list candidate functions in their metadata, while their tool policy is explicitly <code>no_calls</code>. The scoring section links to the pinned public runner and explains its model prompt, tool delivery and judge inputs; it cannot reveal hidden provider instructions or private reasoning.</p></div>
 <div class="card-grid msi-examples">{''.join(answer_only_cards)}</div>
 </section>
-<section class="section" id="scoring"><h2>How MSI-Bench scores responses</h2>
-<p class="section-intro">The paper’s described scoring judges the model’s normalized answer and action against atomic criteria; it is not an exact-text comparison with the sample reference answer.</p>
-<div class="callout"><p>The model receives the multi-speaker case and returns normalized output. For semantic judging, the paper says DeepSeek V4 Pro receives the dialogue transcript with acoustic markup stripped, the scene and pattern labels, the rubric and the model’s normalized output. It scores each atomic rubric independently. Thus a <code>no_calls</code> case still gets its response content judged against criteria such as correct refusal, information handling or speaker attribution; the reference answer is an example of a valid response.</p><p>Tool-call structure and arguments are checked by a deterministic validator. In a call-required case, the validator’s verdict is an additional rubric. The reported Tool execution metric covers only cases requiring at least one call; the All-Pass Rate requires every applicable case criterion to pass. The page expands each selected case’s atomic criteria below its reference answer.</p><p>The paper describes judging normalized model output, not listening to the assistant’s generated waveform. It reports no score for spoken-answer naturalness, pronunciation, prosody or response-audio quality. The input is audio; the reported response-content score is based on the normalized answer/action.</p></div>
-<p>See the paper’s <a href="{e(dataset['paper_url'])}">evaluation protocol and metrics</a> for the judge inputs, All-Pass Rate, Atomic Rubric Score and Tool execution definitions.</p>
+<section class="section" id="scoring"><h2>What the model and judge receive</h2>
+<p class="section-intro">The public runner turns a model’s response into a normalized prediction record. For the roommate case, expand “Inspect the model prompt, tool menu and normalized output” in that case card to see the available functions and a clearly labeled format example.</p>
+<div class="callout"><h3>The judge receives the text and calls together</h3><p>The evaluator passes the judge three named JSON values: <code>manifest</code>, <code>prediction</code> and <code>rubric</code>. The manifest view contains the scene, expected action, interaction-pattern label, any contract field present, and dialogue lines with speech-control/acoustic markup removed. The prediction view contains <code>predicted_action</code>, <code>answer_text</code>, <code>tool_calls</code> and <code>confidence</code> when present. The rubric contains its judge instruction and atomic criteria (polarity, dimension and criterion). For a call criterion, the gold calls are written into that criterion; the gold validator specification is not passed as a separate field.</p><p>The judge prompt explicitly says to evaluate <code>prediction.answer_text</code> and <code>prediction.tool_calls</code> against the criteria, and not to re-judge <code>predicted_action</code>. So the text and the call list are judged as parts of the same normalized prediction, not as a whole JSON string matched against the reference response. The answer text is judged semantically, so equivalent wording can pass. The judge sees the dialogue as labeled text lines, not the WAVs or generated speech audio. MSI-Bench reports no spoken-audio quality score. A <code>no_calls</code> sample still has its text response judged; the calls array should be empty.</p><p>There is also a separate deterministic tool validator. It checks required function names, argument values, call multiplicity and extra calls (order-independent under the sample’s <code>exact_multiset</code> policy). This validator does not send its verdict to the LLM judge; its pass/fail contributes separately to the tool metric and, for tool-required cases, the paper’s All-Pass decision. Invalid model JSON/schema is recorded as a format error rather than semantic success.</p><p><strong>How the model is instructed:</strong> the turn-based template tells it to choose <code>respond</code> or <code>silent</code>. A response that needs an external action should include only supported calls from the offered menu and a short pre-action spoken sentence; it should not claim that an action succeeded. In <code>prompt_json</code> mode, action, text and calls are emitted in one JSON object. In native-tool mode, the provider returns tool calls through its function-call interface and the adapter combines those with the action/text fields into the same normalized record. For generated turn-based targets, the runner defaults OpenAI and Gemini to native declarations; other targets default to the text/JSON catalog unless configured otherwise. The paper also says open-weight targets use vLLM JSON-schema constrained decoding, while hosted targets use their public APIs.</p><p>The actual prompt placement depends on the adapter: some requests place the instruction in a system message, while some local chat templates place it at the start of the user message. Full-duplex adapters use a separate live prompt/event path. The pinned source exposes the benchmark’s own instructions and adapter requests; it does not expose vendor-internal hidden prompts or private reasoning layers.</p></div>
+<details class="msi-full-case msi-judge-details"><summary>Inspect the judge’s normalized prediction object</summary><p>This example uses the dataset reference answer and required calls to illustrate the fields the judge receives. It is not a model prediction. In an actual run, the adapter puts the model-generated text and calls in these same fields.</p><pre class="msi-json-example"><code>{e(json.dumps({"prediction": {"predicted_action": "respond", "answer_text": cases["msi-zh-seq-edu-00"]["eval"]["standard_answer"], "tool_calls": [{"name": call["name"], "arguments": {name: exact_argument_value(spec) for name, spec in call.get("arguments", {}).items()}} for call in cases["msi-zh-seq-edu-00"]["eval"]["tool_validation"]["required_calls"]]}}, ensure_ascii=False, indent=2))}</code></pre><p>The other two objects provide the cleaned dialogue/context and rubric. The exact judge system and user prompt templates, the view-construction code and deterministic checker are in the <a href="{e(dataset['code_url'].replace('/tree/', '/blob/') + '/src/ib/llm/templates/evaluation/judge_system.j2')}">judge system template</a>, <a href="{e(dataset['code_url'].replace('/tree/', '/blob/') + '/src/ib/llm/templates/evaluation/judge_user.j2')}">judge input template</a>, <a href="{e(dataset['code_url'].replace('/tree/', '/blob/') + '/src/ib/scoring/judge.py')}">judge adapter</a> and <a href="{e(dataset['code_url'].replace('/tree/', '/blob/') + '/src/ib/scoring/tool_validation.py')}">tool validator</a>.</p></details>
+<p>See the paper’s <a href="{e(dataset['paper_url'])}">evaluation protocol and metrics</a> for DeepSeek V4 Pro, All-Pass Rate, Atomic Rubric Score and Tool execution definitions. The pinned <a href="{e(dataset['code_url'])}">evaluation code</a> shows the request and parsing details.</p>
 </section>
 <section class="section" id="analysis"><h2>What the released cases and paper show</h2>
 <p class="section-intro">The six case patterns form three balanced families. The paper reports mean All-Pass Rate across 15 evaluated model configurations by pattern.</p>
