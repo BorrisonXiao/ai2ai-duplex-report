@@ -35,5 +35,11 @@
   "speak_probe_rows": 1152,
   "speak_probe_audio_files": 1152,
   "hear_probe_rows": 384,
-  "total_wav_files": 10001
+  "total_wav_files": 10001,
+  "no_tool_case_count": 395,
+  "no_tool_cases_by_pattern": {
+    "background_speech_retrieval": 78,
+    "selective_disclosure": 191,
+    "speaker_authority_constraint": 126
+  }
 }

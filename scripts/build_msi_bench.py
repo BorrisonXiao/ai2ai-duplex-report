@@ -139,11 +139,34 @@ def render_turn(case, sample, index, checksums):
     }
 
 
+def render_text_turn(case, index):
+    turn = case["turns"][index]
+    speaker = turn.get("speaker") or "Assistant"
+    recipient = turn.get("addressed_to") or "group"
+    return (
+        '<article class="msi-turn msi-context-turn"><div class="msi-turn-heading"><strong>Turn '
+        + str(index + 1)
+        + " · "
+        + e(speaker)
+        + " to "
+        + e(recipient)
+        + '</strong><span class="meta">Text context · no WAV in the release</span></div><p class="msi-transcript">'
+        + e(turn["text"])
+        + "</p></article>"
+    )
+
+
+def expects_no_tool_call(case):
+    return case.get("eval", {}).get("tool_validation", {}).get("call_policy") == "no_calls"
+
+
 def summarize(cases):
     languages = Counter(case["language"] for case in cases)
     patterns = Counter(case["pattern"] for case in cases)
     scenes = Counter(case["scene"] for case in cases)
     speaker_counts = Counter(len(case["participants"]) for case in cases)
+    no_tool_cases = [case for case in cases if expects_no_tool_call(case)]
+    no_tool_patterns = Counter(case["pattern"] for case in no_tool_cases)
     line_counts = [sum(turn.get("audio") is not None for turn in case["turns"]) for case in cases]
     speak_rows = sum(1 for _ in (DATA / "probes/speak_probe.jsonl").open(encoding="utf-8"))
     hear_rows = sum(1 for _ in (DATA / "probes/hear_probe.jsonl").open(encoding="utf-8"))
@@ -166,6 +189,8 @@ def summarize(cases):
         "speak_probe_audio_files": speak_audio_files,
         "hear_probe_rows": hear_rows,
         "total_wav_files": wav_count,
+        "no_tool_case_count": len(no_tool_cases),
+        "no_tool_cases_by_pattern": dict(sorted(no_tool_patterns.items())),
     }
 
 
@@ -290,6 +315,61 @@ def build():
             + "</div></article>"
         )
 
+    answer_only_cards = []
+    for sample in source_config.get("answer_only_samples", []):
+        case = cases[sample["case_id"]]
+        if not expects_no_tool_call(case):
+            raise ValueError(f"Answer-only sample unexpectedly requires a tool call: {sample['case_id']}")
+        if case.get("eval", {}).get("expected_action") != "respond":
+            raise ValueError(f"Answer-only sample does not expect a response: {sample['case_id']}")
+        if sample.get("turn_indices") != "all":
+            raise ValueError(f"Answer-only sample must show the complete case: {sample['case_id']}")
+
+        timeline = []
+        for index, turn in enumerate(case["turns"]):
+            if turn.get("audio"):
+                markup, asset_row = render_turn(case, sample, index, checksums)
+                timeline.append(markup)
+                audio_manifest.append(asset_row)
+            else:
+                timeline.append(render_text_turn(case, index))
+
+        eval_data = case["eval"]
+        available_functions = eval_data.get("available_functions", [])
+        family = FAMILY_BY_PATTERN[case["pattern"]]
+        pattern = PATTERN_LABELS[case["pattern"]]
+        case_json_url = (
+            f"https://huggingface.co/datasets/{e(dataset['repository'])}/blob/"
+            f"{e(dataset['revision'])}/{e(case['path'])}/case.json"
+        )
+        answer_only_cards.append(
+            '<article class="card msi-example msi-answer-only"><div class="msi-example-tags"><span class="tag">'
+            + e(family)
+            + '</span><span class="tag blue">'
+            + e(pattern)
+            + '</span><span class="tag msi-no-tool-tag">No required tool call</span></div><h3>'
+            + e(sample["title"])
+            + "</h3><p>"
+            + e(sample["summary"])
+            + '</p><p class="msi-case-id">Case: <code>'
+            + e(case["case_id"])
+            + '</code> · '
+            + str(len(case["participants"]))
+            + " speakers · "
+            + str(sum(turn.get("audio") is not None for turn in case["turns"]))
+            + " audio turns · tool policy: no_calls · "
+            + str(len(available_functions))
+            + ' functions listed in case metadata · <a href="'
+            + e(case_json_url)
+            + '">source case JSON</a></p><details class="msi-full-case"><summary>Listen to the complete case in turn order</summary><div class="msi-turn-list">'
+            + "".join(timeline)
+            + '</div></details><div class="msi-reference"><h4>Dataset reference response</h4><p>'
+            + e(eval_data.get("standard_answer", ""))
+            + '</p><p class="msi-rubric"><strong>Case rubric:</strong> '
+            + e(eval_data.get("rubric", ""))
+            + "</p><p class=\"msi-rubric\"><strong>Tool-call target:</strong> none. This is a reference answer and scoring target, not a prediction from an evaluated model.</p></div></article>"
+        )
+
     (RESEARCH / "audio_manifest.json").write_text(json.dumps({
         "source_dataset": dataset["dataset_url"],
         "source_revision": dataset["revision"],
@@ -311,7 +391,7 @@ def build():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Listen to selected English and Mandarin turns from MSI-Bench and inspect its case balance, audio probes and reported evaluation findings.">
+<meta name="description" content="Listen to MSI-Bench source conversations and inspect complete cases whose scoring target is a spoken response with no required tool call.">
 <meta name="color-scheme" content="light dark">
 <title>MSI-Bench Preview — AI2AI Duplex</title>
 <link rel="stylesheet" href="assets/site.css?v={css_digest}">
@@ -347,6 +427,14 @@ def build():
 .msi-turn audio {{ display:block; width:100%; margin:9px 0; }}
 .msi-transcript {{ margin:7px 0; overflow-wrap:anywhere; }}
 .msi-gloss,.msi-overlay {{ border-left:3px solid var(--accent); padding-left:10px; color:var(--muted); font-size:13px; }}
+.msi-no-tool-tag {{ background:color-mix(in srgb, var(--accent) 13%, var(--surface)); color:var(--accent); }}
+.msi-full-case {{ margin-top:12px; border:1px solid var(--border); border-radius:10px; padding:11px 13px; background:var(--surface); }}
+.msi-full-case summary {{ cursor:pointer; color:var(--accent); font-weight:700; }}
+.msi-context-turn {{ background:color-mix(in srgb, var(--surface) 80%, var(--border)); border-radius:8px; padding:10px; }}
+.msi-reference {{ margin-top:14px; border-left:3px solid var(--accent); padding:8px 13px; background:var(--surface); border-radius:0 10px 10px 0; }}
+.msi-reference h4 {{ margin:0 0 6px; }}
+.msi-reference p {{ margin:7px 0; }}
+.msi-rubric {{ color:var(--muted); font-size:13px; }}
 .msi-source-list {{ padding-left:22px; }}
 .msi-source-list li {{ margin:9px 0; }}
 .msi-license {{ overflow-wrap:anywhere; }}
@@ -360,10 +448,10 @@ def build():
 <main id="main"><div class="container">{review_tabs('msi')}
 <header class="hero"><p class="eyebrow">Literature review · Dataset preview</p>
 <h1>MSI-Bench: shared speech, speaker-specific decisions</h1>
-<p class="lede">A small set of original English and Mandarin turns shows how the benchmark tests authority, memory and multi-speaker reasoning. The full local snapshot contains {stats['case_count']:,} indexed cases and {stats['total_wav_files']:,} WAV files.</p>
+<p class="lede">Listen to selected source turns, then inspect complete cases where the target is a user-facing response with no required tool call. The full local snapshot contains {stats['case_count']:,} indexed cases and {stats['total_wav_files']:,} WAV files.</p>
 <p class="meta">MSI-Bench v1 · 18 October 2026 · Hugging Face revision <code>{e(dataset['revision'])}</code> · Dataset license: <a href="{e(dataset['license_url'])}">{e(dataset['license'])}</a></p>
-<div class="button-row"><a class="button primary" href="#examples">Listen to sample turns</a><a class="button" href="#analysis">Read the analysis</a><a class="button" href="{e(dataset['dataset_url'])}">Hugging Face dataset</a><a class="button" href="{e(dataset['paper_url'])}">Paper</a></div></header>
-<nav class="msi-jump-links" aria-label="MSI-Bench sections"><a href="#overview">At a glance</a><a href="#composition">Case mix</a><a href="#examples">Audio examples</a><a href="#analysis">Reported findings</a><a href="#provenance">Provenance</a></nav>
+<div class="button-row"><a class="button primary" href="#no-tool-responses">Check no-tool responses</a><a class="button" href="#examples">Listen to sample turns</a><a class="button" href="#analysis">Read the analysis</a><a class="button" href="{e(dataset['dataset_url'])}">Hugging Face dataset</a><a class="button" href="{e(dataset['paper_url'])}">Paper</a></div></header>
+<nav class="msi-jump-links" aria-label="MSI-Bench sections"><a href="#overview">At a glance</a><a href="#composition">Case mix</a><a href="#examples">Audio examples</a><a href="#no-tool-responses">No-tool responses</a><a href="#analysis">Reported findings</a><a href="#provenance">Provenance</a></nav>
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MSI-Bench evaluates a voice assistant in scripted multi-party conversations. Each case includes speaker and scene context, per-turn dialogue, expected tool behavior and atomic scoring criteria.</p>
 <div class="msi-stat-grid"><div class="msi-stat"><strong>{stats['case_count']:,}</strong><span>indexed evaluation cases</span></div><div class="msi-stat"><strong>{stats['languages']['en']} / {stats['languages']['zh']}</strong><span>English / Mandarin cases</span></div><div class="msi-stat"><strong>{len(stats['patterns'])}</strong><span>equally sized interaction patterns</span></div><div class="msi-stat"><strong>{all_files_gb:.2f} GB</strong><span>download size recorded in the asset inventory</span></div></div>
@@ -376,9 +464,14 @@ def build():
 <div class="callout"><h3>Two probe timings test different behavior</h3><p>There is one separate speak-time injected utterance for every case. The 384 hear-time probes apply to selective-disclosure and background-retrieval cases; they point back to existing case WAVs and expect silence before the assistant is addressed. This means the 10,001 WAV inventory is {stats['wav_backed_human_turns']:,} base dialogue turns plus {stats['speak_probe_audio_files']:,} injected lines. Probe counts and definitions come from the release files.</p></div>
 </section>
 <section class="section" id="examples"><h2>Listen to selected original turns</h2>
-<p class="section-intro">The players contain unchanged single-turn WAVs from the release. Read the shown turns in order; other lines from each case are omitted. The transcript text comes from the case JSON, and no model output or gold answer is shown.</p>
+<p class="section-intro">The players contain unchanged single-turn WAVs from the release. Read the shown turns in order; other lines from each case are omitted. The transcript text comes from the case JSON. Complete no-tool cases and their dataset reference answers appear in the next section; no evaluated-model outputs are shown on this page.</p>
 <div class="callout amber"><h3>These are synthesized scripts</h3><p>The benchmark authors report that the dialogue voices are synthesized from cloned Mozilla Common Voice reference clips. They report no real conversations in the release. Each case WAV also uses the scene’s listed ambience, and a background voice may overlap the foreground turn.</p></div>
 <div class="card-grid msi-examples">{''.join(cards)}</div>
+</section>
+<section class="section" id="no-tool-responses"><h2>Cases scored on the spoken response</h2>
+<p class="section-intro">{stats['no_tool_case_count']:,} of {stats['case_count']:,} cases have the dataset’s <code>no_calls</code> tool policy and expect the assistant to respond: {stats['no_tool_cases_by_pattern']['speaker_authority_constraint']} speaker-authority cases, {stats['no_tool_cases_by_pattern']['selective_disclosure']} selective-disclosure cases and {stats['no_tool_cases_by_pattern']['background_speech_retrieval']} background-speech retrieval cases. The three examples below cover refusal, keeping information private and answering from overlapping speech.</p>
+<div class="callout"><h3>What the page shows</h3><p>Each card contains the complete case timeline, the dataset’s reference response and its scoring rubric. A turn without a released WAV is shown as text context. These are dataset targets, not outputs from a model run. Some case records list candidate functions in their metadata, while their tool policy is explicitly <code>no_calls</code>. This dataset preview does not specify how any model adapter presents function definitions or private reasoning layers.</p></div>
+<div class="card-grid msi-examples">{''.join(answer_only_cards)}</div>
 </section>
 <section class="section" id="analysis"><h2>What the released cases and paper show</h2>
 <p class="section-intro">The six case patterns form three balanced families. The paper reports mean All-Pass Rate across 15 evaluated model configurations by pattern.</p>
@@ -389,7 +482,7 @@ def build():
 <section class="section" id="provenance"><h2>Source, integrity and attribution</h2>
 <p class="msi-license"><strong>Dataset:</strong> MSI-Bench v1 by Chenxu Xiong, Dongming Shen, Yuzhi Tang, Wentao Ma, Mu Li and Alex Smola. Source snapshot: <a href="{e(dataset['dataset_url'])}">Hugging Face commit {e(dataset['revision'][:7])}</a>; paper: <a href="{e(dataset['paper_url'])}">arXiv:2609.24812</a>; evaluation code: <a href="{e(dataset['code_url'])}">pinned GitHub source</a>. The dataset is licensed under <a href="{e(dataset['license_url'])}">CC BY 4.0</a>.</p>
 <p>Every sample WAV is checked against its source hash in the dataset’s <code>CHECKSUMS.sha256</code>, then checked again after copying to this site. The current release checksum list does not match its updated <code>README.md</code>; the other 11,162 listed files match. The source checksum manifest is kept unchanged, and the <a href="research/msi-bench/integrity.json">integrity audit</a> records both README hashes. Sample ambience credits and the complete upstream attribution list are available in the <a href="research/msi-bench/ATTRIBUTION.md">attribution record</a>; the dataset license text is <a href="research/msi-bench/LICENSE">available here</a>.</p>
-<ul class="msi-source-list"><li>Commerce/bank example: “Ambience Bank Kookmin Bank.wav” by tweeterdj, <a href="https://freesound.org/people/tweeterdj/sounds/30469/">Freesound source</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>; included under the synthesized voices.</li><li>Restaurant example: “ambience - restaurant.WAV” by soundtracvkradio, <a href="https://freesound.org/people/soundtracvkradio/sounds/394678/">Freesound source</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>; the selected line also contains Marco’s overlapping stock update.</li><li>Mandarin dormitory example: “indoors house dorm dormitory ambient room tone with halfway open window traffic.wav” by bulbastre, <a href="https://freesound.org/people/bulbastre/sounds/126938/">Freesound source</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li></ul>
+<ul class="msi-source-list"><li>Commerce/bank example: “Ambience Bank Kookmin Bank.wav” by tweeterdj, <a href="https://freesound.org/people/tweeterdj/sounds/30469/">Freesound source</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>; included under the synthesized voices.</li><li>Protected-surprise/hotel example: “AMB_Recepcion_detras_escaleras_250508” by Dani_S.T., <a href="https://freesound.org/people/Dani_S.T./sounds/805983/">Freesound source</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.</li><li>Restaurant example: “ambience - restaurant.WAV” by soundtracvkradio, <a href="https://freesound.org/people/soundtracvkradio/sounds/394678/">Freesound source</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>; the selected line also contains Marco’s overlapping stock update.</li><li>Pickup-counter/store example: “Grocery Store Ambience Checkout Line” by deleted_user_7146007, <a href="https://freesound.org/people/deleted_user_7146007/sounds/383718/">Freesound source</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>; the selected case overlays Marco’s announcement on foreground speech.</li><li>Mandarin dormitory example: “indoors house dorm dormitory ambient room tone with halfway open window traffic.wav” by bulbastre, <a href="https://freesound.org/people/bulbastre/sounds/126938/">Freesound source</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li></ul>
 <p class="meta">The complete release remains in the local workspace at <code>{e(dataset['download_path'])}</code>. This preview publishes only the selected source turns and the required attribution; it does not contain the full 4.29 GB release.</p>
 </section>
 <footer class="site-footer"><p>MSI-Bench data preview · <a href="index.html#literature-review">Return to the duplex landscape</a> · <a href="{e(dataset['dataset_url'])}">Open the dataset source</a></p></footer>
