@@ -1065,6 +1065,374 @@
     "columns": [
       [
         "name",
+        "Benchmark"
+      ],
+      [
+        "multi",
+        "Multi-party"
+      ],
+      [
+        "synthetic",
+        "Synthetic"
+      ],
+      [
+        "model",
+        "Target model"
+      ],
+      [
+        "content",
+        "Content"
+      ],
+      [
+        "calls",
+        "Tools"
+      ],
+      [
+        "timed",
+        "Timing"
+      ],
+      [
+        "interrupt",
+        "User interruption"
+      ],
+      [
+        "backchannel",
+        "Backchannels"
+      ],
+      [
+        "quality",
+        "Speech quality"
+      ]
+    ],
+    "rows": [
+      {
+        "id": "msi",
+        "name": "MSI-Bench",
+        "page": "msi-bench.html",
+        "speakers": "Yes: 2–3 human roles plus assistant; some foreground/background speech overlaps.",
+        "origin": "Synthetic scripts and cloned-voice TTS; recorded ambience and sound effects are mixed in. Not natural group conversations.",
+        "interface": "Fixed audio cases → normalized action, answer text and optional calls. Core scoring supports audio-to-text/JSON models and speech/duplex adapters; transcript controls also exist.",
+        "semantics": "Yes: atomic criteria for memory, authority, disclosure, ownership, scope and constraints; judge reads normalized text/calls.",
+        "tools": "Yes: semantic call criteria plus separate strict name/count/argument validation. Scores proposed calls, not real service execution.",
+        "timing": "Limited: premature-response probes and bystander interference during an answer; live on duplex targets, approximated on turn-based targets.",
+        "exclusions": "No general directed-interruption repair/stop-delay, backchannel-generation, pause/transition-timing or speech-fluency/quality suite. Core answer scores alone do not demonstrate duplex skill.",
+        "sources": [
+          [
+            "Paper §§3–4",
+            "https://arxiv.org/html/2609.24812"
+          ],
+          [
+            "Runner",
+            "https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "Yes",
+          "model": "Audio→text",
+          "content": "Yes",
+          "calls": "Yes",
+          "timed": "Limited",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "mp",
+        "name": "MP-Bench",
+        "page": "mpbench.html",
+        "speakers": "Yes: 3 simulated human speakers plus the agent; discussion and turn-based games.",
+        "origin": "Synthetic LLM-authored dialogue rendered with ElevenLabs conversational TTS; human-verified tasks. Main recordings have no overlapping speech or background noise.",
+        "interface": "A complete audio task is streamed to voice agents. Primarily realtime speech-in/speech-out; non-realtime voice and text-only controls are also evaluated.",
+        "semantics": "Yes: comprehension/speaker-name accuracy and response appropriateness from transcribed output; discussion appropriateness measures consistency, not factual accuracy.",
+        "tools": "No dedicated tool-call task or call validator.",
+        "timing": "Limited: speak/stay-silent decision after the task clip and response-onset latency for realtime voice agents.",
+        "exclusions": "No dedicated interruption/correction-recovery, backchannel, overlapping-input or speech-fluency/quality test. Streaming input alone does not establish these behaviors.",
+        "sources": [
+          [
+            "Paper §§3–4",
+            "https://arxiv.org/html/2609.13076"
+          ],
+          [
+            "Official repository",
+            "https://github.com/atosystem/MP-Bench"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "Yes",
+          "model": "Voice",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "Limited",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "groupmem",
+        "name": "GroupMemBench",
+        "speakers": "Yes in text: multiple named workplace-chat participants, roles, threads and timestamps; no acoustic voices.",
+        "origin": "Synthetic enterprise group chats generated from fictional projects and participant personas.",
+        "interface": "Text conversations ingested by LLM memory/RAG systems, followed by text questions and answers.",
+        "semantics": "Yes: speaker-conditioned ambiguity, implicit references, updates, multi-hop/temporal QA and abstention.",
+        "tools": "No task-level function-call correctness metric; memory retrieval is part of the evaluated pipeline.",
+        "timing": "No speech or duplex timing tests; ingestion/storage cost is a different measure.",
+        "exclusions": "No audio perception, spoken output, interruption, backchannel or live clarification exchange.",
+        "sources": [
+          [
+            "Paper §§3–4",
+            "https://arxiv.org/html/2605.14498"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "Yes",
+          "model": "Text",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "No",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "multitalk",
+        "name": "MultiTalkBench",
+        "speakers": "Yes: real multi-party recordings; the model replaces a designated named participant.",
+        "origin": "Human recordings from meeting, dinner-party, in-car and telephone corpora; constructed alignments/persona prompts. Distinct from synthetic MultiTalkPT/FT training data.",
+        "interface": "Long audio conversations for full-duplex speech models; target-participant outputs are aligned and inserted into the peer transcript for offline judging.",
+        "semantics": "Yes: response quality, speaker/state tracking, group interaction and role-specific contributions.",
+        "tools": "No dedicated function-call execution/argument metric.",
+        "timing": "Limited: mechanical first-to-last speech-span participation score; content/role judgments. The paper explicitly excludes direct latency/interruption-timing measurement.",
+        "exclusions": "Its scores do not certify barge-in stop latency, backchannel timing, acoustic fluency or tool use, despite targeting full-duplex models.",
+        "sources": [
+          [
+            "Paper §2.2; Appendix E",
+            "https://arxiv.org/html/2609.36903"
+          ],
+          [
+            "Benchmark card",
+            "https://huggingface.co/datasets/MultiTalk/MultiTalkBench"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "No",
+          "model": "Duplex",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "Limited",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "mpe",
+        "name": "Duplex-MPE",
+        "speakers": "Yes: continuous multi-party scenarios with explicit/implicit assistant addressing and other-directed speech.",
+        "origin": "Synthetic conversation scripts with Qwen3-TTS human-role turns, assembled into paired streams.",
+        "interface": "Continuous audio-only input and audible output from streaming full-duplex models with persistent state.",
+        "semantics": "Yes: conditional answer accuracy; semantic distinction between allowed acknowledgements and substantive intrusion.",
+        "tools": "No dedicated function-call correctness metric.",
+        "timing": "Yes: fresh response onset, silence preservation and floor release after a human answers/cancels the request, including speech arriving during an answer.",
+        "exclusions": "No broad tool-use or speech-fluency/prosody suite; allowed backchannels are exempted from intrusion scoring, rather than scored as a standalone generation task.",
+        "sources": [
+          [
+            "Paper §§3–4; Appendix A3",
+            "https://arxiv.org/html/2609.31948"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "Yes",
+          "model": "Duplex",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "Yes",
+          "interrupt": "Yes",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "ask",
+        "name": "ASK-QA",
+        "speakers": "Three voice roles: narrator, user and assistant; a QA interaction with narrated context, rather than a group discussion.",
+        "origin": "Abg-CoQA text dialogues rendered with TTS, plus generated/paraphrased assistant text, injected disfluencies and noise.",
+        "interface": "Spoken context/history → text answer or clarification from audio-language models; turn-based simulator can extend the dialogue.",
+        "semantics": "Yes: answer similarity and final outcome after simulated clarification turns.",
+        "tools": "No dedicated external function-call task.",
+        "timing": "No simultaneous listen/speak, interruption or timed backchannel metric; interactive clarification uses successive turns.",
+        "exclusions": "No natural multi-party addressee competition or realtime duplex/speech-delivery evaluation.",
+        "sources": [
+          [
+            "Paper §3.1; Appendix B",
+            "https://aclanthology.org/2025.findings-acl.71.pdf"
+          ]
+        ],
+        "quick": {
+          "multi": "No",
+          "synthetic": "Yes",
+          "model": "Audio→text",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "No",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "elitr",
+        "name": "ELITR-Bench",
+        "speakers": "Multi-party meetings represented as transcripts; assistant answers a later reader's meeting questions.",
+        "origin": "Human meeting recordings/ASR transcripts with manually authored QA; additional transcript-noise conditions.",
+        "interface": "Completed-meeting text → text answers from long-context LLMs; standalone QA and follow-up conversation variants.",
+        "semantics": "Yes: meeting-grounded answer quality and robustness to transcript noise.",
+        "tools": "No dedicated function-call task.",
+        "timing": "No audio-stream timing or duplex interaction protocol.",
+        "exclusions": "No acoustic speaker perception, live interruption/backchannel behavior, or spoken-output quality.",
+        "sources": [
+          [
+            "Paper §§3–4",
+            "https://aclanthology.org/2025.coling-main.28.pdf"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "No",
+          "model": "Text",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "No",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "contextdialog",
+        "name": "ContextDialog",
+        "speakers": "Two dialogue speakers, used as user/assistant history; not a multi-person group setting.",
+        "origin": "Hybrid: human MultiDialog histories plus LLM-generated recall QA and speaker-adaptive TTS question/answer audio.",
+        "interface": "Spoken dialogue history and recall question → answer from voice interaction models; RAG and text-derived controls.",
+        "semantics": "Yes: recall of past user/assistant facts and use of retrieved supporting utterances.",
+        "tools": "No external function-call scoring; RAG is an experimental memory aid.",
+        "timing": "No dedicated interruption, backchannel or response-timing benchmark.",
+        "exclusions": "No multi-party authority/addressee policy or general duplex/speech-fluency evaluation.",
+        "sources": [
+          [
+            "Paper §§3–4",
+            "https://aclanthology.org/2025.findings-acl.470.pdf"
+          ]
+        ],
+        "quick": {
+          "multi": "No",
+          "synthetic": "Mixed",
+          "model": "Voice",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "No",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "muppet",
+        "name": "MuPPET",
+        "speakers": "Yes in text: workplace groups plus an assistant acting for one employee.",
+        "origin": "Synthetic workplace chats from manually curated seeds and generated employee profiles/memories.",
+        "interface": "Text group conversation and private user memories → public text answer from an LLM assistant.",
+        "semantics": "Yes: sensitive-information leakage and useful response content.",
+        "tools": "No dedicated function-call execution/argument task in this protocol.",
+        "timing": "No speech or duplex timing evaluation.",
+        "exclusions": "No audio perception, interruption, backchannel, prosody or spoken fluency; privacy norms are workplace-specific.",
+        "sources": [
+          [
+            "Paper §§3–4 and limitations",
+            "https://arxiv.org/html/2606.23217"
+          ]
+        ],
+        "quick": {
+          "multi": "Yes",
+          "synthetic": "Yes",
+          "model": "Text",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "No",
+          "interrupt": "No",
+          "backchannel": "No",
+          "quality": "No"
+        }
+      },
+      {
+        "id": "fdb-v1",
+        "name": "Full-Duplex-Bench v1 (reference)",
+        "speakers": "Primarily dyadic user–model interaction; not a group ownership/authority reasoning benchmark.",
+        "origin": "Mixed: human CANDOR/ICC recordings plus synthetic ChatTTS interruption and pause cases.",
+        "interface": "Timed audio streaming with concurrent generated speech; full-duplex speech-to-speech systems.",
+        "semantics": "Limited: coherence/relevance/adaptability of the response following an interruption.",
+        "tools": "No function-call metric in v1; later Full-Duplex-Bench versions have different scopes.",
+        "timing": "Yes: user pauses, model backchannel frequency/timing, smooth turn transitions and user interruption responses/latency.",
+        "exclusions": "No speaker-scoped group task/tool correctness. Timing/behavior scores do not constitute a comprehensive speech-fluency assessment.",
+        "sources": [
+          [
+            "Paper §III",
+            "https://arxiv.org/html/2503.04721"
+          ]
+        ],
+        "quick": {
+          "multi": "No",
+          "synthetic": "Mixed",
+          "model": "Duplex",
+          "content": "Limited",
+          "calls": "No",
+          "timed": "Yes",
+          "interrupt": "Yes",
+          "backchannel": "Yes",
+          "quality": "No"
+        },
+        "short_name": "Full-Duplex-Bench v1"
+      },
+      {
+        "id": "fdb-v15",
+        "name": "Full-Duplex-Bench v1.5 (reference)",
+        "speakers": "User–model interaction with injected listener, other-directed and background speech; not sustained group collaboration.",
+        "origin": "Synthesized controlled overlap events with simulated distance/channel effects.",
+        "interface": "Streaming audio input during model speech; open-weight and hosted full-duplex speech systems.",
+        "semantics": "Yes within overlap trials: classify respond/resume/uncertain behavior after the injected event.",
+        "tools": "No function-call metric in v1.5.",
+        "timing": "Yes: interruption versus user backchannel/other-directed/background speech, stopping and response timing, prosodic adaptation and predicted speech quality.",
+        "exclusions": "No general long-history speaker-scoped task/tool evaluation. User-backchannel tolerance differs from v1's model-backchannel generation task.",
+        "sources": [
+          [
+            "Paper §§2–3; §5.2",
+            "https://arxiv.org/html/2507.23159"
+          ]
+        ],
+        "quick": {
+          "multi": "Limited",
+          "synthetic": "Yes",
+          "model": "Duplex",
+          "content": "Limited",
+          "calls": "No",
+          "timed": "Yes",
+          "interrupt": "Yes",
+          "backchannel": "Limited",
+          "quality": "Yes"
+        },
+        "short_name": "Full-Duplex-Bench v1.5"
+      }
+    ],
+    "detail_columns": [
+      [
+        "name",
         "Benchmark / evidence"
       ],
       [
@@ -1095,209 +1463,6 @@
         "exclusions",
         "What the scores do not establish"
       ]
-    ],
-    "rows": [
-      {
-        "id": "msi",
-        "name": "MSI-Bench",
-        "page": "msi-bench.html",
-        "speakers": "Yes: 2–3 human roles plus assistant; some foreground/background speech overlaps.",
-        "origin": "Synthetic scripts and cloned-voice TTS; recorded ambience and sound effects are mixed in. Not natural group conversations.",
-        "interface": "Fixed audio cases → normalized action, answer text and optional calls. Core scoring supports audio-to-text/JSON models and speech/duplex adapters; transcript controls also exist.",
-        "semantics": "Yes: atomic criteria for memory, authority, disclosure, ownership, scope and constraints; judge reads normalized text/calls.",
-        "tools": "Yes: semantic call criteria plus separate strict name/count/argument validation. Scores proposed calls, not real service execution.",
-        "timing": "Limited: premature-response probes and bystander interference during an answer; live on duplex targets, approximated on turn-based targets.",
-        "exclusions": "No general directed-interruption repair/stop-delay, backchannel-generation, pause/transition-timing or speech-fluency/quality suite. Core answer scores alone do not demonstrate duplex skill.",
-        "sources": [
-          [
-            "Paper §§3–4",
-            "https://arxiv.org/html/2609.24812"
-          ],
-          [
-            "Runner",
-            "https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf"
-          ]
-        ]
-      },
-      {
-        "id": "mp",
-        "name": "MP-Bench",
-        "page": "mpbench.html",
-        "speakers": "Yes: 3 simulated human speakers plus the agent; discussion and turn-based games.",
-        "origin": "Synthetic LLM-authored dialogue rendered with ElevenLabs conversational TTS; human-verified tasks. Main recordings have no overlapping speech or background noise.",
-        "interface": "A complete audio task is streamed to voice agents. Primarily realtime speech-in/speech-out; non-realtime voice and text-only controls are also evaluated.",
-        "semantics": "Yes: comprehension/speaker-name accuracy and response appropriateness from transcribed output; discussion appropriateness measures consistency, not factual accuracy.",
-        "tools": "No dedicated tool-call task or call validator.",
-        "timing": "Limited: speak/stay-silent decision after the task clip and response-onset latency for realtime voice agents.",
-        "exclusions": "No dedicated interruption/correction-recovery, backchannel, overlapping-input or speech-fluency/quality test. Streaming input alone does not establish these behaviors.",
-        "sources": [
-          [
-            "Paper §§3–4",
-            "https://arxiv.org/html/2609.13076"
-          ],
-          [
-            "Official repository",
-            "https://github.com/atosystem/MP-Bench"
-          ]
-        ]
-      },
-      {
-        "id": "groupmem",
-        "name": "GroupMemBench",
-        "speakers": "Yes in text: multiple named workplace-chat participants, roles, threads and timestamps; no acoustic voices.",
-        "origin": "Synthetic enterprise group chats generated from fictional projects and participant personas.",
-        "interface": "Text conversations ingested by LLM memory/RAG systems, followed by text questions and answers.",
-        "semantics": "Yes: speaker-conditioned ambiguity, implicit references, updates, multi-hop/temporal QA and abstention.",
-        "tools": "No task-level function-call correctness metric; memory retrieval is part of the evaluated pipeline.",
-        "timing": "No speech or duplex timing tests; ingestion/storage cost is a different measure.",
-        "exclusions": "No audio perception, spoken output, interruption, backchannel or live clarification exchange.",
-        "sources": [
-          [
-            "Paper §§3–4",
-            "https://arxiv.org/html/2605.14498"
-          ]
-        ]
-      },
-      {
-        "id": "multitalk",
-        "name": "MultiTalkBench",
-        "speakers": "Yes: real multi-party recordings; the model replaces a designated named participant.",
-        "origin": "Human recordings from meeting, dinner-party, in-car and telephone corpora; constructed alignments/persona prompts. Distinct from synthetic MultiTalkPT/FT training data.",
-        "interface": "Long audio conversations for full-duplex speech models; target-participant outputs are aligned and inserted into the peer transcript for offline judging.",
-        "semantics": "Yes: response quality, speaker/state tracking, group interaction and role-specific contributions.",
-        "tools": "No dedicated function-call execution/argument metric.",
-        "timing": "Limited: mechanical first-to-last speech-span participation score; content/role judgments. The paper explicitly excludes direct latency/interruption-timing measurement.",
-        "exclusions": "Its scores do not certify barge-in stop latency, backchannel timing, acoustic fluency or tool use, despite targeting full-duplex models.",
-        "sources": [
-          [
-            "Paper §2.2; Appendix E",
-            "https://arxiv.org/html/2609.36903"
-          ],
-          [
-            "Benchmark card",
-            "https://huggingface.co/datasets/MultiTalk/MultiTalkBench"
-          ]
-        ]
-      },
-      {
-        "id": "mpe",
-        "name": "Duplex-MPE",
-        "speakers": "Yes: continuous multi-party scenarios with explicit/implicit assistant addressing and other-directed speech.",
-        "origin": "Synthetic conversation scripts with Qwen3-TTS human-role turns, assembled into paired streams.",
-        "interface": "Continuous audio-only input and audible output from streaming full-duplex models with persistent state.",
-        "semantics": "Yes: conditional answer accuracy; semantic distinction between allowed acknowledgements and substantive intrusion.",
-        "tools": "No dedicated function-call correctness metric.",
-        "timing": "Yes: fresh response onset, silence preservation and floor release after a human answers/cancels the request, including speech arriving during an answer.",
-        "exclusions": "No broad tool-use or speech-fluency/prosody suite; allowed backchannels are exempted from intrusion scoring, rather than scored as a standalone generation task.",
-        "sources": [
-          [
-            "Paper §§3–4; Appendix A3",
-            "https://arxiv.org/html/2609.31948"
-          ]
-        ]
-      },
-      {
-        "id": "ask",
-        "name": "ASK-QA",
-        "speakers": "Three voice roles: narrator, user and assistant; a QA interaction with narrated context, rather than a group discussion.",
-        "origin": "Abg-CoQA text dialogues rendered with TTS, plus generated/paraphrased assistant text, injected disfluencies and noise.",
-        "interface": "Spoken context/history → text answer or clarification from audio-language models; turn-based simulator can extend the dialogue.",
-        "semantics": "Yes: answer similarity and final outcome after simulated clarification turns.",
-        "tools": "No dedicated external function-call task.",
-        "timing": "No simultaneous listen/speak, interruption or timed backchannel metric; interactive clarification uses successive turns.",
-        "exclusions": "No natural multi-party addressee competition or realtime duplex/speech-delivery evaluation.",
-        "sources": [
-          [
-            "Paper §3.1; Appendix B",
-            "https://aclanthology.org/2025.findings-acl.71.pdf"
-          ]
-        ]
-      },
-      {
-        "id": "elitr",
-        "name": "ELITR-Bench",
-        "speakers": "Multi-party meetings represented as transcripts; assistant answers a later reader's meeting questions.",
-        "origin": "Human meeting recordings/ASR transcripts with manually authored QA; additional transcript-noise conditions.",
-        "interface": "Completed-meeting text → text answers from long-context LLMs; standalone QA and follow-up conversation variants.",
-        "semantics": "Yes: meeting-grounded answer quality and robustness to transcript noise.",
-        "tools": "No dedicated function-call task.",
-        "timing": "No audio-stream timing or duplex interaction protocol.",
-        "exclusions": "No acoustic speaker perception, live interruption/backchannel behavior, or spoken-output quality.",
-        "sources": [
-          [
-            "Paper §§3–4",
-            "https://aclanthology.org/2025.coling-main.28.pdf"
-          ]
-        ]
-      },
-      {
-        "id": "contextdialog",
-        "name": "ContextDialog",
-        "speakers": "Two dialogue speakers, used as user/assistant history; not a multi-person group setting.",
-        "origin": "Hybrid: human MultiDialog histories plus LLM-generated recall QA and speaker-adaptive TTS question/answer audio.",
-        "interface": "Spoken dialogue history and recall question → answer from voice interaction models; RAG and text-derived controls.",
-        "semantics": "Yes: recall of past user/assistant facts and use of retrieved supporting utterances.",
-        "tools": "No external function-call scoring; RAG is an experimental memory aid.",
-        "timing": "No dedicated interruption, backchannel or response-timing benchmark.",
-        "exclusions": "No multi-party authority/addressee policy or general duplex/speech-fluency evaluation.",
-        "sources": [
-          [
-            "Paper §§3–4",
-            "https://aclanthology.org/2025.findings-acl.470.pdf"
-          ]
-        ]
-      },
-      {
-        "id": "muppet",
-        "name": "MuPPET",
-        "speakers": "Yes in text: workplace groups plus an assistant acting for one employee.",
-        "origin": "Synthetic workplace chats from manually curated seeds and generated employee profiles/memories.",
-        "interface": "Text group conversation and private user memories → public text answer from an LLM assistant.",
-        "semantics": "Yes: sensitive-information leakage and useful response content.",
-        "tools": "No dedicated function-call execution/argument task in this protocol.",
-        "timing": "No speech or duplex timing evaluation.",
-        "exclusions": "No audio perception, interruption, backchannel, prosody or spoken fluency; privacy norms are workplace-specific.",
-        "sources": [
-          [
-            "Paper §§3–4 and limitations",
-            "https://arxiv.org/html/2606.23217"
-          ]
-        ]
-      },
-      {
-        "id": "fdb-v1",
-        "name": "Full-Duplex-Bench v1 (reference)",
-        "speakers": "Primarily dyadic user–model interaction; not a group ownership/authority reasoning benchmark.",
-        "origin": "Mixed: human CANDOR/ICC recordings plus synthetic ChatTTS interruption and pause cases.",
-        "interface": "Timed audio streaming with concurrent generated speech; full-duplex speech-to-speech systems.",
-        "semantics": "Limited: coherence/relevance/adaptability of the response following an interruption.",
-        "tools": "No function-call metric in v1; later Full-Duplex-Bench versions have different scopes.",
-        "timing": "Yes: user pauses, model backchannel frequency/timing, smooth turn transitions and user interruption responses/latency.",
-        "exclusions": "No speaker-scoped group task/tool correctness. Timing/behavior scores do not constitute a comprehensive speech-fluency assessment.",
-        "sources": [
-          [
-            "Paper §III",
-            "https://arxiv.org/html/2503.04721"
-          ]
-        ]
-      },
-      {
-        "id": "fdb-v15",
-        "name": "Full-Duplex-Bench v1.5 (reference)",
-        "speakers": "User–model interaction with injected listener, other-directed and background speech; not sustained group collaboration.",
-        "origin": "Synthesized controlled overlap events with simulated distance/channel effects.",
-        "interface": "Streaming audio input during model speech; open-weight and hosted full-duplex speech systems.",
-        "semantics": "Yes within overlap trials: classify respond/resume/uncertain behavior after the injected event.",
-        "tools": "No function-call metric in v1.5.",
-        "timing": "Yes: interruption versus user backchannel/other-directed/background speech, stopping and response timing, prosodic adaptation and predicted speech quality.",
-        "exclusions": "No general long-history speaker-scoped task/tool evaluation. User-backchannel tolerance differs from v1's model-backchannel generation task.",
-        "sources": [
-          [
-            "Paper §§2–3; §5.2",
-            "https://arxiv.org/html/2507.23159"
-          ]
-        ]
-      }
     ]
   }
 }

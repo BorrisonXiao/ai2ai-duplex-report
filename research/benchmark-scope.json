@@ -2,14 +2,46 @@
   "reviewed_on": "2026-10-19",
   "definition": "Coverage of the published evaluation protocol, not every task that could be built from the data. Model interface describes the intended input/output route; it does not imply that every capability of that model is evaluated.",
   "columns": [
-    ["name", "Benchmark / evidence"],
-    ["speakers", "Multi-speaker setting"],
-    ["origin", "Data origin"],
-    ["interface", "Input, protocol and model interface"],
-    ["semantics", "Semantic response scoring"],
-    ["tools", "Tool-call scoring"],
-    ["timing", "Duplex and timing coverage"],
-    ["exclusions", "What the scores do not establish"]
+    [
+      "name",
+      "Benchmark"
+    ],
+    [
+      "multi",
+      "Multi-party"
+    ],
+    [
+      "synthetic",
+      "Synthetic"
+    ],
+    [
+      "model",
+      "Target model"
+    ],
+    [
+      "content",
+      "Content"
+    ],
+    [
+      "calls",
+      "Tools"
+    ],
+    [
+      "timed",
+      "Timing"
+    ],
+    [
+      "interrupt",
+      "User interruption"
+    ],
+    [
+      "backchannel",
+      "Backchannels"
+    ],
+    [
+      "quality",
+      "Speech quality"
+    ]
   ],
   "rows": [
     {
@@ -23,7 +55,27 @@
       "tools": "Yes: semantic call criteria plus separate strict name/count/argument validation. Scores proposed calls, not real service execution.",
       "timing": "Limited: premature-response probes and bystander interference during an answer; live on duplex targets, approximated on turn-based targets.",
       "exclusions": "No general directed-interruption repair/stop-delay, backchannel-generation, pause/transition-timing or speech-fluency/quality suite. Core answer scores alone do not demonstrate duplex skill.",
-      "sources": [["Paper §§3–4", "https://arxiv.org/html/2609.24812"], ["Runner", "https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf"]]
+      "sources": [
+        [
+          "Paper §§3–4",
+          "https://arxiv.org/html/2609.24812"
+        ],
+        [
+          "Runner",
+          "https://github.com/boson-ai/MSI-Bench/tree/d98a61473f7401c170b69ad5e73a674537e07acf"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "Yes",
+        "model": "Audio→text",
+        "content": "Yes",
+        "calls": "Yes",
+        "timed": "Limited",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "mp",
@@ -36,7 +88,27 @@
       "tools": "No dedicated tool-call task or call validator.",
       "timing": "Limited: speak/stay-silent decision after the task clip and response-onset latency for realtime voice agents.",
       "exclusions": "No dedicated interruption/correction-recovery, backchannel, overlapping-input or speech-fluency/quality test. Streaming input alone does not establish these behaviors.",
-      "sources": [["Paper §§3–4", "https://arxiv.org/html/2609.13076"], ["Official repository", "https://github.com/atosystem/MP-Bench"]]
+      "sources": [
+        [
+          "Paper §§3–4",
+          "https://arxiv.org/html/2609.13076"
+        ],
+        [
+          "Official repository",
+          "https://github.com/atosystem/MP-Bench"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "Yes",
+        "model": "Voice",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "Limited",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "groupmem",
@@ -48,7 +120,23 @@
       "tools": "No task-level function-call correctness metric; memory retrieval is part of the evaluated pipeline.",
       "timing": "No speech or duplex timing tests; ingestion/storage cost is a different measure.",
       "exclusions": "No audio perception, spoken output, interruption, backchannel or live clarification exchange.",
-      "sources": [["Paper §§3–4", "https://arxiv.org/html/2605.14498"]]
+      "sources": [
+        [
+          "Paper §§3–4",
+          "https://arxiv.org/html/2605.14498"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "Yes",
+        "model": "Text",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "No",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "multitalk",
@@ -60,7 +148,27 @@
       "tools": "No dedicated function-call execution/argument metric.",
       "timing": "Limited: mechanical first-to-last speech-span participation score; content/role judgments. The paper explicitly excludes direct latency/interruption-timing measurement.",
       "exclusions": "Its scores do not certify barge-in stop latency, backchannel timing, acoustic fluency or tool use, despite targeting full-duplex models.",
-      "sources": [["Paper §2.2; Appendix E", "https://arxiv.org/html/2609.36903"], ["Benchmark card", "https://huggingface.co/datasets/MultiTalk/MultiTalkBench"]]
+      "sources": [
+        [
+          "Paper §2.2; Appendix E",
+          "https://arxiv.org/html/2609.36903"
+        ],
+        [
+          "Benchmark card",
+          "https://huggingface.co/datasets/MultiTalk/MultiTalkBench"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "No",
+        "model": "Duplex",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "Limited",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "mpe",
@@ -72,7 +180,23 @@
       "tools": "No dedicated function-call correctness metric.",
       "timing": "Yes: fresh response onset, silence preservation and floor release after a human answers/cancels the request, including speech arriving during an answer.",
       "exclusions": "No broad tool-use or speech-fluency/prosody suite; allowed backchannels are exempted from intrusion scoring, rather than scored as a standalone generation task.",
-      "sources": [["Paper §§3–4; Appendix A3", "https://arxiv.org/html/2609.31948"]]
+      "sources": [
+        [
+          "Paper §§3–4; Appendix A3",
+          "https://arxiv.org/html/2609.31948"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "Yes",
+        "model": "Duplex",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "Yes",
+        "interrupt": "Yes",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "ask",
@@ -84,7 +208,23 @@
       "tools": "No dedicated external function-call task.",
       "timing": "No simultaneous listen/speak, interruption or timed backchannel metric; interactive clarification uses successive turns.",
       "exclusions": "No natural multi-party addressee competition or realtime duplex/speech-delivery evaluation.",
-      "sources": [["Paper §3.1; Appendix B", "https://aclanthology.org/2025.findings-acl.71.pdf"]]
+      "sources": [
+        [
+          "Paper §3.1; Appendix B",
+          "https://aclanthology.org/2025.findings-acl.71.pdf"
+        ]
+      ],
+      "quick": {
+        "multi": "No",
+        "synthetic": "Yes",
+        "model": "Audio→text",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "No",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "elitr",
@@ -96,7 +236,23 @@
       "tools": "No dedicated function-call task.",
       "timing": "No audio-stream timing or duplex interaction protocol.",
       "exclusions": "No acoustic speaker perception, live interruption/backchannel behavior, or spoken-output quality.",
-      "sources": [["Paper §§3–4", "https://aclanthology.org/2025.coling-main.28.pdf"]]
+      "sources": [
+        [
+          "Paper §§3–4",
+          "https://aclanthology.org/2025.coling-main.28.pdf"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "No",
+        "model": "Text",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "No",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "contextdialog",
@@ -108,7 +264,23 @@
       "tools": "No external function-call scoring; RAG is an experimental memory aid.",
       "timing": "No dedicated interruption, backchannel or response-timing benchmark.",
       "exclusions": "No multi-party authority/addressee policy or general duplex/speech-fluency evaluation.",
-      "sources": [["Paper §§3–4", "https://aclanthology.org/2025.findings-acl.470.pdf"]]
+      "sources": [
+        [
+          "Paper §§3–4",
+          "https://aclanthology.org/2025.findings-acl.470.pdf"
+        ]
+      ],
+      "quick": {
+        "multi": "No",
+        "synthetic": "Mixed",
+        "model": "Voice",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "No",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "muppet",
@@ -120,7 +292,23 @@
       "tools": "No dedicated function-call execution/argument task in this protocol.",
       "timing": "No speech or duplex timing evaluation.",
       "exclusions": "No audio perception, interruption, backchannel, prosody or spoken fluency; privacy norms are workplace-specific.",
-      "sources": [["Paper §§3–4 and limitations", "https://arxiv.org/html/2606.23217"]]
+      "sources": [
+        [
+          "Paper §§3–4 and limitations",
+          "https://arxiv.org/html/2606.23217"
+        ]
+      ],
+      "quick": {
+        "multi": "Yes",
+        "synthetic": "Yes",
+        "model": "Text",
+        "content": "Yes",
+        "calls": "No",
+        "timed": "No",
+        "interrupt": "No",
+        "backchannel": "No",
+        "quality": "No"
+      }
     },
     {
       "id": "fdb-v1",
@@ -132,7 +320,24 @@
       "tools": "No function-call metric in v1; later Full-Duplex-Bench versions have different scopes.",
       "timing": "Yes: user pauses, model backchannel frequency/timing, smooth turn transitions and user interruption responses/latency.",
       "exclusions": "No speaker-scoped group task/tool correctness. Timing/behavior scores do not constitute a comprehensive speech-fluency assessment.",
-      "sources": [["Paper §III", "https://arxiv.org/html/2503.04721"]]
+      "sources": [
+        [
+          "Paper §III",
+          "https://arxiv.org/html/2503.04721"
+        ]
+      ],
+      "quick": {
+        "multi": "No",
+        "synthetic": "Mixed",
+        "model": "Duplex",
+        "content": "Limited",
+        "calls": "No",
+        "timed": "Yes",
+        "interrupt": "Yes",
+        "backchannel": "Yes",
+        "quality": "No"
+      },
+      "short_name": "Full-Duplex-Bench v1"
     },
     {
       "id": "fdb-v15",
@@ -144,7 +349,58 @@
       "tools": "No function-call metric in v1.5.",
       "timing": "Yes: interruption versus user backchannel/other-directed/background speech, stopping and response timing, prosodic adaptation and predicted speech quality.",
       "exclusions": "No general long-history speaker-scoped task/tool evaluation. User-backchannel tolerance differs from v1's model-backchannel generation task.",
-      "sources": [["Paper §§2–3; §5.2", "https://arxiv.org/html/2507.23159"]]
+      "sources": [
+        [
+          "Paper §§2–3; §5.2",
+          "https://arxiv.org/html/2507.23159"
+        ]
+      ],
+      "quick": {
+        "multi": "Limited",
+        "synthetic": "Yes",
+        "model": "Duplex",
+        "content": "Limited",
+        "calls": "No",
+        "timed": "Yes",
+        "interrupt": "Yes",
+        "backchannel": "Limited",
+        "quality": "Yes"
+      },
+      "short_name": "Full-Duplex-Bench v1.5"
     }
+  ],
+  "detail_columns": [
+    [
+      "name",
+      "Benchmark / evidence"
+    ],
+    [
+      "speakers",
+      "Multi-speaker setting"
+    ],
+    [
+      "origin",
+      "Data origin"
+    ],
+    [
+      "interface",
+      "Input, protocol and model interface"
+    ],
+    [
+      "semantics",
+      "Semantic response scoring"
+    ],
+    [
+      "tools",
+      "Tool-call scoring"
+    ],
+    [
+      "timing",
+      "Duplex and timing coverage"
+    ],
+    [
+      "exclusions",
+      "What the scores do not establish"
+    ]
   ]
 }

@@ -2,17 +2,19 @@
 """Render the narrowed review and test real sub-tab navigation in Chromium."""
 import argparse
 import json
+from benchmark_scope import SCOPE
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 
 def check_scope(page, width, expected_rows):
     table=page.locator('#benchmark-scope-table')
-    assert table.locator('thead th').count()==8
+    assert table.locator('thead th').count()==len(SCOPE['columns'])
     assert table.locator('tbody tr').count()==expected_rows
     assert page.evaluate('document.documentElement.scrollWidth') <= width
     region=page.locator('.benchmark-scope-scroll')
-    assert region.evaluate('el => el.scrollWidth > el.clientWidth')
+    assert region.evaluate('el => el.scrollWidth >= el.clientWidth')
+    assert page.locator('.benchmark-scope-details').get_attribute('open') is None
     region.evaluate('el => el.scrollLeft = el.scrollWidth')
     last=table.locator('tbody tr').first.locator('td').last.bounding_box()
     box=region.bounding_box()
@@ -51,7 +53,7 @@ def main():
             page.evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
             page.wait_for_function('Array.from(document.images).every(i=>i.complete && i.naturalWidth>0)')
             assert page.locator('figure').count()==7 and page.locator('table').count()==7
-            for ident,suffix in [('scope','scope'),('context-performance','results'),('context-paper-figures','papers')]:
+            for ident,suffix in [('benchmark-scope','scope'),('context-performance','results'),('context-paper-figures','papers')]:
                 target=page.locator('#'+ident)
                 target.scroll_into_view_if_needed()
                 target.screenshot(path=str(args.output/(name+'-'+suffix+'.png')),style='.site-nav { visibility: hidden !important; }')
