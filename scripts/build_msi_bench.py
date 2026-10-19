@@ -160,6 +160,69 @@ def expects_no_tool_call(case):
     return case.get("eval", {}).get("tool_validation", {}).get("call_policy") == "no_calls"
 
 
+def exact_argument_value(spec):
+    if isinstance(spec, dict) and spec.get("op") == "exact":
+        return spec.get("value")
+    return spec
+
+
+def render_expected_calls(case):
+    validation = case.get("eval", {}).get("tool_validation", {})
+    calls = validation.get("required_calls", [])
+    if validation.get("call_policy") != "exact_multiset" or not calls:
+        raise ValueError(f"Tool-call sample needs exact_multiset gold calls: {case['case_id']}")
+
+    items = []
+    used_speaker_refs = set()
+    for call in calls:
+        arguments = []
+        for name, spec in call.get("arguments", {}).items():
+            value = exact_argument_value(spec)
+            if isinstance(value, str) and value.startswith("S") and value[1:].isdigit():
+                used_speaker_refs.add(value)
+            encoded = json.dumps(value, ensure_ascii=False, sort_keys=True)
+            arguments.append("<li><code>" + e(name) + "</code> = <code>" + e(encoded) + "</code></li>")
+        items.append(
+            "<li><strong><code>" + e(call["name"]) + "</code></strong><ul>"
+            + "".join(arguments)
+            + "</ul></li>"
+        )
+
+    speaker_refs = []
+    for index, participant in enumerate(case.get("participants", []), start=1):
+        ref = f"S{index}"
+        if ref in used_speaker_refs:
+            speaker_refs.append("<code>" + ref + "</code> = " + e(participant.get("name", participant.get("role", ref))))
+    ref_note = ""
+    if speaker_refs:
+        ref_note = '<p class="msi-rubric"><strong>Speaker references:</strong> ' + "; ".join(speaker_refs) + ".</p>"
+    return (
+        "<ol class=\"msi-tool-calls\">" + "".join(items) + "</ol>"
+        + ref_note
+    )
+
+
+def render_atomic_rubric(rubric_row):
+    criteria = rubric_row.get("atomic_criteria", [])
+    if not criteria:
+        return ""
+    items = []
+    for criterion in criteria:
+        dimension = criterion.get("dimension", "criterion").replace("_", " ")
+        items.append(
+            '<li><strong>' + e(dimension) + "</strong><p>"
+            + e(criterion.get("criterion", ""))
+            + "</p></li>"
+        )
+    return (
+        '<details class="msi-full-case"><summary>View the '
+        + str(len(criteria))
+        + ' atomic scoring criteria</summary><ol class="msi-rubric-criteria">'
+        + "".join(items)
+        + "</ol></details>"
+    )
+
+
 def summarize(cases):
     languages = Counter(case["language"] for case in cases)
     patterns = Counter(case["pattern"] for case in cases)
@@ -270,6 +333,10 @@ def build():
         case = json.loads(line)
         cases[case["case_id"]] = case
         all_cases.append(case)
+    rubric_rows = {}
+    for line in (DATA / "index/rubrics.jsonl").read_text(encoding="utf-8").splitlines():
+        rubric_row = json.loads(line)
+        rubric_rows[rubric_row["case_id"]] = rubric_row
     checksums = read_checksums()
     stats = summarize(all_cases)
     if stats["case_count"] != 1152 or stats["total_wav_files"] != 10001:
@@ -293,6 +360,16 @@ def build():
             audio_manifest.append(asset_row)
         pattern = PATTERN_LABELS[case["pattern"]]
         family = FAMILY_BY_PATTERN[case["pattern"]]
+        eval_data = case["eval"]
+        calls = eval_data["tool_validation"].get("required_calls", [])
+        if eval_data["tool_validation"].get("call_policy") != "exact_multiset" or not calls:
+            raise ValueError(f"Audio example is not a tool-call case: {sample['case_id']}")
+        call_markup = render_expected_calls(case)
+        atomic_rubric_markup = render_atomic_rubric(rubric_rows[case["case_id"]])
+        case_json_url = (
+            f"https://huggingface.co/datasets/{e(dataset['repository'])}/blob/"
+            f"{e(dataset['revision'])}/{e(case['path'])}/case.json"
+        )
         cards.append(
             '<article class="card msi-example"><div class="msi-example-tags"><span class="tag">'
             + e(family)
@@ -310,8 +387,24 @@ def build():
             + str(len(case["participants"]))
             + " speakers · "
             + str(sum(turn.get("audio") is not None for turn in case["turns"]))
-            + ' WAV-backed turns in full case</p><div class="msi-turn-list">'
+            + ' WAV-backed turns in full case · '
+            + str(len(eval_data.get("available_functions", [])))
+            + ' candidate functions listed in case metadata · '
+            + str(len(calls))
+            + ' required calls · policy: exact_multiset · <a href="'
+            + e(case_json_url)
+            + '">source case JSON</a></p><div class="msi-turn-list">'
             + "".join(turn_html)
+            + '</div><div class="msi-reference"><h4>Expected behavior</h4><p><strong>Assistant action:</strong> '
+            + e(eval_data.get("expected_action", "respond"))
+            + ". Make exactly the required calls listed below; no extra calls.</p>"
+            + call_markup
+            + '<p><strong>Dataset reference response:</strong> '
+            + e(eval_data.get("standard_answer", ""))
+            + '</p><p class="msi-rubric"><strong>Judge instruction:</strong> '
+            + e(eval_data.get("rubric", ""))
+            + "</p>"
+            + atomic_rubric_markup
             + "</div></article>"
         )
 
@@ -335,6 +428,7 @@ def build():
                 timeline.append(render_text_turn(case, index))
 
         eval_data = case["eval"]
+        atomic_rubric_markup = render_atomic_rubric(rubric_rows[case["case_id"]])
         available_functions = eval_data.get("available_functions", [])
         family = FAMILY_BY_PATTERN[case["pattern"]]
         pattern = PATTERN_LABELS[case["pattern"]]
@@ -365,9 +459,11 @@ def build():
             + "".join(timeline)
             + '</div></details><div class="msi-reference"><h4>Dataset reference response</h4><p>'
             + e(eval_data.get("standard_answer", ""))
-            + '</p><p class="msi-rubric"><strong>Case rubric:</strong> '
+            + '</p><p class="msi-rubric"><strong>Judge instruction:</strong> '
             + e(eval_data.get("rubric", ""))
-            + "</p><p class=\"msi-rubric\"><strong>Tool-call target:</strong> none. This is a reference answer and scoring target, not a prediction from an evaluated model.</p></div></article>"
+            + "</p><p class=\"msi-rubric\"><strong>Tool-call target:</strong> none. This is a reference answer and scoring target, not a prediction from an evaluated model.</p>"
+            + atomic_rubric_markup
+            + "</div></article>"
         )
 
     (RESEARCH / "audio_manifest.json").write_text(json.dumps({
@@ -435,6 +531,10 @@ def build():
 .msi-reference h4 {{ margin:0 0 6px; }}
 .msi-reference p {{ margin:7px 0; }}
 .msi-rubric {{ color:var(--muted); font-size:13px; }}
+.msi-tool-calls {{ padding-left:24px; }}
+.msi-tool-calls > li,.msi-rubric-criteria > li {{ margin:10px 0; }}
+.msi-tool-calls ul {{ margin:4px 0; padding-left:22px; }}
+.msi-rubric-criteria p {{ margin:5px 0; }}
 .msi-source-list {{ padding-left:22px; }}
 .msi-source-list li {{ margin:9px 0; }}
 .msi-license {{ overflow-wrap:anywhere; }}
@@ -451,7 +551,7 @@ def build():
 <p class="lede">Listen to selected source turns, then inspect complete cases where the target is a user-facing response with no required tool call. The full local snapshot contains {stats['case_count']:,} indexed cases and {stats['total_wav_files']:,} WAV files.</p>
 <p class="meta">MSI-Bench v1 · 18 October 2026 · Hugging Face revision <code>{e(dataset['revision'])}</code> · Dataset license: <a href="{e(dataset['license_url'])}">{e(dataset['license'])}</a></p>
 <div class="button-row"><a class="button primary" href="#no-tool-responses">Check no-tool responses</a><a class="button" href="#examples">Listen to sample turns</a><a class="button" href="#analysis">Read the analysis</a><a class="button" href="{e(dataset['dataset_url'])}">Hugging Face dataset</a><a class="button" href="{e(dataset['paper_url'])}">Paper</a></div></header>
-<nav class="msi-jump-links" aria-label="MSI-Bench sections"><a href="#overview">At a glance</a><a href="#composition">Case mix</a><a href="#examples">Audio examples</a><a href="#no-tool-responses">No-tool responses</a><a href="#analysis">Reported findings</a><a href="#provenance">Provenance</a></nav>
+<nav class="msi-jump-links" aria-label="MSI-Bench sections"><a href="#overview">At a glance</a><a href="#composition">Case mix</a><a href="#examples">Audio examples</a><a href="#no-tool-responses">No-tool responses</a><a href="#scoring">Scoring</a><a href="#analysis">Reported findings</a><a href="#provenance">Provenance</a></nav>
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MSI-Bench evaluates a voice assistant in scripted multi-party conversations. Each case includes speaker and scene context, per-turn dialogue, expected tool behavior and atomic scoring criteria.</p>
 <div class="msi-stat-grid"><div class="msi-stat"><strong>{stats['case_count']:,}</strong><span>indexed evaluation cases</span></div><div class="msi-stat"><strong>{stats['languages']['en']} / {stats['languages']['zh']}</strong><span>English / Mandarin cases</span></div><div class="msi-stat"><strong>{len(stats['patterns'])}</strong><span>equally sized interaction patterns</span></div><div class="msi-stat"><strong>{all_files_gb:.2f} GB</strong><span>download size recorded in the asset inventory</span></div></div>
@@ -464,14 +564,19 @@ def build():
 <div class="callout"><h3>Two probe timings test different behavior</h3><p>There is one separate speak-time injected utterance for every case. The 384 hear-time probes apply to selective-disclosure and background-retrieval cases; they point back to existing case WAVs and expect silence before the assistant is addressed. This means the 10,001 WAV inventory is {stats['wav_backed_human_turns']:,} base dialogue turns plus {stats['speak_probe_audio_files']:,} injected lines. Probe counts and definitions come from the release files.</p></div>
 </section>
 <section class="section" id="examples"><h2>Listen to selected original turns</h2>
-<p class="section-intro">The players contain unchanged single-turn WAVs from the release. Read the shown turns in order; other lines from each case are omitted. The transcript text comes from the case JSON. Complete no-tool cases and their dataset reference answers appear in the next section; no evaluated-model outputs are shown on this page.</p>
+<p class="section-intro">The players contain unchanged single-turn WAVs from the release. Read the shown turns in order; other lines from each case are omitted. The transcript text comes from the case JSON. The tool-requiring examples below show their exact expected calls and reference responses; complete no-tool cases appear in the next section. No evaluated-model outputs are shown on this page.</p>
 <div class="callout amber"><h3>These are synthesized scripts</h3><p>The benchmark authors report that the dialogue voices are synthesized from cloned Mozilla Common Voice reference clips. They report no real conversations in the release. Each case WAV also uses the scene’s listed ambience, and a background voice may overlap the foreground turn.</p></div>
 <div class="card-grid msi-examples">{''.join(cards)}</div>
 </section>
 <section class="section" id="no-tool-responses"><h2>Cases scored on the spoken response</h2>
 <p class="section-intro">{stats['no_tool_case_count']:,} of {stats['case_count']:,} cases have the dataset’s <code>no_calls</code> tool policy and expect the assistant to respond: {stats['no_tool_cases_by_pattern']['speaker_authority_constraint']} speaker-authority cases, {stats['no_tool_cases_by_pattern']['selective_disclosure']} selective-disclosure cases and {stats['no_tool_cases_by_pattern']['background_speech_retrieval']} background-speech retrieval cases. The three examples below cover refusal, keeping information private and answering from overlapping speech.</p>
-<div class="callout"><h3>What the page shows</h3><p>Each card contains the complete case timeline, the dataset’s reference response and its scoring rubric. A turn without a released WAV is shown as text context. These are dataset targets, not outputs from a model run. Some case records list candidate functions in their metadata, while their tool policy is explicitly <code>no_calls</code>. This dataset preview does not specify how any model adapter presents function definitions or private reasoning layers.</p></div>
+<div class="callout"><h3>What the page shows</h3><p>Each card contains the complete case timeline, the dataset’s reference response and expandable atomic scoring criteria. A turn without a released WAV is shown as text context. These are dataset targets, not outputs from a model run. Some case records list candidate functions in their metadata, while their tool policy is explicitly <code>no_calls</code>. This dataset preview does not specify how any model adapter presents function definitions or private reasoning layers.</p></div>
 <div class="card-grid msi-examples">{''.join(answer_only_cards)}</div>
+</section>
+<section class="section" id="scoring"><h2>How MSI-Bench scores responses</h2>
+<p class="section-intro">The paper’s described scoring judges the model’s normalized answer and action against atomic criteria; it is not an exact-text comparison with the sample reference answer.</p>
+<div class="callout"><p>The model receives the multi-speaker case and returns normalized output. For semantic judging, the paper says DeepSeek V4 Pro receives the dialogue transcript with acoustic markup stripped, the scene and pattern labels, the rubric and the model’s normalized output. It scores each atomic rubric independently. Thus a <code>no_calls</code> case still gets its response content judged against criteria such as correct refusal, information handling or speaker attribution; the reference answer is an example of a valid response.</p><p>Tool-call structure and arguments are checked by a deterministic validator. In a call-required case, the validator’s verdict is an additional rubric. The reported Tool execution metric covers only cases requiring at least one call; the All-Pass Rate requires every applicable case criterion to pass. The page expands each selected case’s atomic criteria below its reference answer.</p><p>The paper describes judging normalized model output, not listening to the assistant’s generated waveform. It reports no score for spoken-answer naturalness, pronunciation, prosody or response-audio quality. The input is audio; the reported response-content score is based on the normalized answer/action.</p></div>
+<p>See the paper’s <a href="{e(dataset['paper_url'])}">evaluation protocol and metrics</a> for the judge inputs, All-Pass Rate, Atomic Rubric Score and Tool execution definitions.</p>
 </section>
 <section class="section" id="analysis"><h2>What the released cases and paper show</h2>
 <p class="section-intro">The six case patterns form three balanced families. The paper reports mean All-Pass Rate across 15 evaluated model configurations by pattern.</p>
