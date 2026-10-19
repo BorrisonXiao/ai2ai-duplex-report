@@ -1,0 +1,153 @@
+{
+  "benchmark": "Full-Duplex-Bench v3",
+  "checked_on": "2026-10-19",
+  "source_revision": "3e799c45a045256f47d5f1c9cda90157e2d2ec9e",
+  "archive_sha256": "37545bd896f81718136598cf5be25d42ea9aa22efcd91f58370938d05d7d672f",
+  "archive_bytes": 736136419,
+  "stats": {
+    "recordings": 100,
+    "unique_scenario_ids": 79,
+    "anonymized_speaker_ids": 12,
+    "audio_hours": 1.310536,
+    "domain_counts": {
+      "ecommerce_support": 29,
+      "finance_billing": 25,
+      "housing_location": 26,
+      "travel_identity": 20
+    },
+    "difficulty_counts": {
+      "easy": 36,
+      "hard": 30,
+      "medium": 34
+    },
+    "disfluency_recording_counts": {
+      "FALSE_START": 12,
+      "FILLER": 29,
+      "HESITATION": 10,
+      "PAUSE": 18,
+      "SELF_CORRECTION": 17
+    },
+    "metadata_state_rollback_recordings": 17,
+    "expected_tool_call_total": 150,
+    "audio_format_counts": {
+      "1ch_16000Hz_16bit_pcm": 7,
+      "1ch_48000Hz_32bit_pcm": 83,
+      "2ch_48000Hz_32bit_pcm": 10
+    },
+    "duration_seconds": {
+      "min": 36.36,
+      "median": 47.445,
+      "max": 59.16
+    }
+  },
+  "catalogue_crosswalk": {
+    "catalogue_scenario_ids": 100,
+    "audio_scenario_ids": 79,
+    "audio_ids_missing_from_catalogue": [],
+    "catalogue_ids_without_audio": [
+      "ecommerce_03",
+      "ecommerce_22",
+      "ecommerce_24",
+      "finance_05",
+      "finance_09",
+      "finance_13",
+      "finance_24",
+      "finance_25",
+      "housing_07",
+      "housing_12",
+      "housing_16",
+      "housing_23",
+      "travel_04",
+      "travel_06",
+      "travel_09",
+      "travel_12",
+      "travel_13",
+      "travel_15",
+      "travel_17",
+      "travel_22",
+      "travel_25"
+    ],
+    "all_non_dialogue_task_fields_match": true,
+    "non_dialogue_records_matching": 100,
+    "dialogue_note": "Each audio-side metadata file contains its single recorded user turn; matching catalogue rows also contain the scripted agent turn.",
+    "metadata_rollback_recordings": 17,
+    "catalogue_rollback_scenarios": 21
+  },
+  "license": {
+    "archive_license_file_present": false,
+    "upstream_repository_license": "CC BY-NC 4.0",
+    "upstream_repository_license_path": "external/full-duplex-bench/LICENSE",
+    "upstream_repository_license_sha256": "3711f963c05d0be80d53e5923308a6dee31b203da23435c9cfb7c7b6e4dd5e19",
+    "scope_note": "The Drive ZIP has no separate license file; CC BY-NC 4.0 is the top-level upstream repository license."
+  },
+  "examples": [
+    {
+      "id": "finance_18",
+      "role": "Three-tool chain without a disfluency label",
+      "title": "Exchange + Autopay + Benefits Chain",
+      "domain": "finance_billing",
+      "difficulty": "hard",
+      "disfluency_features": [],
+      "expected_tool_calls": 3,
+      "state_rollback_test": false,
+      "source_file": "data/benchmarks/full_duplex_bench_v3/fdb_v3_data_released/finance_18_6998abd731d2ec50d067d5bd/input.wav",
+      "source_sha256": "332eb32d9ab770e73941034189dd28c3c1184cc5a28b7914a80d5e2c71d00fc7",
+      "preview_file": "assets/full-duplex-bench-v3/finance-18.wav",
+      "preview_sha256": "4e426416b23755b02af6ef4e096cb108f1f72b3e77aa44a53bbd413bb04cb3da",
+      "preview_audio": {
+        "channels": 1,
+        "sample_rate_hz": 24000,
+        "sample_width_bytes": 2,
+        "duration_seconds": 49.797291666666666,
+        "bytes": 2390314
+      }
+    },
+    {
+      "id": "travel_19",
+      "role": "Mid-utterance correction and state rollback",
+      "title": "Double Destination + Date Correction",
+      "domain": "travel_identity",
+      "difficulty": "hard",
+      "disfluency_features": [
+        "SELF_CORRECTION"
+      ],
+      "expected_tool_calls": 1,
+      "state_rollback_test": true,
+      "source_file": "data/benchmarks/full_duplex_bench_v3/fdb_v3_data_released/travel_19_695bd157114f0d2317f88617/input.wav",
+      "source_sha256": "3f00a48c3359116baa02dc022d4c0bc8ac6dfe6f6630763e6b24b9123f2cf657",
+      "preview_file": "assets/full-duplex-bench-v3/travel-19.wav",
+      "preview_sha256": "f08d99256337d1852fbc6409106fd8ad535bac150be8c3538ca682061579a79f",
+      "preview_audio": {
+        "channels": 1,
+        "sample_rate_hz": 24000,
+        "sample_width_bytes": 2,
+        "duration_seconds": 49.14,
+        "bytes": 2358764
+      }
+    },
+    {
+      "id": "ecommerce_04",
+      "role": "A pause during an e-commerce request",
+      "title": "Order Tracking with Pause",
+      "domain": "ecommerce_support",
+      "difficulty": "easy",
+      "disfluency_features": [
+        "PAUSE"
+      ],
+      "expected_tool_calls": 1,
+      "state_rollback_test": false,
+      "source_file": "data/benchmarks/full_duplex_bench_v3/fdb_v3_data_released/ecommerce_04_6998abd731d2ec50d067d5bd/input.wav",
+      "source_sha256": "98afde3c0f1d64a967e5ac5198dce78cf558d1bdf804af5ac8f070dbf2948706",
+      "preview_file": "assets/full-duplex-bench-v3/ecommerce-04.wav",
+      "preview_sha256": "f074976b9845371dbecfdc405ca05bea78606c676c6e18c20477cf017045bac0",
+      "preview_audio": {
+        "channels": 1,
+        "sample_rate_hz": 24000,
+        "sample_width_bytes": 2,
+        "duration_seconds": 40.773291666666665,
+        "bytes": 1957162
+      }
+    }
+  ],
+  "source_report": "integrity.json"
+}
