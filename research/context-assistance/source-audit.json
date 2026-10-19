@@ -576,10 +576,19 @@
     },
     {
       "url": "https://github.com/atosystem/MP-Bench",
-      "checked_at": "2026-10-05T00:05:01.265439+00:00",
-      "status": "lookup_failure",
-      "error": "HTTP Error 404: Not Found",
-      "http_status": 404
+      "checked_at": "2026-10-19T23:00:17.749509+00:00",
+      "status": "reachable",
+      "content_type": "text/html",
+      "check_method": "Public repository opened and contents inspected through web.run on 2026-10-19; local pinned release already verified.",
+      "previous_checks": [
+        {
+          "url": "https://github.com/atosystem/MP-Bench",
+          "checked_at": "2026-10-05T00:05:01.265439+00:00",
+          "status": "lookup_failure",
+          "error": "HTTP Error 404: Not Found",
+          "http_status": 404
+        }
+      ]
     },
     {
       "url": "https://github.com/boson-ai/MSI-Bench",

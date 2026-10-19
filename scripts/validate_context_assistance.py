@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit, unquote
 from validate_site import Parser
+from benchmark_scope import SCOPE
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'research/context-assistance'
@@ -21,7 +22,7 @@ def validate():
         parser.feed(text)
         pages[filename]=(text,parser)
         tabs=re.search(r'<nav[^>]*aria-label="Literature review sub-tabs"[^>]*>(.*?)</nav>',text,re.S)
-        assert tabs and tabs[1].count('<a ') == 4 and tabs[1].count('aria-current="page"') == 1
+        assert tabs and tabs[1].count('<a ') == 5 and tabs[1].count('aria-current="page"') == 1
         current=re.search(r'<a[^>]*href="([^"]+)"[^>]*aria-current="page"',tabs[1])[1]
         assert urlsplit(current).path == filename
         project=re.search(r'<nav[^>]*aria-label="Project tabs"[^>]*>(.*?)</nav>',text,re.S)
@@ -31,8 +32,8 @@ def validate():
         for m in re.finditer(r'<(p|h[1-6]|td|th|dd|dt)\b[^>]*>(.*?)</\1>',text,re.S):
             assert '\n' not in m[2] and not re.search(r'<br\b|&nbsp;|&#160;|\u00a0',m[2],re.I)
     text,parser=pages['context-assistance.html']
-    assert len(parser.tables) == 6 and parser.figures == 7
-    for kind,count in [('Table',6),('Figure',7)]:
+    assert len(parser.tables) == 7 and parser.figures == 7
+    for kind,count in [('Table',7),('Figure',7)]:
         labels=[int(m[1]) for label in parser.labels if (m:=re.match(kind+r' (\d+)\.',label))]
         assert labels == list(range(1,count+1)), labels
     for tag,url in parser.links:
@@ -57,7 +58,7 @@ def validate():
         assert 'ref-'+p['id'] in parser.ids and p['date'] <= digest['date']
         assert p['title'] in audit[p['source']]['metadata']['citation_title']
     assert all(set(g['refs']) <= known for g in digest['gaps'])
-    expected={'context-systems':5,'context-benchmarks':9,'context-data':8}
+    expected={'benchmark-scope-table':11,'context-systems':5,'context-benchmarks':9,'context-data':8}
     for g in digest['reported_scores']:
         ident='context-results-'+g['id']
         expected[ident]=len(g['rows'])
@@ -70,14 +71,24 @@ def validate():
         assert len(widths)==len(g['rows'])
     for ident,n in expected.items():
         body=re.search(r'<table id="'+ident+r'">.*?<tbody>(.*?)</tbody>',text,re.S)[1]
-        assert body.count('<tr>') == n,(ident,n)
+        assert len(re.findall(r'<tr\b', body)) == n,(ident,n)
+    scope_rows = dict(re.findall(r'<tr data-benchmark="([^"]+)">(.*?)</tr>', text, re.S))
+    assert list(scope_rows) == [row['id'] for row in SCOPE['rows']]
+    assert parser.tables[0] == 'benchmark-scope-table'
+    for ident, filename in [('msi', 'msi-bench.html'), ('mp', 'mpbench.html')]:
+        detail = (ROOT / filename).read_text()
+        row = re.search(r'<tr data-benchmark="' + ident + r'">(.*?)</tr>', detail, re.S)
+        assert row and row[1] == scope_rows[ident], 'Scope row drift: ' + ident
+        assert detail.index('id="benchmark-scope"') < detail.index('id="overview"')
+        for _, heading in SCOPE['columns']:
+            assert '<th scope="col">' + heading + '</th>' in detail
     md=(OUT/'LITERATURE.md').read_text()
     assert not re.search(r' {2,}\n|\\\n|<br\b',md)
     assert not re.search(r'white-space\s*:\s*(?:pre|nowrap)',(ROOT/'assets/site.css').read_text())
     assert 'context-assistance.html)' in (ROOT/'README.md').read_text()
     manifest=json.loads((ROOT/'assets/context-assistance/manifest.json').read_text())
     assert len(manifest['sources'])==3 and all(len(x['pdf_sha256'])==64 for x in manifest['sources'])
-    print('PASS: four literature sub-tabs; existing focused review preserves 15 verified papers and 6 tables / 7 figures; local links, score/SVG values and natural wrapping.')
+    print('PASS: five literature sub-tabs; 15 verified papers; 7 tables / 7 figures; 11 scope rows with identical MSI/MP detail rows; local links, scores and wrapping.')
 
 if __name__ == '__main__':
     validate()

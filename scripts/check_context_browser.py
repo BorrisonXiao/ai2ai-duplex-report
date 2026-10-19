@@ -6,6 +6,19 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 
+def check_scope(page, width, expected_rows):
+    table=page.locator('#benchmark-scope-table')
+    assert table.locator('thead th').count()==8
+    assert table.locator('tbody tr').count()==expected_rows
+    assert page.evaluate('document.documentElement.scrollWidth') <= width
+    region=page.locator('.benchmark-scope-scroll')
+    assert region.evaluate('el => el.scrollWidth > el.clientWidth')
+    region.evaluate('el => el.scrollLeft = el.scrollWidth')
+    last=table.locator('tbody tr').first.locator('td').last.bounding_box()
+    box=region.bounding_box()
+    assert last['x']+last['width'] <= box['x']+box['width']+2
+    region.evaluate('el => el.scrollLeft = 0')
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--chromium')
@@ -29,12 +42,15 @@ def main():
             page.locator('[aria-label="Literature review sub-tabs"] a').filter(has_text='Context-aware assistance').click()
             page.wait_for_url('**/context-assistance.html')
             assert page.locator('[aria-label="Literature review sub-tabs"] [aria-current="page"]').inner_text() == 'Context-aware assistance'
+            check_scope(page,width,11)
+            shared_header=page.locator('#benchmark-scope-table thead').inner_text()
+            shared_rows={ident:page.locator('[data-benchmark="'+ident+'"]').inner_text() for ident in ('msi','mp')}
             assert page.evaluate('document.documentElement.scrollWidth') <= width
             page.screenshot(path=str(args.output/(name+'.png')))
             page.locator('#context-paper-figures summary').click()
             page.evaluate("document.querySelectorAll('img').forEach(i=>i.loading='eager')")
             page.wait_for_function('Array.from(document.images).every(i=>i.complete && i.naturalWidth>0)')
-            assert page.locator('figure').count()==7 and page.locator('table').count()==6
+            assert page.locator('figure').count()==7 and page.locator('table').count()==7
             for ident,suffix in [('scope','scope'),('context-performance','results'),('context-paper-figures','papers')]:
                 target=page.locator('#'+ident)
                 target.scroll_into_view_if_needed()
@@ -48,12 +64,22 @@ def main():
             assert page.locator('#context-benchmarks-count').inner_text()=='9 of 9 entries'
             page.locator('#context-notes details summary').first.click()
             assert page.locator('#context-notes details').first.get_attribute('open') is not None
+            for ident,filename in [('msi','msi-bench.html'),('mp','mpbench.html')]:
+                page.goto((ROOT/filename).as_uri(),wait_until='load')
+                check_scope(page,width,1)
+                assert page.locator('#benchmark-scope-table thead').inner_text()==shared_header
+                assert page.locator('[data-benchmark="'+ident+'"]').inner_text()==shared_rows[ident]
+                page.locator('#benchmark-scope').screenshot(path=str(args.output/(name+'-'+ident+'-scope.png')),style='.site-nav { visibility: hidden !important; }')
+                if ident=='msi':
+                    page.evaluate("document.querySelectorAll('.msi-reference details').forEach(el=>el.open=true)")
+                    assert page.evaluate("Array.from(document.querySelectorAll('.msi-example')).every(el=>el.scrollWidth<=el.clientWidth+1)")
+                    assert page.evaluate('document.documentElement.scrollWidth') <= width
             assert not errors and all(x.startswith(('file:','data:')) for x in requests)
             page.locator('[aria-label="Literature review sub-tabs"] a').filter(has_text='Duplex landscape').click()
             page.wait_for_url('**/index.html#literature-review')
             assert page.locator('[aria-label="Literature review sub-tabs"] [aria-current="page"]').inner_text()=='Duplex landscape'
             assert page.evaluate('document.documentElement.scrollWidth') <= width
-            checks.append(dict(view=name,width=width,theme=scheme,sub_tab_navigation='passed',filters='passed',figures='passed',page_wide_overflow=False,external_requests=0,javascript_errors=errors))
+            checks.append(dict(view=name,width=width,theme=scheme,sub_tab_navigation='passed',filters='passed',figures='passed',scope_tables='11 overview rows; identical MSI/MP rows; end columns reachable',expanded_msi_json='contained',page_wide_overflow=False,external_requests=0,javascript_errors=errors))
             context.close()
         browser.close()
     (args.output/'browser-validation.json').write_text(json.dumps(dict(status='passed',checks=checks),indent=2)+'\n')

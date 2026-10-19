@@ -17,6 +17,7 @@ PREVIEW = RESEARCH / "preview.json"
 ASSETS = ROOT / "assets/msi-bench"
 sys.path.insert(0, str(ROOT / "scripts"))
 from site_navigation import project_tabs, review_tabs
+from benchmark_scope import render_scope_section
 
 
 PATTERN_LABELS = {
@@ -335,8 +336,8 @@ def composition_table(stats):
         ("Probes", f"{stats['speak_probe_rows']:,} speak-time · {stats['hear_probe_rows']:,} hear-time", "Hear probes cover selective disclosure and background retrieval"),
     ]
     return (
-        '<div class="msi-table-scroll" role="region" aria-label="Table 1: MSI-Bench release composition" tabindex="0">'
-        '<table class="msi-table"><caption>Table 1. MSI-Bench v1 case composition and probe coverage, recomputed from the local case index.</caption>'
+        '<div class="msi-table-scroll" role="region" aria-label="Table 2: MSI-Bench release composition" tabindex="0">'
+        '<table class="msi-table"><caption>Table 2. MSI-Bench v1 case composition and probe coverage, recomputed from the local case index.</caption>'
         '<thead><tr><th scope="col">Dimension</th><th scope="col">Counts</th><th scope="col">Reading</th></tr></thead><tbody>'
         + "".join("<tr><th scope=\"row\">" + e(a) + "</th><td>" + e(b) + "</td><td>" + e(c) + "</td></tr>" for a, b, c in rows)
         + "</tbody></table></div>"
@@ -379,8 +380,8 @@ def pattern_table():
         ("Memory", "Scope tracking · Background speech retrieval", "24.9% · 7.0%"),
     ]
     return (
-        '<div class="msi-table-scroll" role="region" aria-label="Table 2: paper-reported mean pattern All-Pass Rates" tabindex="0">'
-        '<table class="msi-table"><caption>Table 2. Mean pattern All-Pass Rate across the paper’s 15 evaluated model configurations; pattern values follow the displayed order.</caption>'
+        '<div class="msi-table-scroll" role="region" aria-label="Table 3: paper-reported mean pattern All-Pass Rates" tabindex="0">'
+        '<table class="msi-table"><caption>Table 3. Mean pattern All-Pass Rate across the paper’s 15 evaluated model configurations; pattern values follow the displayed order.</caption>'
         '<thead><tr><th scope="col">Capability family</th><th scope="col">Patterns</th><th scope="col">Mean APR by pattern</th></tr></thead><tbody>'
         + "".join("<tr><th scope=\"row\">" + e(a) + "</th><td>" + e(b) + "</td><td>" + e(c) + "</td></tr>" for a, b, c in rows)
         + "</tbody></table></div>"
@@ -605,7 +606,7 @@ def build():
 .msi-tool-calls > li,.msi-rubric-criteria > li {{ margin:10px 0; }}
 .msi-tool-calls ul {{ margin:4px 0; padding-left:22px; }}
 .msi-rubric-criteria p {{ margin:5px 0; }}
-.msi-reference code,.msi-rubric-criteria p,.msi-case-id {{ overflow-wrap:anywhere; word-break:break-word; }}
+.msi-reference,.msi-source-list,.msi-case-id {{ overflow-wrap:anywhere; word-break:break-word; }}
 .msi-reference li,.msi-rubric-criteria li,.msi-prompt-content {{ min-width:0; max-width:100%; }}
 .msi-json-example {{ box-sizing:border-box; max-width:100%; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; word-break:break-word; }}
 .msi-json-example code {{ white-space:inherit; overflow-wrap:anywhere; word-break:break-word; }}
@@ -626,7 +627,8 @@ def build():
 <p class="lede">Listen to selected source turns, then inspect complete cases where the target is a user-facing response with no required tool call. The full local snapshot contains {stats['case_count']:,} indexed cases and {stats['total_wav_files']:,} WAV files.</p>
 <p class="meta">MSI-Bench v1 · 18 October 2026 · Hugging Face revision <code>{e(dataset['revision'])}</code> · Dataset license: <a href="{e(dataset['license_url'])}">{e(dataset['license'])}</a></p>
 <div class="button-row"><a class="button primary" href="#no-tool-responses">Check no-tool responses</a><a class="button" href="#examples">Listen to sample turns</a><a class="button" href="#analysis">Read the analysis</a><a class="button" href="{e(dataset['dataset_url'])}">Hugging Face dataset</a><a class="button" href="{e(dataset['paper_url'])}">Paper</a></div></header>
-<nav class="msi-jump-links" aria-label="MSI-Bench sections"><a href="#overview">At a glance</a><a href="#composition">Case mix</a><a href="#examples">Audio examples</a><a href="#no-tool-responses">No-tool responses</a><a href="#scoring">Scoring</a><a href="#analysis">Reported findings</a><a href="#provenance">Provenance</a></nav>
+<nav class="msi-jump-links" aria-label="MSI-Bench sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#composition">Case mix</a><a href="#examples">Audio examples</a><a href="#no-tool-responses">No-tool responses</a><a href="#scoring">Scoring</a><a href="#analysis">Reported findings</a><a href="#provenance">Provenance</a></nav>
+{render_scope_section(['msi'])}
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MSI-Bench evaluates a voice assistant in scripted multi-party conversations. Each case includes speaker and scene context, per-turn dialogue, expected tool behavior and atomic scoring criteria.</p>
 <div class="msi-stat-grid"><div class="msi-stat"><strong>{stats['case_count']:,}</strong><span>indexed evaluation cases</span></div><div class="msi-stat"><strong>{stats['languages']['en']} / {stats['languages']['zh']}</strong><span>English / Mandarin cases</span></div><div class="msi-stat"><strong>{len(stats['patterns'])}</strong><span>equally sized interaction patterns</span></div><div class="msi-stat"><strong>{all_files_gb:.2f} GB</strong><span>download size recorded in the asset inventory</span></div></div>

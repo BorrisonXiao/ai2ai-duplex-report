@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from site_navigation import project_tabs, review_tabs
+from benchmark_scope import render_scope_section
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'research/mpbench/preview.json').read_text(encoding='utf-8'))
@@ -64,7 +65,7 @@ def build():
     )
     reference_table = (
         '<div class="mpbench-results-scroll" role="region" aria-label="Text-only Gemini reference results" tabindex="0">'
-        '<table class="mpbench-results"><caption>Table 1. Text-only reference scores from paper Table 3 (accuracy %)</caption>'
+        '<table class="mpbench-results"><caption>Table 2. Text-only reference scores from paper Table 3 (accuracy %)</caption>'
         '<thead><tr><th scope="col">Metric</th><th scope="col">ASR-only</th>'
         '<th scope="col">SpkD-ASR</th><th scope="col">Baseline or scoring note</th></tr></thead>'
         '<tbody>' + result_rows_html + '</tbody></table></div>'
@@ -103,7 +104,8 @@ def build():
 <p class="lede">Three complete task clips let you hear the benchmark’s discussion, speaker-identification, and turn-taking settings. Each player is paired with its upstream input transcript and the task’s label.</p>
 <p class="meta">16 October 2026 · Original benchmark audio · Published paper references are identified separately from local model evaluation</p>
 <div class="button-row"><a class="button primary" href="#previews">Listen to the examples</a><a class="button" href="#task-design">What the benchmark measures</a><a class="button" href="''' + e(DATA['repository']) + '''">Official repository</a></div></header>
-<nav class="jump-links" aria-label="MP-Bench sections"><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#previews">Audio and transcripts</a><a href="#scoring">Scoring protocol</a><a href="#text-reference">Text-only references</a><a href="#attribution">Attribution and license</a></nav>
+<nav class="jump-links" aria-label="MP-Bench sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#previews">Audio and transcripts</a><a href="#scoring">Scoring protocol</a><a href="#text-reference">Text-only references</a><a href="#attribution">Attribution and license</a></nav>
+''' + render_scope_section(['mp']) + '''
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MP-Bench evaluates a voice agent as a participant in a four-person spoken conversation: three simulated humans and the agent. The official task set has two scenarios and 927 tasks.</p>
 <div class="stat-grid"><div class="stat"><strong>''' + str(counts['tasks']) + '''</strong><span>audio tasks</span></div>
