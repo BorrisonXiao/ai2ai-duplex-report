@@ -1,0 +1,196 @@
+"""Shared, evidence-grounded input/output explanations for the two AMI reports."""
+from html import escape as e
+
+
+def _step(number, title, operation, inputs, outputs):
+    return (
+        '<li class="ami-module">'
+        '<h3><span class="ami-module-number" aria-hidden="true">' + str(number) + '</span>'
+        + e(title) + '</h3><p>' + e(operation) + '</p><dl>'
+        '<dt>Input</dt><dd>' + e(inputs) + '</dd>'
+        '<dt>Output</dt><dd>' + e(outputs) + '</dd></dl></li>'
+    )
+
+
+def _flow(labels, caption):
+    return (
+        '<figure class="ami-pipeline-figure"><div class="ami-pipeline-route" '
+        'aria-label="Workflow in order">'
+        + '<span aria-hidden="true" class="ami-pipeline-arrow">→</span>'.join(
+            '<span class="ami-pipeline-node">' + e(label) + '</span>' for label in labels
+        )
+        + '</div><figcaption>Figure 1. ' + e(caption) + '</figcaption></figure>'
+    )
+
+
+def _terms(items):
+    return (
+        '<details class="ami-pipeline-terms"><summary>Speech and evaluation terms used here</summary>'
+        '<dl>' + ''.join('<dt>' + e(term) + '</dt><dd>' + e(meaning) + '</dd>' for term, meaning in items)
+        + '</dl></details>'
+    )
+
+
+def question_pipeline(audit):
+    steps = [
+        (
+            'Read the AMI annotations',
+            'Use the corpus’s manual transcription, word timing and speaker labels. This is oracle diarization: the annotation already tells us who spoke when.',
+            'EN2003a word and segment annotations, speaker/channel metadata and the original meeting recording for later replay.',
+            'Utterance records containing A/B/C speaker ID, words, start/end time and source ID. No automatic ASR or diarizer is run to create this text input.',
+        ),
+        (
+            'Build the available meeting history',
+            'Freeze a causal transcript prefix at each question time. Infer a requester’s current task from their earlier speech, such as B’s outreach or C’s webpage work.',
+            'Timed utterances, a source-clock cutoff and an assumed 0.5-second delay after a completed chunk.',
+            'A frozen available prefix and a requester/task description. Unfinished chunks stay out. Metadata identifies speakers and channels; it supplies no formal job roles for this meeting.',
+        ),
+        (
+            'Propose question text',
+            'Compare local text-only LLM generation with questions written by the primary assistant. Prompt variants ask for natural wording, earlier evidence and the latest agreed plan.',
+            'The frozen prefix and generation instructions. Qwen3-4B Instruct and Qwen3-30B Thinking use full prefixes in v1–v3; supervised v4 gives 4B Instruct selected earlier evidence excerpts. Assistant-authored drafts use the same available history.',
+            'Candidate question, requester, source timestamp, proposed reference answer and supporting utterance IDs. The reference answer is a draft annotation, not an original AMI answer.',
+        ),
+        (
+            'Probe whether older history matters',
+            'A 4B Instruct reader tries to answer the question under four context conditions: full available prefix, recent 60 seconds, question alone and prefix with selected evidence removed.',
+            'Question text plus one transcript condition. Proposed reference answers, the evidence list and the inferred task description are withheld from the reader.',
+            'Actual reader answers and citations for comparison. Losing an older required fact under shorter context is useful evidence; an “answerable” flag alone is insufficient. Some evidence can remain elsewhere after removal.',
+        ),
+        (
+            'Review wording and factual support',
+            'The primary assistant checks natural requester motivation, attribution, tentative versus settled plans, reference completeness and whether the question itself reveals its answer.',
+            'Each candidate, its proposed reference, the exact available source utterances and the reader’s actual answers under the four conditions.',
+            'Accept/revise/reject with reasons and retained edit provenance. This is assistant-supervised review, not an independent human annotation study; reader errors remain visible.',
+        ),
+        (
+            'Save separate request and label files',
+            'Keep the question that a system will hear separate from the reference facts used to assess an answer. Select an approved subset for the audio follow-up.',
+            'Reviewed candidates and their evidence. This pilot retains ' + str(audit['accepted']) + ' variants from ' + str(audit['raw_candidates']) + ' raw drafts plus one explicit reference edit.',
+            'Request records: question text, requester ID and source time. Separate label records: proposed answer, atomic claims and evidence. Three retained questions become the TTS inputs on the audio page.',
+        ),
+    ]
+    html = (
+        '<section class="section ami-pipeline" id="pipeline" aria-labelledby="pipeline-title">'
+        '<h2 id="pipeline-title">How the text questions are generated</h2>'
+        '<p>The question-writing stage operates on text. It uses the meeting’s manually transcribed, '
+        'speaker-attributed history to write a new request that a participant could naturally address '
+        'to a separate meeting assistant. Figure 1 gives the data flow; each module below names its input and output.</p>'
+        + _flow(
+            ['Manual transcript + speaker labels', 'Available prefix', 'Question proposals', 'Reader controls + review', 'Requests + separate labels'],
+            'Text-generation pipeline. Only earlier available transcript enters question generation. Reference answers remain evaluation annotations and are withheld from reader inputs.',
+        )
+        + '<ol class="ami-module-grid">'
+        + ''.join(_step(i, *step) for i, step in enumerate(steps, 1)) + '</ol>'
+        '<p class="ami-pipeline-note"><strong>Text-to-audio handoff.</strong> The '
+        '<a href="ami-question-audio.html#pipeline">audio pipeline</a> receives approved question text, '
+        'requester ID and a planned insertion time. W3’s later audio insertion is moved to a complete-sentence '
+        'boundary; the original text-generation and reader cutoff remains recorded in the timing table below. '
+        'The text study already contains proposed reference answers; the audio follow-up synthesizes questions only.</p>'
+        + _terms([
+            ('Oracle diarization', 'Known speaker labels from the corpus, rather than speaker identities estimated from audio by a model.'),
+            ('Causal prefix', 'Only transcript chunks released before the chosen source time. The 0.5-second release delay is a preparation assumption, not measured streaming-ASR latency.'),
+            ('Reference answer', 'A proposed answer plus the facts needed for scoring. It is kept separate from the question and is not human-verified ground truth.'),
+            ('Reader control', 'The same question answered with different amounts of history, to inspect which earlier facts the answer actually needs. The 4B reader is also a generator in one setting, so it is not an independent judge.'),
+        ]) + '</section>'
+    )
+    return html
+
+
+def audio_pipeline():
+    steps = [
+        (
+            'Choose the question events',
+            'Take three unchanged, accepted questions from the text study: B asks about poster capacity and outreach; C asks about the webpage deadlines.',
+            'Approved question text, requester ID and planned source time: B at 17:55.00 and 26:18.92; C at 35:35.50.',
+            'Three question events that say what to speak, whose voice to condition on and where to pause the original recording. Reference-answer text is not a synthesis input.',
+        ),
+        (
+            'Prepare the speaker prompts',
+            'Crop roughly 8–10 seconds of the requester’s earlier speech and retain its manual transcript. Compare individual-headset and mixed-channel references, plus an alternate utterance.',
+            'Original AMI audio, manual word timing and the corrected speaker/channel mapping: B = Headset-1, C = Headset-3. Every conditioning excerpt precedes its question time.',
+            'Short reference WAV + known words + sample rate. Keep a different original utterance for speaker-similarity checking; it never conditions the TTS model.',
+        ),
+        (
+            'Run zero-shot speaker-conditioned TTS',
+            'Generate new speech in the reference speaker’s voice without training speaker-specific weights. Qwen and Chatterbox generate speech codes (audio tokens) for a neural decoder; F5 generates a mel-spectrogram (a time–frequency representation) for its Vocos vocoder.',
+            'Question text + reference audio. Qwen3-TTS and F5-TTS also receive the reference transcript; Chatterbox uses the audio reference. Delivery and sampling settings are varied. Qwen inference uses vLLM-Omni.',
+            'Raw question WAVs at 24 kHz: three models × three questions × four settings = 36 outputs, with the exact reference and settings logged. The TTS model receives a short voice prompt, not the full meeting history.',
+        ),
+        (
+            'Check words and compare voices',
+            'Parakeet ASR transcribes each generated waveform. An ECAPA speaker encoder converts it and unused original utterances into speaker embeddings for comparison.',
+            'Raw question WAV, intended question text, a held-out utterance from the requester and an utterance from the other requester.',
+            'Recognized words and word error rate (WER), plus similarity to each speaker. Choose wording-qualified outputs first, then the strongest requester similarity within each model/question group: nine listening candidates.',
+        ),
+        (
+            'Match the recording and recheck audio',
+            'Resample to the meeting’s 16 kHz, trim outer silence, match active-speech RMS level and add only missing background-noise power using earlier speech-free room tone. Short fades affect inserted audio only.',
+            'Selected raw WAV, original same-speaker level in the meeting mix and captured room tone from before the insertion time.',
+            'Nine processed question WAVs, rechecked with Parakeet, Whisper-base and speaker/clipping measurements. Final clips use no extra EQ or added reverberation. ASR and speaker scores support screening; naturalness and identity still need listening.',
+        ),
+        (
+            'Pause, splice and resume',
+            'Copy original audio up to the selected source time, insert the processed question with short room-tone pads, then resume from the same original sample.',
+            'Original mixed-headset waveform, source-time event and the processed question WAV. The source clock stays fixed while playback advances through the insertion.',
+            'For review: about 14–20 seconds of preceding context, the synthetic question and 5 seconds of resumed source. Locally: a full replay with three F5 insertions and a 480 ms packet manifest. Original source samples are preserved exactly.',
+        ),
+    ]
+    html = (
+        '<section class="section ami-pipeline" id="pipeline" aria-labelledby="pipeline-title">'
+        '<h2 id="pipeline-title">How the question audio is generated and inserted</h2>'
+        '<p>Question generation and speech synthesis are separate stages. The '
+        '<a href="ami-questions.html#pipeline">text pipeline</a> decides what a participant could ask from earlier '
+        'meeting history. This pipeline uses a short original utterance to condition how that approved question '
+        'sounds, then places its waveform into the recording.</p>'
+        + _flow(
+            ['Approved question + requester + time', 'Earlier speaker prompt', 'TTS waveform', 'Word + voice checks', 'Recording match + paused insertion'],
+            'Audio-generation pipeline. Reference audio supplies speaker identity and acoustic cues; question text supplies the words. All synthesis is prepared offline, and answers remain deferred.',
+        )
+        + '<ol class="ami-module-grid">'
+        + ''.join(_step(i, *step) for i, step in enumerate(steps, 1)) + '</ol>'
+        '<aside class="ami-pipeline-note"><h3>Side experiment: TTS → voice conversion</h3>'
+        '<p><strong>Input:</strong> the F5 deadline-question waveform and a target-speaker reference from C. '
+        '<strong>Module:</strong> Chatterbox’s voice-conversion model keeps the spoken content while trying '
+        'to change the voice. <strong>Output:</strong> two converted question WAVs, checked again with ASR '
+        'and the speaker encoder. Both reduce C’s held-out similarity, so the main replay uses direct F5. '
+        'The converted clips remain available below.</p></aside>'
+        '<p><strong>Two clocks, one pause.</strong> If the source pauses at 17:55, its next original sample '
+        'still comes from 17:55 after the question finishes; playback time has advanced by the inserted duration. '
+        'Each model-comparison clip is a separate branch from the original recording. The local full replay '
+        'combines the three selected F5 questions. Neither produces an assistant answer or demonstrates live TTS latency.</p>'
+        + _terms([
+            ('Speaker conditioning / zero-shot voice cloning', 'Use an example of a person’s speech to guide a new utterance in that voice, without fine-tuning model weights on that person.'),
+            ('Vocoder / neural audio decoder', 'The component that turns a mel-spectrogram or speech codes into waveform samples that can be played.'),
+            ('ASR and WER', 'Automatic speech recognition converts the synthesized audio back into text. Word error rate compares those recognized words with the intended question; zero WER is an ASR check, not proof of exact pronunciation.'),
+            ('Speaker embedding and cosine similarity', 'A numerical voice representation and a score comparing two utterances. The original comparison utterance is held out from TTS conditioning, but is used for development-time selection; the score is not an identity probability.'),
+            ('Active-speech RMS and room tone', 'Average waveform level while speech is active, and the recording’s low-level background noise. Matching them helps the inserted audio sit at the level and noise floor of the meeting.'),
+        ]) + '</section>'
+    )
+    return html
+
+
+def pipeline_styles():
+    return '''
+.ami-pipeline{margin:30px 0 42px;scroll-margin-top:24px}
+.ami-pipeline-figure{margin:20px 0 24px;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.ami-pipeline-route{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.ami-pipeline-node{padding:8px 11px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;font-weight:650;max-width:100%;overflow-wrap:anywhere}
+.ami-pipeline-arrow{color:var(--accent);font-size:1.3rem}
+.ami-pipeline-figure figcaption{margin:14px 0 0;line-height:1.65;color:var(--muted)}
+.ami-module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0}
+.ami-module{min-width:0;margin:0;padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.ami-module h3{display:flex;align-items:flex-start;gap:9px;font-size:1.06rem;margin:0 0 14px;line-height:1.45}
+.ami-module-number{flex-shrink:0;display:inline-flex;justify-content:center;align-items:center;width:25px;height:25px;border-radius:50%;background:var(--accent);color:var(--bg);font-size:.85rem}
+.ami-module p,.ami-module dd{font-size:.94rem;line-height:1.65;margin:0 0 12px;overflow-wrap:anywhere}
+.ami-module dl{margin:16px 0 0;border-top:1px solid var(--border);padding-top:12px}
+.ami-module dt,.ami-pipeline-terms dt{font-weight:700;color:var(--accent);margin:8px 0 3px}
+.ami-module dd{margin-left:0;margin-bottom:10px}
+.ami-pipeline-note{margin:20px 0;padding:16px 20px;border-left:3px solid var(--accent);background:var(--surface-2);border-radius:0 8px 8px 0;overflow-wrap:anywhere}
+.ami-pipeline-note h3{font-size:1.05rem;margin:0 0 8px}
+.ami-pipeline-note p{margin:0;line-height:1.7}
+.ami-pipeline-terms{margin-top:20px}
+.ami-pipeline-terms dd{margin:0 0 12px;line-height:1.7}
+@media(max-width:1000px){.ami-module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.ami-module-grid{grid-template-columns:1fr}.ami-module{padding:17px}.ami-pipeline-route{flex-direction:column;align-items:stretch}.ami-pipeline-arrow{align-self:center;transform:rotate(90deg);line-height:1}.ami-pipeline-node{text-align:center}.ami-pipeline-figure{padding:16px}}
+'''
