@@ -5,7 +5,7 @@ def project_tabs(current, prefix=""):
 
 
 def review_tabs(current):
-    items = [('landscape', 'Duplex landscape', 'index.html#literature-review'), ('context', 'Context-aware assistance', 'context-assistance.html'), ('mpbench', 'MP-Bench', 'mpbench.html'), ('msi', 'MSI-Bench', 'msi-bench.html'), ('multitalk', 'MultiTalkBench', 'multitalk-bench.html'), ('fdb', 'Full-Duplex-Bench v3', 'full-duplex-bench.html'), ('prethinking', 'Pre-thinking proposal', 'prethinking.html')]
+    items = [('landscape', 'Duplex landscape', 'index.html#literature-review'), ('context', 'Context-aware assistance', 'context-assistance.html'), ('mpbench', 'MP-Bench', 'mpbench.html'), ('msi', 'MSI-Bench', 'msi-bench.html'), ('multitalk', 'MultiTalkBench', 'multitalk-bench.html'), ('fdb2', 'Full-Duplex-Bench v2', 'full-duplex-bench-v2.html'), ('fdb', 'Full-Duplex-Bench v3', 'full-duplex-bench.html'), ('prethinking', 'Pre-thinking proposal', 'prethinking.html')]
     return '<nav class="review-tabs" aria-label="Literature review sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
 
 

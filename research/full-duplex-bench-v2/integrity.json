@@ -1,0 +1,124 @@
+{
+  "status": "validated_with_metadata_caveat",
+  "checked_at_utc": "2026-10-20T01:53:39.972121+00:00",
+  "benchmark": "Full-Duplex-Bench v2",
+  "source_repository": "https://github.com/DanielLin94144/Full-Duplex-Bench",
+  "source_revision": "3e799c45a045256f47d5f1c9cda90157e2d2ec9e",
+  "source_revision_date": "2026-05-20",
+  "license": "CC BY-NC 4.0 (upstream top-level LICENSE)",
+  "local_data_directory": "data/benchmarks/full_duplex_bench_v2/",
+  "dataset": {
+    "task_count": 200,
+    "family_count": 4,
+    "class_count": 18,
+    "splits": [
+      {
+        "split": "Daily",
+        "tasks": 50,
+        "class_count": 5,
+        "class_task_counts": {
+          "ordering": 10,
+          "planning": 10,
+          "reservations": 10,
+          "scheduling": 10,
+          "troubleshoot": 10
+        }
+      },
+      {
+        "split": "Correction",
+        "tasks": 50,
+        "class_count": 1,
+        "class_task_counts": {
+          "correction": 50
+        }
+      },
+      {
+        "split": "EntityTracking",
+        "tasks": 50,
+        "class_count": 1,
+        "class_task_counts": {
+          "entity_tracking": 50
+        }
+      },
+      {
+        "split": "Safety",
+        "tasks": 50,
+        "class_count": 11,
+        "class_task_counts": {
+          "adult_minors": 3,
+          "agent_safety": 3,
+          "copyright": 3,
+          "cyber_illicit": 5,
+          "financial_legal": 5,
+          "health_mental": 6,
+          "health_physical": 6,
+          "illegal_physical": 5,
+          "misinfo": 5,
+          "privacy": 4,
+          "toxicity_bias": 5
+        }
+      }
+    ],
+    "static_audio_recordings": 0,
+    "static_audio_present": false,
+    "prompt_file_version": 6,
+    "settings_declared_in_prompt_file": {
+      "turn_limit": 5,
+      "max_duration_sec": 60,
+      "examiner_can_interrupt": true,
+      "examiner_is_interruptible": false,
+      "language": "en-US"
+    }
+  },
+  "files": [
+    {
+      "path": "data/benchmarks/full_duplex_bench_v2/prompts_staged_200.json",
+      "source_path": "v2/prompts_staged_200.json",
+      "bytes": 652630,
+      "sha256": "a606a9740bb48245f9b63e36c8a0c09b4fb49a98f4b00280992a1caa1828f62e",
+      "matches_pinned_upstream_blob": true
+    },
+    {
+      "path": "data/benchmarks/full_duplex_bench_v2/eval_prompts.json",
+      "source_path": "v2/eval/eval_prompts.json",
+      "bytes": 6494,
+      "sha256": "3c1540512de3fce1ed804d842a2f262d815ca37acfe626f3a1712e7765ee34c9",
+      "matches_pinned_upstream_blob": true
+    },
+    {
+      "path": "data/benchmarks/full_duplex_bench_v2/LICENSE",
+      "source_path": "LICENSE",
+      "bytes": 19346,
+      "sha256": "3711f963c05d0be80d53e5923308a6dee31b203da23435c9cfb7c7b6e4dd5e19",
+      "matches_pinned_upstream_blob": true
+    }
+  ],
+  "validation": {
+    "source_blobs_match_pinned_commit": true,
+    "file_sizes_and_sha256_match_manifest": true,
+    "prompt_json_parses": true,
+    "evaluation_prompts_json_parses": true,
+    "all_task_ids_unique": true,
+    "task_schema_and_class_references": "pass",
+    "expected_tasks_per_family": {
+      "Daily": 50,
+      "Correction": 50,
+      "EntityTracking": 50,
+      "Safety": 50
+    },
+    "no_static_audio_files": true,
+    "source_note_consistency": {
+      "source_note": "Staged 150 tasks from 150prompt.txt using v9 scaffolding. Splits: Daily (5 classes), Correction, EntityTracking.",
+      "actual_task_count": 200,
+      "actual_splits": [
+        "Daily",
+        "Correction",
+        "EntityTracking",
+        "Safety"
+      ],
+      "mismatch": true,
+      "detail": "The source note says 150 tasks across Daily, Correction and EntityTracking; the parsed arrays contain 200 tasks across those families plus Safety. The upstream file is preserved without editing."
+    }
+  },
+  "scope_note": "FDB-v2 is a real-time Examiner/Evaluatee framework. The checked v2 artifact contains prompts, not a static audio corpus; Examiner speech is generated during evaluation."
+}

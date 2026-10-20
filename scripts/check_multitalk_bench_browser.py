@@ -42,7 +42,7 @@ def main():
             page.on("request", lambda request: requests.append(request.url))
             page.goto((ROOT / "multitalk-bench.html").as_uri(), wait_until="load")
             assert page.title() == "MultiTalkBench Test Data — AI2AI Duplex"
-            assert page.locator(".review-tabs a").count() == 7
+            assert page.locator(".review-tabs a").count() == 8
             assert page.locator(".review-tabs a[aria-current='page']").inner_text() == "MultiTalkBench"
             assert page.locator("#benchmark-scope-table tr[data-benchmark='multitalk']").count() == 1
             assert page.locator("#audio-examples audio").count() == 2
@@ -76,7 +76,7 @@ def main():
                 audioReady: [...document.querySelectorAll('#audio-examples audio')].map(x => x.readyState)
             })""")
             assert dimensions["document"] <= width, dimensions
-            assert dimensions["scopeRows"] == 1 and dimensions["menuItems"] == 7, dimensions
+            assert dimensions["scopeRows"] == 1 and dimensions["menuItems"] == 8, dimensions
             assert dimensions["auditCards"] == 6, dimensions
             assert not errors, errors
             assert all(url.startswith(("file:", "data:")) for url in requests), requests
@@ -94,7 +94,7 @@ def main():
 
     report = {"status": "passed", "page": "multitalk-bench.html", "checks": checks}
     (args.output / "browser-validation.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print("PASS: four responsive/theme views, local FLAC decode/playback, audit content and seven-tab navigation.")
+    print("PASS: four responsive/theme views, local FLAC decode/playback, audit content and eight-tab navigation.")
 
 
 if __name__ == "__main__":

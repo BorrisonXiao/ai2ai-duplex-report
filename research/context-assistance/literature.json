@@ -1431,6 +1431,44 @@
         "short_name": "Full-Duplex-Bench v1.5"
       },
       {
+        "id": "fdb-v2",
+        "name": "Full-Duplex-Bench v2",
+        "page": "full-duplex-bench-v2.html",
+        "speakers": "Two roles: a spoken Examiner and the model under evaluation; no multi-party speaker set.",
+        "origin": "Authored staged role-play prompts and synthesized Examiner speech. The checked release contains JSON prompts, not recorded human audio.",
+        "interface": "Real-time audio exchange between two model adapters over WebRTC, using 48 kHz mono PCM in 10 ms frames and Fast/Slow Examiner pacing.",
+        "semantics": "Yes: per-event turn-taking fluency and instruction-following, plus dialogue-level Correction, Entity Tracking and Safety scores on a 1–5 scale.",
+        "tools": "No model tool-call execution or argument metric; the examiner and judge are orchestration/scoring components.",
+        "timing": "Limited: streaming turn events are scored and tracked over time; the paper does not report an absolute stop-delay or first-response latency metric.",
+        "exclusions": "No natural recorded user audio, multi-party diarization, dedicated acoustic speech-quality score or v3 tool-use tasks. Fast pacing permits interruptions and backchannels, but there is no separate stop-latency measure.",
+        "sources": [
+          [
+            "ACL 2026 paper §§2–3",
+            "https://aclanthology.org/2026.acl-short.4/"
+          ],
+          [
+            "Pinned v2 task prompts",
+            "https://github.com/DanielLin94144/Full-Duplex-Bench/blob/3e799c45a045256f47d5f1c9cda90157e2d2ec9e/v2/prompts_staged_200.json"
+          ],
+          [
+            "Official source repository",
+            "https://github.com/DanielLin94144/Full-Duplex-Bench/tree/3e799c45a045256f47d5f1c9cda90157e2d2ec9e/v2"
+          ]
+        ],
+        "quick": {
+          "multi": "No",
+          "synthetic": "Yes",
+          "model": "Duplex",
+          "content": "Yes",
+          "calls": "No",
+          "timed": "Limited",
+          "interrupt": "Limited",
+          "backchannel": "Limited",
+          "quality": "No"
+        },
+        "short_name": "Full-Duplex-Bench v2"
+      },
+      {
         "id": "fdb-v3",
         "name": "Full-Duplex-Bench v3",
         "page": "full-duplex-bench.html",

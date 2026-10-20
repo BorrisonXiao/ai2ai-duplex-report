@@ -1,0 +1,184 @@
+{
+  "benchmark": "Full-Duplex-Bench v2",
+  "paper": "https://aclanthology.org/2026.acl-short.4/",
+  "repository": "https://github.com/DanielLin94144/Full-Duplex-Bench",
+  "source_revision": "3e799c45a045256f47d5f1c9cda90157e2d2ec9e",
+  "checked_at_utc": "2026-10-20T01:53:39.972121+00:00",
+  "license": "CC BY-NC 4.0",
+  "prompt_file_version": 6,
+  "task_count": 200,
+  "family_count": 4,
+  "class_count": 18,
+  "split_counts": [
+    {
+      "split": "Daily",
+      "task_count": 50,
+      "classes": [
+        "Ordering",
+        "Scheduling",
+        "Planning",
+        "Reservations",
+        "Troubleshooting & Exceptions"
+      ],
+      "class_count": 5,
+      "description": "Routine requests such as ordering, scheduling, planning, reservations, and troubleshooting."
+    },
+    {
+      "split": "Correction",
+      "task_count": 50,
+      "classes": [
+        "Correction (Mid-/Cross-turn Repairs)"
+      ],
+      "class_count": 1,
+      "description": "Mid-turn and cross-turn repairs where a speaker revises an earlier detail or intent."
+    },
+    {
+      "split": "EntityTracking",
+      "task_count": 50,
+      "classes": [
+        "Entity Tracking"
+      ],
+      "class_count": 1,
+      "description": "Reference resolution and keeping entity attributes consistent across turns."
+    },
+    {
+      "split": "Safety",
+      "task_count": 50,
+      "classes": [
+        "Physical Health (Non-diagnostic)",
+        "Mental Health & Crisis Support",
+        "Illegal Activities (Physical-world)",
+        "Cybersecurity & Illicit Tech",
+        "Privacy, Surveillance & Doxxing",
+        "Bias, Hate, Harassment",
+        "Financial/Legal High-Risk",
+        "Adult/Sexual Content & Minors",
+        "Misinformation (Health/Politics)",
+        "Copyright/Illicit Media",
+        "Agent/Tool-use Safety (Optional)"
+      ],
+      "class_count": 11,
+      "description": "Eleven safety classes that test boundary setting, refusal, and safe redirection."
+    }
+  ],
+  "settings_declared_in_prompt_file": {
+    "turn_limit": 5,
+    "max_duration_sec": 60,
+    "examiner_can_interrupt": true,
+    "examiner_is_interruptible": false,
+    "language": "en-US"
+  },
+  "source_note_consistency": {
+    "source_note": "Staged 150 tasks from 150prompt.txt using v9 scaffolding. Splits: Daily (5 classes), Correction, EntityTracking.",
+    "actual_task_count": 200,
+    "actual_splits": [
+      "Daily",
+      "Correction",
+      "EntityTracking",
+      "Safety"
+    ],
+    "mismatch": true,
+    "detail": "The source note says 150 tasks across Daily, Correction and EntityTracking; the parsed arrays contain 200 tasks across those families plus Safety. The upstream file is preserved without editing."
+  },
+  "static_audio_recordings": 0,
+  "local_files": [
+    {
+      "name": "prompts_staged_200.json",
+      "bytes": 652630,
+      "sha256": "a606a9740bb48245f9b63e36c8a0c09b4fb49a98f4b00280992a1caa1828f62e"
+    },
+    {
+      "name": "eval_prompts.json",
+      "bytes": 6494,
+      "sha256": "3c1540512de3fce1ed804d842a2f262d815ca37acfe626f3a1712e7765ee34c9"
+    }
+  ],
+  "examples": [
+    {
+      "split": "Daily",
+      "id": "Daily.ordering.001",
+      "class_name": "Ordering",
+      "scenario_title": "Breakfast set takeaway",
+      "skills_tested": [
+        "constraints",
+        "confirmation"
+      ]
+    },
+    {
+      "split": "Correction",
+      "id": "Correction.001",
+      "class_name": "Correction (Mid-/Cross-turn Repairs)",
+      "scenario_title": "Train ticket date shift (T2 corrects T1)",
+      "skills_tested": [
+        "repair",
+        "consistency",
+        "readback"
+      ]
+    },
+    {
+      "split": "EntityTracking",
+      "id": "EntityTracking.001",
+      "class_name": "Entity Tracking",
+      "scenario_title": "Café shortlist with noise/quiet attribute",
+      "skills_tested": [
+        "entity_reference",
+        "confirmation"
+      ]
+    },
+    {
+      "split": "Safety",
+      "id": "Safety.health_physical.001",
+      "class_name": "Physical Health (Non-diagnostic)",
+      "scenario_title": "OTC cold relief with blood-pressure concern",
+      "skills_tested": [
+        "safety_boundary",
+        "risk_awareness",
+        "disclaimer"
+      ]
+    }
+  ],
+  "author_reported_task_scores": [
+    {
+      "system": "Freeze-Omni",
+      "pacing": "Fast",
+      "correction": 2.74,
+      "entity_tracking": 2.62,
+      "safety": 3.94
+    },
+    {
+      "system": "Moshi",
+      "pacing": "Fast",
+      "correction": 2.88,
+      "entity_tracking": 2.76,
+      "safety": 3.67
+    },
+    {
+      "system": "GPT-Realtime",
+      "pacing": "Fast",
+      "correction": 4.02,
+      "entity_tracking": 4.51,
+      "safety": 4.44
+    },
+    {
+      "system": "Freeze-Omni",
+      "pacing": "Slow",
+      "correction": 3.5,
+      "entity_tracking": 2.86,
+      "safety": 4.27
+    },
+    {
+      "system": "Moshi",
+      "pacing": "Slow",
+      "correction": 3.46,
+      "entity_tracking": 3.84,
+      "safety": 3.51
+    },
+    {
+      "system": "GPT-Realtime",
+      "pacing": "Slow",
+      "correction": 3.94,
+      "entity_tracking": 4.12,
+      "safety": 4.53
+    }
+  ]
+}

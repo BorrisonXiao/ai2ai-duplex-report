@@ -1,0 +1,242 @@
+#!/usr/bin/env python3
+"""Build the Full-Duplex-Bench v2 data audit and benchmark preview."""
+
+from datetime import datetime
+import hashlib
+import html
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = ROOT.parent
+DATA = PROJECT_ROOT / "data/benchmarks/full_duplex_bench_v2"
+INTEGRITY_SOURCE = PROJECT_ROOT / "reports/full_duplex_bench_v2_integrity.json"
+RESEARCH = ROOT / "research/full-duplex-bench-v2"
+PAGE = ROOT / "full-duplex-bench-v2.html"
+
+from site_navigation import project_tabs, review_tabs
+from benchmark_scope import render_scope_section
+
+
+REPOSITORY = "https://github.com/DanielLin94144/Full-Duplex-Bench"
+REVISION = "3e799c45a045256f47d5f1c9cda90157e2d2ec9e"
+PAPER = "https://aclanthology.org/2026.acl-short.4/"
+LICENSE_URL = "https://creativecommons.org/licenses/by-nc/4.0/"
+FAMILY_DESCRIPTIONS = {
+    "Daily": "Routine requests such as ordering, scheduling, planning, reservations, and troubleshooting.",
+    "Correction": "Mid-turn and cross-turn repairs where a speaker revises an earlier detail or intent.",
+    "EntityTracking": "Reference resolution and keeping entity attributes consistent across turns.",
+    "Safety": "Eleven safety classes that test boundary setting, refusal, and safe redirection.",
+}
+PAPER_RESULTS = [
+    {"system": "Freeze-Omni", "pacing": "Fast", "correction": 2.74, "entity_tracking": 2.62, "safety": 3.94},
+    {"system": "Moshi", "pacing": "Fast", "correction": 2.88, "entity_tracking": 2.76, "safety": 3.67},
+    {"system": "GPT-Realtime", "pacing": "Fast", "correction": 4.02, "entity_tracking": 4.51, "safety": 4.44},
+    {"system": "Freeze-Omni", "pacing": "Slow", "correction": 3.50, "entity_tracking": 2.86, "safety": 4.27},
+    {"system": "Moshi", "pacing": "Slow", "correction": 3.46, "entity_tracking": 3.84, "safety": 3.51},
+    {"system": "GPT-Realtime", "pacing": "Slow", "correction": 3.94, "entity_tracking": 4.12, "safety": 4.53},
+]
+SAMPLES = ["Daily", "Correction", "EntityTracking", "Safety"]
+
+
+def e(value):
+    return html.escape(str(value), quote=True)
+
+
+def sha256(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def build_preview(prompt_data, integrity):
+    split_rows = []
+    examples = []
+    for split, block in prompt_data["splits"].items():
+        class_names = [item["name"] for item in block["classes"]]
+        split_rows.append({
+            "split": split,
+            "task_count": len(block["tasks"]),
+            "classes": class_names,
+            "class_count": len(class_names),
+            "description": FAMILY_DESCRIPTIONS[split],
+        })
+        task = block["tasks"][0]
+        examples.append({
+            "split": split,
+            "id": task["id"],
+            "class_name": task["class_name"],
+            "scenario_title": task["scenario_title"],
+            "skills_tested": task["skills_tested"],
+        })
+    prompt_record = next(item for item in integrity["files"] if item["source_path"] == "v2/prompts_staged_200.json")
+    eval_record = next(item for item in integrity["files"] if item["source_path"] == "v2/eval/eval_prompts.json")
+    preview = {
+        "benchmark": "Full-Duplex-Bench v2",
+        "paper": PAPER,
+        "repository": REPOSITORY,
+        "source_revision": REVISION,
+        "checked_at_utc": integrity["checked_at_utc"],
+        "license": "CC BY-NC 4.0",
+        "prompt_file_version": prompt_data["version"],
+        "task_count": sum(row["task_count"] for row in split_rows),
+        "family_count": len(split_rows),
+        "class_count": sum(row["class_count"] for row in split_rows),
+        "split_counts": split_rows,
+        "settings_declared_in_prompt_file": prompt_data["settings"],
+        "source_note_consistency": integrity["validation"]["source_note_consistency"],
+        "static_audio_recordings": integrity["dataset"]["static_audio_recordings"],
+        "local_files": [
+            {"name": "prompts_staged_200.json", "bytes": prompt_record["bytes"], "sha256": prompt_record["sha256"]},
+            {"name": "eval_prompts.json", "bytes": eval_record["bytes"], "sha256": eval_record["sha256"]},
+        ],
+        "examples": examples,
+        "author_reported_task_scores": PAPER_RESULTS,
+    }
+    RESEARCH.mkdir(parents=True, exist_ok=True)
+    (RESEARCH / "preview.json").write_text(json.dumps(preview, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (RESEARCH / "integrity.json").write_text(json.dumps(integrity, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return preview
+
+
+def render_page(preview):
+    css_hash = hashlib.sha256((ROOT / "assets/site.css").read_bytes()).hexdigest()[:12]
+    task_json = f"{REPOSITORY}/blob/{REVISION}/v2/prompts_staged_200.json"
+    eval_json = f"{REPOSITORY}/blob/{REVISION}/v2/eval/eval_prompts.json"
+    source_tree = f"{REPOSITORY}/tree/{REVISION}/v2"
+    audit_url = "research/full-duplex-bench-v2/integrity.json"
+    task_rows = []
+    task_cards = []
+    for row in preview["split_counts"]:
+        task_rows.append(
+            "<tr><th scope=\"row\">" + e(row["split"]) + "</th>"
+            + "<td>" + str(row["task_count"]) + "</td>"
+            + "<td>" + str(row["class_count"]) + "</td>"
+            + "<td>" + e(", ".join(row["classes"])) + "</td>"
+            + "<td>" + e(row["description"]) + "</td></tr>"
+        )
+    for item in preview["examples"]:
+        task_cards.append(
+            "<article class=\"card fdbv2-example\"><span class=\"tag\">" + e(item["split"]) + " · " + e(item["class_name"]) + "</span>"
+            + "<h3>" + e(item["scenario_title"]) + "</h3><p class=\"meta\">Example task ID: <code>" + e(item["id"]) + "</code></p>"
+            + "<p>Skill labels: " + e(", ".join(item["skills_tested"])) + "</p></article>"
+        )
+    result_rows = []
+    for row in preview["author_reported_task_scores"]:
+        result_rows.append(
+            "<tr><th scope=\"row\">" + e(row["system"]) + "</th><td>" + e(row["pacing"]) + "</td>"
+            + "<td>" + f"{row['correction']:.2f}" + "</td><td>" + f"{row['entity_tracking']:.2f}" + "</td>"
+            + "<td>" + f"{row['safety']:.2f}" + "</td></tr>"
+        )
+    audit = preview["source_note_consistency"]
+    status_label = "Validated with a source metadata caveat" if audit["mismatch"] else "Validated"
+    file_rows = []
+    for item in preview["local_files"]:
+        file_rows.append(
+            "<tr><th scope=\"row\">" + e(item["name"]) + "</th><td>" + f"{item['bytes']:,}" + "</td>"
+            + "<td><code>" + e(item["sha256"]) + "</code></td></tr>"
+        )
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An integrity-checked preview of Full-Duplex-Bench v2: 200 staged prompts for real-time multi-turn audio evaluation, four task families, source hashes, scoring protocol and paper-reported reference scores.">
+<meta name="color-scheme" content="light dark">
+<title>Full-Duplex-Bench v2 Preview — AI2AI Duplex</title>
+<link rel="stylesheet" href="assets/site.css?v={css_hash}">
+<script src="assets/site.js" defer></script>
+<style>
+.fdbv2-table-scroll {{ overflow-x:auto; margin:20px 0; border:1px solid var(--border); border-radius:12px; background:var(--surface); }}
+.fdbv2-table {{ width:100%; min-width:760px; border-collapse:collapse; }}
+.fdbv2-table caption {{ padding:16px; color:var(--muted); font-weight:700; text-align:left; }}
+.fdbv2-table th, .fdbv2-table td {{ padding:13px 16px; border-top:1px solid var(--border); text-align:left; vertical-align:top; }}
+.fdbv2-table th[scope="row"] {{ min-width:135px; }}
+.fdbv2-table td.numeric {{ white-space:nowrap; font-variant-numeric:tabular-nums; }}
+.fdbv2-example {{ min-width:0; }}
+.fdbv2-hash {{ overflow-wrap:anywhere; }}
+.fdbv2-license {{ overflow-wrap:anywhere; }}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to benchmark preview</a>
+<header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a>{project_tabs('literature')}</div></header>
+<main id="main"><div class="container">{review_tabs('fdb2')}
+<header class="hero" id="fdb-v2-review"><p class="eyebrow">Literature review · Dataset and protocol preview</p>
+<h1>Full-Duplex-Bench v2: evaluating live multi-turn speech interaction</h1>
+<p class="lede">The pinned v2 task set contains 200 staged role-play prompts across Daily, Correction, Entity Tracking, and Safety. It is designed for live Examiner–Evaluatee audio conversations; the release contains prompt JSON rather than a static recording corpus.</p>
+<p class="meta">{datetime.now().astimezone().strftime('%d %B %Y')} · Source revision <code>{REVISION[:12]}</code> · {e(status_label)} · No local model inference or benchmark scoring</p>
+<div class="button-row"><a class="button primary" href="#task-design">Inspect the task set</a><a class="button" href="#evaluation">Read the protocol</a><a class="button" href="{e(task_json)}">Pinned task JSON</a><a class="button" href="{e(PAPER)}">ACL 2026 paper</a></div></header>
+<nav class="jump-links" aria-label="Full-Duplex-Bench v2 sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#examples">Example tasks</a><a href="#evaluation">Scoring</a><a href="#paper-results">Paper results</a><a href="#audit">Download audit</a><a href="#attribution">Attribution</a></nav>
+{render_scope_section(['fdb-v2'], number=1)}
+<section class="section" id="overview"><h2>At a glance</h2>
+<p class="section-intro">FDB-v2 uses a spoken Examiner to guide the model under evaluation through a staged conversation. The task JSON and scoring prompts are checked against the official repository at one pinned revision.</p>
+<div class="stat-grid"><div class="stat"><strong>{preview['task_count']}</strong><span>staged task prompts</span></div>
+<div class="stat"><strong>{preview['family_count']}</strong><span>task families, 50 prompts each</span></div>
+<div class="stat"><strong>{preview['class_count']}</strong><span>scenario classes</span></div>
+<div class="stat"><strong>0</strong><span>pre-recorded v2 input audio files</span></div></div>
+<p>The Examiner delivers synthesized speech and adjusts the next goal based on the Evaluatee’s response. The paper describes Fast and Slow pacing, a streaming WebRTC orchestrator, and a canonical 48 kHz mono PCM interface with 10 ms frames. The two roles are the Examiner and the Evaluatee; this is not a multi-party group-conversation benchmark.</p>
+<div class="callout"><h3>What is in the local download</h3><p>The workspace stores the task set, evaluator prompt file, and upstream license under <code>data/benchmarks/full_duplex_bench_v2/</code>. The public preview links to the original pinned files; it does not copy the full task prompts onto the website. The upstream v2 runner creates audio during live evaluation.</p></div>
+</section>
+<section class="section" id="task-design"><h2>Four prompt families</h2>
+<p class="section-intro">Each task includes an examiner role, a staged semantic-goal prompt, skill labels, metric-focus labels, and a flag allowing examiner barge-in. The v6 prompt file declares a five-turn limit and a 60-second duration setting.</p>
+<div class="fdbv2-table-scroll" role="region" aria-label="Full-Duplex-Bench v2 task family counts" tabindex="0"><table class="fdbv2-table"><caption>Table 2. Counts from the locally validated v6 prompt arrays; class names are copied from the prompt file.</caption>
+<thead><tr><th scope="col">Family</th><th scope="col">Prompts</th><th scope="col">Classes</th><th scope="col">Class names</th><th scope="col">Focus</th></tr></thead><tbody>{''.join(task_rows)}</tbody></table></div>
+<p>The Fast examiner takes more initiative and may interrupt or backchannel; the Slow examiner waits for the model to finish or pause. These are interaction settings, not separate pre-recorded audio versions of each prompt.</p>
+</section>
+<section class="section" id="examples"><h2>Four example scenarios</h2>
+<p class="section-intro">These cards show the first task ID and short scenario title in each split. They identify the format without reproducing the complete public prompt set.</p>
+<div class="card-grid">{''.join(task_cards)}</div>
+</section>
+<section class="section" id="evaluation"><h2>How the live evaluation is scored</h2>
+<div class="card-grid">
+<article class="card"><span class="tag">Turn-taking fluency</span><h3>Coordination at each event</h3><p>The automated judge labels Evaluatee turn-taking events and scores response naturalness and timing on a 1–5 scale. The paper discusses overlaps and handoffs and reports scores over the dialogue timeline.</p></article>
+<article class="card"><span class="tag blue">Instruction following</span><h3>Staged goals across turns</h3><p>A separate 1–5 event score measures whether the model understands and executes the Examiner’s current semantic goal while retaining earlier constraints.</p></article>
+<article class="card"><span class="tag amber">Task-specific competence</span><h3>Dialogue-level outcome</h3><p>Correction Handling, Entity Tracking, and Safety receive one global 1–5 score per dialogue. Daily prompts are evaluated through the shared turn-taking and instruction-following dimensions.</p></article>
+</div>
+<p>The paper’s setup uses a synthesized-speech GPT-Realtime Examiner, Parakeet-TDT transcription, and a Gemini 2.5 Flash judge. Reproduction therefore depends on model/API versions and evaluator prompts in addition to the static task file. The authors report judge–human Krippendorff’s α values from 0.588 to 0.693 across metrics; these figures describe their validation study, not this local data audit.</p>
+<div class="callout amber"><h3>Timing coverage is partial</h3><p>FDB-v2 scores perceived turn-taking fluency during live streaming and plots event scores over time. The paper does not report an absolute first-response or interruption-stop latency metric. A smoothness score should not be interpreted as a measured stop delay.</p></div>
+</section>
+<section class="section" id="paper-results"><h2>Author-reported task-specific scores</h2>
+<p class="section-intro">These are the authors’ global task-specific scores from ACL 2026 Table 1, not local model runs. Scores range from 1 to 5; higher is better. Turn-taking fluency and instruction-following trajectory results are reported separately in the paper’s Figure 2.</p>
+<div class="fdbv2-table-scroll" role="region" aria-label="Author-reported FDB-v2 task-specific scores" tabindex="0"><table class="fdbv2-table"><caption>Table 3. Paper-reported Correction, Entity Tracking, and Safety scores by system and Examiner pacing; 1–5 scale.</caption>
+<thead><tr><th scope="col">System</th><th scope="col">Pacing</th><th scope="col">Correction</th><th scope="col">Entity Tracking</th><th scope="col">Safety</th></tr></thead><tbody>{''.join(result_rows)}</tbody></table></div>
+<p>Fast and Slow are independent Examiner settings. The paper notes that slower pacing can help some systems recover instruction-following performance on memory-heavy tasks. The table is a context reference only and has not been recomputed from the downloaded prompts.</p>
+</section>
+<section class="section" id="audit"><h2>Download and integrity audit</h2>
+<p class="section-intro">The task set was extracted byte-for-byte from the official repository at commit <a href="{e(REPOSITORY + '/commit/' + REVISION)}"><code>{REVISION}</code></a>. The scoring prompt and license were copied from that same commit. The audit checks hashes against Git blobs, parses all JSON, verifies every task ID and class reference, and checks the expected per-family counts.</p>
+<div class="fdbv2-table-scroll" role="region" aria-label="Downloaded FDB-v2 file hashes" tabindex="0"><table class="fdbv2-table"><caption>Table 4. Locally downloaded files; SHA-256 values match the recorded import manifest and pinned Git blobs.</caption>
+<thead><tr><th scope="col">File</th><th scope="col">Bytes</th><th scope="col">SHA-256</th></tr></thead><tbody>{''.join(file_rows)}</tbody></table></div>
+<div class="callout amber"><h3>Upstream note does not match the data arrays</h3><p>The source JSON’s top-level note says it stages 150 tasks across Daily, Correction, and Entity Tracking. Its actual arrays contain 200 unique prompts: 50 in each of four splits, including Safety. All four arrays, task schemas, class references, and pinned-source hashes pass validation. The stale note remains unchanged in the downloaded file and is recorded as a metadata caveat in the <a href="{e(audit_url)}">full integrity report</a>.</p></div>
+<p>The audit is for a prompt release, not audio quality. No audio files are packaged in the checked v2 task directory; the Examiner’s spoken input is synthesized during evaluation. No benchmark model inference, transcription, judging, or GPU allocation was performed for this page.</p>
+<p class="meta">Audit status: <strong>{e(status_label)}</strong> · {preview['task_count']} prompts · {preview['class_count']} classes · pinned source SHA-256 checks passed</p>
+</section>
+<section class="section" id="attribution"><h2>Attribution, license, and related versions</h2>
+<p class="fdbv2-license"><strong>Full-Duplex-Bench v2</strong> by Guan-Ting Lin, Shih-Yun Shan Kuan, Jiatong Shi, Kai-Wei Chang, Siddhant Arora, Shinji Watanabe, and Hung-yi Lee. “Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner.” In <em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</em>, pages 27–36, 2026. <a href="{e(PAPER)}">ACL Anthology</a>; DOI <a href="https://doi.org/10.18653/v1/2026.acl-short.4">10.18653/v1/2026.acl-short.4</a>.</p>
+<p>Source repository: <a href="{e(source_tree)}">Full-Duplex-Bench v2 at the pinned revision</a>. The repository’s top-level dataset/code license is <a href="{e(LICENSE_URL)}">CC BY-NC 4.0</a>. This page provides an attributed summary and selected scenario titles; it does not imply endorsement by the authors. See the full <a href="research/full-duplex-bench-v2/ATTRIBUTION.md">attribution record</a>.</p>
+<p>Compare versions: <a href="full-duplex-bench.html">Full-Duplex-Bench v3</a> evaluates tool use with released human recordings; <a href="{e(REPOSITORY + '/tree/' + REVISION + '/v1_v1.5')}">v1/v1.5</a> cover earlier static turn-taking and overlap tests.</p>
+<details><summary>Paper citation (BibTeX)</summary><pre><code>@inproceedings{{lin-etal-2026-full,
+  title = {{Full-Duplex-{{B}}ench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner}},
+  author = {{Lin, Guan-Ting and Kuan, Shih-Yun Shan and Shi, Jiatong and Chang, Kai-Wei and Arora, Siddhant and Watanabe, Shinji and Lee, Hung-yi}},
+  booktitle = {{Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)}},
+  pages = {{27--36}},
+  year = {{2026}},
+  doi = {{10.18653/v1/2026.acl-short.4}}
+}}</code></pre></details>
+</section>
+<footer class="site-footer"><p>AI2AI Duplex · Literature review · <a href="index.html#literature-review">Back to duplex landscape</a> · <a href="{e(source_tree)}">Official source</a></p></footer>
+</div></main>
+</body></html>
+'''
+
+
+def main():
+    prompt_data = json.loads((DATA / "prompts_staged_200.json").read_text(encoding="utf-8"))
+    integrity = json.loads(INTEGRITY_SOURCE.read_text(encoding="utf-8"))
+    preview = build_preview(prompt_data, integrity)
+    page = render_page(preview)
+    PAGE.write_text(page, encoding="utf-8")
+    print(f"Built {PAGE.relative_to(ROOT)} from {preview['task_count']} validated prompt entries")
+
+
+if __name__ == "__main__":
+    main()

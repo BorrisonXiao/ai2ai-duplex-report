@@ -42,7 +42,7 @@ def main():
             page.on("request", lambda request: requests.append(request.url))
             page.goto((ROOT / "full-duplex-bench.html").as_uri(), wait_until="load")
             assert page.title() == "Full-Duplex-Bench v3 Preview — AI2AI Duplex"
-            assert page.locator(".review-tabs a").count() == 7
+            assert page.locator(".review-tabs a").count() == 8
             assert page.locator(".review-tabs a[aria-current='page']").inner_text() == "Full-Duplex-Bench v3"
             assert page.locator("#benchmark-scope-table tr[data-benchmark='fdb-v3']").count() == 1
             assert page.locator(".fdb-table caption").count() == 2
@@ -77,7 +77,7 @@ def main():
                 audioReady: [...document.querySelectorAll('#audio-examples audio')].map(x => x.readyState)
             })""")
             assert dimensions["document"] <= width, dimensions
-            assert dimensions["scopeRows"] == 1 and dimensions["menuItems"] == 7, dimensions
+            assert dimensions["scopeRows"] == 1 and dimensions["menuItems"] == 8, dimensions
             assert not errors, errors
             assert all(url.startswith(("file:", "data:")) for url in requests), requests
             if name in ("desktop", "mobile", "narrow", "dark"):
@@ -95,7 +95,7 @@ def main():
 
     report = {"status": "passed", "page": "full-duplex-bench.html", "checks": checks}
     (args.output / "browser-validation.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print("PASS: four responsive/theme views, local audio decode/playback, scope row and seven-tab navigation.")
+    print("PASS: four responsive/theme views, local audio decode/playback, scope row and eight-tab navigation.")
 
 
 if __name__ == "__main__":

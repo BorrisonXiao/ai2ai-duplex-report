@@ -22,7 +22,7 @@ def validate():
         parser.feed(text)
         pages[filename]=(text,parser)
         tabs=re.search(r'<nav[^>]*aria-label="Literature review sub-tabs"[^>]*>(.*?)</nav>',text,re.S)
-        assert tabs and tabs[1].count('<a ') == 7 and tabs[1].count('aria-current="page"') == 1
+        assert tabs and tabs[1].count('<a ') == 8 and tabs[1].count('aria-current="page"') == 1
         current=re.search(r'<a[^>]*href="([^"]+)"[^>]*aria-current="page"',tabs[1])[1]
         assert urlsplit(current).path == filename
         project=re.search(r'<nav[^>]*aria-label="Project tabs"[^>]*>(.*?)</nav>',text,re.S)
@@ -58,7 +58,7 @@ def validate():
         assert 'ref-'+p['id'] in parser.ids and p['date'] <= digest['date']
         assert p['title'] in audit[p['source']]['metadata']['citation_title']
     assert all(set(g['refs']) <= known for g in digest['gaps'])
-    expected={'benchmark-scope-table':12,'context-systems':5,'context-benchmarks':9,'context-data':8}
+    expected={'benchmark-scope-table':len(SCOPE['rows']),'context-systems':5,'context-benchmarks':9,'context-data':8}
     for g in digest['reported_scores']:
         ident='context-results-'+g['id']
         expected[ident]=len(g['rows'])
@@ -88,7 +88,7 @@ def validate():
     assert 'context-assistance.html)' in (ROOT/'README.md').read_text()
     manifest=json.loads((ROOT/'assets/context-assistance/manifest.json').read_text())
     assert len(manifest['sources'])==3 and all(len(x['pdf_sha256'])==64 for x in manifest['sources'])
-    print('PASS: seven literature sub-tabs; 15 verified papers; 7 tables / 7 figures; 12 scope rows match MSI/MP/MultiTalk detail pages; local links, scores and wrapping.')
+    print(f'PASS: eight literature sub-tabs; 15 verified papers; 7 tables / 7 figures; {len(SCOPE["rows"])} scope rows match MSI/MP/MultiTalk detail pages; local links, scores and wrapping.')
 
 if __name__ == '__main__':
     validate()
