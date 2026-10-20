@@ -1,0 +1,43 @@
+{
+  "upstream_commit": "3979639b5a2b89fe2a85c323e286928cbfea5acb",
+  "checked_date": "2026-10-19",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "MultiTalkBench/prompt_builder.py",
+      "url": "https://raw.githubusercontent.com/multitalk-ai/MultiTalk/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/prompt_builder.py",
+      "sha256": "8cf25166fff2c023d22462a879ec2fcdfd10649adde5df58e96acbfa517ccbca",
+      "bytes": 74519
+    },
+    {
+      "path": "MultiTalkBench/benchmark.py",
+      "url": "https://raw.githubusercontent.com/multitalk-ai/MultiTalk/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py",
+      "sha256": "94e1d1c1ff7d33f63ad3f87adc77700db5e824caa557108c9c85d602e25b0082",
+      "bytes": 32001
+    },
+    {
+      "path": "MultiTalkBench/judge/gemma4.py",
+      "url": "https://raw.githubusercontent.com/multitalk-ai/MultiTalk/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/judge/gemma4.py",
+      "sha256": "7c14d825d002d9d3cb88c30420f6c911e249e4bc13ee671b3532e235e4f758ae",
+      "bytes": 4806
+    },
+    {
+      "path": "MultiTalkBench/config.py",
+      "url": "https://raw.githubusercontent.com/multitalk-ai/MultiTalk/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/config.py",
+      "sha256": "71a8c0d095db00bc67247cdbcf1a9111ac007a294e272114f17cb5944ce8f2c7",
+      "bytes": 3771
+    },
+    {
+      "path": "MultiTalkBench/README.md",
+      "url": "https://raw.githubusercontent.com/multitalk-ai/MultiTalk/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/README.md",
+      "sha256": "19ee982ccd0d3800f7fa0526107365c123e3ad0aba695d5310bd06d4b8027664",
+      "bytes": 7854
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/multitalk-ai/MultiTalk/3979639b5a2b89fe2a85c323e286928cbfea5acb/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    }
+  ]
+}

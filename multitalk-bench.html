@@ -3,11 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="MultiTalkBench test-set coverage, two attributed audio excerpts, and a full local data integrity audit.">
+<meta name="description" content="MultiTalkBench evaluation protocol, exact Gemma judge prompt examples, scoring rules, two audio excerpts and a complete test-data audit.">
 <meta name="color-scheme" content="light dark">
-<title>MultiTalkBench Test Data — AI2AI Duplex</title>
+<title>MultiTalkBench Evaluation and Test Data — AI2AI Duplex</title>
 <link rel="stylesheet" href="assets/site.css?v=776af14a9dee">
 <script src="assets/site.js" defer></script>
+<script>window.MathJax = {tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]}, svg: {fontCache: 'global'}};</script>
+<script id="MathJax-script" defer src="assets/vendor/mathjax/tex-svg.js"></script>
 <style>
 .mtb-preview-figure { margin:24px 0; }
 .mtb-example { display:flex; flex-direction:column; }
@@ -18,6 +20,16 @@
 .mtb-audit-item { padding:18px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
 .mtb-audit-item h3 { font-size:16px; }
 .mtb-audit-item p { margin:0; color:var(--muted); font-size:14px; }
+.mtb-prompt { min-width:0; }
+.mtb-prompt summary { overflow-wrap:anywhere; }
+.hero h1 { overflow-wrap:anywhere; }
+.container pre { white-space:pre-wrap; overflow-wrap:anywhere; }
+.container code { overflow-wrap:anywhere; }
+.mtb-prompt pre, #illustrative-transcript pre { white-space:pre-wrap; overflow-wrap:anywhere; padding:16px; border-radius:8px; background:var(--surface-2); font-size:13px; line-height:1.6; max-height:600px; overflow:auto; }
+.mtb-workflow li { margin:12px 0; }
+.equation { overflow-x:auto; margin:14px 0; padding:14px 16px; border-radius:9px; background:var(--surface-2); }
+.equation mjx-container[display="true"] { margin:0 !important; }
+mjx-container { max-width:100%; }
 @media (max-width:700px) { .mtb-audit-grid { grid-template-columns:minmax(0,1fr); } }
 </style>
 </head>
@@ -25,12 +37,12 @@
 <a class="skip-link" href="#main">Skip to MultiTalkBench review</a>
 <header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="index.html" aria-current="page">Literature review</a><a href="experiments/index.html">Experiments</a></nav></div></header>
 <main id="main"><div class="container"><nav class="review-tabs" aria-label="Literature review sub-tabs"><a href="index.html#literature-review">Duplex landscape</a><a href="context-assistance.html">Context-aware assistance</a><a href="mpbench.html">MP-Bench</a><a href="msi-bench.html">MSI-Bench</a><a href="multitalk-bench.html" aria-current="page">MultiTalkBench</a><a href="full-duplex-bench-v2.html">Full-Duplex-Bench v2</a><a href="full-duplex-bench.html">Full-Duplex-Bench v3</a><a href="prethinking.html">Pre-thinking proposal</a></nav>
-<header class="hero"><p class="eyebrow">Literature review · Dataset preview</p>
+<header class="hero"><p class="eyebrow">Literature review · Evaluation protocol and dataset preview</p>
 <h1>MultiTalkBench: long, multi-party speech in English and Chinese</h1>
-<p class="lede">A local test-set audit for a benchmark that evaluates a model as one participant in a long group conversation.</p>
+<p class="lede">How a model replaces one participant in a long group conversation, how Gemma judges its contributions, and what those scores can establish.</p>
 <p class="meta">MultiTalkBench test split · Checked 19 October 2026 · Hugging Face revision <code>d7188c179603</code> · Dataset license: CC BY-SA 4.0</p>
-<div class="button-row"><a class="button primary" href="#audio-examples">Listen to excerpts</a><a class="button" href="#validation">Read the integrity check</a><a class="button" href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Dataset card</a><a class="button" href="https://arxiv.org/abs/2609.36903">Paper</a></div></header>
-<nav class="jump-links" aria-label="MultiTalkBench sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#audio-examples">Audio examples</a><a href="#data-layout">Data layout</a><a href="#validation">Local validation</a><a href="#reproduce">Reproduce</a><a href="#provenance">Attribution</a></nav>
+<div class="button-row"><a class="button primary" href="#evaluation-protocol">Read the evaluation protocol</a><a class="button" href="#judge-prompts">Inspect actual prompts</a><a class="button" href="#audio-examples">Listen to excerpts</a><a class="button" href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Dataset card</a><a class="button" href="https://arxiv.org/abs/2609.36903">Paper</a></div></header>
+<nav class="jump-links" aria-label="MultiTalkBench sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#evaluation-protocol">Protocol</a><a href="#judge-prompts">Judge prompts</a><a href="#scoring">Scoring</a><a href="#evaluation-limits">Interpretation</a><a href="#audio-examples">Audio examples</a><a href="#data-layout">Data layout</a><a href="#validation">Local validation</a><a href="#reproduce">Reproduce</a><a href="#provenance">Attribution</a></nav>
 <section class="section benchmark-scope" id="benchmark-scope"><h2>What this benchmark tests</h2><p class="benchmark-scope-hint">Yes = tested; No = no dedicated test; Limited = partial coverage. Details and sources below.</p><div class="benchmark-scope-scroll" role="region" aria-label="Benchmark scope comparison" tabindex="0"><table id="benchmark-scope-table"><caption>Table 1. Benchmark coverage.</caption><thead><tr><th scope="col">Benchmark</th><th scope="col">Multi-party</th><th scope="col">Synthetic</th><th scope="col">Target model</th><th scope="col">Content</th><th scope="col">Tools</th><th scope="col">Timing</th><th scope="col">User interruption</th><th scope="col">Backchannels</th><th scope="col">Speech quality</th></tr></thead><tbody><tr data-benchmark="multitalk"><th scope="row"><a href="multitalk-bench.html">MultiTalkBench</a></th><td class="scope-yes">Yes</td><td class="scope-no">No</td><td class="scope-label">Duplex</td><td class="scope-yes">Yes</td><td class="scope-no">No</td><td class="scope-partial">Limited</td><td class="scope-no">No</td><td class="scope-no">No</td><td class="scope-no">No</td></tr></tbody></table></div><details class="benchmark-scope-details"><summary>Definitions, caveats and sources</summary><p>Coverage of the published evaluation protocol, not every task that could be built from the data. Model interface describes the intended input/output route; it does not imply that every capability of that model is evaluated.</p><p>Multi-party means a group setting, in text or audio. Synthetic describes the conversation/voice material; Mixed combines generated and human material. Target model: Text = text input/output; Audio→text = audio input, text/JSON output; Voice = voice interaction; Duplex = concurrent listening and speaking. Alternative adapters and text controls are listed below.</p><p>Content = semantic response scoring; Tools = call correctness; Timing = participation or response timing; User interruption = yielding/recovery when a user interrupts; Backchannels = generation or tolerance of brief acknowledgments; Speech quality = acoustic/prosodic scoring. A Yes does not imply comprehensive coverage. MSI bystander interference is distinct from directed user interruption. Source check: 2026-10-19.</p><article class="benchmark-scope-note"><h3>MultiTalkBench</h3><dl><dt>Multi-speaker setting</dt><dd>Yes: real multi-party recordings; the model replaces a designated named participant.</dd><dt>Data origin</dt><dd>Human recordings from meeting, dinner-party, in-car and telephone corpora; constructed alignments/persona prompts. Distinct from synthetic MultiTalkPT/FT training data.</dd><dt>Input, protocol and model interface</dt><dd>Long audio conversations for full-duplex speech models; target-participant outputs are aligned and inserted into the peer transcript for offline judging.</dd><dt>Semantic response scoring</dt><dd>Yes: response quality, speaker/state tracking, group interaction and role-specific contributions.</dd><dt>Tool-call scoring</dt><dd>No dedicated function-call execution/argument metric.</dd><dt>Duplex and timing coverage</dt><dd>Limited: mechanical first-to-last speech-span participation score; content/role judgments. The paper explicitly excludes direct latency/interruption-timing measurement.</dd><dt>What the scores do not establish</dt><dd>Its scores do not certify barge-in stop latency, backchannel timing, acoustic fluency or tool use, despite targeting full-duplex models.</dd></dl><p><a href="https://arxiv.org/html/2609.36903">Paper §2.2; Appendix E</a> · <a href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Benchmark card</a></p></article><p><a href="research/benchmark-scope.json">Shared scope data</a> · <a href="context-assistance.html#benchmark-scope">Compare all benchmarks</a></p></details></section>
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MultiTalkBench is a held-out, long-form speech-to-speech benchmark. Each row pairs a real meeting recording with a designated participant, that participant’s aligned speech, and persona/context material. The evaluated model takes the designated participant’s role while the other participants remain part of the conversation.</p>
@@ -42,6 +54,784 @@
 <thead><tr><th scope="col">Split</th><th scope="col">Samples</th><th scope="col">Coverage</th></tr></thead><tbody><tr><th scope="row">English</th><td>60</td><td>60 of 104 samples</td></tr><tr><th scope="row">Chinese</th><td>44</td><td>44 of 104 samples</td></tr><tr><th scope="row">All samples</th><td>104</td><td>56.52 hours across 27 meetings</td></tr></tbody></table></div>
 <p>The release describes tests of long conversations, multi-party participation, and bilingual ability. It includes explicit probes for long-range entity tracking and topic coherence alongside addressee selection and turn-taking. The scope table above distinguishes those content and participation judgments from direct interruption latency, acoustic fluency, and tool-use evaluation.</p>
 </section>
+
+<section class="section" id="evaluation-protocol"><h2>How a sample is evaluated</h2>
+<p class="section-intro">The model takes one participant’s place in a recorded conversation. Its contributions are judged as part of a reconstructed group transcript by <code>google/gemma-4-31B-it</code>. A separate mechanical measure compares the span of its participation with the original human participant’s span.</p>
+<p>The other participants follow their original recordings; they do not adapt to the model’s new statements. The detailed persona prompt or alternative minimal prompt conditions model inference. Those persona files are distinct from the judge prompts below: the judge receives the speaker list, target alias and reconstructed transcript. The released adapters save timestamped text in an <code>alignments</code> array for evaluation. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/README.md">Adapter and judge setup</a> · <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py#L239">Transcript construction</a></p>
+<ol class="mtb-workflow"><li><strong>Run the target participant.</strong> Replay the peer audio through the model adapter and save the model’s timestamped output text.</li><li><strong>Build the judging transcript.</strong> Remove padding tokens, join model tokens into utterances, and split when the gap exceeds 1.2 seconds. Interleave these with the peers’ reference sentence alignments in start-time order.</li><li><strong>Assign aliases.</strong> The target becomes <code>A:</code>; peers become <code>B:</code>, <code>C:</code>, and so on. Every judge call includes a reminder to cite only the target’s lines.</li><li><strong>Judge six modules.</strong> Identify the target’s observed dominant role, then obtain general, multi-party and role-specific ratings. This role comes from the reconstructed transcript, rather than a fixed gold role label.</li><li><strong>Aggregate ratings.</strong> Normalize the ratings, average within three groups, and apply the released code’s participation multiplier.</li></ol>
+<div class="callout"><h3>What the judge can see</h3><p>The judge reads text with speaker aliases. Although timestamps determine utterance order and the participation metric, they are omitted from the judging transcript itself. The judge does not hear waveform quality, pauses or overlap. Its assessments of conversational rhythm and competing inputs are therefore based on the text sequence. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py#L338">Exact transcript formatting</a></p></div>
+<div class="table-wrap"><table id="mtb-judge-calls"><caption>Table 3. The six intended judge calls for each sample.</caption><thead><tr><th scope="col">Call</th><th scope="col">Tests</th><th scope="col">Output / example evidence sought</th></tr></thead><tbody>
+<tr><th scope="row"><a href="#prompt-call1">1 · Role identification</a></th><td>Facilitator, Driver, Collaborator or Evaluator</td><td>Primary/secondary role, confidence, turn count, evidence and reasoning. For example, does the target allocate turns and close decisions?</td></tr>
+<tr><th scope="row"><a href="#prompt-call2a">2a · M1–M2</a></th><td>Speaker tracking; differentiated responses</td><td>Does it attribute an earlier statement correctly and respond to different people’s distinct concerns?</td></tr>
+<tr><th scope="row"><a href="#prompt-call2b">2b · M3–M4</a></th><td>Cross-speaker information integration; disagreement handling</td><td>Does it combine facts from several speakers and address three-way conflicting positions?</td></tr>
+<tr><th scope="row"><a href="#prompt-call2c">2c · M5–M6</a></th><td>Group awareness; input prioritization</td><td>Does it consider everyone present and explain how it resolves contradictory inputs?</td></tr>
+<tr><th scope="row"><a href="#prompt-call3a">3a · G1–G4</a></th><td>Clarity/actionability; response relevance; agenda fit; progress</td><td>Does it provide concrete, responsive contributions that help the meeting advance?</td></tr>
+<tr><th scope="row"><a href="#prompt-call3b-facilitator">3b · Assigned role</a></th><td>Four or five dimensions for the role identified by Call 1</td><td>For a facilitator: agenda momentum, activating participation, converging on decisions, closure and fairness.</td></tr>
+</tbody></table></div>
+<p>Table 3 describes rubric judgments, including speaker tracking and addressee-sensitive behavior; these are not separate exact-match addressee labels or timed turn-boundary accuracy tests. A sample receives 14 ratings, or 15 for a facilitator. Across all four role branches there are 27 judged dimensions, plus mechanical P1. The paper describes independent calls after role identification; the pinned <code>benchmark.py</code> executes its call list sequentially. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/prompt_builder.py#L625">Complete definitions and English templates</a> · <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py#L656">Execution loop</a></p>
+</section>
+<section class="section" id="judge-prompts"><h2>Actual prompts, with an illustrative meeting</h2>
+<p class="section-intro">Expand a module below to read its complete system and user messages. They are rendered from the unchanged public prompt builder at commit <code>3979639b5a2b</code>, with the same target-only reminder used by the benchmark. The short meeting below is authored for explanation; it is not a benchmark sample, a model output, or a scored result.</p>
+<p>In this example, B supplies the 500-dollar limit and C reserves 100 dollars for testing; A combines those inputs into a 400-dollar design budget. This gives the integration module something concrete to assess. A also asks both peers for input and records an owner and deadline, which the facilitator module can examine. There is no three-way conflict, so the example does not demonstrate disagreement-handling ability. No judge has rated this example.</p>
+<details id="illustrative-transcript"><summary>Read the authored transcript used in every prompt example</summary><pre><code>A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.</code></pre></details>
+<p>Each scoring system message supplies the shared 1–5 rubric and dimension-specific questions. Its required JSON includes <code>score</code>, <code>positive_evidence</code>, <code>negative_evidence</code> and <code>reasoning</code> for each dimension. English evidence snippets are limited to 12 words and one item per evidence array; reasoning is limited to 40 words. The Chinese templates use 20-character evidence and 40-character reasoning limits. The general and role prompts instruct the judge to assess meeting behavior, rather than domain knowledge correctness. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/prompt_builder.py#L180">Output schema and shared rubric</a></p>
+<div class="table-wrap"><table id="mtb-rating-rubric"><caption>Table 4. Shared ordinal rubric; labels are summarized from the source.</caption><thead><tr><th scope="col">Rating</th><th scope="col">Interpretation</th><th scope="col">Normalized value</th></tr></thead><tbody>
+<tr><th scope="row">5</th><td>Outstanding; clear positive evidence and no notable flaws</td><td>100</td></tr><tr><th scope="row">4</th><td>Good; minor imperfections</td><td>75</td></tr><tr><th scope="row">3</th><td>Adequate; baseline behavior</td><td>50</td></tr><tr><th scope="row">2</th><td>Noticeable problems affecting meeting outcomes</td><td>25</td></tr><tr><th scope="row">1</th><td>Little evidence or clear negative behavior</td><td>0</td></tr><tr><th scope="row">N/A</th><td>Fewer than five valid speaking turns; insufficient material to judge</td><td>0; included at the minimum, not dropped</td></tr>
+</tbody></table></div>
+<p>The four Call 3b examples show alternative branches. In a real evaluation, only the branch selected by Call 1 is used. We set the role explicitly here to expose each template; this is not a judge’s inferred role. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/prompt_builder.py#L917">Role-specific definitions</a></p>
+<details class="mtb-prompt" id="prompt-call1"><summary>call1 · Role identification</summary><p><a href="research/multitalk-bench/prompts/call1.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a professional meeting behavior analyst specializing in identifying participant role types.
+
+## Role Definitions
+
+**Facilitator**
+Core traits: opens or closes the meeting, actively transitions topics (3+ times), assigns speaking turns, announces or confirms decisions.
+Typical language: &quot;Let&#x27;s move on to the next item&quot;, &quot;Could you share your thoughts?&quot;, &quot;Let&#x27;s go with that&quot;, &quot;That&#x27;s all for today.&quot;
+
+**Driver**
+Core traits: high proportion of independently initiated new ideas, leads discussion direction, puts forward concrete proposals or action recommendations — initiates more than responds.
+Typical language: &quot;I suggest…&quot;, &quot;We could do it this way…&quot;, &quot;I think the direction should be…&quot;
+
+**Collaborator**
+Core traits: builds on others&#x27; ideas, integrates different opinions, facilitates consensus — extending others&#x27; ideas more often than independently initiating.
+Typical language: &quot;Building on what you said…&quot;, &quot;These two points can be combined…&quot;, &quot;I think everyone is actually saying something similar.&quot;
+
+**Evaluator**
+Core traits: challenges existing proposals, identifies risks or constraints, raises counter-examples — questioning utterances exceed 35% of total contributions.
+Typical language: &quot;But there&#x27;s a problem here…&quot;, &quot;What if this leads to…&quot;, &quot;There&#x27;s a premise we haven&#x27;t discussed.&quot;
+
+## Role Priority Rules
+Facilitator &gt; Driver &gt; Evaluator &gt; Collaborator (default fallback)
+
+When two roles are clearly satisfied, record both a primary and a secondary role.
+
+## Output Format (strict JSON, no additional text)
+{
+  &quot;primary_role&quot;: &quot;Facilitator|Driver|Collaborator|Evaluator&quot;,
+  &quot;secondary_role&quot;: &quot;Facilitator|Driver|Collaborator|Evaluator|null&quot;,
+  &quot;confidence&quot;: &quot;high|medium|low&quot;,
+  &quot;turn_count&quot;: &lt;integer — total speaking turns by the target speaker&gt;,
+  &quot;key_evidence&quot;: [
+    &quot;Evidence 1 (direct quote + which trait category it supports)&quot;,
+    &quot;Evidence 2&quot;,
+    &quot;Evidence 3&quot;
+  ],
+  &quot;reasoning&quot;: &quot;Core reasoning for the role assignment, within 100 words&quot;
+}</code></pre><h4>User message</h4><pre><code>Please analyze the following multi-party meeting transcript and identify the dominant role of [A].
+
+Participants: A, B, C
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Output the role identification result for [A] in strict JSON format.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call2a"><summary>call2a · M1 Multi-Speaker Tracking  +  M2 Differentiated Response</summary><p><a href="research/multitalk-bench/prompts/call2a.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a multi-party meeting capability assessment expert specializing in evaluating participants&#x27; specific abilities in multi-person meeting contexts.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## Dimension M1: Multi-Speaker State Tracking
+
+[Definition]
+As the meeting progresses, can the participant consistently and accurately distinguish what each person has said and what position they hold, without confusion or misattribution over time?
+
+[Evaluation Points]
+- When quoting others, does the participant misattribute statements (attribute A&#x27;s words to B)?
+- When referencing earlier statements later in the meeting, are attributions consistent with the original?
+- After multiple people speak consecutively, is the participant still accurate when describing someone&#x27;s position?
+- When there are 4+ participants, does tracking accuracy noticeably decline?
+
+[High Score Signals] Clear attributions that match the original; can clearly distinguish multiple speakers&#x27; different positions
+[Low Score Signals] Misattribution, position confusion, failure to recall key things someone said earlier
+
+---
+
+## Dimension M2: Differentiated Response Capability
+
+[Definition]
+When facing multiple participants with different positions, needs, or backgrounds, can the participant give distinguishably different responses rather than sending identical messages to everyone?
+
+[Evaluation Points]
+- Does the participant give different specific responses to participants with different positions?
+- Are weaker voices or silent participants ignored?
+- When facing disagreement, does the participant avoid real differentiation by offering generic statements like &quot;everyone makes a good point&quot;?
+
+[High Score Signals] Explicitly says different things to different people; while acknowledging A, specifically addresses B&#x27;s concerns
+[Low Score Signals] Sends the same message to the whole group; only responds to the most vocal participant; silent participants are consistently ignored
+
+---
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;M1&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;M2&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on M1 (Multi-Speaker State Tracking) and M2 (Differentiated Response Capability) based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call2b"><summary>call2b · M3 Cross-Speaker Integration  +  M4 Multi-Party Disagreement</summary><p><a href="research/multitalk-bench/prompts/call2b.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a multi-party meeting capability assessment expert.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## Dimension M3: Cross-Speaker Information Integration
+
+[Definition]
+When key information is scattered across multiple speakers&#x27; contributions, can the participant piece together a complete picture and identify implicit consensus or contradictions that span across different speakers?
+
+[Evaluation Points]
+- Do summaries or decisions cover key information from different people, or rely only on the most recent statements?
+- Does the participant identify logical contradictions scattered across different speakers and time points?
+- Does the participant notice key information from less vocal participants?
+- Can the participant recognize when multiple people are expressing the same idea in different words?
+
+[High Score Signals] Summaries trace back to specific statements from different speakers; identifies cross-turn contradictions or latent consensus
+[Low Score Signals] Summaries only reflect the later part of the discussion or the most vocal participants; ignores early or peripheral contributions
+
+---
+
+## Dimension M4: Multi-Party Disagreement Handling
+
+[Definition]
+When there are three or more conflicting positions (not just a simple two-party standoff), can the participant identify each party&#x27;s core concerns and find a mutually acceptable integrative path, rather than simply siding with one party or deferring?
+
+[Evaluation Points]
+- When A, B, and C each have different positions, does the participant only handle the most prominent conflict and miss the third party?
+- Can the participant identify a proposal that actually contains multiple parties&#x27; concerns and present it as an integration point?
+- Is the conclusion a substantive convergence, or an empty deferral like &quot;we need to discuss this further&quot;?
+- Does the participant show obvious bias toward the party with the most speaking time?
+
+[High Score Signals] Explicitly identifies the core concerns of 3+ parties; finds an integrative direction accommodating multiple parties
+[Low Score Signals] Only handles two-party conflict; gives empty deferrals; biases toward the most vocal party
+
+---
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;M3&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;M4&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on M3 (Cross-Speaker Information Integration) and M4 (Multi-Party Disagreement Handling) based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call2c"><summary>call2c · M5 Group Awareness  +  M6 Noise Resistance</summary><p><a href="research/multitalk-bench/prompts/call2c.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a multi-party meeting capability assessment expert.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## Dimension M5: Group Awareness in Speaking
+
+[Definition]
+Is the participant aware that everything they say is visible to all present in a multi-person context, and do they accordingly consider the impact of their words on different attendees — rather than speaking as if in a one-on-one conversation?
+
+[Evaluation Points]
+- When responding to one person, does the participant inadvertently ignore the positions or feelings of others present?
+- In front of people with differing positions, does the participant strongly endorse one side without any balancing acknowledgment?
+- Does the participant use large amounts of assumed context that only specific people would understand?
+- Does the participant leverage the multi-person setting to deliver valuable information to multiple parties in a single utterance?
+
+[High Score Signals] When responding to A, proactively accounts for B and C&#x27;s needs; uses public statements to advance group consensus
+[Low Score Signals] Strongly endorses A&#x27;s controversial proposal in front of B; uses large amounts of insider language only A would understand
+
+---
+
+## Dimension M6: Noise Resistance and Input Priority Judgment
+
+[Definition]
+When multiple participants simultaneously or consecutively send competing inputs, can the participant make reasonable priority judgments rather than simply executing the most recent or loudest instruction?
+
+[Evaluation Points]
+- Is the participant completely overridden by the last message, forgetting earlier important instructions or context?
+- Does the participant appropriately differentiate priority between the facilitator&#x27;s agenda instructions and ordinary participants&#x27; spontaneous interruptions?
+- After one party applies sustained pressure, does the participant change position without substantive justification?
+- When facing contradictory inputs, does the participant explicitly flag the conflict rather than quietly siding with one?
+
+[High Score Signals] Explicitly explains priority reasoning; proactively clarifies contradictory inputs rather than unilaterally executing
+[Low Score Signals] Gets completely overridden by the last message; changes position without justification after repeated pressure
+
+---
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;M5&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;M6&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on M5 (Group Awareness in Speaking) and M6 (Noise Resistance and Input Priority Judgment) based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call3a"><summary>call3a · G1 Clarity/Actionability  +  G2 Response Accuracy  +  G3 Agenda Fit  +  G4 Progress</summary><p><a href="research/multitalk-bench/prompts/call3a.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a meeting performance assessment expert evaluating a participant across four universal dimensions. These apply to all roles — assess meeting behaviors only, not domain knowledge accuracy.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## Dimension G1: Clarity and Actionability
+
+[Definition] Can the participant&#x27;s contributions be clearly understood, and do they contain enough concrete information for others to react, decide, or act? Assess both clarity and practical usefulness.
+
+[Evaluation Points]
+- Does the participant clearly express the point, proposal, concern, or conclusion?
+- Is the wording too vague for others to know how to respond or act?
+- Does the utterance provide concrete information that helps move discussion forward?
+
+---
+
+## Dimension G2: Relevance and Accuracy of Response
+
+[Definition] When responding to others, does the participant address what was actually said, with a response that is relevant, accurate, and substantive rather than off-target, misunderstood, or empty?
+
+[Evaluation Points]
+- Does the response address the speaker&#x27;s actual core point rather than an imagined version?
+- Does it miss important qualifiers, distort the issue, or only answer the easiest part?
+- Does it add substance that clarifies, advances, or resolves the issue?
+
+---
+
+## Dimension G3: Agenda Fit and Rhythm Awareness
+
+[Definition] Are the participant&#x27;s contributions aligned with the current topic and stage of the meeting? Assess whether they sense when to explore, align, decide, or wrap up.
+
+[Evaluation Points]
+- Do contributions stay on the active agenda item rather than jumping elsewhere?
+- Does the participant match the current stage of discussion instead of restarting or derailing it?
+- When input is needed, do they contribute at the right moment rather than remaining absent or out of sync?
+
+---
+
+## Dimension G4: Contribution to Meeting Progress
+
+[Definition] Do the participant&#x27;s contributions help the meeting move forward by clarifying issues, narrowing disagreement, surfacing decisions, or defining next steps, rather than causing stagnation, repetition, or circular talk?
+
+[Evaluation Points]
+- After the participant speaks, does the discussion become clearer, more focused, or more actionable?
+- Do they help transform vague ideas into options, decisions, or next steps?
+- Do they mainly repeat prior content or express stance without adding forward motion?
+
+---
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;G1&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;G2&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;G3&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;G4&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on G1 (Clarity and Actionability), G2 (Relevance and Accuracy of Response), G3 (Agenda Fit and Rhythm Awareness), and G4 (Contribution to Meeting Progress) based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call3b-facilitator"><summary>call3b-facilitator · Facilitator role-specific dims (F1, F2, F3, F4, F5)</summary><p><a href="research/multitalk-bench/prompts/call3b-facilitator.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a meeting performance assessment expert evaluating a participant on role-specific dimensions for their dominant role. Assess meeting behaviors only, not domain knowledge correctness.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## F1: Agenda Momentum
+Does the participant effectively advance topics? Are transitions natural and logical? Does the meeting cover expected agenda items within available time?
+[High] Proactively announces topic transitions with reasoning; ensures each item has a conclusion before moving on
+[Low] Discussion circles on the same point too long; abrupt jumps without explanation; agenda items skipped
+
+## F2: Participation Activation
+Does the participant actively invite different members to speak? Do they prevent any one person from dominating? Do they bring silent members into the discussion?
+[High] Explicitly invites silent participants by name; naturally redirects when someone has been speaking too long
+[Low] Only interacts with already-active speakers; someone stays silent throughout without being noticed
+
+## F3: Decision Convergence
+When facing disagreements, does the participant effectively summarize consensus? Can they make clear decisions rather than deferring? Are conclusions accepted by the group?
+[High] Reframes disagreements as actionable choices; clearly announces conclusions and confirms acceptance
+[Low] Leaves disagreements to &quot;be discussed later&quot;; conclusions are too vague to act on
+
+## F4: Summary and Closure Quality
+Are periodic summaries accurate? Are action items assigned to specific people with deadlines? Does the meeting end with a clear next-steps list?
+[High] Summary includes &quot;who does what by when&quot;; consistent with what was actually discussed
+[Low] Summary content diverges from actual discussion; action items have no owner or deadline
+
+## F5: Neutrality and Fairness
+Does the participant treat different viewpoints equally? Is there obvious favoritism? Can they maintain an objective stance?
+[High] Uses comparable language when handling different viewpoints; facilitates without presupposing outcomes
+[Low] Noticeably more enthusiastic about one person&#x27;s ideas; signals preference before conclusions are formed
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;F1&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;F2&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;F3&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;F4&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;F5&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on the role-specific dimensions for their role as Facilitator, based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+Identified role: Facilitator
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Output the evaluation results in strict JSON format.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call3b-driver"><summary>call3b-driver · Driver role-specific dims (D1, D2, D3, D4)</summary><p><a href="research/multitalk-bench/prompts/call3b-driver.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a meeting performance assessment expert evaluating a participant on role-specific dimensions for their dominant role. Assess meeting behaviors only, not domain knowledge correctness.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## D1: New-Direction Initiation
+Can the participant introduce genuinely new directions, proposals, or frames rather than merely rephrasing what others already said?
+[High] Opens a direction that had not yet been explored and clearly distinguishes it from prior ideas
+[Low] Repackages existing ideas as if they were new; adds motion without new substance
+
+## D2: Proposal Actionability
+Are the ideas relevant to the meeting goal and concrete enough to be discussed, tested, or executed?
+[High] Gives a clear path, conditions, resources, or next steps; turns abstract thoughts into workable proposals
+[Low] Produces vague or off-topic ideas that cannot practically move into execution
+
+## D3: Argumentation and Push
+Does the participant support ideas with reasons, comparisons, or evidence, and keep the discussion moving when challenged?
+[High] Explains why the proposal is worth doing and responds to objections with substantive support
+[Low] Relies on repetition, confidence, or pressure rather than reasoning
+
+## D4: Pace Control
+Can the participant push discussion forward without monopolizing the room or overselling one direction past its useful point?
+[High] Pushes toward selection or action at the right time while preserving others&#x27; room to contribute
+[Low] Repeatedly pushes the same idea in a way that distorts the meeting rhythm or suppresses others
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;D1&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;D2&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;D3&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;D4&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on the role-specific dimensions for their role as Driver, based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+Identified role: Driver
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Output the evaluation results in strict JSON format.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call3b-collaborator"><summary>call3b-collaborator · Collaborator role-specific dims (C1, C2, C3, C4)</summary><p><a href="research/multitalk-bench/prompts/call3b-collaborator.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a meeting performance assessment expert evaluating a participant on role-specific dimensions for their dominant role. Assess meeting behaviors only, not domain knowledge correctness.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## C1: Extension and Building Ability
+Can the participant add substantive value on top of others&#x27; ideas, rather than merely expressing agreement?
+[High] Explicitly says &quot;building on your X, we could also add Y&quot; where Y has real substance
+[Low] &quot;Yes, exactly&quot; style with no substantive extension; repeats someone else&#x27;s words as a contribution
+
+## C2: Integration Ability
+When opposing views coexist, can the participant identify common ground and propose a synthesis?
+[High] Proposes an integrated solution capturing multiple parties&#x27; core concerns; names what was integrated
+[Low] Only claims &quot;everyone has a point&quot; without offering an integration path
+
+## C3: Friction Reduction
+Can the participant reduce unnecessary tension or misunderstanding so that disagreement remains discussable?
+[High] Helps parties better understand each other and rephrases conflict in a more workable frame
+[Low] Offers superficial harmony or, through poor framing, makes conflict worse
+
+## C4: Supportive Progress
+When supporting others, does the participant make that support concrete and useful enough to help the idea advance?
+[High] Explains why a point matters and helps bring overlooked useful ideas into the main discussion
+[Low] Provides empty affirmation or only echoes the strongest voice without helping progress
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;C1&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;C2&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;C3&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;C4&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on the role-specific dimensions for their role as Collaborator, based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+Identified role: Collaborator
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Output the evaluation results in strict JSON format.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details><details class="mtb-prompt" id="prompt-call3b-evaluator"><summary>call3b-evaluator · Evaluator role-specific dims (E1, E2, E3, E4)</summary><p><a href="research/multitalk-bench/prompts/call3b-evaluator.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>You are a meeting performance assessment expert evaluating a participant on role-specific dimensions for their dominant role. Assess meeting behaviors only, not domain knowledge correctness.
+
+## Scoring Rubric
+5 – Outstanding: clear positive evidence, no notable flaws
+4 – Good: generally solid, minor imperfections with no significant impact
+3 – Adequate: meets the baseline, no obvious strengths or major failures
+2 – Below average: noticeable problems that affected meeting outcomes, not entirely absent
+1 – Poor: almost no evidence of the behavior, or clear negative performance
+N/A – Not enough valid speaking turns (&lt; 5) to evaluate
+
+---
+
+## E1: Accuracy of Challenges
+Do the problems identified actually exist? Can the participant pinpoint the weak spots with precision?
+[High] Challenges directly target specific flaws in the proposal that genuinely exist
+[Low] Challenges are misaligned with actual proposal content; challenges too abstract to verify
+
+## E2: Constructiveness of Criticism
+After raising a problem, does the participant offer an improvement direction or an alternative?
+[High] &quot;The issue here is X; one possible solution would be Y&quot;
+[Low] Only says &quot;that won&#x27;t work&quot; without suggesting improvements; raises objections repeatedly without ever recommending changes
+
+## E3: Sufficiency of Evidence
+Are challenges supported by reasoning? Does the participant use examples, analogies, or logical chains?
+[High] Uses specific examples or reasoning chains to explain why something would go wrong
+[Low] &quot;I just feel like this isn&#x27;t right&quot; style without evidence; unable to elaborate further when pressed
+
+## E4: Risk-to-Action Conversion
+After identifying risks, can the participant help the group define validation steps, conditions, or modifications rather than leaving the discussion stuck at rejection?
+[High] Converts concerns into checks, decision gates, or concrete revisions
+[Low] Repeatedly blocks momentum with criticism while offering no path to proceed
+
+## Output Format (strict JSON)
+Requirements: output exactly one complete JSON object and include every dimension key; each evidence array may contain at most one item; each quote must be a very short verbatim snippet no longer than 12 words; use [] when there is no evidence; do not output Markdown or any extra text.
+{
+  &quot;E1&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;E2&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;E3&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  },
+  &quot;E4&quot;: {
+    &quot;score&quot;: integer 1–5 or &quot;N/A&quot;,
+    &quot;positive_evidence&quot;: [&quot;at most 1 very short positive quote&quot;],
+    &quot;negative_evidence&quot;: [&quot;at most 1 very short negative quote&quot;],
+    &quot;reasoning&quot;: &quot;scoring rationale, within 40 words&quot;
+  }
+}</code></pre><h4>User message</h4><pre><code>Please evaluate [A]&#x27;s performance on the role-specific dimensions for their role as Evaluator, based on the following multi-party meeting transcript.
+
+Participants: A, B, C
+Participant being assessed: A
+Identified role: Evaluator
+
+Meeting Transcript:
+A: First, let&#x27;s agree on the budget. B, what is the limit?
+B: We can spend 500 dollars.
+C: We also need to reserve 100 dollars for testing.
+A: That leaves 400 dollars for the design. Let&#x27;s move to materials. C, what do you recommend?
+C: Recycled plastic fits that budget.
+B: I agree, provided we test durability.
+A: Both of you support recycled plastic with a durability check. Let&#x27;s move to testing. B, can you own that?
+B: Yes, I can finish the test on Friday.
+A: Then let&#x27;s confirm the decision: recycled plastic, a 400-dollar design budget, and B tests durability by Friday. C, any concern before we close?
+C: No, that covers my concern.
+A: Agreed. We have the decision and an owner. That closes the meeting.
+
+Output the evaluation results in strict JSON format.
+
+Important: the participant being evaluated is speaker A. Only score or cite utterances spoken on lines that begin with &#x27;A:&#x27;. Do not use other speakers&#x27; utterances as evidence for the target participant.</code></pre></details>
+<details id="judge-retries"><summary>Judge defaults and the retry prompt</summary><p>The client defaults to temperature 1.0, top-p 0.95 and top-k 64. Each module’s output cap is 8,192 tokens in the pinned benchmark. These are judge settings, not settings for the speech model under test. Six logical calls can involve additional requests: the default permits two retries per call. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/judge/gemma4.py#L80">Request settings</a> · <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py#L33">Per-call caps</a></p><p><strong>Retry caveat:</strong> after a failed scoring attempt, the code replaces the normal transcript/rubric messages with a compact JSON request that contains neither the transcript nor the dimension definitions. It explicitly instructs the judge not to inspect or quote the transcript, and suggests score 1 when uncertain. This is not equivalent to repeating the original evidence-based judgment; inspect each result’s <code>attempts</code> and <code>retry_mode</code> before trusting a score. Role-identification retries retain their original prompt. The exact M1/M2 retry messages are shown below. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py#L480">Retry construction and selection</a></p><details class="mtb-prompt" id="prompt-retry-call2a"><summary>retry-call2a · Compact retry for M1/M2 after a failed first attempt</summary><p><a href="research/multitalk-bench/prompts/retry-call2a.json">Download these exact system/user messages (JSON)</a></p><h4>System message</h4><pre><code>RETRY FORMAT OVERRIDE: The previous answer was not valid JSON. For this retry, do not inspect or quote the transcript. Output only one compact, complete JSON object. No Markdown fences, no direct quotes, no evidence text, no commentary. Use [] for every evidence field. The top-level keys must be exactly: &quot;M1&quot;, &quot;M2&quot;. If the target speaker is incoherent or the score is uncertain, use score 1.</code></pre><h4>User message</h4><pre><code>Return compact JSON only using this exact shape, with every requested dimension present:
+{
+  &quot;M1&quot;: {&quot;score&quot;: 1, &quot;positive_evidence&quot;: [], &quot;negative_evidence&quot;: [], &quot;reasoning&quot;: &quot;compact retry&quot;},
+  &quot;M2&quot;: {&quot;score&quot;: 1, &quot;positive_evidence&quot;: [], &quot;negative_evidence&quot;: [], &quot;reasoning&quot;: &quot;compact retry&quot;}
+}
+You may change score and reasoning, but do not add quotes or evidence text.</code></pre></details></details>
+<p><a href="research/multitalk-bench/prompt-examples.json">Download all ten examples and their provenance</a>. English messages are displayed here; both language templates remain available in the <a href="research/multitalk-bench/protocol-source/MultiTalkBench/prompt_builder.py">unchanged source snapshot</a>.</p>
+</section>
+<section class="section" id="scoring"><h2>How the released code computes scores</h2>
+<p>Each judged rating is mapped to 0–100 as shown in Table 4. General score G averages four dimensions; multi-party score M averages six; role score R averages the four or five dimensions of the selected role. The three groups receive equal weight, so the larger multi-party group does not automatically dominate. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/prompt_builder.py#L1185">ScoreCalculator</a></p>
+<p>Participation is computed separately. For either the model or the human reference, r is the time between that target’s first utterance start and last utterance end, divided by the corresponding meeting span. A target with no utterances receives zero. This measures the span of presence, rather than total voiced duration or the fraction of turns spoken. The coefficient c compares model and human spans:</p>
+<div class="equation">\[c=\max\!\left(0,\,1-\left|r_{\mathrm{model}}-r_{\mathrm{human}}\right|\right)\]</div>
+<p>The released implementation multiplies the group average by c. The dataset score averages these per-sample final scores; it does not multiply a dataset-wide mean participation coefficient by independently averaged groups.</p>
+<div class="equation">\[\text{Sample score}=\frac{G+M+R}{3}\,c\]</div>
+<p><strong>Worked arithmetic example, not a measured result:</strong> suppose normalized G, M and R are 75, 50 and 25. Their mean is 50. If the model’s participation span ratio is 0.8 and the human’s is 0.9, c is 0.9, so the sample score is 45. P1 is reported separately on a 0–100 scale as 100 times c; the raw result stores it on the 1–5 scale as 1 plus 4 times c. <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/benchmark.py#L684">Participation and stored P1</a></p>
+<div class="callout amber" id="paper-code-discrepancy"><h3>Paper/code discrepancy</h3><p>Appendix E.5 displays the final score as the equally weighted average of the three judge groups, without a participation multiplier. The pinned released code applies c to every group and to the final score. We document the implementation above; this source review does not establish which exact revision produced the paper’s result table. <a href="https://arxiv.org/html/2609.36903#A5.SS5">Paper Appendix E.5</a> · <a href="https://github.com/multitalk-ai/MultiTalk/blob/3979639b5a2b89fe2a85c323e286928cbfea5acb/MultiTalkBench/prompt_builder.py#L1314">Executed scoring expression</a></p></div>
+<div class="callout"><h3>Limits of the participation metric</h3><p>Two brief utterances near the beginning and end can produce a span ratio close to one, just as continuous talking can. The metric therefore does not establish an appropriate speech rate, balanced airtime, correct entry points or interruption recovery. Those behaviors would need separate measurements.</p></div>
+</section>
+<section class="section" id="evaluation-limits"><h2>What an evaluation result would establish</h2>
+<p>The scores describe transcript-level meeting behavior under replay of fixed human peers. Those peers cannot respond to a model’s novel proposal, so our interpretation is that this protocol cannot alone establish success in a fully reactive group conversation. The paper explicitly excludes direct latency and interruption-timing measurement. It also provides no dedicated tool-execution, backchannel-timing or acoustic-quality score. <a href="https://arxiv.org/html/2609.36903#S2.SS2">Paper §2.2</a></p>
+<p>Long-range tracking and addressee-sensitive behavior are assessed through the rubric questions, not through an additional question set with exact-match gold answers in this scorer. English and Chinese have corresponding templates; bilingual coverage does not by itself establish code-switching ability. The source recordings and aligned utterances below illustrate the data, not evaluated model behavior.</p>
+<details id="protocol-provenance"><summary>Source pin, attribution and reproducibility</summary><p>This review pins public upstream commit <code>3979639b5a2b89fe2a85c323e286928cbfea5acb</code>. Six unchanged files, including the Apache-2.0 license, are archived under <code>research/multitalk-bench/protocol-source/</code>; the <a href="research/multitalk-bench/protocol-sources.json">source manifest</a> records URLs, byte counts and SHA-256 values. The code/templates retain their <a href="research/multitalk-bench/protocol-source/LICENSE">Apache-2.0 license</a>; the audio remains separately attributed under CC BY-SA 4.0.</p><p>Rebuild the page and prompt examples with <code>python scripts/build_multitalk_bench.py</code> from the site checkout. Prompt rendering is offline and uses 0 GPUs. No speech inference or Gemma judge requests were run for this documentation update. The short transcript and worked score are authored illustrations; no local benchmark score is claimed.</p></details>
+</section>
+
 <section class="section" id="audio-examples"><h2>Two source excerpts</h2>
 <p class="section-intro">These short English and Chinese examples come from the held-out test release. Each player contains a 15-second crop from a stereo recording; the aligned utterance and exact source interval are shown below it.</p>
 <figure class="mtb-preview-figure"><div class="card-grid"><article class="card mtb-example"><span class="tag">English · EN2002a</span><h3>Target participant <code>EN2002a.Headset-0.SPKMEE073</code></h3><p class="meta">15-second source crop at 0.00–15.00 s · 16 kHz stereo PCM16</p><audio controls preload="none" aria-label="Play the English MultiTalkBench excerpt"><source src="assets/multitalk-bench/EN2002a-Headset-0-SPKMEE073.flac?v=41ea5166fcef" type="audio/flac">Audio playback is unavailable. <a href="assets/multitalk-bench/EN2002a-Headset-0-SPKMEE073.flac?v=41ea5166fcef">Download the FLAC excerpt</a>.</audio><p class="mtb-transcript"><strong>Aligned target-speaker utterance (0.96–6.85 s):</strong> Wonder how much of the meetings is talking about the stuff at the meetings. Yeah.</p><p class="meta">Source: <code>audio/en/EN2002a.Headset-0.SPKMEE073.flac</code>; transcript: <code>alignments/en/EN2002a.Headset-0.SPKMEE073.json</code>.</p></article><article class="card mtb-example"><span class="tag">Chinese · R8008_M8017</span><h3>Target participant <code>R8008_M8017_N_SPK8065</code></h3><p class="meta">15-second source crop at 18.63–33.63 s · 16 kHz stereo PCM16</p><audio controls preload="none" aria-label="Play the Chinese MultiTalkBench excerpt"><source src="assets/multitalk-bench/R8008_M8017_N_SPK8065.flac?v=2e4a7b640c78" type="audio/flac">Audio playback is unavailable. <a href="assets/multitalk-bench/R8008_M8017_N_SPK8065.flac?v=2e4a7b640c78">Download the FLAC excerpt</a>.</audio><p class="mtb-transcript"><strong>Aligned target-speaker utterance (19.63–31.31 s):</strong> 嗯，这边的问题的话就是现在我们这边招的扫地阿姨啊，不是太勤快，所以说我在考虑这个是怎么调解还是说直接开除。</p><p class="meta">Source: <code>audio/zh/R8008_M8017_N_SPK8065.flac</code>; transcript: <code>alignments/zh/R8008_M8017_N_SPK8065.json</code>.</p></article></div>
@@ -57,7 +847,7 @@
 <p class="section-intro">The complete local copy was checked against Hugging Face commit <code>d7188c179603db8566c50b6e43af5c8a1e7678ba</code>. Validation covers the downloaded inventory and sizes, row agreement across the three tabular views, every referenced asset, full FLAC decoding, and alignment bounds.</p>
 <div class="mtb-audit-grid"><article class="mtb-audit-item"><h3>Release inventory</h3><p>372 of 372 files present; all file sizes match the pinned Hub tree.</p></article><article class="mtb-audit-item"><h3>Local hashes</h3><p>SHA-256 recorded for all 372 release files.</p></article><article class="mtb-audit-item"><h3>Tabular split</h3><p>104 JSONL, 104 CSV, and 104 Parquet rows agree, including all audio paths.</p></article><article class="mtb-audit-item"><h3>Audio decode</h3><p>104 of 104 recordings fully decoded as 16 kHz stereo FLAC PCM16.</p></article><article class="mtb-audit-item"><h3>Aligned text</h3><p>15,896 sentence spans and 219,647 word spans fall within recording durations.</p></article><article class="mtb-audit-item"><h3>Referenced assets</h3><p>Every audio, alignment, persona, meeting profile, and transcript-context path exists; profile IDs match sample meeting IDs.</p></article></div>
 <p>The repository snapshot is 5,191,617,996 bytes (5.19 GB decimal; about 4.83 GiB). The Parquet shard stores an audio payload column, so its metadata and non-audio columns were read without loading the multi-gigabyte audio column into memory. The separate audio files were all decoded in bounded blocks.</p>
-<div class="callout"><h3>No model evaluation is claimed here</h3><p>This page audits the released test data only. No local model inference, benchmark scoring, or quality claim has been produced from this snapshot.</p></div>
+<div class="callout"><h3>No model evaluation is claimed here</h3><p>The local checks validate the released data and the prompt examples document the public evaluator. No local model inference, judge requests, benchmark scores or quality claim have been produced from this snapshot.</p></div>
 </section>
 <section class="section" id="reproduce"><h2>Reproduce the data checks</h2>
 <p>From the project workspace, download the same pinned snapshot and run the validator and preview exporter:</p>

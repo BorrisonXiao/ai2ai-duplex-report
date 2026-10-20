@@ -1,0 +1,10 @@
+[
+  {
+    "role": "system",
+    "content": "RETRY FORMAT OVERRIDE: The previous answer was not valid JSON. For this retry, do not inspect or quote the transcript. Output only one compact, complete JSON object. No Markdown fences, no direct quotes, no evidence text, no commentary. Use [] for every evidence field. The top-level keys must be exactly: \"M1\", \"M2\". If the target speaker is incoherent or the score is uncertain, use score 1."
+  },
+  {
+    "role": "user",
+    "content": "Return compact JSON only using this exact shape, with every requested dimension present:\n{\n  \"M1\": {\"score\": 1, \"positive_evidence\": [], \"negative_evidence\": [], \"reasoning\": \"compact retry\"},\n  \"M2\": {\"score\": 1, \"positive_evidence\": [], \"negative_evidence\": [], \"reasoning\": \"compact retry\"}\n}\nYou may change score and reasoning, but do not add quotes or evidence text."
+  }
+]

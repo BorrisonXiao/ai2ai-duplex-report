@@ -10,6 +10,7 @@ from pathlib import Path
 
 from benchmark_scope import render_scope_section
 from site_navigation import project_tabs, review_tabs
+from multitalk_protocol import render_protocol
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,17 +82,20 @@ def build() -> Path:
     scope = render_scope_section(["multitalk"], number=1)
     revision = audit["revision"]
     release_bytes = validation["release_total_bytes"]
+    protocol = render_protocol()
 
     page = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="MultiTalkBench test-set coverage, two attributed audio excerpts, and a full local data integrity audit.">
+<meta name="description" content="MultiTalkBench evaluation protocol, exact Gemma judge prompt examples, scoring rules, two audio excerpts and a complete test-data audit.">
 <meta name="color-scheme" content="light dark">
-<title>MultiTalkBench Test Data — AI2AI Duplex</title>
+<title>MultiTalkBench Evaluation and Test Data — AI2AI Duplex</title>
 <link rel="stylesheet" href="assets/site.css?v={css_digest}">
 <script src="assets/site.js" defer></script>
+<script>window.MathJax = {{tex: {{inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']]}}, svg: {{fontCache: 'global'}}}};</script>
+<script id="MathJax-script" defer src="assets/vendor/mathjax/tex-svg.js"></script>
 <style>
 .mtb-preview-figure {{ margin:24px 0; }}
 .mtb-example {{ display:flex; flex-direction:column; }}
@@ -102,6 +106,16 @@ def build() -> Path:
 .mtb-audit-item {{ padding:18px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }}
 .mtb-audit-item h3 {{ font-size:16px; }}
 .mtb-audit-item p {{ margin:0; color:var(--muted); font-size:14px; }}
+.mtb-prompt {{ min-width:0; }}
+.mtb-prompt summary {{ overflow-wrap:anywhere; }}
+.hero h1 {{ overflow-wrap:anywhere; }}
+.container pre {{ white-space:pre-wrap; overflow-wrap:anywhere; }}
+.container code {{ overflow-wrap:anywhere; }}
+.mtb-prompt pre, #illustrative-transcript pre {{ white-space:pre-wrap; overflow-wrap:anywhere; padding:16px; border-radius:8px; background:var(--surface-2); font-size:13px; line-height:1.6; max-height:600px; overflow:auto; }}
+.mtb-workflow li {{ margin:12px 0; }}
+.equation {{ overflow-x:auto; margin:14px 0; padding:14px 16px; border-radius:9px; background:var(--surface-2); }}
+.equation mjx-container[display="true"] {{ margin:0 !important; }}
+mjx-container {{ max-width:100%; }}
 @media (max-width:700px) {{ .mtb-audit-grid {{ grid-template-columns:minmax(0,1fr); }} }}
 </style>
 </head>
@@ -109,12 +123,12 @@ def build() -> Path:
 <a class="skip-link" href="#main">Skip to MultiTalkBench review</a>
 <header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a>{project_tabs("literature")}</div></header>
 <main id="main"><div class="container">{review_tabs("multitalk")}
-<header class="hero"><p class="eyebrow">Literature review · Dataset preview</p>
+<header class="hero"><p class="eyebrow">Literature review · Evaluation protocol and dataset preview</p>
 <h1>MultiTalkBench: long, multi-party speech in English and Chinese</h1>
-<p class="lede">A local test-set audit for a benchmark that evaluates a model as one participant in a long group conversation.</p>
+<p class="lede">How a model replaces one participant in a long group conversation, how Gemma judges its contributions, and what those scores can establish.</p>
 <p class="meta">MultiTalkBench test split · Checked 19 October 2026 · Hugging Face revision <code>{e(revision[:12])}</code> · Dataset license: CC BY-SA 4.0</p>
-<div class="button-row"><a class="button primary" href="#audio-examples">Listen to excerpts</a><a class="button" href="#validation">Read the integrity check</a><a class="button" href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Dataset card</a><a class="button" href="https://arxiv.org/abs/2609.36903">Paper</a></div></header>
-<nav class="jump-links" aria-label="MultiTalkBench sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#audio-examples">Audio examples</a><a href="#data-layout">Data layout</a><a href="#validation">Local validation</a><a href="#reproduce">Reproduce</a><a href="#provenance">Attribution</a></nav>
+<div class="button-row"><a class="button primary" href="#evaluation-protocol">Read the evaluation protocol</a><a class="button" href="#judge-prompts">Inspect actual prompts</a><a class="button" href="#audio-examples">Listen to excerpts</a><a class="button" href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Dataset card</a><a class="button" href="https://arxiv.org/abs/2609.36903">Paper</a></div></header>
+<nav class="jump-links" aria-label="MultiTalkBench sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#evaluation-protocol">Protocol</a><a href="#judge-prompts">Judge prompts</a><a href="#scoring">Scoring</a><a href="#evaluation-limits">Interpretation</a><a href="#audio-examples">Audio examples</a><a href="#data-layout">Data layout</a><a href="#validation">Local validation</a><a href="#reproduce">Reproduce</a><a href="#provenance">Attribution</a></nav>
 {scope}
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">MultiTalkBench is a held-out, long-form speech-to-speech benchmark. Each row pairs a real meeting recording with a designated participant, that participant’s aligned speech, and persona/context material. The evaluated model takes the designated participant’s role while the other participants remain part of the conversation.</p>
@@ -126,6 +140,7 @@ def build() -> Path:
 <thead><tr><th scope="col">Split</th><th scope="col">Samples</th><th scope="col">Coverage</th></tr></thead><tbody>{language_table}</tbody></table></div>
 <p>The release describes tests of long conversations, multi-party participation, and bilingual ability. It includes explicit probes for long-range entity tracking and topic coherence alongside addressee selection and turn-taking. The scope table above distinguishes those content and participation judgments from direct interruption latency, acoustic fluency, and tool-use evaluation.</p>
 </section>
+{protocol}
 <section class="section" id="audio-examples"><h2>Two source excerpts</h2>
 <p class="section-intro">These short English and Chinese examples come from the held-out test release. Each player contains a 15-second crop from a stereo recording; the aligned utterance and exact source interval are shown below it.</p>
 <figure class="mtb-preview-figure"><div class="card-grid">{''.join(cards)}</div>
@@ -141,7 +156,7 @@ def build() -> Path:
 <p class="section-intro">The complete local copy was checked against Hugging Face commit <code>{e(revision)}</code>. Validation covers the downloaded inventory and sizes, row agreement across the three tabular views, every referenced asset, full FLAC decoding, and alignment bounds.</p>
 <div class="mtb-audit-grid">{audit_html}</div>
 <p>The repository snapshot is {release_bytes:,} bytes (5.19 GB decimal; about 4.83 GiB). The Parquet shard stores an audio payload column, so its metadata and non-audio columns were read without loading the multi-gigabyte audio column into memory. The separate audio files were all decoded in bounded blocks.</p>
-<div class="callout"><h3>No model evaluation is claimed here</h3><p>This page audits the released test data only. No local model inference, benchmark scoring, or quality claim has been produced from this snapshot.</p></div>
+<div class="callout"><h3>No model evaluation is claimed here</h3><p>The local checks validate the released data and the prompt examples document the public evaluator. No local model inference, judge requests, benchmark scores or quality claim have been produced from this snapshot.</p></div>
 </section>
 <section class="section" id="reproduce"><h2>Reproduce the data checks</h2>
 <p>From the project workspace, download the same pinned snapshot and run the validator and preview exporter:</p>

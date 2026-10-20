@@ -18,3 +18,7 @@ Please cite:
   year={2026},
   url={https://openreview.net/forum?id=G9Adf8ZYoP}
 }
+
+## Evaluation source and prompt examples
+
+Unchanged evaluation code and judge templates from multitalk-ai/MultiTalk commit `3979639b5a2b89fe2a85c323e286928cbfea5acb` are archived in [protocol-source/](protocol-source/MultiTalkBench/README.md) under the upstream [Apache-2.0 license](protocol-source/LICENSE). File hashes and original URLs appear in [protocol-sources.json](protocol-sources.json). Rendered examples reproduce those templates with a short authored fictional meeting; no model output, inferred role or judge score is claimed. These code/template terms are separate from the audio license above.
