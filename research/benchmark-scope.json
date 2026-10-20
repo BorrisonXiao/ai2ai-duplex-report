@@ -141,6 +141,7 @@
     {
       "id": "multitalk",
       "name": "MultiTalkBench",
+      "page": "multitalk-bench.html",
       "speakers": "Yes: real multi-party recordings; the model replaces a designated named participant.",
       "origin": "Human recordings from meeting, dinner-party, in-car and telephone corpora; constructed alignments/persona prompts. Distinct from synthetic MultiTalkPT/FT training data.",
       "interface": "Long audio conversations for full-duplex speech models; target-participant outputs are aligned and inserted into the peer transcript for offline judging.",

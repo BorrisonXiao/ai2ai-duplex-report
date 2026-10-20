@@ -1,0 +1,50 @@
+{
+  "repository": "MultiTalk/MultiTalkBench",
+  "revision": "d7188c179603db8566c50b6e43af5c8a1e7678ba",
+  "license": "CC BY-SA 4.0",
+  "excerpt_processing": "15-second lossless PCM16 FLAC crops from the source stereo recordings; no resampling or channel mixing.",
+  "examples": [
+    {
+      "sample_id": "EN2002a.Headset-0.SPKMEE073",
+      "language": "en",
+      "meeting_id": "EN2002a",
+      "target_speaker": "EN2002a.Headset-0.SPKMEE073",
+      "source_audio": "audio/en/EN2002a.Headset-0.SPKMEE073.flac",
+      "source_sha256": "7c2aab3e83eb22b3ddad9a030ec867cd6a15f3f7adc6f93fca84a842c16531f7",
+      "source_alignment": "alignments/en/EN2002a.Headset-0.SPKMEE073.json",
+      "excerpt_start_seconds": 0.0,
+      "excerpt_end_seconds": 15.0,
+      "excerpt_duration_seconds": 15.0,
+      "transcript_text": "Wonder how much of the meetings is talking about the stuff at the meetings. Yeah.",
+      "transcript_start_seconds": 0.96,
+      "transcript_end_seconds": 6.85,
+      "site_audio": "assets/multitalk-bench/EN2002a-Headset-0-SPKMEE073.flac",
+      "site_audio_sha256": "41ea5166fcef12b35b1c6ae8a557d32ed744f93ccf4b1e08e942412dc508b658",
+      "site_audio_bytes": 224183,
+      "sample_rate_hz": 16000,
+      "channels": 2,
+      "subtype": "PCM_16"
+    },
+    {
+      "sample_id": "R8008_M8017_N_SPK8065",
+      "language": "zh",
+      "meeting_id": "R8008_M8017",
+      "target_speaker": "R8008_M8017_N_SPK8065",
+      "source_audio": "audio/zh/R8008_M8017_N_SPK8065.flac",
+      "source_sha256": "ed9dc77f682671b9204a7bd063d9131d5fdd03a98b6d54dfe9b54e88aee76bcf",
+      "source_alignment": "alignments/zh/R8008_M8017_N_SPK8065.json",
+      "excerpt_start_seconds": 18.63,
+      "excerpt_end_seconds": 33.63,
+      "excerpt_duration_seconds": 15.0,
+      "transcript_text": "嗯，这边的问题的话就是现在我们这边招的扫地阿姨啊，不是太勤快，所以说我在考虑这个是怎么调解还是说直接开除。",
+      "transcript_start_seconds": 19.63,
+      "transcript_end_seconds": 31.31,
+      "site_audio": "assets/multitalk-bench/R8008_M8017_N_SPK8065.flac",
+      "site_audio_sha256": "2e4a7b640c78fb0c1f418c1d19810c33be06ebd61462b0065b42f6fddadcf5f9",
+      "site_audio_bytes": 213056,
+      "sample_rate_hz": 16000,
+      "channels": 2,
+      "subtype": "PCM_16"
+    }
+  ]
+}

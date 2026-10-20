@@ -162,7 +162,7 @@ def main():
     md.extend(['These are synthesis-based candidate gaps, not exhaustive novelty claims. No experiments or new annotations were created.','', '## References','',*['- '+p['authors']+'. '+p['title']+'. '+p['venue']+'; '+p['version']+'. [Primary source]('+p['source']+').' for p in PAPERS],'','## Evidence caveats','','MP-Bench: PDF and landing-page abstracts disagree (33% vs. 22%); excluded from plots. GroupMemBench: paper and card corpus counts differ. MultiTalk: public data does not verify its claimed engine/scorer/checkpoint release. Dataset reuse licences are separated from code licences. Full primary manuscripts were read; all bibliography entries have independently checked metadata.',''])
     (OUT/'LITERATURE.md').write_text('\n'.join(md),encoding='utf-8')
     (ROOT/'context-assistance.html').write_text(html(),encoding='utf-8')
-    print('Built context-assistance.html and digests: 15 papers, 5 systems, 9 benchmarks, 8 training resources, 7 figures, 7 tables; shared scope matrix covers 11 benchmark/version rows.')
+    print('Built context-assistance.html and digests: 15 papers, 5 systems, 9 focused benchmarks, 8 training resources, 7 figures, 7 tables; shared scope matrix covers 12 benchmark/version rows.')
 
 if __name__ == '__main__':
     main()
