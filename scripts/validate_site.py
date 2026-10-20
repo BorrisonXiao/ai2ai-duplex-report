@@ -78,8 +78,8 @@ def validate():
         if parts.path.startswith('/'):
             errors.append('Root-absolute link would break the GitHub Pages project subpath: ' + url)
     tabs = re.search(r'<nav\b[^>]*aria-label="Project tabs"[^>]*>(.*?)</nav>',source,re.S)
-    if not tabs or len(re.findall('<a ',tabs.group(1))) != 2 or '>Literature review</a>' not in tabs.group(1) or '>Experiments</a>' not in tabs.group(1):
-        errors.append('Project navigation must contain Literature review and Experiments')
+    if not tabs or len(re.findall('<a ',tabs.group(1))) != 3 or '>Literature Review</a>' not in tabs.group(1) or '>Experiments</a>' not in tabs.group(1) or '>Proposal</a>' not in tabs.group(1):
+        errors.append('Project navigation must contain Literature Review, Experiments and Proposal')
     for kind,count in [('Table',len(parser.tables)),('Figure',parser.figures)]:
         actual = [int(match.group(1)) for text in parser.labels if (match := re.match(kind + r' (\d+)\.',text))]
         if actual != list(range(1,count+1)): errors.append('Missing or non-sequential ' + kind + ' captions')
@@ -153,4 +153,4 @@ if __name__ == '__main__':
     if errors:
         for error in errors: print('ERROR:',error)
         raise SystemExit(1)
-    print(f'Validation passed: two project collections, {6+len(PROFILES)} tables, {10+len(PROFILES)} labeled figures, {len(digest["papers"])} verified papers, complete local links/citations, natural text wrapping.')
+    print(f'Validation passed: three project collections, {6+len(PROFILES)} tables, {10+len(PROFILES)} labeled figures, {len(digest["papers"])} verified papers, complete local links/citations, natural text wrapping.')

@@ -333,7 +333,7 @@ def build_page(data):
 <p><strong>Suggested citation:</strong> Lin, G.-T., Chen, C., Chen, Z., &amp; Lee, H.-y. (2026). <em>Full-Duplex-Bench-v3: Benchmarking Tool Use for Full-Duplex Voice Agents Under Real-World Disfluency.</em> arXiv:2604.04847.</p>
 <p>Dataset files are kept locally under <code class="fdb-path">data/benchmarks/full_duplex_bench_v3/</code>. Only three converted previews and their source hashes are included on this site.</p>
 </section>
-<footer class="site-footer"><p>AI2AI Duplex · Literature review · <a href="index.html#literature-review">Duplex landscape</a> · <a href="research/full-duplex-bench-v3/ATTRIBUTION.md">Attribution record</a> · <a href="https://github.com/BorrisonXiao/ai2ai-duplex-report">Source repository</a></p></footer>
+<footer class="site-footer"><p>AI2AI Duplex · Literature review · <a href="index.html#literature-review">Duplex Overview</a> · <a href="research/full-duplex-bench-v3/ATTRIBUTION.md">Attribution record</a> · <a href="https://github.com/BorrisonXiao/ai2ai-duplex-report">Source repository</a></p></footer>
 </div></main>
 </body>
 </html>'''

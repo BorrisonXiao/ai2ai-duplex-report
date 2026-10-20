@@ -22,11 +22,11 @@ def validate():
         parser.feed(text)
         pages[filename]=(text,parser)
         tabs=re.search(r'<nav[^>]*aria-label="Literature review sub-tabs"[^>]*>(.*?)</nav>',text,re.S)
-        assert tabs and tabs[1].count('<a ') == 8 and tabs[1].count('aria-current="page"') == 1
+        assert tabs and tabs[1].count('<a ') == 3 and tabs[1].count('aria-current="page"') == 1
         current=re.search(r'<a[^>]*href="([^"]+)"[^>]*aria-current="page"',tabs[1])[1]
         assert urlsplit(current).path == filename
         project=re.search(r'<nav[^>]*aria-label="Project tabs"[^>]*>(.*?)</nav>',text,re.S)
-        assert project and project[1].count('<a ') == 2 and '>Literature review</a>' in project[1] and '>Experiments</a>' in project[1]
+        assert project and project[1].count('<a ') == 3 and '>Literature Review</a>' in project[1] and '>Experiments</a>' in project[1] and '>Proposal</a>' in project[1]
         assert all(n == 1 for n in Counter(parser.ids).values())
         assert parser.viewport and parser.title and not parser.images_missing_alt
         for m in re.finditer(r'<(p|h[1-6]|td|th|dd|dt)\b[^>]*>(.*?)</\1>',text,re.S):
@@ -88,7 +88,7 @@ def validate():
     assert 'context-assistance.html)' in (ROOT/'README.md').read_text()
     manifest=json.loads((ROOT/'assets/context-assistance/manifest.json').read_text())
     assert len(manifest['sources'])==3 and all(len(x['pdf_sha256'])==64 for x in manifest['sources'])
-    print(f'PASS: eight literature sub-tabs; 15 verified papers; 7 tables / 7 figures; {len(SCOPE["rows"])} scope rows match MSI/MP/MultiTalk detail pages; local links, scores and wrapping.')
+    print(f'PASS: three literature categories; 15 verified papers; 7 tables / 7 figures; {len(SCOPE["rows"])} scope rows match MSI/MP/MultiTalk detail pages; local links, scores and wrapping.')
 
 if __name__ == '__main__':
     validate()

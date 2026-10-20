@@ -1,20 +1,72 @@
-"""Shared collection navigation and stable literature-review sub-tabs."""
+"""Shared navigation for the literature, experiments and proposal collections."""
+from html import escape
+
+
+def tabs(items, current, label, prefix="", css="review-tabs"):
+    return '<nav class="' + css + '" aria-label="' + label + '">' + ''.join(
+        '<a href="' + escape(prefix + url, quote=True) + '"' +
+        (' aria-current="page"' if key == current else '') + '>' + text + '</a>'
+        for key, text, url in items) + '</nav>'
+
+
 def project_tabs(current, prefix=""):
-    items = [("literature", "Literature review", "index.html"), ("experiments", "Experiments", "experiments/index.html")]
-    return '<nav class="nav-links" aria-label="Project tabs">' + ''.join('<a href="' + prefix + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
+    return tabs([
+        ("literature", "Literature Review", "index.html"),
+        ("experiments", "Experiments", "experiments/index.html"),
+        ("proposal", "Proposal", "proposals/index.html"),
+    ], current, "Project tabs", prefix, "nav-links")
+
+
+BENCHMARKS = [
+    ('mpbench', 'MP-Bench', 'mpbench.html'),
+    ('msi', 'MSI-Bench', 'msi-bench.html'),
+    ('multitalk', 'MultiTalkBench', 'multitalk-bench.html'),
+    ('fdb2', 'Full-Duplex-Bench v2', 'full-duplex-bench-v2.html'),
+    ('fdb', 'Full-Duplex-Bench v3', 'full-duplex-bench.html'),
+]
 
 
 def review_tabs(current):
-    items = [('landscape', 'Duplex landscape', 'index.html#literature-review'), ('context', 'Context-aware assistance', 'context-assistance.html'), ('mpbench', 'MP-Bench', 'mpbench.html'), ('msi', 'MSI-Bench', 'msi-bench.html'), ('multitalk', 'MultiTalkBench', 'multitalk-bench.html'), ('fdb2', 'Full-Duplex-Bench v2', 'full-duplex-bench-v2.html'), ('fdb', 'Full-Duplex-Bench v3', 'full-duplex-bench.html'), ('prethinking', 'Pre-thinking proposal', 'prethinking.html')]
-    return '<nav class="review-tabs" aria-label="Literature review sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
+    if current == 'prethinking':
+        return proposal_tabs(current)
+    benchmark = current in {key for key, _, _ in BENCHMARKS}
+    result = tabs([
+        ('landscape', 'Duplex Overview', 'index.html#literature-review'),
+        ('context', 'Conversation context', 'context-assistance.html'),
+        ('benchmarks', 'Benchmarks', 'benchmarks.html'),
+    ], 'benchmarks' if benchmark else current, 'Literature review sub-tabs')
+    if benchmark:
+        result += tabs(BENCHMARKS, current, 'Benchmark pages', css='review-tabs secondary-tabs')
+    return result
+
+
+DUPLEX_PAGES = [
+    ('duplex', 'Overview', 'duplexomni.html'),
+    ('basic', 'S1 speech', 'single-request.html'),
+    ('replay', 'Interruption replay', 'interruption.html'),
+    ('evidence', 'Interruption results', 'natural-study.html'),
+    ('s2', 'S2 reasoning', 's2-single.html'),
+    ('reproduction', 'S1 reproduction', 's1-reproduction.html'),
+    ('archive', 'Earlier studies', 'archive.html'),
+]
 
 
 def experiment_subtabs(current):
-    items = [('overview', 'All experiments', 'index.html'),
-             ('replay', 'Current replay', 'interruption.html'),
-             ('s2', 'Single-request S2', 's2-single.html'),
-             ('reproduction', 'S1 reproduction report', 's1-reproduction.html'),
-             ('evidence', 'Interruption evidence', 'natural-study.html'),
-             ('prethinking', 'Pre-thinking pilot', 'prethinking-pilot.html'),
-             ('ami', 'AMI questions', 'ami-questions.html')]
-    return '<nav class="review-tabs" aria-label="Experiment sub-tabs">' + ''.join('<a href="' + url + '"' + (' aria-current="page"' if key == current else '') + '>' + label + '</a>' for key, label, url in items) + '</nav>'
+    duplex = current in {key for key, _, _ in DUPLEX_PAGES}
+    result = tabs([
+        ('overview', 'All experiments', 'index.html'),
+        ('duplex', 'DuplexOmni', 'duplexomni.html'),
+        ('prethinking', 'Pre-thinking pilot', 'prethinking-pilot.html'),
+        ('ami', 'AMI questions', 'ami-questions.html'),
+        ('ami-audio', 'AMI question audio', 'ami-question-audio.html'),
+    ], 'duplex' if duplex else current, 'Experiment sub-tabs')
+    if duplex:
+        result += tabs(DUPLEX_PAGES, current, 'DuplexOmni experiments', css='review-tabs secondary-tabs')
+    return result
+
+
+def proposal_tabs(current, prefix=""):
+    return tabs([
+        ('overview', 'All proposals', 'proposals/index.html'),
+        ('prethinking', 'Pre-thinking', 'prethinking.html'),
+    ], current, 'Proposal pages', prefix)

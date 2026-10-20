@@ -6,7 +6,7 @@
 <meta name="description" content="MultiTalkBench evaluation protocol, exact Gemma judge prompt examples, scoring rules, two audio excerpts and a complete test-data audit.">
 <meta name="color-scheme" content="light dark">
 <title>MultiTalkBench Evaluation and Test Data — AI2AI Duplex</title>
-<link rel="stylesheet" href="assets/site.css?v=776af14a9dee">
+<link rel="stylesheet" href="assets/site.css?v=6c662ba91a97">
 <script src="assets/site.js" defer></script>
 <script>window.MathJax = {tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]}, svg: {fontCache: 'global'}};</script>
 <script id="MathJax-script" defer src="assets/vendor/mathjax/tex-svg.js"></script>
@@ -41,8 +41,8 @@ mjx-container { max-width:100%; }
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to MultiTalkBench review</a>
-<header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="index.html" aria-current="page">Literature review</a><a href="experiments/index.html">Experiments</a></nav></div></header>
-<main id="main"><div class="container"><nav class="review-tabs" aria-label="Literature review sub-tabs"><a href="index.html#literature-review">Duplex landscape</a><a href="context-assistance.html">Context-aware assistance</a><a href="mpbench.html">MP-Bench</a><a href="msi-bench.html">MSI-Bench</a><a href="multitalk-bench.html" aria-current="page">MultiTalkBench</a><a href="full-duplex-bench-v2.html">Full-Duplex-Bench v2</a><a href="full-duplex-bench.html">Full-Duplex-Bench v3</a><a href="prethinking.html">Pre-thinking proposal</a></nav>
+<header class="site-nav"><div class="nav-inner"><a class="brand" href="./">AI2AI Duplex</a><nav class="nav-links" aria-label="Project tabs"><a href="index.html" aria-current="page">Literature Review</a><a href="experiments/index.html">Experiments</a><a href="proposals/index.html">Proposal</a></nav></div></header><div class="container collection-nav"><nav class="review-tabs" aria-label="Literature review sub-tabs"><a href="index.html#literature-review">Duplex Overview</a><a href="context-assistance.html">Conversation context</a><a href="benchmarks.html" aria-current="page">Benchmarks</a></nav><nav class="review-tabs secondary-tabs" aria-label="Benchmark pages"><a href="mpbench.html">MP-Bench</a><a href="msi-bench.html">MSI-Bench</a><a href="multitalk-bench.html" aria-current="page">MultiTalkBench</a><a href="full-duplex-bench-v2.html">Full-Duplex-Bench v2</a><a href="full-duplex-bench.html">Full-Duplex-Bench v3</a></nav></div>
+<main id="main"><div class="container">
 <header class="hero"><p class="eyebrow">Literature review · Evaluation protocol and dataset preview</p>
 <h1>MultiTalkBench: long, multi-party speech in English and Chinese</h1>
 <p class="lede">How a model replaces one participant in a long group conversation, how Gemma judges its contributions, and what those scores can establish.</p>
@@ -873,7 +873,7 @@ python site/scripts/build_multitalk_bench.py</code></pre>
 <p>MultiTalkBench is released by Ke Wang, Houxing Ren, Zimu Lu, Yunqiao Yang, Zhuofan Zong, Mingjie Zhan, and Hongsheng Li. The dataset card identifies <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. The two preview excerpts are 15-second crops, with source sample rate and stereo channels retained; they are provided under the same license. Source hash, excerpt bounds, and webpage asset hash are recorded in the <a href="research/multitalk-bench/preview.json">preview manifest</a>.</p>
 <p>Paper: <a href="https://arxiv.org/abs/2609.36903">MultiTalk: Scaling Full-Duplex Speech Models to Long, Multi-Party, Bilingual Conversation</a>. Data card and full download: <a href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Hugging Face MultiTalkBench</a>. The local release’s <a href="research/multitalk-bench/validation.json">validation and SHA-256 inventory</a> records the exact snapshot and checked counts. Full upstream attribution details are in the <a href="research/multitalk-bench/ATTRIBUTION.md">attribution record</a>.</p>
 </section>
-<footer class="site-footer"><p>MultiTalkBench data preview · <a href="index.html#literature-review">Return to the duplex landscape</a> · <a href="context-assistance.html#benchmark-scope">Compare benchmark scope</a> · <a href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Open the dataset card</a></p></footer>
+<footer class="site-footer"><p>MultiTalkBench data preview · <a href="index.html#literature-review">Return to the duplex overview</a> · <a href="context-assistance.html#benchmark-scope">Compare benchmark scope</a> · <a href="https://huggingface.co/datasets/MultiTalk/MultiTalkBench">Open the dataset card</a></p></footer>
 </div></main>
 </body>
 </html>

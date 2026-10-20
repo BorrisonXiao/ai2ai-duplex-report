@@ -32,8 +32,9 @@ def main():
             assert parts.fragment in parsed.ids,url
     for filename in ['index.html','context-assistance.html','prethinking.html']:
         html=(ROOT/filename).read_text()
-        nav=re.search(r'<nav[^>]*aria-label="Literature review sub-tabs"[^>]*>(.*?)</nav>',html,re.S)[1]
-        assert nav.count('<a ')==8 and nav.count('aria-current="page"')==1
+        label='Proposal pages' if filename=='prethinking.html' else 'Literature review sub-tabs'
+        nav=re.search(r'<nav[^>]*aria-label="'+label+r'"[^>]*>(.*?)</nav>',html,re.S)[1]
+        assert nav.count('<a ')==(2 if filename=='prethinking.html' else 3) and nav.count('aria-current="page"')==1
         current=re.search(r'<a[^>]*href="([^"]+)"[^>]*aria-current="page"',nav)[1]
         assert urlsplit(current).path==filename
     for m in re.finditer(r'<(p|h[1-6]|td|th|dd|dt)\b[^>]*>(.*?)</\1>',text,re.S):
@@ -57,6 +58,6 @@ def main():
     assert all(set(g['refs'])<=ids for g in digest['gaps'])
     assert audit['multitalk-code']['status']=='unreachable' and audit['multitalk-code']['error'].endswith('Not Found')
     assert 'prethinking.html)' in (ROOT/'README.md').read_text()
-    print('PASS: 8 sub-tabs, 18 verified papers, 6 tables, 1 illustration, 5 escaped equations, all links and natural wrapping; 0 GPUs.')
+    print('PASS: separate proposal navigation, 18 verified papers, 6 tables, 1 illustration, 5 escaped equations, all links and natural wrapping; 0 GPUs.')
 
 if __name__=='__main__':main()

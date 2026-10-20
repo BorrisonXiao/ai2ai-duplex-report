@@ -312,7 +312,7 @@ def render_page(preview):
   doi = {{10.18653/v1/2026.acl-short.4}}
 }}</code></pre></details>
 </section>
-<footer class="site-footer"><p>AI2AI Duplex · Literature review · <a href="index.html#literature-review">Back to duplex landscape</a> · <a href="{e(source_tree)}">Official source</a></p></footer>
+<footer class="site-footer"><p>AI2AI Duplex · Literature review · <a href="index.html#literature-review">Back to duplex overview</a> · <a href="{e(source_tree)}">Official source</a></p></footer>
 </div></main>
 </body></html>
 '''

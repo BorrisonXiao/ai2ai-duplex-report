@@ -17,7 +17,7 @@ def main():
     q=first['runtime_qualification'];body=experiment_subtabs('s2')
     body+='<header class="hero"><p class="eyebrow">Single-request reasoning · updated 14 October 2026</p><h1>S1 can speak a response informed by S2.</h1><p class="lede">The harness has completed a real S1–S2 exchange on one human question. A separate arithmetic test exposed a reasoning-budget failure, which we investigated with direct provider controls.</p>'+paragraphs('S1 listens and speaks while the separate S2 backend reasons. In the successful human example, S2 returns a short answer about outlet stores, and S1 finishes its spoken explanation with matching information. The S2 call is explicitly forced in this example; the arithmetic follow-up also tests whether S1’s own THINK command can start the exchange.')+'</header>'
     if study['followup_review']:
-        body=body.replace('S1 can speak a response informed by S2.','S1 asks S2 and speaks the result.')
+        body=body.replace('S1 can speak a response informed by S2.','S2 reasoning and spoken answers')
         body=body.replace('The harness has completed a real S1–S2 exchange on one human question. A separate arithmetic test exposed a reasoning-budget failure, which we investigated with direct provider controls.',
             'On one calculation request, S1 emits THINK, S2 reasons and returns 391, and S1 speaks the answer. The complete exchange now works without forcing delegation. A human-recorded question and matched controls provide additional evidence.')
         body=body.replace('The S2 call is explicitly forced in this example; the arithmetic follow-up also tests whether S1’s own THINK command can start the exchange.',

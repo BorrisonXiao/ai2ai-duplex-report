@@ -152,7 +152,7 @@ def build():
 <p class="mpbench-license"><strong>MP-Bench</strong> by Yi-Jen Shih, Shih-Yun Shan Kuan, Guan-Ting Lin, Kai-Wei Chang, Siddhant Arora, Shu-wen Yang, Abdelrahman Mohamed, Shinji Watanabe, Hung-yi Lee, and David Harwath (2026), “MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant,” <a href="''' + e(DATA['paper']) + '''">arXiv:2609.13076</a>. Source repository: <a href="''' + e(DATA['readme']) + '''">atosystem/MP-Bench at the pinned commit</a>; audio: <a href="''' + e(DATA['audio_source']) + '''">official task audio archive</a>. Licensed under <a href="''' + e(DATA['license_url']) + '''">CC BY-NC 4.0</a>.</p>
 <p>The three audio files are reproduced unchanged. Transcript text is copied verbatim from the upstream examples and paired with task descriptions for this preview. The authors state that MP-Bench is for evaluation only; do not use the tasks or audio to train models. See the <a href="research/mpbench/ATTRIBUTION.md">full local attribution record</a> and <a href="research/mpbench/preview.json">preview manifest with source hashes</a>.</p>
 </section>
-<footer class="site-footer"><p>MP-Bench dataset preview · <a href="index.html#literature-review">Return to the duplex landscape</a> · <a href="''' + e(DATA['repository']) + '''">Official benchmark repository</a></p></footer>
+<footer class="site-footer"><p>MP-Bench dataset preview · <a href="index.html#literature-review">Return to the duplex overview</a> · <a href="''' + e(DATA['repository']) + '''">Official benchmark repository</a></p></footer>
 </div></main>
 </body>
 </html>
