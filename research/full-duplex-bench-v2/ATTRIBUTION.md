@@ -26,5 +26,12 @@ text and file checksums are recorded in the project workspace under
 `data/benchmarks/full_duplex_bench_v2/`; the local data audit is published at
 [`integrity.json`](integrity.json).
 
-This website page contains an attributed summary, aggregate counts, and four
-short scenario titles. It does not imply endorsement by the authors.
+This website page contains an attributed summary, aggregate counts, four short
+scenario titles, and short examiner/evaluator prompt excerpts. It does not
+imply endorsement by the authors.
+
+The three playable audio examples are not part of the downloaded v2 prompt
+package and are not rehosted here. They stream from the authors' linked demo at
+https://ericsunkuan.github.io/full-duplex-bench-v2-demo/ . That demo labels its
+audio samples for research purposes only. Clip URLs and checked WAV hashes,
+formats, and sizes are recorded in [`audio-samples.json`](audio-samples.json).

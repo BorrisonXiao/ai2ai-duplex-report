@@ -22,6 +22,8 @@ from benchmark_scope import render_scope_section
 REPOSITORY = "https://github.com/DanielLin94144/Full-Duplex-Bench"
 REVISION = "3e799c45a045256f47d5f1c9cda90157e2d2ec9e"
 PAPER = "https://aclanthology.org/2026.acl-short.4/"
+AUTHOR_DEMO = "https://ericsunkuan.github.io/full-duplex-bench-v2-demo/"
+DEMO_AUDIO_MANIFEST = RESEARCH / "audio-samples.json"
 LICENSE_URL = "https://creativecommons.org/licenses/by-nc/4.0/"
 FAMILY_DESCRIPTIONS = {
     "Daily": "Routine requests such as ordering, scheduling, planning, reservations, and troubleshooting.",
@@ -44,11 +46,23 @@ def e(value):
     return html.escape(str(value), quote=True)
 
 
+def render_audio_card(item):
+    label = f"{item['family']} · {item['pacing']} · {item['sample']} · {item['model']}"
+    return (
+        '<article class="card fdbv2-audio-card"><span class="tag">' + e(item["family"]) + " · " + e(item["pacing"]) + "</span>"
+        + "<h3>" + e(item["model"]) + "</h3><p>" + e(item["sample"]) + "</p>"
+        + '<audio controls preload="none" aria-label="' + e(label) + '" src="' + e(item["url"]) + '">'
+        + 'Your browser does not support HTML audio. <a href="' + e(item["url"]) + '">Open the WAV</a>.'
+        + "</audio><p class=\"meta\">" + f"{item['wave']['duration_seconds']:g} s · {item['wave']['sample_rate_hz']:,} Hz mono · "
+        + '<a href="' + e(item["url"]) + '" target="_blank" rel="noopener noreferrer">Open source WAV</a></p></article>'
+    )
+
+
 def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def build_preview(prompt_data, integrity):
+def build_preview(prompt_data, integrity, eval_prompts):
     split_rows = []
     examples = []
     for split, block in prompt_data["splits"].items():
@@ -70,6 +84,9 @@ def build_preview(prompt_data, integrity):
         })
     prompt_record = next(item for item in integrity["files"] if item["source_path"] == "v2/prompts_staged_200.json")
     eval_record = next(item for item in integrity["files"] if item["source_path"] == "v2/eval/eval_prompts.json")
+    daily_example = next(task for task in prompt_data["splits"]["Daily"]["tasks"] if task["id"] == "Daily.ordering.001")
+    correction_rubric = next(item for item in eval_prompts["task_specific_prompts"] if item["id"] == "correction")
+    audio_manifest = json.loads(DEMO_AUDIO_MANIFEST.read_text(encoding="utf-8"))
     preview = {
         "benchmark": "Full-Duplex-Bench v2",
         "paper": PAPER,
@@ -90,6 +107,33 @@ def build_preview(prompt_data, integrity):
             {"name": "eval_prompts.json", "bytes": eval_record["bytes"], "sha256": eval_record["sha256"]},
         ],
         "examples": examples,
+        "prompt_examples": {
+            "examiner": {
+                "task_id": daily_example["id"],
+                "scenario_title": daily_example["scenario_title"],
+                "roleplay_excerpt": "Roleplay a customer ordering a breakfast set to-go.",
+                "staged_goals": [
+                    "Begin with a pickup order request.",
+                    "Reveal the drink and bread preference when asked.",
+                    "Give a pickup window and the order name.",
+                    "Confirm the items, estimated price, and pickup time.",
+                ],
+                "system_summary": "The shared examiner instructions ask for concise, natural, cooperative spoken turns; details are revealed progressively and the exchange stays short.",
+            },
+            "judge": {
+                "system_excerpt": "You are an impartial evaluator of Channel B.",
+                "turn_taking_excerpt": "How natural and well-timed are Channel B’s responses during the conversation?",
+                "scoring_summary": "The evaluator scores turn-taking fluency and instruction following per Examinee response event, then gives one task-specific score for correction, entity tracking, or safety.",
+                "correction_rubric_summary": "For correction tasks, the rubric checks whether the Evaluatee notices a revised value, acknowledges the correction, and consistently uses the corrected value later.",
+                "input_summary": "The pinned runner combines these rubrics with staged goals, channel transcript summaries, and timestamped Channel B segments before calling its configured Gemini evaluator.",
+                "default_model": "gemini-2.5-flash-preview-09-2025",
+                "output_summary": "JSON with time-bounded turn-taking and instruction-following scores plus a dialogue-level task-specific score.",
+                "task_specific_rubric_title": correction_rubric["title"],
+            },
+        },
+        "audio_samples": audio_manifest["samples"],
+        "audio_demo_url": audio_manifest["source_demo"],
+        "audio_demo_notice": audio_manifest["source_notice"],
         "author_reported_task_scores": PAPER_RESULTS,
     }
     RESEARCH.mkdir(parents=True, exist_ok=True)
@@ -153,6 +197,10 @@ def render_page(preview):
 .fdbv2-table th[scope="row"] {{ min-width:135px; }}
 .fdbv2-table td.numeric {{ white-space:nowrap; font-variant-numeric:tabular-nums; }}
 .fdbv2-example {{ min-width:0; }}
+.fdbv2-audio-card {{ min-width:0; }}
+.fdbv2-audio-card audio {{ display:block; width:100%; min-height:44px; margin:12px 0; }}
+.fdbv2-prompt-card {{ min-width:0; }}
+.fdbv2-prompt-card ol {{ padding-left:22px; }}
 .fdbv2-hash {{ overflow-wrap:anywhere; }}
 .fdbv2-license {{ overflow-wrap:anywhere; }}
 </style>
@@ -165,17 +213,22 @@ def render_page(preview):
 <h1>Full-Duplex-Bench v2: evaluating live multi-turn speech interaction</h1>
 <p class="lede">The pinned v2 task set contains 200 staged role-play prompts across Daily, Correction, Entity Tracking, and Safety. It is designed for live Examiner–Evaluatee audio conversations; the release contains prompt JSON rather than a static recording corpus.</p>
 <p class="meta">{datetime.now().astimezone().strftime('%d %B %Y')} · Source revision <code>{REVISION[:12]}</code> · {e(status_label)} · No local model inference or benchmark scoring</p>
-<div class="button-row"><a class="button primary" href="#task-design">Inspect the task set</a><a class="button" href="#evaluation">Read the protocol</a><a class="button" href="{e(task_json)}">Pinned task JSON</a><a class="button" href="{e(PAPER)}">ACL 2026 paper</a></div></header>
-<nav class="jump-links" aria-label="Full-Duplex-Bench v2 sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#examples">Example tasks</a><a href="#evaluation">Scoring</a><a href="#paper-results">Paper results</a><a href="#audit">Download audit</a><a href="#attribution">Attribution</a></nav>
+<div class="button-row"><a class="button primary" href="#audio-examples">Listen to audio</a><a class="button" href="#prompt-examples">See prompt examples</a><a class="button" href="{e(task_json)}">Pinned task JSON</a><a class="button" href="{e(eval_json)}">Pinned judge prompts</a><a class="button" href="{e(PAPER)}">ACL 2026 paper</a></div></header>
+<nav class="jump-links" aria-label="Full-Duplex-Bench v2 sections"><a href="#benchmark-scope">Tests and limits</a><a href="#overview">At a glance</a><a href="#task-design">Task design</a><a href="#audio-examples">Audio examples</a><a href="#examples">Example tasks</a><a href="#prompt-examples">Prompt examples</a><a href="#evaluation">Scoring</a><a href="#paper-results">Paper results</a><a href="#audit">Download audit</a><a href="#attribution">Attribution</a></nav>
 {render_scope_section(['fdb-v2'], number=1)}
 <section class="section" id="overview"><h2>At a glance</h2>
 <p class="section-intro">FDB-v2 uses a spoken Examiner to guide the model under evaluation through a staged conversation. The task JSON and scoring prompts are checked against the official repository at one pinned revision.</p>
 <div class="stat-grid"><div class="stat"><strong>{preview['task_count']}</strong><span>staged task prompts</span></div>
 <div class="stat"><strong>{preview['family_count']}</strong><span>task families, 50 prompts each</span></div>
 <div class="stat"><strong>{preview['class_count']}</strong><span>scenario classes</span></div>
-<div class="stat"><strong>0</strong><span>pre-recorded v2 input audio files</span></div></div>
+<div class="stat"><strong>0</strong><span>audio files in the downloaded prompt package</span></div></div>
 <p>The Examiner delivers synthesized speech and adjusts the next goal based on the Evaluatee’s response. The paper describes Fast and Slow pacing, a streaming WebRTC orchestrator, and a canonical 48 kHz mono PCM interface with 10 ms frames. The two roles are the Examiner and the Evaluatee; this is not a multi-party group-conversation benchmark.</p>
-<div class="callout"><h3>What is in the local download</h3><p>The workspace stores the task set, evaluator prompt file, and upstream license under <code>data/benchmarks/full_duplex_bench_v2/</code>. The public preview links to the original pinned files; it does not copy the full task prompts onto the website. The upstream v2 runner creates audio during live evaluation.</p></div>
+<div class="callout"><h3>What is in the local download</h3><p>The workspace stores the task set, evaluator prompt file, and upstream license under <code>data/benchmarks/full_duplex_bench_v2/</code>. The prompt release contains no WAVs, but the authors’ demo separately hosts recorded evaluation examples. Three demo clips are playable below and stream from the authors’ site.</p></div>
+</section>
+<section class="section" id="audio-examples"><h2>Listen to author-hosted audio examples</h2>
+<p class="section-intro">These are actual recorded clips from the benchmark authors’ demo: one Daily-family, Sample 1, Fast-pacing set across three evaluated systems. They are not recordings packaged with our downloaded prompt JSON and are not local model outputs. The source demo labels its audio samples for research use.</p>
+<div class="card-grid">{''.join(render_audio_card(item) for item in preview['audio_samples'])}</div>
+<p class="meta">Audio is streamed directly from the <a href="{e(preview['audio_demo_url'])}" target="_blank" rel="noopener noreferrer">authors’ FDB-v2 demo</a>; this page does not rehost the WAVs. <a href="research/full-duplex-bench-v2/audio-samples.json">Clip URLs, WAV metadata, and SHA-256 audit</a>.</p>
 </section>
 <section class="section" id="task-design"><h2>Four prompt families</h2>
 <p class="section-intro">Each task includes an examiner role, a staged semantic-goal prompt, skill labels, metric-focus labels, and a flag allowing examiner barge-in. The v6 prompt file declares a five-turn limit and a 60-second duration setting.</p>
@@ -186,6 +239,28 @@ def render_page(preview):
 <section class="section" id="examples"><h2>Four example scenarios</h2>
 <p class="section-intro">These cards show the first task ID and short scenario title in each split. They identify the format without reproducing the complete public prompt set.</p>
 <div class="card-grid">{''.join(task_cards)}</div>
+</section>
+<section class="section" id="prompt-examples"><h2>What prompts do the Examiner and judge use?</h2>
+<p class="section-intro">The Examiner gets a task-specific role prompt and staged goals. The separate judge prompt file defines scoring dimensions and output format. The pinned runner sends the judge ASR transcript summaries and timestamps, not raw audio.</p>
+<div class="card-grid">
+<article class="card fdbv2-prompt-card"><span class="tag">Examiner · {e(preview['prompt_examples']['examiner']['task_id'])}</span><h3>{e(preview['prompt_examples']['examiner']['scenario_title'])}</h3>
+<p><strong>Task-prompt excerpt:</strong> “{e(preview['prompt_examples']['examiner']['roleplay_excerpt'])}”</p>
+<p>{e(preview['prompt_examples']['examiner']['system_summary'])}</p>
+<p><strong>Staged goals, summarized:</strong></p><ol>{''.join('<li>' + e(goal) + '</li>' for goal in preview['prompt_examples']['examiner']['staged_goals'])}</ol>
+<p class="meta">The runner passes the task’s Examiner system prompt and task prompt to Channel A; Channel B is the model being evaluated.</p></article>
+<article class="card fdbv2-prompt-card"><span class="tag blue">LLM judge · {e(preview['prompt_examples']['judge']['default_model'])}</span><h3>{e(preview['prompt_examples']['judge']['task_specific_rubric_title'])} and event-level scoring</h3>
+<p><strong>System-prompt excerpt:</strong> “{e(preview['prompt_examples']['judge']['system_excerpt'])}”</p>
+<p><strong>Turn-taking rubric excerpt:</strong> “{e(preview['prompt_examples']['judge']['turn_taking_excerpt'])}”</p>
+<p>{e(preview['prompt_examples']['judge']['correction_rubric_summary'])} {e(preview['prompt_examples']['judge']['scoring_summary'])}</p>
+<p>{e(preview['prompt_examples']['judge']['input_summary'])}</p>
+<details><summary>Illustrative output shape</summary><pre><code>{{
+  "turn_events": [
+    {{"start": 1.2, "end": 2.1, "turn_taking": 4, "instruction_following": 5}}
+  ],
+  "task_specific_score": 4
+}}</code></pre><p class="meta">The pinned prompt requests a parseable JSON result with event time ranges and a global task-specific score; field names above are simplified for readability.</p></details>
+<p class="meta">The source evaluator prompt includes separate rubrics for turn-taking fluency, multi-turn instruction following, and the task-specific family. <a href="{e(eval_json)}">Open the full pinned judge prompt JSON</a>.</p></article>
+</div>
 </section>
 <section class="section" id="evaluation"><h2>How the live evaluation is scored</h2>
 <div class="card-grid">
@@ -207,12 +282,12 @@ def render_page(preview):
 <div class="fdbv2-table-scroll" role="region" aria-label="Downloaded FDB-v2 file hashes" tabindex="0"><table class="fdbv2-table"><caption>Table 4. Locally downloaded files; SHA-256 values match the recorded import manifest and pinned Git blobs.</caption>
 <thead><tr><th scope="col">File</th><th scope="col">Bytes</th><th scope="col">SHA-256</th></tr></thead><tbody>{''.join(file_rows)}</tbody></table></div>
 <div class="callout amber"><h3>Upstream note does not match the data arrays</h3><p>The source JSON’s top-level note says it stages 150 tasks across Daily, Correction, and Entity Tracking. Its actual arrays contain 200 unique prompts: 50 in each of four splits, including Safety. All four arrays, task schemas, class references, and pinned-source hashes pass validation. The stale note remains unchanged in the downloaded file and is recorded as a metadata caveat in the <a href="{e(audit_url)}">full integrity report</a>.</p></div>
-<p>The audit is for a prompt release, not audio quality. No audio files are packaged in the checked v2 task directory; the Examiner’s spoken input is synthesized during evaluation. No benchmark model inference, transcription, judging, or GPU allocation was performed for this page.</p>
+<p>The audit is for the prompt release, not audio quality. No audio files are packaged in the checked v2 task directory; the audio section links to author-hosted demo recordings instead. No benchmark model inference, transcription, judging, or GPU allocation was performed for this page.</p>
 <p class="meta">Audit status: <strong>{e(status_label)}</strong> · {preview['task_count']} prompts · {preview['class_count']} classes · pinned source SHA-256 checks passed</p>
 </section>
 <section class="section" id="attribution"><h2>Attribution, license, and related versions</h2>
 <p class="fdbv2-license"><strong>Full-Duplex-Bench v2</strong> by Guan-Ting Lin, Shih-Yun Shan Kuan, Jiatong Shi, Kai-Wei Chang, Siddhant Arora, Shinji Watanabe, and Hung-yi Lee. “Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner.” In <em>Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</em>, pages 27–36, 2026. <a href="{e(PAPER)}">ACL Anthology</a>; DOI <a href="https://doi.org/10.18653/v1/2026.acl-short.4">10.18653/v1/2026.acl-short.4</a>.</p>
-<p>Source repository: <a href="{e(source_tree)}">Full-Duplex-Bench v2 at the pinned revision</a>. The repository’s top-level dataset/code license is <a href="{e(LICENSE_URL)}">CC BY-NC 4.0</a>. This page provides an attributed summary and selected scenario titles; it does not imply endorsement by the authors. See the full <a href="research/full-duplex-bench-v2/ATTRIBUTION.md">attribution record</a>.</p>
+<p>Source repository: <a href="{e(source_tree)}">Full-Duplex-Bench v2 at the pinned revision</a>. The repository’s top-level dataset/code license is <a href="{e(LICENSE_URL)}">CC BY-NC 4.0</a>. Short prompt excerpts and the playable sample recordings are attributed in the <a href="{e(preview['audio_demo_url'])}">authors’ demo</a> and full <a href="research/full-duplex-bench-v2/ATTRIBUTION.md">attribution record</a>; the page does not imply endorsement by the authors.</p>
 <p>Compare versions: <a href="full-duplex-bench.html">Full-Duplex-Bench v3</a> evaluates tool use with released human recordings; <a href="{e(REPOSITORY + '/tree/' + REVISION + '/v1_v1.5')}">v1/v1.5</a> cover earlier static turn-taking and overlap tests.</p>
 <details><summary>Paper citation (BibTeX)</summary><pre><code>@inproceedings{{lin-etal-2026-full,
   title = {{Full-Duplex-{{B}}ench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner}},
@@ -232,7 +307,8 @@ def render_page(preview):
 def main():
     prompt_data = json.loads((DATA / "prompts_staged_200.json").read_text(encoding="utf-8"))
     integrity = json.loads(INTEGRITY_SOURCE.read_text(encoding="utf-8"))
-    preview = build_preview(prompt_data, integrity)
+    eval_prompts = json.loads((DATA / "eval_prompts.json").read_text(encoding="utf-8"))
+    preview = build_preview(prompt_data, integrity, eval_prompts)
     page = render_page(preview)
     PAGE.write_text(page, encoding="utf-8")
     print(f"Built {PAGE.relative_to(ROOT)} from {preview['task_count']} validated prompt entries")

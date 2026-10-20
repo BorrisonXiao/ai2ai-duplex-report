@@ -3,7 +3,7 @@
   "paper": "https://aclanthology.org/2026.acl-short.4/",
   "repository": "https://github.com/DanielLin94144/Full-Duplex-Bench",
   "source_revision": "3e799c45a045256f47d5f1c9cda90157e2d2ec9e",
-  "checked_at_utc": "2026-10-20T01:53:39.972121+00:00",
+  "checked_at_utc": "2026-10-20T01:54:51.407463+00:00",
   "license": "CC BY-NC 4.0",
   "prompt_file_version": 6,
   "task_count": 200,
@@ -137,6 +137,97 @@
       ]
     }
   ],
+  "prompt_examples": {
+    "examiner": {
+      "task_id": "Daily.ordering.001",
+      "scenario_title": "Breakfast set takeaway",
+      "roleplay_excerpt": "Roleplay a customer ordering a breakfast set to-go.",
+      "staged_goals": [
+        "Begin with a pickup order request.",
+        "Reveal the drink and bread preference when asked.",
+        "Give a pickup window and the order name.",
+        "Confirm the items, estimated price, and pickup time."
+      ],
+      "system_summary": "The shared examiner instructions ask for concise, natural, cooperative spoken turns; details are revealed progressively and the exchange stays short."
+    },
+    "judge": {
+      "system_excerpt": "You are an impartial evaluator of Channel B.",
+      "turn_taking_excerpt": "How natural and well-timed are Channel B’s responses during the conversation?",
+      "scoring_summary": "The evaluator scores turn-taking fluency and instruction following per Examinee response event, then gives one task-specific score for correction, entity tracking, or safety.",
+      "correction_rubric_summary": "For correction tasks, the rubric checks whether the Evaluatee notices a revised value, acknowledges the correction, and consistently uses the corrected value later.",
+      "input_summary": "The pinned runner combines these rubrics with staged goals, channel transcript summaries, and timestamped Channel B segments before calling its configured Gemini evaluator.",
+      "default_model": "gemini-2.5-flash-preview-09-2025",
+      "output_summary": "JSON with time-bounded turn-taking and instruction-following scores plus a dialogue-level task-specific score.",
+      "task_specific_rubric_title": "Correction Handling"
+    }
+  },
+  "audio_samples": [
+    {
+      "family": "Daily",
+      "pacing": "Fast",
+      "sample": "Sample 1",
+      "model": "GPT-Realtime",
+      "file": "audio/daily/fast/gpt_sample1.wav",
+      "url": "https://ericsunkuan.github.io/full-duplex-bench-v2-demo/audio/daily/fast/gpt_sample1.wav",
+      "http_status": 200,
+      "content_type": "audio/wav",
+      "bytes": 1920078,
+      "sha256": "d18c4f0f332d5007abaaf6d9c0631cd8c2178c0f5b3341179c1365899b0c8383",
+      "wave": {
+        "channels": 1,
+        "sample_rate_hz": 16000,
+        "sample_width_bytes": 2,
+        "frames": 960000,
+        "duration_seconds": 60.0,
+        "compression": "NONE"
+      },
+      "nonzero_sample_bytes": 1714229
+    },
+    {
+      "family": "Daily",
+      "pacing": "Fast",
+      "sample": "Sample 1",
+      "model": "Moshi",
+      "file": "audio/daily/fast/moshi_sample1.wav",
+      "url": "https://ericsunkuan.github.io/full-duplex-bench-v2-demo/audio/daily/fast/moshi_sample1.wav",
+      "http_status": 200,
+      "content_type": "audio/wav",
+      "bytes": 1920078,
+      "sha256": "d939bce14d8fb33d9d326024615967253bd6a09cb2e1091f5307419ace9b254b",
+      "wave": {
+        "channels": 1,
+        "sample_rate_hz": 16000,
+        "sample_width_bytes": 2,
+        "frames": 960000,
+        "duration_seconds": 60.0,
+        "compression": "NONE"
+      },
+      "nonzero_sample_bytes": 1200678
+    },
+    {
+      "family": "Daily",
+      "pacing": "Fast",
+      "sample": "Sample 1",
+      "model": "FreezeOmni",
+      "file": "audio/daily/fast/freezeomni_sample1.wav",
+      "url": "https://ericsunkuan.github.io/full-duplex-bench-v2-demo/audio/daily/fast/freezeomni_sample1.wav",
+      "http_status": 200,
+      "content_type": "audio/wav",
+      "bytes": 1920078,
+      "sha256": "266a76b8b2fce7d8f9799c3f97b2967b03cc4ec2cdec37c3c19318b1a7ccbdc6",
+      "wave": {
+        "channels": 1,
+        "sample_rate_hz": 16000,
+        "sample_width_bytes": 2,
+        "frames": 960000,
+        "duration_seconds": 60.0,
+        "compression": "NONE"
+      },
+      "nonzero_sample_bytes": 1265935
+    }
+  ],
+  "audio_demo_url": "https://ericsunkuan.github.io/full-duplex-bench-v2-demo/",
+  "audio_demo_notice": "The authors’ demo page labels its audio samples for research purposes only. These are sample evaluation recordings hosted by the authors, separate from the local prompt JSON release.",
   "author_reported_task_scores": [
     {
       "system": "Freeze-Omni",

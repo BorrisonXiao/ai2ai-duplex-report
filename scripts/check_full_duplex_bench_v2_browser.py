@@ -8,6 +8,7 @@ from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
+AUTHOR_AUDIO_ORIGIN = "https://ericsunkuan.github.io"
 
 
 def main():
@@ -54,10 +55,16 @@ def main():
             assert page.locator("#benchmark-scope-table tr[data-benchmark='fdb-v2']").count() == 1
             assert page.locator(".fdbv2-table caption").count() == 3
             assert page.locator("#examples .fdbv2-example").count() == 4
-            assert page.locator("audio").count() == 0
+            assert page.locator("#audio-examples audio").count() == 3
+            assert page.locator("#prompt-examples .fdbv2-prompt-card").count() == 2
+            for player in page.locator("#audio-examples audio").all():
+                assert player.get_attribute("src").startswith(AUTHOR_AUDIO_ORIGIN + "/full-duplex-bench-v2-demo/audio/")
+                assert player.get_attribute("preload") == "none"
             body_text = page.locator("body").inner_text()
             assert "actual arrays contain 200 unique prompts" in body_text
             assert "No local model inference or benchmark scoring" in body_text
+            assert "What prompts do the Examiner and judge use?" in body_text
+            assert "The pinned runner sends the judge ASR transcript summaries and timestamps" in body_text
             dimensions = page.evaluate("""() => ({
                 viewport: innerWidth,
                 document: document.documentElement.scrollWidth,
@@ -66,17 +73,22 @@ def main():
                 tables: [...document.querySelectorAll('.fdbv2-table-scroll')].map(x => ({
                     scrollWidth: x.scrollWidth, clientWidth: x.clientWidth
                 })),
-                cards: document.querySelectorAll('#examples .fdbv2-example').length
+                cards: document.querySelectorAll('#examples .fdbv2-example').length,
+                audioPlayers: document.querySelectorAll('#audio-examples audio').length,
+                promptCards: document.querySelectorAll('#prompt-examples .fdbv2-prompt-card').length
             })""")
             assert dimensions["document"] <= width, dimensions
             assert dimensions["scopeRows"] == 1 and dimensions["cards"] == 4, dimensions
+            assert dimensions["audioPlayers"] == 3 and dimensions["promptCards"] == 2, dimensions
             assert not errors, errors
-            bad_requests = [url for url in requests if not (url.startswith(("file:", "data:")) or (allowed_origin and url.startswith(allowed_origin + "/")))]
+            bad_requests = [url for url in requests if not (url.startswith(("file:", "data:")) or (allowed_origin and url.startswith(allowed_origin + "/")) or url.startswith(AUTHOR_AUDIO_ORIGIN + "/"))]
             assert not bad_requests, bad_requests
             if name in ("desktop", "mobile", "narrow", "dark"):
                 page.screenshot(path=str(args.output / f"{name}-top.png"), full_page=True)
             if name == "desktop":
                 page.locator("#task-design").screenshot(path=str(args.output / "desktop-task-design.png"))
+                page.locator("#audio-examples").screenshot(path=str(args.output / "desktop-audio-examples.png"))
+                page.locator("#prompt-examples").screenshot(path=str(args.output / "desktop-prompt-examples.png"))
                 page.locator("#paper-results").screenshot(path=str(args.output / "desktop-paper-results.png"))
             checks.append({
                 "view": name,
@@ -90,7 +102,7 @@ def main():
 
     result = {"status": "passed", "page": target, "checks": checks}
     (args.output / "browser-validation.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    print("PASS: FDB-v2 page, eight-tab navigation, task/audit content and layout at desktop, mobile, 320 px and dark theme.")
+    print("PASS: FDB-v2 page, eight-tab navigation, source-hosted audio, prompt examples and layout at desktop, mobile, 320 px and dark theme.")
 
 
 if __name__ == "__main__":
