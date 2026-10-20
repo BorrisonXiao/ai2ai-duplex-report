@@ -1,0 +1,54 @@
+{
+  "checked_date": "2026-10-20",
+  "sources": [
+    {
+      "title": "Qwen3-TTS official implementation",
+      "url": "https://github.com/QwenLM/Qwen3-TTS",
+      "reason": "Base model accepts reference audio and reference transcript; speaker-embedding-only conditioning is optional; vLLM-Omni deployment documented.",
+      "license": "Apache-2.0"
+    },
+    {
+      "title": "vLLM-Omni v0.16.0 Qwen3-TTS example",
+      "url": "https://github.com/vllm-project/vllm-omni/tree/v0.16.0/examples/offline_inference/qwen3_tts",
+      "reason": "Pinned vLLM 0.16-compatible two-stage voice-cloning engine, CUDA graph Talker and acoustic decoder on one GPU."
+    },
+    {
+      "title": "Chatterbox official implementation",
+      "url": "https://github.com/resemble-ai/chatterbox",
+      "reason": "English reference-conditioned model with classifier-free guidance and exaggeration controls; standard Perth watermark retained.",
+      "license": "MIT"
+    },
+    {
+      "title": "F5-TTS official implementation",
+      "url": "https://github.com/SWivid/F5-TTS",
+      "reason": "Independent flow-matching architecture, known reference transcript, adjustable guidance, steps and speed.",
+      "license": "Code MIT; pretrained weights CC BY-NC 4.0"
+    },
+    {
+      "title": "F5-TTS pretrained checkpoint model card",
+      "url": "https://huggingface.co/SWivid/F5-TTS",
+      "reason": "Weight license and v1 Base checkpoint provenance."
+    },
+    {
+      "title": "AMI corpus license",
+      "url": "https://groups.inf.ed.ac.uk/ami/corpus/license.shtml",
+      "reason": "Current official corpus release attribution; preserve distinction from older mirrors with different license labels."
+    },
+    {
+      "title": "AMI EN2003a official individual audio",
+      "url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/EN2003a/audio/",
+      "reason": "Correct source for individual headset files. meetings.xml explicitly maps requester C to audio channel 3."
+    },
+    {
+      "title": "ECAPA-TDNN independent speaker encoder",
+      "url": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb",
+      "reason": "Cross-utterance voice similarity proxy; independent of the TTS conditioning encoders."
+    },
+    {
+      "title": "Parakeet TDT 0.6B v2 independent ASR",
+      "url": "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2",
+      "reason": "Locally cached model checks actual generated wording; no use of transcript-as-output."
+    }
+  ],
+  "selection_scope": "Three complementary open models; F5 weight use is noncommercial research, not a permissive commercial-weight claim."
+}

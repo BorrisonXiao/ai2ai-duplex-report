@@ -1,0 +1,281 @@
+{
+  "meeting": "EN2003a",
+  "license": "CC BY 4.0",
+  "questions": [
+    {
+      "id": "authored-W2-1",
+      "meeting": "EN2003a",
+      "source_time_seconds": 1075.0,
+      "requester": "B",
+      "recipient": "meeting_assistant",
+      "question": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+      "mode": "pause_insert_question_resume",
+      "requester_identity_condition": "explicit_oracle_label",
+      "prefix_window_id": "W2",
+      "question_tts": null,
+      "short_id": "poster-capacity",
+      "answer_generated": false,
+      "context_start_seconds": 1055.0,
+      "context_end_seconds": 1080.0,
+      "context_transcript": [
+        {
+          "speaker": "C",
+          "start": 1054.82,
+          "end": 1055.18,
+          "text": "Yep."
+        },
+        {
+          "speaker": "A",
+          "start": 1050.06,
+          "end": 1055.27,
+          "text": "we need more talks, and just, you know, do it like that."
+        },
+        {
+          "speaker": "C",
+          "start": 1068.77,
+          "end": 1072.24,
+          "text": "Just throw a general suggestion at them."
+        },
+        {
+          "speaker": "A",
+          "start": 1055.27,
+          "end": 1073.18,
+          "text": "Um we could even say something like um you know, first-years might want to give a poster or something like that because I don't know, maybe that's a bad idea, but Yeah"
+        },
+        {
+          "speaker": "A",
+          "start": 1073.18,
+          "end": 1073.18,
+          "text": "."
+        },
+        {
+          "speaker": "C",
+          "start": 1072.24,
+          "end": 1073.53,
+          "text": "See what happens."
+        },
+        {
+          "speaker": "A",
+          "start": 1073.18,
+          "end": 1073.63,
+          "text": "Okay."
+        }
+      ]
+    },
+    {
+      "id": "authored-W3-1",
+      "meeting": "EN2003a",
+      "source_time_seconds": 1578.92,
+      "requester": "B",
+      "recipient": "meeting_assistant",
+      "question": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+      "mode": "pause_insert_question_resume",
+      "requester_identity_condition": "explicit_oracle_label",
+      "prefix_window_id": "W3",
+      "question_tts": null,
+      "short_id": "outreach",
+      "answer_generated": false,
+      "context_start_seconds": 1558.92,
+      "context_end_seconds": 1583.92,
+      "context_transcript": [
+        {
+          "speaker": "B",
+          "start": 1544.67,
+          "end": 1558.96,
+          "text": "Mm, yeah, and I think Yeah yeah, yeah."
+        },
+        {
+          "speaker": "A",
+          "start": 1550.46,
+          "end": 1559.49,
+          "text": "And it's also good if talks are on the same topic for a whole morning or a whole afternoon because then people will come along and go oh, this morning it's all on phonology or this morning it's all on applied linguistics."
+        },
+        {
+          "speaker": "A",
+          "start": 1559.49,
+          "end": 1562.14,
+          "text": "And then Okay?"
+        },
+        {
+          "speaker": "C",
+          "start": 1562.48,
+          "end": 1562.71,
+          "text": "Mm-hmm."
+        },
+        {
+          "speaker": "A",
+          "start": 1564.88,
+          "end": 1566.4,
+          "text": "As much as possible anyway."
+        },
+        {
+          "speaker": "C",
+          "start": 1566.91,
+          "end": 1575.72,
+          "text": "I think that's So far it's just a general statement of interest, what we intend to do."
+        },
+        {
+          "speaker": "C",
+          "start": 1575.72,
+          "end": 1578.4,
+          "text": "What we actually get to do we'll see later when we have the stuff."
+        },
+        {
+          "speaker": "A",
+          "start": 1579.14,
+          "end": 1580.52,
+          "text": "Yeah."
+        },
+        {
+          "speaker": "A",
+          "start": 1580.52,
+          "end": 1586.25,
+          "text": "Now we need if I'm gonna send out this call, uh we need a deadline for titles."
+        }
+      ]
+    },
+    {
+      "id": "curated-instruct-packets-W4-deadlines",
+      "meeting": "EN2003a",
+      "source_time_seconds": 2135.5,
+      "requester": "C",
+      "recipient": "meeting_assistant",
+      "question": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+      "mode": "pause_insert_question_resume",
+      "requester_identity_condition": "explicit_oracle_label",
+      "prefix_window_id": "W4",
+      "question_tts": null,
+      "short_id": "deadlines",
+      "answer_generated": false,
+      "context_start_seconds": 2116.5,
+      "context_end_seconds": 2140.5,
+      "context_transcript": [
+        {
+          "speaker": "A",
+          "start": 2113.39,
+          "end": 2118.68,
+          "text": "Presumably, you can access from web-mail or, you know, or I_ MAP or whatever."
+        },
+        {
+          "speaker": "C",
+          "start": 2119.19,
+          "end": 2121.04,
+          "text": "Should I take care of the web page?"
+        },
+        {
+          "speaker": "C",
+          "start": 2128.34,
+          "end": 2129.19,
+          "text": "Mm-hmm."
+        },
+        {
+          "speaker": "C",
+          "start": 2129.19,
+          "end": 2129.55,
+          "text": "Yeah."
+        },
+        {
+          "speaker": "A",
+          "start": 2122.43,
+          "end": 2132.61,
+          "text": "Yeah, if you want to to create a web page and just copy my email into it or something, and anything else you might wanna do, and then later on we can put the uh the programme in."
+        },
+        {
+          "speaker": "C",
+          "start": 2132.67,
+          "end": 2132.92,
+          "text": "Yeah."
+        },
+        {
+          "speaker": "B",
+          "start": 2133.97,
+          "end": 2134.85,
+          "text": "Mm-hmm, cool."
+        },
+        {
+          "speaker": "A",
+          "start": 2137.17,
+          "end": 2158.66,
+          "text": "So um Okay"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "B-primary",
+      "speaker": "B",
+      "channel": 1,
+      "source_start_seconds": 984.4499999999999,
+      "source_end_seconds": 993.14,
+      "text": "Um well we should find out if um generally they use poster boards, if there are some poster boards that we can get ahold of, then that's alright.",
+      "headset": "exp/ami_question_audio/assets/B-primary-headset.wav",
+      "mix": "exp/ami_question_audio/assets/B-primary-mix.wav",
+      "role": "primary"
+    },
+    {
+      "id": "B-alternate",
+      "speaker": "B",
+      "channel": 1,
+      "source_start_seconds": 442.21000000000004,
+      "source_end_seconds": 450.01,
+      "text": "Then we just subtract the number of second and third year students and then everything else is just I'd I would favour doing it just on a first come first serve basis.",
+      "headset": "exp/ami_question_audio/assets/B-alternate-headset.wav",
+      "mix": "exp/ami_question_audio/assets/B-alternate-mix.wav",
+      "role": "alternate"
+    },
+    {
+      "id": "B-heldout",
+      "speaker": "B",
+      "channel": 1,
+      "source_start_seconds": 714.53,
+      "source_end_seconds": 721.87,
+      "text": "But w wouldn't we want to actually just like dedicate an afternoon or a morning to being a poster session?",
+      "headset": "exp/ami_question_audio/assets/B-heldout-headset.wav",
+      "mix": "exp/ami_question_audio/assets/B-heldout-mix.wav",
+      "role": "heldout"
+    },
+    {
+      "id": "C-primary",
+      "speaker": "C",
+      "channel": 3,
+      "source_start_seconds": 999.5799999999999,
+      "source_end_seconds": 1008.46,
+      "text": "Um write into the call that we are considering the idea of having a poster session.",
+      "headset": "exp/ami_question_audio/assets/C-primary-headset.wav",
+      "mix": "exp/ami_question_audio/assets/C-primary-mix.wav",
+      "role": "primary"
+    },
+    {
+      "id": "C-alternate",
+      "speaker": "C",
+      "channel": 3,
+      "source_start_seconds": 731.43,
+      "source_end_seconds": 741.21,
+      "text": "Actually there's always the problem again then the people who are presenting the posters don't get around to go and look at others' posters.",
+      "headset": "exp/ami_question_audio/assets/C-alternate-headset.wav",
+      "mix": "exp/ami_question_audio/assets/C-alternate-mix.wav",
+      "role": "alternate"
+    },
+    {
+      "id": "C-heldout",
+      "speaker": "C",
+      "channel": 3,
+      "source_start_seconds": 1735.29,
+      "source_end_seconds": 1747.04,
+      "text": "In my experience what you usually should have is some kind of um, what's it, over-head thingo um beamer.",
+      "headset": "exp/ami_question_audio/assets/C-heldout-headset.wav",
+      "mix": "exp/ami_question_audio/assets/C-heldout-mix.wav",
+      "role": "heldout"
+    }
+  ],
+  "original_sample_rate": 16000,
+  "speaker_mapping": {
+    "B": "Headset-1",
+    "C": "Headset-3"
+  },
+  "speaker_mapping_note": "meetings.xml explicitly corrects the Transcriber channel mismatch: C is audio channel 3, not channel 2.",
+  "max_gpus_authorized": 4,
+  "answer_generation": "deferred",
+  "pause_policy": "source clock pauses for question only, then resumes; no assistant response"
+}

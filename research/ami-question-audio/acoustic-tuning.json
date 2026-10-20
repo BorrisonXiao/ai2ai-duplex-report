@@ -1,0 +1,49 @@
+{
+  "trial": "bounded +/-4 dB smoothed EQ + level + room tone",
+  "second_asr": {
+    "model": "openai/whisper-base",
+    "gpus": 0,
+    "seconds": 10.13875918200938,
+    "records": [
+      {
+        "id": "poster-capacity--chatterbox",
+        "question": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+        "raw_path": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+        "matched_path": "assistant, how did adding a poster session change the number of talks we thought we could fit?"
+      },
+      {
+        "id": "poster-capacity--f5",
+        "question": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+        "raw_path": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+        "matched_path": "assistant, how did adding a post-decession change the number of talks we thought we could fit?"
+      },
+      {
+        "id": "outreach--chatterbox",
+        "question": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+        "raw_path": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+        "matched_path": "assistant before I adapt the call can you run through who's contacting each group."
+      },
+      {
+        "id": "outreach--f5",
+        "question": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+        "raw_path": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+        "matched_path": "Assistant, before I adapt the call, can you run through his contacting each group?"
+      },
+      {
+        "id": "deadlines--chatterbox",
+        "question": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+        "raw_path": "Assistant, Remami of the two deadlines for abstracts and titles mentioned in the planning.",
+        "matched_path": "Assistant, Remami of the two deadlines for abstracts and titles mentioned in the planning."
+      },
+      {
+        "id": "deadlines--f5",
+        "question": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+        "raw_path": "Assistant remind me of the two deadlines for abstracts and titles mentioned in the planning",
+        "matched_path": "assistant remind me of the two deadlines for abstracts and titles mentioned in the planning"
+      }
+    ],
+    "scope": "Independent ASR proxy; small-model errors require comparison with Parakeet, not automatic rejection."
+  },
+  "decision": "Use zero additional EQ for main listening clips; retain reference-conditioned acoustics and apply only active-level match, missing past room-tone power and 16 kHz resampling.",
+  "reason": "Whisper-base was less stable on two F5 phrases after optional EQ. This is ASR sensitivity, not a verified perceptual degradation; the conservative choice avoids that extra transformation."
+}

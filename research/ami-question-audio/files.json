@@ -1,0 +1,426 @@
+{
+  "source-ami_qwen_exact_prompt_launcher.py": {
+    "bytes": 1658,
+    "sha256": "6f1c6b7018f0de124aa5d73819f4fa3c2b415587e32908ee542f6747c74610fc"
+  },
+  "source-ami_tts.sbatch": {
+    "bytes": 1580,
+    "sha256": "dc3c23dc356d01652f8f006fb7dd9d43a8aaa1a9f53eff4c4130bf6d8bafca25"
+  },
+  "ami_qwen_tts-lock.txt": {
+    "bytes": 4602,
+    "sha256": "262c88e74b8d2597d9ea02b60d52be4e6d7277d88bf798cd1cd2d9d0f7037691"
+  },
+  "source-ami_tts_generate.py": {
+    "bytes": 6492,
+    "sha256": "04e2076571a1387fccdc4c8b4ba79c4e4bdaa0daea297fe3f7ef346ea696d377"
+  },
+  "acoustic-tuning.json": {
+    "bytes": 3091,
+    "sha256": "caa12e93aae47c4c5c5fadb63cee6048cc92d1549f6ce8a9383893cb7dd2391c"
+  },
+  "model-provenance.json": {
+    "bytes": 6387,
+    "sha256": "898efbaa50152282f5a9f92397d1540eaeee4c5b36705a2faa5a3709ea1b2be9"
+  },
+  "source-ami_tts_evaluate.py": {
+    "bytes": 4871,
+    "sha256": "362314c0b42740266b884508586443f49f437096efa37e21c799631b05d9490a"
+  },
+  "source-ami_f5_pcm_launcher.py": {
+    "bytes": 997,
+    "sha256": "8e494331e46cee87a7c1c10a264471cafc107342b24a8137b5e135f18a11f813"
+  },
+  "ami_chatterbox-lock.txt": {
+    "bytes": 2501,
+    "sha256": "aaef77f292acf619cb933d985298a3551ed151ef08a0ad62cd99107998a90add"
+  },
+  "source-mix_ami_question_audio.py": {
+    "bytes": 8890,
+    "sha256": "c4cec486745a05fb1e6cfdf6d8f84e2ef7e55505708ae02e96151470938acad8"
+  },
+  "source-prepare_ami_question_audio.py": {
+    "bytes": 3654,
+    "sha256": "d0fee7814c51395fc99b540fdacc93466530aba30c9955f4b85bc72929c3eaef"
+  },
+  "source-repair_ami_tts_envs.sh": {
+    "bytes": 493,
+    "sha256": "86b1257cf8cc43bd1c15341a9325bdfc1f47f259afe6b37dcea0a1783dbff35c"
+  },
+  "audio-provenance.json": {
+    "bytes": 17528,
+    "sha256": "dc522a8f10485ddda4a9260b342256dab063a9d179d5a417f54361209a1cf9d4"
+  },
+  "source-ami_qwen_tts_stages.yaml": {
+    "bytes": 2576,
+    "sha256": "12e9c48b4f41c0d301c97a790e747296da55ac7bb2d44c32426194e485b7b4b8"
+  },
+  "ami_f5-lock.txt": {
+    "bytes": 3300,
+    "sha256": "447720a54f945ea0c8cb770bd7fd5b11cd5c97ef4bd25b77c9a7d330ed0e6c54"
+  },
+  "accounting.json": {
+    "bytes": 17141,
+    "sha256": "27e32af5764395979a360c8b4faa5c1b5c6184cfd86c95e7f5d70110ad2a265a"
+  },
+  "source-ami_tts_f5_retry.sbatch": {
+    "bytes": 1583,
+    "sha256": "8e5b9f0c68a6be3204bfc64d9076695e835d4453b8ada7b5c41ca07c3569ef65"
+  },
+  "source-finalize_ami_tts_vc.py": {
+    "bytes": 2233,
+    "sha256": "4b6cef372d0985ef3ddc8154a6fed9424fba1154c9988f524507d807e73bd279"
+  },
+  "literature.json": {
+    "bytes": 2611,
+    "sha256": "15b2c567e2a0238a1a94f45d1224b927a043b39de40af8899ac4dda05f1050eb"
+  },
+  "manifest.json": {
+    "bytes": 260869,
+    "sha256": "a3735a9e6e28a268d0f5626f437292c3e94caec239076d2fed4ea5809676f2a4"
+  },
+  "source-ami_tts_vc.py": {
+    "bytes": 1990,
+    "sha256": "a138a6abf5900847577417da6047c298015e1e48318715c6aa795a5cd6226c27"
+  },
+  "source-export_ami_tts.py": {
+    "bytes": 3353,
+    "sha256": "4fe5ca9d157925276e63c2ae1276d85b4a602c482f416b3d5421dfba8e0538d7"
+  },
+  "source-ami_tts_evaluate.sbatch": {
+    "bytes": 1456,
+    "sha256": "64ec66eef79ec1ab1ca2aae6ab788c2581b9ddda125878b3cd1077ba2608775e"
+  },
+  "source-audit_ami_tts.py": {
+    "bytes": 6214,
+    "sha256": "6bfb19704aee0265b9350625e54d54d7ac2294680d8cdb9e6ff98dbb10b7c53d"
+  },
+  "source-ami_tts_qwen_retry.sbatch": {
+    "bytes": 1594,
+    "sha256": "81d3e0799277413b44afb4e0c12cc6b00aab89a3ae07570b4b5bc8a8e7239ba8"
+  },
+  "source-ami_tts_vc.sbatch": {
+    "bytes": 1515,
+    "sha256": "2852e0e7b5c829557c5c9eeed4e5a76b42188fa6246c2d069cd7d97a37096bd7"
+  },
+  "source-revisions.json": {
+    "bytes": 237,
+    "sha256": "0aa2748594825c7710557fb87b7bc8c5c9c13b5873ad45a7e8c6a9b76d6691ed"
+  },
+  "source-setup_ami_tts.sh": {
+    "bytes": 1183,
+    "sha256": "a86375e27d950156bb3e0ac8fefa6fa181ad41d8f0aad1a3186e1246174d0ff0"
+  },
+  "protocol.json": {
+    "bytes": 9290,
+    "sha256": "20298b3521d854992754d46e87098e816cb59ccb5c010d17ee289a35b944cfb2"
+  },
+  "vc-controls.json": {
+    "bytes": 11750,
+    "sha256": "caca2a997256a32d0a86640073c52694f17e101f375f7a8763dd4b4bd6645eb5"
+  },
+  "review.json": {
+    "bytes": 31648,
+    "sha256": "29ca7b63f8804760ae7f5ddabf55757eb2d78d24f1f60d0d19100bbc12c3ce63"
+  },
+  "source-ami_tts_whisper_check.py": {
+    "bytes": 1680,
+    "sha256": "3c4381d17268c0542838613fb4babd9c1c8eccb4e3c15b4513b806a72bc3d5ce"
+  },
+  "source-replay_ami_question_injection.py": {
+    "bytes": 3514,
+    "sha256": "5b5a6f57b834d26ab0372a50351905b98937bc6046083c5e1848597b6c0d400b"
+  },
+  "audio/f5_1165793/poster-capacity--primary-calm.wav": {
+    "bytes": 270892,
+    "sha256": "80409924212e0391ba4581ed3b55fcc73bd0ec8acaeafbee8e4008a5c0cdb3aa"
+  },
+  "audio/f5_1165793/deadlines--primary-mix.wav": {
+    "bytes": 508460,
+    "sha256": "2f7b9943e70125a2c1f67d90b7eaa9691f6cced37ab739a290c1b4a8192a70b0"
+  },
+  "audio/f5_1165793/outreach--primary-default.wav": {
+    "bytes": 217644,
+    "sha256": "cd8743d1d564dd3934edc63b45b8481737a752cb3e646ee44162d33819993e36"
+  },
+  "audio/f5_1165793/outreach--alternate-calm.wav": {
+    "bytes": 194604,
+    "sha256": "7ef101406c448b5309173eb2878734dbba4ec64a99d75da2510caae56347157f"
+  },
+  "audio/f5_1165793/poster-capacity--primary-default.wav": {
+    "bytes": 243756,
+    "sha256": "9567ad6e03889105f5ca60c280ae5429b3ef54bd8059e83263686f2b8cf19303"
+  },
+  "audio/f5_1165793/deadlines--primary-default.wav": {
+    "bytes": 419884,
+    "sha256": "c3b3be9594b88b629cfc8eb8c5bcd48662612c8cf65b958622d4c9f20adb5fb8"
+  },
+  "audio/f5_1165793/outreach--primary-calm.wav": {
+    "bytes": 242220,
+    "sha256": "66f6cb06bca559e0f981151605f5703bb53aae818d35b9b0595c2d344b197606"
+  },
+  "audio/f5_1165793/deadlines--alternate-calm.wav": {
+    "bytes": 331820,
+    "sha256": "3490a6b6ea88a97767de00299352842385cec5780ab6f7f63f6bb0f0235b8e45"
+  },
+  "audio/f5_1165793/outreach--primary-mix.wav": {
+    "bytes": 232492,
+    "sha256": "cace10a6dafd3a907a230004a88fba0861aba370a1b3269a6a0cc85e6b867c12"
+  },
+  "audio/f5_1165793/poster-capacity--primary-mix.wav": {
+    "bytes": 260652,
+    "sha256": "20b340c41382615bcd6e65e5fc1e54222e9752c7094eea4fa73203bee1834fdc"
+  },
+  "audio/f5_1165793/deadlines--primary-calm.wav": {
+    "bytes": 466476,
+    "sha256": "99640dcfec44b141ed62f4976200af0e1afeed39dcbe3cb779a05b9c142a618e"
+  },
+  "audio/f5_1165793/poster-capacity--alternate-calm.wav": {
+    "bytes": 218156,
+    "sha256": "204dd53275b61c97e5ac8a7713d87001074b358f17fc4e1356c30c87f441fc74"
+  },
+  "audio/assets/B-alternate-headset.wav": {
+    "bytes": 249644,
+    "sha256": "5d635a8e946f9eaef8b5b9d2b096ac409d970c57eea0b6647f71aff0e11a8c7c"
+  },
+  "audio/assets/B-primary-headset.wav": {
+    "bytes": 278124,
+    "sha256": "201b465900dafe04c59fddd9850d56b998573f219b311c4fc71ee710ba04fcec"
+  },
+  "audio/assets/B-heldout-mix.wav": {
+    "bytes": 234924,
+    "sha256": "d11031abf46c417168000a9211862797f5adb3c2d7e627ea53c9472e639ca741"
+  },
+  "audio/assets/B-primary-mix.wav": {
+    "bytes": 278124,
+    "sha256": "56576731d3cd3e3b8325351906780ba26bc14d02592103bb617b635599fab117"
+  },
+  "audio/assets/C-primary-headset.wav": {
+    "bytes": 284204,
+    "sha256": "2935032eae4d783465123078a7594b07ce809ad59de2585bb9b4932631c8cd96"
+  },
+  "audio/assets/B-heldout-headset.wav": {
+    "bytes": 234924,
+    "sha256": "315227db0351a3c0fd857290fa6bb85861d2c78d2f2f49813c263240b136514b"
+  },
+  "audio/assets/B-alternate-mix.wav": {
+    "bytes": 249644,
+    "sha256": "9d88e7511bcd3113062a7bff8f20d42fdc803ecc40ee0cc4afe13a8335b101ba"
+  },
+  "audio/assets/C-alternate-headset.wav": {
+    "bytes": 313004,
+    "sha256": "ea9aac40c43b8142521cdaf7dcdec90bea66bf9ffc115e7e925e0fc6fb7b6cff"
+  },
+  "audio/assets/C-alternate-mix.wav": {
+    "bytes": 313004,
+    "sha256": "c62f53dd1750b5731e0e18aa05c96125c8b72886e882694ece022c4fcd246dbf"
+  },
+  "audio/assets/C-heldout-mix.wav": {
+    "bytes": 376044,
+    "sha256": "3fd975fd2777147a0bca319cb6a5681d90bec8a6e1ba8c524d7829a414f4c773"
+  },
+  "audio/assets/C-heldout-headset.wav": {
+    "bytes": 376044,
+    "sha256": "edda681ce73832c9f6a268648d83d3f8e92f64449ca69602e7c00103c3165fba"
+  },
+  "audio/assets/C-primary-mix.wav": {
+    "bytes": 284204,
+    "sha256": "409f307115f21856894e4facfd8ff8ee52057c7d82a43bac8ee23618fb99c11c"
+  },
+  "audio/qwen_1165771/outreach--primary-icl.wav": {
+    "bytes": 84524,
+    "sha256": "0f2e6a336db42725277fc00999e2693e0b199428f6dad1106a7466d29a75e72d"
+  },
+  "audio/qwen_1165771/deadlines--primary-icl.wav": {
+    "bytes": 1962284,
+    "sha256": "822b62311b76053501cd7b3b5df15bcff707c1f77f8b4bc60c30306aed4e34fd"
+  },
+  "audio/qwen_1165771/poster-capacity--primary-icl.wav": {
+    "bytes": 23084,
+    "sha256": "8430fe9cf185fdbd1bd180b3f87b2444f08e52df646380b374ef9ca6e7422099"
+  },
+  "audio/review/outreach--chatterbox--matched.wav": {
+    "bytes": 133804,
+    "sha256": "c7877aeb08d0b8db0433b79dd10628c259ffe56cd9a748bda37dd1b097ac6f15"
+  },
+  "audio/review/deadlines--chatterbox--injected.wav": {
+    "bytes": 899244,
+    "sha256": "0fcb33fcfdc30f1f2dce074616f21ad9fe8a324c48c41a1de20ca9a330edc0c4"
+  },
+  "audio/review/deadlines--qwen--injected.wav": {
+    "bytes": 874284,
+    "sha256": "e0eb10c04e9840102451065657af25c7d552797092ab56f3ac17b9011465f16e"
+  },
+  "audio/review/deadlines--chatterbox--matched.wav": {
+    "bytes": 192684,
+    "sha256": "e4120c58806157df0059a9ab148c262752e5e6cf23d4a545daa32a5b6597ca17"
+  },
+  "audio/review/deadlines--f5--matched.wav": {
+    "bytes": 289068,
+    "sha256": "e5c2a46cf8bd01f90d7aca2f6e0970acc6dab2931c85a1d07cfd14f5d4f65817"
+  },
+  "audio/review/poster-capacity--chatterbox--matched.wav": {
+    "bytes": 147244,
+    "sha256": "cc9b69602b7c7db870dac5877a3c92b948b83ac6c79de1186beca19b1d631024"
+  },
+  "audio/review/outreach--qwen--matched.wav": {
+    "bytes": 125484,
+    "sha256": "46c79097e442f985b6cba2553742ac8482c86604aebd4486500e373588774753"
+  },
+  "audio/review/poster-capacity--qwen--injected.wav": {
+    "bytes": 942124,
+    "sha256": "4c3dae79f4dde1227aa5b6d3d8a66541afd5a61ce31a42acba7a7769227201b5"
+  },
+  "audio/review/poster-capacity--qwen--matched.wav": {
+    "bytes": 137004,
+    "sha256": "2e9ce772bcf730bc4ceb34fd3f9d22648af84fc41492d51787175d0b4bf4f396"
+  },
+  "audio/review/outreach--f5--injected.wav": {
+    "bytes": 752792,
+    "sha256": "eeac0644d24d74eebfb7e6f23d5bef8b537de7758233f35e3be5fb74f552f98c"
+  },
+  "audio/review/outreach--f5--matched.wav": {
+    "bytes": 120792,
+    "sha256": "22cfe6412ca9b7cc5e4dd64f156502ecffbf0e57e3faf2d6f3ded842e01cea50"
+  },
+  "audio/review/poster-capacity--chatterbox--injected.wav": {
+    "bytes": 952364,
+    "sha256": "98a8e3c2c0b5529000a01fb4a0fa223d6ede704a70c40929e87f37466b34f16f"
+  },
+  "audio/review/deadlines--qwen--matched.wav": {
+    "bytes": 167724,
+    "sha256": "11e44884aaf5f7dd5652bb96ac9af52010b9d162cf5441bee91a1f51ac552d91"
+  },
+  "audio/review/outreach--chatterbox--injected.wav": {
+    "bytes": 765804,
+    "sha256": "78332e0da59d260cccbd67a10d3b1566550e3937434a418798188a566db51916"
+  },
+  "audio/review/outreach--qwen--injected.wav": {
+    "bytes": 757484,
+    "sha256": "1f6388ed68838a41f520e3da79924cec110037b5f852169f73e5d8b522bf4143"
+  },
+  "audio/review/deadlines--f5--injected.wav": {
+    "bytes": 995628,
+    "sha256": "9c3ca57dac85d372dd66475b3b1eb57faf18ef8f31b03e9812bac644b4329054"
+  },
+  "audio/review/poster-capacity--f5--injected.wav": {
+    "bytes": 961410,
+    "sha256": "bb30a8c514a37d53b2e8332c3274af72ad972b86cc4d07de9b70e82a983199ff"
+  },
+  "audio/review/poster-capacity--f5--matched.wav": {
+    "bytes": 156290,
+    "sha256": "b52feceab524011ad367f8003080e316ea20f73e25c23d9aa317874228ebbc90"
+  },
+  "audio/vc/deadlines--f5-vc-primary.wav": {
+    "bytes": 508844,
+    "sha256": "4dfaf710b9575bd6e82fc4f62773050532942028a5545de55610cf6861365ce2"
+  },
+  "audio/vc/deadlines--f5-vc-alternate.wav": {
+    "bytes": 507884,
+    "sha256": "b91c836d6cdec4222b8ebb39f94ba49347b46fadc08666476749ee6f4d7255a7"
+  },
+  "audio/vc/deadlines--f5-vc-alternate--matched.wav": {
+    "bytes": 289964,
+    "sha256": "9604eaa7a80bd873493a4ee310490591c249c1ebd52c80b4c512cad400a5deee"
+  },
+  "audio/vc/deadlines--f5-vc-primary--matched.wav": {
+    "bytes": 289324,
+    "sha256": "9889fecdc5c106324fe3f33f4d64be7063d38e414713d4a15e1ddfdc9602763a"
+  },
+  "audio/chatterbox_1166151/deadlines--alternate-calm.wav": {
+    "bytes": 356204,
+    "sha256": "0a0d5e90f0f0ab42b3081750f486c3acb43b9b5e3d229dbdac31c77d25ae0b7e"
+  },
+  "audio/chatterbox_1166151/outreach--primary-default.wav": {
+    "bytes": 238124,
+    "sha256": "c2fa07819bcf2babb3753e3c6e4c68ecd85d162f01973c02058937b6e82deb56"
+  },
+  "audio/chatterbox_1166151/outreach--primary-calm.wav": {
+    "bytes": 265004,
+    "sha256": "2ed4d2d4248862b48ef516f50935f52fc9b6364ebae06b0ee9085d8f7a6f3985"
+  },
+  "audio/chatterbox_1166151/poster-capacity--primary-calm.wav": {
+    "bytes": 282284,
+    "sha256": "3b431fdfb0fa24b26dd6435e0be4252d672f77eb4f52d27fb70970c048b2224d"
+  },
+  "audio/chatterbox_1166151/outreach--primary-mix.wav": {
+    "bytes": 282284,
+    "sha256": "f332ffa17b27a48442f2052e2f7160268a5660ec4d4320fa6cd07857a98bb7c9"
+  },
+  "audio/chatterbox_1166151/deadlines--primary-default.wav": {
+    "bytes": 226604,
+    "sha256": "105297cc9c52cb920d9c491349393babdad5839ed5787be949eba38fd7b87672"
+  },
+  "audio/chatterbox_1166151/poster-capacity--alternate-calm.wav": {
+    "bytes": 241964,
+    "sha256": "7c8efa0dcc1fd4092f6ce7ad770271a34331305092047493bf07d0dab083ccb9"
+  },
+  "audio/chatterbox_1166151/poster-capacity--primary-default.wav": {
+    "bytes": 247724,
+    "sha256": "9811154e47704b40ca61d1102cd61def6665511ede948029cdd079576f95e5c6"
+  },
+  "audio/chatterbox_1166151/outreach--alternate-calm.wav": {
+    "bytes": 213164,
+    "sha256": "0008f0edc8cdfdac19e8270146ebcca5e9823c05cb511743cc9fccf913edc024"
+  },
+  "audio/chatterbox_1166151/deadlines--primary-mix.wav": {
+    "bytes": 313004,
+    "sha256": "48c8d7686b1bd90aacef88a5930612f5312ae55f28b82f0003c3921ad42f8f8a"
+  },
+  "audio/chatterbox_1166151/poster-capacity--primary-mix.wav": {
+    "bytes": 284204,
+    "sha256": "b847e995e631e22538f7a95c46bfe9db7bb99e48329879f07a61263f29549bd3"
+  },
+  "audio/chatterbox_1166151/deadlines--primary-calm.wav": {
+    "bytes": 326444,
+    "sha256": "080f357e926fc578e9f4109846b5cc08e331377a07c52736b08d2093689d3c0b"
+  },
+  "audio/qwen_1167246/poster-capacity--alternate-icl.wav": {
+    "bytes": 226604,
+    "sha256": "310a1ef48268ad7b7379dc2dfb902f533343a5329678aece38475401c5eb4f54"
+  },
+  "audio/qwen_1167246/outreach--primary-mix.wav": {
+    "bytes": 188204,
+    "sha256": "b1bb616b77074576eb287758d0c3266098d70758a941381589d73062d4e2e1e3"
+  },
+  "audio/qwen_1167246/outreach--primary-calm.wav": {
+    "bytes": 192044,
+    "sha256": "95bb0c618762d3ada13e62be6c39c013b645f9a77f148762f42a414903df0f98"
+  },
+  "audio/qwen_1167246/poster-capacity--primary-icl.wav": {
+    "bytes": 222764,
+    "sha256": "bb2c1e34ac54187e3b9c96a537e93bcc8527049679fdee58cc7435b90806c8ae"
+  },
+  "audio/qwen_1167246/deadlines--primary-icl.wav": {
+    "bytes": 234284,
+    "sha256": "f1b3c560d401a4716825f9ae5ad476243414841154ef609708c869ac37916b3f"
+  },
+  "audio/qwen_1167246/deadlines--primary-mix.wav": {
+    "bytes": 230444,
+    "sha256": "644652930f2153ddb052d3cd7f644ff4794cef30815e29e9dbe379d4a9905c0c"
+  },
+  "audio/qwen_1167246/deadlines--alternate-icl.wav": {
+    "bytes": 245804,
+    "sha256": "ad514ee7516007e190e544f41a0f10f0de4cdd3401d8c5c974658942a2d089d5"
+  },
+  "audio/qwen_1167246/poster-capacity--primary-calm.wav": {
+    "bytes": 234284,
+    "sha256": "d8ddcdc1d51a91ac3172e44757d1950e864af8d355baacea6adc6310a2e21a12"
+  },
+  "audio/qwen_1167246/outreach--primary-icl.wav": {
+    "bytes": 184364,
+    "sha256": "110134c5730b26680e95d1717ee1b5fe7cae672e5f6f8e5a4e7a1ab2e4433c90"
+  },
+  "audio/qwen_1167246/deadlines--primary-calm.wav": {
+    "bytes": 268844,
+    "sha256": "9fc353368c41cdc7ee52d5461585865b332818181d24499cfb0aba5d154144aa"
+  },
+  "audio/qwen_1167246/poster-capacity--primary-mix.wav": {
+    "bytes": 211244,
+    "sha256": "8a27dd2b5b95c14c83c4927c4981514b96f2748c0d2e44e15018860dc5695e10"
+  },
+  "audio/qwen_1167246/outreach--alternate-icl.wav": {
+    "bytes": 276524,
+    "sha256": "a5b5a7474af1dd7a9dd70c1811a62452d653032ee0b1a48200a2d87b9f7ad097"
+  }
+}

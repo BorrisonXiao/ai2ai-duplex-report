@@ -1,0 +1,475 @@
+{
+  "condition": "F5-TTS question converted with Chatterbox S3",
+  "records": [
+    {
+      "model": "f5_chatterbox_vc",
+      "job": "1167280",
+      "path": "audio/vc/deadlines--f5-vc-primary.wav",
+      "text": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+      "requester": "C",
+      "short_id": "deadlines",
+      "reference_id": "C-primary",
+      "reference_path": "exp/ami_question_audio/assets/C-primary-headset.wav",
+      "source_tts_path": "exp/ami_question_audio/f5_1165793/deadlines--primary-mix.wav",
+      "source_tts_job": "1165793",
+      "reference_end_seconds": 1008.46,
+      "source_time_seconds": 2135.5,
+      "is_vc": true,
+      "status": "generated_content_and_voice_review_required",
+      "duration_seconds": 10.6,
+      "wall_seconds": 8.944853791035712,
+      "sha256": "4dfaf710b9575bd6e82fc4f62773050532942028a5545de55610cf6861365ce2",
+      "watermark": "Standard Perth watermark applied",
+      "matched_path": "audio/vc/deadlines--f5-vc-primary--matched.wav",
+      "asr": {
+        "path": "exp/ami_question_audio/vc/deadlines--f5-vc-primary.wav",
+        "expected": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+        "text": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning.",
+        "chunks": [
+          {
+            "text": "Assistant,",
+            "timestamp": [
+              1.44,
+              2.48
+            ]
+          },
+          {
+            "text": "remind",
+            "timestamp": [
+              3.04,
+              3.7600000000000002
+            ]
+          },
+          {
+            "text": "me",
+            "timestamp": [
+              3.7600000000000002,
+              4.08
+            ]
+          },
+          {
+            "text": "of",
+            "timestamp": [
+              4.08,
+              4.4
+            ]
+          },
+          {
+            "text": "the",
+            "timestamp": [
+              4.4,
+              4.72
+            ]
+          },
+          {
+            "text": "two",
+            "timestamp": [
+              4.72,
+              4.96
+            ]
+          },
+          {
+            "text": "deadlines",
+            "timestamp": [
+              5.28,
+              6.72
+            ]
+          },
+          {
+            "text": "for",
+            "timestamp": [
+              7.04,
+              7.36
+            ]
+          },
+          {
+            "text": "abstracts",
+            "timestamp": [
+              7.36,
+              8.48
+            ]
+          },
+          {
+            "text": "and",
+            "timestamp": [
+              8.48,
+              8.8
+            ]
+          },
+          {
+            "text": "titles",
+            "timestamp": [
+              8.8,
+              9.44
+            ]
+          },
+          {
+            "text": "mentioned",
+            "timestamp": [
+              9.44,
+              9.84
+            ]
+          },
+          {
+            "text": "in",
+            "timestamp": [
+              9.84,
+              10.0
+            ]
+          },
+          {
+            "text": "the",
+            "timestamp": [
+              10.0,
+              10.08
+            ]
+          },
+          {
+            "text": "planning.",
+            "timestamp": [
+              10.08,
+              10.4
+            ]
+          }
+        ],
+        "audio_sha256": "4dfaf710b9575bd6e82fc4f62773050532942028a5545de55610cf6861365ce2",
+        "wer": 0.0,
+        "is_reference": false,
+        "is_room_tone": false
+      },
+      "speaker_check": {
+        "path": "exp/ami_question_audio/vc/deadlines--f5-vc-primary.wav",
+        "requester": "C",
+        "cosine_to_heldout": {
+          "B": 0.16990560293197632,
+          "C": 0.49641337990760803
+        },
+        "target_cosine": 0.49641337990760803,
+        "target_minus_other": 0.3265077769756317,
+        "is_reference": false
+      },
+      "acoustics": {
+        "trim_start_seconds": 1.56,
+        "trim_end_seconds": 0.0,
+        "gain_db": -2.939741117170216,
+        "eq_limit_db": 0,
+        "eq_frequencies_hz": [
+          0.0,
+          250.0,
+          500.0,
+          750.0,
+          1000.0,
+          1250.0,
+          1500.0,
+          1750.0,
+          2000.0,
+          2250.0,
+          2500.0,
+          2750.0,
+          3000.0,
+          3250.0,
+          3500.0,
+          3750.0,
+          4000.0,
+          4250.0,
+          4500.0,
+          4750.0,
+          5000.0,
+          5250.0,
+          5500.0,
+          5750.0,
+          6000.0,
+          6250.0,
+          6500.0,
+          6750.0,
+          7000.0,
+          7250.0,
+          7500.0,
+          7750.0,
+          8000.0
+        ],
+        "eq_gain_db": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "room_tone_scale": 0.9679964968868112,
+        "peak_attenuation_db": 0.0,
+        "reference_active_rms_dbfs": -44.22479187065282,
+        "raw_active_rms_dbfs": -41.2850507544897,
+        "matched_active_rms_dbfs": -44.23900555331492,
+        "raw_noise_floor_proxy_dbfs": -84.13688358195233,
+        "room_tone_rms_dbfs": -72.12910145942551,
+        "new_room_impulse_response": false
+      },
+      "delta_cosine_vs_direct_f5": -0.07441672682762146
+    },
+    {
+      "model": "f5_chatterbox_vc",
+      "job": "1167280",
+      "path": "audio/vc/deadlines--f5-vc-alternate.wav",
+      "text": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+      "requester": "C",
+      "short_id": "deadlines",
+      "reference_id": "C-alternate",
+      "reference_path": "exp/ami_question_audio/assets/C-alternate-headset.wav",
+      "source_tts_path": "exp/ami_question_audio/f5_1165793/deadlines--primary-mix.wav",
+      "source_tts_job": "1165793",
+      "reference_end_seconds": 741.21,
+      "source_time_seconds": 2135.5,
+      "is_vc": true,
+      "status": "generated_content_and_voice_review_required",
+      "duration_seconds": 10.58,
+      "wall_seconds": 0.4570682500489056,
+      "sha256": "b91c836d6cdec4222b8ebb39f94ba49347b46fadc08666476749ee6f4d7255a7",
+      "watermark": "Standard Perth watermark applied",
+      "matched_path": "audio/vc/deadlines--f5-vc-alternate--matched.wav",
+      "asr": {
+        "path": "exp/ami_question_audio/vc/deadlines--f5-vc-alternate.wav",
+        "expected": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+        "text": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning.",
+        "chunks": [
+          {
+            "text": "Assistant,",
+            "timestamp": [
+              1.44,
+              2.48
+            ]
+          },
+          {
+            "text": "remind",
+            "timestamp": [
+              3.04,
+              3.6
+            ]
+          },
+          {
+            "text": "me",
+            "timestamp": [
+              3.84,
+              4.16
+            ]
+          },
+          {
+            "text": "of",
+            "timestamp": [
+              4.16,
+              4.48
+            ]
+          },
+          {
+            "text": "the",
+            "timestamp": [
+              4.48,
+              4.8
+            ]
+          },
+          {
+            "text": "two",
+            "timestamp": [
+              4.8,
+              5.12
+            ]
+          },
+          {
+            "text": "deadlines",
+            "timestamp": [
+              5.12,
+              6.640000000000001
+            ]
+          },
+          {
+            "text": "for",
+            "timestamp": [
+              6.96,
+              7.28
+            ]
+          },
+          {
+            "text": "abstracts",
+            "timestamp": [
+              7.44,
+              8.48
+            ]
+          },
+          {
+            "text": "and",
+            "timestamp": [
+              8.48,
+              8.72
+            ]
+          },
+          {
+            "text": "titles",
+            "timestamp": [
+              8.72,
+              9.44
+            ]
+          },
+          {
+            "text": "mentioned",
+            "timestamp": [
+              9.44,
+              9.84
+            ]
+          },
+          {
+            "text": "in",
+            "timestamp": [
+              9.84,
+              9.92
+            ]
+          },
+          {
+            "text": "the",
+            "timestamp": [
+              9.92,
+              10.08
+            ]
+          },
+          {
+            "text": "planning.",
+            "timestamp": [
+              10.08,
+              10.4
+            ]
+          }
+        ],
+        "audio_sha256": "b91c836d6cdec4222b8ebb39f94ba49347b46fadc08666476749ee6f4d7255a7",
+        "wer": 0.0,
+        "is_reference": false,
+        "is_room_tone": false
+      },
+      "speaker_check": {
+        "path": "exp/ami_question_audio/vc/deadlines--f5-vc-alternate.wav",
+        "requester": "C",
+        "cosine_to_heldout": {
+          "B": 0.09487144649028778,
+          "C": 0.40312254428863525
+        },
+        "target_cosine": 0.40312254428863525,
+        "target_minus_other": 0.3082510977983475,
+        "is_reference": false
+      },
+      "acoustics": {
+        "trim_start_seconds": 1.52,
+        "trim_end_seconds": 0.0,
+        "gain_db": -3.1723614231073216,
+        "eq_limit_db": 0,
+        "eq_frequencies_hz": [
+          0.0,
+          250.0,
+          500.0,
+          750.0,
+          1000.0,
+          1250.0,
+          1500.0,
+          1750.0,
+          2000.0,
+          2250.0,
+          2500.0,
+          2750.0,
+          3000.0,
+          3250.0,
+          3500.0,
+          3750.0,
+          4000.0,
+          4250.0,
+          4500.0,
+          4750.0,
+          5000.0,
+          5250.0,
+          5500.0,
+          5750.0,
+          6000.0,
+          6250.0,
+          6500.0,
+          6750.0,
+          7000.0,
+          7250.0,
+          7500.0,
+          7750.0,
+          8000.0
+        ],
+        "eq_gain_db": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "room_tone_scale": 0.9676422211387914,
+        "peak_attenuation_db": 0.0,
+        "reference_active_rms_dbfs": -44.22479187065282,
+        "raw_active_rms_dbfs": -41.05243044852598,
+        "matched_active_rms_dbfs": -44.27963403283109,
+        "raw_noise_floor_proxy_dbfs": -84.08985361959068,
+        "room_tone_rms_dbfs": -72.12910145942551,
+        "new_room_impulse_response": false
+      },
+      "delta_cosine_vs_direct_f5": -0.16770756244659424
+    }
+  ],
+  "direct_f5_cosine": 0.5708301067352295,
+  "decision": "Retain direct F5. Both VC controls preserve wording under Parakeet but reduce held-out C speaker similarity; do not use VC for the main replay.",
+  "listening_review_pending": true,
+  "additional_tts_architectures": 0
+}
