@@ -113,6 +113,12 @@ def build() -> Path:
 .container code {{ overflow-wrap:anywhere; }}
 .mtb-prompt pre, #illustrative-transcript pre {{ white-space:pre-wrap; overflow-wrap:anywhere; padding:16px; border-radius:8px; background:var(--surface-2); font-size:13px; line-height:1.6; max-height:600px; overflow:auto; }}
 .mtb-workflow li {{ margin:12px 0; }}
+.mtb-call-list {{ display:grid; gap:18px; margin:20px 0; }}
+.mtb-call {{ padding:20px; border:1px solid var(--border); border-radius:12px; background:var(--surface); min-width:0; }}
+.mtb-call h4 {{ font-size:20px; line-height:1.35; margin:8px 0 14px; }}
+.mtb-call .meta {{ margin:0; }}
+.mtb-teaching-case {{ padding:20px; margin:22px 0; border-radius:12px; background:var(--accent-soft); }}
+.mtb-teaching-case li {{ margin:8px 0; }}
 .equation {{ overflow-x:auto; margin:14px 0; padding:14px 16px; border-radius:9px; background:var(--surface-2); }}
 .equation mjx-container[display="true"] {{ margin:0 !important; }}
 mjx-container {{ max-width:100%; }}

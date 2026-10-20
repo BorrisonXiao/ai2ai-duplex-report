@@ -51,6 +51,10 @@ def main():
             assert page.locator("#validation").inner_text().find("372 of 372 files present") >= 0
             assert page.locator("#validation").inner_text().find("No model evaluation is claimed") >= 0
             assert page.locator("#mtb-judge-calls tbody tr").count() == 6
+            assert page.locator(".mtb-call").count() == 6
+            assert "Gemma reads that written conversation six times" in page.locator("#evaluation-protocol").inner_text()
+            assert "stronger and weaker replies" in page.locator("#simple-meeting").inner_text()
+            assert "does not give the quality ratings" in page.locator("#explain-call1").inner_text()
             assert page.locator(".mtb-prompt").count() == 10
             assert "neither the transcript" in page.locator("#judge-retries").text_content()
             assert "without a participation multiplier" in page.locator("#paper-code-discrepancy").inner_text()
@@ -61,6 +65,8 @@ def main():
             assert "RETRY FORMAT OVERRIDE" in page.locator("#prompt-retry-call2a pre").first.inner_text()
             page.locator("#prompt-call2a").screenshot(path=str(args.output / (name + "-prompt.png")))
             page.locator("#scoring").screenshot(path=str(args.output / (name + "-scoring.png")))
+            page.locator("#simple-meeting").screenshot(path=str(args.output / (name + "-simple-meeting.png")))
+            page.locator("#explain-call2b").screenshot(path=str(args.output / (name + "-plain-example.png")))
             page.evaluate("document.querySelectorAll('#judge-prompts details').forEach(el => el.open = false)")
 
             audio = page.locator("#audio-examples audio").first
@@ -102,6 +108,7 @@ def main():
                 **dimensions,
                 "javascript_errors": errors,
                 "prompt_panels": 10,
+                "plain_language_examples": 6,
                 "rendered_equations": 2,
                 "expanded_prompts_no_overflow": True,
                 "sample_playback": playback,
