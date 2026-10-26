@@ -1,0 +1,886 @@
+{
+  "status": "descriptive_analysis_existing_questions_only",
+  "question_file_sha256": "784b017e386e29743e53b2d4de5af29a61a3acb182af56d831f9526182fb4e1e",
+  "timing_meaning": "Planned source-clock time of a synthetic question, not a new audio injection or an observed human request.",
+  "percent_definition": "100 times planned question time in seconds divided by complete conversation duration in seconds.",
+  "selection": "AMI candidate windows target 56% and 86% of metadata duration, adjusted to annotated pauses. Earnings windows target 60% and 86% of the timed transcript span. Percentages in this analysis use full official conversation duration, not that transcript span.",
+  "cohorts": {
+    "wordings": {
+      "summary": {
+        "n": 23,
+        "mean_elapsed_minutes": 28.997971014492755,
+        "median_elapsed_minutes": 27.18316666666667,
+        "min_elapsed_minutes": 16.449666666666666,
+        "max_elapsed_minutes": 47.06183333333333,
+        "mean_percent": 70.28209195608467,
+        "median_percent": 60.1138579751711,
+        "min_percent": 53.00087680841736,
+        "max_percent": 87.0692733090756
+      },
+      "rows": [
+        {
+          "id": "EN-times-authored",
+          "intent_id": "EN-times",
+          "meeting": "EN2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 986.98,
+          "elapsed_minutes": 16.449666666666666,
+          "duration_seconds": 1786.922,
+          "percent_of_conversation": 55.23352446273536,
+          "question_words": 11
+        },
+        {
+          "id": "EN-results-authored",
+          "intent_id": "EN-results",
+          "meeting": "EN2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1555.86,
+          "elapsed_minutes": 25.930999999999997,
+          "duration_seconds": 1786.922,
+          "percent_of_conversation": 87.0692733090756,
+          "question_words": 9
+        },
+        {
+          "id": "EN-xml-authored",
+          "intent_id": "EN-xml",
+          "meeting": "EN2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1555.86,
+          "elapsed_minutes": 25.930999999999997,
+          "duration_seconds": 1786.922,
+          "percent_of_conversation": 87.0692733090756,
+          "question_words": 8
+        },
+        {
+          "id": "ES-colour-authored",
+          "intent_id": "ES-colour",
+          "meeting": "ES2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1208.95,
+          "elapsed_minutes": 20.149166666666666,
+          "duration_seconds": 2281.0,
+          "percent_of_conversation": 53.00087680841736,
+          "question_words": 8
+        },
+        {
+          "id": "ES-teletext-authored",
+          "intent_id": "ES-teletext",
+          "meeting": "ES2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1873.33,
+          "elapsed_minutes": 31.222166666666666,
+          "duration_seconds": 2281.0,
+          "percent_of_conversation": 82.12757562472599,
+          "question_words": 7
+        },
+        {
+          "id": "ES-devices-authored",
+          "intent_id": "ES-devices",
+          "meeting": "ES2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1873.33,
+          "elapsed_minutes": 31.222166666666666,
+          "duration_seconds": 2281.0,
+          "percent_of_conversation": 82.12757562472599,
+          "question_words": 9
+        },
+        {
+          "id": "IS-receiver-authored",
+          "intent_id": "IS-receiver",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1244.2,
+          "elapsed_minutes": 20.736666666666668,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 53.14822725331055,
+          "question_words": 8
+        },
+        {
+          "id": "IS-lost-authored",
+          "intent_id": "IS-lost",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1988.47,
+          "elapsed_minutes": 33.14116666666667,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 84.94105083297737,
+          "question_words": 9
+        },
+        {
+          "id": "IS-voice-authored",
+          "intent_id": "IS-voice",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1988.47,
+          "elapsed_minutes": 33.14116666666667,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 84.94105083297737,
+          "question_words": 12
+        },
+        {
+          "id": "TS-target-authored",
+          "intent_id": "TS-target",
+          "meeting": "TS3003b",
+          "dataset": "ami",
+          "elapsed_seconds": 1241.23,
+          "elapsed_minutes": 20.687166666666666,
+          "duration_seconds": 2210.305,
+          "percent_of_conversation": 56.15650328800776,
+          "question_words": 10
+        },
+        {
+          "id": "TS-looks-authored",
+          "intent_id": "TS-looks",
+          "meeting": "TS3003b",
+          "dataset": "ami",
+          "elapsed_seconds": 1241.23,
+          "elapsed_minutes": 20.687166666666666,
+          "duration_seconds": 2210.305,
+          "percent_of_conversation": 56.15650328800776,
+          "question_words": 12
+        },
+        {
+          "id": "DH-growth-authored",
+          "intent_id": "DH-growth",
+          "meeting": "EC4344338",
+          "dataset": "earnings",
+          "elapsed_seconds": 1630.99,
+          "elapsed_minutes": 27.18316666666667,
+          "duration_seconds": 2721.169,
+          "percent_of_conversation": 59.937107912077494,
+          "question_words": 11
+        },
+        {
+          "id": "DH-basis-authored",
+          "intent_id": "DH-basis",
+          "meeting": "EC4344338",
+          "dataset": "earnings",
+          "elapsed_seconds": 2342.13,
+          "elapsed_minutes": 39.0355,
+          "duration_seconds": 2721.169,
+          "percent_of_conversation": 86.07072916088637,
+          "question_words": 10
+        },
+        {
+          "id": "MO-performance-authored",
+          "intent_id": "MO-performance",
+          "meeting": "EC4320211",
+          "dataset": "earnings",
+          "elapsed_seconds": 1975.25,
+          "elapsed_minutes": 32.920833333333334,
+          "duration_seconds": 3285.848,
+          "percent_of_conversation": 60.1138579751711,
+          "question_words": 11
+        },
+        {
+          "id": "MO-selection-authored",
+          "intent_id": "MO-selection",
+          "meeting": "EC4320211",
+          "dataset": "earnings",
+          "elapsed_seconds": 2823.71,
+          "elapsed_minutes": 47.06183333333333,
+          "duration_seconds": 3285.848,
+          "percent_of_conversation": 85.93550279866872,
+          "question_words": 8
+        },
+        {
+          "id": "IS-receiver-packet",
+          "intent_id": "IS-receiver",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1244.2,
+          "elapsed_minutes": 20.736666666666668,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 53.14822725331055,
+          "question_words": 14
+        },
+        {
+          "id": "IS-lost-packet",
+          "intent_id": "IS-lost",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1988.47,
+          "elapsed_minutes": 33.14116666666667,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 84.94105083297737,
+          "question_words": 14
+        },
+        {
+          "id": "TS-target-packet",
+          "intent_id": "TS-target",
+          "meeting": "TS3003b",
+          "dataset": "ami",
+          "elapsed_seconds": 1241.23,
+          "elapsed_minutes": 20.687166666666666,
+          "duration_seconds": 2210.305,
+          "percent_of_conversation": 56.15650328800776,
+          "question_words": 13
+        },
+        {
+          "id": "TS-looks-packet",
+          "intent_id": "TS-looks",
+          "meeting": "TS3003b",
+          "dataset": "ami",
+          "elapsed_seconds": 1241.23,
+          "elapsed_minutes": 20.687166666666666,
+          "duration_seconds": 2210.305,
+          "percent_of_conversation": 56.15650328800776,
+          "question_words": 10
+        },
+        {
+          "id": "DH-growth-packet",
+          "intent_id": "DH-growth",
+          "meeting": "EC4344338",
+          "dataset": "earnings",
+          "elapsed_seconds": 1630.99,
+          "elapsed_minutes": 27.18316666666667,
+          "duration_seconds": 2721.169,
+          "percent_of_conversation": 59.937107912077494,
+          "question_words": 12
+        },
+        {
+          "id": "DH-basis-packet",
+          "intent_id": "DH-basis",
+          "meeting": "EC4344338",
+          "dataset": "earnings",
+          "elapsed_seconds": 2342.13,
+          "elapsed_minutes": 39.0355,
+          "duration_seconds": 2721.169,
+          "percent_of_conversation": 86.07072916088637,
+          "question_words": 12
+        },
+        {
+          "id": "MO-performance-packet",
+          "intent_id": "MO-performance",
+          "meeting": "EC4320211",
+          "dataset": "earnings",
+          "elapsed_seconds": 1975.25,
+          "elapsed_minutes": 32.920833333333334,
+          "duration_seconds": 3285.848,
+          "percent_of_conversation": 60.1138579751711,
+          "question_words": 14
+        },
+        {
+          "id": "MO-selection-packet",
+          "intent_id": "MO-selection",
+          "meeting": "EC4320211",
+          "dataset": "earnings",
+          "elapsed_seconds": 2823.71,
+          "elapsed_minutes": 47.06183333333333,
+          "duration_seconds": 3285.848,
+          "percent_of_conversation": 85.93550279866872,
+          "question_words": 12
+        }
+      ],
+      "percent_bins": [
+        {
+          "left": 0,
+          "right": 10,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 10,
+          "right": 20,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 20,
+          "right": 30,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 30,
+          "right": 40,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 40,
+          "right": 50,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 50,
+          "right": 60,
+          "ami": 8,
+          "earnings": 2
+        },
+        {
+          "left": 60,
+          "right": 70,
+          "ami": 0,
+          "earnings": 2
+        },
+        {
+          "left": 70,
+          "right": 80,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 80,
+          "right": 90,
+          "ami": 7,
+          "earnings": 4
+        },
+        {
+          "left": 90,
+          "right": 100,
+          "ami": 0,
+          "earnings": 0
+        }
+      ],
+      "minute_bins": [
+        {
+          "left": 0,
+          "right": 5,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 5,
+          "right": 10,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 10,
+          "right": 15,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 15,
+          "right": 20,
+          "ami": 1,
+          "earnings": 0
+        },
+        {
+          "left": 20,
+          "right": 25,
+          "ami": 7,
+          "earnings": 0
+        },
+        {
+          "left": 25,
+          "right": 30,
+          "ami": 2,
+          "earnings": 2
+        },
+        {
+          "left": 30,
+          "right": 35,
+          "ami": 5,
+          "earnings": 2
+        },
+        {
+          "left": 35,
+          "right": 40,
+          "ami": 0,
+          "earnings": 2
+        },
+        {
+          "left": 40,
+          "right": 45,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 45,
+          "right": 50,
+          "ami": 0,
+          "earnings": 2
+        },
+        {
+          "left": 50,
+          "right": 55,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 55,
+          "right": 60,
+          "ami": 0,
+          "earnings": 0
+        }
+      ]
+    },
+    "information_needs": {
+      "summary": {
+        "n": 15,
+        "mean_elapsed_minutes": 28.366655555555557,
+        "median_elapsed_minutes": 27.18316666666667,
+        "min_elapsed_minutes": 16.449666666666666,
+        "max_elapsed_minutes": 47.06183333333333,
+        "mean_percent": 71.60190883205603,
+        "median_percent": 82.12757562472599,
+        "min_percent": 53.00087680841736,
+        "max_percent": 87.0692733090756
+      },
+      "rows": [
+        {
+          "id": "EN-times-authored",
+          "intent_id": "EN-times",
+          "meeting": "EN2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 986.98,
+          "elapsed_minutes": 16.449666666666666,
+          "duration_seconds": 1786.922,
+          "percent_of_conversation": 55.23352446273536,
+          "question_words": 11
+        },
+        {
+          "id": "EN-results-authored",
+          "intent_id": "EN-results",
+          "meeting": "EN2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1555.86,
+          "elapsed_minutes": 25.930999999999997,
+          "duration_seconds": 1786.922,
+          "percent_of_conversation": 87.0692733090756,
+          "question_words": 9
+        },
+        {
+          "id": "EN-xml-authored",
+          "intent_id": "EN-xml",
+          "meeting": "EN2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1555.86,
+          "elapsed_minutes": 25.930999999999997,
+          "duration_seconds": 1786.922,
+          "percent_of_conversation": 87.0692733090756,
+          "question_words": 8
+        },
+        {
+          "id": "ES-colour-authored",
+          "intent_id": "ES-colour",
+          "meeting": "ES2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1208.95,
+          "elapsed_minutes": 20.149166666666666,
+          "duration_seconds": 2281.0,
+          "percent_of_conversation": 53.00087680841736,
+          "question_words": 8
+        },
+        {
+          "id": "ES-teletext-authored",
+          "intent_id": "ES-teletext",
+          "meeting": "ES2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1873.33,
+          "elapsed_minutes": 31.222166666666666,
+          "duration_seconds": 2281.0,
+          "percent_of_conversation": 82.12757562472599,
+          "question_words": 7
+        },
+        {
+          "id": "ES-devices-authored",
+          "intent_id": "ES-devices",
+          "meeting": "ES2002b",
+          "dataset": "ami",
+          "elapsed_seconds": 1873.33,
+          "elapsed_minutes": 31.222166666666666,
+          "duration_seconds": 2281.0,
+          "percent_of_conversation": 82.12757562472599,
+          "question_words": 9
+        },
+        {
+          "id": "IS-receiver-authored",
+          "intent_id": "IS-receiver",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1244.2,
+          "elapsed_minutes": 20.736666666666668,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 53.14822725331055,
+          "question_words": 8
+        },
+        {
+          "id": "IS-lost-authored",
+          "intent_id": "IS-lost",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1988.47,
+          "elapsed_minutes": 33.14116666666667,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 84.94105083297737,
+          "question_words": 9
+        },
+        {
+          "id": "IS-voice-authored",
+          "intent_id": "IS-voice",
+          "meeting": "IS1000b",
+          "dataset": "ami",
+          "elapsed_seconds": 1988.47,
+          "elapsed_minutes": 33.14116666666667,
+          "duration_seconds": 2341.0,
+          "percent_of_conversation": 84.94105083297737,
+          "question_words": 12
+        },
+        {
+          "id": "TS-target-authored",
+          "intent_id": "TS-target",
+          "meeting": "TS3003b",
+          "dataset": "ami",
+          "elapsed_seconds": 1241.23,
+          "elapsed_minutes": 20.687166666666666,
+          "duration_seconds": 2210.305,
+          "percent_of_conversation": 56.15650328800776,
+          "question_words": 10
+        },
+        {
+          "id": "TS-looks-authored",
+          "intent_id": "TS-looks",
+          "meeting": "TS3003b",
+          "dataset": "ami",
+          "elapsed_seconds": 1241.23,
+          "elapsed_minutes": 20.687166666666666,
+          "duration_seconds": 2210.305,
+          "percent_of_conversation": 56.15650328800776,
+          "question_words": 12
+        },
+        {
+          "id": "DH-growth-authored",
+          "intent_id": "DH-growth",
+          "meeting": "EC4344338",
+          "dataset": "earnings",
+          "elapsed_seconds": 1630.99,
+          "elapsed_minutes": 27.18316666666667,
+          "duration_seconds": 2721.169,
+          "percent_of_conversation": 59.937107912077494,
+          "question_words": 11
+        },
+        {
+          "id": "DH-basis-authored",
+          "intent_id": "DH-basis",
+          "meeting": "EC4344338",
+          "dataset": "earnings",
+          "elapsed_seconds": 2342.13,
+          "elapsed_minutes": 39.0355,
+          "duration_seconds": 2721.169,
+          "percent_of_conversation": 86.07072916088637,
+          "question_words": 10
+        },
+        {
+          "id": "MO-performance-authored",
+          "intent_id": "MO-performance",
+          "meeting": "EC4320211",
+          "dataset": "earnings",
+          "elapsed_seconds": 1975.25,
+          "elapsed_minutes": 32.920833333333334,
+          "duration_seconds": 3285.848,
+          "percent_of_conversation": 60.1138579751711,
+          "question_words": 11
+        },
+        {
+          "id": "MO-selection-authored",
+          "intent_id": "MO-selection",
+          "meeting": "EC4320211",
+          "dataset": "earnings",
+          "elapsed_seconds": 2823.71,
+          "elapsed_minutes": 47.06183333333333,
+          "duration_seconds": 3285.848,
+          "percent_of_conversation": 85.93550279866872,
+          "question_words": 8
+        }
+      ],
+      "percent_bins": [
+        {
+          "left": 0,
+          "right": 10,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 10,
+          "right": 20,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 20,
+          "right": 30,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 30,
+          "right": 40,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 40,
+          "right": 50,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 50,
+          "right": 60,
+          "ami": 5,
+          "earnings": 1
+        },
+        {
+          "left": 60,
+          "right": 70,
+          "ami": 0,
+          "earnings": 1
+        },
+        {
+          "left": 70,
+          "right": 80,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 80,
+          "right": 90,
+          "ami": 6,
+          "earnings": 2
+        },
+        {
+          "left": 90,
+          "right": 100,
+          "ami": 0,
+          "earnings": 0
+        }
+      ],
+      "minute_bins": [
+        {
+          "left": 0,
+          "right": 5,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 5,
+          "right": 10,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 10,
+          "right": 15,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 15,
+          "right": 20,
+          "ami": 1,
+          "earnings": 0
+        },
+        {
+          "left": 20,
+          "right": 25,
+          "ami": 4,
+          "earnings": 0
+        },
+        {
+          "left": 25,
+          "right": 30,
+          "ami": 2,
+          "earnings": 1
+        },
+        {
+          "left": 30,
+          "right": 35,
+          "ami": 4,
+          "earnings": 1
+        },
+        {
+          "left": 35,
+          "right": 40,
+          "ami": 0,
+          "earnings": 1
+        },
+        {
+          "left": 40,
+          "right": 45,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 45,
+          "right": 50,
+          "ami": 0,
+          "earnings": 1
+        },
+        {
+          "left": 50,
+          "right": 55,
+          "ami": 0,
+          "earnings": 0
+        },
+        {
+          "left": 55,
+          "right": 60,
+          "ami": 0,
+          "earnings": 0
+        }
+      ]
+    }
+  },
+  "per_meeting": [
+    {
+      "meeting": "EN2002b",
+      "duration_minutes": 29.782033333333334,
+      "wordings": 3,
+      "information_needs": 3,
+      "planned_moments": 2,
+      "timing": {
+        "n": 3,
+        "mean_elapsed_minutes": 22.770555555555553,
+        "median_elapsed_minutes": 25.930999999999997,
+        "min_elapsed_minutes": 16.449666666666666,
+        "max_elapsed_minutes": 25.930999999999997,
+        "mean_percent": 76.45735702696219,
+        "median_percent": 87.0692733090756,
+        "min_percent": 55.23352446273536,
+        "max_percent": 87.0692733090756
+      }
+    },
+    {
+      "meeting": "ES2002b",
+      "duration_minutes": 38.016666666666666,
+      "wordings": 3,
+      "information_needs": 3,
+      "planned_moments": 2,
+      "timing": {
+        "n": 3,
+        "mean_elapsed_minutes": 27.531166666666667,
+        "median_elapsed_minutes": 31.222166666666666,
+        "min_elapsed_minutes": 20.149166666666666,
+        "max_elapsed_minutes": 31.222166666666666,
+        "mean_percent": 72.41867601928978,
+        "median_percent": 82.12757562472599,
+        "min_percent": 53.00087680841736,
+        "max_percent": 82.12757562472599
+      }
+    },
+    {
+      "meeting": "IS1000b",
+      "duration_minutes": 39.016666666666666,
+      "wordings": 5,
+      "information_needs": 3,
+      "planned_moments": 2,
+      "timing": {
+        "n": 5,
+        "mean_elapsed_minutes": 28.17936666666667,
+        "median_elapsed_minutes": 33.14116666666667,
+        "min_elapsed_minutes": 20.736666666666668,
+        "max_elapsed_minutes": 33.14116666666667,
+        "mean_percent": 72.22392140111064,
+        "median_percent": 84.94105083297737,
+        "min_percent": 53.14822725331055,
+        "max_percent": 84.94105083297737
+      }
+    },
+    {
+      "meeting": "TS3003b",
+      "duration_minutes": 36.83841666666667,
+      "wordings": 4,
+      "information_needs": 2,
+      "planned_moments": 1,
+      "timing": {
+        "n": 4,
+        "mean_elapsed_minutes": 20.687166666666666,
+        "median_elapsed_minutes": 20.687166666666666,
+        "min_elapsed_minutes": 20.687166666666666,
+        "max_elapsed_minutes": 20.687166666666666,
+        "mean_percent": 56.15650328800776,
+        "median_percent": 56.15650328800776,
+        "min_percent": 56.15650328800776,
+        "max_percent": 56.15650328800776
+      }
+    },
+    {
+      "meeting": "EC4320211",
+      "duration_minutes": 54.764133333333334,
+      "wordings": 4,
+      "information_needs": 2,
+      "planned_moments": 2,
+      "timing": {
+        "n": 4,
+        "mean_elapsed_minutes": 39.99133333333333,
+        "median_elapsed_minutes": 39.99133333333333,
+        "min_elapsed_minutes": 32.920833333333334,
+        "max_elapsed_minutes": 47.06183333333333,
+        "mean_percent": 73.02468038691991,
+        "median_percent": 73.02468038691991,
+        "min_percent": 60.1138579751711,
+        "max_percent": 85.93550279866872
+      }
+    },
+    {
+      "meeting": "EC4344338",
+      "duration_minutes": 45.35281666666666,
+      "wordings": 4,
+      "information_needs": 2,
+      "planned_moments": 2,
+      "timing": {
+        "n": 4,
+        "mean_elapsed_minutes": 33.10933333333333,
+        "median_elapsed_minutes": 33.10933333333333,
+        "min_elapsed_minutes": 27.18316666666667,
+        "max_elapsed_minutes": 39.0355,
+        "mean_percent": 73.00391853648193,
+        "median_percent": 73.00391853648193,
+        "min_percent": 59.937107912077494,
+        "max_percent": 86.07072916088637
+      }
+    }
+  ],
+  "durations": {
+    "EN2002b": {
+      "seconds": 1786.922,
+      "source": "AMI meeting metadata: duration",
+      "url": "https://groups.inf.ed.ac.uk/ami/corpus/annotations.shtml"
+    },
+    "ES2002b": {
+      "seconds": 2281.0,
+      "source": "AMI meeting metadata: duration",
+      "url": "https://groups.inf.ed.ac.uk/ami/corpus/annotations.shtml"
+    },
+    "IS1000b": {
+      "seconds": 2341.0,
+      "source": "AMI meeting metadata: duration",
+      "url": "https://groups.inf.ed.ac.uk/ami/corpus/annotations.shtml"
+    },
+    "TS3003b": {
+      "seconds": 2210.305,
+      "source": "AMI meeting metadata: duration",
+      "url": "https://groups.inf.ed.ac.uk/ami/corpus/annotations.shtml"
+    },
+    "EC4320211": {
+      "seconds": 3285.848,
+      "source": "Rev Earnings21 earnings21-file-metadata.csv: audio_length",
+      "url": "https://github.com/revdotcom/speech-datasets/blob/c05ab6fd8b4b627d123c922a22a39e993dd37635/earnings21/earnings21-file-metadata.csv"
+    },
+    "EC4344338": {
+      "seconds": 2721.169,
+      "source": "Rev Earnings21 earnings21-file-metadata.csv: audio_length",
+      "url": "https://github.com/revdotcom/speech-datasets/blob/c05ab6fd8b4b627d123c922a22a39e993dd37635/earnings21/earnings21-file-metadata.csv"
+    }
+  },
+  "unique_planned_moments": 11,
+  "inventory": {
+    "first_model_requests": 16,
+    "first_complete_drafts": 10,
+    "first_no_question": 5,
+    "first_incomplete": 1,
+    "selected_evidence_model_drafts": 16,
+    "assistant_written_drafts": 16,
+    "total_complete_new_candidate_records": 42,
+    "reader_tested_new_candidates": 32,
+    "retained_wordings": 23,
+    "retained_information_needs": 15,
+    "earlier_comparison_questions": 9
+  },
+  "gpus": 0
+}

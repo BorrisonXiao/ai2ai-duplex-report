@@ -1,0 +1,207 @@
+{
+  "EN-times-authored": {
+    "context": "A project team is building a browser for searching and displaying recorded meetings.",
+    "motivation": "The requester earlier asked how to extract the start and end times of a meeting segment. The group is now discussing how search results should be displayed.",
+    "review": "The answer needs B’s earlier programming suggestion. The reader should preserve B’s uncertainty about the method name."
+  },
+  "EN-results-authored": {
+    "context": "A project team is building a browser for searching and displaying recorded meetings.",
+    "motivation": "The team needs to distinguish different kinds of search results in its meeting browser.",
+    "review": "The answer is the earlier list of topics, summaries and transcripts. At the earlier question time, that list is also present in the latest minute; the assistant-written question was therefore moved to the later time."
+  },
+  "EN-xml-authored": {
+    "context": "A project team is building a browser for searching and displaying recorded meetings.",
+    "motivation": "The group is discussing ways to transform its XML transcript files without excessive Java work.",
+    "review": "The answer is the name XSLT, mentioned in an earlier suggestion. No final choice of software was recorded in that suggestion."
+  },
+  "ES-colour-authored": {
+    "context": "Four participants are playing product-design roles and planning a TV remote control.",
+    "motivation": "The interface designer needs to know whether the remote’s corporate colour is actually known.",
+    "review": "Earlier, the project manager guessed yellow but said they were unsure. An answer must not turn that guess into a confirmed requirement."
+  },
+  "ES-teletext-authored": {
+    "context": "Four participants are playing product-design roles and planning a TV remote control.",
+    "motivation": "The interface designer is recapping the remote’s functions and checking an earlier company requirement.",
+    "review": "Earlier, the project manager said teletext did not need to be included because the company considered it outdated."
+  },
+  "ES-devices-authored": {
+    "context": "Four participants are playing product-design roles and planning a TV remote control.",
+    "motivation": "The industrial designer is checking which devices the remote must support while the group finalises its functions.",
+    "review": "The earlier requirement was TV only. The same discussion explicitly excluded VCR and DVD players."
+  },
+  "IS-receiver-authored": {
+    "context": "A different four-person design team is discussing customer research and technical choices for a TV remote.",
+    "motivation": "The interface designer is about to present after a discussion of how the remote communicates with a TV.",
+    "review": "The project manager said the receiver already inside the TV could not be changed; the new remote had to work with it."
+  },
+  "IS-lost-authored": {
+    "context": "A different four-person design team is discussing customer research and technical choices for a TV remote.",
+    "motivation": "The team is asking why customers would need a new remote. The industrial designer asks about a customer problem reported earlier.",
+    "review": "In this role-play meeting, the marketing participant reports a survey: 50% of users often lose their remotes, while 34% find a new remote hard to learn. Both reader answers to the remote-loss question incorrectly use 34%."
+  },
+  "IS-voice-authored": {
+    "context": "A different four-person design team is discussing customer research and technical choices for a TV remote.",
+    "motivation": "The project manager is leading a discussion of which age group to target.",
+    "review": "The earlier survey report says 90% of people aged 15–25 would pay more for speech recognition. This is survey interest, not an agreed sales target."
+  },
+  "TS-target-authored": {
+    "context": "Another design team is choosing features and a target market for a TV remote.",
+    "motivation": "The team is discussing a new company requirement to target people over 40.",
+    "review": "The question asks for marketing’s earlier recommendation: ages 16–45. Naming that earlier recommendation must not imply it remained the current requirement."
+  },
+  "TS-looks-authored": {
+    "context": "Another design team is choosing features and a target market for a TV remote.",
+    "motivation": "The industrial designer wants to recall the survey evidence that appearance might matter to buyers.",
+    "review": "The marketing participant earlier reported that 80% would spend more on a fancy-looking remote. That statement gives no amount of extra spending."
+  },
+  "TS-touch-authored": {
+    "context": "Another design team is choosing features and a target market for a TV remote.",
+    "motivation": "The group is weighing a screen against a charging base because of cost.",
+    "review": "Earlier participants disagreed about touchscreen cost. The generated answers do not establish an agreed price or a verified budget; these question wordings were excluded."
+  },
+  "DH-growth-authored": {
+    "context": "Danaher management and financial analysts are discussing first-quarter 2020 results and the Cytiva acquisition.",
+    "motivation": "An analyst has just asked about Cytiva’s own growth. A private question to an assistant can recover the forecast for Danaher as a whole.",
+    "review": "Management earlier forecast second-quarter core revenue growth, including Cytiva, from flat to down 10%. This differs from the current discussion of Cytiva’s roughly 10% growth."
+  },
+  "DH-basis-authored": {
+    "context": "Danaher management and financial analysts are discussing first-quarter 2020 results and the Cytiva acquisition.",
+    "motivation": "An analyst is interpreting Cytiva’s contribution to the company’s growth figures.",
+    "review": "Management earlier said the comparison would treat Cytiva as if it had been owned in both the current and the comparable previous-year period."
+  },
+  "MO-performance-authored": {
+    "context": "Monro management and financial analysts are discussing store changes and third-quarter fiscal-2020 results.",
+    "motivation": "An analyst is discussing the sales increase at stores that changed brands. They ask their assistant about the stores that only had their appearance updated.",
+    "review": "Management earlier said the stores with appearance updates alone were slightly down. The question must keep that group separate from the rebranded stores."
+  },
+  "MO-selection-authored": {
+    "context": "Monro management and financial analysts are discussing store changes and third-quarter fiscal-2020 results.",
+    "motivation": "An analyst is asking about disruption from changes to Monro’s stores. A private reminder can recover how management chose between the types of change.",
+    "review": "Management earlier said it used its analytical model and considered existing brand recognition in each market. The reviewed answer does not add unstated details about the model."
+  },
+  "EN-times-packet": {
+    "context": "A project team is building a browser for searching and displaying recorded meetings.",
+    "motivation": "The requester earlier asked how to extract the start and end times of a meeting segment. The group is now discussing how search results should be displayed.",
+    "review": "The answer needs B’s earlier programming suggestion. The reader should preserve B’s uncertainty about the method name. Asking for an exact method name also makes the uncertain recollection sound more definite than it was."
+  },
+  "EN-results-packet": {
+    "context": "A project team is building a browser for searching and displaying recorded meetings.",
+    "motivation": "The team needs to distinguish different kinds of search results in its meeting browser.",
+    "review": "The answer is the earlier list of topics, summaries and transcripts. At the earlier question time, that list is also present in the latest minute; the assistant-written question was therefore moved to the later time. The reader wrongly says the recent minute does not contain the list, so its failure cannot establish that older history is needed here."
+  },
+  "EN-xml-packet": {
+    "context": "A project team is building a browser for searching and displaying recorded meetings.",
+    "motivation": "The group is discussing ways to transform its XML transcript files without excessive Java work.",
+    "review": "The answer is the name XSLT, mentioned in an earlier suggestion. No final choice of software was recorded in that suggestion. The model also puts the transcript label D into the spoken question; D is not a participant name."
+  },
+  "ES-colour-packet": {
+    "context": "Four participants are playing product-design roles and planning a TV remote control.",
+    "motivation": "The interface designer needs to know whether the remote’s corporate colour is actually known.",
+    "review": "Earlier, the project manager guessed yellow but said they were unsure. An answer must not turn that guess into a confirmed requirement. This wording gives yellow away in the question and was excluded as a test of memory."
+  },
+  "ES-teletext-packet": {
+    "context": "Four participants are playing product-design roles and planning a TV remote control.",
+    "motivation": "The interface designer is recapping the remote’s functions and checking an earlier company requirement.",
+    "review": "Earlier, the project manager said teletext did not need to be included because the company considered it outdated. The longer wording also asks about an unrecorded future possibility; the shorter version was preferred."
+  },
+  "ES-devices-packet": {
+    "context": "Four participants are playing product-design roles and planning a TV remote control.",
+    "motivation": "The industrial designer is checking which devices the remote must support while the group finalises its functions.",
+    "review": "The earlier requirement was TV only. The same discussion explicitly excluded VCR and DVD players. This wording gives TV-only away in the question and was excluded as a test of memory."
+  },
+  "IS-receiver-packet": {
+    "context": "A different four-person design team is discussing customer research and technical choices for a TV remote.",
+    "motivation": "The interface designer is about to present after a discussion of how the remote communicates with a TV.",
+    "review": "The project manager said the receiver already inside the TV could not be changed; the new remote had to work with it."
+  },
+  "IS-lost-packet": {
+    "context": "A different four-person design team is discussing customer research and technical choices for a TV remote.",
+    "motivation": "The team is asking why customers would need a new remote. The industrial designer asks about a customer problem reported earlier.",
+    "review": "In this role-play meeting, the marketing participant reports a survey: 50% of users often lose their remotes, while 34% find a new remote hard to learn. Both reader answers to the remote-loss question incorrectly use 34%."
+  },
+  "IS-voice-packet": {
+    "context": "A different four-person design team is discussing customer research and technical choices for a TV remote.",
+    "motivation": "The project manager is leading a discussion of which age group to target.",
+    "review": "The earlier survey report says 90% of people aged 15–25 would pay more for speech recognition. This is survey interest, not an agreed sales target. This version was excluded because its wording about willingness to pay sounds unnecessarily formal."
+  },
+  "TS-target-packet": {
+    "context": "Another design team is choosing features and a target market for a TV remote.",
+    "motivation": "The team is discussing a new company requirement to target people over 40.",
+    "review": "The question asks for marketing’s earlier recommendation: ages 16–45. Naming that earlier recommendation must not imply it remained the current requirement."
+  },
+  "TS-looks-packet": {
+    "context": "Another design team is choosing features and a target market for a TV remote.",
+    "motivation": "The industrial designer wants to recall the survey evidence that appearance might matter to buyers.",
+    "review": "The marketing participant earlier reported that 80% would spend more on a fancy-looking remote. That statement gives no amount of extra spending."
+  },
+  "TS-touch-packet": {
+    "context": "Another design team is choosing features and a target market for a TV remote.",
+    "motivation": "The group is weighing a screen against a charging base because of cost.",
+    "review": "Earlier participants disagreed about touchscreen cost. The generated answers do not establish an agreed price or a verified budget; these question wordings were excluded."
+  },
+  "DH-growth-packet": {
+    "context": "Danaher management and financial analysts are discussing first-quarter 2020 results and the Cytiva acquisition.",
+    "motivation": "An analyst has just asked about Cytiva’s own growth. A private question to an assistant can recover the forecast for Danaher as a whole.",
+    "review": "Management earlier forecast second-quarter core revenue growth, including Cytiva, from flat to down 10%. This differs from the current discussion of Cytiva’s roughly 10% growth."
+  },
+  "DH-basis-packet": {
+    "context": "Danaher management and financial analysts are discussing first-quarter 2020 results and the Cytiva acquisition.",
+    "motivation": "An analyst is interpreting Cytiva’s contribution to the company’s growth figures.",
+    "review": "Management earlier said the comparison would treat Cytiva as if it had been owned in both the current and the comparable previous-year period."
+  },
+  "MO-performance-packet": {
+    "context": "Monro management and financial analysts are discussing store changes and third-quarter fiscal-2020 results.",
+    "motivation": "An analyst is discussing the sales increase at stores that changed brands. They ask their assistant about the stores that only had their appearance updated.",
+    "review": "Management earlier said the stores with appearance updates alone were slightly down. The question must keep that group separate from the rebranded stores."
+  },
+  "MO-selection-packet": {
+    "context": "Monro management and financial analysts are discussing store changes and third-quarter fiscal-2020 results.",
+    "motivation": "An analyst is asking about disruption from changes to Monro’s stores. A private reminder can recover how management chose between the types of change.",
+    "review": "Management earlier said it used its analytical model and considered existing brand recognition in each market. The reviewed answer does not add unstated details about the model."
+  },
+  "legacy-thinking-direct_v1-W4-2": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader correctly recalls the title deadline as Monday the seventh and the abstract deadline as Monday the fourteenth."
+  },
+  "legacy-thinking-evidence_v2-W4-1": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader correctly recalls both submission deadlines."
+  },
+  "legacy-authored-W1-2": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader says the main call will go out by the end of the week. A actually said today or tomorrow. The answer from only the latest minute also misses part of the requested information."
+  },
+  "legacy-authored-W2-1": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader says posters leave room for 36 talks. The discussion changed the working plan from a maximum of 36 talks to 30 talks plus a poster session."
+  },
+  "legacy-authored-W3-1": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader gives A the job of contacting Psychology. A had asked C to email Claire, and C acknowledged the task. B volunteered to contact Informatics and Philosophy."
+  },
+  "legacy-authored-W3-2": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader adds an instruction to avoid technical language that was not retained in the final outreach plan. The latest minute alone cannot justify the comparison with the earlier Psychology message."
+  },
+  "legacy-authored-W4-1": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader correctly recalls both deadlines and the request for applicants to state their technology needs."
+  },
+  "legacy-authored-W4-2": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader correctly explains why technical needs were requested early and why talks sharing a computer setup should be grouped."
+  },
+  "legacy-curated-instruct-packets-W4-deadlines": {
+    "context": "A university group is organising a workshop, including publicity, presentation slots and its webpage.",
+    "motivation": "This is an unchanged question from the earlier workshop-planning pilot.",
+    "review": "The reader correctly recalls both deadlines."
+  }
+}

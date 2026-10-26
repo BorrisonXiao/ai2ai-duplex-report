@@ -1,0 +1,184 @@
+{
+  "status": "manual_review_existing_questions",
+  "distinct_information_needs": 15,
+  "single_passage_or_short_exchange": 15,
+  "verified_required_multihop": 0,
+  "definition": "A new reasoning step requires information from a separate passage that is necessary to connect to the next fact. Transcript chunk count, distance in time and longer wording are not sufficient.",
+  "items": [
+    {
+      "intent_id": "EN-times",
+      "representative_question_id": "EN-times-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EN2002b-u0395",
+        "EN2002b-u0398",
+        "EN2002b-u0405",
+        "EN2002b-u0406"
+      ],
+      "reason": "The answer needs B’s earlier programming suggestion. The reader should preserve B’s uncertainty about the method name.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "EN-results",
+      "representative_question_id": "EN-results-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EN2002b-u0436",
+        "EN2002b-u0437"
+      ],
+      "reason": "The answer is the earlier list of topics, summaries and transcripts. At the earlier question time, that list is also present in the latest minute; the assistant-written question was therefore moved to the later time.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "EN-xml",
+      "representative_question_id": "EN-xml-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EN2002b-u0726"
+      ],
+      "reason": "The answer is the name XSLT, mentioned in an earlier suggestion. No final choice of software was recorded in that suggestion.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "ES-colour",
+      "representative_question_id": "ES-colour-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "ES2002b-u0024",
+        "ES2002b-u0025"
+      ],
+      "reason": "Earlier, the project manager guessed yellow but said they were unsure. An answer must not turn that guess into a confirmed requirement.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "ES-teletext",
+      "representative_question_id": "ES-teletext-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "ES2002b-u0015",
+        "ES2002b-u0016",
+        "ES2002b-u0018"
+      ],
+      "reason": "Earlier, the project manager said teletext did not need to be included because the company considered it outdated.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "ES-devices",
+      "representative_question_id": "ES-devices-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "ES2002b-u0019"
+      ],
+      "reason": "The earlier requirement was TV only. The same discussion explicitly excluded VCR and DVD players.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "IS-receiver",
+      "representative_question_id": "IS-receiver-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "IS1000b-u0303",
+        "IS1000b-u0305"
+      ],
+      "reason": "The project manager said the receiver already inside the TV could not be changed; the new remote had to work with it.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "IS-lost",
+      "representative_question_id": "IS-lost-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "IS1000b-u0091"
+      ],
+      "reason": "In this role-play meeting, the marketing participant reports a survey: 50% of users often lose their remotes, while 34% find a new remote hard to learn. Both reader answers to the remote-loss question incorrectly use 34%.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "IS-voice",
+      "representative_question_id": "IS-voice-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "IS1000b-u0196",
+        "IS1000b-u0197"
+      ],
+      "reason": "The earlier survey report says 90% of people aged 15–25 would pay more for speech recognition. This is survey interest, not an agreed sales target.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "TS-target",
+      "representative_question_id": "TS-target-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "TS3003b-u0088"
+      ],
+      "reason": "The question asks for marketing’s earlier recommendation: ages 16–45. Naming that earlier recommendation must not imply it remained the current requirement.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "TS-looks",
+      "representative_question_id": "TS-looks-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "TS3003b-u0056"
+      ],
+      "reason": "The marketing participant earlier reported that 80% would spend more on a fancy-looking remote. That statement gives no amount of extra spending.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "DH-growth",
+      "representative_question_id": "DH-growth-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EC4344338-u0123"
+      ],
+      "reason": "Management earlier forecast second-quarter core revenue growth, including Cytiva, from flat to down 10%. This differs from the current discussion of Cytiva’s roughly 10% growth.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "DH-basis",
+      "representative_question_id": "DH-basis-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EC4344338-u0026",
+        "EC4344338-u0027"
+      ],
+      "reason": "Management earlier said the comparison would treat Cytiva as if it had been owned in both the current and the comparable previous-year period.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "MO-performance",
+      "representative_question_id": "MO-performance-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EC4320211-u0077"
+      ],
+      "reason": "Management earlier said the stores with appearance updates alone were slightly down. The question must keep that group separate from the rebranded stores.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    },
+    {
+      "intent_id": "MO-selection",
+      "representative_question_id": "MO-selection-authored",
+      "assessment": "answerable_from_one_local_passage_or_short_exchange",
+      "supporting_excerpt_ids": [
+        "EC4320211-u0063"
+      ],
+      "reason": "Management earlier said it used its analytical model and considered existing brand recognition in each market. The reviewed answer does not add unstated details about the model.",
+      "reviewer": "primary_assistant",
+      "scope": "Minimum information demanded by the question wording; extra explanation in the proposed answer does not add a required hop."
+    }
+  ]
+}

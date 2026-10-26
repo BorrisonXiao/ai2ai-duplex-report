@@ -1,0 +1,262 @@
+{
+  "instruction": "Review multi-hop question-generation and indirect-reference methods before proposing a harder, natural meeting-question pilot; do not execute that pilot yet.",
+  "date": "2026-10-26",
+  "scope": "Eight primary papers on generation, evidence necessity and referring questions",
+  "sub_questions": [
+    "What makes multiple evidence steps necessary?",
+    "How do generators preserve a connected chain?",
+    "How can indirect references stay natural?",
+    "Which shortcuts should be tested?",
+    "How should question timing and evidence age be measured separately?"
+  ],
+  "papers": [
+    {
+      "id": "min2019",
+      "title": "Compositional Questions Do Not Necessitate Multi-hop Reasoning",
+      "authors": "Sewon Min, Eric Wallace, Sameer Singh, Matt Gardner, Hannaneh Hajishirzi, Luke Zettlemoyer",
+      "year": 2019,
+      "venue": "ACL",
+      "problem": "A question can appear compositional while one paragraph already supplies its answer.",
+      "method": "Tests HotpotQA using a model that reads one paragraph and a human study with supporting paragraphs withheld.",
+      "results": "Single-paragraph BERT reaches 67 F1; humans answer over 80% in the reported incomplete-evidence setting.",
+      "relevance": "Test whether each proposed evidence step is necessary, rather than counting citations or descriptive phrases.",
+      "limit": "A QA diagnostic rather than a question generator; its numeric results do not predict performance on meeting audio.",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "url": "https://aclanthology.org/P19-1416/",
+      "pdf_url": "https://aclanthology.org/P19-1416.pdf",
+      "pdf_sha256": "0e78a4b727504439394ea99024b3b75e1ec249703a57c57620d96e9e879ba9de",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    },
+    {
+      "id": "reinforced2020",
+      "title": "Reinforced Multi-task Approach for Multi-hop Question Generation",
+      "authors": "Deepak Gupta, Hardik Chauhan, Ravi Tej Akella, Asif Ekbal, Pushpak Bhattacharyya",
+      "year": 2020,
+      "venue": "COLING",
+      "problem": "Question generators can ignore some of the facts supplied to them.",
+      "method": "Jointly predicts supporting facts and generates the question, with a reward for using the supporting information.",
+      "results": "Reports improvements in automatic scores and human judgments of question quality and coverage.",
+      "relevance": "Select and check the required facts before polishing a question’s spoken wording.",
+      "limit": "Using more facts is not sufficient if one fact or another passage still gives away the answer.",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "url": "https://aclanthology.org/2020.coling-main.249/",
+      "pdf_url": "https://aclanthology.org/2020.coling-main.249.pdf",
+      "pdf_sha256": "eae7e1fa17b9a2e0fe94cb32e867bf679b6e5f23d4e409c3220ad487fc7778d8",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    },
+    {
+      "id": "mulqg2020",
+      "title": "Multi-hop Question Generation with Graph Convolutional Network",
+      "authors": "Dan Su, Yan Xu, Wenliang Dai, Ziwei Ji, Tiezheng Yu, Pascale Fung",
+      "year": 2020,
+      "venue": "Findings of EMNLP",
+      "problem": "Relevant evidence is scattered across paragraphs.",
+      "method": "MulQG uses an entity graph and repeated encoding to connect evidence before question generation.",
+      "results": "Reports better HotpotQA generation metrics and a human evaluation of completeness and multi-hop content.",
+      "relevance": "Represent a connection such as task → person → earlier commitment explicitly before writing the question.",
+      "limit": "Its learned graph architecture does not need to be reproduced for a small prompt-based pilot; graph edges also need source verification.",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "url": "https://aclanthology.org/2020.findings-emnlp.416/",
+      "pdf_url": "https://aclanthology.org/2020.findings-emnlp.416.pdf",
+      "pdf_sha256": "a741e4eb96a22b1e7c48528f9a78186c0ace1095c5267f2cb1038641ad69902a",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    },
+    {
+      "id": "cqg2022",
+      "title": "CQG: A Simple and Effective Controlled Generation Framework for Multi-hop Question Generation",
+      "authors": "Zichu Fei, Qi Zhang, Tao Gui, Di Liang, Sirui Wang, Wei Wu, Xuanjing Huang",
+      "year": 2022,
+      "venue": "ACL",
+      "problem": "A generator can receive several documents but still produce a shallow question.",
+      "method": "Extracts important entities along a reasoning chain and controls generation so relevant entities appear in the question.",
+      "results": "Reports a five-BLEU-point improvement on HotpotQA over its stated comparison.",
+      "relevance": "Plan a connected evidence chain and check that the final question still needs that connection.",
+      "limit": "We should not force every entity name into speech: that can sound unnatural or reveal the intermediate answer. This is our adaptation concern, not a reported failure of CQG.",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "url": "https://aclanthology.org/2022.acl-long.475/",
+      "pdf_url": "https://aclanthology.org/2022.acl-long.475.pdf",
+      "pdf_sha256": "634deea7603d9d2356ac67c377043bee546f7e7bd0faa55d68370517efe8a97a",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    },
+    {
+      "id": "musique2022",
+      "title": "MuSiQue: Multihop Questions via Single-hop Question Composition",
+      "authors": "Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, Ashish Sabharwal",
+      "year": 2022,
+      "venue": "TACL",
+      "problem": "Existing multi-hop questions often allow an answer without connecting the intended steps.",
+      "method": "Composes simple questions only when a later step depends on the answer to an earlier one; filters shortcuts and adds unanswerable variants.",
+      "results": "Creates about 25,000 questions requiring two to four steps, with tests for disconnected reasoning.",
+      "relevance": "The strongest construction principle for this project: each link must be necessary, including identity resolution.",
+      "limit": "The source is Wikipedia QA. Meeting timing, speaker motivation and ordinary spoken wording require additional review.",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "url": "https://aclanthology.org/2022.tacl-1.31/",
+      "pdf_url": "https://aclanthology.org/2022.tacl-1.31.pdf",
+      "pdf_sha256": "c0d8b89636bcbca4972b55ab68f014eb20f74c4b9a4fcf126ca68d7f2ec1e753",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    },
+    {
+      "id": "rewrite2024",
+      "title": "Explainable Multi-hop Question Generation: An End-to-End Approach without Intermediate Question Labeling",
+      "authors": "Seonjeong Hwang, Yunsu Kim, Gary Geunbae Lee",
+      "year": 2024,
+      "venue": "LREC-COLING",
+      "problem": "Complex generated questions are hard to explain, and intermediate rewriting labels are costly.",
+      "method": "E2EQR successively rewrites a question using additional documents, transferring decoder state between steps and training without intermediate question labels.",
+      "results": "Evaluates three- and four-step generation and the usefulness of generated questions for QA training.",
+      "relevance": "Start from a useful short reminder, then add one necessary dependency while retaining a natural sentence.",
+      "limit": "A rewrite can add words without adding a necessary reasoning step. Every source document in our adaptation must already be available at the question time.",
+      "pages_read": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ],
+      "url": "https://aclanthology.org/2024.lrec-main.599/",
+      "pdf_url": "https://aclanthology.org/2024.lrec-main.599.pdf",
+      "pdf_sha256": "e68215f05ad02c242eb38b6ed080be898429a33db64726c7857bfc793af717c6",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    },
+    {
+      "id": "longvideo2024",
+      "title": "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding",
+      "authors": "Haoning Wu, Dongxu Li, Bei Chen, Junnan Li",
+      "year": 2024,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "problem": "Video questions can be answered from one frame instead of understanding a longer context.",
+      "method": "Human annotators write questions that first refer to a person, event, scene or subtitle, then ask about the referred content.",
+      "results": "6,678 human-annotated multiple-choice questions over 3,763 videos. Its annotation guide includes clothing-based descriptions and earlier/later appearances.",
+      "relevance": "A close match to the user’s remembered style. For audio, an earlier task or proposal can identify the speaker before retrieving what that person said.",
+      "limit": "The remembered paper is not identified conclusively. LongVideoBench includes perception tasks as well as relations; indirect descriptions alone do not guarantee multiple necessary evidence steps.",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "additional_section_read": "Official arXiv HTML appendix E: human annotation instructions, including object-referred events and appearance changes",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/329ad516cf7a6ac306f29882e9c77558-Abstract-Datasets_and_Benchmarks_Track.html",
+      "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/329ad516cf7a6ac306f29882e9c77558-Paper-Datasets_and_Benchmarks_Track.pdf",
+      "pdf_sha256": "41589d3da66314fbc53061455d579ce8fb5acbf8f3a9e4aec1e4c18b1f32b405",
+      "status": "verified_primary_paper",
+      "arxiv_id": "2407.15754",
+      "doi": null
+    },
+    {
+      "id": "dpkg2025",
+      "title": "Multi-Hop Question Generation via Dual-Perspective Keyword Guidance",
+      "authors": "Maodong Li, Longyin Zhang, Fang Kong",
+      "year": 2025,
+      "venue": "Findings of ACL",
+      "problem": "Keywords expressing the questioner’s intent play a different role from words locating evidence.",
+      "method": "Distinguishes question keywords from document keywords and uses both to guide generation.",
+      "results": "Reports improvements on HotpotQA generation experiments.",
+      "relevance": "Keep the participant’s immediate need separate from the evidence used to answer it.",
+      "limit": "Forced keywords should not replace a review of whether a real participant would ask the resulting question.",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "url": "https://aclanthology.org/2025.findings-acl.526/",
+      "pdf_url": "https://aclanthology.org/2025.findings-acl.526.pdf",
+      "pdf_sha256": "2ccc164268a40cf060d17fb11905403fc526fd72f2863f60d5c47d23d39358d2",
+      "status": "verified_primary_paper",
+      "arxiv_id": null,
+      "doi": null
+    }
+  ],
+  "themes": [
+    "Long context, indirect wording and necessary evidence composition are separate dimensions.",
+    "Compose connected facts before writing a question; verify the final wording has not removed the dependency.",
+    "Rewriting and keyword controls are useful design ideas, while source sufficiency and naturalness need separate checks."
+  ],
+  "gaps": [
+    {
+      "id": "g1",
+      "statement": "The current meeting set tests recall but has not established necessary multi-step evidence composition.",
+      "evidence": "Manual inspection of the 15 retained information needs, interpreted using Min et al. and MuSiQue."
+    },
+    {
+      "id": "g2",
+      "statement": "Text QA methods need adaptation to the requester’s situation and the stream cutoff.",
+      "evidence": "The reviewed generation papers use available documents; the application here adds a particular speaker and question time."
+    }
+  ],
+  "proposal": {
+    "status": "discussion_only_not_executed",
+    "current_set_assessment": "All 15 retained information needs can be answered from one local passage or short exchange. Several transcript chunks or a long time gap do not make them multi-hop.",
+    "recommended_first_scope": "A small two-step pilot, after the user reviews this direction.",
+    "families": [
+      {
+        "name": "Find the person, then retrieve their commitment",
+        "chain": "An earlier task assignment identifies a participant; a separate turn supplies that participant’s commitment or requested detail.",
+        "naturalness": "Use a task description only when it is a believable way for this requester to refer to that participant."
+      },
+      {
+        "name": "Apply a later change to an earlier plan",
+        "chain": "An earlier plan supplies one fact; a later constraint or correction changes what remains possible.",
+        "naturalness": "Ask about the practical consequence that matters at the current point, rather than requesting a chronology for its own sake."
+      },
+      {
+        "name": "Resolve a reference in the call, then check a document",
+        "chain": "Earlier speech identifies the company metric or store group; an available document supplies the comparison or exact value.",
+        "naturalness": "Use this as a later tool experiment, with a clear reason to open the document."
+      }
+    ],
+    "acceptance_criteria": [
+      "The answer requires two connected facts in separate passages; supplying unrelated facts is not a chain.",
+      "Every necessary fact is available before the proposed question time.",
+      "Search the entire available transcript for a recap that already combines the facts. If one passage is sufficient, classify the item as recall.",
+      "Withhold each necessary fact, accounting for repeated mentions. The remaining evidence should not justify the complete answer.",
+      "Use a plausible alternative person, proposal or metric to check that the first step genuinely selects the second.",
+      "Review wording, requester motivation, ambiguity and whether the question reveals an intermediate answer.",
+      "Use source-based review and independent human checks; the same 30B model’s agreement cannot establish validity."
+    ],
+    "timing_design": "For a future pilot, cover early, middle and late points where real dependencies exist, and report elapsed time separately from evidence age. Do not create an early question before its needed evidence has arrived.",
+    "not_started": [
+      "No new question generation",
+      "No new reader inference",
+      "No model training",
+      "No new TTS or audio injection",
+      "No experiment GPU allocation"
+    ]
+  },
+  "gpus": 0
+}
