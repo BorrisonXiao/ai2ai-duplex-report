@@ -1,0 +1,105 @@
+{
+  "wordings": {
+    "n": 51,
+    "mean_minutes": 13.962486928104575,
+    "median_minutes": 9.725333333333333,
+    "mean_percent": 37.13274618314294,
+    "early": 36
+  },
+  "information_needs": {
+    "n": 39,
+    "mean_minutes": 13.091683760683761,
+    "median_minutes": 9.267,
+    "mean_percent": 35.025600875763814,
+    "early": 29
+  },
+  "planned_positions": 23,
+  "time_bins_minutes": [
+    0,
+    5,
+    7.5,
+    10.5,
+    20,
+    30,
+    45
+  ],
+  "time_counts": [
+    1,
+    14,
+    21,
+    0,
+    6,
+    9
+  ],
+  "fraction_bins_percent": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100
+  ],
+  "fraction_counts": [
+    18,
+    18,
+    0,
+    15,
+    0
+  ],
+  "per_meeting": [
+    {
+      "meeting": "EC4320211",
+      "wordings": 6,
+      "information_needs": 3,
+      "mean_minutes": 7.897222222222222,
+      "earliest_seconds": 302.86,
+      "latest_seconds": 596.49,
+      "duration_seconds": 3285.848
+    },
+    {
+      "meeting": "EC4344338",
+      "wordings": 5,
+      "information_needs": 4,
+      "mean_minutes": 13.5374,
+      "earliest_seconds": 296.45,
+      "latest_seconds": 2126.22,
+      "duration_seconds": 2721.169
+    },
+    {
+      "meeting": "EN2002b",
+      "wordings": 10,
+      "information_needs": 8,
+      "mean_minutes": 12.079183333333333,
+      "earliest_seconds": 303.62,
+      "latest_seconds": 1385.22,
+      "duration_seconds": 1786.922
+    },
+    {
+      "meeting": "ES2002b",
+      "wordings": 8,
+      "information_needs": 7,
+      "mean_minutes": 15.445749999999999,
+      "earliest_seconds": 308.77,
+      "latest_seconds": 1823.87,
+      "duration_seconds": 2281.0
+    },
+    {
+      "meeting": "IS1000b",
+      "wordings": 10,
+      "information_needs": 8,
+      "mean_minutes": 19.7476,
+      "earliest_seconds": 328.15,
+      "latest_seconds": 1855.31,
+      "duration_seconds": 2341.0
+    },
+    {
+      "meeting": "TS3003b",
+      "wordings": 12,
+      "information_needs": 9,
+      "mean_minutes": 12.931888888888889,
+      "earliest_seconds": 302.37,
+      "latest_seconds": 1721.99,
+      "duration_seconds": 2210.305
+    }
+  ]
+}

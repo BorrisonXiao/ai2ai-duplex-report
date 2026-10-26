@@ -1,6 +1,6 @@
 {
   "title": "Larger question pilot with early checkpoints and speaker-matched audio",
-  "updated_utc": "2026-10-26T23:09:15.959301+00:00",
+  "updated_utc": "2026-10-26T23:21:34.122022+00:00",
   "tasks": [
     {
       "id": "preserve",
@@ -19,22 +19,23 @@
     {
       "id": "generate",
       "label": "Generate a larger pool with three clearly defined methods",
-      "status": "in_progress",
-      "note": "Job 1304657 is submitted for Qwen3-30B Instruct through vLLM. Up to two questions per method and time point; unsupported opportunities may return fewer.",
-      "updated_utc": "2026-10-26T22:57:22.805021+00:00"
+      "status": "complete",
+      "note": "Four sequential vLLM jobs produced 78 model drafts across full-transcript, source-pair and concise writing prompts. 15 model wordings retained with documented source/role corrections; 36 authored wordings add separate supervised examples.",
+      "updated_utc": "2026-10-26T23:21:34.000990+00:00"
     },
     {
       "id": "review",
       "label": "Check natural wording, requester motivation and required evidence",
-      "status": "in_progress",
-      "note": "36 additional source-checked authored questions prepared; checking model drafts against the same speech. Six connected-fact pairs are being tested with supervised generation and independent rewriting.",
-      "updated_utc": "2026-10-26T23:09:15.959290+00:00"
+      "status": "complete",
+      "note": "51 new wordings cover 39 information needs. Six authored questions require linking separate discussions; one additional model question compares two discussions. Alternatives are counted as wordings, not new needs.",
+      "updated_utc": "2026-10-26T23:21:34.060526+00:00"
     },
     {
       "id": "reader",
       "label": "Test the 30B reader, including incomplete evidence and growing context",
-      "status": "pending",
-      "note": ""
+      "status": "in_progress",
+      "note": "Job 1304869 runs 197 blinded reader controls: full prefix, recent speech, source removal, single-fact context and growing context. Outputs still require content review.",
+      "updated_utc": "2026-10-26T23:21:34.122007+00:00"
     },
     {
       "id": "tts",

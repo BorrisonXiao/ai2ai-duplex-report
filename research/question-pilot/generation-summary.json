@@ -1,0 +1,51 @@
+{
+  "model": "Qwen3-30B-A3B-Instruct-2507",
+  "backend": "vLLM 0.16.0",
+  "methods": [
+    {
+      "prompt": "Full transcript",
+      "calls": 48,
+      "drafts": 31,
+      "retained": 7,
+      "no_question_calls": 30,
+      "incomplete_responses": 0
+    },
+    {
+      "prompt": "Verified source pairs",
+      "calls": 16,
+      "drafts": 15,
+      "retained": 1,
+      "no_question_calls": 0,
+      "incomplete_responses": 1
+    },
+    {
+      "prompt": "Explicit assistant addressee",
+      "calls": 16,
+      "drafts": 14,
+      "retained": 1,
+      "no_question_calls": 0,
+      "incomplete_responses": 2
+    },
+    {
+      "prompt": "Short few-shot writing prompt",
+      "calls": 18,
+      "drafts": 18,
+      "retained": 6,
+      "no_question_calls": 0,
+      "incomplete_responses": 0
+    }
+  ],
+  "reviewed_drafts": 78,
+  "retained_model_wordings": 15,
+  "authored_wordings": 36,
+  "connected_authored_questions": 6,
+  "source_selection": "Assistant selected and verified source pairs; these trials do not establish automatic multi-hop discovery.",
+  "review_criteria": [
+    "A plausible request to a separate assistant from an existing participant",
+    "A supported answer or a clearly identified missing decision in the available past",
+    "No invented fact, new promise, or participant-code letter in the spoken question",
+    "An older fact matters; avoid simply restating the immediately preceding recap",
+    "Select useful distinct needs and paired simple controls; valid duplicates may be omitted"
+  ],
+  "label_corrections": "Question wording preserved for all retained model drafts; one requester corrected and source/reference-answer corrections recorded per question."
+}
