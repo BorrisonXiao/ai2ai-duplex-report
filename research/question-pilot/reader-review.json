@@ -1,0 +1,152 @@
+{
+  "job": "1304869",
+  "model": "Qwen3-30B-A3B-Instruct-2507",
+  "total_responses": 197,
+  "unique_questions": 51,
+  "growing_questions": 8,
+  "growing_replays": 20,
+  "full_history_main_targets_correct": 45,
+  "full_history_main_targets_total": 51,
+  "lead": "The run produced 197 responses. Source review found the main requested facts correct in 45 of 51 full-history answers and all 20 longer-history replays of eight stable early questions. This measures the main answer target; additional claims and citations still contain errors.",
+  "table_caption": "Counts are model responses, not retained questions. The checked main target must preserve the requested number, person, period and material uncertainty. “Reports missing facts” counts the reader’s own nonempty missing-information field, not a verified decision to withhold an answer. An invalid citation ID does not exist in that response’s supplied context.",
+  "table_headers": [
+    "Context supplied",
+    "Responses",
+    "Checked main target correct",
+    "Reports missing facts",
+    "Has invalid citation IDs"
+  ],
+  "table_rows": [
+    [
+      "Full earlier history",
+      51,
+      "45 / 51",
+      0,
+      3
+    ],
+    [
+      "Latest sixty seconds",
+      51,
+      "Control; not scored",
+      42,
+      3
+    ],
+    [
+      "Selected answer excerpts removed",
+      43,
+      "Control; not scored",
+      23,
+      1
+    ],
+    [
+      "First fact group removed",
+      8,
+      "Control; not scored",
+      1,
+      2
+    ],
+    [
+      "Second fact group removed",
+      8,
+      "Control; not scored",
+      4,
+      2
+    ],
+    [
+      "First fact group alone",
+      8,
+      "Control; not scored",
+      5,
+      0
+    ],
+    [
+      "Second fact group alone",
+      8,
+      "Control; not scored",
+      2,
+      1
+    ],
+    [
+      "Longer history for stable early questions",
+      20,
+      "20 / 20",
+      0,
+      3
+    ]
+  ],
+  "counts": {
+    "full_prefix": {
+      "responses": 51,
+      "complete_structured_responses": 50,
+      "reports_missing_information": 0,
+      "responses_with_invalid_citation_ids": 3
+    },
+    "recent_60s": {
+      "responses": 51,
+      "complete_structured_responses": 51,
+      "reports_missing_information": 42,
+      "responses_with_invalid_citation_ids": 3
+    },
+    "selected_evidence_removed": {
+      "responses": 43,
+      "complete_structured_responses": 43,
+      "reports_missing_information": 23,
+      "responses_with_invalid_citation_ids": 1
+    },
+    "fact_1_removed": {
+      "responses": 8,
+      "complete_structured_responses": 8,
+      "reports_missing_information": 1,
+      "responses_with_invalid_citation_ids": 2
+    },
+    "fact_2_removed": {
+      "responses": 8,
+      "complete_structured_responses": 8,
+      "reports_missing_information": 4,
+      "responses_with_invalid_citation_ids": 2
+    },
+    "fact_1_only": {
+      "responses": 8,
+      "complete_structured_responses": 8,
+      "reports_missing_information": 5,
+      "responses_with_invalid_citation_ids": 0
+    },
+    "fact_2_only": {
+      "responses": 8,
+      "complete_structured_responses": 8,
+      "reports_missing_information": 2,
+      "responses_with_invalid_citation_ids": 1
+    },
+    "growing_context": {
+      "responses": 20,
+      "complete_structured_responses": 20,
+      "reports_missing_information": 0,
+      "responses_with_invalid_citation_ids": 3
+    }
+  },
+  "notes": [
+    "One full-history answer, about unsent meeting notes in IS1000b, hit its 1536-token response limit before completing the structured output. It counts as a failed main answer, rather than an omitted test.",
+    "The extra fact controls cover eight questions: six authored source links, one authored January-versus-quarter comparison and one model evidence comparison. Removing each group from the complete history and trying each group alone produces 32 responses.",
+    "No wording is certified as requiring multiple reasoning steps from reader failure alone. Some fact-removal masks leave related mentions elsewhere, and a context containing just one person or feature can make an unsupported guess easy. These small controls expose weaknesses in both the reader and the proposed dependency tests.",
+    "Matching citation IDs to the supplied context checks only that those IDs exist. It does not establish that their words support the answer. For example, the reader correctly answered thirty-four percent for learning difficulty in IS1000b but cited the different discussion about repetitive-strain concerns.",
+    "Growing-context results use the original question wording at later cutoffs solely as offline controls. Their main facts stayed correct in this eight-question sample; three of the twenty replay responses nevertheless contained invalid citation IDs. This does not establish general long-context robustness."
+  ],
+  "examples": [
+    {
+      "question_id": "P-TS-dock and its paired simple control",
+      "description": "In TS3003b, the survey said fifty percent of people lost their remote. Later, marketing proposed a docking-station button that makes the remote beep so it can be found. The linked question asks how common the problem addressed by that proposal was. Full history produced thirty percent, while the simple lost-remote question produced the correct fifty percent. Removing the percentage passage made the linked reader identify the missing percentage."
+    },
+    {
+      "question_id": "P-TS-target-change",
+      "description": "The full-history reader recovered the change from marketing’s recommended ages sixteen to forty-five to the later forty-plus requirement. In reduced contexts it also invented or reconstructed age ranges from incomplete evidence, showing why a correct-looking answer alone does not prove the needed source link."
+    },
+    {
+      "question_id": "M-EC4320211-P10-reminder-1",
+      "description": "Monro described its California conversions as substantially completed and still planned to finish them. Asked whether they were fully rebranded, the reader began with yes. The qualification in the source must remain part of the answer."
+    },
+    {
+      "question_id": "P-EN-report",
+      "description": "The reader correctly recalled the proposed report section, changes since the initial specification, but cited shortened IDs absent from the input. The source-content answer and citation-format failure are recorded separately."
+    }
+  ]
+}

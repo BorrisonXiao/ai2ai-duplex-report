@@ -1,6 +1,6 @@
 {
   "title": "Larger question pilot with early checkpoints and speaker-matched audio",
-  "updated_utc": "2026-10-26T23:21:34.122022+00:00",
+  "updated_utc": "2026-10-26T23:34:30.363725+00:00",
   "tasks": [
     {
       "id": "preserve",
@@ -33,21 +33,23 @@
     {
       "id": "reader",
       "label": "Test the 30B reader, including incomplete evidence and growing context",
-      "status": "in_progress",
-      "note": "Job 1304869 runs 197 blinded reader controls: full prefix, recent speech, source removal, single-fact context and growing context. Outputs still require content review.",
-      "updated_utc": "2026-10-26T23:21:34.122007+00:00"
+      "status": "complete",
+      "note": "197 responses completed and audited: main target correct in 45/51 full-history answers and 20/20 longer-history replays. Source-removal, citation and uncertainty failures remain; difficulty is not certified by reader failure.",
+      "updated_utc": "2026-10-26T23:34:14.657586+00:00"
     },
     {
       "id": "tts",
       "label": "Generate selected questions in the original requester\u2019s voice",
-      "status": "pending",
-      "note": ""
+      "status": "complete",
+      "note": "F5-TTS generated 30 variants for ten frozen questions in 26.95 seconds of model work on one L40S 48 GB. All variants still need independent wording and voice checks.",
+      "updated_utc": "2026-10-26T23:34:30.266053+00:00"
     },
     {
       "id": "audio",
       "label": "Check wording and speaker match; assemble short paused-meeting clips",
-      "status": "pending",
-      "note": ""
+      "status": "in_progress",
+      "note": "Independent ASR and held-out speaker checks are running before variant selection and pause/resume mixing.",
+      "updated_utc": "2026-10-26T23:34:30.363709+00:00"
     },
     {
       "id": "publish",
