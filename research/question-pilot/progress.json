@@ -1,6 +1,6 @@
 {
   "title": "Larger question pilot with early checkpoints and speaker-matched audio",
-  "updated_utc": "2026-10-26T22:57:22.805035+00:00",
+  "updated_utc": "2026-10-26T23:09:15.959301+00:00",
   "tasks": [
     {
       "id": "preserve",
@@ -26,8 +26,9 @@
     {
       "id": "review",
       "label": "Check natural wording, requester motivation and required evidence",
-      "status": "pending",
-      "note": ""
+      "status": "in_progress",
+      "note": "36 additional source-checked authored questions prepared; checking model drafts against the same speech. Six connected-fact pairs are being tested with supervised generation and independent rewriting.",
+      "updated_utc": "2026-10-26T23:09:15.959290+00:00"
     },
     {
       "id": "reader",
