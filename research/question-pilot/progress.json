@@ -1,6 +1,6 @@
 {
   "title": "Larger question pilot with early checkpoints and speaker-matched audio",
-  "updated_utc": "2026-10-26T22:51:04.830906+00:00",
+  "updated_utc": "2026-10-26T22:57:22.805035+00:00",
   "tasks": [
     {
       "id": "preserve",
@@ -12,15 +12,16 @@
     {
       "id": "windows",
       "label": "Choose more question times, including opportunities around 5\u201310 minutes",
-      "status": "in_progress",
-      "note": "Selecting more early and late points from the original timed transcripts; no new model job has started yet.",
-      "updated_utc": "2026-10-26T22:51:04.830896+00:00"
+      "status": "complete",
+      "note": "Prepared 24 past-only transcript cutoffs across six conversations: 18 early controls near five, 7.5 and ten minutes, plus six later points. Actual time deviations are recorded; AMI points avoid cutting words.",
+      "updated_utc": "2026-10-26T22:57:22.740225+00:00"
     },
     {
       "id": "generate",
       "label": "Generate a larger pool with three clearly defined methods",
-      "status": "pending",
-      "note": ""
+      "status": "in_progress",
+      "note": "Job 1304657 is submitted for Qwen3-30B Instruct through vLLM. Up to two questions per method and time point; unsupported opportunities may return fewer.",
+      "updated_utc": "2026-10-26T22:57:22.805021+00:00"
     },
     {
       "id": "review",
