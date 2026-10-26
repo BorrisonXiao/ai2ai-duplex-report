@@ -1,0 +1,281 @@
+[
+  {
+    "id": "EN2002b-W1-spoken_direct",
+    "meeting": "EN2002b",
+    "at": 986.98,
+    "question": "",
+    "requester": "",
+    "reference_answer": "",
+    "validation_errors": [
+      "generator_abstained",
+      "invalid_reference_claims",
+      "missing_or_nonold_essential_evidence",
+      "question_length",
+      "unknown_requester"
+    ],
+    "primary_review": {
+      "decision": "abstained",
+      "note": "Model returned supported=false. No question fabricated to fill the slot.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "EN2002b-W1-evidence_then_spoken",
+    "meeting": "EN2002b",
+    "at": 986.98,
+    "question": "Can we just keep the colour-coding for the results like we talked about earlier?",
+    "requester": "C",
+    "reference_answer": "C suggested colour-coding the results to distinguish them by type and meeting. The idea was discussed as a way to organize search results without using separate panes or tabs. This approach was considered to maintain visibility and ease of comparison.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "reject",
+      "note": "Requests a new design approval rather than a transcript-grounded reminder; colour coding was just proposed at the cutoff.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "EN2002b-W2-spoken_direct",
+    "meeting": "EN2002b",
+    "at": 1555.86,
+    "question": "",
+    "requester": "",
+    "reference_answer": "",
+    "validation_errors": [
+      "generator_abstained",
+      "invalid_reference_claims",
+      "missing_or_nonold_essential_evidence",
+      "question_length",
+      "unknown_requester"
+    ],
+    "primary_review": {
+      "decision": "abstained",
+      "note": "Model returned supported=false. No question fabricated to fill the slot.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "EN2002b-W2-evidence_then_spoken",
+    "meeting": "EN2002b",
+    "at": 1555.86,
+    "question": "",
+    "requester": "",
+    "reference_answer": "",
+    "validation_errors": [
+      "generator_abstained",
+      "invalid_reference_claims",
+      "missing_or_nonold_essential_evidence",
+      "question_length",
+      "unknown_requester"
+    ],
+    "primary_review": {
+      "decision": "abstained",
+      "note": "Model returned supported=false. No question fabricated to fill the slot.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "ES2002b-W1-spoken_direct",
+    "meeting": "ES2002b",
+    "at": 1208.95,
+    "question": "Can you remind me what the company's corporate colour is supposed to be?",
+    "requester": "B",
+    "reference_answer": "The corporate colour might be yellow, as suggested by B in the transcript. This is not confirmed, and B expressed uncertainty about it. The source of this information is B's statement at 154.97-158.12s.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "plausible_duplicate_not_selected",
+      "note": "Natural reminder and reference correctly preserves uncertainty about yellow. Branding motivation at this point is weaker than the later scope-review items; same fact is tested by a supervised authored variant.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "ES2002b-W1-evidence_then_spoken",
+    "meeting": "ES2002b",
+    "at": 1208.95,
+    "question": "So what were the three new requirements the company gave us?",
+    "requester": "C",
+    "reference_answer": "The three new requirements are: (1) do not consider teletext in functionality, (2) only control the TV, not VCR or DVD, and (3) incorporate the company's corporate colour and slogan into the design. Source IDs: ES2002b-u0015, ES2002b-u0019, ES2002b-u0023.",
+    "validation_errors": [
+      "invalid_reference_claims"
+    ],
+    "primary_review": {
+      "decision": "revise_reference",
+      "note": "Natural three-requirements reminder. One claim cites outside the declared evidence union; needs reference bookkeeping repair before use. Not included in the reader set.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "ES2002b-W2-spoken_direct",
+    "meeting": "ES2002b",
+    "at": 1873.33,
+    "question": "",
+    "requester": "",
+    "reference_answer": "",
+    "validation_errors": [
+      "generator_abstained",
+      "invalid_reference_claims",
+      "missing_or_nonold_essential_evidence",
+      "question_length",
+      "unknown_requester"
+    ],
+    "primary_review": {
+      "decision": "abstained",
+      "note": "Model returned supported=false. No question fabricated to fill the slot.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "ES2002b-W2-evidence_then_spoken",
+    "meeting": "ES2002b",
+    "at": 1873.33,
+    "question": "",
+    "requester": "",
+    "reference_answer": "",
+    "validation_errors": [
+      "generator_abstained",
+      "invalid_reference_claims",
+      "missing_or_nonold_essential_evidence",
+      "question_length",
+      "unknown_requester"
+    ],
+    "primary_review": {
+      "decision": "abstained",
+      "note": "Model returned supported=false. No question fabricated to fill the slot.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "IS1000b-W1-spoken_direct",
+    "meeting": "IS1000b",
+    "at": 1244.2,
+    "question": null,
+    "requester": null,
+    "reference_answer": null,
+    "validation_errors": [
+      "generator_abstained",
+      "invalid_reference_claims",
+      "missing_or_nonold_essential_evidence",
+      "question_length",
+      "unknown_requester",
+      "generation_truncated"
+    ],
+    "primary_review": {
+      "decision": "truncated",
+      "note": "Citation list ran to the output cap; incomplete JSON is not a usable question.",
+      "human_rated": false
+    },
+    "finish_reason": "length"
+  },
+  {
+    "id": "IS1000b-W1-evidence_then_spoken",
+    "meeting": "IS1000b",
+    "at": 1244.2,
+    "question": "Can you remind me what the main technical constraint was for the receiver in the TV?",
+    "requester": "C",
+    "reference_answer": "The receiver in the television is fixed and cannot be changed, so the remote control must adapt to it. Source: IS1000b-u0303, IS1000b-u0305.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "plausible_duplicate_not_selected",
+      "note": "Natural, source-backed receiver constraint; a shorter packet variant of this intent is included in the reader set.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "IS1000b-W2-spoken_direct",
+    "meeting": "IS1000b",
+    "at": 1988.47,
+    "question": "Can you remind me what the target age group was for the remote control design based on the focus group data?",
+    "requester": "A",
+    "reference_answer": "The target age groups from the focus group data were: 15-25 years (90% would pay more), 25-35 (76%), 35-45 (35%), 45-55 (22%), and 55-65 (8%). Source IDs: IS1000b-u0197, IS1000b-u0200.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "reject",
+      "note": "Survey age bins and willingness-to-pay percentages do not establish an agreed target group. Question assumes a settled target not present at this cutoff.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "IS1000b-W2-evidence_then_spoken",
+    "meeting": "IS1000b",
+    "at": 1988.47,
+    "question": "What was the age group we said would pay more for speech recognition in the remote control?",
+    "requester": "D",
+    "reference_answer": "Ninety percent of the fifteen to twenty-five year old market said they would pay more for speech recognition in a remote control. Source: IS1000b-u0197.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "reject",
+      "note": "Several age groups were willing to pay more. Asking for the age group misleadingly assumes a unique one; reference silently picks the youngest.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "TS3003b-W1-spoken_direct",
+    "meeting": "TS3003b",
+    "at": 1241.23,
+    "question": "D, can you remind us what percentage of users said they'd spend more on a fancy-looking remote?",
+    "requester": "D",
+    "reference_answer": "Eighty percent of users indicated they would spend more money on a fancy-looking remote control. Source: TS3003b-u0056.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "reject",
+      "note": "D is the requester and an annotation label; the self-addressed vocative is artificial.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "TS3003b-W1-evidence_then_spoken",
+    "meeting": "TS3003b",
+    "at": 1241.23,
+    "question": "What was the age group we originally planned to target based on the market research?",
+    "requester": "D",
+    "reference_answer": "The age group originally planned to target was sixteen to forty-five years old, based on market research indicating this group makes up the largest part of the market and is critical of remote controls. Source IDs: TS3003b-u0088, TS3003b-u0076, TS3003b-u0077.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "revise_reference",
+      "note": "Reasonable recall of the original marketing target, but the reference must clearly distinguish it from the newer 40-plus requirement.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "TS3003b-W2-spoken_direct",
+    "meeting": "TS3003b",
+    "at": 1891.28,
+    "question": "Can you remind me what the budget constraint was for the docking station?",
+    "requester": "A",
+    "reference_answer": "The docking station should be possible if it's not too fancy and the remote stays small. (Source: TS3003b-u0480, TS3003b-u0482)",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "reject",
+      "note": "No separate numeric docking-station budget was established. A design feasibility remark is not that budget.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  },
+  {
+    "id": "TS3003b-W2-evidence_then_spoken",
+    "meeting": "TS3003b",
+    "at": 1891.28,
+    "question": "Can we confirm the budget constraint on the docking station from earlier?",
+    "requester": "A",
+    "reference_answer": "The docking station is possible if it's not too fancy and the remote stays small, according to the industrial designer. This was stated during a discussion about budget constraints. The industrial designer confirmed this based on the product's size and design simplicity.",
+    "validation_errors": [],
+    "primary_review": {
+      "decision": "reject",
+      "note": "Asks to confirm an unestablished docking-station-specific budget; reference conflates simplicity/size comments with cost agreement.",
+      "human_rated": false
+    },
+    "finish_reason": "stop"
+  }
+]

@@ -1,0 +1,188 @@
+{
+  "instruction": "Find earnings/contextual-ASR datasets useful for natural history-dependent meeting-assistant questions and possible document tools.",
+  "date": "2026-10-26",
+  "scope": "Focused dataset selection and a two-call text/document pilot",
+  "sub_questions": [
+    "Are complete multi-speaker calls available?",
+    "Which timestamps and speaker identities are annotated versus inferred?",
+    "Are matching documents available before a question?",
+    "Which resources help evaluate technical words, retrieval and numeric reasoning?"
+  ],
+  "papers": [
+    {
+      "id": "earnings21",
+      "title": "Earnings-21: A Practical Benchmark for ASR in the Wild",
+      "authors": "Miguel Del Rio et al.",
+      "year": 2021,
+      "venue": "Interspeech",
+      "arxiv_id": "2104.11348",
+      "doi": "10.21437/Interspeech.2021-1915",
+      "url": "https://arxiv.org/abs/2104.11348",
+      "problem": "Entity-dense business speech is poorly represented in common ASR tests.",
+      "method": "Earnings-call audio, transcripts and entity annotations.",
+      "results": "39 hours across nine financial sectors; entity recognition is a central challenge.",
+      "relevance": "Long real multi-speaker source conversations; not already an assistant QA benchmark.",
+      "limit": "Transcript/text CC BY-SA terms do not establish blanket rights for all audio and third-party PDFs.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "earnings22",
+      "title": "Earnings-22: A Practical Benchmark for Accents in the Wild",
+      "authors": "Miguel Del Rio, Peter Ha, Quinten McNamara, Corey Miller, Shipra Chandra",
+      "year": 2022,
+      "venue": "Interspeech",
+      "arxiv_id": "2203.15591",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2203.15591",
+      "problem": "Accented real English remains difficult for ASR.",
+      "method": "Global-company earnings-call corpus and transcription benchmark.",
+      "results": "125 files and 119 hours.",
+      "relevance": "More accent diversity and long discussions for a later audio pilot.",
+      "limit": "Manual transcripts are not a guarantee of manual word alignment; document/timing coverage must be checked per call.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "conec",
+      "title": "ConEC: Earnings Call Dataset with Real-world Contexts for Benchmarking Contextual Speech Recognition",
+      "authors": "Ruizhe Huang et al.",
+      "year": 2024,
+      "venue": "LREC-COLING",
+      "arxiv_id": null,
+      "doi": null,
+      "url": "https://aclanthology.org/2024.lrec-main.328/",
+      "problem": "Contextual ASR often uses artificial bias lists containing the answer.",
+      "method": "Adds authentic slides, releases and participant context to Earnings-21/22; corrects transcripts.",
+      "results": "Realistic noisy contexts support contextual ASR evaluation; pilot files include complete matching PDFs for Danaher and Monro.",
+      "relevance": "Best immediate match to a call-history plus document-search assistant.",
+      "limit": "Repository says added timestamps are automatically aligned and may be missing. Full-call participant lists are not causally safe without availability evidence; no top-level repository license was found.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "contextual22",
+      "title": "Contextual Earnings-22: A Speech Recognition Benchmark with Custom Vocabulary in the Wild",
+      "authors": "Berkin Durmus, Chen Cen, Eduardo Pacheco, Arda Okan, Atila Orhon",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "arxiv_id": "2604.07354",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2604.07354",
+      "problem": "Academic ASR metrics underweight rare custom vocabulary.",
+      "method": "Realistic vocabulary contexts and keyword prompting/boosting baselines over Earnings-22 clips.",
+      "results": "The official Hugging Face test split exposes 772 rows; inspected examples are 15-second clips.",
+      "relevance": "Useful later for controlled technical-term recognition and vocabulary distractors.",
+      "limit": "Clips and custom-vocabulary lists are not themselves full meeting-history QA or tool-call annotations.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "fincall",
+      "title": "FinCall-Surprise: A Large Scale Multi-modal Benchmark for Earning Surprise Prediction",
+      "authors": "Dong Shu, Yanguang Liu, Huopu Zhang, Mengnan Du",
+      "year": 2026,
+      "venue": "ACL",
+      "arxiv_id": "2510.03965",
+      "doi": "10.18653/v1/2026.acl-long.610",
+      "url": "https://aclanthology.org/2026.acl-long.610/",
+      "problem": "Multimodal earnings research lacks accessible paired data.",
+      "method": "Calls paired with audio, transcripts and presentation slides, evaluated for earnings-surprise prediction.",
+      "results": "2,688 calls from 2019–2021; paper evaluates 26 models and warns about label imbalance.",
+      "relevance": "A promising larger pool after the small ConEC pilot.",
+      "limit": "GitHub has all text but only small audio/slide samples; full media are external archives. Alignment, speaker IDs, document availability and redistribution were not audited here.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "maec",
+      "title": "MAEC: A Multimodal Aligned Earnings Conference Call Dataset for Financial Risk Prediction",
+      "authors": "Jiazheng Li, Linyi Yang, Barry Smyth, Ruihai Dong",
+      "year": 2020,
+      "venue": "CIKM",
+      "arxiv_id": null,
+      "doi": "10.1145/3340531.3412879",
+      "url": "https://github.com/Earnings-Call-Dataset/MAEC-A-Multimodal-Aligned-Earnings-Conference-Call-Dataset-for-Financial-Risk-Prediction",
+      "problem": "Paired earnings text/audio for financial-risk research is limited.",
+      "method": "Iterative forced alignment and released transcripts/audio features.",
+      "results": "Official repository exposes text.txt, features.csv and external MFCC feature archives.",
+      "relevance": "Potential alignment and speaker-structure comparison.",
+      "limit": "Released features cannot substitute for waveform audio in streaming question injection; no matched slide/release inventory was verified.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "finqa",
+      "title": "FinQA: A Dataset of Numerical Reasoning over Financial Data",
+      "authors": "Zhiyu Chen et al.",
+      "year": 2021,
+      "venue": "EMNLP",
+      "arxiv_id": "2109.00122",
+      "doi": null,
+      "url": "https://aclanthology.org/2021.emnlp-main.300/",
+      "problem": "Numerical reasoning over heterogeneous financial reports needs explainable supervision.",
+      "method": "Expert-written financial-report questions with gold reasoning programs.",
+      "results": "Provides explicit arithmetic reasoning supervision; popular models lag expert humans.",
+      "relevance": "Useful templates for grounded calculator calls and numeric answer checking.",
+      "limit": "Document QA, not timestamped multi-speaker conversation; do not pretend its expert questions were spoken call requests.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    },
+    {
+      "id": "tatqa",
+      "title": "TAT-QA: A Question Answering Benchmark on a Hybrid of Tabular and Textual Content in Finance",
+      "authors": "Fengbin Zhu et al.",
+      "year": 2021,
+      "venue": "ACL-IJCNLP",
+      "arxiv_id": "2105.07624",
+      "doi": "10.18653/v1/2021.acl-long.254",
+      "url": "https://aclanthology.org/2021.acl-long.254/",
+      "problem": "Financial answers often combine table cells and explanatory prose.",
+      "method": "Hybrid table/text contexts, expert questions and symbolic aggregation.",
+      "results": "Official project reports 16,552 questions over 2,757 hybrid contexts.",
+      "relevance": "Page/table provenance, units and numerical operators for a future document tool.",
+      "limit": "Not streaming history QA. Expert finance wording is a reference for useful content, not a model for casual spoken phrasing.",
+      "status": "verified",
+      "verification": "primary paper abstract and/or official project repository checked 2026-10-26"
+    }
+  ],
+  "themes": [
+    "Use complete calls for history, short contextual-ASR clips for lexical stress, and document QA for tool supervision; these serve different purposes.",
+    "Realistic context contains distracting names and numbers; context extracted from future dialogue must be excluded.",
+    "Existing papers motivate the ingredients, but they do not supply natural participant-to-assistant requests with causal cutoffs."
+  ],
+  "gaps": [
+    {
+      "id": "g1",
+      "statement": "Natural short participant-to-assistant questions linked to past evidence and current motivation remain to be constructed.",
+      "evidence": "ConEC/Earnings datasets evaluate ASR; FinQA/TAT-QA evaluate static documents. This is our inference about the inspected task definitions, not a universal novelty claim."
+    },
+    {
+      "id": "g2",
+      "statement": "Document availability, speaker identity and timing quality need explicit audit before streaming replay.",
+      "evidence": "ConEC timestamp README, missing boundaries in both inspected calls, and speaker rosters from third-party full-call sources."
+    },
+    {
+      "id": "g3",
+      "statement": "Tool use needs a source-page and arithmetic audit, including abstention when sources are unavailable.",
+      "evidence": "Our two PDF fixtures demonstrate table lookups; an autonomous tool policy has not been tested."
+    }
+  ],
+  "primary_resource_urls": [
+    "https://github.com/huangruizhe/ConEC",
+    "https://github.com/revdotcom/speech-datasets",
+    "https://huggingface.co/datasets/argmaxinc/contextual-earnings22",
+    "https://github.com/Tizzzzy/FinCall-Surprise/blob/main/README.md"
+  ],
+  "search_angles": [
+    "contextual ASR earnings calls slides releases",
+    "Earnings21 entity benchmark",
+    "Earnings22 accents and license",
+    "ConEC timestamps missing alignment",
+    "Contextual Earnings22 custom vocabulary",
+    "FinCall Surprise full audio slides repository",
+    "MAEC forced alignment audio features",
+    "FinQA numerical reasoning programs",
+    "TAT-QA hybrid tables text"
+  ]
+}

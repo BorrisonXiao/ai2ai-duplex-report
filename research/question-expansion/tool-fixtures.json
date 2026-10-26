@@ -1,0 +1,18 @@
+[
+  {
+    "id": "DH-document-growth",
+    "question": "What’s the growth range in the release before adding Cytiva?",
+    "source_label": "4344338-release, PDF page 5",
+    "source_url": "https://github.com/huangruizhe/ConEC/blob/88440713d8b80dc4f19b225f6480237e78c379de/earnings21/contexts/pdfs/4344338_2.pdf",
+    "expected": "Core growth excluding Cytiva: down 2% to down 12%; Cytiva adds approximately 2 percentage points, yielding flat to down 10%.",
+    "execution": "scripted_query_and_page_selection_not_model_tool_call"
+  },
+  {
+    "id": "MO-document-sales",
+    "question": "What does the slide put the re-imaged stores at, exactly?",
+    "source_label": "4320211-slides, PDF page 5",
+    "source_url": "https://github.com/huangruizhe/ConEC/blob/88440713d8b80dc4f19b225f6480237e78c379de/earnings21/contexts/pdfs/4320211_1.pdf",
+    "expected": "The slide reports minus 2% for 30 re-imaged stores, versus plus 18% for 30 rebranded stores. It covers comp stores with a full quarter after transformation.",
+    "execution": "scripted_query_and_page_selection_not_model_tool_call"
+  }
+]

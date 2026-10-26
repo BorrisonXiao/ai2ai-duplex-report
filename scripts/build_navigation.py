@@ -27,6 +27,7 @@ EXPERIMENT_KEYS = {
     'natural-study.html': 'evidence', 's2-single.html': 's2',
     's1-reproduction.html': 'reproduction', 'prethinking-pilot.html': 'prethinking',
     'ami-questions.html': 'ami', 'ami-question-audio.html': 'ami-audio',
+    'question-expansion.html': 'ami',
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
@@ -62,6 +63,7 @@ def build_collections():
         ('Earlier studies', 'Earlier failures and timing tests, kept with their original evidence and limitations.', 'archive.html'),
     ]
     ami = [
+        ('More meeting questions', 'Four new AMI meetings and two earnings calls, checked with a 30B Instruct reader and document retrieval fixtures.', 'question-expansion.html'),
         ('AMI questions', 'Questions that require earlier meeting details, with supporting transcripts and a review of generated answers.', 'ami-questions.html'),
         ('AMI question audio', 'Compare three TTS models inserting the same questions into the meeting in the requester’s voice.', 'ami-question-audio.html'),
     ]

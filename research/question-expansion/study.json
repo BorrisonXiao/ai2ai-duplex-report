@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-26",
+  "model": "Qwen3-30B-A3B-Instruct-2507",
+  "model_revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+  "new_meetings": 6,
+  "new_ami_meetings": 4,
+  "new_earnings_calls": 2,
+  "retained_variants": 23,
+  "retained_intents": 15,
+  "authored_retained": 15,
+  "local_wordings_retained": 8,
+  "reader_calls": 205,
+  "reader_questions": 41,
+  "largest_reader_input_tokens": 30452,
+  "invalid_citation_calls": 34,
+  "invalid_citation_conditions": {
+    "question_only": 33,
+    "evidence_removed": 1
+  },
+  "truncated_reader_calls": 0,
+  "earnings_words": 15714,
+  "earnings_untimed_words": 4552,
+  "reader_rows": [
+    [
+      "New assistant-authored",
+      16,
+      11,
+      0,
+      15
+    ],
+    [
+      "New local 30B wordings",
+      16,
+      12,
+      0,
+      8
+    ],
+    [
+      "Earlier EN2003a comparison",
+      9,
+      5,
+      0,
+      0
+    ]
+  ],
+  "initial_rows": [
+    [
+      "abstained",
+      5
+    ],
+    [
+      "reject",
+      6
+    ],
+    [
+      "plausible_duplicate_not_selected",
+      2
+    ],
+    [
+      "revise_reference",
+      2
+    ],
+    [
+      "truncated",
+      1
+    ]
+  ],
+  "source_rows": [
+    [
+      "AMI",
+      "EN2002b · meeting-browser project",
+      "Past-speech perspectives; four speakers",
+      "Manual word annotations; text only"
+    ],
+    [
+      "AMI",
+      "ES2002b · remote-control design",
+      "Project manager / industrial / UI / marketing roles",
+      "Manual word annotations; text only"
+    ],
+    [
+      "AMI",
+      "IS1000b · remote-control design",
+      "Different four-speaker design team",
+      "Manual word annotations; text only"
+    ],
+    [
+      "AMI",
+      "TS3003b · remote-control design",
+      "Different four-speaker design team",
+      "Manual word annotations; reviewed development data"
+    ],
+    [
+      "ConEC / Earnings21",
+      "4344338 · Danaher Q1 2020",
+      "Observed speaker IDs and past introductions",
+      "Automatic alignment with gaps; matching slides/release"
+    ],
+    [
+      "ConEC / Earnings21",
+      "4320211 · Monro Q3 FY2020",
+      "Observed speaker IDs and past introductions",
+      "Automatic alignment with gaps; matching slides/release"
+    ]
+  ],
+  "job_rows": [
+    [
+      "1303627",
+      "Whole-prefix drafts",
+      "1 × H100 SXM 80 GB",
+      "Qwen3-30B-A3B-Instruct-2507 weights and KV cache on GPU 0",
+      "179 s; COMPLETED"
+    ],
+    [
+      "1303722",
+      "Reviewed evidence packets",
+      "1 × H100 SXM 80 GB",
+      "Qwen3-30B-A3B-Instruct-2507 weights and KV cache on GPU 0",
+      "171 s; COMPLETED"
+    ],
+    [
+      "1303812",
+      "Blinded reader: five conditions",
+      "1 × H100 SXM 80 GB",
+      "Qwen3-30B-A3B-Instruct-2507 weights and KV cache on GPU 0",
+      "321 s; COMPLETED"
+    ],
+    [
+      "1303882",
+      "Span diagnostic, cancelled",
+      "1 × H100 SXM 80 GB",
+      "Qwen3-30B-A3B-Instruct-2507 weights and KV cache on GPU 0",
+      "200 s; CANCELLED by 10053"
+    ],
+    [
+      "1303913",
+      "Bounded span retry: qualification failed",
+      "1 × H100 SXM 80 GB",
+      "Qwen3-30B-A3B-Instruct-2507 weights and KV cache on GPU 0",
+      "89 s; COMPLETED"
+    ]
+  ],
+  "gpu_hours": 0.266667,
+  "maximum_active_gpus": 1,
+  "active_experiment_gpus": 0,
+  "span_calls": 4,
+  "empty_gate_cases": 41,
+  "span_rows": [
+    [
+      "What were the three kinds of search results again?",
+      "adequate",
+      "Abstains despite present evidence",
+      "No quoted support",
+      "Fail"
+    ],
+    [
+      "Did we ever settle on the company colour?",
+      "adequate",
+      "Abstains despite present evidence",
+      "No quoted support",
+      "Fail"
+    ],
+    [
+      "How many people said they keep losing their remote?",
+      "incorrect",
+      "Abstains despite present evidence",
+      "No quoted support",
+      "Fail"
+    ],
+    [
+      "What range did they give for overall core growth next quarter?",
+      "adequate",
+      "Correct growth range; capitalises source word",
+      "nonverbatim_quote:EC4344338-u0123",
+      "Fail"
+    ]
+  ],
+  "negative_controls": 12,
+  "human_naturalness_ratings": false,
+  "strict_reader_status": "qualification_failed_no_full_followup",
+  "findings": [
+    "Retained 23 new question wordings over 15 information needs: 15 assistant-authored and eight local 30B wordings with source-reviewed references. These span four additional AMI meetings and two earnings calls. They are simulated requests, not original human dialogue.",
+    "Short questions can be useful without forcing a multi-part summary: “What was that tool for transforming the XML?” and “Did we ever settle on the company colour?” ask for facts that earlier discussion supplies. Requester motivation and the actual cutoff are checked separately from fluency.",
+    "The 30B reader is a useful diagnostic, but cannot certify its own labels: it still swaps a nearby 34% learning-difficulty statistic for the actual 50% remote-loss figure and fails earlier capacity/ownership questions. Thirty-three question-only calls cite nonexistent context. Manual source review remains necessary.",
+    "Two real document lookups run through a local search/open backend. They establish source pages and availability gates, not an autonomous model tool policy. No new audio or answer TTS is generated."
+  ],
+  "span_findings": [
+    "The first evidence-first attempt was cancelled after 29 recorded calls because constrained decoding repeatedly emitted whitespace; nine partial calls hit the cap. Its original artifacts are preserved. This attempt is included in allocation cost.",
+    "A bounded retry disabled arbitrary grammar whitespace and clarified that the new request need not already appear in the transcript. All four probes parsed, but three abstained despite source evidence and one altered source capitalisation in its copied quote. It failed the exact-span qualification; the broader 82-call follow-up did not run.",
+    "The failure is not a reason to accept the original reader unchecked. A separate CPU-tested empty-context guard returns missing context without inference; exact quote checks and direct source review remain distinct checks."
+  ],
+  "status": "text_pilot_complete_source_reviewed_no_human_naturalness_validation"
+}
