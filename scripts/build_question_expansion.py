@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 from site_navigation import project_tabs, experiment_subtabs
+from question_pilot_progress import progress_panel
 
 ROOT=Path(__file__).resolve().parents[1]
 D=ROOT/'research/question-expansion'
@@ -67,6 +68,7 @@ def main():
     body+='<div class="container collection-nav">'+experiment_subtabs('ami')+'</div><main id="main"><div class="container">'
     body+='<header class="hero"><span class="eyebrow">Meeting-question study · 26 October 2026</span><h1>What questions did we create, and when would they be asked?</h1><p class="lede">We kept 23 question wordings covering 15 distinct information needs in six conversations. This version tests recall of earlier discussion. It does not yet establish questions that require multiple reasoning steps.</p></header>'
 
+    body+=progress_panel()
     body+='<section class="section" id="findings"><h2>What is in the current set?</h2>'+metrics([('Retained wordings',23),('Distinct questions',15),('Conversations',6),('Planned question moments',11)])
     body+='<p>A <strong>wording</strong> is one version of a spoken question. Two versions asking for the same information count as one <strong>distinct question</strong>. Several questions are alternatives at the same point in a conversation; they would not all be inserted together.</p><p>The new material includes one real AMI project meeting, three AMI role-play meetings about designing a TV remote, and two earnings calls. The earnings questions simulate a participant privately asking a separate assistant while listening to the call. They are separate from the recorded analysts’ questions to management.</p>'
     names={'EN2002b':'AMI · meeting-browser project','ES2002b':'AMI · TV-remote design','IS1000b':'AMI · TV-remote design','TS3003b':'AMI · TV-remote design','EC4344338':'Danaher · Q1 2020 earnings','EC4320211':'Monro · Q3 FY2020 earnings'}

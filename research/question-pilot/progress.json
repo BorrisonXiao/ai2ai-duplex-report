@@ -1,0 +1,65 @@
+{
+  "title": "Larger question pilot with early checkpoints and speaker-matched audio",
+  "updated_utc": "2026-10-26T22:51:04.830906+00:00",
+  "tasks": [
+    {
+      "id": "preserve",
+      "label": "Keep the current questions and audio unchanged",
+      "status": "complete",
+      "note": "The existing question files, answer labels, reader outputs and published audio are preserved. New pilot data is stored separately.",
+      "updated_utc": "2026-10-26T22:51:04.773607+00:00"
+    },
+    {
+      "id": "windows",
+      "label": "Choose more question times, including opportunities around 5\u201310 minutes",
+      "status": "in_progress",
+      "note": "Selecting more early and late points from the original timed transcripts; no new model job has started yet.",
+      "updated_utc": "2026-10-26T22:51:04.830896+00:00"
+    },
+    {
+      "id": "generate",
+      "label": "Generate a larger pool with three clearly defined methods",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "review",
+      "label": "Check natural wording, requester motivation and required evidence",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "reader",
+      "label": "Test the 30B reader, including incomplete evidence and growing context",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "tts",
+      "label": "Generate selected questions in the original requester\u2019s voice",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "audio",
+      "label": "Check wording and speaker match; assemble short paused-meeting clips",
+      "status": "pending",
+      "note": ""
+    },
+    {
+      "id": "publish",
+      "label": "Publish questions, results and playable audio; verify the live page",
+      "status": "pending",
+      "note": ""
+    }
+  ],
+  "scope": "New pilot; earlier questions and audio are preserved.",
+  "resource_plan": {
+    "text": "One A100/H100 SXM 80 GB per job; resident Qwen3-30B Instruct weights and cache on GPU 0, using vLLM.",
+    "tts": "One L40S 48 GB per job; F5-TTS and its vocoder share GPU 0.",
+    "evaluation": "One L40S 48 GB per job; ASR and speaker checks run sequentially on GPU 0.",
+    "dependencies": "Text generation, source review and reading precede final TTS; audio checks precede publication.",
+    "maximum_active_gpus": 1,
+    "cpu_preparation_gpus": 0
+  }
+}
