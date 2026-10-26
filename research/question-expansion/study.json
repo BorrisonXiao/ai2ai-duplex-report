@@ -189,5 +189,6 @@
     "A bounded retry disabled arbitrary grammar whitespace and clarified that the new request need not already appear in the transcript. All four probes parsed, but three abstained despite source evidence and one altered source capitalisation in its copied quote. It failed the exact-span qualification; the broader 82-call follow-up did not run.",
     "The failure is not a reason to accept the original reader unchecked. A separate CPU-tested empty-context guard returns missing context without inference; exact quote checks and direct source review remain distinct checks."
   ],
-  "status": "text_pilot_complete_source_reviewed_no_human_naturalness_validation"
+  "status": "text_pilot_complete_source_reviewed_no_human_naturalness_validation",
+  "curation_scope": "Offline source selection can inspect whole transcript files. Model generation/readers receive only the chosen past prefix, and retained factual references must be supported there. No future-unseen curator or request-anticipation result is claimed."
 }
