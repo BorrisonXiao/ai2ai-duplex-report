@@ -148,5 +148,70 @@
       "question_id": "P-EN-report",
       "description": "The reader correctly recalled the proposed report section, changes since the initial specification, but cited shortened IDs absent from the input. The source-content answer and citation-format failure are recorded separately."
     }
+  ],
+  "growth_headers": [
+    "Question",
+    "Original time",
+    "Later cutoffs",
+    "Input tokens: initial to largest",
+    "Main targets correct"
+  ],
+  "growth_rows": [
+    [
+      "EC4344338 · Where did they say the slides and financial reconciliations were posted?",
+      "4:56",
+      "7:27, 9:56, 35:26",
+      "2429 to 16481",
+      "4 / 4"
+    ],
+    [
+      "EN2002b · Was that timeline updated, or copied from the earlier documents?",
+      "5:04",
+      "7:51, 9:59, 23:05",
+      "5120 to 27332",
+      "4 / 4"
+    ],
+    [
+      "ES2002b · Where were the notes from the last meeting again?",
+      "5:09",
+      "7:40, 9:16, 30:24",
+      "2484 to 26495",
+      "4 / 4"
+    ],
+    [
+      "IS1000b · How many people were in that research group?",
+      "10:01",
+      "30:55",
+      "5676 to 21476",
+      "2 / 2"
+    ],
+    [
+      "EC4320211 · How did the January sales trend compare with the quarter overall?",
+      "5:03",
+      "7:28, 9:56, 42:47",
+      "2380 to 20940",
+      "4 / 4"
+    ],
+    [
+      "TS3003b · How many people said they only used a small fraction of the buttons?",
+      "7:32",
+      "9:44, 28:42",
+      "3999 to 18558",
+      "3 / 3"
+    ],
+    [
+      "TS3003b · Which controls got the highest relevance score?",
+      "7:32",
+      "9:44, 28:42",
+      "3993 to 18552",
+      "3 / 3"
+    ],
+    [
+      "TS3003b · How many people took part in that usability research?",
+      "5:02",
+      "7:32, 9:44, 28:42",
+      "2730 to 18554",
+      "4 / 4"
+    ]
   ]
 }

@@ -1,0 +1,528 @@
+{
+  "lead": "Ten question-insertion clips are ready for listening. Eight match the target text exactly in Parakeet after case and punctuation normalization; one has a spoken contraction and one has an article disagreement between ASR systems. All ten are closer to their own held-out voice than to the other tested requester in the same meeting.",
+  "clips": [
+    {
+      "id": "P-EN-timeline",
+      "question_id": "P-EN-timeline",
+      "question": "Was that timeline updated, or copied from the earlier documents?",
+      "meeting": "EN2002b",
+      "requester": "C",
+      "voice": "EN2002b-C",
+      "source_time_seconds": 303.62,
+      "context_start_seconds": 285.62,
+      "context_end_seconds": 308.62,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 21.308375,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 21.558375,
+      "source_clock_shift_seconds": 3.558375,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "primary-default",
+        "ref": "primary",
+        "channel": "headset",
+        "nfe_step": 32,
+        "cfg_strength": 2,
+        "speed": 1.0
+      },
+      "selection_reason": "Remove the recognized reference-continuation prefix before an otherwise word-exact question, using ASR word timestamps. All final processed words must pass a fresh ASR check.",
+      "prefix_crop_seconds": 0.765,
+      "prefix_removed": "type",
+      "room_tone": {
+        "source_start_seconds": 251.0,
+        "source_end_seconds": 251.88,
+        "rms_dbfs": -54.124542062419124,
+        "peak_dbfs": -38.66773144096018,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "Was that timeline updated or copied from the earlier documents?",
+        "wer": 0.0
+      },
+      "whisper_text": "was that timeline updated or copied from the earlier documents?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.3488893210887909,
+        "target_minus_same_meeting_other": 0.4534938782453537,
+        "target_minus_highest_other": 0.2693188562989235
+      },
+      "public_injected": "audio/P-EN-timeline--injected.wav",
+      "public_matched": "audio/P-EN-timeline--question.wav",
+      "public_reference": "audio/EN2002b-C--reference.wav"
+    },
+    {
+      "id": "P-EN-same-person",
+      "question_id": "P-EN-same-person",
+      "question": "Was the person taking notes also going to put our sections together?",
+      "meeting": "EN2002b",
+      "requester": "B",
+      "voice": "EN2002b-B",
+      "source_time_seconds": 471.33,
+      "context_start_seconds": 453.33,
+      "context_end_seconds": 476.33,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 21.544,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 21.794,
+      "source_clock_shift_seconds": 3.794,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "alternate-calm",
+        "ref": "alternate",
+        "channel": "headset",
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 392.3,
+        "source_end_seconds": 392.87,
+        "rms_dbfs": -67.67041717918575,
+        "peak_dbfs": -53.532016884449256,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "Was the person taking notes also gonna put our sections together?",
+        "wer": 0.16666666666666666
+      },
+      "whisper_text": "Was the person taking notes also going to put our sections together?",
+      "wording_note": "Parakeet writes “gonna” for “going to,” a spoken contraction with the same meaning. The strict word comparison counts this as two edits.",
+      "speaker_check": {
+        "target_cosine": 0.434796005487442,
+        "target_minus_same_meeting_other": 0.3385735899209976,
+        "target_minus_highest_other": 0.2525634318590164
+      },
+      "public_injected": "audio/P-EN-same-person--injected.wav",
+      "public_matched": "audio/P-EN-same-person--question.wav",
+      "public_reference": "audio/EN2002b-B--reference.wav"
+    },
+    {
+      "id": "P-EN-handoff",
+      "question_id": "P-EN-handoff",
+      "question": "When did the person putting our sections together expect to have the search interface ready?",
+      "meeting": "EN2002b",
+      "requester": "C",
+      "voice": "EN2002b-C",
+      "source_time_seconds": 1385.22,
+      "context_start_seconds": 1367.22,
+      "context_end_seconds": 1390.22,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 21.268,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 21.518,
+      "source_clock_shift_seconds": 3.518,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "alternate-calm",
+        "ref": "alternate",
+        "channel": "headset",
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 1338.6699999999998,
+        "source_end_seconds": 1339.24,
+        "rms_dbfs": -51.096631087541276,
+        "peak_dbfs": -36.904081637711876,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "When did the person putting our sections together expect to have the search interface ready?",
+        "wer": 0.0
+      },
+      "whisper_text": "When did the person putting our sections together expect to have a search interface ready?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.4477427303791046,
+        "target_minus_same_meeting_other": 0.38490167260169983,
+        "target_minus_highest_other": 0.29034653306007385
+      },
+      "public_injected": "audio/P-EN-handoff--injected.wav",
+      "public_matched": "audio/P-EN-handoff--question.wav",
+      "public_reference": "audio/EN2002b-C--reference.wav"
+    },
+    {
+      "id": "P-ES-slogan",
+      "question_id": "P-ES-slogan",
+      "question": "Did they want the actual slogan on the remote, or just the idea behind it?",
+      "meeting": "ES2002b",
+      "requester": "C",
+      "voice": "ES2002b-C",
+      "source_time_seconds": 308.77,
+      "context_start_seconds": 290.77,
+      "context_end_seconds": 313.77,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 21.521375,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 21.771375,
+      "source_clock_shift_seconds": 3.771375,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "primary-calm",
+        "ref": "primary",
+        "channel": "headset",
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 288.27,
+        "source_end_seconds": 289.05,
+        "rms_dbfs": -68.83754651544888,
+        "peak_dbfs": -52.35645687338553,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "Did they want the actual slogan on the remote, or just the idea behind it?",
+        "wer": 0.0
+      },
+      "whisper_text": "Did they want the actual slogan on the remote or just the idea behind it?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.5826635956764221,
+        "target_minus_same_meeting_other": 0.3276253342628479,
+        "target_minus_highest_other": 0.3276253342628479
+      },
+      "public_injected": "audio/P-ES-slogan--injected.wav",
+      "public_matched": "audio/P-ES-slogan--question.wav",
+      "public_reference": "audio/ES2002b-C--reference.wav"
+    },
+    {
+      "id": "P-ES-numbers",
+      "question_id": "P-ES-numbers",
+      "question": "Were the channel number buttons optional, or did we say they were essential?",
+      "meeting": "ES2002b",
+      "requester": "D",
+      "voice": "ES2002b-D",
+      "source_time_seconds": 556.02,
+      "context_start_seconds": 538.02,
+      "context_end_seconds": 561.02,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 21.9266875,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 22.1766875,
+      "source_clock_shift_seconds": 4.1766875,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "alternate-calm",
+        "ref": "alternate",
+        "channel": "headset",
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 491.88,
+        "source_end_seconds": 492.75,
+        "rms_dbfs": -69.26569273943355,
+        "peak_dbfs": -53.16234877056899,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "Were the channel number buttons optional or did we say they were essential?",
+        "wer": 0.0
+      },
+      "whisper_text": "or the channel number buttons optional or did we say they were essential?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.6514586806297302,
+        "target_minus_same_meeting_other": 0.5845395103096962,
+        "target_minus_highest_other": 0.5659846812486649
+      },
+      "public_injected": "audio/P-ES-numbers--injected.wav",
+      "public_matched": "audio/P-ES-numbers--question.wav",
+      "public_reference": "audio/ES2002b-D--reference.wav"
+    },
+    {
+      "id": "P-ES-voice-open",
+      "question_id": "P-ES-voice-open",
+      "question": "Did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
+      "meeting": "ES2002b",
+      "requester": "C",
+      "voice": "ES2002b-C",
+      "source_time_seconds": 1823.87,
+      "context_start_seconds": 1805.87,
+      "context_end_seconds": 1828.87,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 22.7066875,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 22.9566875,
+      "source_clock_shift_seconds": 4.9566875,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "primary-default",
+        "ref": "primary",
+        "channel": "headset",
+        "nfe_step": 32,
+        "cfg_strength": 2,
+        "speed": 1.0
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 1524.34,
+        "source_end_seconds": 1525.8700000000001,
+        "rms_dbfs": -42.89009968452451,
+        "peak_dbfs": -26.059919478388842,
+        "search_lookback_seconds": 600
+      },
+      "processed_asr": {
+        "text": "Did we commit to the feature adults, said they'd pay extra for or were we still keeping our options open?",
+        "wer": 0.0
+      },
+      "whisper_text": "Did we commit to the feature adults that they pay extra for or were we still keeping our options open?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.6728283166885376,
+        "target_minus_same_meeting_other": 0.4912439286708832,
+        "target_minus_highest_other": 0.4912439286708832
+      },
+      "public_injected": "audio/P-ES-voice-open--injected.wav",
+      "public_matched": "audio/P-ES-voice-open--question.wav",
+      "public_reference": "audio/ES2002b-C--reference.wav"
+    },
+    {
+      "id": "P-IS-learning",
+      "question_id": "P-IS-learning",
+      "question": "What proportion said a new remote took too long to learn?",
+      "meeting": "IS1000b",
+      "requester": "D",
+      "voice": "IS1000b-D",
+      "source_time_seconds": 600.64,
+      "context_start_seconds": 582.64,
+      "context_end_seconds": 605.64,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 20.765375,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 21.015375,
+      "source_clock_shift_seconds": 3.015375,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "primary-default",
+        "ref": "primary",
+        "channel": "headset",
+        "nfe_step": 32,
+        "cfg_strength": 2,
+        "speed": 1.0
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 580.94,
+        "source_end_seconds": 582.94,
+        "rms_dbfs": -35.92336173641798,
+        "peak_dbfs": -21.40314331067492,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "What proportion said a new remote took too long to learn?",
+        "wer": 0.0
+      },
+      "whisper_text": "what proportions said a new remote took too long to learn.",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.42734357714653015,
+        "target_minus_same_meeting_other": 0.528733029961586,
+        "target_minus_highest_other": 0.3589865192770958
+      },
+      "public_injected": "audio/P-IS-learning--injected.wav",
+      "public_matched": "audio/P-IS-learning--question.wav",
+      "public_reference": "audio/IS1000b-D--reference.wav"
+    },
+    {
+      "id": "P-IS-teletext-usage",
+      "question_id": "P-IS-teletext-usage",
+      "question": "How much were people using the function the account manager was questioning whether to include?",
+      "meeting": "IS1000b",
+      "requester": "C",
+      "voice": "IS1000b-C",
+      "source_time_seconds": 1855.31,
+      "context_start_seconds": 1837.31,
+      "context_end_seconds": 1860.31,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 24.961375,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 25.211375,
+      "source_clock_shift_seconds": 7.211375,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "alternate-calm",
+        "ref": "alternate",
+        "channel": "headset",
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
+      },
+      "selection_reason": "Wording correct; alternate reference avoids the ASR-predicted mid-question sentence break. Similarity is effectively tied with the default. Prosody needs listening review.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 1780.4299999999998,
+        "source_end_seconds": 1781.8100000000002,
+        "rms_dbfs": -41.42515907639484,
+        "peak_dbfs": -29.993423571413537,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "How much were people using the the function the account manager was questioning whether to include",
+        "wer": 0.06666666666666667
+      },
+      "whisper_text": "how much were people using the function, the account manager was questioning whether to include",
+      "wording_note": "Parakeet reports a repeated “the”; Whisper does not. Please check this wording difference by listening.",
+      "speaker_check": {
+        "target_cosine": 0.7042754888534546,
+        "target_minus_same_meeting_other": 0.7599496692419052,
+        "target_minus_highest_other": 0.6012657061219215
+      },
+      "public_injected": "audio/P-IS-teletext-usage--injected.wav",
+      "public_matched": "audio/P-IS-teletext-usage--question.wav",
+      "public_reference": "audio/IS1000b-C--reference.wav"
+    },
+    {
+      "id": "P-TS-time",
+      "question_id": "P-TS-time",
+      "question": "How long were we allowing for each presentation?",
+      "meeting": "TS3003b",
+      "requester": "D",
+      "voice": "TS3003b-D",
+      "source_time_seconds": 302.37,
+      "context_start_seconds": 284.37,
+      "context_end_seconds": 307.37,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 20.685375,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 20.935375,
+      "source_clock_shift_seconds": 2.935375,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "primary-default",
+        "ref": "primary",
+        "channel": "headset",
+        "nfe_step": 32,
+        "cfg_strength": 2,
+        "speed": 1.0
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 273.4,
+        "source_end_seconds": 275.0,
+        "rms_dbfs": -77.36240789288767,
+        "peak_dbfs": -63.86461280451598,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "How long were we allowing for each presentation?",
+        "wer": 0.0
+      },
+      "whisper_text": "How long were we allowing for each presentation?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.7554930448532104,
+        "target_minus_same_meeting_other": 0.8084564916789532,
+        "target_minus_highest_other": 0.6167830228805542
+      },
+      "public_injected": "audio/P-TS-time--injected.wav",
+      "public_matched": "audio/P-TS-time--question.wav",
+      "public_reference": "audio/TS3003b-D--reference.wav"
+    },
+    {
+      "id": "P-TS-target-change",
+      "question_id": "P-TS-target-change",
+      "question": "How did the target audience change from the marketing presentation to the new requirements?",
+      "meeting": "TS3003b",
+      "requester": "B",
+      "voice": "TS3003b-B",
+      "source_time_seconds": 1721.99,
+      "context_start_seconds": 1703.99,
+      "context_end_seconds": 1726.99,
+      "synthetic_speech_playback_start_seconds": 18.18,
+      "synthetic_speech_playback_end_seconds": 23.68,
+      "inserted_interval_start_seconds": 18.0,
+      "inserted_interval_end_seconds": 23.93,
+      "source_clock_shift_seconds": 5.93,
+      "prefix_suffix_exact": true,
+      "setting": {
+        "id": "alternate-calm",
+        "ref": "alternate",
+        "channel": "headset",
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
+      },
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
+      "room_tone": {
+        "source_start_seconds": 1709.05,
+        "source_end_seconds": 1709.98,
+        "rms_dbfs": -78.4416258299919,
+        "peak_dbfs": -66.78717351808073,
+        "search_lookback_seconds": 90
+      },
+      "processed_asr": {
+        "text": "How did the target audience change from the marketing presentation to the new requirements?",
+        "wer": 0.0
+      },
+      "whisper_text": "How did the target audience change from the marketing presentation to the new requirements?",
+      "wording_note": "Parakeet matches the question after case and punctuation normalization.",
+      "speaker_check": {
+        "target_cosine": 0.6938343048095703,
+        "target_minus_same_meeting_other": 0.7780398279428482,
+        "target_minus_highest_other": 0.5344437509775162
+      },
+      "public_injected": "audio/P-TS-target-change--injected.wav",
+      "public_matched": "audio/P-TS-target-change--question.wav",
+      "public_reference": "audio/TS3003b-B--reference.wav"
+    }
+  ],
+  "variants": 36,
+  "raw_variants_strict_wording_matches": 19,
+  "processed_strict_wording_matches": 8,
+  "wording_policy": "Case and punctuation are ignored for the strict word-error calculation. Contractions are described separately, rather than silently changing the score. ASR differences are not treated as verified speech errors.",
+  "voice_policy": "ECAPA cosine to disjoint past speech; all selected clips exceed the other tested requester in the same meeting. This does not certify perceptual identity or compare all four meeting participants.",
+  "source_pcm": "Original context and continuation PCM are unchanged; four local full-meeting replays restore the complete source after removing insertions.",
+  "local_replay_packet_counts": [
+    {
+      "meeting": "EN2002b",
+      "packets": 3746,
+      "packet_seconds": 0.48,
+      "source_pcm_recovered_exactly": true
+    },
+    {
+      "meeting": "ES2002b",
+      "packets": 4777,
+      "packet_seconds": 0.48,
+      "source_pcm_recovered_exactly": true
+    },
+    {
+      "meeting": "IS1000b",
+      "packets": 4904,
+      "packet_seconds": 0.48,
+      "source_pcm_recovered_exactly": true
+    },
+    {
+      "meeting": "TS3003b",
+      "packets": 4624,
+      "packet_seconds": 0.48,
+      "source_pcm_recovered_exactly": true
+    }
+  ],
+  "answer_audio": "deferred"
+}

@@ -1,6 +1,6 @@
 {
   "title": "Larger question pilot with early checkpoints and speaker-matched audio",
-  "updated_utc": "2026-10-26T23:34:30.363725+00:00",
+  "updated_utc": "2026-10-26T23:52:28.172044+00:00",
   "tasks": [
     {
       "id": "preserve",
@@ -47,15 +47,16 @@
     {
       "id": "audio",
       "label": "Check wording and speaker match; assemble short paused-meeting clips",
-      "status": "in_progress",
-      "note": "Independent ASR and held-out speaker checks are running before variant selection and pause/resume mixing.",
-      "updated_utc": "2026-10-26T23:34:30.363709+00:00"
+      "status": "complete",
+      "note": "Ten review clips and four local 480 ms packet replays complete; source PCM recovers exactly. Eight clips match Parakeet strictly, one has a spoken contraction, one an ASR article disagreement. All ten voice proxies favor the correct tested requester; listening review remains requested.",
+      "updated_utc": "2026-10-26T23:52:28.113354+00:00"
     },
     {
       "id": "publish",
       "label": "Publish questions, results and playable audio; verify the live page",
-      "status": "pending",
-      "note": ""
+      "status": "in_progress",
+      "note": "Preparing the final audio page, source-copy hashes, responsive browser checks and live deployment verification.",
+      "updated_utc": "2026-10-26T23:52:28.172027+00:00"
     }
   ],
   "scope": "New pilot; earlier questions and audio are preserved.",
