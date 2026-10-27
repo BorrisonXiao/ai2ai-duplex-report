@@ -153,9 +153,74 @@
       "gpu_hours": 0.0125,
       "dependencies": "All preceding GPU stages complete; no overlap",
       "stage_id": "post-final"
+    },
+    {
+      "job": "1305346",
+      "stage": "Regenerate speech with Assistant cue",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type": "L40S 48 GB",
+      "role": "F5-TTS and Vocos share GPU 0",
+      "start": "2026-10-26T20:28:00",
+      "end": "2026-10-26T20:28:38",
+      "allocated_seconds": 38,
+      "gpu_hours": 0.010555555555555556,
+      "dependencies": "Previous GPU stage completed; no overlap"
+    },
+    {
+      "job": "1305351",
+      "stage": "Check cue speech and requester voice",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type": "L40S 48 GB",
+      "role": "Parakeet ASR and ECAPA speaker encoder run sequentially on GPU 0; CPU splice between checks",
+      "start": "2026-10-26T20:29:23",
+      "end": "2026-10-26T20:29:49",
+      "allocated_seconds": 26,
+      "gpu_hours": 0.007222222222222222,
+      "dependencies": "Previous GPU stage completed; no overlap"
+    },
+    {
+      "job": "1305377",
+      "stage": "Verify processed cue and assemble paused replays",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type": "L40S 48 GB",
+      "role": "Parakeet ASR and ECAPA speaker encoder run sequentially on GPU 0; CPU splice between checks",
+      "start": "2026-10-26T20:32:23",
+      "end": "2026-10-26T20:33:10",
+      "allocated_seconds": 47,
+      "gpu_hours": 0.013055555555555556,
+      "dependencies": "Previous GPU stage completed; no overlap"
+    },
+    {
+      "job": "1305536",
+      "stage": "Clarify the timeline cue with slower synthesis",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type": "L40S 48 GB",
+      "role": "F5-TTS and Vocos share GPU 0",
+      "start": "2026-10-26T20:41:24",
+      "end": "2026-10-26T20:41:49",
+      "allocated_seconds": 25,
+      "gpu_hours": 0.006944444444444444,
+      "dependencies": "Previous GPU stage completed; no overlap"
+    },
+    {
+      "job": "1305565",
+      "stage": "Verify the clarified cue and final clips",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type": "L40S 48 GB",
+      "role": "Parakeet ASR and ECAPA speaker encoder run sequentially on GPU 0; CPU splice between checks",
+      "start": "2026-10-26T20:45:16",
+      "end": "2026-10-26T20:46:00",
+      "allocated_seconds": 44,
+      "gpu_hours": 0.012222222222222223,
+      "dependencies": "Previous GPU stage completed; no overlap"
     }
   ],
-  "gpu_hours": 0.358888888888889,
+  "gpu_hours": 0.40888888888888897,
   "maximum_active_gpus": 1,
   "no_overlapping_gpu_intervals": true,
   "all_gpu_jobs_finished": true,
@@ -229,5 +294,8 @@
     }
   ],
   "failed_and_cancelled_attempts_included": true,
-  "allocation_time_zone": "America/New_York"
+  "allocation_time_zone": "America/New_York",
+  "previous_pilot_gpu_hours": 0.358888888888889,
+  "spoken_cue_followup_gpu_hours": 0.05,
+  "report_revision_gpus": 0
 }

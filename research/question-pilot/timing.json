@@ -1,18 +1,19 @@
 {
-  "wordings": {
+  "distinct_questions": {
+    "n": 43,
+    "mean_minutes": 13.560476744186046,
+    "median_minutes": 9.267,
+    "mean_percent": 36.25005602980211,
+    "early": 31
+  },
+  "saved_phrasings": {
     "n": 51,
     "mean_minutes": 13.962486928104575,
     "median_minutes": 9.725333333333333,
     "mean_percent": 37.13274618314294,
     "early": 36
   },
-  "information_needs": {
-    "n": 39,
-    "mean_minutes": 13.091683760683761,
-    "median_minutes": 9.267,
-    "mean_percent": 35.025600875763814,
-    "early": 29
-  },
+  "alternative_phrasings": 8,
   "planned_positions": 23,
   "time_bins_minutes": [
     0,
@@ -25,11 +26,11 @@
   ],
   "time_counts": [
     1,
-    14,
-    21,
+    13,
+    17,
     0,
-    6,
-    9
+    5,
+    7
   ],
   "fraction_bins_percent": [
     0,
@@ -40,66 +41,73 @@
     100
   ],
   "fraction_counts": [
-    18,
-    18,
-    0,
     15,
+    16,
+    0,
+    12,
     0
   ],
   "per_meeting": [
     {
       "meeting": "EC4320211",
-      "wordings": 6,
-      "information_needs": 3,
-      "mean_minutes": 7.897222222222222,
+      "distinct_questions": 4,
+      "saved_phrasings": 6,
+      "alternative_phrasings": 2,
+      "mean_minutes": 6.875083333333333,
       "earliest_seconds": 302.86,
       "latest_seconds": 596.49,
       "duration_seconds": 3285.848
     },
     {
       "meeting": "EC4344338",
-      "wordings": 5,
-      "information_needs": 4,
-      "mean_minutes": 13.5374,
+      "distinct_questions": 4,
+      "saved_phrasings": 5,
+      "alternative_phrasings": 1,
+      "mean_minutes": 14.438791666666667,
       "earliest_seconds": 296.45,
       "latest_seconds": 2126.22,
       "duration_seconds": 2721.169
     },
     {
       "meeting": "EN2002b",
-      "wordings": 10,
-      "information_needs": 8,
-      "mean_minutes": 12.079183333333333,
+      "distinct_questions": 9,
+      "saved_phrasings": 10,
+      "alternative_phrasings": 1,
+      "mean_minutes": 10.856092592592592,
       "earliest_seconds": 303.62,
       "latest_seconds": 1385.22,
       "duration_seconds": 1786.922
     },
     {
       "meeting": "ES2002b",
-      "wordings": 8,
-      "information_needs": 7,
-      "mean_minutes": 15.445749999999999,
+      "distinct_questions": 7,
+      "saved_phrasings": 8,
+      "alternative_phrasings": 1,
+      "mean_minutes": 13.309738095238094,
       "earliest_seconds": 308.77,
       "latest_seconds": 1823.87,
       "duration_seconds": 2281.0
     },
     {
       "meeting": "IS1000b",
-      "wordings": 10,
-      "information_needs": 8,
-      "mean_minutes": 19.7476,
+      "distinct_questions": 9,
+      "saved_phrasings": 10,
+      "alternative_phrasings": 1,
+      "mean_minutes": 18.50601851851852,
       "earliest_seconds": 328.15,
       "latest_seconds": 1855.31,
       "duration_seconds": 2341.0
     },
     {
       "meeting": "TS3003b",
-      "wordings": 12,
-      "information_needs": 9,
-      "mean_minutes": 12.931888888888889,
+      "distinct_questions": 10,
+      "saved_phrasings": 12,
+      "alternative_phrasings": 2,
+      "mean_minutes": 14.041783333333333,
       "earliest_seconds": 302.37,
       "latest_seconds": 1721.99,
       "duration_seconds": 2210.305
     }
-  ]
+  ],
+  "representative_rule": "One retained representative per distinct question; alternative phrasings and repeated test times do not add counts."
 }

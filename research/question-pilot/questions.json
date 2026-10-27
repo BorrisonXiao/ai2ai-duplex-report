@@ -5,7 +5,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "Who said they'd take the notes today?",
+    "question": "Assistant, who said they'd take the notes today?",
     "reference_answer": "D volunteered to take the notes.",
     "evidence_ids": [
       "EN2002b-u0015"
@@ -26,7 +26,10 @@
     "source_ids": [
       "EN2002b-u0015"
     ],
-    "percent": 16.991228492346057
+    "percent": 16.991228492346057,
+    "question_body": "Who said they'd take the notes today?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-notes"
   },
   {
     "id": "P-EN-timeline",
@@ -34,7 +37,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "Was that timeline updated, or copied from the earlier documents?",
+    "question": "Assistant, was that timeline updated, or copied from the earlier documents?",
     "reference_answer": "D said it was copied straight from the other documents and might be inaccurate.",
     "evidence_ids": [
       "EN2002b-u0027",
@@ -59,7 +62,10 @@
       "EN2002b-u0028",
       "EN2002b-u0029"
     ],
-    "percent": 16.991228492346057
+    "percent": 16.991228492346057,
+    "question_body": "Was that timeline updated, or copied from the earlier documents?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-timeline"
   },
   {
     "id": "P-EN-audio",
@@ -67,7 +73,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "Why were we dropping the work on the audio files?",
+    "question": "Assistant, why were we dropping the work on the audio files?",
     "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
     "evidence_ids": [
       "EN2002b-u0166",
@@ -98,7 +104,10 @@
       "EN2002b-u0198",
       "EN2002b-u0199"
     ],
-    "percent": 26.376640950192566
+    "percent": 26.376640950192566,
+    "question_body": "Why were we dropping the work on the audio files?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-audio"
   },
   {
     "id": "P-EN-report",
@@ -106,7 +115,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "A",
-    "question": "Where were we going to explain the work we dropped?",
+    "question": "Assistant, where were we going to explain the work we dropped?",
     "reference_answer": "C proposed putting it under changes since the initial specification, explaining the lack of time.",
     "evidence_ids": [
       "EN2002b-u0192",
@@ -131,7 +140,10 @@
       "EN2002b-u0193",
       "EN2002b-u0198"
     ],
-    "percent": 26.376640950192566
+    "percent": 26.376640950192566,
+    "question_body": "Where were we going to explain the work we dropped?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-report"
   },
   {
     "id": "P-EN-segmentation",
@@ -139,7 +151,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "How far had we got with topic segmentation?",
+    "question": "Assistant, how far had we got with topic segmentation?",
     "reference_answer": "B said the LCseg and TextTiling topic segmentation was basically done but needed tuning.",
     "evidence_ids": [
       "EN2002b-u0289",
@@ -168,7 +180,10 @@
       "EN2002b-u0292",
       "EN2002b-u0293"
     ],
-    "percent": 33.537557878855374
+    "percent": 33.537557878855374,
+    "question_body": "How far had we got with topic segmentation?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-segmentation"
   },
   {
     "id": "P-EN-order",
@@ -176,7 +191,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "How did we think the search results should be ordered?",
+    "question": "Assistant, how did we think the search results should be ordered?",
     "reference_answer": "C suggested ordering by meeting; D agreed that ordering by meeting made most sense, essentially in time order.",
     "evidence_ids": [
       "EN2002b-u0490",
@@ -205,7 +220,10 @@
       "EN2002b-u0500",
       "EN2002b-u0502"
     ],
-    "percent": 77.5198917468138
+    "percent": 77.5198917468138,
+    "question_body": "How did we think the search results should be ordered?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-order"
   },
   {
     "id": "P-EN-handoff",
@@ -213,7 +231,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "When did the person putting our sections together expect to have the search interface ready?",
+    "question": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
     "reference_answer": "D offered to combine the sections, and expected at least a GUI by tomorrow, hoping to connect it tomorrow morning.",
     "evidence_ids": [
       "EN2002b-u0083",
@@ -249,7 +267,10 @@
       "EN2002b-u0349",
       "EN2002b-u0352"
     ],
-    "percent": 77.5198917468138
+    "percent": 77.5198917468138,
+    "question_body": "When did the person putting our sections together expect to have the search interface ready?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-handoff"
   },
   {
     "id": "P-EN-same-person",
@@ -257,7 +278,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "Was the person taking notes also going to put our sections together?",
+    "question": "Assistant, was the person taking notes also going to put our sections together?",
     "reference_answer": "Yes. D volunteered for the notes and later offered to combine everyone’s sections.",
     "evidence_ids": [
       "EN2002b-u0015",
@@ -288,7 +309,10 @@
       "EN2002b-u0015",
       "EN2002b-u0083"
     ],
-    "percent": 26.376640950192566
+    "percent": 26.376640950192566,
+    "question_body": "Was the person taking notes also going to put our sections together?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-same-person"
   },
   {
     "id": "P-ES-minutes",
@@ -296,7 +320,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "A",
-    "question": "Where were the notes from the last meeting again?",
+    "question": "Assistant, where were the notes from the last meeting again?",
     "reference_answer": "B said the previous meeting’s minutes were in the project folder.",
     "evidence_ids": [
       "ES2002b-u0011"
@@ -317,7 +341,10 @@
     "source_ids": [
       "ES2002b-u0011"
     ],
-    "percent": 13.536606751424813
+    "percent": 13.536606751424813,
+    "question_body": "Where were the notes from the last meeting again?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-minutes"
   },
   {
     "id": "P-ES-slogan",
@@ -325,7 +352,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "Did they want the actual slogan on the remote, or just the idea behind it?",
+    "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
     "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
     "evidence_ids": [
       "ES2002b-u0023",
@@ -354,7 +381,10 @@
       "ES2002b-u0030",
       "ES2002b-u0031"
     ],
-    "percent": 13.536606751424813
+    "percent": 13.536606751424813,
+    "question_body": "Did they want the actual slogan on the remote, or just the idea behind it?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-slogan"
   },
   {
     "id": "P-ES-complexity",
@@ -362,7 +392,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "What was the reason for keeping it so simple?",
+    "question": "Assistant, what was the reason for keeping it so simple?",
     "reference_answer": "B said additional complexity could delay production and time to market.",
     "evidence_ids": [
       "ES2002b-u0019",
@@ -387,7 +417,10 @@
       "ES2002b-u0021",
       "ES2002b-u0022"
     ],
-    "percent": 13.536606751424813
+    "percent": 13.536606751424813,
+    "question_body": "What was the reason for keeping it so simple?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-complexity"
   },
   {
     "id": "P-ES-hidden",
@@ -395,7 +428,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "A",
-    "question": "How did we suggest keeping the extra controls out of the way?",
+    "question": "Assistant, how did we suggest keeping the extra controls out of the way?",
     "reference_answer": "C proposed hiding advanced functions in a drawer; B later suggested a flip-open arrangement. These were ideas, not a settled construction.",
     "evidence_ids": [
       "ES2002b-u0073",
@@ -418,7 +451,10 @@
       "ES2002b-u0073",
       "ES2002b-u0103"
     ],
-    "percent": 20.167470407715914
+    "percent": 20.167470407715914,
+    "question_body": "How did we suggest keeping the extra controls out of the way?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-hidden"
   },
   {
     "id": "P-ES-numbers",
@@ -426,7 +462,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "Were the channel number buttons optional, or did we say they were essential?",
+    "question": "Assistant, were the channel number buttons optional, or did we say they were essential?",
     "reference_answer": "B treated direct channel selection using number buttons as required.",
     "evidence_ids": [
       "ES2002b-u0114",
@@ -453,7 +489,10 @@
       "ES2002b-u0119",
       "ES2002b-u0122"
     ],
-    "percent": 24.376150811047786
+    "percent": 24.376150811047786,
+    "question_body": "Were the channel number buttons optional, or did we say they were essential?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-numbers"
   },
   {
     "id": "P-ES-voice-open",
@@ -461,7 +500,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "Did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
+    "question": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
     "reference_answer": "The feature was voice recognition. B proposed including it if possible, but A argued against committing to a technology before deciding the functions, so it was not an unconditional commitment.",
     "evidence_ids": [
       "ES2002b-u0280",
@@ -516,7 +555,10 @@
       "ES2002b-u0433",
       "ES2002b-u0440"
     ],
-    "percent": 79.95922840859272
+    "percent": 79.95922840859272,
+    "question_body": "Did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-voice-open"
   },
   {
     "id": "P-ES-power",
@@ -524,7 +566,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "What extra hardware would voice recognition need?",
+    "question": "Assistant, what extra hardware would voice recognition need?",
     "reference_answer": "A said the user interface would gain components including a microphone and voice-recognition components; more power could be added if the function mattered.",
     "evidence_ids": [
       "ES2002b-u0512",
@@ -549,7 +591,10 @@
       "ES2002b-u0513",
       "ES2002b-u0555"
     ],
-    "percent": 79.95922840859272
+    "percent": 79.95922840859272,
+    "question_body": "What extra hardware would voice recognition need?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-power"
   },
   {
     "id": "P-IS-notes",
@@ -557,7 +602,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "Were the notes from our last meeting sent out yet?",
+    "question": "Assistant, were the notes from our last meeting sent out yet?",
     "reference_answer": "B had prepared them but had not sent them before this meeting; B said the others would receive them.",
     "evidence_ids": [
       "IS1000b-u0016"
@@ -578,7 +623,10 @@
     "source_ids": [
       "IS1000b-u0016"
     ],
-    "percent": 14.017513882956
+    "percent": 14.017513882956,
+    "question_body": "Were the notes from our last meeting sent out yet?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-notes"
   },
   {
     "id": "P-IS-sample",
@@ -586,7 +634,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "How many people were in that research group?",
+    "question": "Assistant, how many people were in that research group?",
     "reference_answer": "A described a small focus group of one hundred people.",
     "evidence_ids": [
       "IS1000b-u0059"
@@ -607,7 +655,10 @@
     "source_ids": [
       "IS1000b-u0059"
     ],
-    "percent": 25.657411362665528
+    "percent": 25.657411362665528,
+    "question_body": "How many people were in that research group?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-sample"
   },
   {
     "id": "P-IS-frequency",
@@ -615,7 +666,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "How often were people changing channels in that research?",
+    "question": "Assistant, how often were people changing channels in that research?",
     "reference_answer": "A reported channel selection being used 168 times per hour.",
     "evidence_ids": [
       "IS1000b-u0082",
@@ -640,7 +691,10 @@
       "IS1000b-u0083",
       "IS1000b-u0085"
     ],
-    "percent": 25.657411362665528
+    "percent": 25.657411362665528,
+    "question_body": "How often were people changing channels in that research?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-frequency"
   },
   {
     "id": "P-IS-learning",
@@ -648,7 +702,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "What proportion said a new remote took too long to learn?",
+    "question": "Assistant, what proportion said a new remote took too long to learn?",
     "reference_answer": "Thirty-four percent, according to A’s report.",
     "evidence_ids": [
       "IS1000b-u0094",
@@ -671,7 +725,10 @@
       "IS1000b-u0094",
       "IS1000b-u0098"
     ],
-    "percent": 25.657411362665528
+    "percent": 25.657411362665528,
+    "question_body": "What proportion said a new remote took too long to learn?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-learning"
   },
   {
     "id": "P-IS-teletext-usage",
@@ -679,7 +736,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "How much were people using the function the account manager was questioning whether to include?",
+    "question": "Assistant, how much were people using the function the account manager was questioning whether to include?",
     "reference_answer": "The function was teletext; A reported fourteen uses per hour.",
     "evidence_ids": [
       "IS1000b-u0088",
@@ -718,7 +775,10 @@
       "IS1000b-u0480",
       "IS1000b-u0482"
     ],
-    "percent": 79.25288338316959
+    "percent": 79.25288338316959,
+    "question_body": "How much were people using the function the account manager was questioning whether to include?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-teletext-usage"
   },
   {
     "id": "P-IS-components",
@@ -726,7 +786,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "Were those components a final choice or just a preference?",
+    "question": "Assistant, were those components a final choice or just a preference?",
     "reference_answer": "D described the chosen components as a preference that could still be changed.",
     "evidence_ids": [
       "IS1000b-u0298",
@@ -749,7 +809,10 @@
       "IS1000b-u0298",
       "IS1000b-u0300"
     ],
-    "percent": 79.25288338316959
+    "percent": 79.25288338316959,
+    "question_body": "Were those components a final choice or just a preference?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-components"
   },
   {
     "id": "P-IS-budget",
@@ -757,7 +820,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "What cost limit were we worried the voice features might exceed?",
+    "question": "Assistant, what cost limit were we worried the voice features might exceed?",
     "reference_answer": "B questioned whether the fancy voice-related features could be built for twelve euros and fifty cents. That is the remote’s cost constraint, not a separate voice-feature budget.",
     "evidence_ids": [
       "IS1000b-u0165",
@@ -786,7 +849,10 @@
       "IS1000b-u0172",
       "IS1000b-u0176"
     ],
-    "percent": 79.25288338316959
+    "percent": 79.25288338316959,
+    "question_body": "What cost limit were we worried the voice features might exceed?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-budget"
   },
   {
     "id": "P-TS-time",
@@ -794,7 +860,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "How long were we allowing for each presentation?",
+    "question": "Assistant, how long were we allowing for each presentation?",
     "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
     "evidence_ids": [
       "TS3003b-u0029",
@@ -819,7 +885,10 @@
       "TS3003b-u0030",
       "TS3003b-u0032"
     ],
-    "percent": 13.68001248696447
+    "percent": 13.68001248696447,
+    "question_body": "How long were we allowing for each presentation?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-time"
   },
   {
     "id": "P-TS-sample",
@@ -827,7 +896,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "How many people took part in that usability research?",
+    "question": "Assistant, how many people took part in that usability research?",
     "reference_answer": "D said there were one hundred test subjects.",
     "evidence_ids": [
       "TS3003b-u0046",
@@ -852,7 +921,10 @@
       "TS3003b-u0047",
       "TS3003b-u0048"
     ],
-    "percent": 13.68001248696447
+    "percent": 13.68001248696447,
+    "question_body": "How many people took part in that usability research?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-sample"
   },
   {
     "id": "P-TS-buttons",
@@ -860,7 +932,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "How many people said they only used a small fraction of the buttons?",
+    "question": "Assistant, how many people said they only used a small fraction of the buttons?",
     "reference_answer": "Fifty percent said they used about ten percent of the buttons.",
     "evidence_ids": [
       "TS3003b-u0059"
@@ -881,7 +953,10 @@
     "source_ids": [
       "TS3003b-u0059"
     ],
-    "percent": 20.445142186259364
+    "percent": 20.445142186259364,
+    "question_body": "How many people said they only used a small fraction of the buttons?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-buttons"
   },
   {
     "id": "P-TS-relevance",
@@ -889,7 +964,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "Which controls got the highest relevance score?",
+    "question": "Assistant, which controls got the highest relevance score?",
     "reference_answer": "Channel selection and volume selection each scored ten on a ten-point relevance scale.",
     "evidence_ids": [
       "TS3003b-u0064",
@@ -914,7 +989,10 @@
       "TS3003b-u0065",
       "TS3003b-u0067"
     ],
-    "percent": 20.445142186259364
+    "percent": 20.445142186259364,
+    "question_body": "Which controls got the highest relevance score?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-relevance"
   },
   {
     "id": "P-TS-dock",
@@ -922,7 +1000,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "What share of the people surveyed had the problem that the proposed docking station would help with?",
+    "question": "Assistant, what share of the people surveyed had the problem that the proposed docking station would help with?",
     "reference_answer": "Fifty percent said their remote tended to get lost. The proposed docking station could signal the remote to beep so it could be found.",
     "evidence_ids": [
       "TS3003b-u0060",
@@ -961,7 +1039,10 @@
       "TS3003b-u0107",
       "TS3003b-u0108"
     ],
-    "percent": 26.39997647383506
+    "percent": 26.39997647383506,
+    "question_body": "What share of the people surveyed had the problem that the proposed docking station would help with?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-dock"
   },
   {
     "id": "P-TS-learning",
@@ -969,7 +1050,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "What percentage found a new remote hard to learn?",
+    "question": "Assistant, what percentage found a new remote hard to learn?",
     "reference_answer": "Thirty-four percent, according to D’s presentation.",
     "evidence_ids": [
       "TS3003b-u0093"
@@ -990,7 +1071,10 @@
     "source_ids": [
       "TS3003b-u0093"
     ],
-    "percent": 26.39997647383506
+    "percent": 26.39997647383506,
+    "question_body": "What percentage found a new remote hard to learn?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-learning"
   },
   {
     "id": "P-TS-target-change",
@@ -998,7 +1082,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "How did the target audience change from the marketing presentation to the new requirements?",
+    "question": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
     "reference_answer": "D originally recommended ages sixteen to forty-five; A’s later requirements specified customers aged forty-plus.",
     "evidence_ids": [
       "TS3003b-u0087",
@@ -1054,7 +1138,10 @@
       "TS3003b-u0274",
       "TS3003b-u0275"
     ],
-    "percent": 77.90734762849472
+    "percent": 77.90734762849472,
+    "question_body": "How did the target audience change from the marketing presentation to the new requirements?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-target-change"
   },
   {
     "id": "P-TS-teletext",
@@ -1062,7 +1149,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "Were we definitely leaving teletext out, or had that changed?",
+    "question": "Assistant, were we definitely leaving teletext out, or had that changed?",
     "reference_answer": "A initially said to omit teletext, but later reopened inclusion if it would not increase cost and noted its value for subtitles. It was not a definite unconditional exclusion.",
     "evidence_ids": [
       "TS3003b-u0266",
@@ -1097,7 +1184,10 @@
       "TS3003b-u0380",
       "TS3003b-u0384"
     ],
-    "percent": 77.90734762849472
+    "percent": 77.90734762849472,
+    "question_body": "Were we definitely leaving teletext out, or had that changed?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-teletext"
   },
   {
     "id": "P-MO-comparison",
@@ -1105,7 +1195,7 @@
     "meeting": "EC4320211",
     "dataset": "ConEC/Earnings21",
     "requester": "S1",
-    "question": "How did the January sales trend compare with the quarter overall?",
+    "question": "Assistant, how did the January sales trend compare with the quarter overall?",
     "reference_answer": "Comparable-store sales were down four percent in January, versus down 0.9 percent for the third quarter overall. These refer to different periods.",
     "evidence_ids": [
       "EC4320211-u0023",
@@ -1135,7 +1225,10 @@
       "EC4320211-u0023",
       "EC4320211-u0026"
     ],
-    "percent": 9.217103164845117
+    "percent": 9.217103164845117,
+    "question_body": "How did the January sales trend compare with the quarter overall?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-MO-comparison"
   },
   {
     "id": "P-MO-pricing",
@@ -1143,7 +1236,7 @@
     "meeting": "EC4320211",
     "dataset": "ConEC/Earnings21",
     "requester": "S1",
-    "question": "When was the new tire pricing system supposed to start rolling out?",
+    "question": "Assistant, when was the new tire pricing system supposed to start rolling out?",
     "reference_answer": "The first quarter of fiscal 2021.",
     "evidence_ids": [
       "EC4320211-u0034"
@@ -1164,7 +1257,10 @@
     "source_ids": [
       "EC4320211-u0034"
     ],
-    "percent": 13.628445381527083
+    "percent": 13.628445381527083,
+    "question_body": "When was the new tire pricing system supposed to start rolling out?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-MO-pricing"
   },
   {
     "id": "P-MO-completion",
@@ -1172,7 +1268,7 @@
     "meeting": "EC4320211",
     "dataset": "ConEC/Earnings21",
     "requester": "S1",
-    "question": "Had all the California store conversions finished, or were some still being worked on?",
+    "question": "Assistant, had all the California store conversions finished, or were some still being worked on?",
     "reference_answer": "They were substantially completed, not all declared fully complete. Management still planned to finalize the California transformation by the fiscal year end.",
     "evidence_ids": [
       "EC4320211-u0053",
@@ -1197,7 +1293,10 @@
       "EC4320211-u0054",
       "EC4320211-u0070"
     ],
-    "percent": 18.15330471768627
+    "percent": 18.15330471768627,
+    "question_body": "Had all the California store conversions finished, or were some still being worked on?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-MO-completion"
   },
   {
     "id": "P-DH-documents",
@@ -1205,7 +1304,7 @@
     "meeting": "EC4344338",
     "dataset": "ConEC/Earnings21",
     "requester": "S2",
-    "question": "Where did they say the slides and financial reconciliations were posted?",
+    "question": "Assistant, where did they say the slides and financial reconciliations were posted?",
     "reference_answer": "On Danaher’s investor website under quarterly earnings.",
     "evidence_ids": [
       "EC4344338-u0013",
@@ -1228,7 +1327,10 @@
       "EC4344338-u0013",
       "EC4344338-u0014"
     ],
-    "percent": 10.894214949530882
+    "percent": 10.894214949530882,
+    "question_body": "Where did they say the slides and financial reconciliations were posted?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-DH-documents"
   },
   {
     "id": "P-DH-replay",
@@ -1236,7 +1338,7 @@
     "meeting": "EC4344338",
     "dataset": "ConEC/Earnings21",
     "requester": "S2",
-    "question": "Until what date did they say the call replay would be available?",
+    "question": "Assistant, until what date did they say the call replay would be available?",
     "reference_answer": "May twenty-first, twenty twenty.",
     "evidence_ids": [
       "EC4344338-u0016"
@@ -1257,7 +1359,10 @@
     "source_ids": [
       "EC4344338-u0016"
     ],
-    "percent": 21.8990441240511
+    "percent": 21.8990441240511,
+    "question_body": "Until what date did they say the call replay would be available?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-DH-replay"
   },
   {
     "id": "P-DH-cepheid",
@@ -1265,7 +1370,7 @@
     "meeting": "EC4344338",
     "dataset": "ConEC/Earnings21",
     "requester": "S5",
-    "question": "What was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
+    "question": "Assistant, what was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
     "reference_answer": "Approximately six million tests per quarter going forward, versus approximately two million test cartridges shipped so far. The cumulative shipment and quarterly target are different measures.",
     "evidence_ids": [
       "EC4344338-u0050",
@@ -1288,7 +1393,10 @@
       "EC4344338-u0050",
       "EC4344338-u0051"
     ],
-    "percent": 78.13627158033918
+    "percent": 78.13627158033918,
+    "question_body": "What was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-DH-cepheid"
   },
   {
     "id": "M-IS1000b-P075-reminder-2",
@@ -1297,7 +1405,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "Did we agree on the target group for the remote control?",
+    "question": "Assistant, did we agree on the target group for the remote control?",
     "reference_answer": "No target group had been selected in the available transcript. B described reaching that decision as a goal for this meeting; the statement about lunch was a plan, not evidence that the meeting had ended.",
     "evidence_ids": [
       "IS1000b-u0035",
@@ -1325,7 +1433,10 @@
       "IS1000b-u0042",
       "IS1000b-u0046"
     ],
-    "percent": 18.878257155061938
+    "percent": 18.878257155061938,
+    "question_body": "Did we agree on the target group for the remote control?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-target-unknown"
   },
   {
     "id": "M-TS3003b-P05-reminder-1",
@@ -1334,7 +1445,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "D",
-    "question": "Can we confirm the remote control aesthetics feedback is based on 100 test subjects?",
+    "question": "Assistant, can we confirm the remote control aesthetics feedback is based on 100 test subjects?",
     "reference_answer": "D said there were one hundred test subjects.",
     "evidence_ids": [
       "TS3003b-u0046",
@@ -1360,7 +1471,10 @@
       "TS3003b-u0047",
       "TS3003b-u0048"
     ],
-    "percent": 13.68001248696447
+    "percent": 13.68001248696447,
+    "question_body": "Can we confirm the remote control aesthetics feedback is based on 100 test subjects?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-sample"
   },
   {
     "id": "M-EC4344338-P075-reminder-1",
@@ -1369,7 +1483,7 @@
     "meeting": "EC4344338",
     "dataset": "ConEC/Earnings21",
     "requester": "S1",
-    "question": "How many diagnostic tests has IDT enabled so far?",
+    "question": "Assistant, how many diagnostic tests has IDT enabled so far?",
     "reference_answer": "IDT had shipped kits enabling more than thirty million diagnostic tests.",
     "evidence_ids": [
       "EC4344338-u0046",
@@ -1393,7 +1507,10 @@
       "EC4344338-u0046",
       "EC4344338-u0047"
     ],
-    "percent": 16.416841438367115
+    "percent": 16.416841438367115,
+    "question_body": "How many diagnostic tests has IDT enabled so far?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-DH-idt"
   },
   {
     "id": "M-EC4344338-P10-reminder-1",
@@ -1402,7 +1519,7 @@
     "meeting": "EC4344338",
     "dataset": "ConEC/Earnings21",
     "requester": "S2",
-    "question": "When will the replay of this call be available until?",
+    "question": "Assistant, when will the replay of this call be available until?",
     "reference_answer": "May twenty-first, twenty twenty.",
     "evidence_ids": [
       "EC4344338-u0016"
@@ -1424,7 +1541,10 @@
     "source_ids": [
       "EC4344338-u0016"
     ],
-    "percent": 21.8990441240511
+    "percent": 21.8990441240511,
+    "question_body": "When will the replay of this call be available until?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-DH-replay"
   },
   {
     "id": "M-EC4320211-P05-reminder-2",
@@ -1433,7 +1553,7 @@
     "meeting": "EC4320211",
     "dataset": "ConEC/Earnings21",
     "requester": "S2",
-    "question": "How did mild weather affect our Northern markets in January?",
+    "question": "Assistant, how did mild weather affect our Northern markets in January?",
     "reference_answer": "Management linked the continued mild weather to January comparable-store sales being down four percent.",
     "evidence_ids": [
       "EC4320211-u0025",
@@ -1459,7 +1579,10 @@
       "EC4320211-u0026",
       "EC4320211-u0027"
     ],
-    "percent": 9.217103164845117
+    "percent": 9.217103164845117,
+    "question_body": "How did mild weather affect our Northern markets in January?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "Q-MO-weather"
   },
   {
     "id": "M-EC4320211-P10-reminder-1",
@@ -1468,7 +1591,7 @@
     "meeting": "EC4320211",
     "dataset": "ConEC/Earnings21",
     "requester": "S2",
-    "question": "Are the California stores fully rebranded under the Tire Choice banner?",
+    "question": "Assistant, are the California stores fully rebranded under the Tire Choice banner?",
     "reference_answer": "They were substantially completed, not all declared fully complete. Management still planned to finalize the California transformation by the fiscal year end.",
     "evidence_ids": [
       "EC4320211-u0053",
@@ -1494,7 +1617,10 @@
       "EC4320211-u0054",
       "EC4320211-u0070"
     ],
-    "percent": 18.15330471768627
+    "percent": 18.15330471768627,
+    "question_body": "Are the California stores fully rebranded under the Tire Choice banner?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-MO-completion"
   },
   {
     "id": "M-EC4320211-P10-reminder-2",
@@ -1503,7 +1629,7 @@
     "meeting": "EC4320211",
     "dataset": "ConEC/Earnings21",
     "requester": "S2",
-    "question": "When will the tire category management and pricing system rollout begin?",
+    "question": "Assistant, when will the tire category management and pricing system rollout begin?",
     "reference_answer": "The first quarter of fiscal 2021.",
     "evidence_ids": [
       "EC4320211-u0034"
@@ -1525,7 +1651,10 @@
     "source_ids": [
       "EC4320211-u0034"
     ],
-    "percent": 18.15330471768627
+    "percent": 18.15330471768627,
+    "question_body": "When will the tire category management and pricing system rollout begin?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-MO-pricing"
   },
   {
     "id": "M-P-TS-dock-anchored_base-1",
@@ -1534,7 +1663,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "How would the docking station help if the remote gets lost?",
+    "question": "Assistant, how would the docking station help if the remote gets lost?",
     "reference_answer": "D proposed a button on the docking station that would signal the remote to beep, so the remote could be found in the room.",
     "evidence_ids": [
       "TS3003b-u0104",
@@ -1562,7 +1691,10 @@
       "TS3003b-u0107",
       "TS3003b-u0108"
     ],
-    "percent": 26.39997647383506
+    "percent": 26.39997647383506,
+    "question_body": "How would the docking station help if the remote gets lost?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-dock-mechanism"
   },
   {
     "id": "M-P-IS-teletext-usage-anchored_rewrite-1",
@@ -1571,7 +1703,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "What did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
+    "question": "Assistant, what did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
     "reference_answer": "A reported fourteen teletext uses per hour, compared with 168 channel selections. B later relayed the concern that teletext was being used less and questioned its place on the remote. The survey shows lower usage than channel selection, not a measured decline over time.",
     "evidence_ids": [
       "IS1000b-u0085",
@@ -1614,7 +1746,10 @@
       "IS1000b-u0480",
       "IS1000b-u0482"
     ],
-    "percent": 79.25288338316959
+    "percent": 79.25288338316959,
+    "question_body": "What did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "Q-IS-teletext-comparison"
   },
   {
     "id": "M-P-EN-handoff-concise_base",
@@ -1623,7 +1758,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "When was the GUI and wiring expected to be ready?",
+    "question": "Assistant, when was the GUI and wiring expected to be ready?",
     "reference_answer": "D expected at least a GUI by tomorrow and hoped to connect it tomorrow morning; this was an expectation, not a confirmed delivery.",
     "evidence_ids": [
       "EN2002b-u0349",
@@ -1647,7 +1782,10 @@
       "EN2002b-u0349",
       "EN2002b-u0352"
     ],
-    "percent": 77.5198917468138
+    "percent": 77.5198917468138,
+    "question_body": "When was the GUI and wiring expected to be ready?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-EN-handoff"
   },
   {
     "id": "M-P-EN-same-person-concise_base",
@@ -1656,7 +1794,7 @@
     "meeting": "EN2002b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "Who said they could put everyone's parts together?",
+    "question": "Assistant, who said they could put everyone's parts together?",
     "reference_answer": "D offered to combine everyone’s sections.",
     "evidence_ids": [
       "EN2002b-u0083"
@@ -1678,7 +1816,10 @@
     "source_ids": [
       "EN2002b-u0083"
     ],
-    "percent": 26.376640950192566
+    "percent": 26.376640950192566,
+    "question_body": "Who said they could put everyone's parts together?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "Q-EN-compiler"
   },
   {
     "id": "M-P-ES-voice-open-concise_base",
@@ -1687,7 +1828,7 @@
     "meeting": "ES2002b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "Did the team decide to include voice recognition?",
+    "question": "Assistant, did the team decide to include voice recognition?",
     "reference_answer": "The feature was voice recognition. B proposed including it if possible, but A argued against committing to a technology before deciding the functions, so it was not an unconditional commitment.",
     "evidence_ids": [
       "ES2002b-u0414",
@@ -1719,7 +1860,10 @@
       "ES2002b-u0433",
       "ES2002b-u0440"
     ],
-    "percent": 79.95922840859272
+    "percent": 79.95922840859272,
+    "question_body": "Did the team decide to include voice recognition?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-ES-voice-open"
   },
   {
     "id": "M-P-IS-teletext-usage-concise_base",
@@ -1728,7 +1872,7 @@
     "meeting": "IS1000b",
     "dataset": "AMI",
     "requester": "C",
-    "question": "How frequently was teletext being used?",
+    "question": "Assistant, how frequently was teletext being used?",
     "reference_answer": "A reported fourteen uses per hour.",
     "evidence_ids": [
       "IS1000b-u0088"
@@ -1750,7 +1894,10 @@
     "source_ids": [
       "IS1000b-u0088"
     ],
-    "percent": 79.25288338316959
+    "percent": 79.25288338316959,
+    "question_body": "How frequently was teletext being used?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-IS-teletext-usage"
   },
   {
     "id": "M-P-TS-dock-concise_base",
@@ -1759,7 +1906,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "What percentage of people said their remote got lost in the room?",
+    "question": "Assistant, what percentage of people said their remote got lost in the room?",
     "reference_answer": "Fifty percent said their remote tended to get lost.",
     "evidence_ids": [
       "TS3003b-u0060"
@@ -1781,7 +1928,10 @@
     "source_ids": [
       "TS3003b-u0060"
     ],
-    "percent": 26.39997647383506
+    "percent": 26.39997647383506,
+    "question_body": "What percentage of people said their remote got lost in the room?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "P-TS-dock"
   },
   {
     "id": "M-P-TS-target-change-concise_base",
@@ -1790,7 +1940,7 @@
     "meeting": "TS3003b",
     "dataset": "AMI",
     "requester": "B",
-    "question": "Which age group did the new requirements specify?",
+    "question": "Assistant, which age group did the new requirements specify?",
     "reference_answer": "The later requirements specified customers aged forty-plus.",
     "evidence_ids": [
       "TS3003b-u0271",
@@ -1814,6 +1964,9 @@
       "TS3003b-u0271",
       "TS3003b-u0275"
     ],
-    "percent": 77.90734762849472
+    "percent": 77.90734762849472,
+    "question_body": "Which age group did the new requirements specify?",
+    "wake_phrase": "Assistant",
+    "distinct_question_id": "Q-TS-current-audience"
   }
 ]

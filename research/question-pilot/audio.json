@@ -1,10 +1,12 @@
 {
-  "lead": "Ten question-insertion clips are ready for listening. Eight match the target text exactly in Parakeet after case and punctuation normalization; one has a spoken contraction and one has an article disagreement between ASR systems. All ten are closer to their own held-out voice than to the other tested requester in the same meeting.",
+  "wake_phrase": "Assistant",
+  "wake_phrase_recognized_in_all_clips": true,
+  "lead": "Ten question-insertion clips are ready for listening. All ten include the spoken Assistant cue in both ASR systems. Eight match the full target text exactly in Parakeet after case and punctuation normalization; one has a spoken contraction and one has a filler-word disagreement between ASR systems. All ten are closer to their own held-out voice than to the other tested requester in the same meeting.",
   "clips": [
     {
       "id": "P-EN-timeline",
       "question_id": "P-EN-timeline",
-      "question": "Was that timeline updated, or copied from the earlier documents?",
+      "question": "Assistant, was that timeline updated, or copied from the earlier documents?",
       "meeting": "EN2002b",
       "requester": "C",
       "voice": "EN2002b-C",
@@ -12,22 +14,22 @@
       "context_start_seconds": 285.62,
       "context_end_seconds": 308.62,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 21.308375,
+      "synthetic_speech_playback_end_seconds": 21.68,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 21.558375,
-      "source_clock_shift_seconds": 3.558375,
+      "inserted_interval_end_seconds": 21.93,
+      "source_clock_shift_seconds": 3.93,
       "prefix_suffix_exact": true,
       "setting": {
-        "id": "primary-default",
-        "ref": "primary",
+        "id": "alternate-slow-cfg3",
+        "ref": "alternate",
         "channel": "headset",
-        "nfe_step": 32,
-        "cfg_strength": 2,
-        "speed": 1.0
+        "nfe_step": 48,
+        "cfg_strength": 3,
+        "speed": 0.65
       },
-      "selection_reason": "Remove the recognized reference-continuation prefix before an otherwise word-exact question, using ASR word timestamps. All final processed words must pass a fresh ASR check.",
-      "prefix_crop_seconds": 0.765,
-      "prefix_removed": "type",
+      "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
+      "prefix_crop_seconds": 0,
+      "prefix_removed": "",
       "room_tone": {
         "source_start_seconds": 251.0,
         "source_end_seconds": 251.88,
@@ -35,16 +37,22 @@
         "peak_dbfs": -38.66773144096018,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "0f002f5e3728872bc8f186a7ccd0ebeefcaecdbfa95e084291fcbf5983c6f3f5",
+        "public_matched": "7ab9a9d81d5691584d1170298b9c67c0615d20838700c229d63c18a69e7e8351",
+        "public_reference": "bc09d5d4af075fe0c8e0006048a849291dd326d4413572442faae95153cf89c0"
+      },
       "processed_asr": {
-        "text": "Was that timeline updated or copied from the earlier documents?",
+        "text": "Assistant, was that timeline updated or copied from the earlier documents?",
         "wer": 0.0
       },
-      "whisper_text": "was that timeline updated or copied from the earlier documents?",
+      "whisper_text": "Assistant was that timeline updated and copied from the earlier documents.",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.3488893210887909,
-        "target_minus_same_meeting_other": 0.4534938782453537,
-        "target_minus_highest_other": 0.2693188562989235
+        "target_cosine": 0.5030779838562012,
+        "target_minus_same_meeting_other": 0.46126091480255127,
+        "target_minus_highest_other": 0.3396013081073761
       },
       "public_injected": "audio/P-EN-timeline--injected.wav",
       "public_matched": "audio/P-EN-timeline--question.wav",
@@ -53,7 +61,7 @@
     {
       "id": "P-EN-same-person",
       "question_id": "P-EN-same-person",
-      "question": "Was the person taking notes also going to put our sections together?",
+      "question": "Assistant, was the person taking notes also going to put our sections together?",
       "meeting": "EN2002b",
       "requester": "B",
       "voice": "EN2002b-B",
@@ -61,10 +69,10 @@
       "context_start_seconds": 453.33,
       "context_end_seconds": 476.33,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 21.544,
+      "synthetic_speech_playback_end_seconds": 22.12,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 21.794,
-      "source_clock_shift_seconds": 3.794,
+      "inserted_interval_end_seconds": 22.37,
+      "source_clock_shift_seconds": 4.37,
       "prefix_suffix_exact": true,
       "setting": {
         "id": "alternate-calm",
@@ -84,16 +92,22 @@
         "peak_dbfs": -53.532016884449256,
         "search_lookback_seconds": 90
       },
-      "processed_asr": {
-        "text": "Was the person taking notes also gonna put our sections together?",
-        "wer": 0.16666666666666666
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "40442af33f15906d7838af46f6eb1302894da6f2d68c25932a0054ab31ec7b71",
+        "public_matched": "83faae353cbde00483adf2e0214d815945a7c6e02df57f6ab3d7e240615ed3e3",
+        "public_reference": "c12c06eac90b8eca83c58e34e711c6c08c6f8f2ce626ced6843ef66de08d045e"
       },
-      "whisper_text": "Was the person taking notes also going to put our sections together?",
+      "processed_asr": {
+        "text": "Assistant was the person taking notes also gonna put our sections together.",
+        "wer": 0.15384615384615385
+      },
+      "whisper_text": "Assistant was the person taking notes also going to put our sections together.",
       "wording_note": "Parakeet writes “gonna” for “going to,” a spoken contraction with the same meaning. The strict word comparison counts this as two edits.",
       "speaker_check": {
-        "target_cosine": 0.434796005487442,
-        "target_minus_same_meeting_other": 0.3385735899209976,
-        "target_minus_highest_other": 0.2525634318590164
+        "target_cosine": 0.457222044467926,
+        "target_minus_same_meeting_other": 0.3601996451616287,
+        "target_minus_highest_other": 0.26160135865211487
       },
       "public_injected": "audio/P-EN-same-person--injected.wav",
       "public_matched": "audio/P-EN-same-person--question.wav",
@@ -102,7 +116,7 @@
     {
       "id": "P-EN-handoff",
       "question_id": "P-EN-handoff",
-      "question": "When did the person putting our sections together expect to have the search interface ready?",
+      "question": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
       "meeting": "EN2002b",
       "requester": "C",
       "voice": "EN2002b-C",
@@ -110,10 +124,10 @@
       "context_start_seconds": 1367.22,
       "context_end_seconds": 1390.22,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 21.268,
+      "synthetic_speech_playback_end_seconds": 21.693375,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 21.518,
-      "source_clock_shift_seconds": 3.518,
+      "inserted_interval_end_seconds": 21.943375,
+      "source_clock_shift_seconds": 3.943375,
       "prefix_suffix_exact": true,
       "setting": {
         "id": "alternate-calm",
@@ -133,16 +147,22 @@
         "peak_dbfs": -36.904081637711876,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "0b042e269f7607fb04dc41d295be1f1c81112be7434b792072fcb213cf655df6",
+        "public_matched": "3d9f134738401ffb2b0d550f1712e3214ce715074411403568233a23da32e255",
+        "public_reference": "bc09d5d4af075fe0c8e0006048a849291dd326d4413572442faae95153cf89c0"
+      },
       "processed_asr": {
-        "text": "When did the person putting our sections together expect to have the search interface ready?",
+        "text": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
         "wer": 0.0
       },
-      "whisper_text": "When did the person putting our sections together expect to have a search interface ready?",
+      "whisper_text": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.4477427303791046,
-        "target_minus_same_meeting_other": 0.38490167260169983,
-        "target_minus_highest_other": 0.29034653306007385
+        "target_cosine": 0.478309690952301,
+        "target_minus_same_meeting_other": 0.40690237283706665,
+        "target_minus_highest_other": 0.2397870123386383
       },
       "public_injected": "audio/P-EN-handoff--injected.wav",
       "public_matched": "audio/P-EN-handoff--question.wav",
@@ -151,7 +171,7 @@
     {
       "id": "P-ES-slogan",
       "question_id": "P-ES-slogan",
-      "question": "Did they want the actual slogan on the remote, or just the idea behind it?",
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
       "meeting": "ES2002b",
       "requester": "C",
       "voice": "ES2002b-C",
@@ -159,18 +179,18 @@
       "context_start_seconds": 290.77,
       "context_end_seconds": 313.77,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 21.521375,
+      "synthetic_speech_playback_end_seconds": 21.86,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 21.771375,
-      "source_clock_shift_seconds": 3.771375,
+      "inserted_interval_end_seconds": 22.11,
+      "source_clock_shift_seconds": 4.11,
       "prefix_suffix_exact": true,
       "setting": {
-        "id": "primary-calm",
+        "id": "primary-default",
         "ref": "primary",
         "channel": "headset",
-        "nfe_step": 48,
-        "cfg_strength": 1.5,
-        "speed": 0.9
+        "nfe_step": 32,
+        "cfg_strength": 2,
+        "speed": 1.0
       },
       "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
       "prefix_crop_seconds": 0,
@@ -182,16 +202,22 @@
         "peak_dbfs": -52.35645687338553,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "d8f871a9fea657eda4557bfcc5e2ff166204e5bb2eba8b084a689c8697ce6b15",
+        "public_matched": "90ac671e3668eb4e5b8992bdbed6ea1548b5d6e7965dc1e2dfe19fdff7246a7e",
+        "public_reference": "975d00137a7ab203e76ec3841e23a1ef7476ba30fb169257c3367fe583053968"
+      },
       "processed_asr": {
-        "text": "Did they want the actual slogan on the remote, or just the idea behind it?",
+        "text": "Assistant, did they want the actual slogan on the remote or just the idea behind it?",
         "wer": 0.0
       },
-      "whisper_text": "Did they want the actual slogan on the remote or just the idea behind it?",
+      "whisper_text": "assistant did they want the actual slogan on the remote or just the idea behind it",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.5826635956764221,
-        "target_minus_same_meeting_other": 0.3276253342628479,
-        "target_minus_highest_other": 0.3276253342628479
+        "target_cosine": 0.6474781036376953,
+        "target_minus_same_meeting_other": 0.4052610397338867,
+        "target_minus_highest_other": 0.4052610397338867
       },
       "public_injected": "audio/P-ES-slogan--injected.wav",
       "public_matched": "audio/P-ES-slogan--question.wav",
@@ -200,7 +226,7 @@
     {
       "id": "P-ES-numbers",
       "question_id": "P-ES-numbers",
-      "question": "Were the channel number buttons optional, or did we say they were essential?",
+      "question": "Assistant, were the channel number buttons optional, or did we say they were essential?",
       "meeting": "ES2002b",
       "requester": "D",
       "voice": "ES2002b-D",
@@ -208,14 +234,14 @@
       "context_start_seconds": 538.02,
       "context_end_seconds": 561.02,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 21.9266875,
+      "synthetic_speech_playback_end_seconds": 23.345375,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 22.1766875,
-      "source_clock_shift_seconds": 4.1766875,
+      "inserted_interval_end_seconds": 23.595375,
+      "source_clock_shift_seconds": 5.595375,
       "prefix_suffix_exact": true,
       "setting": {
-        "id": "alternate-calm",
-        "ref": "alternate",
+        "id": "primary-calm",
+        "ref": "primary",
         "channel": "headset",
         "nfe_step": 48,
         "cfg_strength": 1.5,
@@ -231,16 +257,22 @@
         "peak_dbfs": -53.16234877056899,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "7909148ae20df03dcd0a7e19c9b6b7cf3a2c4e5b2f6d68af39277052dc26a025",
+        "public_matched": "2c1251fa83265d42b0e194e00c36004baacf265856c2eafbca04fb0cf91b56ff",
+        "public_reference": "f48b68a9ecb044b275108aa0d3c3f5e06d7d9a6d52532d852c19849ef6e52de8"
+      },
       "processed_asr": {
-        "text": "Were the channel number buttons optional or did we say they were essential?",
+        "text": "Assistant, were the channel number buttons optional? Or did we say they were essential?",
         "wer": 0.0
       },
-      "whisper_text": "or the channel number buttons optional or did we say they were essential?",
+      "whisper_text": "assistant were the channel number buttons optional or did we say they were essential",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.6514586806297302,
-        "target_minus_same_meeting_other": 0.5845395103096962,
-        "target_minus_highest_other": 0.5659846812486649
+        "target_cosine": 0.6474730968475342,
+        "target_minus_same_meeting_other": 0.6118068993091583,
+        "target_minus_highest_other": 0.541446253657341
       },
       "public_injected": "audio/P-ES-numbers--injected.wav",
       "public_matched": "audio/P-ES-numbers--question.wav",
@@ -249,7 +281,7 @@
     {
       "id": "P-ES-voice-open",
       "question_id": "P-ES-voice-open",
-      "question": "Did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
+      "question": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
       "meeting": "ES2002b",
       "requester": "C",
       "voice": "ES2002b-C",
@@ -257,10 +289,10 @@
       "context_start_seconds": 1805.87,
       "context_end_seconds": 1828.87,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 22.7066875,
+      "synthetic_speech_playback_end_seconds": 23.5026875,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 22.9566875,
-      "source_clock_shift_seconds": 4.9566875,
+      "inserted_interval_end_seconds": 23.7526875,
+      "source_clock_shift_seconds": 5.7526875,
       "prefix_suffix_exact": true,
       "setting": {
         "id": "primary-default",
@@ -280,16 +312,22 @@
         "peak_dbfs": -26.059919478388842,
         "search_lookback_seconds": 600
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "4a69219f0d2aea1331309f2d34b5e5746bf28f81bfe39fe18014313b100649e3",
+        "public_matched": "dd558bd275641c2f5d721dacb25bbfc8d7c4ddce8c23ab2c7d09235cb6ad791d",
+        "public_reference": "975d00137a7ab203e76ec3841e23a1ef7476ba30fb169257c3367fe583053968"
+      },
       "processed_asr": {
-        "text": "Did we commit to the feature adults, said they'd pay extra for or were we still keeping our options open?",
+        "text": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
         "wer": 0.0
       },
-      "whisper_text": "Did we commit to the feature adults that they pay extra for or were we still keeping our options open?",
+      "whisper_text": "Assistant did we commit to the feature adult said they'd pay extra for or were we still keeping our options open?",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.6728283166885376,
-        "target_minus_same_meeting_other": 0.4912439286708832,
-        "target_minus_highest_other": 0.4912439286708832
+        "target_cosine": 0.6750403642654419,
+        "target_minus_same_meeting_other": 0.4175885021686554,
+        "target_minus_highest_other": 0.3921257555484772
       },
       "public_injected": "audio/P-ES-voice-open--injected.wav",
       "public_matched": "audio/P-ES-voice-open--question.wav",
@@ -298,7 +336,7 @@
     {
       "id": "P-IS-learning",
       "question_id": "P-IS-learning",
-      "question": "What proportion said a new remote took too long to learn?",
+      "question": "Assistant, what proportion said a new remote took too long to learn?",
       "meeting": "IS1000b",
       "requester": "D",
       "voice": "IS1000b-D",
@@ -306,18 +344,18 @@
       "context_start_seconds": 582.64,
       "context_end_seconds": 605.64,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 20.765375,
+      "synthetic_speech_playback_end_seconds": 22.069375,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 21.015375,
-      "source_clock_shift_seconds": 3.015375,
+      "inserted_interval_end_seconds": 22.319375,
+      "source_clock_shift_seconds": 4.319375,
       "prefix_suffix_exact": true,
       "setting": {
-        "id": "primary-default",
+        "id": "primary-calm",
         "ref": "primary",
         "channel": "headset",
-        "nfe_step": 32,
-        "cfg_strength": 2,
-        "speed": 1.0
+        "nfe_step": 48,
+        "cfg_strength": 1.5,
+        "speed": 0.9
       },
       "selection_reason": "Highest held-out target similarity among ASR wording-correct variants.",
       "prefix_crop_seconds": 0,
@@ -329,16 +367,22 @@
         "peak_dbfs": -21.40314331067492,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "245612296f526f34a1da1ed7c6f0a9b229b0a681a5192eb6400588e61ab5115b",
+        "public_matched": "9d5a0516c331d9f78f4e63131c6e9b95331022c17741602911f82fa43d30c003",
+        "public_reference": "e7b2e7604d39d0de389c1cbcf5bbb96e94ac7d30fae75bce5e7259d3f92690aa"
+      },
       "processed_asr": {
-        "text": "What proportion said a new remote took too long to learn?",
+        "text": "Assistant, what proportion said a new remote took too long to learn?",
         "wer": 0.0
       },
-      "whisper_text": "what proportions said a new remote took too long to learn.",
+      "whisper_text": "assistant, what proportions at a new remote took too long to learn.",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.42734357714653015,
-        "target_minus_same_meeting_other": 0.528733029961586,
-        "target_minus_highest_other": 0.3589865192770958
+        "target_cosine": 0.4738825559616089,
+        "target_minus_same_meeting_other": 0.5623901560902596,
+        "target_minus_highest_other": 0.40767164528369904
       },
       "public_injected": "audio/P-IS-learning--injected.wav",
       "public_matched": "audio/P-IS-learning--question.wav",
@@ -347,7 +391,7 @@
     {
       "id": "P-IS-teletext-usage",
       "question_id": "P-IS-teletext-usage",
-      "question": "How much were people using the function the account manager was questioning whether to include?",
+      "question": "Assistant, how much were people using the function the account manager was questioning whether to include?",
       "meeting": "IS1000b",
       "requester": "C",
       "voice": "IS1000b-C",
@@ -355,10 +399,10 @@
       "context_start_seconds": 1837.31,
       "context_end_seconds": 1860.31,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 24.961375,
+      "synthetic_speech_playback_end_seconds": 25.792,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 25.211375,
-      "source_clock_shift_seconds": 7.211375,
+      "inserted_interval_end_seconds": 26.042,
+      "source_clock_shift_seconds": 8.042,
       "prefix_suffix_exact": true,
       "setting": {
         "id": "alternate-calm",
@@ -378,16 +422,22 @@
         "peak_dbfs": -29.993423571413537,
         "search_lookback_seconds": 90
       },
-      "processed_asr": {
-        "text": "How much were people using the the function the account manager was questioning whether to include",
-        "wer": 0.06666666666666667
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "6b0b92c5db1a7ead23c01c39def876319ee6bb5e2a14946269915a441f4ac53a",
+        "public_matched": "4409ad4a9e0117f0bfc4f18bc5b1bbaac8d6dad9e3e44ef3b0feeeaf0a67d616",
+        "public_reference": "320cd611312e4dc3384a98ab1b3f9413e4a1712cdf200023e1d6a44e3d63fb1f"
       },
-      "whisper_text": "how much were people using the function, the account manager was questioning whether to include",
-      "wording_note": "Parakeet reports a repeated “the”; Whisper does not. Please check this wording difference by listening.",
+      "processed_asr": {
+        "text": "Assistant, how much were people using the function? The account manager was questioning whether to uh include",
+        "wer": 0.0625
+      },
+      "whisper_text": "assistant, how much were people using the function, the account manager was questioning whether to include",
+      "wording_note": "Parakeet reports an extra “uh”; Whisper does not. Please check this small speech difference by listening.",
       "speaker_check": {
-        "target_cosine": 0.7042754888534546,
-        "target_minus_same_meeting_other": 0.7599496692419052,
-        "target_minus_highest_other": 0.6012657061219215
+        "target_cosine": 0.707271933555603,
+        "target_minus_same_meeting_other": 0.8002632781863213,
+        "target_minus_highest_other": 0.6120837181806564
       },
       "public_injected": "audio/P-IS-teletext-usage--injected.wav",
       "public_matched": "audio/P-IS-teletext-usage--question.wav",
@@ -396,7 +446,7 @@
     {
       "id": "P-TS-time",
       "question_id": "P-TS-time",
-      "question": "How long were we allowing for each presentation?",
+      "question": "Assistant, how long were we allowing for each presentation?",
       "meeting": "TS3003b",
       "requester": "D",
       "voice": "TS3003b-D",
@@ -404,10 +454,10 @@
       "context_start_seconds": 284.37,
       "context_end_seconds": 307.37,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 20.685375,
+      "synthetic_speech_playback_end_seconds": 21.632,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 20.935375,
-      "source_clock_shift_seconds": 2.935375,
+      "inserted_interval_end_seconds": 21.882,
+      "source_clock_shift_seconds": 3.882,
       "prefix_suffix_exact": true,
       "setting": {
         "id": "primary-default",
@@ -427,16 +477,22 @@
         "peak_dbfs": -63.86461280451598,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "159b0501b59d94a27fec8b5146d48241004a063cb027d402ee8436c8b17dfe8c",
+        "public_matched": "c30c742ec48bcf5c176068cc6a38f2c4d9351e526176ae862a116d85dfe8fa72",
+        "public_reference": "c4388cc21712be8d6bb8cc90b5ed1d186f31974abdab9c2505f80040806608bc"
+      },
       "processed_asr": {
-        "text": "How long were we allowing for each presentation?",
+        "text": "Assistant, how long were we allowing for each presentation?",
         "wer": 0.0
       },
-      "whisper_text": "How long were we allowing for each presentation?",
+      "whisper_text": "assistant, how long were we allowing for each presentation?",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.7554930448532104,
-        "target_minus_same_meeting_other": 0.8084564916789532,
-        "target_minus_highest_other": 0.6167830228805542
+        "target_cosine": 0.7579516172409058,
+        "target_minus_same_meeting_other": 0.7983919754624367,
+        "target_minus_highest_other": 0.6209127008914948
       },
       "public_injected": "audio/P-TS-time--injected.wav",
       "public_matched": "audio/P-TS-time--question.wav",
@@ -445,7 +501,7 @@
     {
       "id": "P-TS-target-change",
       "question_id": "P-TS-target-change",
-      "question": "How did the target audience change from the marketing presentation to the new requirements?",
+      "question": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
       "meeting": "TS3003b",
       "requester": "B",
       "voice": "TS3003b-B",
@@ -453,10 +509,10 @@
       "context_start_seconds": 1703.99,
       "context_end_seconds": 1726.99,
       "synthetic_speech_playback_start_seconds": 18.18,
-      "synthetic_speech_playback_end_seconds": 23.68,
+      "synthetic_speech_playback_end_seconds": 24.8,
       "inserted_interval_start_seconds": 18.0,
-      "inserted_interval_end_seconds": 23.93,
-      "source_clock_shift_seconds": 5.93,
+      "inserted_interval_end_seconds": 25.05,
+      "source_clock_shift_seconds": 7.05,
       "prefix_suffix_exact": true,
       "setting": {
         "id": "alternate-calm",
@@ -476,23 +532,29 @@
         "peak_dbfs": -66.78717351808073,
         "search_lookback_seconds": 90
       },
+      "wake_phrase": "Assistant",
+      "audio_hashes": {
+        "public_injected": "b501e179f70377cba797bca086ae7b01b755f5f2baa0877a0e8013375ed0e160",
+        "public_matched": "674c0cc105c500d177adecbe9f81d3744614d3ba2ca4b3cee17805b7d72f307a",
+        "public_reference": "058851d04d27ca5991ba61e247574edf8255cdb3a4d36b9473ac484a3cb869db"
+      },
       "processed_asr": {
-        "text": "How did the target audience change from the marketing presentation to the new requirements?",
+        "text": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
         "wer": 0.0
       },
-      "whisper_text": "How did the target audience change from the marketing presentation to the new requirements?",
+      "whisper_text": "assistant, how did the target audience change from the marketing presentation to the new requirements?",
       "wording_note": "Parakeet matches the question after case and punctuation normalization.",
       "speaker_check": {
-        "target_cosine": 0.6938343048095703,
-        "target_minus_same_meeting_other": 0.7780398279428482,
-        "target_minus_highest_other": 0.5344437509775162
+        "target_cosine": 0.6682482957839966,
+        "target_minus_same_meeting_other": 0.7629952132701874,
+        "target_minus_highest_other": 0.5445669814944267
       },
       "public_injected": "audio/P-TS-target-change--injected.wav",
       "public_matched": "audio/P-TS-target-change--question.wav",
       "public_reference": "audio/TS3003b-B--reference.wav"
     }
   ],
-  "variants": 36,
+  "variants": 34,
   "raw_variants_strict_wording_matches": 19,
   "processed_strict_wording_matches": 8,
   "wording_policy": "Case and punctuation are ignored for the strict word-error calculation. Contractions are described separately, rather than silently changing the score. ASR differences are not treated as verified speech errors.",
@@ -501,25 +563,25 @@
   "local_replay_packet_counts": [
     {
       "meeting": "EN2002b",
-      "packets": 3746,
+      "packets": 3749,
       "packet_seconds": 0.48,
       "source_pcm_recovered_exactly": true
     },
     {
       "meeting": "ES2002b",
-      "packets": 4777,
+      "packets": 4782,
       "packet_seconds": 0.48,
       "source_pcm_recovered_exactly": true
     },
     {
       "meeting": "IS1000b",
-      "packets": 4904,
+      "packets": 4909,
       "packet_seconds": 0.48,
       "source_pcm_recovered_exactly": true
     },
     {
       "meeting": "TS3003b",
-      "packets": 4624,
+      "packets": 4628,
       "packet_seconds": 0.48,
       "source_pcm_recovered_exactly": true
     }

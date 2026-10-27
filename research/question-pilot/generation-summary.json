@@ -8,7 +8,9 @@
       "drafts": 31,
       "retained": 7,
       "no_question_calls": 30,
-      "incomplete_responses": 0
+      "incomplete_responses": 0,
+      "new_distinct_questions": 3,
+      "alternative_phrasings_kept": 4
     },
     {
       "prompt": "Verified source pairs",
@@ -16,15 +18,19 @@
       "drafts": 15,
       "retained": 1,
       "no_question_calls": 0,
-      "incomplete_responses": 1
+      "incomplete_responses": 1,
+      "new_distinct_questions": 1,
+      "alternative_phrasings_kept": 0
     },
     {
-      "prompt": "Explicit assistant addressee",
+      "prompt": "Tell the model to ask the meeting assistant",
       "calls": 16,
       "drafts": 14,
       "retained": 1,
       "no_question_calls": 0,
-      "incomplete_responses": 2
+      "incomplete_responses": 2,
+      "new_distinct_questions": 1,
+      "alternative_phrasings_kept": 0
     },
     {
       "prompt": "Short few-shot writing prompt",
@@ -32,7 +38,9 @@
       "drafts": 18,
       "retained": 6,
       "no_question_calls": 0,
-      "incomplete_responses": 0
+      "incomplete_responses": 0,
+      "new_distinct_questions": 2,
+      "alternative_phrasings_kept": 4
     }
   ],
   "reviewed_drafts": 78,
@@ -47,5 +55,10 @@
     "An older fact matters; avoid simply restating the immediately preceding recap",
     "Select useful distinct needs and paired simple controls; valid duplicates may be omitted"
   ],
-  "label_corrections": "Question wording preserved for all retained model drafts; one requester corrected and source/reference-answer corrections recorded per question."
+  "label_corrections": "Question wording preserved for all retained model drafts; one requester corrected and source/reference-answer corrections recorded per question.",
+  "distinct_questions": 43,
+  "authored_questions": 36,
+  "model_contributed_questions": 7,
+  "alternative_phrasings": 8,
+  "prompt_clarification": "The third prompt tells the generator that a participant is asking a separate assistant to recall the meeting. It should not ask that assistant to perform a participant’s work or make a new promise. That earlier prompt did not require the literal spoken cue Assistant; the current audio follow-up adds it."
 }

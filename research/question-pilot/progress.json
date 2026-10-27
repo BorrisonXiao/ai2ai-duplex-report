@@ -20,43 +20,49 @@
       "id": "generate",
       "label": "Generate a larger pool with three clearly defined methods",
       "status": "complete",
-      "note": "Four sequential vLLM jobs produced 78 model drafts across full-transcript, source-pair and concise writing prompts. 15 model wordings retained with documented source/role corrections; 36 authored wordings add separate supervised examples.",
+      "note": "Four sequential vLLM jobs produced 78 model drafts across full-transcript, source-pair and concise writing prompts. 15 model saved phrasings retained with documented source/role corrections; 36 authored saved phrasings add separate supervised examples.",
       "updated_utc": "2026-10-26T23:21:34.000990+00:00"
     },
     {
       "id": "review",
       "label": "Check natural wording, requester motivation and required evidence",
       "status": "complete",
-      "note": "51 new wordings cover 39 information needs. Six authored questions require linking separate discussions; one additional model question compares two discussions. Alternatives are counted as wordings, not new needs.",
+      "note": "The report now counts 43 distinct questions, with eight alternative phrasings kept underneath them. Four former topic groups were split because their control questions ask for different facts.",
       "updated_utc": "2026-10-26T23:21:34.060526+00:00"
     },
     {
       "id": "reader",
       "label": "Test the 30B reader, including incomplete evidence and growing context",
       "status": "complete",
-      "note": "197 responses completed and audited: main target correct in 45/51 full-history answers and 20/20 longer-history replays. Source-removal, citation and uncertainty failures remain; difficulty is not certified by reader failure.",
+      "note": "Historical reader controls cover 51 saved texts for 43 distinct questions, without the spoken cue. Main requested facts were correct in 45/51 full-context answers; the cue update did not rerun the reader.",
       "updated_utc": "2026-10-26T23:34:14.657586+00:00"
     },
     {
       "id": "tts",
       "label": "Generate selected questions in the original requester\u2019s voice",
       "status": "complete",
-      "note": "F5-TTS generated 30 variants for ten frozen questions in 26.95 seconds of model work on one L40S 48 GB. All variants still need independent wording and voice checks.",
+      "note": "Thirty cue-bearing outputs plus four targeted slower outputs were generated from the same past requester references; all model weights are unchanged.",
       "updated_utc": "2026-10-26T23:34:30.266053+00:00"
     },
     {
       "id": "audio",
       "label": "Check wording and speaker match; assemble short paused-meeting clips",
       "status": "complete",
-      "note": "Ten review clips and four local 480 ms packet replays complete; source PCM recovers exactly. Eight clips match Parakeet strictly, one has a spoken contraction, one an ASR article disagreement. All ten voice proxies favor the correct tested requester; listening review remains requested.",
+      "note": "All ten cue-bearing clips preserve source context and continuation exactly. Eight strict Parakeet matches, one spoken contraction and one filler discrepancy between ASR models are shown for listening.",
       "updated_utc": "2026-10-26T23:52:28.113354+00:00"
     },
     {
       "id": "publish",
       "label": "Publish questions, results and playable audio; verify the live page",
-      "status": "complete",
-      "note": "Validated 50 HTML pages, responsive filters and all ten main audio players. Pages deployment 40423219182 succeeded and 181 live files matched; final task-list sync and playback verification follow.",
+      "status": "in_progress",
+      "note": "Updating question-level statistics, grouped question cards and spoken-cue audio; deployment verification follows.",
       "updated_utc": "2026-10-27T00:02:14.803018+00:00"
+    },
+    {
+      "id": "wake",
+      "label": "Add and verify the spoken Assistant cue in the latest ten clips",
+      "status": "complete",
+      "note": "The first spoken word is Assistant in all ten final clips, recovered by both Parakeet and CPU Whisper. The timeline cue uses slower synthesis after a disagreement in the first check. Live duplex triggering remains untested."
     }
   ],
   "scope": "New pilot; earlier questions and audio are preserved.",

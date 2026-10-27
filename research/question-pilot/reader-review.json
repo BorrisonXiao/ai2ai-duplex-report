@@ -7,8 +7,8 @@
   "growing_replays": 20,
   "full_history_main_targets_correct": 45,
   "full_history_main_targets_total": 51,
-  "lead": "The run produced 197 responses. Source review found the main requested facts correct in 45 of 51 full-history answers and all 20 longer-history replays of eight stable early questions. This measures the main answer target; additional claims and citations still contain errors.",
-  "table_caption": "Counts are model responses, not retained questions. The checked main target must preserve the requested number, person, period and material uncertainty. “Reports missing facts” counts the reader’s own nonempty missing-information field, not a verified decision to withhold an answer. An invalid citation ID does not exist in that response’s supplied context.",
+  "lead": "Counting one fixed representative for each of the 43 distinct questions, 39 full-history responses recovered the main requested facts. The 20 later replays of eight stable early questions also retained their main facts. These checks used question bodies without the spoken Assistant cue; extra claims and citations can still be wrong.",
+  "table_caption": "Question-level summary: the 43 displayed representatives contribute 173 response tests across these conditions. Alternative phrasings are excluded. A correct main target preserves the requested fact and material uncertainty; it does not certify every extra claim. Missing facts are the reader’s own report. Invalid citation IDs are absent from the supplied context.",
   "table_headers": [
     "Context supplied",
     "Responses",
@@ -19,23 +19,23 @@
   "table_rows": [
     [
       "Full earlier history",
-      51,
-      "45 / 51",
+      43,
+      "39 / 43",
       0,
-      3
+      2
     ],
     [
       "Latest sixty seconds",
-      51,
+      43,
       "Control; not scored",
-      42,
+      35,
       3
     ],
     [
       "Selected answer excerpts removed",
-      43,
+      35,
       "Control; not scored",
-      23,
+      18,
       1
     ],
     [
@@ -129,7 +129,8 @@
     "The extra fact controls cover eight questions: six authored source links, one authored January-versus-quarter comparison and one model evidence comparison. Removing each group from the complete history and trying each group alone produces 32 responses.",
     "No wording is certified as requiring multiple reasoning steps from reader failure alone. Some fact-removal masks leave related mentions elsewhere, and a context containing just one person or feature can make an unsupported guess easy. These small controls expose weaknesses in both the reader and the proposed dependency tests.",
     "Matching citation IDs to the supplied context checks only that those IDs exist. It does not establish that their words support the answer. For example, the reader correctly answered thirty-four percent for learning difficulty in IS1000b but cited the different discussion about repetitive-strain concerns.",
-    "Growing-context results use the original question wording at later cutoffs solely as offline controls. Their main facts stayed correct in this eight-question sample; three of the twenty replay responses nevertheless contained invalid citation IDs. This does not establish general long-context robustness."
+    "Growing-context results use the original question wording at later cutoffs solely as offline controls. Their main facts stayed correct in this eight-question sample; three of the twenty replay responses nevertheless contained invalid citation IDs. This does not establish general long-context robustness.",
+    "These reader tests used 51 saved question texts covering 43 distinct questions, without the spoken Assistant cue. They are historical text controls. The current audio clips include the cue; duplex response timing has not been tested here."
   ],
   "examples": [
     {
@@ -213,5 +214,79 @@
       "2730 to 18554",
       "4 / 4"
     ]
-  ]
+  ],
+  "tested_phrasings": 51,
+  "distinct_questions": 43,
+  "wake_phrase_present_in_reader_tests": false,
+  "all_saved_response_summary": {
+    "caption": "Counts are model responses, not retained questions. The checked main target must preserve the requested number, person, period and material uncertainty. “Reports missing facts” counts the reader’s own nonempty missing-information field, not a verified decision to withhold an answer. An invalid citation ID does not exist in that response’s supplied context.",
+    "headers": [
+      "Context supplied",
+      "Responses",
+      "Checked main target correct",
+      "Reports missing facts",
+      "Has invalid citation IDs"
+    ],
+    "rows": [
+      [
+        "Full earlier history",
+        51,
+        "45 / 51",
+        0,
+        3
+      ],
+      [
+        "Latest sixty seconds",
+        51,
+        "Control; not scored",
+        42,
+        3
+      ],
+      [
+        "Selected answer excerpts removed",
+        43,
+        "Control; not scored",
+        23,
+        1
+      ],
+      [
+        "First fact group removed",
+        8,
+        "Control; not scored",
+        1,
+        2
+      ],
+      [
+        "Second fact group removed",
+        8,
+        "Control; not scored",
+        4,
+        2
+      ],
+      [
+        "First fact group alone",
+        8,
+        "Control; not scored",
+        5,
+        0
+      ],
+      [
+        "Second fact group alone",
+        8,
+        "Control; not scored",
+        2,
+        1
+      ],
+      [
+        "Longer history for stable early questions",
+        20,
+        "20 / 20",
+        0,
+        3
+      ]
+    ],
+    "responses": 197
+  },
+  "representative_response_count": 173,
+  "representative_full_history_correct": 39
 }
