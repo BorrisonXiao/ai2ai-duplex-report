@@ -3,28 +3,28 @@
   "now": [
     {
       "status": "complete",
-      "text": "We have 105 distinct questions with recorded speech and the spoken Assistant cue.",
-      "url": "experiments/question-audio.html"
+      "text": "We have 105 distinct recorded questions and a draft answer for each.",
+      "url": "experiments/question-overview.html"
     },
     {
       "status": "complete",
-      "text": "The 30B reader gives 13 complete answers out of 20 with full transcripts, but only four with our current notes.",
-      "url": "experiments/question-checks.html#reader"
+      "text": "The full-bank what-to-think plan and notation table are ready for discussion.",
+      "url": "what-to-think.html"
     },
     {
       "status": "pending",
-      "text": "Fix the notes and check longer histories before running speech experiments.",
-      "url": "#comparison"
+      "text": "Validate all reference answers before running the new experiments.",
+      "url": "what-to-think.html#scope"
     },
     {
       "status": "planned",
-      "text": "Compare when to start pre-thinking and what work it should do.",
-      "url": "#thinking-design"
+      "text": "Compare S1-only, text S2 and speech S2 on accuracy and new thinking tokens for the request.",
+      "url": "what-to-think.html#conditions"
     }
   ],
   "definition": {
     "text": "Doing useful private work before a user asks a question.",
-    "url": "#thinking-flow"
+    "url": "what-to-think.html#chunking"
   },
   "stages": [
     {
@@ -35,6 +35,11 @@
           "status": "complete",
           "text": "Keep 20 reviewed questions across six meetings, with answer facts and six clips of ordinary discussion.",
           "url": "experiments/question-checks.html#dataset"
+        },
+        {
+          "status": "pending",
+          "text": "Generate or revise and validate reference answers for all 105 questions.",
+          "url": "what-to-think.html#scope"
         },
         {
           "status": "complete",
@@ -71,37 +76,37 @@
     },
     {
       "id": "comparison",
-      "title": "3. Test when and what to think",
+      "title": "3. Evaluate what to think",
       "items": [
         {
+          "status": "complete",
+          "text": "Define the S1 and S2 experiments, shared chunks and token notation.",
+          "url": "what-to-think.html"
+        },
+        {
           "status": "pending",
-          "text": "Fix task owners, changed decisions and forgotten rules in the notes.",
+          "text": "Select chunk settings and private prompts using separate development meetings.",
+          "url": "what-to-think.html#prompts"
+        },
+        {
+          "status": "pending",
+          "text": "Qualify full history and document any capacity fallback.",
+          "url": "what-to-think.html#capacity"
+        },
+        {
+          "status": "planned",
+          "text": "Run every selected condition on all 105 questions and fill the results tables.",
+          "url": "what-to-think.html#results"
+        },
+        {
+          "status": "planned",
+          "text": "Measure answer accuracy and new native thinking tokens, with earlier private work counted separately.",
+          "url": "what-to-think.html#metrics"
+        },
+        {
+          "status": "planned",
+          "text": "Study timing and live speech handoff after these content comparisons.",
           "url": "#comparison-details"
-        },
-        {
-          "status": "pending",
-          "text": "Check that S1 keeps listening and S2 can access older facts as history grows.",
-          "url": "#comparison-details"
-        },
-        {
-          "status": "planned",
-          "text": "Run the original three audio questions through the four system conditions.",
-          "url": "#catalog-table-2"
-        },
-        {
-          "status": "planned",
-          "text": "Compare waiting for the request with pre-thinking every 30 seconds or after a meaningful change.",
-          "url": "#catalog-table-3"
-        },
-        {
-          "status": "planned",
-          "text": "Compare summaries, facts with owners and status, and small deductions while keeping update times fixed.",
-          "url": "#catalog-table-4"
-        },
-        {
-          "status": "pending",
-          "text": "Hide future questions, count all pre-thinking work and measure the first correct useful answer.",
-          "url": "#thinking-design"
         }
       ]
     },

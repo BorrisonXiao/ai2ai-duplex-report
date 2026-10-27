@@ -1,7 +1,7 @@
 {
   "title": "Project implementation plan",
   "scope": "Build a reliable meeting-assistant evaluation, establish what its history supports, compare reactive and background reasoning, then add tools and learn when to act.",
-  "current_state": "Steps 1–2 are complete for the simplified operational pilot: twenty frozen recorded questions, four separate text probes, six ordinary-discussion controls, source-based answer criteria, matched transcript-reader checks and an audited note prototype. Independent human listening ratings remain optional and uncollected. The initial note cache is not reliable enough for a speech experiment; step 3 now separates when to prepare from what work to prepare, with explicit repair and capacity gates.",
+  "current_state": "The current experiment plan covers all 105 distinct questions and focuses on what to think. Existing recordings and the twenty-question source/history study are preserved. Full-bank reference validation, chunk/prompt selection and all new S1/S2 runs remain pending; the plan and notation are ready for discussion.",
   "choices": [
     "Use a separate meeting assistant and an existing participant as the requester.",
     "Freeze the existing F5-TTS checkpoint and inference recipe; do not tune the model on the evaluation meetings or speakers.",
@@ -13,9 +13,9 @@
     "Use the same S2 checkpoint when comparing policies; the 30B offline reader is quality-control evidence, not an unreported model upgrade in a speech condition."
   ],
   "next": [
-    "Discuss the two experiment axes, a cheaper S2-only text replay and the full paced-audio cost before submitting a new inference experiment.",
-    "Repair source copying, responsibility fields and durable-fact retention; the first note cache gives only four complete answers out of twenty.",
-    "Qualify the larger S2 context and S1 rolling-history/audio behavior, then run the original three-question system comparison before the schedule/work-content sweep."
+    "Discuss the all-105 what-to-think plan and maintained notation before implementation.",
+    "Generate or revise and validate source-grounded answers for every evaluation question.",
+    "Freeze shared chunks and model-specific private goals on separate development meetings, then qualify and run the matrix."
   ],
   "meeting_state_schema": "speaker · fact/commitment · proposed/agreed/superseded · evidence · source time",
   "conditions": [
@@ -51,8 +51,8 @@
     {
       "id": "evaluation",
       "title": "1. Build a small, reliable evaluation set",
-      "status": "complete",
-      "goal": "A source-checked operational pilot: twenty frozen recorded questions over six meetings, with extra text diagnostics and ordinary-discussion controls. This is not an independently human-rated benchmark.",
+      "status": "partial",
+      "goal": "Expand the existing reviewed pilot into a full 105-question evaluation bank with frozen source-supported answers and scoring facts.",
       "tasks": [
         {
           "status": "complete",
@@ -89,6 +89,12 @@
           "text": "Reuse the completed question-audio diagnostics.",
           "evidence": "The twenty clips have 20/20 Parakeet Assistant-first results, 16/20 normalized full-question matches, 18/20 with declared spelling equivalence, and 19/20 Whisper cue recognition. Every conditioning clip is earlier speech.",
           "url": "question-checks.html#dataset"
+        },
+        {
+          "status": "pending",
+          "text": "Validate reference answers for all 105 distinct questions.",
+          "evidence": "Every question already has a draft reference; reuse previous source reviews, generate or repair missing facts, resolve disputes and freeze the complete answer bank before evaluation.",
+          "project_url": "what-to-think.html#scope"
         },
         {
           "status": "optional",
@@ -131,56 +137,50 @@
     },
     {
       "id": "comparison",
-      "title": "3. Decide when and what to think, then run controlled comparisons",
+      "title": "3. Evaluate what to think over all 105 questions",
       "status": "partial",
-      "goal": "Design ready for discussion; no new streaming speech experiment is run. First qualify the history and note interface, then hold pre-thinking content fixed to test timing, and hold timing fixed to test content.",
+      "goal": "Plan only: compare S1-only systems, four text-S2 families repeated over transcript tools, and two speech-S2 families; timing policies and live S1/S2 integration follow later.",
       "tasks": [
         {
           "status": "complete",
-          "text": "Review close prior work and prepare the two-axis experiment design.",
-          "evidence": "Ten primary papers are checked. LTS-VoiceAgent already studies semantic thought triggers and maintained state, so those ideas alone are not a novelty claim. The proposed emphasis is controlled multi-speaker updates under causal ASR, with full cost accounting."
-        },
-        {
-          "status": "complete",
-          "text": "Check the current prototype’s context limits on CPU.",
-          "evidence": "The three full-transcript prompts need 11,251 / 16,554 / 22,500 input tokens plus 4,096 output tokens. None fits the current S2 model’s 8,192-token window. A 32,768-token window needs an estimated 4.5 GiB BF16 KV for one sequence, before runtime overhead. No inference config was changed. Extending to all 24 text cases needs a 49,152-token context, estimated 6.75 GiB KV for one sequence, before runtime memory."
+          "text": "Compile the full-bank experiment matrix and shared notation.",
+          "evidence": "Three S1 systems, four text candidates, three speech candidates and two transcript pipelines give 33 planned cells; all result values remain empty.",
+          "project_url": "what-to-think.html#conditions"
         },
         {
           "status": "pending",
-          "text": "Repair note construction and state meaning before measuring a timing benefit.",
-          "evidence": "Copy source text by code; separate who spoke from who is responsible; preserve durable constraints until changed; check meaning and uncertainty, not just literal quotes."
+          "text": "Generate and validate all reference answers before testing.",
+          "evidence": "Keep all 105 questions and versioned references; the new unified review is not yet complete.",
+          "project_url": "what-to-think.html#scope"
         },
         {
           "status": "pending",
-          "text": "Qualify retained history, token/audio capacity and S1 listening throughput.",
-          "evidence": "Start bounded and verify older facts remain accessible as context grows. Current S1 has 4,096 tokens/40 history turns. Raise and qualify the S2 context/KV allocation before calling a condition full history.",
-          "url": "question-checks.html#state"
+          "text": "Select stable chunks and private goals on separate development data.",
+          "evidence": "Start with 20–45 second chunks and eight seconds of speech, compare goal families, then freeze settings without tuning on the 105 evaluation questions.",
+          "project_url": "what-to-think.html#chunking"
         },
         {
           "status": "pending",
-          "text": "Run the original three questions through the four system conditions below.",
-          "evidence": "Keep this as a plumbing, perception and history study before a larger policy comparison. Short listening excerpts do not establish 18–35-minute retention.",
-          "url": "ami-question-audio.html"
+          "text": "Qualify model contexts, previous-result retention and token counters.",
+          "evidence": "Use full history plus earlier results when it fits; apply a documented fallback to the same raw-history intervals for paired conditions.",
+          "project_url": "what-to-think.html#capacity"
         },
         {
-          "status": "pending",
-          "text": "Test when to think with one fixed pre-thinking task.",
-          "evidence": "Compare reactive-only, fixed intervals, and meaningful-change triggers; use pause/random controls where helpful. Choose a few natural request moments shortly after real updates as well as later, rather than inventing an arbitrary question at every point."
+          "status": "planned",
+          "text": "Run every selected S1 and S2 condition on all 105 questions.",
+          "evidence": "The main study is unpaced and measures accuracy and newly generated request-time thinking; it does not claim real-time performance.",
+          "project_url": "what-to-think.html#results"
         },
         {
-          "status": "pending",
-          "text": "Test what to think at identical update times.",
-          "evidence": "Compare a plain summary, facts with owners/status/evidence, and that ledger plus a few reference-resolution or conditional-calculation checks. Keep raw speaker-attributed ASR as an extra low-pre-thinking baseline."
+          "status": "planned",
+          "text": "Judge factual accuracy and report thinking, answer and earlier private tokens separately.",
+          "evidence": "No-channel or unexposed reasoning counts are N/A, not artificial zeros; all failed or missing answers remain visible.",
+          "project_url": "what-to-think.html#metrics"
         },
         {
-          "status": "pending",
-          "text": "Cross the two main timing policies with the three work types after the separate controls work.",
-          "evidence": "Six pre-thinking conditions, plus reactive/raw-transcript baselines; freeze budgets and prompts on development meetings. Variants of a question are not independent new questions."
-        },
-        {
-          "status": "pending",
-          "text": "Enforce causal input, cancellation and complete cost/latency accounting.",
-          "evidence": "The pre-thinking worker must never receive future question text, schedules, scoring labels or selected answer facts. Count all prompt/private/output tokens and unused or cancelled work. Measure first correct useful audible fact and complete supported answer, including wrong answers and timeouts."
+          "status": "planned",
+          "text": "Return to timing policies and speech handoff after the content study.",
+          "evidence": "The earlier three-question/four-condition proposal remains an archived integration plan, not the current evaluation scope."
         }
       ]
     },
@@ -219,7 +219,7 @@
       ]
     }
   ],
-  "resource_note": "This update used one A100-SXM4 80 GB job: Qwen3-30B Instruct weights and KV cache share GPU 0; question-blind note updates then matched readers run in sequential vLLM stages. Maximum one GPU active; 479 allocated seconds / 0.133056 GPU hours, all finished. Source extraction/review, curation, CPU token checks and publication use 0 GPUs. Step 3 proposes isolated S1/S2 GPUs but no speech experiment is submitted.",
+  "resource_note": "This planning and report update uses 0 GPUs, no GPU roles/shared components/dependencies and maximum zero active GPUs. No model inference, downloads, runtime implementation or jobs were started. Future jobs are sequential and qualification-gated, with a planned maximum of four H100 80 GB GPUs for the largest speech candidate.",
   "update_rule": "Update stage status only when the stated evidence exists. A larger corpus, completed synthesis or parsed model response does not mark the controlled system evaluation complete.",
   "comparison_design": {
     "status": "proposal_for_discussion_not_executed",
@@ -439,5 +439,7 @@
       "Keep a genuinely new meeting split for a later confirmatory policy evaluation if these pilot results are used repeatedly to refine prompts or gates."
     ]
   },
-  "study_evidence_url": "question-checks.html"
+  "study_evidence_url": "question-checks.html",
+  "current_what_plan_url": "what-to-think.html",
+  "notation_url": "notation.html"
 }

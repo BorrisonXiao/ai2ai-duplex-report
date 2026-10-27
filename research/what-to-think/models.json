@@ -1,0 +1,152 @@
+{
+  "checked_date": "2026-10-27",
+  "selection": "Open local candidates with complementary families; no new AMI performance claim or runtime qualification.",
+  "models": [
+    {
+      "id": "s1-moshi",
+      "group": "S1",
+      "name": "Moshi / Moshiko pinned checkpoint",
+      "source": "https://github.com/kyutai-labs/moshi",
+      "reason": "Native streaming speech baseline.",
+      "thinking": "not_applicable",
+      "resources": "1 A100 80 GB; language model and Mimi share GPU 0.",
+      "status": "existing_checkpoint_new_study_not_run"
+    },
+    {
+      "id": "s1-duplex",
+      "group": "S1",
+      "name": "DuplexOmni S1",
+      "source": "https://github.com/MuyeHuang/DuplexOmni",
+      "reason": "Native speech baseline with S2 disabled.",
+      "thinking": "not_applicable",
+      "resources": "1 A100 80 GB first; Thinker, Talker, MTP and Code2Wav share GPU 0; historical OOM-only fallback rule stays in force.",
+      "status": "existing_checkpoint_new_study_not_run"
+    },
+    {
+      "id": "s1-minicpm",
+      "group": "S1",
+      "name": "MiniCPM-o 4.5 duplex mode",
+      "source": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/minicpm_o4dot5_en.md",
+      "reason": "Native duplex baseline; turn-based mode would be labeled separately.",
+      "thinking": "not_applicable",
+      "resources": "1 A100 80 GB; audio, language and speech components share GPU 0.",
+      "status": "existing_checkpoint_new_study_not_run"
+    },
+    {
+      "id": "t-qwen-think",
+      "group": "text",
+      "name": "Qwen3-30B-A3B-Thinking-2507",
+      "source": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507",
+      "reason": "Pinned reasoning model for continuity with earlier work.",
+      "thinking": "native_channel_to_verify",
+      "resources": "1 H100 80 GB; weights and KV cache on GPU 0.",
+      "status": "existing_checkpoint_new_study_not_run"
+    },
+    {
+      "id": "t-qwen-inst",
+      "group": "text",
+      "name": "Qwen3-30B-A3B-Instruct-2507",
+      "source": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "reason": "Pinned instruction model; pair with Thinking and report output tokens separately.",
+      "thinking": "not_applicable",
+      "resources": "1 H100 80 GB; weights and KV cache on GPU 0.",
+      "status": "existing_checkpoint_new_study_not_run"
+    },
+    {
+      "id": "t-qwen36",
+      "group": "text",
+      "name": "Qwen3.6-35B-A3B, thinking enabled",
+      "source": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+      "reason": "Recent open-weight model with documented historical-thinking preservation; text input only in this group.",
+      "thinking": "native_channel_to_verify",
+      "resources": "2 H100 80 GB planned; TP2 weights and KV cache across GPUs 0–1.",
+      "status": "candidate_download_and_runtime_not_qualified"
+    },
+    {
+      "id": "t-gemma4",
+      "group": "text",
+      "name": "Gemma 4 31B IT, thinking enabled",
+      "source": "https://huggingface.co/google/gemma-4-31B-it",
+      "reason": "Recent independent model family with a native thought channel; this 31B variant is a text candidate, not an audio candidate.",
+      "thinking": "native_channel_to_verify",
+      "resources": "2 H100 80 GB planned; TP2 weights and KV cache across GPUs 0–1.",
+      "status": "candidate_download_and_runtime_not_qualified"
+    },
+    {
+      "id": "a-qwen-think",
+      "group": "speech",
+      "name": "Qwen3-Omni-30B-A3B-Thinking",
+      "source": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Thinking",
+      "reason": "Audio input with native reasoning and text output.",
+      "thinking": "native_channel_to_verify",
+      "resources": "2 H100 80 GB planned; audio encoder, language weights and KV cache across GPUs 0–1; no Talker.",
+      "status": "candidate_runtime_not_qualified"
+    },
+    {
+      "id": "a-qwen-inst",
+      "group": "speech",
+      "name": "Qwen3-Omni-30B-A3B-Instruct, text output",
+      "source": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "reason": "Audio-input instruction counterpart; disable speech output for the S2 comparison.",
+      "thinking": "not_applicable_unless_a_native_channel_is_verified",
+      "resources": "2 H100 80 GB planned; Thinker/audio encoder/KV across GPUs 0–1; Talker disabled.",
+      "status": "existing_checkpoint_new_mode_not_qualified"
+    },
+    {
+      "id": "a-step",
+      "group": "speech",
+      "name": "Step-Audio-R1.1",
+      "source": "https://huggingface.co/stepfun-ai/Step-Audio-R1.1",
+      "reason": "Independent audio-reasoning family; verify extraction of reasoning and answer text before admitting it to the token comparison.",
+      "thinking": "native_channel_to_verify",
+      "resources": "4 H100 80 GB planned, GPUs 0–3 for the vendor vLLM runtime; exact component placement and text-output mode must be qualified.",
+      "status": "candidate_download_and_runtime_not_qualified"
+    }
+  ],
+  "transcript_tools": [
+    {
+      "id": "D1",
+      "name": "Parakeet TDT 0.6B v2 + Nemotron 3 Diarization",
+      "sources": [
+        "https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2",
+        "https://huggingface.co/nvidia/Nemotron-3-Diarization"
+      ],
+      "reason": "Reuse pinned English ASR; evaluate the September 2026 diarizer with up to eight speakers.",
+      "causality": "Run only on released audio; streaming look-ahead is counted in release time; speaker revisions are versioned.",
+      "resources": "1 L40S 48 GB; ASR and diarization run sequentially on GPU 0."
+    },
+    {
+      "id": "D2",
+      "name": "WhisperX / Whisper large-v3 + pyannote Community-1",
+      "sources": [
+        "https://github.com/m-bain/whisperX",
+        "https://huggingface.co/pyannote/speaker-diarization-community-1"
+      ],
+      "reason": "Independent ASR/alignment and diarization pipeline.",
+      "causality": "Prefix-only recomputation for this unpaced study; never diarize the full future meeting and backfill labels.",
+      "resources": "1 L40S 48 GB; ASR, alignment and diarization run sequentially on GPU 0; gated model access must be checked."
+    }
+  ],
+  "reviewed_reserves": [
+    {
+      "name": "Qwen3.8-Omni-Flash",
+      "source": "https://arxiv.org/abs/2609.25611",
+      "decision": "Recent paper checked; no locally runnable open checkpoint and exposed thinking-token path verified in this review, so it is outside the primary matrix."
+    },
+    {
+      "name": "Step-Audio-R1.5",
+      "source": "https://github.com/stepfun-ai/Step-Audio-R1",
+      "decision": "A newer report and benchmarks are linked, while the verified download instructions target R1.1; qualify downloadable R1.5 weights before substitution."
+    },
+    {
+      "name": "Gemma 4 12B IT",
+      "source": "https://huggingface.co/google/gemma-4-12B-it",
+      "decision": "Native audio and thinking are documented, but the card limits audio to 30 seconds; reserve for a separately labeled short-audio study."
+    },
+    {
+      "name": "MiniCPM-o 4.5 as S2",
+      "source": "https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/minicpm_o4dot5_en.md",
+      "decision": "Useful reserve candidate; its turn-based audio/reasoning mode and token observability need separate qualification from the S1 duplex path."
+    }
+  ]
+}

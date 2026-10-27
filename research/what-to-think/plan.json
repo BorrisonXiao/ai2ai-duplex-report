@@ -1,0 +1,111 @@
+{
+  "title": "What to think: a 105-question experiment plan",
+  "date": "2026-10-27",
+  "status": "plan_only_no_inference_or_experiment_implementation",
+  "confirmed_choices": [
+    "Reactive S2 baselines reason only when the actual user request arrives.",
+    "Pre-thinking variants generate earlier private results and reuse them.",
+    "Retain all history plus earlier results where feasible; use a documented selection fallback on overflow/OOM.",
+    "Report native thinking and ordinary output tokens separately; do not force a reasoning trace from Instruct models."
+  ],
+  "summary": [
+    "Evaluate all 105 distinct questions, using verified text answers and source-based scoring facts.",
+    "Use shared chunks of about 20–45 seconds, so short fillers do not trigger separate pre-thinking calls.",
+    "Compare three S1 systems, four text-S2 families and two audio-S2 families.",
+    "Keep the user request hidden until it actually arrives, then reuse earlier private results where applicable.",
+    "Measure answer accuracy and new thinking tokens for the request, with pre-thinking tokens listed separately.",
+    "Keep full history where it fits and label every capacity fallback."
+  ],
+  "scope": {
+    "questions": 105,
+    "conversations": 26,
+    "AMI_questions": 93,
+    "AMI_meetings": 24,
+    "earnings_questions": 12,
+    "earnings_calls": 2,
+    "latest_insertion_minutes": 47.06183333333333,
+    "existing_source_review_subset": 20,
+    "all105_answers_validated": false,
+    "reference_answer_audio": "deferred; text and fact checklists suffice",
+    "development": "Use separate additional meetings/speakers for prompt and chunk selection; the exposed 105-question bank remains the full evaluation pool.",
+    "extra_diagnostic4": "The four previous text probes stay separate unless the user later expands the 105-question bank."
+  },
+  "chunking": {
+    "status": "proposed_starting_rule_not_tuned",
+    "minimum_elapsed_seconds": 20,
+    "minimum_active_speech_seconds": 8,
+    "target_seconds": 30,
+    "maximum_seconds": 45,
+    "pause_seconds": 0.5,
+    "rule": "After at least 20 elapsed seconds and eight seconds of voiced speech, close at the next completed pause of at least 0.5 seconds; target roughly 30 seconds. A hard 45-second cap bounds continuous speech.",
+    "cap_rule": "At 45 seconds, close at the current causal audio frame. If speech is still continuing, mark the last speech unit partial and let the next prefix supply its continuation; do not look ahead or create a shorter retrospective chunk.",
+    "low_activity": "A capped interval with less than eight seconds of speech is a passive chunk: keep all its samples in history but skip a private model call; the next active call still has that earlier audio available.",
+    "fillers": "Short backchannels and fillers are accumulated with surrounding speech rather than becoming their own calls; a long low-information block may return NO_UPDATE, with its tokens counted.",
+    "request": "At request onset, stop launching pre-thinking. Put the unclosed meeting tail and the complete request into the final input, even if the tail is shorter than the normal minimum.",
+    "common_schedule": "Use one causal audio-VAD boundary manifest across GT text, both ASR tools and speech S2; no GT sentence boundaries or question-specific evidence may choose the cuts.",
+    "causality": "A pause is used only after its silence has been observed; text prefixes include only already available words, never the complete future part of an intersecting utterance.",
+    "same_content": "Macro chunks and native S1 frames cover the same original samples, request and source horizon; preserve an interval/hash ledger with no dropped or duplicated speech.",
+    "development": "Compare 15/30/45 and 20/30/60 second settings on separate development meetings, then freeze one schedule for the main what-to-think study.",
+    "not_when_study": "The schedule is fixed across all conditions; learned semantic trigger timing is deferred."
+  },
+  "gold_steps": [
+    "Keep one evaluation record per distinct question, verify the actual spoken request and its retained intent, and preserve requester and actual insertion time.",
+    "Reuse existing draft answers as starting material; generate a candidate answer and required-fact checklist from only the available GT prefix.",
+    "Attach source passage IDs, speaker, time, quantities/units, uncertainty and allowed alternative answers; distinguish required facts from optional context.",
+    "Check every answer with deterministic number/owner/status checks where possible, a second-model review and Codex inspection of source evidence.",
+    "Resolve disagreements and unsupported premises before freezing all 105 references; preserve versions and do not silently drop difficult cases.",
+    "Freeze answer facts and judge criteria before any evaluation run; keep them out of model inputs."
+  ],
+  "protocol": [
+    "This is an unpaced content study: complete each private chunk call before releasing the next chunk; measure accuracy and token movement, without a real-time latency claim.",
+    "Pre-thinking branches see only earlier original meeting speech; synthetic evaluation questions and answers never enter the shared pre-thinking stem.",
+    "At the request, use the whole available history plus retained earlier results; user-request recognition in generated-transcript conditions comes from that tool, with a GT-question-text diagnostic reported separately.",
+    "Use the same final-answer instruction and within-model decoding/output allowance across paired conditions.",
+    "Full earlier traces and artifacts are retained when possible; chat-template stripping of previous thinking must be checked using actual serialized inputs.",
+    "Track each transcript/speaker revision at its release; do not use full-meeting future diarization or oracle speaker-name mappings in generated-transcript conditions.",
+    "Fork independent question examples from the original meeting stem; earlier synthetic questions or model replies never become history for later examples.",
+    "S2 audio experiments produce text answers and private results; native speech is scored in S1. Qualify any S2 engine that cannot separate text/reasoning from speech output.",
+    "Reuse causal pre-thinking stems per meeting/model/tool/prompt where their exact inputs match, without exposing question times to the worker.",
+    "Choose generation limits on development data: start with 8192 new tokens for native Thinking models and 4096 for Instruct, raise if needed for complete outputs, then freeze within-model paired limits and report all length stops.",
+    "The appended GT request text must match the chosen recorded question, including any retained alternative; every condition uses the same spoken request and gold intent.",
+    "After the request, allow only the fixed silence/EOS needed by native speech decoding, never resumed future meeting audio; save the full output and select scoring spans by timing rather than correctness."
+  ],
+  "capacity": [
+    "Preflight audio duration, encoded positions, text length, prior-trace length and output reserve before each family.",
+    "Try full history first; reducing concurrency or a qualified larger allocation may resolve memory pressure without changing the model context limit.",
+    "When full history cannot fit, retain the request, recent complete chunks and useful earlier results; preserve older commitments, revisions and source anchors with a fixed rule using available information only.",
+    "For a paired comparison, use the same selected raw-history intervals and output reserve; list which earlier results were retained or removed.",
+    "Keep full-history and budgeted results separate while reporting an all-105 total; log selector version, omitted intervals, cause and actual input counts.",
+    "Never silently truncate, use gold evidence to select history, change precision/checkpoint, or omit a question; if even the declared minimum cannot run, record a capacity failure in the all-105 ledger.",
+    "Distinguish a model-native rolling context from caller-selected history: consuming a full recording does not prove that every earlier state remains directly accessible. Record native rolling/eviction separately from a selected-history fallback."
+  ],
+  "metrics": [
+    "Primary accuracy: a complete source-supported answer without a material unsupported claim, judged using verified facts, rules and a blinded LLM judge.",
+    "Primary token measure: newly generated native thinking after the actual request, excluding all earlier pre-thinking and answer text.",
+    "For absent native thinking channels use not-applicable; for unexposed channels use unavailable, never a fabricated zero or a forced chain of thought.",
+    "Also list final-answer tokens, total request-time output, request-time input/prefill, earlier pre-thinking output, truncations and context mode.",
+    "Report native thinking means over all eligible attempts, correct-only values separately, and accuracy alongside every token comparison; silence and failed answers cannot win on token count.",
+    "Use model-specific tokenizers and compare token reductions primarily within the same model; different tokenizers and input costs prevent a universal compute interpretation.",
+    "Have the judge see the request, verified facts/source evidence and candidate answer, with model and condition names hidden; inspect disputes directly against the source.",
+    "For S1, independently transcribe generated audio and inspect disputed words/numbers by listening; an internal text stream is diagnostic, not a substitute for the spoken answer.",
+    "Report per-question logical pre-thinking exposure and the actual unique executed pre-thinking totals separately, so reuse of a shared meeting stem is not double-counted.",
+    "A helper or selector that uses the actual request performs request-time work: count its native reasoning and ordinary output, never relabel it pre-thinking. The main history selector uses fixed rules."
+  ],
+  "resources": {
+    "current_GPU_count": 0,
+    "current_maximum_active_GPUs": 0,
+    "current_roles": {},
+    "current_dependencies": "Read-only inventory/literature plus plan and report generation; no model calls, downloads or jobs.",
+    "planned_maximum_active_GPUs": 4,
+    "policy": "All GPU jobs sequential; transcript tools and reference validation precede evaluation; judges follow generation. No concurrent S1+S2 integration is part of this matrix.",
+    "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
+  },
+  "execution_order": [
+    "Discuss and freeze this plan and notation; no inference implementation is authorized by this document alone.",
+    "Generate and validate references for all 105; select disjoint development examples.",
+    "Tune chunk thresholds and prompt goals on development data, then freeze them.",
+    "Qualify model input limits, history retention/fallback and native token extraction.",
+    "Run every selected condition on all 105 questions, including both transcript tools.",
+    "Judge answers and fill the result tables; discuss timing-policy or speech-handoff studies afterward."
+  ]
+}
