@@ -17,6 +17,8 @@
         {
           "source_id": "authored-W1-2",
           "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+          "original_question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 351.0,
           "insertion_time": 351.0,
@@ -25,9 +27,11 @@
         }
       ],
       "report_url": "ami-questions.html#authored-W1-2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 351.0,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#first--authored-W1-2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -47,6 +51,8 @@
         {
           "source_id": "authored-W2-1",
           "question": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+          "original_question": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1075.0,
           "insertion_time": 1075.0,
@@ -56,7 +62,7 @@
       ],
       "report_url": "ami-questions.html#authored-W2-1",
       "has_audio": true,
-      "audio_url": "ami-question-audio.html#listen",
+      "audio_url": "question-audio.html#first--authored-W2-1",
       "audio_demos": 3,
       "has_spoken_cue": true
     },
@@ -77,6 +83,8 @@
         {
           "source_id": "authored-W3-1",
           "question": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+          "original_question": "Assistant, before I adapt the call, can you run through who's contacting each group?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1489.99,
           "insertion_time": 1578.92,
@@ -86,7 +94,7 @@
       ],
       "report_url": "ami-questions.html#authored-W3-1",
       "has_audio": true,
-      "audio_url": "ami-question-audio.html#listen",
+      "audio_url": "question-audio.html#first--authored-W3-1",
       "audio_demos": 3,
       "has_spoken_cue": true
     },
@@ -107,6 +115,8 @@
         {
           "source_id": "authored-W3-2",
           "question": "Assistant, what do I need to change in the Philosophy version, and how does that compare with what we told Claire?",
+          "original_question": "Assistant, what do I need to change in the Philosophy version, and how does that compare with what we told Claire?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1489.99,
           "insertion_time": 1578.92,
@@ -115,9 +125,11 @@
         }
       ],
       "report_url": "ami-questions.html#authored-W3-2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1578.92,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#first--authored-W3-2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -137,6 +149,8 @@
         {
           "source_id": "authored-W4-1",
           "question": "Assistant, for the webpage, what deadlines did we settle on, and what extra information should people send with their abstracts?",
+          "original_question": "Assistant, for the webpage, what deadlines did we settle on, and what extra information should people send with their abstracts?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2135.5,
           "insertion_time": 2135.5,
@@ -145,9 +159,11 @@
         }
       ],
       "report_url": "ami-questions.html#authored-W4-1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 2135.5,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#first--authored-W4-1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -167,6 +183,8 @@
         {
           "source_id": "authored-W4-2",
           "question": "Assistant, before I copy the call onto the webpage, remind me why we wanted people's technical requirements early and how that affects the programme?",
+          "original_question": "Assistant, before I copy the call onto the webpage, remind me why we wanted people's technical requirements early and how that affects the programme?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2135.5,
           "insertion_time": 2135.5,
@@ -175,9 +193,11 @@
         }
       ],
       "report_url": "ami-questions.html#authored-W4-2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 2135.5,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#first--authored-W4-2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -197,6 +217,8 @@
         {
           "source_id": "curated-instruct-packets-W4-deadlines",
           "question": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+          "original_question": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2135.5,
           "insertion_time": 2135.5,
@@ -206,6 +228,8 @@
         {
           "source_id": "thinking-direct_v1-W4-2",
           "question": "Assistant, for the call for abstracts, what are the deadlines I should list on the webpage?",
+          "original_question": "Assistant, for the call for abstracts, what are the deadlines I should list on the webpage?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2135.5,
           "insertion_time": 2135.5,
@@ -215,6 +239,8 @@
         {
           "source_id": "thinking-evidence_v2-W4-1",
           "question": "Assistant, I'm setting up the conference webpage and need to include the deadlines for abstract submissions. Could you confirm the title deadline and abstract deadline?",
+          "original_question": "Assistant, I'm setting up the conference webpage and need to include the deadlines for abstract submissions. Could you confirm the title deadline and abstract deadline?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2135.5,
           "insertion_time": 2135.5,
@@ -224,7 +250,7 @@
       ],
       "report_url": "ami-questions.html#curated-instruct-packets-W4-deadlines",
       "has_audio": true,
-      "audio_url": "ami-question-audio.html#listen",
+      "audio_url": "question-audio.html#first--abstract-title-deadlines",
       "audio_demos": 3,
       "has_spoken_cue": true
     },
@@ -239,12 +265,14 @@
       "transcript_time": 986.98,
       "percent": 55.23352446273536,
       "requester": "A",
-      "question": "How do I get the segment start and end times again?",
+      "question": "Assistant, how do I get the segment start and end times again?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "EN-times-authored",
-          "question": "How do I get the segment start and end times again?",
+          "question": "Assistant, how do I get the segment start and end times again?",
+          "original_question": "How do I get the segment start and end times again?",
+          "cue_added": true,
           "requester": "A",
           "transcript_time": 986.98,
           "insertion_time": 986.98,
@@ -253,10 +281,12 @@
         }
       ],
       "report_url": "question-expansion.html#EN-times-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 986.98,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--EN-times",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:EN-results",
@@ -269,12 +299,14 @@
       "transcript_time": 1555.86,
       "percent": 87.0692733090756,
       "requester": "C",
-      "question": "What were the three kinds of search results again?",
+      "question": "Assistant, what were the three kinds of search results again?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "EN-results-authored",
-          "question": "What were the three kinds of search results again?",
+          "question": "Assistant, what were the three kinds of search results again?",
+          "original_question": "What were the three kinds of search results again?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1555.86,
           "insertion_time": 1555.86,
@@ -283,10 +315,12 @@
         }
       ],
       "report_url": "question-expansion.html#EN-results-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1555.86,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--EN-results",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:EN-xml",
@@ -299,12 +333,14 @@
       "transcript_time": 1555.86,
       "percent": 87.0692733090756,
       "requester": "A",
-      "question": "What was that tool for transforming the XML?",
+      "question": "Assistant, what was that tool for transforming the XML?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "EN-xml-authored",
-          "question": "What was that tool for transforming the XML?",
+          "question": "Assistant, what was that tool for transforming the XML?",
+          "original_question": "What was that tool for transforming the XML?",
+          "cue_added": true,
           "requester": "A",
           "transcript_time": 1555.86,
           "insertion_time": 1555.86,
@@ -313,10 +349,12 @@
         }
       ],
       "report_url": "question-expansion.html#EN-xml-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1555.86,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--EN-xml",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:ES-colour",
@@ -329,12 +367,14 @@
       "transcript_time": 1208.95,
       "percent": 53.00087680841736,
       "requester": "C",
-      "question": "Did we ever settle on the company colour?",
+      "question": "Assistant, did we ever settle on the company colour?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "ES-colour-authored",
-          "question": "Did we ever settle on the company colour?",
+          "question": "Assistant, did we ever settle on the company colour?",
+          "original_question": "Did we ever settle on the company colour?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1208.95,
           "insertion_time": 1208.95,
@@ -343,10 +383,12 @@
         }
       ],
       "report_url": "question-expansion.html#ES-colour-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1208.95,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--ES-colour",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:ES-teletext",
@@ -359,12 +401,14 @@
       "transcript_time": 1873.33,
       "percent": 82.12757562472599,
       "requester": "C",
-      "question": "What did the company say about teletext?",
+      "question": "Assistant, what did the company say about teletext?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "ES-teletext-authored",
-          "question": "What did the company say about teletext?",
+          "question": "Assistant, what did the company say about teletext?",
+          "original_question": "What did the company say about teletext?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1873.33,
           "insertion_time": 1873.33,
@@ -373,10 +417,12 @@
         }
       ],
       "report_url": "question-expansion.html#ES-teletext-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1873.33,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--ES-teletext",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:ES-devices",
@@ -389,12 +435,14 @@
       "transcript_time": 1873.33,
       "percent": 82.12757562472599,
       "requester": "A",
-      "question": "Was this meant to work with DVD players too?",
+      "question": "Assistant, was this meant to work with DVD players too?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "ES-devices-authored",
-          "question": "Was this meant to work with DVD players too?",
+          "question": "Assistant, was this meant to work with DVD players too?",
+          "original_question": "Was this meant to work with DVD players too?",
+          "cue_added": true,
           "requester": "A",
           "transcript_time": 1873.33,
           "insertion_time": 1873.33,
@@ -403,10 +451,12 @@
         }
       ],
       "report_url": "question-expansion.html#ES-devices-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1873.33,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--ES-devices",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:IS-receiver",
@@ -419,12 +469,14 @@
       "transcript_time": 1244.2,
       "percent": 53.14822725331055,
       "requester": "C",
-      "question": "What can we change on the TV side?",
+      "question": "Assistant, what can we change on the TV side?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "IS-receiver-authored",
-          "question": "What can we change on the TV side?",
+          "question": "Assistant, what can we change on the TV side?",
+          "original_question": "What can we change on the TV side?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1244.2,
           "insertion_time": 1244.2,
@@ -433,7 +485,9 @@
         },
         {
           "source_id": "IS-receiver-packet",
-          "question": "Can you remind me what the constraint was on the receiver in the design?",
+          "question": "Assistant, can you remind me what the constraint was on the receiver in the design?",
+          "original_question": "Can you remind me what the constraint was on the receiver in the design?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1244.2,
           "insertion_time": 1244.2,
@@ -442,10 +496,12 @@
         }
       ],
       "report_url": "question-expansion.html#IS-receiver-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1244.2,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--IS-receiver",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:IS-lost",
@@ -458,12 +514,14 @@
       "transcript_time": 1988.47,
       "percent": 84.94105083297735,
       "requester": "D",
-      "question": "How many people said they keep losing their remote?",
+      "question": "Assistant, how many people said they keep losing their remote?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "IS-lost-authored",
-          "question": "How many people said they keep losing their remote?",
+          "question": "Assistant, how many people said they keep losing their remote?",
+          "original_question": "How many people said they keep losing their remote?",
+          "cue_added": true,
           "requester": "D",
           "transcript_time": 1988.47,
           "insertion_time": 1988.47,
@@ -472,7 +530,9 @@
         },
         {
           "source_id": "IS-lost-packet",
-          "question": "What was the percentage of users who said their remote control gets lost often?",
+          "question": "Assistant, what was the percentage of users who said their remote control gets lost often?",
+          "original_question": "What was the percentage of users who said their remote control gets lost often?",
+          "cue_added": true,
           "requester": "D",
           "transcript_time": 1988.47,
           "insertion_time": 1988.47,
@@ -481,10 +541,12 @@
         }
       ],
       "report_url": "question-expansion.html#IS-lost-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1988.47,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--IS-lost",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:IS-voice",
@@ -497,12 +559,14 @@
       "transcript_time": 1988.47,
       "percent": 84.94105083297735,
       "requester": "B",
-      "question": "What did the youngest group say about paying extra for voice control?",
+      "question": "Assistant, what did the youngest group say about paying extra for voice control?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "IS-voice-authored",
-          "question": "What did the youngest group say about paying extra for voice control?",
+          "question": "Assistant, what did the youngest group say about paying extra for voice control?",
+          "original_question": "What did the youngest group say about paying extra for voice control?",
+          "cue_added": true,
           "requester": "B",
           "transcript_time": 1988.47,
           "insertion_time": 1988.47,
@@ -511,10 +575,12 @@
         }
       ],
       "report_url": "question-expansion.html#IS-voice-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1988.47,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--IS-voice",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:TS-target",
@@ -527,12 +593,14 @@
       "transcript_time": 1241.23,
       "percent": 56.15650328800777,
       "requester": "B",
-      "question": "Which age group did marketing originally want us to target?",
+      "question": "Assistant, which age group did marketing originally want us to target?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "TS-target-authored",
-          "question": "Which age group did marketing originally want us to target?",
+          "question": "Assistant, which age group did marketing originally want us to target?",
+          "original_question": "Which age group did marketing originally want us to target?",
+          "cue_added": true,
           "requester": "B",
           "transcript_time": 1241.23,
           "insertion_time": 1241.23,
@@ -541,7 +609,9 @@
         },
         {
           "source_id": "TS-target-packet",
-          "question": "What was the age group the marketing expert originally recommended for the remote?",
+          "question": "Assistant, what was the age group the marketing expert originally recommended for the remote?",
+          "original_question": "What was the age group the marketing expert originally recommended for the remote?",
+          "cue_added": true,
           "requester": "B",
           "transcript_time": 1241.23,
           "insertion_time": 1241.23,
@@ -550,10 +620,12 @@
         }
       ],
       "report_url": "question-expansion.html#TS-target-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1241.23,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--TS-target",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:TS-looks",
@@ -566,12 +638,14 @@
       "transcript_time": 1241.23,
       "percent": 56.15650328800777,
       "requester": "C",
-      "question": "How many people were willing to pay more just for the design?",
+      "question": "Assistant, how many people were willing to pay more just for the design?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "TS-looks-authored",
-          "question": "How many people were willing to pay more just for the design?",
+          "question": "Assistant, how many people were willing to pay more just for the design?",
+          "original_question": "How many people were willing to pay more just for the design?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1241.23,
           "insertion_time": 1241.23,
@@ -580,7 +654,9 @@
         },
         {
           "source_id": "TS-looks-packet",
-          "question": "What percentage said they'd spend more on a fancy-looking remote?",
+          "question": "Assistant, what percentage said they'd spend more on a fancy-looking remote?",
+          "original_question": "What percentage said they'd spend more on a fancy-looking remote?",
+          "cue_added": true,
           "requester": "C",
           "transcript_time": 1241.23,
           "insertion_time": 1241.23,
@@ -589,10 +665,12 @@
         }
       ],
       "report_url": "question-expansion.html#TS-looks-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1241.23,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--TS-looks",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:DH-growth",
@@ -605,12 +683,14 @@
       "transcript_time": 1630.99,
       "percent": 59.937107912077494,
       "requester": "S3",
-      "question": "What range did they give for overall core growth next quarter?",
+      "question": "Assistant, what range did they give for overall core growth next quarter?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "DH-growth-authored",
-          "question": "What range did they give for overall core growth next quarter?",
+          "question": "Assistant, what range did they give for overall core growth next quarter?",
+          "original_question": "What range did they give for overall core growth next quarter?",
+          "cue_added": true,
           "requester": "S3",
           "transcript_time": 1630.99,
           "insertion_time": 1630.99,
@@ -619,7 +699,9 @@
         },
         {
           "source_id": "DH-growth-packet",
-          "question": "What's the group-level core revenue growth guidance for Q2 again, including Cytiva?",
+          "question": "Assistant, what's the group-level core revenue growth guidance for Q2 again, including Cytiva?",
+          "original_question": "What's the group-level core revenue growth guidance for Q2 again, including Cytiva?",
+          "cue_added": true,
           "requester": "S3",
           "transcript_time": 1630.99,
           "insertion_time": 1630.99,
@@ -628,10 +710,12 @@
         }
       ],
       "report_url": "question-expansion.html#DH-growth-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1630.99,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--DH-growth",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:DH-basis",
@@ -644,12 +728,14 @@
       "transcript_time": 2342.13,
       "percent": 86.07072916088637,
       "requester": "S5",
-      "question": "How are they treating Cytiva in the core growth number?",
+      "question": "Assistant, how are they treating Cytiva in the core growth number?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "DH-basis-authored",
-          "question": "How are they treating Cytiva in the core growth number?",
+          "question": "Assistant, how are they treating Cytiva in the core growth number?",
+          "original_question": "How are they treating Cytiva in the core growth number?",
+          "cue_added": true,
           "requester": "S5",
           "transcript_time": 2342.13,
           "insertion_time": 2342.13,
@@ -658,7 +744,9 @@
         },
         {
           "source_id": "DH-basis-packet",
-          "question": "What's the basis for including Cytiva in core growth starting in Q2?",
+          "question": "Assistant, what's the basis for including Cytiva in core growth starting in Q2?",
+          "original_question": "What's the basis for including Cytiva in core growth starting in Q2?",
+          "cue_added": true,
           "requester": "S5",
           "transcript_time": 2342.13,
           "insertion_time": 2342.13,
@@ -667,10 +755,12 @@
         }
       ],
       "report_url": "question-expansion.html#DH-basis-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 2342.13,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--DH-basis",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:MO-performance",
@@ -679,16 +769,18 @@
       "meeting": "EC4320211",
       "dataset": "Earnings calls",
       "duration_seconds": 3285.848,
-      "at": 1975.25,
+      "at": 1976.85,
       "transcript_time": 1975.25,
-      "percent": 60.1138579751711,
+      "percent": 60.16255164572433,
       "requester": "S5",
-      "question": "Did the stores they only re-imaged see a sales lift too?",
+      "question": "Assistant, did the stores they only re-imaged see a sales lift too?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "MO-performance-authored",
-          "question": "Did the stores they only re-imaged see a sales lift too?",
+          "question": "Assistant, did the stores they only re-imaged see a sales lift too?",
+          "original_question": "Did the stores they only re-imaged see a sales lift too?",
+          "cue_added": true,
           "requester": "S5",
           "transcript_time": 1975.25,
           "insertion_time": 1975.25,
@@ -697,7 +789,9 @@
         },
         {
           "source_id": "MO-performance-packet",
-          "question": "What was the performance of just re-imaged stores, not rebranded ones, in the quarter?",
+          "question": "Assistant, what was the performance of just re-imaged stores, not rebranded ones, in the quarter?",
+          "original_question": "What was the performance of just re-imaged stores, not rebranded ones, in the quarter?",
+          "cue_added": true,
           "requester": "S5",
           "transcript_time": 1975.25,
           "insertion_time": 1975.25,
@@ -706,10 +800,12 @@
         }
       ],
       "report_url": "question-expansion.html#MO-performance-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 1975.25,
+      "pause_adjustment_seconds": 1.599999999999909,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--MO-performance",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "expansion:MO-selection",
@@ -722,12 +818,14 @@
       "transcript_time": 2823.71,
       "percent": 85.93550279866872,
       "requester": "S8",
-      "question": "How were they deciding which stores to rebrand?",
+      "question": "Assistant, how were they deciding which stores to rebrand?",
       "writer": "Codex",
       "versions": [
         {
           "source_id": "MO-selection-authored",
-          "question": "How were they deciding which stores to rebrand?",
+          "question": "Assistant, how were they deciding which stores to rebrand?",
+          "original_question": "How were they deciding which stores to rebrand?",
+          "cue_added": true,
           "requester": "S8",
           "transcript_time": 2823.71,
           "insertion_time": 2823.71,
@@ -736,7 +834,9 @@
         },
         {
           "source_id": "MO-selection-packet",
-          "question": "Can you remind me how they decided between rebranding and re-imaging stores?",
+          "question": "Assistant, can you remind me how they decided between rebranding and re-imaging stores?",
+          "original_question": "Can you remind me how they decided between rebranding and re-imaging stores?",
+          "cue_added": true,
           "requester": "S8",
           "transcript_time": 2823.71,
           "insertion_time": 2823.71,
@@ -745,10 +845,12 @@
         }
       ],
       "report_url": "question-expansion.html#MO-selection-authored",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
-      "has_spoken_cue": false
+      "original_insertion_time": 2823.71,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#expansion--MO-selection",
+      "audio_demos": 1,
+      "has_spoken_cue": true
     },
     {
       "id": "pilot:P-EN-notes",
@@ -767,6 +869,8 @@
         {
           "source_id": "P-EN-notes",
           "question": "Assistant, who said they'd take the notes today?",
+          "original_question": "Assistant, who said they'd take the notes today?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 303.62,
           "insertion_time": 303.62,
@@ -775,9 +879,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-EN-notes",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 303.62,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-EN-notes",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -797,6 +903,8 @@
         {
           "source_id": "P-EN-timeline",
           "question": "Assistant, was that timeline updated, or copied from the earlier documents?",
+          "original_question": "Assistant, was that timeline updated, or copied from the earlier documents?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 303.62,
           "insertion_time": 303.62,
@@ -806,7 +914,7 @@
       ],
       "report_url": "question-pilot.html#P-EN-timeline",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-EN-timeline",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -827,6 +935,8 @@
         {
           "source_id": "P-EN-audio",
           "question": "Assistant, why were we dropping the work on the audio files?",
+          "original_question": "Assistant, why were we dropping the work on the audio files?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 471.33,
           "insertion_time": 471.33,
@@ -835,9 +945,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-EN-audio",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 471.33,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-EN-audio",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -857,6 +969,8 @@
         {
           "source_id": "P-EN-report",
           "question": "Assistant, where were we going to explain the work we dropped?",
+          "original_question": "Assistant, where were we going to explain the work we dropped?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 471.33,
           "insertion_time": 471.33,
@@ -865,9 +979,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-EN-report",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 471.33,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-EN-report",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -887,6 +1003,8 @@
         {
           "source_id": "P-EN-segmentation",
           "question": "Assistant, how far had we got with topic segmentation?",
+          "original_question": "Assistant, how far had we got with topic segmentation?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 599.29,
           "insertion_time": 599.29,
@@ -895,9 +1013,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-EN-segmentation",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 599.29,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-EN-segmentation",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -917,6 +1037,8 @@
         {
           "source_id": "P-EN-order",
           "question": "Assistant, how did we think the search results should be ordered?",
+          "original_question": "Assistant, how did we think the search results should be ordered?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1385.22,
           "insertion_time": 1385.22,
@@ -925,9 +1047,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-EN-order",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1385.22,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-EN-order",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -947,6 +1071,8 @@
         {
           "source_id": "P-EN-handoff",
           "question": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
+          "original_question": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1385.22,
           "insertion_time": 1385.22,
@@ -956,6 +1082,8 @@
         {
           "source_id": "M-P-EN-handoff-concise_base",
           "question": "Assistant, when was the GUI and wiring expected to be ready?",
+          "original_question": "Assistant, when was the GUI and wiring expected to be ready?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1385.22,
           "insertion_time": 1385.22,
@@ -965,7 +1093,7 @@
       ],
       "report_url": "question-pilot.html#P-EN-handoff",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-EN-handoff",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -986,6 +1114,8 @@
         {
           "source_id": "P-EN-same-person",
           "question": "Assistant, was the person taking notes also going to put our sections together?",
+          "original_question": "Assistant, was the person taking notes also going to put our sections together?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 471.33,
           "insertion_time": 471.33,
@@ -995,7 +1125,7 @@
       ],
       "report_url": "question-pilot.html#P-EN-same-person",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-EN-same-person",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1016,6 +1146,8 @@
         {
           "source_id": "P-ES-minutes",
           "question": "Assistant, where were the notes from the last meeting again?",
+          "original_question": "Assistant, where were the notes from the last meeting again?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 308.77,
           "insertion_time": 308.77,
@@ -1024,9 +1156,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-ES-minutes",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 308.77,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-ES-minutes",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1046,6 +1180,8 @@
         {
           "source_id": "P-ES-slogan",
           "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+          "original_question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 308.77,
           "insertion_time": 308.77,
@@ -1055,7 +1191,7 @@
       ],
       "report_url": "question-pilot.html#P-ES-slogan",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-ES-slogan",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1076,6 +1212,8 @@
         {
           "source_id": "P-ES-complexity",
           "question": "Assistant, what was the reason for keeping it so simple?",
+          "original_question": "Assistant, what was the reason for keeping it so simple?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 308.77,
           "insertion_time": 308.77,
@@ -1084,9 +1222,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-ES-complexity",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 308.77,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-ES-complexity",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1106,17 +1246,33 @@
         {
           "source_id": "P-ES-hidden",
           "question": "Assistant, how did we suggest keeping the extra controls out of the way?",
+          "original_question": "Assistant, how did we suggest keeping the extra controls out of the way?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 460.02,
           "insertion_time": 460.02,
           "reference_answer": "C proposed hiding advanced functions in a drawer; B later suggested a flip-open arrangement. These were ideas, not a settled construction.",
           "writer": "Codex"
+        },
+        {
+          "source_id": "pilot:P-ES-hidden-spoken-alternative",
+          "question": "Assistant, how were those extra controls going to be kept out of the way?",
+          "original_question": "Assistant, how were those extra controls going to be kept out of the way?",
+          "cue_added": false,
+          "requester": "A",
+          "transcript_time": 460.02,
+          "insertion_time": 460.02,
+          "reference_answer": "C proposed hiding advanced functions in a drawer; B later suggested a flip-open arrangement. These were ideas, not a settled construction.",
+          "writer": "Codex",
+          "purpose": "Same question; alternative phrasing used in its TTS recording"
         }
       ],
       "report_url": "question-pilot.html#P-ES-hidden",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 460.02,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-ES-hidden",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1136,6 +1292,8 @@
         {
           "source_id": "P-ES-numbers",
           "question": "Assistant, were the channel number buttons optional, or did we say they were essential?",
+          "original_question": "Assistant, were the channel number buttons optional, or did we say they were essential?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 556.02,
           "insertion_time": 556.02,
@@ -1145,7 +1303,7 @@
       ],
       "report_url": "question-pilot.html#P-ES-numbers",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-ES-numbers",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1166,6 +1324,8 @@
         {
           "source_id": "P-ES-voice-open",
           "question": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
+          "original_question": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1823.87,
           "insertion_time": 1823.87,
@@ -1175,6 +1335,8 @@
         {
           "source_id": "M-P-ES-voice-open-concise_base",
           "question": "Assistant, did the team decide to include voice recognition?",
+          "original_question": "Assistant, did the team decide to include voice recognition?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1823.87,
           "insertion_time": 1823.87,
@@ -1184,7 +1346,7 @@
       ],
       "report_url": "question-pilot.html#P-ES-voice-open",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-ES-voice-open",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1205,6 +1367,8 @@
         {
           "source_id": "P-ES-power",
           "question": "Assistant, what extra hardware would voice recognition need?",
+          "original_question": "Assistant, what extra hardware would voice recognition need?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1823.87,
           "insertion_time": 1823.87,
@@ -1213,9 +1377,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-ES-power",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1823.87,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-ES-power",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1235,6 +1401,8 @@
         {
           "source_id": "P-IS-notes",
           "question": "Assistant, were the notes from our last meeting sent out yet?",
+          "original_question": "Assistant, were the notes from our last meeting sent out yet?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 328.15,
           "insertion_time": 328.15,
@@ -1243,9 +1411,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-IS-notes",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 328.15,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-IS-notes",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1265,6 +1435,8 @@
         {
           "source_id": "P-IS-sample",
           "question": "Assistant, how many people were in that research group?",
+          "original_question": "Assistant, how many people were in that research group?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 600.64,
           "insertion_time": 600.64,
@@ -1273,9 +1445,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-IS-sample",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 600.64,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-IS-sample",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1295,6 +1469,8 @@
         {
           "source_id": "P-IS-frequency",
           "question": "Assistant, how often were people changing channels in that research?",
+          "original_question": "Assistant, how often were people changing channels in that research?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 600.64,
           "insertion_time": 600.64,
@@ -1303,9 +1479,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-IS-frequency",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 600.64,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-IS-frequency",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1325,6 +1503,8 @@
         {
           "source_id": "P-IS-learning",
           "question": "Assistant, what proportion said a new remote took too long to learn?",
+          "original_question": "Assistant, what proportion said a new remote took too long to learn?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 600.64,
           "insertion_time": 600.64,
@@ -1334,7 +1514,7 @@
       ],
       "report_url": "question-pilot.html#P-IS-learning",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-IS-learning",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1355,6 +1535,8 @@
         {
           "source_id": "P-IS-teletext-usage",
           "question": "Assistant, how much were people using the function the account manager was questioning whether to include?",
+          "original_question": "Assistant, how much were people using the function the account manager was questioning whether to include?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1855.31,
           "insertion_time": 1855.31,
@@ -1364,6 +1546,8 @@
         {
           "source_id": "M-P-IS-teletext-usage-concise_base",
           "question": "Assistant, how frequently was teletext being used?",
+          "original_question": "Assistant, how frequently was teletext being used?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1855.31,
           "insertion_time": 1855.31,
@@ -1373,7 +1557,7 @@
       ],
       "report_url": "question-pilot.html#P-IS-teletext-usage",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-IS-teletext-usage",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1394,6 +1578,8 @@
         {
           "source_id": "P-IS-components",
           "question": "Assistant, were those components a final choice or just a preference?",
+          "original_question": "Assistant, were those components a final choice or just a preference?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1855.31,
           "insertion_time": 1855.31,
@@ -1402,9 +1588,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-IS-components",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1855.31,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-IS-components",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1424,6 +1612,8 @@
         {
           "source_id": "P-IS-budget",
           "question": "Assistant, what cost limit were we worried the voice features might exceed?",
+          "original_question": "Assistant, what cost limit were we worried the voice features might exceed?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1855.31,
           "insertion_time": 1855.31,
@@ -1432,9 +1622,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-IS-budget",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1855.31,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-IS-budget",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1454,6 +1646,8 @@
         {
           "source_id": "P-TS-time",
           "question": "Assistant, how long were we allowing for each presentation?",
+          "original_question": "Assistant, how long were we allowing for each presentation?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 302.37,
           "insertion_time": 302.37,
@@ -1463,7 +1657,7 @@
       ],
       "report_url": "question-pilot.html#P-TS-time",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-TS-time",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1484,6 +1678,8 @@
         {
           "source_id": "P-TS-sample",
           "question": "Assistant, how many people took part in that usability research?",
+          "original_question": "Assistant, how many people took part in that usability research?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 302.37,
           "insertion_time": 302.37,
@@ -1493,6 +1689,8 @@
         {
           "source_id": "M-TS3003b-P05-reminder-1",
           "question": "Assistant, can we confirm the remote control aesthetics feedback is based on 100 test subjects?",
+          "original_question": "Assistant, can we confirm the remote control aesthetics feedback is based on 100 test subjects?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 302.37,
           "insertion_time": 302.37,
@@ -1501,9 +1699,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-TS-sample",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 302.37,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-sample",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1523,6 +1723,8 @@
         {
           "source_id": "P-TS-buttons",
           "question": "Assistant, how many people said they only used a small fraction of the buttons?",
+          "original_question": "Assistant, how many people said they only used a small fraction of the buttons?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 451.9,
           "insertion_time": 451.9,
@@ -1531,9 +1733,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-TS-buttons",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 451.9,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-buttons",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1553,6 +1757,8 @@
         {
           "source_id": "P-TS-relevance",
           "question": "Assistant, which controls got the highest relevance score?",
+          "original_question": "Assistant, which controls got the highest relevance score?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 451.9,
           "insertion_time": 451.9,
@@ -1561,9 +1767,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-TS-relevance",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 451.9,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-relevance",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1583,6 +1791,8 @@
         {
           "source_id": "P-TS-dock",
           "question": "Assistant, what share of the people surveyed had the problem that the proposed docking station would help with?",
+          "original_question": "Assistant, what share of the people surveyed had the problem that the proposed docking station would help with?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 583.52,
           "insertion_time": 583.52,
@@ -1592,6 +1802,8 @@
         {
           "source_id": "M-P-TS-dock-concise_base",
           "question": "Assistant, what percentage of people said their remote got lost in the room?",
+          "original_question": "Assistant, what percentage of people said their remote got lost in the room?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 583.52,
           "insertion_time": 583.52,
@@ -1600,9 +1812,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-TS-dock",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 583.52,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-dock",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1622,6 +1836,8 @@
         {
           "source_id": "P-TS-learning",
           "question": "Assistant, what percentage found a new remote hard to learn?",
+          "original_question": "Assistant, what percentage found a new remote hard to learn?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 583.52,
           "insertion_time": 583.52,
@@ -1630,9 +1846,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-TS-learning",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 583.52,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-learning",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1652,6 +1870,8 @@
         {
           "source_id": "P-TS-target-change",
           "question": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
+          "original_question": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1721.99,
           "insertion_time": 1721.99,
@@ -1661,7 +1881,7 @@
       ],
       "report_url": "question-pilot.html#P-TS-target-change",
       "has_audio": true,
-      "audio_url": "question-pilot.html#audio",
+      "audio_url": "question-audio.html#pilot--P-TS-target-change",
       "audio_demos": 1,
       "has_spoken_cue": true
     },
@@ -1682,6 +1902,8 @@
         {
           "source_id": "P-TS-teletext",
           "question": "Assistant, were we definitely leaving teletext out, or had that changed?",
+          "original_question": "Assistant, were we definitely leaving teletext out, or had that changed?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1721.99,
           "insertion_time": 1721.99,
@@ -1690,9 +1912,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-TS-teletext",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1721.99,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-teletext",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1702,9 +1926,9 @@
       "meeting": "EC4320211",
       "dataset": "Earnings calls",
       "duration_seconds": 3285.848,
-      "at": 302.86,
+      "at": 303.18,
       "transcript_time": 302.86,
-      "percent": 9.217103164845117,
+      "percent": 9.226841898955765,
       "requester": "S1",
       "question": "Assistant, how did the January sales trend compare with the quarter overall?",
       "writer": "Codex",
@@ -1712,6 +1936,8 @@
         {
           "source_id": "P-MO-comparison",
           "question": "Assistant, how did the January sales trend compare with the quarter overall?",
+          "original_question": "Assistant, how did the January sales trend compare with the quarter overall?",
+          "cue_added": false,
           "requester": "S1",
           "transcript_time": 302.86,
           "insertion_time": 302.86,
@@ -1720,9 +1946,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-MO-comparison",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 302.86,
+      "pause_adjustment_seconds": 0.3199999999999932,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-MO-comparison",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1732,9 +1960,9 @@
       "meeting": "EC4320211",
       "dataset": "Earnings calls",
       "duration_seconds": 3285.848,
-      "at": 447.81,
+      "at": 448.61,
       "transcript_time": 447.81,
-      "percent": 13.628445381527083,
+      "percent": 13.652792216803698,
       "requester": "S1",
       "question": "Assistant, when was the new tire pricing system supposed to start rolling out?",
       "writer": "Codex",
@@ -1742,6 +1970,8 @@
         {
           "source_id": "P-MO-pricing",
           "question": "Assistant, when was the new tire pricing system supposed to start rolling out?",
+          "original_question": "Assistant, when was the new tire pricing system supposed to start rolling out?",
+          "cue_added": false,
           "requester": "S1",
           "transcript_time": 447.81,
           "insertion_time": 447.81,
@@ -1751,6 +1981,8 @@
         {
           "source_id": "M-EC4320211-P10-reminder-2",
           "question": "Assistant, when will the tire category management and pricing system rollout begin?",
+          "original_question": "Assistant, when will the tire category management and pricing system rollout begin?",
+          "cue_added": false,
           "requester": "S2",
           "transcript_time": 596.49,
           "insertion_time": 596.49,
@@ -1759,9 +1991,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-MO-pricing",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 447.81,
+      "pause_adjustment_seconds": 0.8000000000000114,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-MO-pricing",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1771,9 +2005,9 @@
       "meeting": "EC4320211",
       "dataset": "Earnings calls",
       "duration_seconds": 3285.848,
-      "at": 596.49,
+      "at": 599.89,
       "transcript_time": 596.49,
-      "percent": 18.15330471768627,
+      "percent": 18.25677876761189,
       "requester": "S1",
       "question": "Assistant, had all the California store conversions finished, or were some still being worked on?",
       "writer": "Codex",
@@ -1781,6 +2015,8 @@
         {
           "source_id": "P-MO-completion",
           "question": "Assistant, had all the California store conversions finished, or were some still being worked on?",
+          "original_question": "Assistant, had all the California store conversions finished, or were some still being worked on?",
+          "cue_added": false,
           "requester": "S1",
           "transcript_time": 596.49,
           "insertion_time": 596.49,
@@ -1790,6 +2026,8 @@
         {
           "source_id": "M-EC4320211-P10-reminder-1",
           "question": "Assistant, are the California stores fully rebranded under the Tire Choice banner?",
+          "original_question": "Assistant, are the California stores fully rebranded under the Tire Choice banner?",
+          "cue_added": false,
           "requester": "S2",
           "transcript_time": 596.49,
           "insertion_time": 596.49,
@@ -1798,9 +2036,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-MO-completion",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 596.49,
+      "pause_adjustment_seconds": 3.3999999999999773,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-MO-completion",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1810,9 +2050,9 @@
       "meeting": "EC4344338",
       "dataset": "Earnings calls",
       "duration_seconds": 2721.169,
-      "at": 296.45,
+      "at": 296.84999999999997,
       "transcript_time": 296.45,
-      "percent": 10.894214949530882,
+      "percent": 10.908914514313517,
       "requester": "S2",
       "question": "Assistant, where did they say the slides and financial reconciliations were posted?",
       "writer": "Codex",
@@ -1820,6 +2060,8 @@
         {
           "source_id": "P-DH-documents",
           "question": "Assistant, where did they say the slides and financial reconciliations were posted?",
+          "original_question": "Assistant, where did they say the slides and financial reconciliations were posted?",
+          "cue_added": false,
           "requester": "S2",
           "transcript_time": 296.45,
           "insertion_time": 296.45,
@@ -1828,9 +2070,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-DH-documents",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 296.45,
+      "pause_adjustment_seconds": 0.39999999999997726,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-DH-documents",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1840,9 +2084,9 @@
       "meeting": "EC4344338",
       "dataset": "Earnings calls",
       "duration_seconds": 2721.169,
-      "at": 595.91,
+      "at": 596.0699999999999,
       "transcript_time": 595.91,
-      "percent": 21.8990441240511,
+      "percent": 21.90492394996415,
       "requester": "S2",
       "question": "Assistant, until what date did they say the call replay would be available?",
       "writer": "Codex",
@@ -1850,6 +2094,8 @@
         {
           "source_id": "P-DH-replay",
           "question": "Assistant, until what date did they say the call replay would be available?",
+          "original_question": "Assistant, until what date did they say the call replay would be available?",
+          "cue_added": false,
           "requester": "S2",
           "transcript_time": 595.91,
           "insertion_time": 595.91,
@@ -1859,6 +2105,8 @@
         {
           "source_id": "M-EC4344338-P10-reminder-1",
           "question": "Assistant, when will the replay of this call be available until?",
+          "original_question": "Assistant, when will the replay of this call be available until?",
+          "cue_added": false,
           "requester": "S2",
           "transcript_time": 595.91,
           "insertion_time": 595.91,
@@ -1867,9 +2115,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-DH-replay",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 595.91,
+      "pause_adjustment_seconds": 0.15999999999996817,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-DH-replay",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1889,6 +2139,8 @@
         {
           "source_id": "P-DH-cepheid",
           "question": "Assistant, what was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
+          "original_question": "Assistant, what was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
+          "cue_added": false,
           "requester": "S5",
           "transcript_time": 2126.22,
           "insertion_time": 2126.22,
@@ -1897,9 +2149,11 @@
         }
       ],
       "report_url": "question-pilot.html#P-DH-cepheid",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 2126.22,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-DH-cepheid",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1919,6 +2173,8 @@
         {
           "source_id": "M-IS1000b-P075-reminder-2",
           "question": "Assistant, did we agree on the target group for the remote control?",
+          "original_question": "Assistant, did we agree on the target group for the remote control?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 441.94,
           "insertion_time": 441.94,
@@ -1927,9 +2183,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-IS1000b-P075-reminder-2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 441.94,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-IS-target-unknown",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1939,9 +2197,9 @@
       "meeting": "EC4344338",
       "dataset": "Earnings calls",
       "duration_seconds": 2721.169,
-      "at": 446.73,
+      "at": 446.81,
       "transcript_time": 446.73,
-      "percent": 16.416841438367115,
+      "percent": 16.419781351323643,
       "requester": "S1",
       "question": "Assistant, how many diagnostic tests has IDT enabled so far?",
       "writer": "Local model",
@@ -1949,6 +2207,8 @@
         {
           "source_id": "M-EC4344338-P075-reminder-1",
           "question": "Assistant, how many diagnostic tests has IDT enabled so far?",
+          "original_question": "Assistant, how many diagnostic tests has IDT enabled so far?",
+          "cue_added": false,
           "requester": "S1",
           "transcript_time": 446.73,
           "insertion_time": 446.73,
@@ -1957,9 +2217,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-EC4344338-P075-reminder-1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 446.73,
+      "pause_adjustment_seconds": 0.07999999999998408,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-DH-idt",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -1969,9 +2231,9 @@
       "meeting": "EC4320211",
       "dataset": "Earnings calls",
       "duration_seconds": 3285.848,
-      "at": 302.86,
+      "at": 303.18,
       "transcript_time": 302.86,
-      "percent": 9.217103164845117,
+      "percent": 9.226841898955765,
       "requester": "S2",
       "question": "Assistant, how did mild weather affect our Northern markets in January?",
       "writer": "Local model",
@@ -1979,6 +2241,8 @@
         {
           "source_id": "M-EC4320211-P05-reminder-2",
           "question": "Assistant, how did mild weather affect our Northern markets in January?",
+          "original_question": "Assistant, how did mild weather affect our Northern markets in January?",
+          "cue_added": false,
           "requester": "S2",
           "transcript_time": 302.86,
           "insertion_time": 302.86,
@@ -1987,9 +2251,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-EC4320211-P05-reminder-2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 302.86,
+      "pause_adjustment_seconds": 0.3199999999999932,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--Q-MO-weather",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2009,6 +2275,8 @@
         {
           "source_id": "M-P-TS-dock-anchored_base-1",
           "question": "Assistant, how would the docking station help if the remote gets lost?",
+          "original_question": "Assistant, how would the docking station help if the remote gets lost?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 583.52,
           "insertion_time": 583.52,
@@ -2017,9 +2285,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-P-TS-dock-anchored_base-1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 583.52,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--P-TS-dock-mechanism",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2039,6 +2309,8 @@
         {
           "source_id": "M-P-IS-teletext-usage-anchored_rewrite-1",
           "question": "Assistant, what did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
+          "original_question": "Assistant, what did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1855.31,
           "insertion_time": 1855.31,
@@ -2047,9 +2319,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-P-IS-teletext-usage-anchored_rewrite-1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1855.31,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--Q-IS-teletext-comparison",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2069,6 +2343,8 @@
         {
           "source_id": "M-P-EN-same-person-concise_base",
           "question": "Assistant, who said they could put everyone's parts together?",
+          "original_question": "Assistant, who said they could put everyone's parts together?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 471.33,
           "insertion_time": 471.33,
@@ -2077,9 +2353,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-P-EN-same-person-concise_base",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 471.33,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--Q-EN-compiler",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2099,6 +2377,8 @@
         {
           "source_id": "M-P-TS-target-change-concise_base",
           "question": "Assistant, which age group did the new requirements specify?",
+          "original_question": "Assistant, which age group did the new requirements specify?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1721.99,
           "insertion_time": 1721.99,
@@ -2107,9 +2387,11 @@
         }
       ],
       "report_url": "question-pilot.html#M-P-TS-target-change-concise_base",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1721.99,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#pilot--Q-TS-current-audience",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2129,17 +2411,33 @@
         {
           "source_id": "EN2001b-Slater-Q2",
           "question": "Assistant, how were we going to store the information-density values alongside the segments?",
+          "original_question": "Assistant, how were we going to store the information-density values alongside the segments?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 2769.16,
           "insertion_time": 2769.16,
           "reference_answer": "The suggestion was to create a separate file linking each value to the segment ID. It was a proposed representation, not proof of an implemented storage format.",
           "writer": "Local model with Codex edits"
+        },
+        {
+          "source_id": "scale:EN2001b-Slater-Q2-spoken-alternative",
+          "question": "Assistant, what was the plan for storing the information-density values alongside the segments?",
+          "original_question": "Assistant, what was the plan for storing the information-density values alongside the segments?",
+          "cue_added": false,
+          "requester": "B",
+          "transcript_time": 2769.16,
+          "insertion_time": 2769.16,
+          "reference_answer": "The suggestion was to create a separate file linking each value to the segment ID. It was a proposed representation, not proof of an implemented storage format.",
+          "writer": "Codex",
+          "purpose": "Same question; alternative phrasing used in its TTS recording"
         }
       ],
       "report_url": "question-scale.html#EN2001b-Slater-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 2769.16,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2001b-Slater-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2159,6 +2457,8 @@
         {
           "source_id": "EN2004a-S05-Q3",
           "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+          "original_question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 561.16,
           "insertion_time": 561.16,
@@ -2167,9 +2467,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2004a-S05-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 561.16,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2004a-S05-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2189,6 +2491,8 @@
         {
           "source_id": "EN2004a-S075-Q2",
           "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+          "original_question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 640.16,
           "insertion_time": 640.16,
@@ -2197,9 +2501,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2004a-S075-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 640.16,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2004a-S075-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2219,6 +2525,8 @@
         {
           "source_id": "EN2004a-Smiddle-Q2",
           "question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
+          "original_question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1697.61,
           "insertion_time": 1697.61,
@@ -2227,9 +2535,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2004a-Smiddle-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1697.61,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2004a-Smiddle-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2249,6 +2559,8 @@
         {
           "source_id": "EN2009b-S10-Q3",
           "question": "Assistant, is Nynke available to help with the pilot test when she returns tomorrow?",
+          "original_question": "Assistant, is Nynke available to help with the pilot test when she returns tomorrow?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 732.14,
           "insertion_time": 732.14,
@@ -2257,9 +2569,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2009b-S10-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 732.14,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2009b-S10-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2279,6 +2593,8 @@
         {
           "source_id": "EN2009b-Smiddle-Q2",
           "question": "Assistant, what exactly does the ten kilo-hertz sound need to do in the setup to be detected properly?",
+          "original_question": "Assistant, what exactly does the ten kilo-hertz sound need to do in the setup to be detected properly?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 1228.22,
           "insertion_time": 1228.22,
@@ -2287,9 +2603,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2009b-Smiddle-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1228.22,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2009b-Smiddle-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2309,6 +2627,8 @@
         {
           "source_id": "IN1005-S075-Q1",
           "question": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link-based iteration starts?",
+          "original_question": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link-based iteration starts?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 502.38,
           "insertion_time": 502.38,
@@ -2317,9 +2637,11 @@
         }
       ],
       "report_url": "question-scale.html#IN1005-S075-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 502.38,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IN1005-S075-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2339,6 +2661,8 @@
         {
           "source_id": "IN1005-Smiddle-Q1",
           "question": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
+          "original_question": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1504.36,
           "insertion_time": 1504.36,
@@ -2348,6 +2672,8 @@
         {
           "source_id": "IN1005-Slater-Q1",
           "question": "Assistant, can you clarify how the evaluation task uses the Yahoo directory labels without including them in training?",
+          "original_question": "Assistant, can you clarify how the evaluation task uses the Yahoo directory labels without including them in training?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2166.4,
           "insertion_time": 2166.4,
@@ -2356,9 +2682,11 @@
         }
       ],
       "report_url": "question-scale.html#IN1005-Smiddle-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1504.36,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IN1005-directory-evaluation",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2378,6 +2706,8 @@
         {
           "source_id": "IN1007-S05-Q2",
           "question": "Assistant, do we still have the original MATLAB code from Marios and Petr’s joint work?",
+          "original_question": "Assistant, do we still have the original MATLAB code from Marios and Petr’s joint work?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 328.62,
           "insertion_time": 328.62,
@@ -2387,6 +2717,8 @@
         {
           "source_id": "IN1007-Slater-Q2",
           "question": "Assistant, do we still have the original MATLAB code for the TRAP compression experiments?",
+          "original_question": "Assistant, do we still have the original MATLAB code for the TRAP compression experiments?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1942.18,
           "insertion_time": 1942.18,
@@ -2395,9 +2727,11 @@
         }
       ],
       "report_url": "question-scale.html#IN1007-S05-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 328.62,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IN1007-matlab-availability",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2417,6 +2751,8 @@
         {
           "source_id": "IB4001-S05-Q1",
           "question": "Assistant, what's the exact deadline for the final plan submission again? I want to make sure I'm not missing anything from earlier.",
+          "original_question": "Assistant, what's the exact deadline for the final plan submission again? I want to make sure I'm not missing anything from earlier.",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 298.01,
           "insertion_time": 298.01,
@@ -2425,9 +2761,11 @@
         }
       ],
       "report_url": "question-scale.html#IB4001-S05-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 298.01,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IB4001-S05-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2447,6 +2785,8 @@
         {
           "source_id": "IB4001-Slater-Q2",
           "question": "Assistant, does the plan still allow for the reading room to be used for short meetings if needed?",
+          "original_question": "Assistant, does the plan still allow for the reading room to be used for short meetings if needed?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1436.84,
           "insertion_time": 1436.84,
@@ -2455,9 +2795,11 @@
         }
       ],
       "report_url": "question-scale.html#IB4001-Slater-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1436.84,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IB4001-Slater-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2477,6 +2819,8 @@
         {
           "source_id": "IB4003-S075-Q3",
           "question": "Assistant, how many people were we finding offices for again?",
+          "original_question": "Assistant, how many people were we finding offices for again?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 436.54,
           "insertion_time": 436.54,
@@ -2485,9 +2829,11 @@
         }
       ],
       "report_url": "question-scale.html#IB4003-S075-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 436.54,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IB4003-S075-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2507,6 +2853,8 @@
         {
           "source_id": "IB4003-S10-Q3",
           "question": "Assistant, had we picked a room for the reading lounge?",
+          "original_question": "Assistant, had we picked a room for the reading lounge?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 656.27,
           "insertion_time": 656.27,
@@ -2515,9 +2863,11 @@
         }
       ],
       "report_url": "question-scale.html#IB4003-S10-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 656.27,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IB4003-S10-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2537,6 +2887,8 @@
         {
           "source_id": "IB4003-Smiddle-Q3",
           "question": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
+          "original_question": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1078.12,
           "insertion_time": 1078.12,
@@ -2545,9 +2897,11 @@
         }
       ],
       "report_url": "question-scale.html#IB4003-Smiddle-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1078.12,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--IB4003-Smiddle-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2567,6 +2921,8 @@
         {
           "source_id": "ES2003c-S075-Q3",
           "question": "Assistant, what was the concern about using a kinetic battery for this remote?",
+          "original_question": "Assistant, what was the concern about using a kinetic battery for this remote?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 453.53,
           "insertion_time": 453.53,
@@ -2575,9 +2931,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2003c-S075-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 453.53,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2003c-S075-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2597,6 +2955,8 @@
         {
           "source_id": "ES2003c-S10-Q1",
           "question": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
+          "original_question": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 605.14,
           "insertion_time": 605.14,
@@ -2605,9 +2965,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2003c-S10-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 605.14,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2003c-S10-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2627,6 +2989,8 @@
         {
           "source_id": "ES2003c-Slater-Q2",
           "question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
+          "original_question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1798.74,
           "insertion_time": 1798.74,
@@ -2635,9 +2999,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2003c-Slater-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1798.74,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2003c-Slater-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2657,6 +3023,8 @@
         {
           "source_id": "TS3004d-S05-Q1",
           "question": "Assistant, why were we leaning toward a slide-open design?",
+          "original_question": "Assistant, why were we leaning toward a slide-open design?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 304.46,
           "insertion_time": 304.46,
@@ -2666,6 +3034,8 @@
         {
           "source_id": "TS3004d-S10-Q1",
           "question": "Assistant, what were the reasons for preferring a slide-open inner panel?",
+          "original_question": "Assistant, what were the reasons for preferring a slide-open inner panel?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 595.85,
           "insertion_time": 595.85,
@@ -2674,9 +3044,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3004d-S05-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 304.46,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3004d-slide-reasons",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2696,6 +3068,8 @@
         {
           "source_id": "TS3004d-S075-Q1",
           "question": "Assistant, what's the latest on the slide-open mechanism design?",
+          "original_question": "Assistant, what's the latest on the slide-open mechanism design?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 445.92,
           "insertion_time": 445.92,
@@ -2704,9 +3078,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3004d-S075-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 445.92,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3004d-S075-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2726,6 +3102,8 @@
         {
           "source_id": "TS3004d-Smiddle-Q3",
           "question": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
+          "original_question": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1370.57,
           "insertion_time": 1370.57,
@@ -2734,9 +3112,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3004d-Smiddle-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1370.57,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3004d-Smiddle-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2756,6 +3136,8 @@
         {
           "source_id": "TS3004d-Slater-Q1",
           "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+          "original_question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 2189.66,
           "insertion_time": 2189.66,
@@ -2764,9 +3146,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3004d-Slater-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 2189.66,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3004d-Slater-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2786,6 +3170,8 @@
         {
           "source_id": "TS3004d-Slater-Q2",
           "question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
+          "original_question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 2189.66,
           "insertion_time": 2189.66,
@@ -2794,9 +3180,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3004d-Slater-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 2189.66,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3004d-Slater-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2816,6 +3204,8 @@
         {
           "source_id": "ES2004d-S075-Q1",
           "question": "Assistant, where were we planning to put the infrared sender?",
+          "original_question": "Assistant, where were we planning to put the infrared sender?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 450.92,
           "insertion_time": 450.92,
@@ -2825,6 +3215,8 @@
         {
           "source_id": "ES2004d-S10-Q1",
           "question": "Assistant, where was the infrared sender supposed to go on the prototype?",
+          "original_question": "Assistant, where was the infrared sender supposed to go on the prototype?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 609.51,
           "insertion_time": 609.51,
@@ -2833,9 +3225,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2004d-S075-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 450.92,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2004d-infrared-location",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2855,6 +3249,8 @@
         {
           "source_id": "TS3005b-Slater-Q3",
           "question": "Assistant, did we confirm whether the LCD screen can be made with large buttons for elderly users? That was part of the user needs.",
+          "original_question": "Assistant, did we confirm whether the LCD screen can be made with large buttons for elderly users? That was part of the user needs.",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1954.13,
           "insertion_time": 1954.13,
@@ -2863,9 +3259,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3005b-Slater-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1954.13,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3005b-Slater-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2885,6 +3283,8 @@
         {
           "source_id": "ES2005b-Slater-Q3",
           "question": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
+          "original_question": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1859.39,
           "insertion_time": 1859.39,
@@ -2893,9 +3293,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2005b-Slater-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1859.39,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2005b-Slater-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2915,6 +3317,8 @@
         {
           "source_id": "TS3006c-S05-Q3",
           "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+          "original_question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 309.03,
           "insertion_time": 309.03,
@@ -2923,9 +3327,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3006c-S05-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 309.03,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3006c-S05-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2945,6 +3351,8 @@
         {
           "source_id": "TS3006c-S10-Q1",
           "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+          "original_question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 606.19,
           "insertion_time": 606.19,
@@ -2953,9 +3361,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3006c-S10-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 606.19,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3006c-S10-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -2975,6 +3385,8 @@
         {
           "source_id": "TS3006c-Smiddle-Q2",
           "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+          "original_question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 1300.07,
           "insertion_time": 1300.07,
@@ -2983,9 +3395,11 @@
         }
       ],
       "report_url": "question-scale.html#TS3006c-Smiddle-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1300.07,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--TS3006c-Smiddle-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3005,6 +3419,8 @@
         {
           "source_id": "ES2006a-S075-Q3",
           "question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+          "original_question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 452.23,
           "insertion_time": 452.23,
@@ -3013,9 +3429,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2006a-S075-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 452.23,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2006a-S075-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3035,6 +3453,8 @@
         {
           "source_id": "ES2006a-Slater-Q1",
           "question": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
+          "original_question": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1033.85,
           "insertion_time": 1033.85,
@@ -3043,9 +3463,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2006a-Slater-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1033.85,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2006a-Slater-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3065,6 +3487,8 @@
         {
           "source_id": "ES2006a-Slater-Q2",
           "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+          "original_question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 1033.85,
           "insertion_time": 1033.85,
@@ -3073,9 +3497,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2006a-Slater-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1033.85,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2006a-Slater-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3095,6 +3521,8 @@
         {
           "source_id": "EN2006b-S05-Q1",
           "question": "Assistant, did we decide to annotate Hubble?",
+          "original_question": "Assistant, did we decide to annotate Hubble?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 300.97,
           "insertion_time": 300.97,
@@ -3103,9 +3531,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2006b-S05-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 300.97,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2006b-S05-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3125,6 +3555,8 @@
         {
           "source_id": "EN2006b-S075-Q1",
           "question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
+          "original_question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 440.13,
           "insertion_time": 440.13,
@@ -3133,9 +3565,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2006b-S075-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 440.13,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2006b-S075-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3155,6 +3589,8 @@
         {
           "source_id": "EN2006b-S075-Q2",
           "question": "Assistant, what did we say about annotating absorption line systems?",
+          "original_question": "Assistant, what did we say about annotating absorption line systems?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 440.13,
           "insertion_time": 440.13,
@@ -3163,9 +3599,11 @@
         }
       ],
       "report_url": "question-scale.html#EN2006b-S075-Q2",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 440.13,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--EN2006b-S075-Q2",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3185,6 +3623,8 @@
         {
           "source_id": "ES2007a-S075-Q3",
           "question": "Assistant, what was the next step after the tool training exercise according to the agenda?",
+          "original_question": "Assistant, what was the next step after the tool training exercise according to the agenda?",
+          "cue_added": false,
           "requester": "A",
           "transcript_time": 444.0,
           "insertion_time": 444.0,
@@ -3193,9 +3633,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2007a-S075-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 444.0,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2007a-S075-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3215,6 +3657,8 @@
         {
           "source_id": "ES2007a-Slater-Q3",
           "question": "Assistant, was it agreed that the remote should control only TV or also connected devices like DVD players?",
+          "original_question": "Assistant, was it agreed that the remote should control only TV or also connected devices like DVD players?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 997.74,
           "insertion_time": 997.74,
@@ -3223,9 +3667,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2007a-Slater-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 997.74,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2007a-Slater-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3245,6 +3691,8 @@
         {
           "source_id": "ES2008b-Smiddle-Q3",
           "question": "Assistant, what exactly did the usability lab find about the frequency of channel changing during an hour of use?",
+          "original_question": "Assistant, what exactly did the usability lab find about the frequency of channel changing during an hour of use?",
+          "cue_added": false,
           "requester": "D",
           "transcript_time": 1007.48,
           "insertion_time": 1007.48,
@@ -3253,9 +3701,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2008b-Smiddle-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1007.48,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2008b-Smiddle-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3275,6 +3725,8 @@
         {
           "source_id": "ES2008b-Slater-Q1",
           "question": "Assistant, can you clarify what the exact price cap is for producing the remote control? I want to make sure I’m not missing it.",
+          "original_question": "Assistant, can you clarify what the exact price cap is for producing the remote control? I want to make sure I’m not missing it.",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 1689.56,
           "insertion_time": 1689.56,
@@ -3283,9 +3735,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2008b-Slater-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 1689.56,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2008b-Slater-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3305,6 +3759,8 @@
         {
           "source_id": "ES2009a-S10-Q1",
           "question": "Assistant, what's the current plan for moving from basic features to the sleeker design phase? Need to know the next steps.",
+          "original_question": "Assistant, what's the current plan for moving from basic features to the sleeker design phase? Need to know the next steps.",
+          "cue_added": false,
           "requester": "C",
           "transcript_time": 594.37,
           "insertion_time": 594.37,
@@ -3313,9 +3769,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2009a-S10-Q1",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 594.37,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2009a-S10-Q1",
+      "audio_demos": 1,
       "has_spoken_cue": true
     },
     {
@@ -3335,6 +3793,8 @@
         {
           "source_id": "ES2010b-Smiddle-Q3",
           "question": "Assistant, what battery options had we discussed, and did anyone say they needed to be rechargeable?",
+          "original_question": "Assistant, what battery options had we discussed, and did anyone say they needed to be rechargeable?",
+          "cue_added": false,
           "requester": "B",
           "transcript_time": 887.55,
           "insertion_time": 887.55,
@@ -3343,9 +3803,11 @@
         }
       ],
       "report_url": "question-scale.html#ES2010b-Smiddle-Q3",
-      "has_audio": false,
-      "audio_url": null,
-      "audio_demos": 0,
+      "original_insertion_time": 887.55,
+      "pause_adjustment_seconds": 0,
+      "has_audio": true,
+      "audio_url": "question-audio.html#scale--ES2010b-Smiddle-Q3",
+      "audio_demos": 1,
       "has_spoken_cue": true
     }
   ]

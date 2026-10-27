@@ -1,0 +1,118 @@
+{
+  "status": "frozen_before_new_synthesis",
+  "model_provenance": [
+    {
+      "repo": "SWivid/F5-TTS",
+      "revision": "84e5a410d9cead4de2f847e7c9369a6440bdfaca",
+      "license": "cc-by-nc-4.0",
+      "files": [
+        {
+          "path": "F5TTS_v1_Base/model_1250000.safetensors",
+          "bytes": 1348435761,
+          "sha256": "670900fd14e6c458b95da6e9ed317cdb20dbaf7a1c02ac06a05475a9d32b6a38"
+        },
+        {
+          "path": "F5TTS_v1_Base/vocab.txt",
+          "bytes": 13800,
+          "sha256": "2a05f992e00af9b0bd3800a8d23e78d520dbd705284ed2eedb5f4bd29398fa3c"
+        },
+        {
+          "path": "README.md",
+          "bytes": 630,
+          "sha256": "cf3354feaf4020527b3642b12a5a382de13d0af6bc99e8d37bee84425c1ca224"
+        }
+      ],
+      "seconds": 2.035544498998206
+    },
+    {
+      "repo": "charactr/vocos-mel-24khz",
+      "revision": "0feb3fdd929bcd6649e0e7c5a688cf7dd012ef21",
+      "license": "mit",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 1830,
+          "sha256": "5858497d76d58914b29958a0f448e7b4fd3bb54940100baaa7520d4a56d8b3df"
+        },
+        {
+          "path": "config.yaml",
+          "bytes": 461,
+          "sha256": "da9033922f969a47f0c160010226919e59f27761fd5066f3828d46de6650b0fc"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 54365991,
+          "sha256": "97ec976ad1fd67a33ab2682d29c0ac7df85234fae875aefcc5fb215681a91b2a"
+        }
+      ],
+      "seconds": 0.09440696996171027
+    }
+  ],
+  "settings": [
+    {
+      "id": "primary-default",
+      "ref": "primary",
+      "nfe_step": 32,
+      "cfg_strength": 2,
+      "speed": 1.0,
+      "seed": 17
+    },
+    {
+      "id": "primary-calm",
+      "ref": "primary",
+      "nfe_step": 48,
+      "cfg_strength": 1.5,
+      "speed": 0.9,
+      "seed": 17
+    },
+    {
+      "id": "alternate-calm",
+      "ref": "alternate",
+      "nfe_step": 48,
+      "cfg_strength": 1.5,
+      "speed": 0.9,
+      "seed": 17
+    }
+  ],
+  "fallback_settings": [
+    {
+      "id": "primary-slow-cfg2",
+      "ref": "primary",
+      "channel": "headset",
+      "nfe_step": 48,
+      "cfg_strength": 2,
+      "speed": 0.7
+    },
+    {
+      "id": "primary-slow-cfg3",
+      "ref": "primary",
+      "channel": "headset",
+      "nfe_step": 48,
+      "cfg_strength": 3,
+      "speed": 0.7
+    },
+    {
+      "id": "alternate-slow-cfg2",
+      "ref": "alternate",
+      "channel": "headset",
+      "nfe_step": 48,
+      "cfg_strength": 2,
+      "speed": 0.65
+    },
+    {
+      "id": "alternate-slow-cfg3",
+      "ref": "alternate",
+      "channel": "headset",
+      "nfe_step": 48,
+      "cfg_strength": 3,
+      "speed": 0.65
+    }
+  ],
+  "selection": "Require the full spoken question and cue, allowing orthographic/acronym and homophone spelling differences. Prefer recordings without a continued-reference prefix, then rank using held-out ECAPA similarity. Three proper-name cases remain flagged for pronunciation review and are not word-accuracy passes. The proxy participates in selection; independent human voice review remains pending.",
+  "weight_training": false,
+  "future_question_in_background_preparation": false,
+  "reference_policy": "Past speech where available. User approved separate same-speaker enrollment on 2026-10-27, including later speech, for offline TTS only. Never supply enrollment clips or transcripts to the duplex model.",
+  "reference_preprocessing_repair": "For quiet enrollment clips, apply a documented linear gain before F5 silence detection (target RMS 0.05, peak at most 0.9). The original source PCM and reference timestamps stay unchanged. Final speech is matched back to the original source level.",
+  "cue_trimming": "Use the source ASR alignment of Assistant with 200 ms leading padding, preserving weak cue onsets. Crop only an accidental reference continuation before an otherwise complete question; retain the recorded crop metadata.",
+  "spoken_alternatives": "Two original question intents use natural alternative phrasings to avoid persistent TTS tense changes. Preserve the original primary texts and record these as alternatives, not new questions."
+}

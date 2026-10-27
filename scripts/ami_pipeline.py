@@ -218,3 +218,9 @@ def pipeline_styles():
 @media(max-width:1000px){.ami-module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.ami-module-grid{grid-template-columns:1fr}.ami-module{padding:17px}.ami-pipeline-route{flex-direction:column;align-items:stretch}.ami-pipeline-arrow{align-self:center;transform:rotate(90deg);line-height:1}.ami-pipeline-node{text-align:center}.ami-pipeline-figure{padding:16px}}
 '''
+
+
+def spoken_question(text):
+    if text.startswith('Assistant,'):
+        return text
+    return 'Assistant, ' + (text[0] if text.startswith('I ') else text[0].lower()) + text[1:]

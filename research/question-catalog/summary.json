@@ -2,14 +2,14 @@
   "overall": {
     "questions": 105,
     "conversations": 26,
-    "mean_minutes": 17.545273015873015,
-    "mean_percent": 46.28892029718209,
+    "mean_minutes": 17.546396825396826,
+    "mean_percent": 46.29101088125474,
     "median_minutes": 12.202333333333334,
     "early_questions": 50,
-    "audio_questions": 13,
-    "spoken_cue_questions": 90,
-    "alternative_records": 22,
-    "accepted_text_records": 127
+    "audio_questions": 105,
+    "spoken_cue_questions": 105,
+    "alternative_records": 24,
+    "accepted_text_records": 129
   },
   "batches": [
     {
@@ -22,7 +22,7 @@
       "mean_percent": 70.08078553347778,
       "median_minutes": 26.315333333333335,
       "early_questions": 1,
-      "audio_questions": 3,
+      "audio_questions": 7,
       "spoken_cue_questions": 7,
       "alternative_records": 2,
       "accepted_text_records": 9
@@ -33,12 +33,12 @@
       "url": "question-expansion.html",
       "questions": 15,
       "conversations": 6,
-      "mean_minutes": 28.366655555555557,
-      "mean_percent": 71.60190883205603,
+      "mean_minutes": 28.368433333333332,
+      "mean_percent": 71.60515507675957,
       "median_minutes": 27.18316666666667,
       "early_questions": 0,
-      "audio_questions": 0,
-      "spoken_cue_questions": 0,
+      "audio_questions": 15,
+      "spoken_cue_questions": 15,
       "alternative_records": 8,
       "accepted_text_records": 23
     },
@@ -48,14 +48,14 @@
       "url": "question-pilot.html",
       "questions": 43,
       "conversations": 6,
-      "mean_minutes": 13.560476744186046,
-      "mean_percent": 36.25005602980211,
+      "mean_minutes": 13.562600775193799,
+      "mean_percent": 36.254028533455035,
       "median_minutes": 9.267,
       "early_questions": 31,
-      "audio_questions": 10,
+      "audio_questions": 43,
       "spoken_cue_questions": 43,
-      "alternative_records": 8,
-      "accepted_text_records": 51
+      "alternative_records": 9,
+      "accepted_text_records": 52
     },
     {
       "id": "scale",
@@ -67,10 +67,10 @@
       "mean_percent": 43.42475226768609,
       "median_minutes": 11.570083333333333,
       "early_questions": 18,
-      "audio_questions": 0,
+      "audio_questions": 40,
       "spoken_cue_questions": 40,
-      "alternative_records": 4,
-      "accepted_text_records": 44
+      "alternative_records": 5,
+      "accepted_text_records": 45
     }
   ],
   "datasets": [
@@ -82,21 +82,21 @@
       "mean_percent": 47.21201187995832,
       "median_minutes": 14.792499999999999,
       "early_questions": 43,
-      "audio_questions": 13,
-      "spoken_cue_questions": 82,
-      "alternative_records": 15,
-      "accepted_text_records": 108
+      "audio_questions": 93,
+      "spoken_cue_questions": 93,
+      "alternative_records": 17,
+      "accepted_text_records": 110
     },
     {
       "dataset": "Earnings calls",
       "questions": 12,
       "conversations": 2,
-      "mean_minutes": 19.288069444444446,
-      "mean_percent": 39.1349605306663,
-      "median_minutes": 9.936666666666667,
+      "mean_minutes": 19.29790277777778,
+      "mean_percent": 39.153253141302045,
+      "median_minutes": 9.966333333333331,
       "early_questions": 7,
-      "audio_questions": 0,
-      "spoken_cue_questions": 8,
+      "audio_questions": 12,
+      "spoken_cue_questions": 12,
       "alternative_records": 7,
       "accepted_text_records": 19
     }
@@ -107,12 +107,12 @@
       "dataset": "Earnings calls",
       "questions": 6,
       "conversations": 1,
-      "mean_minutes": 17.913833333333333,
-      "mean_percent": 32.71088620045724,
-      "median_minutes": 8.7025,
+      "mean_minutes": 17.93172222222222,
+      "mean_percent": 32.74355153778669,
+      "median_minutes": 8.7375,
       "early_questions": 4,
-      "audio_questions": 0,
-      "spoken_cue_questions": 4,
+      "audio_questions": 6,
+      "spoken_cue_questions": 6,
       "alternative_records": 4,
       "accepted_text_records": 10
     },
@@ -121,12 +121,12 @@
       "dataset": "Earnings calls",
       "questions": 6,
       "conversations": 1,
-      "mean_minutes": 20.662305555555555,
-      "mean_percent": 45.55903486087536,
-      "median_minutes": 18.5575,
+      "mean_minutes": 20.664083333333334,
+      "mean_percent": 45.5629547448174,
+      "median_minutes": 18.558833333333332,
       "early_questions": 3,
-      "audio_questions": 0,
-      "spoken_cue_questions": 4,
+      "audio_questions": 6,
+      "spoken_cue_questions": 6,
       "alternative_records": 3,
       "accepted_text_records": 9
     },
@@ -139,10 +139,10 @@
       "mean_percent": 80.22025837020625,
       "median_minutes": 46.15266666666666,
       "early_questions": 0,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
-      "alternative_records": 0,
-      "accepted_text_records": 1
+      "alternative_records": 1,
+      "accepted_text_records": 2
     },
     {
       "meeting": "EN2002b",
@@ -153,8 +153,8 @@
       "mean_percent": 46.45320276990266,
       "median_minutes": 8.921833333333334,
       "early_questions": 7,
-      "audio_questions": 3,
-      "spoken_cue_questions": 9,
+      "audio_questions": 12,
+      "spoken_cue_questions": 12,
       "alternative_records": 1,
       "accepted_text_records": 13
     },
@@ -167,7 +167,7 @@
       "mean_percent": 70.08078553347778,
       "median_minutes": 26.315333333333335,
       "early_questions": 1,
-      "audio_questions": 3,
+      "audio_questions": 7,
       "spoken_cue_questions": 7,
       "alternative_records": 2,
       "accepted_text_records": 9
@@ -181,7 +181,7 @@
       "mean_percent": 28.043800463009585,
       "median_minutes": 10.669333333333332,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 3,
       "spoken_cue_questions": 3,
       "alternative_records": 0,
       "accepted_text_records": 3
@@ -195,7 +195,7 @@
       "mean_percent": 12.900062980675406,
       "median_minutes": 7.3355,
       "early_questions": 3,
-      "audio_questions": 0,
+      "audio_questions": 3,
       "spoken_cue_questions": 3,
       "alternative_records": 0,
       "accepted_text_records": 3
@@ -209,7 +209,7 @@
       "mean_percent": 39.61403615127358,
       "median_minutes": 16.336333333333332,
       "early_questions": 0,
-      "audio_questions": 0,
+      "audio_questions": 2,
       "spoken_cue_questions": 2,
       "alternative_records": 0,
       "accepted_text_records": 2
@@ -223,10 +223,10 @@
       "mean_percent": 46.23279263480929,
       "median_minutes": 14.708083333333333,
       "early_questions": 5,
-      "audio_questions": 3,
-      "spoken_cue_questions": 7,
-      "alternative_records": 1,
-      "accepted_text_records": 11
+      "audio_questions": 10,
+      "spoken_cue_questions": 10,
+      "alternative_records": 2,
+      "accepted_text_records": 12
     },
     {
       "meeting": "ES2003c",
@@ -237,7 +237,7 @@
       "mean_percent": 42.31319413593958,
       "median_minutes": 10.085666666666667,
       "early_questions": 2,
-      "audio_questions": 0,
+      "audio_questions": 3,
       "spoken_cue_questions": 3,
       "alternative_records": 0,
       "accepted_text_records": 3
@@ -251,7 +251,7 @@
       "mean_percent": 20.311711711711713,
       "median_minutes": 7.515333333333333,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
       "alternative_records": 1,
       "accepted_text_records": 2
@@ -265,7 +265,7 @@
       "mean_percent": 80.56282495667244,
       "median_minutes": 30.989833333333333,
       "early_questions": 0,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
       "alternative_records": 0,
       "accepted_text_records": 1
@@ -279,7 +279,7 @@
       "mean_percent": 65.11447028423773,
       "median_minutes": 17.230833333333333,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 3,
       "spoken_cue_questions": 3,
       "alternative_records": 0,
       "accepted_text_records": 3
@@ -293,7 +293,7 @@
       "mean_percent": 59.03931203931204,
       "median_minutes": 12.014500000000002,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 2,
       "spoken_cue_questions": 2,
       "alternative_records": 0,
       "accepted_text_records": 2
@@ -307,7 +307,7 @@
       "mean_percent": 64.18467396477868,
       "median_minutes": 22.47533333333333,
       "early_questions": 0,
-      "audio_questions": 0,
+      "audio_questions": 2,
       "spoken_cue_questions": 2,
       "alternative_records": 0,
       "accepted_text_records": 2
@@ -321,7 +321,7 @@
       "mean_percent": 42.12402551381999,
       "median_minutes": 9.906166666666667,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
       "alternative_records": 0,
       "accepted_text_records": 1
@@ -335,7 +335,7 @@
       "mean_percent": 50.314625850340136,
       "median_minutes": 14.792499999999999,
       "early_questions": 0,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
       "alternative_records": 0,
       "accepted_text_records": 1
@@ -349,7 +349,7 @@
       "mean_percent": 48.71343298501855,
       "median_minutes": 14.457083333333333,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 2,
       "spoken_cue_questions": 2,
       "alternative_records": 0,
       "accepted_text_records": 2
@@ -363,7 +363,7 @@
       "mean_percent": 35.764862253888296,
       "median_minutes": 10.937833333333334,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 3,
       "spoken_cue_questions": 3,
       "alternative_records": 0,
       "accepted_text_records": 3
@@ -377,7 +377,7 @@
       "mean_percent": 35.84957964852052,
       "median_minutes": 16.722833333333334,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 2,
       "spoken_cue_questions": 2,
       "alternative_records": 1,
       "accepted_text_records": 3
@@ -391,7 +391,7 @@
       "mean_percent": 13.628136864862915,
       "median_minutes": 5.477,
       "early_questions": 1,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
       "alternative_records": 1,
       "accepted_text_records": 2
@@ -405,8 +405,8 @@
       "mean_percent": 54.15915563149651,
       "median_minutes": 25.829250000000002,
       "early_questions": 5,
-      "audio_questions": 2,
-      "spoken_cue_questions": 9,
+      "audio_questions": 12,
+      "spoken_cue_questions": 12,
       "alternative_records": 3,
       "accepted_text_records": 15
     },
@@ -419,8 +419,8 @@
       "mean_percent": 41.12377401912104,
       "median_minutes": 9.725333333333333,
       "early_questions": 7,
-      "audio_questions": 2,
-      "spoken_cue_questions": 10,
+      "audio_questions": 12,
+      "spoken_cue_questions": 12,
       "alternative_records": 4,
       "accepted_text_records": 16
     },
@@ -433,7 +433,7 @@
       "mean_percent": 47.3608014571949,
       "median_minutes": 22.84283333333333,
       "early_questions": 2,
-      "audio_questions": 0,
+      "audio_questions": 5,
       "spoken_cue_questions": 5,
       "alternative_records": 1,
       "accepted_text_records": 6
@@ -447,7 +447,7 @@
       "mean_percent": 80.09005228048834,
       "median_minutes": 32.56883333333334,
       "early_questions": 0,
-      "audio_questions": 0,
+      "audio_questions": 1,
       "spoken_cue_questions": 1,
       "alternative_records": 0,
       "accepted_text_records": 1
@@ -461,7 +461,7 @@
       "mean_percent": 28.574402647436226,
       "median_minutes": 10.103166666666668,
       "early_questions": 2,
-      "audio_questions": 0,
+      "audio_questions": 3,
       "spoken_cue_questions": 3,
       "alternative_records": 0,
       "accepted_text_records": 3
@@ -472,8 +472,8 @@
     "Local model": 29,
     "Local model with Codex edits": 19
   },
-  "audio_demo_clips": 19,
-  "audio_requester_voices": 10,
+  "audio_demo_clips": 111,
+  "audio_requester_voices": 56,
   "elapsed_bins": [
     0,
     5,
@@ -493,7 +493,7 @@
     100
   ],
   "count_definition": "Same meeting and same facts needed for a complete answer count as one question. Similar topics, partial fact overlap and generic request templates do not by themselves imply the same question.",
-  "timing_definition": "Each question counts once using its first retained representative in the existing report. Use the recorded planned replay time where it differs from the transcript cutoff; this affects two EN2003a outreach questions. Other rows use the saved question cutoff. Alternative phrasings and later repeats do not reweight the statistics.",
+  "timing_definition": "Each question counts once using its first retained representative in the existing report. Use the recorded planned replay time where it differs from the transcript cutoff; this affects two EN2003a outreach questions. Eight earnings-call positions move to a nearby estimated word boundary for audio insertion; their original transcript cutoffs are preserved. Other rows use the saved question cutoff. Alternative phrasings and later repeats do not reweight the statistics.",
   "limitations": "Deliberately selected development questions, not observed human request frequencies. Questions may share a general template across different conversations. Difficulty has not been uniformly validated; no certified multi-hop total is reported.",
   "resources": {
     "gpus": 0,

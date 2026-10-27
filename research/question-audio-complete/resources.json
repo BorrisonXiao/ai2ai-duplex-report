@@ -1,0 +1,237 @@
+{
+  "jobs": [
+    {
+      "job": "1307825",
+      "stage": "source",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 45,
+      "gpu_hours": 0.0125,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1307957",
+      "stage": "tts",
+      "state": "FAILED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 104,
+      "gpu_hours": 0.028888888888888888,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1307976",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 102,
+      "gpu_hours": 0.028333333333333332,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308017",
+      "stage": "source",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 37,
+      "gpu_hours": 0.010277777777777778,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308058",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 66,
+      "gpu_hours": 0.018333333333333333,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308059",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 23,
+      "gpu_hours": 0.006388888888888889,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308067",
+      "stage": "raw",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 54,
+      "gpu_hours": 0.015,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308084",
+      "stage": "source",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 22,
+      "gpu_hours": 0.006111111111111111,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308094",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 55,
+      "gpu_hours": 0.015277777777777777,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308095",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 68,
+      "gpu_hours": 0.01888888888888889,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308124",
+      "stage": "raw",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 48,
+      "gpu_hours": 0.013333333333333334,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308141",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 22,
+      "gpu_hours": 0.006111111111111111,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308146",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 38,
+      "gpu_hours": 0.010555555555555556,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308161",
+      "stage": "raw",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 45,
+      "gpu_hours": 0.0125,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308170",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 55,
+      "gpu_hours": 0.015277777777777777,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308173",
+      "stage": "raw",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 45,
+      "gpu_hours": 0.0125,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308182",
+      "stage": "post",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet, Whisper and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 49,
+      "gpu_hours": 0.01361111111111111,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308481",
+      "stage": "tts",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "F5-TTS and Vocos share GPU 0",
+      "allocation_seconds": 19,
+      "gpu_hours": 0.005277777777777778,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308495",
+      "stage": "raw",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 45,
+      "gpu_hours": 0.0125,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    },
+    {
+      "job": "1308514",
+      "stage": "post",
+      "state": "COMPLETED",
+      "gpus": 1,
+      "gpu_type_vram": "L40S 48 GB",
+      "gpu_role": "Parakeet, Whisper and ECAPA use GPU 0 sequentially",
+      "allocation_seconds": 55,
+      "gpu_hours": 0.015277777777777777,
+      "dependency": "Source reference verification precedes synthesis; raw/processed checks follow completed synthesis"
+    }
+  ],
+  "total_gpu_hours": 0.2769444444444445,
+  "allocation_seconds": 997,
+  "maximum_active_gpus": 2,
+  "active_gpus_at_collection": 0,
+  "valid_waveforms": 390,
+  "distinct_question_intents": 92,
+  "valid_waveforms_per_allocated_TTS_second": 0.7065217391304348,
+  "generated_audio_seconds": 2478.8393333333324,
+  "failed_jobs_charged": [
+    "1307957"
+  ],
+  "cpu_stages": "Source extraction, PCM mixing, exports, plots and webpage checks use 0 GPUs",
+  "weight_training": false
+}

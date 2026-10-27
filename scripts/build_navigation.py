@@ -29,7 +29,7 @@ EXPERIMENT_KEYS = {
     'ami-questions.html': 'ami-original', 'ami-question-audio.html': 'ami-audio',
     'question-expansion.html': 'ami-expansion',
     'question-pilot.html': 'ami-pilot', 'question-scale.html': 'ami-scale',
-    'question-overview.html': 'ami-overview', 'question-plan.html': 'ami-plan',
+    'question-audio.html': 'ami-library', 'question-overview.html': 'ami-overview', 'question-plan.html': 'ami-plan',
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
@@ -66,6 +66,7 @@ def build_collections():
     ]
     ami = [
         ('Question overview and aggregate statistics', 'All retained questions, insertion-time distributions, source coverage and audio coverage.', 'question-overview.html'),
+        ('All question audio', 'All 105 question events, with short source excerpts and original-voice comparisons.', 'question-audio.html'),
         ('Larger AMI batch', 'Forty additional questions from twenty more meetings, with source checks and recorded Codex edits.', 'question-scale.html'),
         ('Question/audio pilot', 'Earlier checkpoints, reader controls and ten inserted questions in eight requester voices.', 'question-pilot.html'),
         ('TODO and staged implementation plan', 'What is complete, what remains, and the sequence from question generation through speech, streaming evaluation and tools.', 'question-plan.html'),

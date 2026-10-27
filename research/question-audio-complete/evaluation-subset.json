@@ -1,0 +1,250 @@
+{
+  "status": "subset_frozen_before_new_synthesis; reliability_and_human_review_pending",
+  "evaluation_meetings": [
+    "EN2004a",
+    "EN2006b",
+    "ES2003c",
+    "ES2006a",
+    "TS3004d",
+    "TS3006c"
+  ],
+  "development_meetings": [
+    "EN2002b",
+    "EN2003a",
+    "ES2002b",
+    "IS1000b",
+    "TS3003b"
+  ],
+  "evaluation_questions": [
+    {
+      "question_id": "scale:EN2004a-S05-Q3",
+      "meeting": "EN2004a",
+      "requester": "A",
+      "source_time_seconds": 561.16,
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "fact_checklist": [
+        "For two equally plausible interpretations, choose one and leave it.",
+        "The discussion uses the example of “ice cream” versus “I scream”."
+      ]
+    },
+    {
+      "question_id": "scale:EN2004a-S075-Q2",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "source_time_seconds": 640.16,
+      "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+      "fact_checklist": [
+        "Do not capitalize the start of the next segment when it clearly continues the same sentence.",
+        "The cited discussion does not settle every ambiguous-pause case."
+      ]
+    },
+    {
+      "question_id": "scale:EN2004a-Smiddle-Q2",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "source_time_seconds": 1697.61,
+      "question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
+      "fact_checklist": [
+        "Restarts can be at phrase level, not only whole-sentence level.",
+        "An ordinary pause with a continuing sentence is not itself a restart."
+      ]
+    },
+    {
+      "question_id": "scale:ES2003c-S075-Q3",
+      "meeting": "ES2003c",
+      "requester": "B",
+      "source_time_seconds": 453.53,
+      "question": "Assistant, what was the concern about using a kinetic battery for this remote?",
+      "fact_checklist": [
+        "The concern was whether movement of a remote would provide enough power; a watch moves around much more.",
+        "These remarks express doubt rather than a measured power result."
+      ]
+    },
+    {
+      "question_id": "scale:ES2003c-S10-Q1",
+      "meeting": "ES2003c",
+      "requester": "C",
+      "source_time_seconds": 605.14,
+      "question": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
+      "fact_checklist": [
+        "No price difference is given.",
+        "The team asks whether the LCD would raise costs substantially and says it requires a more powerful chip than simple buttons.",
+        "That does not establish a quoted or measured cost increase."
+      ]
+    },
+    {
+      "question_id": "scale:ES2003c-Slater-Q2",
+      "meeting": "ES2003c",
+      "requester": "B",
+      "source_time_seconds": 1798.74,
+      "question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
+      "fact_checklist": [
+        "In the articulated design proposal, the grip would be the bulkiest part and was suggested as the place for the battery.",
+        "The source describes a suggestion, not a verified internal layout or balance calculation."
+      ]
+    },
+    {
+      "question_id": "scale:TS3004d-slide-reasons",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "source_time_seconds": 304.46,
+      "question": "Assistant, why were we leaning toward a slide-open design?",
+      "fact_checklist": [
+        "Participants called slide-open usable, suggested it might be stronger and noted the room it gives inside.",
+        "The remarks support a preference, not an experimentally established superiority."
+      ]
+    },
+    {
+      "question_id": "scale:TS3004d-S075-Q1",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "source_time_seconds": 445.92,
+      "question": "Assistant, what's the latest on the slide-open mechanism design?",
+      "fact_checklist": [
+        "They had not yet had time to design the slide pad and did not know how many buttons or what kinds of buttons it needed."
+      ]
+    },
+    {
+      "question_id": "scale:TS3004d-Smiddle-Q3",
+      "meeting": "TS3004d",
+      "requester": "B",
+      "source_time_seconds": 1370.57,
+      "question": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
+      "fact_checklist": [
+        "The earlier placement stated by B was on the left side.",
+        "Later mentions of the scrollwheel in this prefix do not state a relocation."
+      ]
+    },
+    {
+      "question_id": "scale:TS3004d-Slater-Q1",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "source_time_seconds": 2189.66,
+      "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+      "fact_checklist": [
+        "They agreed to add backlighting when the panel opens, illuminating the interior rather than only individual buttons.",
+        "Green or blue light was suggested; no single final color is fixed in the cited exchange."
+      ]
+    },
+    {
+      "question_id": "scale:TS3004d-Slater-Q2",
+      "meeting": "TS3004d",
+      "requester": "D",
+      "source_time_seconds": 2189.66,
+      "question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
+      "fact_checklist": [
+        "They gave fancy look-and-feel a score of one, citing the lighting details and the ability to choose a light/color.",
+        "The reference does not infer whether one is globally the best or worst score."
+      ]
+    },
+    {
+      "question_id": "scale:TS3006c-S05-Q3",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "source_time_seconds": 309.03,
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "fact_checklist": [
+        "C said the files were in the shared folder.",
+        "D initially saw only their own presentation, and C then identified a components-design PowerPoint.",
+        "The exchange does not establish a general folder outage or an upload failure."
+      ]
+    },
+    {
+      "question_id": "scale:TS3006c-S10-Q1",
+      "meeting": "TS3006c",
+      "requester": "C",
+      "source_time_seconds": 606.19,
+      "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+      "fact_checklist": [
+        "Fancy look-and-feel was twice innovation, which was twice ease of use: 4:2:1 in that order."
+      ]
+    },
+    {
+      "question_id": "scale:TS3006c-Smiddle-Q2",
+      "meeting": "TS3006c",
+      "requester": "B",
+      "source_time_seconds": 1300.07,
+      "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "fact_checklist": [
+        "The team discussed mapping speech commands to functions already present.",
+        "The available discussion does not report a finished implementation or demonstrate that it is ready for interface integration."
+      ]
+    },
+    {
+      "question_id": "scale:ES2006a-S075-Q3",
+      "meeting": "ES2006a",
+      "requester": "C",
+      "source_time_seconds": 452.23,
+      "question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+      "fact_checklist": [
+        "Detailed design follows functional and conceptual design, bringing those strands together.",
+        "No calendar start date is given."
+      ]
+    },
+    {
+      "question_id": "scale:ES2006a-Slater-Q1",
+      "meeting": "ES2006a",
+      "requester": "D",
+      "source_time_seconds": 1033.85,
+      "question": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
+      "fact_checklist": [
+        "At the maximum production cost of €12.50 and selling price of €25, €12.50 per unit remains before other costs: 50% of the selling price.",
+        "The separate €50 million total-profit goal is not a per-unit margin, and an exact net margin is not established."
+      ]
+    },
+    {
+      "question_id": "scale:ES2006a-Slater-Q2",
+      "meeting": "ES2006a",
+      "requester": "A",
+      "source_time_seconds": 1033.85,
+      "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+      "fact_checklist": [
+        "Functional design specifies what functions and tasks the remote must perform.",
+        "Conceptual design covers how people will use it.",
+        "The speaker notes that some work on use may already begin during functional design."
+      ]
+    },
+    {
+      "question_id": "scale:EN2006b-S05-Q1",
+      "meeting": "EN2006b",
+      "requester": "C",
+      "source_time_seconds": 300.97,
+      "question": "Assistant, did we decide to annotate Hubble?",
+      "fact_checklist": [
+        "Yes.",
+        "C and B say that they agreed to keep Hubble in the annotation."
+      ]
+    },
+    {
+      "question_id": "scale:EN2006b-S075-Q1",
+      "meeting": "EN2006b",
+      "requester": "C",
+      "source_time_seconds": 440.13,
+      "question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
+      "fact_checklist": [
+        "Underline the HTML material in each case, but not the word “and”.",
+        "The source is discussing how to mark the text, not a later rule about physical mechanisms."
+      ]
+    },
+    {
+      "question_id": "scale:EN2006b-S075-Q2",
+      "meeting": "EN2006b",
+      "requester": "B",
+      "source_time_seconds": 440.13,
+      "question": "Assistant, what did we say about annotating absorption line systems?",
+      "fact_checklist": [
+        "B said absorption line systems should not be included.",
+        "The later recent-minute discussion of marking features does not explicitly reverse that specific earlier statement."
+      ]
+    }
+  ],
+  "questions": 20,
+  "meetings": 6,
+  "no_participant_overlap_with_development": true,
+  "scope": "Held out from prior F5 reference/inference tuning and future policy training. Texts were already source-reviewed; no claim of unseen question generation.",
+  "silence_controls": "To be created and reviewed from original discussion before these question times.",
+  "future_question_hidden_from_preparation": true,
+  "answer_audio": "deferred",
+  "recipe": "F5 v1 Base + Vocos; the three existing fixed settings; no new weight or hyperparameter tuning",
+  "evidence": "Existing Codex-checked evaluation references, not independently verified human labels"
+}
