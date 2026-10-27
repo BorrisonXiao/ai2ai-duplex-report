@@ -1,0 +1,23 @@
+{
+  "updated_utc": "2026-10-27T01:47:16.409408+00:00",
+  "job": "1306013",
+  "status": "generating",
+  "meetings": 20,
+  "ready_windows": 98,
+  "planned_windows": 100,
+  "maximum_candidates": 294,
+  "drafts": 252,
+  "mechanically_valid": 97,
+  "full_history_reviews": 0,
+  "recent_minute_controls": 0,
+  "codex_reviewed": 0,
+  "retained_distinct": 0,
+  "alternative_phrasings": 0,
+  "codex_review_complete": false,
+  "gpu_type_vram": "A100 SXM4 80 GB",
+  "gpus_per_job": 1,
+  "maximum_active_gpus": 1,
+  "gpu_role": "Qwen3-30B Instruct weights and KV cache share GPU 0. Generation and screening use one vLLM engine in sequential stages.",
+  "accounting": null,
+  "summary": null
+}

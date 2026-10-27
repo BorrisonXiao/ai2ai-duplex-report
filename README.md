@@ -136,3 +136,5 @@ The [question expansion](https://borrisonxiao.github.io/ai2ai-duplex-report/expe
 - [Expanded question and audio pilot](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/question-pilot.html): 43 distinct questions with eight alternative phrasings, early checkpoints, reader controls, Assistant-prefixed audio and a synchronized task list.
 
 Current question reports count distinct questions once and keep alternative phrasings under each question. The latest pilot uses the spoken “Assistant,” cue in its current request text and regenerated audio; earlier text-reader tests are labeled separately.
+
+The [larger AMI question batch](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/question-scale.html) expands to 20 additional meetings, with natural participant requests, source screening, Codex review and distinct-question counts. It preserves the earlier pilot and audio.

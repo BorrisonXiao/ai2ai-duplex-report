@@ -1,0 +1,884 @@
+[
+  {
+    "id": "EN2001b-S05",
+    "meeting": "EN2001b",
+    "at": 321.08,
+    "target_seconds": 300,
+    "target_deviation_seconds": 21.079999999999984,
+    "cohort": "early",
+    "duration_seconds": 3451.946
+  },
+  {
+    "id": "EN2001b-S075",
+    "meeting": "EN2001b",
+    "at": 439.89,
+    "target_seconds": 450,
+    "target_deviation_seconds": -10.110000000000014,
+    "cohort": "early",
+    "duration_seconds": 3451.946
+  },
+  {
+    "id": "EN2001b-S10",
+    "meeting": "EN2001b",
+    "at": 600.63,
+    "target_seconds": 600,
+    "target_deviation_seconds": 0.6299999999999955,
+    "cohort": "early",
+    "duration_seconds": 3451.946
+  },
+  {
+    "id": "EN2001b-Smiddle",
+    "meeting": "EN2001b",
+    "at": 1776.34,
+    "target_seconds": 1725.973,
+    "target_deviation_seconds": 50.36699999999996,
+    "cohort": "middle",
+    "duration_seconds": 3451.946
+  },
+  {
+    "id": "EN2001b-Slater",
+    "meeting": "EN2001b",
+    "at": 2769.16,
+    "target_seconds": 2761.5568000000003,
+    "target_deviation_seconds": 7.6031999999995605,
+    "cohort": "later",
+    "duration_seconds": 3451.946
+  },
+  {
+    "id": "EN2004a-S05",
+    "meeting": "EN2004a",
+    "at": 561.16,
+    "target_seconds": 300,
+    "target_deviation_seconds": 261.15999999999997,
+    "cohort": "early",
+    "duration_seconds": 3445.717
+  },
+  {
+    "id": "EN2004a-S075",
+    "meeting": "EN2004a",
+    "at": 640.16,
+    "target_seconds": 450,
+    "target_deviation_seconds": 190.15999999999997,
+    "cohort": "early",
+    "duration_seconds": 3445.717
+  },
+  {
+    "id": "EN2004a-S10",
+    "meeting": "EN2004a",
+    "at": 747.98,
+    "target_seconds": 600,
+    "target_deviation_seconds": 147.98000000000002,
+    "cohort": "early",
+    "duration_seconds": 3445.717
+  },
+  {
+    "id": "EN2004a-Smiddle",
+    "meeting": "EN2004a",
+    "at": 1697.61,
+    "target_seconds": 1722.8585,
+    "target_deviation_seconds": -25.24850000000015,
+    "cohort": "middle",
+    "duration_seconds": 3445.717
+  },
+  {
+    "id": "EN2009b-S05",
+    "meeting": "EN2009b",
+    "at": 279.91,
+    "target_seconds": 300,
+    "target_deviation_seconds": -20.089999999999975,
+    "cohort": "early",
+    "duration_seconds": 2474.325
+  },
+  {
+    "id": "EN2009b-S075",
+    "meeting": "EN2009b",
+    "at": 443.47,
+    "target_seconds": 450,
+    "target_deviation_seconds": -6.529999999999973,
+    "cohort": "early",
+    "duration_seconds": 2474.325
+  },
+  {
+    "id": "EN2009b-S10",
+    "meeting": "EN2009b",
+    "at": 732.14,
+    "target_seconds": 600,
+    "target_deviation_seconds": 132.14,
+    "cohort": "early",
+    "duration_seconds": 2474.325
+  },
+  {
+    "id": "EN2009b-Smiddle",
+    "meeting": "EN2009b",
+    "at": 1228.22,
+    "target_seconds": 1237.1625,
+    "target_deviation_seconds": -8.942499999999882,
+    "cohort": "middle",
+    "duration_seconds": 2474.325
+  },
+  {
+    "id": "EN2009b-Slater",
+    "meeting": "EN2009b",
+    "at": 1984.18,
+    "target_seconds": 1979.46,
+    "target_deviation_seconds": 4.720000000000027,
+    "cohort": "later",
+    "duration_seconds": 2474.325
+  },
+  {
+    "id": "IN1005-S05",
+    "meeting": "IN1005",
+    "at": 256.2,
+    "target_seconds": 300,
+    "target_deviation_seconds": -43.80000000000001,
+    "cohort": "early",
+    "duration_seconds": 2798.833375
+  },
+  {
+    "id": "IN1005-S075",
+    "meeting": "IN1005",
+    "at": 502.38,
+    "target_seconds": 450,
+    "target_deviation_seconds": 52.379999999999995,
+    "cohort": "early",
+    "duration_seconds": 2798.833375
+  },
+  {
+    "id": "IN1005-S10",
+    "meeting": "IN1005",
+    "at": 609.54,
+    "target_seconds": 600,
+    "target_deviation_seconds": 9.539999999999964,
+    "cohort": "early",
+    "duration_seconds": 2798.833375
+  },
+  {
+    "id": "IN1005-Smiddle",
+    "meeting": "IN1005",
+    "at": 1504.36,
+    "target_seconds": 1399.4166875,
+    "target_deviation_seconds": 104.94331249999982,
+    "cohort": "middle",
+    "duration_seconds": 2798.833375
+  },
+  {
+    "id": "IN1005-Slater",
+    "meeting": "IN1005",
+    "at": 2166.4,
+    "target_seconds": 2239.0667000000003,
+    "target_deviation_seconds": -72.66670000000022,
+    "cohort": "later",
+    "duration_seconds": 2798.833375
+  },
+  {
+    "id": "IN1007-S05",
+    "meeting": "IN1007",
+    "at": 328.62,
+    "target_seconds": 300,
+    "target_deviation_seconds": 28.620000000000005,
+    "cohort": "early",
+    "duration_seconds": 2411.33475
+  },
+  {
+    "id": "IN1007-S075",
+    "meeting": "IN1007",
+    "at": 450.87,
+    "target_seconds": 450,
+    "target_deviation_seconds": 0.8700000000000045,
+    "cohort": "early",
+    "duration_seconds": 2411.33475
+  },
+  {
+    "id": "IN1007-S10",
+    "meeting": "IN1007",
+    "at": 581.97,
+    "target_seconds": 600,
+    "target_deviation_seconds": -18.029999999999973,
+    "cohort": "early",
+    "duration_seconds": 2411.33475
+  },
+  {
+    "id": "IN1007-Smiddle",
+    "meeting": "IN1007",
+    "at": 1047.93,
+    "target_seconds": 1205.667375,
+    "target_deviation_seconds": -157.73737499999993,
+    "cohort": "middle",
+    "duration_seconds": 2411.33475
+  },
+  {
+    "id": "IN1007-Slater",
+    "meeting": "IN1007",
+    "at": 1942.18,
+    "target_seconds": 1929.0678,
+    "target_deviation_seconds": 13.11220000000003,
+    "cohort": "later",
+    "duration_seconds": 2411.33475
+  },
+  {
+    "id": "IB4001-S05",
+    "meeting": "IB4001",
+    "at": 298.01,
+    "target_seconds": 300,
+    "target_deviation_seconds": -1.990000000000009,
+    "cohort": "early",
+    "duration_seconds": 1780.669
+  },
+  {
+    "id": "IB4001-S075",
+    "meeting": "IB4001",
+    "at": 456.34,
+    "target_seconds": 450,
+    "target_deviation_seconds": 6.339999999999975,
+    "cohort": "early",
+    "duration_seconds": 1780.669
+  },
+  {
+    "id": "IB4001-S10",
+    "meeting": "IB4001",
+    "at": 590.38,
+    "target_seconds": 600,
+    "target_deviation_seconds": -9.620000000000005,
+    "cohort": "early",
+    "duration_seconds": 1780.669
+  },
+  {
+    "id": "IB4001-Smiddle",
+    "meeting": "IB4001",
+    "at": 895.89,
+    "target_seconds": 890.3345,
+    "target_deviation_seconds": 5.555499999999938,
+    "cohort": "middle",
+    "duration_seconds": 1780.669
+  },
+  {
+    "id": "IB4001-Slater",
+    "meeting": "IB4001",
+    "at": 1436.84,
+    "target_seconds": 1424.5352000000003,
+    "target_deviation_seconds": 12.30479999999966,
+    "cohort": "later",
+    "duration_seconds": 1780.669
+  },
+  {
+    "id": "IB4003-S05",
+    "meeting": "IB4003",
+    "at": 302.76,
+    "target_seconds": 300,
+    "target_deviation_seconds": 2.759999999999991,
+    "cohort": "early",
+    "duration_seconds": 2023.336
+  },
+  {
+    "id": "IB4003-S075",
+    "meeting": "IB4003",
+    "at": 436.54,
+    "target_seconds": 450,
+    "target_deviation_seconds": -13.45999999999998,
+    "cohort": "early",
+    "duration_seconds": 2023.336
+  },
+  {
+    "id": "IB4003-S10",
+    "meeting": "IB4003",
+    "at": 656.27,
+    "target_seconds": 600,
+    "target_deviation_seconds": 56.26999999999998,
+    "cohort": "early",
+    "duration_seconds": 2023.336
+  },
+  {
+    "id": "IB4003-Smiddle",
+    "meeting": "IB4003",
+    "at": 1078.12,
+    "target_seconds": 1011.668,
+    "target_deviation_seconds": 66.45199999999988,
+    "cohort": "middle",
+    "duration_seconds": 2023.336
+  },
+  {
+    "id": "IB4003-Slater",
+    "meeting": "IB4003",
+    "at": 1695.49,
+    "target_seconds": 1618.6688000000001,
+    "target_deviation_seconds": 76.82119999999986,
+    "cohort": "later",
+    "duration_seconds": 2023.336
+  },
+  {
+    "id": "ES2003c-S05",
+    "meeting": "ES2003c",
+    "at": 311.57,
+    "target_seconds": 300,
+    "target_deviation_seconds": 11.569999999999993,
+    "cohort": "early",
+    "duration_seconds": 2251.0
+  },
+  {
+    "id": "ES2003c-S075",
+    "meeting": "ES2003c",
+    "at": 453.53,
+    "target_seconds": 450,
+    "target_deviation_seconds": 3.5299999999999727,
+    "cohort": "early",
+    "duration_seconds": 2251.0
+  },
+  {
+    "id": "ES2003c-S10",
+    "meeting": "ES2003c",
+    "at": 605.14,
+    "target_seconds": 600,
+    "target_deviation_seconds": 5.139999999999986,
+    "cohort": "early",
+    "duration_seconds": 2251.0
+  },
+  {
+    "id": "ES2003c-Smiddle",
+    "meeting": "ES2003c",
+    "at": 1149.9,
+    "target_seconds": 1125.5,
+    "target_deviation_seconds": 24.40000000000009,
+    "cohort": "middle",
+    "duration_seconds": 2251.0
+  },
+  {
+    "id": "ES2003c-Slater",
+    "meeting": "ES2003c",
+    "at": 1798.74,
+    "target_seconds": 1800.8000000000002,
+    "target_deviation_seconds": -2.060000000000173,
+    "cohort": "later",
+    "duration_seconds": 2251.0
+  },
+  {
+    "id": "TS3004d-S05",
+    "meeting": "TS3004d",
+    "at": 304.46,
+    "target_seconds": 300,
+    "target_deviation_seconds": 4.4599999999999795,
+    "cohort": "early",
+    "duration_seconds": 2745.0
+  },
+  {
+    "id": "TS3004d-S075",
+    "meeting": "TS3004d",
+    "at": 445.92,
+    "target_seconds": 450,
+    "target_deviation_seconds": -4.079999999999984,
+    "cohort": "early",
+    "duration_seconds": 2745.0
+  },
+  {
+    "id": "TS3004d-S10",
+    "meeting": "TS3004d",
+    "at": 595.85,
+    "target_seconds": 600,
+    "target_deviation_seconds": -4.149999999999977,
+    "cohort": "early",
+    "duration_seconds": 2745.0
+  },
+  {
+    "id": "TS3004d-Smiddle",
+    "meeting": "TS3004d",
+    "at": 1370.57,
+    "target_seconds": 1372.5,
+    "target_deviation_seconds": -1.9300000000000637,
+    "cohort": "middle",
+    "duration_seconds": 2745.0
+  },
+  {
+    "id": "TS3004d-Slater",
+    "meeting": "TS3004d",
+    "at": 2189.66,
+    "target_seconds": 2196.0,
+    "target_deviation_seconds": -6.3400000000001455,
+    "cohort": "later",
+    "duration_seconds": 2745.0
+  },
+  {
+    "id": "ES2004d-S05",
+    "meeting": "ES2004d",
+    "at": 318.91,
+    "target_seconds": 300,
+    "target_deviation_seconds": 18.910000000000025,
+    "cohort": "early",
+    "duration_seconds": 2220.0
+  },
+  {
+    "id": "ES2004d-S075",
+    "meeting": "ES2004d",
+    "at": 450.92,
+    "target_seconds": 450,
+    "target_deviation_seconds": 0.9200000000000159,
+    "cohort": "early",
+    "duration_seconds": 2220.0
+  },
+  {
+    "id": "ES2004d-S10",
+    "meeting": "ES2004d",
+    "at": 609.51,
+    "target_seconds": 600,
+    "target_deviation_seconds": 9.509999999999991,
+    "cohort": "early",
+    "duration_seconds": 2220.0
+  },
+  {
+    "id": "ES2004d-Smiddle",
+    "meeting": "ES2004d",
+    "at": 1080.59,
+    "target_seconds": 1110.0,
+    "target_deviation_seconds": -29.410000000000082,
+    "cohort": "middle",
+    "duration_seconds": 2220.0
+  },
+  {
+    "id": "ES2004d-Slater",
+    "meeting": "ES2004d",
+    "at": 1789.45,
+    "target_seconds": 1776.0,
+    "target_deviation_seconds": 13.450000000000045,
+    "cohort": "later",
+    "duration_seconds": 2220.0
+  },
+  {
+    "id": "TS3005b-S05",
+    "meeting": "TS3005b",
+    "at": 323.14,
+    "target_seconds": 300,
+    "target_deviation_seconds": 23.139999999999986,
+    "cohort": "early",
+    "duration_seconds": 2439.916
+  },
+  {
+    "id": "TS3005b-S075",
+    "meeting": "TS3005b",
+    "at": 450.82,
+    "target_seconds": 450,
+    "target_deviation_seconds": 0.8199999999999932,
+    "cohort": "early",
+    "duration_seconds": 2439.916
+  },
+  {
+    "id": "TS3005b-S10",
+    "meeting": "TS3005b",
+    "at": 599.64,
+    "target_seconds": 600,
+    "target_deviation_seconds": -0.36000000000001364,
+    "cohort": "early",
+    "duration_seconds": 2439.916
+  },
+  {
+    "id": "TS3005b-Smiddle",
+    "meeting": "TS3005b",
+    "at": 1221.17,
+    "target_seconds": 1219.958,
+    "target_deviation_seconds": 1.211999999999989,
+    "cohort": "middle",
+    "duration_seconds": 2439.916
+  },
+  {
+    "id": "TS3005b-Slater",
+    "meeting": "TS3005b",
+    "at": 1954.13,
+    "target_seconds": 1951.9328000000003,
+    "target_deviation_seconds": 2.197199999999839,
+    "cohort": "later",
+    "duration_seconds": 2439.916
+  },
+  {
+    "id": "ES2005b-S05",
+    "meeting": "ES2005b",
+    "at": 324.01,
+    "target_seconds": 300,
+    "target_deviation_seconds": 24.00999999999999,
+    "cohort": "early",
+    "duration_seconds": 2308.0
+  },
+  {
+    "id": "ES2005b-S075",
+    "meeting": "ES2005b",
+    "at": 424.67,
+    "target_seconds": 450,
+    "target_deviation_seconds": -25.329999999999984,
+    "cohort": "early",
+    "duration_seconds": 2308.0
+  },
+  {
+    "id": "ES2005b-S10",
+    "meeting": "ES2005b",
+    "at": 602.48,
+    "target_seconds": 600,
+    "target_deviation_seconds": 2.480000000000018,
+    "cohort": "early",
+    "duration_seconds": 2308.0
+  },
+  {
+    "id": "ES2005b-Smiddle",
+    "meeting": "ES2005b",
+    "at": 1188.75,
+    "target_seconds": 1154.0,
+    "target_deviation_seconds": 34.75,
+    "cohort": "middle",
+    "duration_seconds": 2308.0
+  },
+  {
+    "id": "ES2005b-Slater",
+    "meeting": "ES2005b",
+    "at": 1859.39,
+    "target_seconds": 1846.4,
+    "target_deviation_seconds": 12.990000000000009,
+    "cohort": "later",
+    "duration_seconds": 2308.0
+  },
+  {
+    "id": "TS3006c-S05",
+    "meeting": "TS3006c",
+    "at": 309.03,
+    "target_seconds": 300,
+    "target_deviation_seconds": 9.029999999999973,
+    "cohort": "early",
+    "duration_seconds": 2584.236
+  },
+  {
+    "id": "TS3006c-S075",
+    "meeting": "TS3006c",
+    "at": 402.44,
+    "target_seconds": 450,
+    "target_deviation_seconds": -47.56,
+    "cohort": "early",
+    "duration_seconds": 2584.236
+  },
+  {
+    "id": "TS3006c-S10",
+    "meeting": "TS3006c",
+    "at": 606.19,
+    "target_seconds": 600,
+    "target_deviation_seconds": 6.190000000000055,
+    "cohort": "early",
+    "duration_seconds": 2584.236
+  },
+  {
+    "id": "TS3006c-Smiddle",
+    "meeting": "TS3006c",
+    "at": 1300.07,
+    "target_seconds": 1292.118,
+    "target_deviation_seconds": 7.951999999999998,
+    "cohort": "middle",
+    "duration_seconds": 2584.236
+  },
+  {
+    "id": "TS3006c-Slater",
+    "meeting": "TS3006c",
+    "at": 2064.58,
+    "target_seconds": 2067.3888,
+    "target_deviation_seconds": -2.8088000000002467,
+    "cohort": "later",
+    "duration_seconds": 2584.236
+  },
+  {
+    "id": "IS1004b-S05",
+    "meeting": "IS1004b",
+    "at": 287.54,
+    "target_seconds": 300,
+    "target_deviation_seconds": -12.45999999999998,
+    "cohort": "early",
+    "duration_seconds": 2166.0
+  },
+  {
+    "id": "IS1004b-S075",
+    "meeting": "IS1004b",
+    "at": 453.36,
+    "target_seconds": 450,
+    "target_deviation_seconds": 3.3600000000000136,
+    "cohort": "early",
+    "duration_seconds": 2166.0
+  },
+  {
+    "id": "IS1004b-S10",
+    "meeting": "IS1004b",
+    "at": 608.24,
+    "target_seconds": 600,
+    "target_deviation_seconds": 8.240000000000009,
+    "cohort": "early",
+    "duration_seconds": 2166.0
+  },
+  {
+    "id": "IS1004b-Smiddle",
+    "meeting": "IS1004b",
+    "at": 1075.21,
+    "target_seconds": 1083.0,
+    "target_deviation_seconds": -7.789999999999964,
+    "cohort": "middle",
+    "duration_seconds": 2166.0
+  },
+  {
+    "id": "IS1004b-Slater",
+    "meeting": "IS1004b",
+    "at": 1797.25,
+    "target_seconds": 1732.8000000000002,
+    "target_deviation_seconds": 64.44999999999982,
+    "cohort": "later",
+    "duration_seconds": 2166.0
+  },
+  {
+    "id": "ES2006a-S05",
+    "meeting": "ES2006a",
+    "at": 309.66,
+    "target_seconds": 300,
+    "target_deviation_seconds": 9.660000000000025,
+    "cohort": "early",
+    "duration_seconds": 1290.0
+  },
+  {
+    "id": "ES2006a-S075",
+    "meeting": "ES2006a",
+    "at": 452.23,
+    "target_seconds": 450,
+    "target_deviation_seconds": 2.230000000000018,
+    "cohort": "early",
+    "duration_seconds": 1290.0
+  },
+  {
+    "id": "ES2006a-S10",
+    "meeting": "ES2006a",
+    "at": 569.68,
+    "target_seconds": 600,
+    "target_deviation_seconds": -30.32000000000005,
+    "cohort": "early",
+    "duration_seconds": 1290.0
+  },
+  {
+    "id": "ES2006a-Smiddle",
+    "meeting": "ES2006a",
+    "at": 660.12,
+    "target_seconds": 645.0,
+    "target_deviation_seconds": 15.120000000000005,
+    "cohort": "middle",
+    "duration_seconds": 1290.0
+  },
+  {
+    "id": "ES2006a-Slater",
+    "meeting": "ES2006a",
+    "at": 1033.85,
+    "target_seconds": 1032.0,
+    "target_deviation_seconds": 1.849999999999909,
+    "cohort": "later",
+    "duration_seconds": 1290.0
+  },
+  {
+    "id": "EN2006b-S05",
+    "meeting": "EN2006b",
+    "at": 300.97,
+    "target_seconds": 300,
+    "target_deviation_seconds": 0.9700000000000273,
+    "cohort": "early",
+    "duration_seconds": 3052.259
+  },
+  {
+    "id": "EN2006b-S075",
+    "meeting": "EN2006b",
+    "at": 440.13,
+    "target_seconds": 450,
+    "target_deviation_seconds": -9.870000000000005,
+    "cohort": "early",
+    "duration_seconds": 3052.259
+  },
+  {
+    "id": "EN2006b-S10",
+    "meeting": "EN2006b",
+    "at": 593.3,
+    "target_seconds": 600,
+    "target_deviation_seconds": -6.7000000000000455,
+    "cohort": "early",
+    "duration_seconds": 3052.259
+  },
+  {
+    "id": "EN2006b-Smiddle",
+    "meeting": "EN2006b",
+    "at": 1529.63,
+    "target_seconds": 1526.1295,
+    "target_deviation_seconds": 3.500500000000102,
+    "cohort": "middle",
+    "duration_seconds": 3052.259
+  },
+  {
+    "id": "ES2007a-S05",
+    "meeting": "ES2007a",
+    "at": 308.27,
+    "target_seconds": 300,
+    "target_deviation_seconds": 8.269999999999982,
+    "cohort": "early",
+    "duration_seconds": 1221.0
+  },
+  {
+    "id": "ES2007a-S075",
+    "meeting": "ES2007a",
+    "at": 444.0,
+    "target_seconds": 450,
+    "target_deviation_seconds": -6.0,
+    "cohort": "early",
+    "duration_seconds": 1221.0
+  },
+  {
+    "id": "ES2007a-S10",
+    "meeting": "ES2007a",
+    "at": 602.18,
+    "target_seconds": 600,
+    "target_deviation_seconds": 2.17999999999995,
+    "cohort": "early",
+    "duration_seconds": 1221.0
+  },
+  {
+    "id": "ES2007a-Smiddle",
+    "meeting": "ES2007a",
+    "at": 677.74,
+    "target_seconds": 610.5,
+    "target_deviation_seconds": 67.24000000000001,
+    "cohort": "middle",
+    "duration_seconds": 1221.0
+  },
+  {
+    "id": "ES2007a-Slater",
+    "meeting": "ES2007a",
+    "at": 997.74,
+    "target_seconds": 976.8000000000001,
+    "target_deviation_seconds": 20.93999999999994,
+    "cohort": "later",
+    "duration_seconds": 1221.0
+  },
+  {
+    "id": "ES2008b-S05",
+    "meeting": "ES2008b",
+    "at": 280.77,
+    "target_seconds": 300,
+    "target_deviation_seconds": -19.230000000000018,
+    "cohort": "early",
+    "duration_seconds": 2101.0
+  },
+  {
+    "id": "ES2008b-S075",
+    "meeting": "ES2008b",
+    "at": 434.56,
+    "target_seconds": 450,
+    "target_deviation_seconds": -15.439999999999998,
+    "cohort": "early",
+    "duration_seconds": 2101.0
+  },
+  {
+    "id": "ES2008b-S10",
+    "meeting": "ES2008b",
+    "at": 603.47,
+    "target_seconds": 600,
+    "target_deviation_seconds": 3.4700000000000273,
+    "cohort": "early",
+    "duration_seconds": 2101.0
+  },
+  {
+    "id": "ES2008b-Smiddle",
+    "meeting": "ES2008b",
+    "at": 1007.48,
+    "target_seconds": 1050.5,
+    "target_deviation_seconds": -43.01999999999998,
+    "cohort": "middle",
+    "duration_seconds": 2101.0
+  },
+  {
+    "id": "ES2008b-Slater",
+    "meeting": "ES2008b",
+    "at": 1689.56,
+    "target_seconds": 1680.8000000000002,
+    "target_deviation_seconds": 8.759999999999764,
+    "cohort": "later",
+    "duration_seconds": 2101.0
+  },
+  {
+    "id": "ES2009a-S05",
+    "meeting": "ES2009a",
+    "at": 337.0,
+    "target_seconds": 300,
+    "target_deviation_seconds": 37.0,
+    "cohort": "early",
+    "duration_seconds": 1411.0
+  },
+  {
+    "id": "ES2009a-S075",
+    "meeting": "ES2009a",
+    "at": 440.34,
+    "target_seconds": 450,
+    "target_deviation_seconds": -9.660000000000025,
+    "cohort": "early",
+    "duration_seconds": 1411.0
+  },
+  {
+    "id": "ES2009a-S10",
+    "meeting": "ES2009a",
+    "at": 594.37,
+    "target_seconds": 600,
+    "target_deviation_seconds": -5.6299999999999955,
+    "cohort": "early",
+    "duration_seconds": 1411.0
+  },
+  {
+    "id": "ES2009a-Smiddle",
+    "meeting": "ES2009a",
+    "at": 703.1,
+    "target_seconds": 705.5,
+    "target_deviation_seconds": -2.3999999999999773,
+    "cohort": "middle",
+    "duration_seconds": 1411.0
+  },
+  {
+    "id": "ES2009a-Slater",
+    "meeting": "ES2009a",
+    "at": 1125.13,
+    "target_seconds": 1128.8,
+    "target_deviation_seconds": -3.6699999999998454,
+    "cohort": "later",
+    "duration_seconds": 1411.0
+  },
+  {
+    "id": "ES2010b-S05",
+    "meeting": "ES2010b",
+    "at": 302.88,
+    "target_seconds": 300,
+    "target_deviation_seconds": 2.8799999999999955,
+    "cohort": "early",
+    "duration_seconds": 1764.0
+  },
+  {
+    "id": "ES2010b-S075",
+    "meeting": "ES2010b",
+    "at": 459.63,
+    "target_seconds": 450,
+    "target_deviation_seconds": 9.629999999999995,
+    "cohort": "early",
+    "duration_seconds": 1764.0
+  },
+  {
+    "id": "ES2010b-S10",
+    "meeting": "ES2010b",
+    "at": 577.27,
+    "target_seconds": 600,
+    "target_deviation_seconds": -22.730000000000018,
+    "cohort": "early",
+    "duration_seconds": 1764.0
+  },
+  {
+    "id": "ES2010b-Smiddle",
+    "meeting": "ES2010b",
+    "at": 887.55,
+    "target_seconds": 882.0,
+    "target_deviation_seconds": 5.5499999999999545,
+    "cohort": "middle",
+    "duration_seconds": 1764.0
+  },
+  {
+    "id": "ES2010b-Slater",
+    "meeting": "ES2010b",
+    "at": 1413.57,
+    "target_seconds": 1411.2,
+    "target_deviation_seconds": 2.369999999999891,
+    "cohort": "later",
+    "duration_seconds": 1764.0
+  }
+]

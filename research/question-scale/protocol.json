@@ -1,0 +1,28 @@
+{
+  "model": "Qwen3-30B-A3B-Instruct-2507",
+  "backend": "vLLM 0.16.0",
+  "meetings": 20,
+  "windows": 100,
+  "maximum_candidates": 300,
+  "earlier_questions_preserved": true,
+  "source_archive_sha256": "b56e5babb2496b8795deeeda7e71178d7fbc9963f94276cf2a3f4b56ebbc9f9d",
+  "selection": "20 additional meetings, prioritizing varied discussion topics and design stages; no participant overlap with the five earlier AMI meetings or between new meetings; metadata selection is deliberate, not a random sample.",
+  "stages": [
+    "generate from all available earlier speech",
+    "blind full-history screening without the proposed answer",
+    "recent-minute reader control",
+    "within-meeting semantic duplicate grouping",
+    "Codex review of candidates and cited source speech"
+  ],
+  "screening_limit": "Generation and screening use the same local checkpoint. Model agreement is not independent validation or a certified multi-hop label.",
+  "resources": {
+    "gpus_per_job": 1,
+    "type_vram": "A100/H100 SXM 80 GB",
+    "roles": {
+      "0": "Qwen3 30B Instruct weights and KV cache; stages run sequentially"
+    },
+    "maximum_active_gpus": 1,
+    "shared_components": "One resident vLLM engine for generation and text screening",
+    "dependencies": "Prepare and preflight inputs before submission; generation precedes screening; Codex review precedes acceptance; no speech or duplex service"
+  }
+}
