@@ -71,7 +71,7 @@ def experiment_subtabs(current):
     result = tabs([
         ('overview', 'All experiments', 'index.html'),
         ('duplex', 'DuplexOmni', 'duplexomni.html'),
-        ('prethinking', 'Pre-thinking pilot', 'prethinking-pilot.html'),
+        ('prethinking', 'Amortized thinking pilot', 'prethinking-pilot.html'),
         ('ami', 'AMI questions', 'question-overview.html'),
         ('ami-library', 'AMI question audio', 'question-audio.html'),
     ], 'duplex' if duplex else parent, 'Experiment sub-tabs')
@@ -85,5 +85,5 @@ def experiment_subtabs(current):
 def proposal_tabs(current, prefix=""):
     return tabs([
         ('overview', 'All proposals', 'proposals/index.html'),
-        ('prethinking', 'Pre-thinking', 'prethinking.html'),
+        ('prethinking', 'Amortized thinking', 'prethinking.html'),
     ], current, 'Proposal pages', prefix)

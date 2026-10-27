@@ -66,8 +66,23 @@ def root_links(html):
 def build_plan():
     r = read(ROOT / 'research/question-catalog/plan.json')
     brief = read(DATA / 'todo-summary.json')
+    progress = read(ROOT / 'research/what-to-think/execution-progress.json')
+    for stage in brief['stages']:
+        if stage['id'] == 'comparison':
+            stage['items'] = progress['tasks']
+    for stage in r['stages']:
+        if stage['id'] == 'comparison':
+            stage['tasks'] = [dict(text=t['text'],status=t['status'],project_url=t.get('url','what-to-think.html'),evidence=t.get('evidence','Plan requirement; not yet executed.' if t['status']!='complete' else 'Updated plan and notation; no inference result.')) for t in progress['tasks']]
+    for path,value in [(DATA / 'todo-summary.json',brief),(ROOT / 'research/question-catalog/plan.json',r)]:
+        path.write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n')
+    manifest_path = ROOT / 'research/question-catalog/manifest.json'
+    manifest = read(manifest_path)
+    for name in manifest:
+        if (manifest_path.parent/name).is_file():
+            manifest[name] = hashlib.sha256((manifest_path.parent/name).read_bytes()).hexdigest()
+    manifest_path.write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
     labels = {'complete': 'Done', 'partial': 'Partly complete', 'pending': 'To do', 'planned': 'Later', 'optional': 'Optional; not collected'}
-    body = '<header class="hero"><h1>Project TODO</h1></header><section class="section" id="at-a-glance"><span id="next"></span><h2>Now</h2>' + status_list(brief['now'], labels) + '<p class="status-legend">Checked means done; an empty box means not done yet. The label distinguishes work to do, later work and optional work.</p><p class="definition"><strong>Pre-thinking:</strong> ' + e(brief['definition']['text']) + ' <a href="' + e(brief['definition']['url'], quote=True) + '">How it works</a></p></section><nav class="jump-links" aria-label="On this page"><a href="#stages">Four stages</a><a href="#appendix">Detailed checklist and design</a><a href="daily-log.html">Daily log</a></nav><section class="section" id="stages"><h2>The four project stages</h2>'
+    body = '<header class="hero"><h1>Project TODO</h1></header><section class="section" id="at-a-glance"><span id="next"></span><h2>Now</h2>' + status_list(brief['now'], labels) + '<p class="status-legend">Checked means done; an empty box means not done yet. The label distinguishes work to do, later work and optional work.</p><p class="definition"><strong>Amortized thinking:</strong> ' + e(brief['definition']['text']) + ' <a href="' + e(brief['definition']['url'], quote=True) + '">How it works</a></p></section><nav class="jump-links" aria-label="On this page"><a href="#stages">Four stages</a><a href="#appendix">Detailed checklist and design</a><a href="daily-log.html">Daily log</a><a href="study-progress.html">Experiment progress</a></nav><section class="section" id="stages"><h2>The four project stages</h2>'
     for s in brief['stages']:
         body += '<article id="' + s['id'] + '"><h3>' + e(s['title']) + '</h3>' + status_list(s['items'], labels) + '</article>'
     body += '</section><section class="section" id="appendix"><h2>Appendix</h2><details id="full-plan"><summary>Open the detailed checklist and experiment design</summary><section id="choices"><h3>Choices already made</h3><ul>' + ''.join('<li>' + e(t) + '</li>' for t in r['choices']) + '</ul></section>'

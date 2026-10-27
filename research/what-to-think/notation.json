@@ -1,152 +1,336 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "date": "2026-10-27",
-  "convention": "Lowercase j = native audio frame; i = pre-thinking chunk; z = result; U = actual user request; Q = private prompt.",
+  "convention": "For one evaluation case e, times are in seconds and the case subscript is omitted from within-case chunk symbols (i, t_i, X_i, z_i), transcripts (Y) and prompts (Q); e always identifies a question, while m always identifies a model.",
   "symbols": [
     {
-      "tex": "e, N",
-      "name": "Evaluation case and number of distinct questions",
-      "definition": "N=105; alternatives and timing branches are not extra questions."
+      "id": "case_count",
+      "tex": "N",
+      "name": "Number of distinct questions",
+      "definition": "N=105 for the main evaluation; alternative phrasings and reruns do not create extra cases."
     },
     {
-      "tex": "m, v, g",
-      "name": "Model, transcript-tool pipeline and pre-thinking-goal choice",
-      "definition": "Separate model identity from input-source and prompt conditions."
+      "id": "case",
+      "tex": "e",
+      "name": "Evaluation case index",
+      "definition": "e is an integer from 1 to N; one case is one question, its earlier conversation audio, its recorded request and its checked reference answer, not one meeting (example: e=17 is the seventeenth question)."
     },
     {
-      "tex": "A_e(t)",
-      "name": "Input waveform on the source clock",
-      "definition": "Original meeting prefix plus the inserted spoken request; no resumed future meeting audio."
+      "id": "model",
+      "tex": "m",
+      "name": "Model identity",
+      "definition": "m identifies a checkpoint and its inference mode from the selected model list (example: DuplexOmni S1 or Qwen3-30B Instruct); it is not an index for meetings."
     },
     {
-      "tex": "x_j^{(m)}, J_{m,e}",
-      "name": "Native S1 transport frame and the last frame at request end",
-      "definition": "j indexes small model-dependent frames; 480 ms is not universal."
+      "id": "parameters",
+      "tex": "\\theta_m",
+      "name": "Frozen model weights",
+      "definition": "Weights of model m; record the checkpoint revision, precision, mode and decoding settings alongside every run."
     },
     {
-      "tex": "t_i, i",
-      "name": "Shared pre-thinking boundary and its integer index",
-      "definition": "i is an index, not a reasoning result."
+      "id": "probability",
+      "tex": "p_{\\theta_m}(\\cdot\\mid\\cdot)",
+      "name": "Conditional output distribution",
+      "definition": "The distribution used to generate an output with model m given the inputs after the conditioning bar; sampling is denoted by the tilde symbol in the update equation."
     },
     {
+      "id": "tool",
+      "tex": "v",
+      "name": "ASR/diarization pipeline choice",
+      "definition": "v is D1 (Parakeet plus Nemotron diarization) or D2 (WhisperX plus pyannote); each produces its own words and speaker labels."
+    },
+    {
+      "id": "goal",
+      "tex": "g",
+      "name": "Thinking-goal choice",
+      "definition": "g is an integer from 0 to 4, selecting Q0 summary, Q1 facts/events, Q2 people/tasks, Q3 checks/implications or Q4 combined goals."
+    },
+    {
+      "id": "selected_goal",
+      "tex": "g^\\star",
+      "name": "Goal selected on development meetings",
+      "definition": "The selected g for a given model and input type; freeze it before the final 105-question evaluation."
+    },
+    {
+      "id": "time",
+      "tex": "t",
+      "name": "Elapsed input time",
+      "definition": "Time in seconds from the start of the meeting audio supplied to this case; the injected request follows the available original conversation and no resumed future speech is included."
+    },
+    {
+      "id": "onset",
+      "tex": "S_e",
+      "name": "Request onset",
+      "definition": "Time in seconds when the inserted user request begins for case e; earlier reasoning must use only audio/transcripts available before this time."
+    },
+    {
+      "id": "request_end",
+      "tex": "T_e",
+      "name": "Request end",
+      "definition": "Time in seconds when the inserted user request ends; final answer inputs include the whole request through this time."
+    },
+    {
+      "id": "waveform",
+      "tex": "A_e(t),\\ A_{e,\\le t}",
+      "name": "Audio waveform and audio history",
+      "definition": "A_e(t) is the input waveform at time t; A_{e,≤t} is all input audio through t, including the inserted request when t reaches its end."
+    },
+    {
+      "id": "frame_count",
+      "tex": "J_{m,e}",
+      "name": "Number of S1 input frames",
+      "definition": "Number of native frames for model m covering case e through the complete request; any required trailing silence is recorded separately."
+    },
+    {
+      "id": "frame_index",
+      "tex": "j",
+      "name": "Native S1 frame index",
+      "definition": "j is an integer from 1 to J_{m,e}; frames are the small audio blocks accepted by model m, whose duration is model-specific (480 ms for the current DuplexOmni caller)."
+    },
+    {
+      "id": "frame",
+      "tex": "x_j^{(m)}",
+      "name": "Native S1 audio frame",
+      "definition": "The jth native audio frame for model m within the current case e; x_{1:J_{m,e}} means the full ordered frame sequence through request end."
+    },
+    {
+      "id": "chunk_count",
+      "tex": "K_e",
+      "name": "Number of earlier thinking chunks",
+      "definition": "Number of complete larger chunks available before S_e for case e; low-speech chunks are kept in history even when no model call is made."
+    },
+    {
+      "id": "chunk_index",
+      "tex": "i",
+      "name": "Larger thinking-chunk index",
+      "definition": "i is an integer from 1 to K_e; it counts the shared 20–45 second chunks, not native S1 frames or generated tokens."
+    },
+    {
+      "id": "chunk_end",
+      "tex": "t_i",
+      "name": "Thinking-chunk end time",
+      "definition": "End of chunk i in seconds, with t_0=0; a reusable earlier result must finish its input chunk before S_e."
+    },
+    {
+      "id": "chunk",
       "tex": "X_i=A_e((t_{i-1},t_i])",
-      "name": "Audio in pre-thinking chunk i",
-      "definition": "Contiguous views of the same samples fed to S1; chunk grouping changes, content does not."
+      "name": "Audio in thinking chunk i",
+      "definition": "The samples after t_{i-1} through t_i; chunks regroup the same speech supplied to S1 without dropping or duplicating samples."
     },
     {
-      "tex": "S_e, T_e",
-      "name": "Request onset and request end",
-      "definition": "Only chunks completed before S_e may produce reusable pre-thinking; final answers condition through T_e."
+      "id": "spoken_request",
+      "tex": "U_e^{\\mathrm{aud}}",
+      "name": "Recorded user request",
+      "definition": "The inserted spoken question for case e, beginning with the Assistant wake word; voice-enrollment clips are excluded from the model history."
     },
     {
-      "tex": "U_e^{\\mathrm{aud}}, U_e^{\\mathrm{txt}}",
-      "name": "Spoken request and its exact text",
-      "definition": "U names the user question; Q is reserved for private instructions."
+      "id": "text_request",
+      "tex": "U_e^{\\mathrm{txt}}",
+      "name": "Exact text of the user request",
+      "definition": "The text matching the chosen recorded question; append it to manual transcript history because the inserted request is absent from the original meeting transcript."
     },
     {
+      "id": "gt",
       "tex": "Y_{\\le t}",
-      "name": "Ground-truth speaker-attributed transcript available through t",
-      "definition": "At the final request, append the synthetic question text because it is absent from the original AMI transcript."
+      "name": "Ground-truth transcript through time t",
+      "definition": "Manual words, speaker labels and timestamps already available by t for this case; no future words from an unfinished utterance are included."
     },
     {
+      "id": "asr",
       "tex": "\\widehat Y^{(v)}_{\\le t}",
-      "name": "Transcript produced by ASR/diarization pipeline v",
-      "definition": "Contains generated words, anonymous speaker identities, timing and revision versions; no future corrections are silently backfilled."
+      "name": "Generated transcript through time t",
+      "definition": "Words, speaker labels and times from pipeline v using only the available audio; preserve released versions and do not apply future corrections early."
     },
     {
-      "tex": "D_e, D_{e,i}",
-      "name": "Input history at the request and at chunk i",
-      "definition": "Either GT text, generated text, or audio, as declared by the condition."
+      "id": "history",
+      "tex": "D_e",
+      "name": "Complete request-time input history",
+      "definition": "The declared input for the condition: Y through T_e, generated Y through T_e or audio A through T_e; include the full spoken/text request."
     },
     {
-      "tex": "Q_{\\le i}^{(g)}",
-      "name": "Private pre-thinking instructions issued through chunk i",
-      "definition": "Task goals come from policy g and past information; future user questions stay hidden."
+      "id": "chunk_history",
+      "tex": "D_{e,i}",
+      "name": "Input history through chunk i",
+      "definition": "The same input type as D_e, limited to t_i; this history contains no later user request."
     },
     {
+      "id": "goals",
+      "tex": "Q^{(g)},\\ Q_{\\le i}^{(g)}",
+      "name": "Thinking instructions",
+      "definition": "Q^(g) is the selected instruction/goal family; Q_{≤i}^(g) is the sequence of instructions issued through chunk i, based only on earlier discussion."
+    },
+    {
+      "id": "answer_instruction",
       "tex": "q^{\\mathrm{ans}}",
-      "name": "Shared final-answer instruction",
-      "definition": "The same answer-format instruction is used in every paired condition; suppressed in the probability formulas."
+      "name": "Common answer-format instruction",
+      "definition": "The same final-answer instruction is used in each paired condition and omitted from the probability formulas for readability."
     },
     {
-      "tex": "z_i=(h_i^{\\mathrm{pre}},\\mu_i)",
-      "name": "Generated private result for chunk i",
-      "definition": "Optional native pre-thinking trace plus a visible private artifact, such as facts or checked implications; i remains only the chunk index."
+      "id": "earlier_thinking",
+      "tex": "h_i^{\\mathrm{am}}",
+      "name": "Earlier native reasoning text",
+      "definition": "Reasoning text generated for chunk i when the model exposes a native thinking channel; absent channels remain N/A."
     },
     {
-      "tex": "Z_{<i}, Z_e^{-}",
-      "name": "Earlier pre-thinking results and the results available before this request",
-      "definition": "Keep prior results where feasible; record exactly which are retained under a capacity fallback."
+      "id": "notes",
+      "tex": "\\mu_i",
+      "name": "Saved notes",
+      "definition": "The text saved after chunk i, such as facts, task owners, changed decisions or checked implications with source references; these notes are not spoken to participants."
     },
     {
+      "id": "result",
+      "tex": "z_i=(h_i^{\\mathrm{am}},\\mu_i)",
+      "name": "Result of an earlier thinking call",
+      "definition": "The optional native reasoning text and saved notes generated for chunk i; z_i is a result, whereas i is only an index."
+    },
+    {
+      "id": "previous_results",
+      "tex": "Z_{<i}",
+      "name": "Results before chunk i",
+      "definition": "The ordered earlier results supplied to the next thinking call; record exactly which results survive any capacity fallback."
+    },
+    {
+      "id": "request_results",
+      "tex": "Z_e^{-}",
+      "name": "Earlier results available for the request",
+      "definition": "The retained results generated from chunks ending before S_e; never include a result that used the current question."
+    },
+    {
+      "id": "request_thinking",
       "tex": "h_e",
-      "name": "Native thinking generated for the actual user request",
-      "definition": "Observable native reasoning for the actual request; include any additional request-conditioned reasoning calls in the accounting rather than relabeling them pre-thinking."
+      "name": "Native thinking for the actual request",
+      "definition": "New native reasoning text generated after receiving the request, including any additional request-conditioned reasoning calls; earlier reasoning read again is input, not new thinking."
     },
     {
-      "tex": "r_e, o_e, R_e",
-      "name": "Answer text, output waveform and the native response object",
-      "definition": "R may contain speech and text; it is the response in the S1 probability model."
+      "id": "answer",
+      "tex": "r_e",
+      "name": "Final answer text",
+      "definition": "The text answer returned for case e, kept separately from thinking text and control messages."
     },
     {
+      "id": "output_audio",
+      "tex": "o_e",
+      "name": "Output speech waveform",
+      "definition": "The actual model speech played/saved for the response, excluding discarded synthesis and input speech."
+    },
+    {
+      "id": "response",
+      "tex": "R_e",
+      "name": "Native S1 response",
+      "definition": "The response returned by S1; depending on the system it contains output speech o_e and optional native text r_e or control fields."
+    },
+    {
+      "id": "answer_asr",
       "tex": "\\widehat r_e",
-      "name": "Independent ASR transcript of generated answer speech",
-      "definition": "Used to score S1 audio, with direct listening when names/numbers are disputed."
+      "name": "Transcript of generated answer speech",
+      "definition": "Independent ASR applied to o_e for scoring; listen directly when words, names or numbers are disputed."
     },
     {
-      "tex": "\u0007lpha^{\\mathrm{in}}_{m,j},\u0007lpha^{\\mathrm{out}}_{m,e}",
-      "name": "Model-specific input audio representation and output acoustic codes",
-      "definition": "These can be continuous embeddings or discrete codes; neither is a text thinking token."
+      "id": "audio_in",
+      "tex": "\\alpha^{\\mathrm{in}}_{m,j}",
+      "name": "Encoded input audio",
+      "definition": "Model m’s audio representation for frame j, which may be continuous embeddings or discrete audio tokens; it is not a text thinking token."
     },
     {
+      "id": "audio_out",
+      "tex": "\\alpha^{\\mathrm{out}}_{m,e}",
+      "name": "Output audio codes",
+      "definition": "The model-specific acoustic codes used to synthesize case e’s response; report them separately from text tokens."
+    },
+    {
+      "id": "tokenizer",
       "tex": "\\operatorname{Tok}_m(\\cdot)",
-      "name": "Tokenization with model m’s tokenizer",
-      "definition": "Use model-native generated token IDs when available; flag counts recovered by retokenization as approximate."
+      "name": "Model m’s text tokenization",
+      "definition": "Use native generated token IDs where available; counts recovered by retokenizing text must be marked approximate. Vertical bars around a token sequence mean its number of tokens."
     },
     {
+      "id": "think_tokens",
       "tex": "N_e^{\\mathrm{think}}",
-      "name": "New native thinking tokens generated for the request",
-      "definition": "Excludes all earlier pre-thinking and the final answer; N/A for a missing or unexposed channel."
+      "name": "Request-time native thinking tokens",
+      "definition": "Number of new tokens in h_e; excludes earlier reasoning and answer text, with N/A for an absent channel and unavailable for an unexposed one."
     },
     {
-      "tex": "N_e^{\\mathrm{ans}},N_e^{\\mathrm{ctrl}}",
-      "name": "New answer-text and protocol/control tokens",
-      "definition": "Report separately from native thinking and acoustic tokens."
+      "id": "answer_tokens",
+      "tex": "N_e^{\\mathrm{ans}}",
+      "name": "Request-time answer tokens",
+      "definition": "Number of newly generated final-answer text tokens in r_e."
     },
     {
-      "tex": "N_e^{\\mathrm{pre}}",
-      "name": "All tokens generated by earlier private pre-thinking calls",
-      "definition": "Includes native pre-thinking and saved artifacts; excludes input-prompt tokens, which have their own ledger."
+      "id": "control_tokens",
+      "tex": "N_e^{\\mathrm{ctrl}}",
+      "name": "Request-time control tokens",
+      "definition": "Number of newly generated text control/protocol tokens, listed separately from answer and thinking tokens."
     },
     {
-      "tex": "N_e^{\\mathrm{req,out}},N_e^{\\mathrm{req,in}}",
-      "name": "New request-time text output and request-time input tokens",
-      "definition": "Earlier results read again count as input, not newly generated thinking."
+      "id": "amortized_tokens",
+      "tex": "N_e^{\\mathrm{am}}",
+      "name": "Amortized-thinking output tokens",
+      "definition": "Total text tokens generated by earlier calls: optional native reasoning and saved notes, including unhelpful updates; earlier input/prefill is counted separately."
     },
     {
-      "tex": "r_e^\\star,\\mathcal F_e^\\star",
-      "name": "Verified reference answer and required source-supported facts",
-      "definition": "Never provided to an evaluated model or the pre-thinking worker."
+      "id": "request_out_tokens",
+      "tex": "N_e^{\\mathrm{req,out}}",
+      "name": "All request-time text output tokens",
+      "definition": "Recorded total of new request-time thinking, answer, helper and text control tokens; report directly if native thinking is unexposed."
     },
     {
-      "tex": "a_e,\\mathrm{Acc}_{105}",
-      "name": "Binary complete-answer judgment and accuracy over all 105 cases",
-      "definition": "Partial facts and unsupported claims are also recorded; missing outputs remain in the denominator."
+      "id": "request_in_tokens",
+      "tex": "N_e^{\\mathrm{req,in}}",
+      "name": "Request-time input tokens",
+      "definition": "All text input tokens processed for the request, including earlier reasoning and notes read again; report audio positions separately."
     },
     {
-      "tex": "\\mathcal S_B, B",
-      "name": "History selection rule and capacity allowance",
-      "definition": "Apply a declared rule when full history overflows; never select using gold facts or scoring labels."
-    },
-    {
+      "id": "helper_tokens",
       "tex": "N_e^{\\mathrm{aux}}",
       "name": "Other request-time generated text",
-      "definition": "Ordinary output of any request-time helper; the main plan uses deterministic history selection, so this is zero unless an extra helper is declared."
+      "definition": "Output from any declared request-time helper; the main plan uses deterministic history selection, so no helper is assumed."
     },
     {
-      "tex": "\\theta_m",
-      "name": "Frozen model parameters",
-      "definition": "The selected checkpoint for model m; native mode, precision, prompt and decoding configuration are recorded alongside it."
+      "id": "reference",
+      "tex": "r_e^\\star",
+      "name": "Verified reference answer",
+      "definition": "Checked answer based only on evidence available before this request; never an input to the evaluated system."
+    },
+    {
+      "id": "facts",
+      "tex": "\\mathcal F_e^\\star",
+      "name": "Required answer facts",
+      "definition": "The source-supported facts, people, quantities and decision status needed for correctness; also record allowed alternatives and uncertainty."
+    },
+    {
+      "id": "score",
+      "tex": "a_e",
+      "name": "Complete-answer score",
+      "definition": "a_e=1 for a complete source-supported answer without a material unsupported claim; otherwise 0, including silence, missing output and capacity failure. Scoring must be finished before a final accuracy is reported."
+    },
+    {
+      "id": "accuracy",
+      "tex": "\\mathrm{Acc}_{105}",
+      "name": "Final accuracy over all 105 cases",
+      "definition": "The sum of complete-answer scores divided by 105; partial-run accuracy is labeled provisional and uses its own displayed reviewed-case denominator."
+    },
+    {
+      "id": "budget",
+      "tex": "B",
+      "name": "Usable model input budget",
+      "definition": "The model-specific number of input positions available after reserving output space; record text/audio position counts and memory constraints."
+    },
+    {
+      "id": "selector",
+      "tex": "\\mathcal S_B",
+      "name": "History-selection rule",
+      "definition": "A fixed rule selecting history and earlier results within budget B using only available inputs; never use reference facts, future speech or scoring labels."
+    },
+    {
+      "id": "selected",
+      "tex": "D_e^B,\\ Z_e^B",
+      "name": "History and earlier results retained after selection",
+      "definition": "The selected inputs when full history does not fit; keep this condition distinct from full-history and model-native rolling context."
     }
-  ]
+  ],
+  "aliases": {
+    "N_e^{pre}": "N_e^{am}",
+    "h_i^{pre}": "h_i^{am}"
+  },
+  "compatibility": "Version 2 updates the unrun plan and empty templates only; recorded prompts, model outputs and historical data are unchanged."
 }

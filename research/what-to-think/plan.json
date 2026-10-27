@@ -4,17 +4,17 @@
   "status": "plan_only_no_inference_or_experiment_implementation",
   "confirmed_choices": [
     "Reactive S2 baselines reason only when the actual user request arrives.",
-    "Pre-thinking variants generate earlier private results and reuse them.",
+    "Amortized thinking variants generate earlier earlier results and reuse them.",
     "Retain all history plus earlier results where feasible; use a documented selection fallback on overflow/OOM.",
     "Report native thinking and ordinary output tokens separately; do not force a reasoning trace from Instruct models."
   ],
   "summary": [
-    "Evaluate all 105 distinct questions, using verified text answers and source-based scoring facts.",
-    "Use shared chunks of about 20–45 seconds, so short fillers do not trigger separate pre-thinking calls.",
-    "Compare three S1 systems, four text-S2 families and two audio-S2 families.",
-    "Keep the user request hidden until it actually arrives, then reuse earlier private results where applicable.",
-    "Measure answer accuracy and new thinking tokens for the request, with pre-thinking tokens listed separately.",
-    "Keep full history where it fits and label every capacity fallback."
+    "Start with S1 and validate the evaluation pipeline on real model outputs before running more experiments.",
+    "Use all 105 distinct questions for the final evaluation, after checking every reference answer.",
+    "Use shared 20–45 second chunks for amortized thinking, while keeping each S1 model’s native audio frames.",
+    "Compare S1-only responses with reactive S2 and S2 that reuses results generated while listening.",
+    "Measure answer accuracy and request-time thinking tokens, and count earlier work separately.",
+    "Keep the progress report, examples and checklists synchronized as runs finish."
   ],
   "scope": {
     "questions": 105,
@@ -39,9 +39,9 @@
     "pause_seconds": 0.5,
     "rule": "After at least 20 elapsed seconds and eight seconds of voiced speech, close at the next completed pause of at least 0.5 seconds; target roughly 30 seconds. A hard 45-second cap bounds continuous speech.",
     "cap_rule": "At 45 seconds, close at the current causal audio frame. If speech is still continuing, mark the last speech unit partial and let the next prefix supply its continuation; do not look ahead or create a shorter retrospective chunk.",
-    "low_activity": "A capped interval with less than eight seconds of speech is a passive chunk: keep all its samples in history but skip a private model call; the next active call still has that earlier audio available.",
+    "low_activity": "A capped interval with less than eight seconds of speech is a passive chunk: keep all its samples in history but skip a thinking call; the next active call still has that earlier audio available.",
     "fillers": "Short backchannels and fillers are accumulated with surrounding speech rather than becoming their own calls; a long low-information block may return NO_UPDATE, with its tokens counted.",
-    "request": "At request onset, stop launching pre-thinking. Put the unclosed meeting tail and the complete request into the final input, even if the tail is shorter than the normal minimum.",
+    "request": "At request onset, stop launching amortized thinking. Put the unclosed meeting tail and the complete request into the final input, even if the tail is shorter than the normal minimum.",
     "common_schedule": "Use one causal audio-VAD boundary manifest across GT text, both ASR tools and speech S2; no GT sentence boundaries or question-specific evidence may choose the cuts.",
     "causality": "A pause is used only after its silence has been observed; text prefixes include only already available words, never the complete future part of an intersecting utterance.",
     "same_content": "Macro chunks and native S1 frames cover the same original samples, request and source horizon; preserve an interval/hash ledger with no dropped or duplicated speech.",
@@ -57,15 +57,15 @@
     "Freeze answer facts and judge criteria before any evaluation run; keep them out of model inputs."
   ],
   "protocol": [
-    "This is an unpaced content study: complete each private chunk call before releasing the next chunk; measure accuracy and token movement, without a real-time latency claim.",
-    "Pre-thinking branches see only earlier original meeting speech; synthetic evaluation questions and answers never enter the shared pre-thinking stem.",
+    "This is an unpaced content study: complete each thinking chunk call before releasing the next chunk; measure accuracy and token movement, without a real-time latency claim.",
+    "Amortized thinking branches see only earlier original meeting speech; synthetic evaluation questions and answers never enter the shared earlier meeting history.",
     "At the request, use the whole available history plus retained earlier results; user-request recognition in generated-transcript conditions comes from that tool, with a GT-question-text diagnostic reported separately.",
     "Use the same final-answer instruction and within-model decoding/output allowance across paired conditions.",
-    "Full earlier traces and artifacts are retained when possible; chat-template stripping of previous thinking must be checked using actual serialized inputs.",
+    "Full earlier reasoning text and saved notes are retained when possible; chat-template stripping of previous thinking must be checked using actual model inputs.",
     "Track each transcript/speaker revision at its release; do not use full-meeting future diarization or oracle speaker-name mappings in generated-transcript conditions.",
-    "Fork independent question examples from the original meeting stem; earlier synthetic questions or model replies never become history for later examples.",
-    "S2 audio experiments produce text answers and private results; native speech is scored in S1. Qualify any S2 engine that cannot separate text/reasoning from speech output.",
-    "Reuse causal pre-thinking stems per meeting/model/tool/prompt where their exact inputs match, without exposing question times to the worker.",
+    "Fork independent question examples from the original meeting history; earlier synthetic questions or model replies never become history for later examples.",
+    "S2 audio experiments produce text answers and earlier results; native speech is scored in S1. Qualify any S2 engine that cannot separate text/reasoning from speech output.",
+    "Reuse causal earlier results per meeting/model/tool/prompt where their exact inputs match, without exposing question times to the worker.",
     "Choose generation limits on development data: start with 8192 new tokens for native Thinking models and 4096 for Instruct, raise if needed for complete outputs, then freeze within-model paired limits and report all length stops.",
     "The appended GT request text must match the chosen recorded question, including any retained alternative; every condition uses the same spoken request and gold intent.",
     "After the request, allow only the fixed silence/EOS needed by native speech decoding, never resumed future meeting audio; save the full output and select scoring spans by timing rather than correctness."
@@ -81,31 +81,71 @@
   ],
   "metrics": [
     "Primary accuracy: a complete source-supported answer without a material unsupported claim, judged using verified facts, rules and a blinded LLM judge.",
-    "Primary token measure: newly generated native thinking after the actual request, excluding all earlier pre-thinking and answer text.",
+    "Primary token measure: newly generated native thinking after the actual request, excluding all earlier amortized thinking and answer text.",
     "For absent native thinking channels use not-applicable; for unexposed channels use unavailable, never a fabricated zero or a forced chain of thought.",
-    "Also list final-answer tokens, total request-time output, request-time input/prefill, earlier pre-thinking output, truncations and context mode.",
+    "Also list final-answer tokens, total request-time output, request-time input text tokens, earlier amortized thinking output, truncations and context mode.",
     "Report native thinking means over all eligible attempts, correct-only values separately, and accuracy alongside every token comparison; silence and failed answers cannot win on token count.",
     "Use model-specific tokenizers and compare token reductions primarily within the same model; different tokenizers and input costs prevent a universal compute interpretation.",
     "Have the judge see the request, verified facts/source evidence and candidate answer, with model and condition names hidden; inspect disputes directly against the source.",
     "For S1, independently transcribe generated audio and inspect disputed words/numbers by listening; an internal text stream is diagnostic, not a substitute for the spoken answer.",
-    "Report per-question logical pre-thinking exposure and the actual unique executed pre-thinking totals separately, so reuse of a shared meeting stem is not double-counted.",
-    "A helper or selector that uses the actual request performs request-time work: count its native reasoning and ordinary output, never relabel it pre-thinking. The main history selector uses fixed rules."
+    "Report per-question logical amortized thinking exposure and the actual unique executed amortized thinking totals separately, so reuse of a shared earlier meeting history is not double-counted.",
+    "A helper or selector that uses the actual request performs request-time work: count its native reasoning and ordinary output, never relabel it amortized thinking. The main history selector uses fixed rules."
   ],
   "resources": {
     "current_GPU_count": 0,
     "current_maximum_active_GPUs": 0,
     "current_roles": {},
-    "current_dependencies": "Read-only inventory/literature plus plan and report generation; no model calls, downloads or jobs.",
+    "current_dependencies": "Plan/report editing and CPU validation only; no new inference, model downloads or GPU jobs.",
     "planned_maximum_active_GPUs": 4,
     "policy": "All GPU jobs sequential; transcript tools and reference validation precede evaluation; judges follow generation. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
   },
   "execution_order": [
-    "Discuss and freeze this plan and notation; no inference implementation is authorized by this document alone.",
-    "Generate and validate references for all 105; select disjoint development examples.",
-    "Tune chunk thresholds and prompt goals on development data, then freeze them.",
-    "Qualify model input limits, history retention/fallback and native token extraction.",
-    "Run every selected condition on all 105 questions, including both transcript tools.",
-    "Judge answers and fill the result tables; discuss timing-policy or speech-handoff studies afterward."
-  ]
+    "Implement the shared S1 response extraction, scoring, token accounting and progress export, starting with saved real outputs.",
+    "Run a small end-to-end S1 pilot with checked reference facts and inspect its actual outputs; pass every evaluation-pipeline check before expanding experiments.",
+    "Generate or repair and validate all 105 reference answers, keeping development meetings separate.",
+    "Qualify the remaining S1 callers, freeze the evaluator and run S1-only on all 105 questions.",
+    "Select chunk thresholds and thinking goals on separate development meetings; qualify S2 context limits, saved-result retention and native token counters.",
+    "Run the text-S2 and speech-S2 conditions on all 105 questions, then fill the paired accuracy/token tables.",
+    "Keep the progress report, examples, daily log and checklists synchronized throughout; discuss timing and speech handoff later."
+  ],
+  "terminology": {
+    "term": "amortized thinking",
+    "definition": "Reason while listening, then save and reuse the results when a user asks a question.",
+    "cost_note": "The term describes moving and reusing work before a request; it does not establish lower total compute or latency, which must be measured.",
+    "scope_note": "No model training is implied; the current plan reuses inference results.",
+    "source": "https://arxiv.org/abs/2510.05150"
+  },
+  "evaluation_gate": {
+    "status": "not_started",
+    "first_model": "DuplexOmni S1, using the existing verified S1 caller with S2 disabled",
+    "scope": "First implement and validate the shared evaluation scripts on saved real S1 outputs, then run a small end-to-end S1 pilot on separately checked question examples; these checks do not replace the final 105-question evaluation.",
+    "checks": [
+      "Freeze a small source-checked pilot set with an early question, a later question and a case about task owners or a changed decision; do not tune models or prompts on the final bank.",
+      "Save the exact input audio, request timing, checkpoint, context retained, raw output, spoken answer and run status for each case.",
+      "Extract the answer from the model’s actual output audio, use independent ASR and listen when names or numbers are unclear; keep native model text separately.",
+      "Check required facts, people, numbers, units and decision status, then use a blinded LLM judge for meaning and manually inspect disagreements.",
+      "Test correct, incorrect, partial, silent, missing, truncated and capacity-failure records, using existing real outputs where available and clearly labeled script fixtures for remaining error paths.",
+      "Check token counts against native token IDs, report absent thinking channels as N/A and leave unexposed counts unavailable.",
+      "Verify that all 105 planned questions remain in final accuracy accounting and that reruns cannot duplicate cases or overwrite earlier evidence.",
+      "Publish at least one end-to-end pilot example with the actual request, verified answer facts, raw model output/audio, extracted answer, score and a plain explanation.",
+      "Rerun the same saved outputs through the evaluator and confirm identical deterministic fields; version and freeze the judge prompt, model, decoding and rules, and record judgment variation.",
+      "Verify that the progress report and checklists match the saved run records, including failure cases and update times."
+    ],
+    "pass_rule": "Proceed only after every pipeline check is verified and an inspected real S1 pilot example is linked; a wrong model answer can still demonstrate correct evaluation, but a successful process exit alone cannot pass this gate.",
+    "next": "Validate all 105 references before full S1 evaluation; qualify the other S1 callers against the same evaluator, then extend to text and speech S2."
+  },
+  "progress_reporting": {
+    "status": "specified_not_implemented",
+    "page": "study-progress.html",
+    "requirements": [
+      "Maintain a run-time report from the same saved run records that determine checklist states and aggregate results.",
+      "During a run, refresh the local report after each completed or failed example and at least every 30 seconds; show the last update, active model/condition/job and finished-versus-planned counts.",
+      "Show completed answers and scored answers separately, with provisional accuracy only over reviewed results and a separate final score over all 105 questions.",
+      "Keep a few actual examples visible, including a correct answer, an error and any silence or truncation; link the request, model output/audio, reference facts, judgment and reason.",
+      "Update the public HTML report at run milestones and publish its snapshot time; never label an old published snapshot as live.",
+      "Use one versioned progress file to generate the experiment-plan checklist, project TODO and progress page; do not mark a task complete until its linked evidence is checked."
+    ],
+    "distinction": "Real-time progress reporting tracks the experiment as it runs; the current inference study remains unpaced and makes no real-time response-latency claim."
+  }
 }

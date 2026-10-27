@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-10-27",
+  "status": "not_started",
+  "snapshot_label": "Plan update; no new evaluation run",
+  "active_job": null,
+  "planned_questions_per_condition": 105,
+  "planned_cells": 33,
+  "planned_final_answers": 3465,
+  "attempted": 0,
+  "completed_outputs": 0,
+  "reviewed_outputs": 0,
+  "correct_outputs": null,
+  "examples": [],
+  "gate_status": "not_validated",
+  "tasks": [
+    {
+      "id": "plan",
+      "text": "Define the experiment families, notation and amortized-thinking terminology.",
+      "status": "complete",
+      "url": "what-to-think.html#notation"
+    },
+    {
+      "id": "evaluator",
+      "text": "Implement shared S1 answer extraction, scoring and token accounting.",
+      "status": "pending",
+      "url": "what-to-think.html#evaluation-first"
+    },
+    {
+      "id": "report",
+      "text": "Implement run-time progress updates from the same saved records as the checklists.",
+      "status": "pending",
+      "url": "what-to-think.html#progress-updates"
+    },
+    {
+      "id": "saved-output-tests",
+      "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
+      "status": "pending",
+      "url": "what-to-think.html#evaluation-first"
+    },
+    {
+      "id": "s1-pilot",
+      "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",
+      "status": "pending",
+      "url": "what-to-think.html#evaluation-first"
+    },
+    {
+      "id": "pilot-example",
+      "text": "Publish an actual pilot output with its request, answer facts, score and explanation.",
+      "status": "pending",
+      "url": "study-progress.html#examples"
+    },
+    {
+      "id": "gate",
+      "text": "Validate and freeze the evaluation protocol before expanding experiments.",
+      "status": "pending",
+      "url": "what-to-think.html#evaluation-first"
+    },
+    {
+      "id": "references",
+      "text": "Generate or repair and validate all 105 reference answers.",
+      "status": "pending",
+      "url": "what-to-think.html#scope"
+    },
+    {
+      "id": "s1-all",
+      "text": "Check every S1 caller and evaluate all 105 questions for each S1 model.",
+      "status": "planned",
+      "url": "what-to-think.html#conditions"
+    },
+    {
+      "id": "s2-development",
+      "text": "Select chunks and thinking goals on separate development meetings.",
+      "status": "planned",
+      "url": "what-to-think.html#prompts"
+    },
+    {
+      "id": "s2-all",
+      "text": "Run the remaining text and speech S2 conditions on all 105 questions.",
+      "status": "planned",
+      "url": "what-to-think.html#results"
+    }
+  ],
+  "updated_at": "2026-10-27T23:30:06Z",
+  "runtime_reporting": "not_implemented"
+}

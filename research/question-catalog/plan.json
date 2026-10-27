@@ -6,16 +6,14 @@
     "Use a separate meeting assistant and an existing participant as the requester.",
     "Freeze the existing F5-TTS checkpoint and inference recipe; do not tune the model on the evaluation meetings or speakers.",
     "Start with pause and resume. Reference-answer audio stays deferred; score against short source-verified fact checklists.",
-    "Background pre-thinking must not see the future question or its scoring labels.",
-    "Count the entire pre-thinking cost, including work that is cancelled or never becomes useful.",
+    "Background amortized thinking must not see the future question or its scoring labels.",
+    "Count the entire amortized thinking cost, including work that is cancelled or never becomes useful.",
     "For this pilot, reuse completed audio checks and use Codex’s documented source/motivation review. Independent human ratings are not claimed and remain optional.",
     "Keep the four new text probes separate from the frozen twenty and the existing 105-question audio bank.",
     "Use the same S2 checkpoint when comparing policies; the 30B offline reader is quality-control evidence, not an unreported model upgrade in a speech condition."
   ],
   "next": [
-    "Discuss the all-105 what-to-think plan and maintained notation before implementation.",
-    "Generate or revise and validate source-grounded answers for every evaluation question.",
-    "Freeze shared chunks and model-specific private goals on separate development meetings, then qualify and run the matrix."
+    "Validate the evaluation pipeline with S1 first, then use the same tested protocol for the full-bank S1/S2 study."
   ],
   "meeting_state_schema": "speaker · fact/commitment · proposed/agreed/superseded · evidence · source time",
   "conditions": [
@@ -35,9 +33,9 @@
       "establishes": "The cost of perception errors and ASR delay."
     },
     {
-      "condition": "Background pre-thinking with the same ASR history",
+      "condition": "Background amortized thinking with the same ASR history",
       "history": "The identical causal ASR history; no future question or scoring facts.",
-      "establishes": "Whether pre-thinking before the request helps, including its full compute cost."
+      "establishes": "Whether amortized thinking before the request helps, including its full compute cost."
     }
   ],
   "actions": [
@@ -81,7 +79,7 @@
         {
           "status": "complete",
           "text": "Add ordinary discussion where the assistant should remain silent.",
-          "evidence": "Six original 18-second clips contain no Assistant wake cue. The expected outward action is to listen; private pre-thinking is allowed. No duplex inference is claimed.",
+          "evidence": "Six original 18-second clips contain no Assistant wake cue. The expected outward action is to listen; private amortized thinking is allowed. No duplex inference is claimed.",
           "url": "question-checks.html#silence"
         },
         {
@@ -142,45 +140,70 @@
       "goal": "Plan only: compare S1-only systems, four text-S2 families repeated over transcript tools, and two speech-S2 families; timing policies and live S1/S2 integration follow later.",
       "tasks": [
         {
+          "text": "Define the experiment families, notation and amortized-thinking terminology.",
           "status": "complete",
-          "text": "Compile the full-bank experiment matrix and shared notation.",
-          "evidence": "Three S1 systems, four text candidates, three speech candidates and two transcript pipelines give 33 planned cells; all result values remain empty.",
-          "project_url": "what-to-think.html#conditions"
+          "project_url": "what-to-think.html#notation",
+          "evidence": "Updated plan and notation; no inference result."
         },
         {
+          "text": "Implement shared S1 answer extraction, scoring and token accounting.",
           "status": "pending",
-          "text": "Generate and validate all reference answers before testing.",
-          "evidence": "Keep all 105 questions and versioned references; the new unified review is not yet complete.",
-          "project_url": "what-to-think.html#scope"
+          "project_url": "what-to-think.html#evaluation-first",
+          "evidence": "Plan requirement; not yet executed."
         },
         {
+          "text": "Implement run-time progress updates from the same saved records as the checklists.",
           "status": "pending",
-          "text": "Select stable chunks and private goals on separate development data.",
-          "evidence": "Start with 20–45 second chunks and eight seconds of speech, compare goal families, then freeze settings without tuning on the 105 evaluation questions.",
-          "project_url": "what-to-think.html#chunking"
+          "project_url": "what-to-think.html#progress-updates",
+          "evidence": "Plan requirement; not yet executed."
         },
         {
+          "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
           "status": "pending",
-          "text": "Qualify model contexts, previous-result retention and token counters.",
-          "evidence": "Use full history plus earlier results when it fits; apply a documented fallback to the same raw-history intervals for paired conditions.",
-          "project_url": "what-to-think.html#capacity"
+          "project_url": "what-to-think.html#evaluation-first",
+          "evidence": "Plan requirement; not yet executed."
         },
         {
-          "status": "planned",
-          "text": "Run every selected S1 and S2 condition on all 105 questions.",
-          "evidence": "The main study is unpaced and measures accuracy and newly generated request-time thinking; it does not claim real-time performance.",
-          "project_url": "what-to-think.html#results"
+          "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",
+          "status": "pending",
+          "project_url": "what-to-think.html#evaluation-first",
+          "evidence": "Plan requirement; not yet executed."
         },
         {
-          "status": "planned",
-          "text": "Judge factual accuracy and report thinking, answer and earlier private tokens separately.",
-          "evidence": "No-channel or unexposed reasoning counts are N/A, not artificial zeros; all failed or missing answers remain visible.",
-          "project_url": "what-to-think.html#metrics"
+          "text": "Publish an actual pilot output with its request, answer facts, score and explanation.",
+          "status": "pending",
+          "project_url": "study-progress.html#examples",
+          "evidence": "Plan requirement; not yet executed."
         },
         {
+          "text": "Validate and freeze the evaluation protocol before expanding experiments.",
+          "status": "pending",
+          "project_url": "what-to-think.html#evaluation-first",
+          "evidence": "Plan requirement; not yet executed."
+        },
+        {
+          "text": "Generate or repair and validate all 105 reference answers.",
+          "status": "pending",
+          "project_url": "what-to-think.html#scope",
+          "evidence": "Plan requirement; not yet executed."
+        },
+        {
+          "text": "Check every S1 caller and evaluate all 105 questions for each S1 model.",
           "status": "planned",
-          "text": "Return to timing policies and speech handoff after the content study.",
-          "evidence": "The earlier three-question/four-condition proposal remains an archived integration plan, not the current evaluation scope."
+          "project_url": "what-to-think.html#conditions",
+          "evidence": "Plan requirement; not yet executed."
+        },
+        {
+          "text": "Select chunks and thinking goals on separate development meetings.",
+          "status": "planned",
+          "project_url": "what-to-think.html#prompts",
+          "evidence": "Plan requirement; not yet executed."
+        },
+        {
+          "text": "Run the remaining text and speech S2 conditions on all 105 questions.",
+          "status": "planned",
+          "project_url": "what-to-think.html#results",
+          "evidence": "Plan requirement; not yet executed."
         }
       ]
     },
@@ -202,11 +225,11 @@
         },
         {
           "status": "pending",
-          "text": "Include a case where later speech changes the request while lookup or pre-thinking is pending."
+          "text": "Include a case where later speech changes the request while lookup or amortized thinking is pending."
         },
         {
           "status": "pending",
-          "text": "Separate internal pre-thinking from outward intervention with explicit actions: listen, prepare, answer/clarify, call a tool, cancel/revise."
+          "text": "Separate internal amortized thinking from outward intervention with explicit actions: listen, prepare, answer/clarify, call a tool, cancel/revise."
         },
         {
           "status": "pending",
@@ -220,7 +243,7 @@
     }
   ],
   "resource_note": "This planning and report update uses 0 GPUs, no GPU roles/shared components/dependencies and maximum zero active GPUs. No model inference, downloads, runtime implementation or jobs were started. Future jobs are sequential and qualification-gated, with a planned maximum of four H100 80 GB GPUs for the largest speech candidate.",
-  "update_rule": "Update stage status only when the stated evidence exists. A larger corpus, completed synthesis or parsed model response does not mark the controlled system evaluation complete.",
+  "update_rule": "Keep the run-time progress report and checklist synchronized from execution-progress.json and saved run records; link inspected real examples and show update times.",
   "comparison_design": {
     "status": "proposal_for_discussion_not_executed",
     "main_questions": [
@@ -233,7 +256,7 @@
         "meaning": "Choose the useful job: retain a responsibility, track a changed decision, resolve a reference, check a constraint, or derive a simple consequence."
       }
     ],
-    "input_vs_work": "Speaker-attributed ASR is an input representation: it helps preserve who said what. The pre-thinking task decides what to do with that information. Correct transcription/diarization is not itself useful reasoning.",
+    "input_vs_work": "Speaker-attributed ASR is an input representation: it helps preserve who said what. The amortized thinking task decides what to do with that information. Correct transcription/diarization is not itself useful reasoning.",
     "current_evidence": [
       "The text study uses ground-truth transcripts and speaker labels, not a measured streaming ASR feed.",
       "Existing S1/S2 examples establish selected short interactions; the current S1 configuration keeps 40 history turns with a 4096-token window.",
@@ -248,13 +271,13 @@
       "policies": [
         {
           "name": "React only",
-          "rule": "Do no private pre-thinking before the real request; reason when it arrives.",
+          "rule": "Do no private amortized thinking before the real request; reason when it arrives.",
           "purpose": "Baseline with no background compute."
         },
         {
           "name": "Every 30 seconds",
           "rule": "Update notes at fixed source-clock intervals.",
-          "purpose": "Simple pre-thinking baseline."
+          "purpose": "Simple amortized thinking baseline."
         },
         {
           "name": "After a meaningful change",
@@ -268,8 +291,8 @@
         }
       ],
       "budget": "Proposed starting limits: two updates per source minute, 1024 retained note tokens and one outstanding S2 job. Use development meetings to choose a total generation cap that produces complete notes; start by checking 1024 tokens per update, counting private reasoning when present. Freeze this before comparing policies. A shared cap is not a claim of equal spent compute: measure all prefill, decoding and service time, including calls that return no usable note.",
-      "question_timing": "Existing questions often follow evidence by minutes, so periodic pre-thinking may already be finished. Add a few reviewed branches shortly after a real update and later in the same discussion. Reuse the same question intent and audio where appropriate; timing variants are not new questions.",
-      "success": "Better fraction of correct supported answers by a fixed useful-answer deadline, or equal quality with less measured pre-thinking work. Report failures and timeouts, not only delays of successful answers."
+      "question_timing": "Existing questions often follow evidence by minutes, so periodic amortized thinking may already be finished. Add a few reviewed branches shortly after a real update and later in the same discussion. Reuse the same question intent and audio where appropriate; timing variants are not new questions.",
+      "success": "Better fraction of correct supported answers by a fixed useful-answer deadline, or equal quality with less measured amortized thinking work. Report failures and timeouts, not only delays of successful answers."
     },
     "what": {
       "hold_fixed": "Use identical update times, available speaker-attributed ASR, S2 checkpoint, output cap and memory allowance.",
@@ -277,7 +300,7 @@
         {
           "name": "Plain summary",
           "work": "Keep a short running account of the discussion.",
-          "output": "A general summary; language-model pre-thinking control under the same output and memory caps. Compare actual compute as well."
+          "output": "A general summary; language-model amortized thinking control under the same output and memory caps. Compare actual compute as well."
         },
         {
           "name": "Facts with owners and status",
@@ -290,10 +313,10 @@
           "output": "For example, derive 4:2:1 from two twice-as-important statements; record the assumptions and source links."
         }
       ],
-      "extra_baseline": "Keep speaker-attributed ASR without an LLM summary as a low-pre-thinking baseline. Reading it at request time still has a cost; it is not compute-matched to the three pre-thinking tasks.",
+      "extra_baseline": "Keep speaker-attributed ASR without an LLM summary as a low-amortized thinking baseline. Reading it at request time still has a cost; it is not compute-matched to the three amortized thinking tasks.",
       "success": "Fewer wrong owners, stale decisions, invented certainty and lost constraints at comparable measured cost. A shorter note or fluent answer alone is not a success."
     },
-    "crossed_comparison": "After the separate controls work, cross periodic versus meaningful-change timing with summary, ledger and ledger-plus-checks: six pre-thinking conditions. Keep reactive and raw-transcript baselines. This tests whether a useful kind of pre-thinking depends on choosing the right moment.",
+    "crossed_comparison": "After the separate controls work, cross periodic versus meaningful-change timing with summary, ledger and ledger-plus-checks: six amortized thinking conditions. Keep reactive and raw-transcript baselines. This tests whether a useful kind of amortized thinking depends on choosing the right moment.",
     "examples": [
       {
         "title": "A proposal changes, then changes again",
@@ -338,7 +361,7 @@
           }
         ],
         "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
-        "lesson": "Attribution helps identify the input; deriving and retaining the ratio is the pre-thinking job."
+        "lesson": "Attribution helps identify the input; deriving and retaining the ratio is the amortized thinking job."
       },
       {
         "title": "A commitment needs an owner and a delivery route",
@@ -361,15 +384,15 @@
     "protocol": [
       {
         "name": "Keep future questions hidden",
-        "rule": "The pre-thinking process receives only released speech and prior notes. It does not receive question text, insertion schedule, answer labels or selected evidence. A guessed future question must be generated from the past and charged as speculation."
+        "rule": "The amortized thinking process receives only released speech and prior notes. It does not receive question text, insertion schedule, answer labels or selected evidence. A guessed future question must be generated from the past and charged as speculation."
       },
       {
         "name": "Version the ASR and speaker labels",
         "rule": "Use only words and speaker assignments emitted by that instant. Later transcript/identity corrections are new events. Oracle speaker labels attached to ASR must be labeled as an upper-bound condition, not a causal diarizer."
       },
       {
-        "name": "Separate pre-thinking from speaking",
-        "rule": "The six ordinary-discussion controls allow private work while requiring no outward speech. The real Assistant wake cue permits a response; a pause or thought trigger does not."
+        "name": "Separate amortized thinking from speaking",
+        "rule": "The six ordinary-discussion controls allow reasoning while listening while requiring no outward speech. The real Assistant wake cue permits a response; a pause or thought trigger does not."
       },
       {
         "name": "Count the complete cost",
@@ -396,12 +419,12 @@
       "now": "One A100 SXM4 80 GB text diagnostic only; all Qwen weights/KV share GPU 0, sequential stages.",
       "planned": "For a future integrated replay, propose 2 H100 SXM 80 GB: S1 Thinker, Talker, MTP and Code2Wav share GPU 0; the existing Qwen3-4B Thinking S2 reasoner is isolated on GPU 1. ASR/speaker traces are produced in a separate sequential job and replayed from CPU for controlled comparisons, explicitly distinct from live ASR. The 30B reader remains an offline quality check. No such job is submitted.",
       "gates": "CPU caller/history/cancellation checks and S2 context preflight before any new speech inference; measured S1 latency/queue qualification under S2 load before interpreting behavior.",
-      "full_prefix_cost_estimate": "At 1× playback the three original prefixes total 79.82 minutes per condition. Reserving two GPUs for each of the four system conditions would require at least 10.64 GPU hours before startup, request/answer time and ASR processing. A one-GPU S1-only allocation reduces that bound; all actual allocation and pre-thinking still count.",
+      "full_prefix_cost_estimate": "At 1× playback the three original prefixes total 79.82 minutes per condition. Reserving two GPUs for each of the four system conditions would require at least 10.64 GPU hours before startup, request/answer time and ASR processing. A one-GPU S1-only allocation reduces that bound; all actual allocation and amortized thinking still count.",
       "cheaper_diagnostic": "A cheaper first schedule/work study can use one isolated S2 worker and a causal text-event replay, skipping idle waits with a virtual clock. Label readiness/latency as simulated until selected two-GPU paced-audio cases validate it. A preloaded-history or bounded-window replay tests that declared setup; it does not prove continuous full-meeting listening."
     },
     "discussion": [
       {
-        "question": "Should private work mainly maintain reliable facts, or also prepare likely answers?",
+        "question": "Should reasoning while listening mainly maintain reliable facts, or also prepare likely answers?",
         "recommendation": "Start with facts/owners/status plus a few cheap derived checks. Keep speculative answer planning as an explicitly costed later control; it is less reliable when the future request is unknown."
       },
       {
@@ -409,7 +432,7 @@
         "recommendation": "Start with completed meaningful updates, compared with fixed intervals under the same caps. Acoustic silence is an opportunity for scheduling, not evidence that thought is useful."
       },
       {
-        "question": "How much pre-thinking should be allowed?",
+        "question": "How much amortized thinking should be allowed?",
         "recommendation": "Use a small predeclared cap and report the full cost curve, then adjust on development meetings only. Discuss the quality/latency/compute trade-off before a larger sweep."
       },
       {

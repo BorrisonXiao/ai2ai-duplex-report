@@ -50,7 +50,7 @@
       "problem": "Separates semantic triggering, incremental state maintenance and foreground response.",
       "method": "Separates semantic triggering, incremental state maintenance and foreground response.",
       "results": "Reported results belong to the source study; no benchmark score is transferred to this proposed AMI/earnings evaluation.",
-      "relevance": "Use stable meaningful blocks and bounded private state; keep timing fixed in this what-to-think study.",
+      "relevance": "Use stable meaningful blocks and bounded saved notes; keep timing fixed in this what-to-think study.",
       "status": "verified_arxiv_abstract",
       "checked_date": "2026-10-27"
     },
@@ -125,7 +125,7 @@
       "problem": "Studies reasoning grounded in audio rather than assuming longer text reasoning always helps audio tasks.",
       "method": "Studies reasoning grounded in audio rather than assuming longer text reasoning always helps audio tasks.",
       "results": "Reported results belong to the source study; no benchmark score is transferred to this proposed AMI/earnings evaluation.",
-      "relevance": "Include an independent audio-reasoning candidate and tune its private prompt separately.",
+      "relevance": "Include an independent audio-reasoning candidate and tune its thinking instruction separately.",
       "status": "verified_arxiv_abstract",
       "checked_date": "2026-10-27"
     },

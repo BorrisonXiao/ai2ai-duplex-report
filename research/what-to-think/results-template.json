@@ -16,14 +16,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "s1-duplex",
@@ -40,14 +40,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "s1-minicpm",
@@ -64,14 +64,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-think",
@@ -88,14 +88,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-think",
@@ -104,7 +104,7 @@
       "family": "T2",
       "source": "GT",
       "tool": "GT",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -112,14 +112,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-think",
@@ -136,14 +136,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-think",
@@ -152,7 +152,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D1",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -160,14 +160,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-think",
@@ -184,14 +184,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-think",
@@ -200,7 +200,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D2",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -208,14 +208,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-inst",
@@ -232,14 +232,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-inst",
@@ -248,7 +248,7 @@
       "family": "T2",
       "source": "GT",
       "tool": "GT",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -256,14 +256,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-inst",
@@ -280,14 +280,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-inst",
@@ -296,7 +296,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D1",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -304,14 +304,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-inst",
@@ -328,14 +328,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen-inst",
@@ -344,7 +344,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D2",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -352,14 +352,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen36",
@@ -376,14 +376,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen36",
@@ -392,7 +392,7 @@
       "family": "T2",
       "source": "GT",
       "tool": "GT",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -400,14 +400,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen36",
@@ -424,14 +424,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen36",
@@ -440,7 +440,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D1",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -448,14 +448,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen36",
@@ -472,14 +472,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-qwen36",
@@ -488,7 +488,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D2",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -496,14 +496,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-gemma4",
@@ -520,14 +520,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-gemma4",
@@ -536,7 +536,7 @@
       "family": "T2",
       "source": "GT",
       "tool": "GT",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -544,14 +544,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-gemma4",
@@ -568,14 +568,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-gemma4",
@@ -584,7 +584,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D1",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -592,14 +592,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-gemma4",
@@ -616,14 +616,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "t-gemma4",
@@ -632,7 +632,7 @@
       "family": "T4",
       "source": "generated",
       "tool": "D2",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -640,14 +640,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "a-qwen-think",
@@ -664,14 +664,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "a-qwen-think",
@@ -680,7 +680,7 @@
       "family": "A2",
       "source": "audio",
       "tool": "none",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -688,14 +688,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "a-qwen-inst",
@@ -712,14 +712,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable_unless_a_native_channel_is_verified",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "a-qwen-inst",
@@ -728,7 +728,7 @@
       "family": "A2",
       "source": "audio",
       "tool": "none",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -736,14 +736,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "not_applicable_unless_a_native_channel_is_verified",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "a-step",
@@ -760,14 +760,14 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "none",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     },
     {
       "model_id": "a-step",
@@ -776,7 +776,7 @@
       "family": "A2",
       "source": "audio",
       "tool": "none",
-      "method": "prethinking",
+      "method": "amortized_thinking",
       "planned_questions": 105,
       "attempted": 0,
       "complete_correct": null,
@@ -784,17 +784,21 @@
       "request_thinking_mean": null,
       "request_thinking_median": null,
       "request_output_mean": null,
-      "prethinking_output_mean": null,
       "full_history_cases": null,
       "budgeted_cases": null,
       "capacity_failures": null,
       "thinking_observability": "native_channel_to_verify",
       "status": "planned_not_run",
       "goal_id": "select_on_development",
-      "native_rolling_cases": null
+      "native_rolling_cases": null,
+      "amortized_output_mean": null
     }
   ],
   "planned_cells": 33,
   "planned_final_responses": 3465,
-  "excludes": "Intermediate pre-thinking, prompt search, reference generation, judges, repeats and optional ablations."
+  "excludes": "Intermediate pre-thinking, prompt search, reference generation, judges, repeats and optional ablations.",
+  "schema_version": "2.0",
+  "field_renames": {
+    "prethinking_output_mean": "amortized_output_mean"
+  }
 }

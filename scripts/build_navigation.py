@@ -74,16 +74,16 @@ def build_collections():
         ('AMI questions', 'Questions that require earlier meeting details, with supporting transcripts and a review of generated answers.', 'ami-questions.html'),
         ('AMI question audio', 'Compare three TTS models inserting the same questions into the meeting in the requester’s voice.', 'ami-question-audio.html'),
     ]
-    pilot = [('Pre-thinking pilot', 'A preliminary study of preparing for likely requests while listening to a group conversation.', 'prethinking-pilot.html')]
+    pilot = [('Amortized thinking pilot', 'A preliminary study of preparing for likely requests while listening to a group conversation.', 'prethinking-pilot.html')]
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
         section('Project progress', 'The project plan and daily work record.', [
-            ('Project TODO', 'The four project stages and the next pre-thinking experiments.', '../todo.html'),
+            ('Project TODO', 'The four project stages and the next amortized-thinking experiments.', '../todo.html'),
             ('Daily log', 'One-sentence updates with links to results and examples.', '../daily-log.html')]) +
         section('DuplexOmni', 'Tests of speech generation, interruption handling and reasoning with the DuplexOmni model.', [
             ('DuplexOmni experiments', 'Start with the overview, then choose S1 speech, interruption or S2 reasoning tests.', 'duplexomni.html')]) +
         section('Meeting questions', 'Text questions and synthetic speech based on the AMI Meeting Corpus.', ami) +
-        section('Pre-thinking', 'Preparing useful reasoning before a request arrives.', pilot),
+        section('Amortized thinking', 'Preparing useful reasoning before a request arrives.', pilot),
         experiment_subtabs('overview'), '../')
     collection('experiments/duplexomni.html', 'experiments', 'DuplexOmni experiments',
         'S1 handles streaming speech. S2 is a separate reasoning model that can send guidance to S1. These tests examine their speech, interruption and reasoning behavior.',
@@ -101,7 +101,7 @@ def build_collections():
         review_tabs('benchmarks'))
     collection('proposals/index.html', 'proposal', 'Proposal',
         'Research plans and proposed experiments for speech assistants.',
-        section('Pre-thinking', 'Preparing for a likely request while continuing to listen.', [
+        section('Amortized thinking', 'Preparing for a likely request while continuing to listen.', [
             ('Thinking before the request', 'Motivation, related work, model design and evaluation plan. This is a proposal, not a completed result.', '../prethinking.html'),
             ('Preliminary experiment', 'Read the separate pilot and its measured results under Experiments.', '../experiments/prethinking-pilot.html')]),
         proposal_tabs('overview', '../'), '../')
@@ -136,7 +136,7 @@ def simplify_prose(source):
 
 
 def page_category(relative):
-    if relative in {'todo.html', 'what-to-think.html', 'notation.html', 'experiments/question-plan.html', 'experiments/question-checks.html'}:
+    if relative in {'todo.html', 'what-to-think.html', 'notation.html', 'study-progress.html', 'experiments/question-plan.html', 'experiments/question-checks.html'}:
         return 'todo'
     if relative == 'daily-log.html':
         return 'log'
@@ -179,7 +179,7 @@ def refresh_page(path, original, navigation_only=False):
         page = page.replace('</header>', '</header><div class="container collection-nav">' + subnav + '</div>', 1)
     if native and not navigation_only:
         page = simplify_prose(page)
-    if relative in {'todo.html', 'daily-log.html', 'prethinking.html', 'experiments/prethinking-pilot.html', 'experiments/question-checks.html'}:
+    if native:
         page = prethinking_prose(page)
     css = prefix + 'assets/site.css'
     digest = hashlib.sha256((ROOT/'assets/site.css').read_bytes()).hexdigest()[:12]
