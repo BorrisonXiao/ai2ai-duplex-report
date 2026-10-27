@@ -1,0 +1,51 @@
+{
+  "status": "CPU_token_budget_check_only",
+  "original_three": [
+    {
+      "question_id": "authored-W2-1",
+      "at": 1075.0,
+      "input_tokens": 11251,
+      "output_reserve": 4096,
+      "fits_current_8192": false
+    },
+    {
+      "question_id": "authored-W3-1",
+      "at": 1578.92,
+      "input_tokens": 16554,
+      "output_reserve": 4096,
+      "fits_current_8192": false
+    },
+    {
+      "question_id": "curated-instruct-packets-W4-deadlines",
+      "at": 2135.5,
+      "input_tokens": 22500,
+      "output_reserve": 4096,
+      "fits_current_8192": false
+    }
+  ],
+  "extended_text_cases": {
+    "cases": 24,
+    "largest_input_tokens": 37309,
+    "output_reserve": 4096,
+    "required_context": 49152,
+    "BF16_KV_estimate_GiB": 6.75
+  },
+  "current": {
+    "S1_context_tokens": 4096,
+    "S1_history_turns": 40,
+    "S2_context_tokens": 8192,
+    "S2_KV_GiB": 1.5
+  },
+  "proposal": {
+    "S2_context_tokens": 32768,
+    "BF16_KV_estimate_GiB": 4.5,
+    "additional_runtime_memory_not_included": true
+  },
+  "limits": [
+    "These are CPU-formatted oracle-transcript prompts, not captured outputs from a new S2 audio inference.",
+    "No existing inference configuration is modified.",
+    "Token fit does not establish retained knowledge, usable answers, speech-clock throughput or a successful long-context GPU load.",
+    "S2 KV allocation and paced S1 behavior need actual qualification before any integrated experiment."
+  ],
+  "gpus": 0
+}

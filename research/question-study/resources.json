@@ -1,0 +1,21 @@
+{
+  "job": "1308851",
+  "state": "COMPLETED",
+  "gpus": 1,
+  "gpu_type_vram": "A100-SXM4 80 GB",
+  "node": "ga132",
+  "gpu_roles": {
+    "0": "Qwen3-30B-A3B-Instruct weights and KV cache"
+  },
+  "shared_components": "One vLLM engine; note updates and readers are sequential stages; batches of at most four independent requests",
+  "dependencies": "CPU source/preflight; one isolated GPU job; content review after completion",
+  "maximum_active_gpus": 1,
+  "allocation_seconds": 479,
+  "gpu_hours": 0.13305555555555557,
+  "output_tokens": 63941,
+  "wall_seconds": 461.30710819736123,
+  "aggregate_output_tokens_per_wall_second": 138.60831290864067,
+  "new_speech_inference": false,
+  "active_gpus": 0,
+  "CPU_stages_gpus": 0
+}

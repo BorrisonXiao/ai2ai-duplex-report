@@ -1,0 +1,49 @@
+{
+  "audio": [
+    {
+      "path": "audio/EN2004a-ordinary-discussion.wav",
+      "source_sha256": "871e6bf51a0d87411b11a6532c9fe57b646c9a70b63b160ae1689a3fff622fcc",
+      "public_sha256": "871e6bf51a0d87411b11a6532c9fe57b646c9a70b63b160ae1689a3fff622fcc",
+      "pcm_sha256": "c2a9d6ef78508793fc07d82d1c581d98d7cef2d9742574368ccb135756acffe4"
+    },
+    {
+      "path": "audio/EN2006b-ordinary-discussion.wav",
+      "source_sha256": "ae120d15ef4cbcacdef44cb337aa31c7702d48272b701c130000b44b725593a5",
+      "public_sha256": "ae120d15ef4cbcacdef44cb337aa31c7702d48272b701c130000b44b725593a5",
+      "pcm_sha256": "848e5fd48313aff86f9b6b3e3f64c2c353455e0370a7ff4e7b2c67ca006057d3"
+    },
+    {
+      "path": "audio/ES2003c-ordinary-discussion.wav",
+      "source_sha256": "38b5c7ee0df91e7f7926c532bae26e5bdae7e41cba2f16491ecc7bf682e970d1",
+      "public_sha256": "38b5c7ee0df91e7f7926c532bae26e5bdae7e41cba2f16491ecc7bf682e970d1",
+      "pcm_sha256": "804b6f5f0d59c8efea4a8e1f8b7f083bf2bd8ab47cb318e697e1aa3e18688877"
+    },
+    {
+      "path": "audio/ES2006a-ordinary-discussion.wav",
+      "source_sha256": "13bf44d7bac95e355acd0e64e8d36c7199301385e4f3381b7d72eff9f0f91461",
+      "public_sha256": "13bf44d7bac95e355acd0e64e8d36c7199301385e4f3381b7d72eff9f0f91461",
+      "pcm_sha256": "c8c06e4ddb667a75878008721e1c501deddcfb39efc2b59366bfd86701683b84"
+    },
+    {
+      "path": "audio/TS3004d-ordinary-discussion.wav",
+      "source_sha256": "b7e5b1c96c371912c63ae1b863933ce9bdeda32019d5d53182cd410e3637b2dc",
+      "public_sha256": "b7e5b1c96c371912c63ae1b863933ce9bdeda32019d5d53182cd410e3637b2dc",
+      "pcm_sha256": "4eccaa023637c79d95669148c6986ae39afd61ed331c378c8d9f34c898116642"
+    },
+    {
+      "path": "audio/TS3006c-ordinary-discussion.wav",
+      "source_sha256": "5be6fead3a088d5aca3b9c364342a969b98ae75be74d4c8f85449ae30044928c",
+      "public_sha256": "5be6fead3a088d5aca3b9c364342a969b98ae75be74d4c8f85449ae30044928c",
+      "pcm_sha256": "1a637d968a042cbe3adb0945466fd0f384161cd28b4e016a22826cfc2a69c7fe"
+    }
+  ],
+  "source": {
+    "dataset": "AMI Meeting Corpus",
+    "license": "CC BY 4.0",
+    "url": "https://groups.inf.ed.ac.uk/ami/corpus/license.shtml",
+    "adaptation": "Six short unmodified PCM excerpts for non-request controls; no synthetic speech"
+  },
+  "teacher_original_files_preserved": true,
+  "frozen_twenty_preserved": true,
+  "evaluation_cases_are_training_targets": false
+}

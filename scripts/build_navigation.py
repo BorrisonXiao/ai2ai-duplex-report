@@ -29,7 +29,7 @@ EXPERIMENT_KEYS = {
     'ami-questions.html': 'ami-original', 'ami-question-audio.html': 'ami-audio',
     'question-expansion.html': 'ami-expansion',
     'question-pilot.html': 'ami-pilot', 'question-scale.html': 'ami-scale',
-    'question-audio.html': 'ami-library', 'question-overview.html': 'ami-overview', 'question-plan.html': 'ami-plan',
+    'question-audio.html': 'ami-library', 'question-overview.html': 'ami-overview', 'question-plan.html': 'ami-plan', 'question-checks.html': 'ami-plan',
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',

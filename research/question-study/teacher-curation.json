@@ -1,0 +1,844 @@
+{
+  "status": "curation_complete_for_simplified_pilot",
+  "raw_original_traces": 64,
+  "later_completion_outputs": 10,
+  "whole_traces_approved_for_training": 0,
+  "quarantined_whole_outputs": 74,
+  "source_checked_structured_development_targets": 5,
+  "source_file_hashes": [
+    {
+      "label": "original64",
+      "sha256": "179c4ce6258b6be76a6ea99c077b1d767de017dc6c506b48611624eca59bfd23"
+    },
+    {
+      "label": "completion10",
+      "sha256": "1617826e3bc271e20a4d3be8b2f8da4e39c50962ba5cb6a2ba9467f6c1d7d683"
+    }
+  ],
+  "method": "Reuse the existing content audit; exclude all whole free-form outputs instead of claiming to repair every reasoning token. Preserve a few independently copied source facts with who/status/time. These facts are development candidates only; no training is run, and evaluation meetings stay excluded.",
+  "known_failures": [
+    {
+      "category": "Single-round: wrong transcript quotations",
+      "assessment": "The actual 0175 asks who plans to talk; 0176 is A’s “No.” The model puts earlier 0171/0172 content under current IDs, then misreads C’s “No” as disagreement with the number thirty. Completion does not repair this grounding failure.",
+      "source_chunk_ids": [
+        "chunk-0171",
+        "chunk-0175",
+        "chunk-0176"
+      ]
+    },
+    {
+      "category": "Archived-prompt completion: lost uncertainty",
+      "assessment": "A says “probably not,” while the generated statement makes everyone’s non-participation certain. This exact-prompt replay has four original private-history entries; the fresh single-round call has none. One comparison cannot isolate the cause of their different errors.",
+      "source_chunk_ids": [
+        "chunk-0177",
+        "chunk-0179"
+      ]
+    },
+    {
+      "category": "Commitment: grounded new deadline",
+      "assessment": "The conditioned second round keeps A as the owner and adds the new end-of-week deadline. The selected passage is grounded, but the model spends substantial effort debating whether the notes represent an update or the full state.",
+      "source_chunk_ids": [
+        "chunk-0026",
+        "chunk-0031"
+      ]
+    },
+    {
+      "category": "Literal continuation: stale update",
+      "assessment": "The continuation calls old 0026 the new commitment and its final JSON repeats the old volunteering entry without the new deadline. It stops at EOS without closing the thinking block. The short 389-token output is not a successful efficiency improvement.",
+      "source_chunk_ids": [
+        "chunk-0026",
+        "chunk-0031"
+      ]
+    },
+    {
+      "category": "Transcript-only control: deadline recovery",
+      "assessment": "The control also recovers A’s end-of-week commitment, so the retained-history case does not prove a quality advantage. The “next day or two” interpretation in this same passage assumes a week boundary; the final notes also promote A’s hesitant Thursday check into a fact. Only the deadline itself is grounded.",
+      "source_chunk_ids": [
+        "chunk-0031"
+      ]
+    },
+    {
+      "category": "Deadline with history: shifted evidence IDs",
+      "assessment": "Actual 0516 is C’s “Yeah.” Mid-March is A’s 0517; the title/abstract sequence is A’s 0518. The conditioned and prefilled variants both shift these labels, even though the prompts contain the correct source text. Valid existing IDs are insufficient to establish grounding.",
+      "source_chunk_ids": [
+        "chunk-0516",
+        "chunk-0517",
+        "chunk-0518"
+      ]
+    },
+    {
+      "category": "Deadline continuation: proposal becomes commitment",
+      "assessment": "A proposes an approximate schedule; the continuation presents it as a commitment and misassigns the evidence IDs. This response closes its thinking marker, unlike the commitment continuation, but still fails content checks.",
+      "source_chunk_ids": [
+        "chunk-0517",
+        "chunk-0518"
+      ]
+    },
+    {
+      "category": "Deadline control: correct source quotation",
+      "assessment": "The reset control quotes these two IDs and A correctly. Its wider reasoning still speculates about exact March dates and treats acknowledgments as agreement. No full-trace quality pass is claimed.",
+      "source_chunk_ids": [
+        "chunk-0517",
+        "chunk-0518"
+      ]
+    }
+  ],
+  "quarantine": [
+    {
+      "group": "original64",
+      "index": 0,
+      "at": 24.07,
+      "generated_sha256": "bcf22c50a45c7dd6c3209389714020ba8972b74eccb95505413fa7f3494274ea",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 1,
+      "at": 115.67,
+      "generated_sha256": "51c0e9405f99b0e79291ee3f692909bc883ffdf978bdbb50fb0a63d9e3928af1",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 2,
+      "at": 623.14,
+      "generated_sha256": "cc2b490784a98eb320533718f472a677e37fac913a8fb5beae7edd3d0014e500",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 3,
+      "at": 1829.92,
+      "generated_sha256": "29a7c788393ecbcff47bc7ca95a1eb5f21d7e0216877d6ab449fd9fcc205df91",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 4,
+      "at": 24.07,
+      "generated_sha256": "9cc1a46077ad9bf94fb3b2bd1c5594508c0172c9acfa5b99fd334e7c2579f215",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 5,
+      "at": 115.67,
+      "generated_sha256": "f511a08307ee664d75f4ad93e51ff837ec15ffbc988e15fb57cf5d5ca260496b",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 6,
+      "at": 623.14,
+      "generated_sha256": "00410edbe0cf478f3c194b9710f3d50d09fd1bfb5f9344cef6fbd02dc8a5b45f",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 7,
+      "at": 1829.92,
+      "generated_sha256": "cf5597b7c93405f5e41a423682f0d838a7772c6aba12f1de40b91eac18ad1028",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 8,
+      "at": 590,
+      "generated_sha256": "dace7b733620c81e14c88dfa8ace94675202a67bda3912407c4476fae0de589b",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 9,
+      "at": 610,
+      "generated_sha256": "0413e9c25e06bdc039713124481d9d9cfacc376f5c2c2b7a806227edc123099f",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 10,
+      "at": 620,
+      "generated_sha256": "271a968d989de251e7d66be281f146e740cc924801186b7d55c4d2d3a298fac8",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 11,
+      "at": 630,
+      "generated_sha256": "8cb379b8879bdb9f8879ce2f6c5b473c02123ceff0e044ac6ac5cd58171f42f1",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 12,
+      "at": 640,
+      "generated_sha256": "4194d888c8f8bf0980bafe844fc6f5c45e054025211129758a36dffe0dfca448",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 13,
+      "at": 650,
+      "generated_sha256": "be858c57e45092d668fb03c3b89a7e0b521f13fdb112ec0119044332961b01ab",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 14,
+      "at": 660,
+      "generated_sha256": "e25c94561d5695f760a5ba51518787609c44a6232b80b5eda1d05d54f4ce348e",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 15,
+      "at": 590,
+      "generated_sha256": "2f6cd46fbc724639d5489592b331dc689464a32556452508877ac6fde6ad32e7",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 16,
+      "at": 610,
+      "generated_sha256": "73c737854a7abfd9ecb578d32ac22eadea92ef79adcae515ab928011c5026233",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 17,
+      "at": 620,
+      "generated_sha256": "05a1b09d61469c6dd2d268b45b0ee15da0dc008488a60996ff4e02d29b21e788",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 18,
+      "at": 630,
+      "generated_sha256": "d63463f9554a0a0ef489d2be2592b8188cb9bb06d2dc231e4456a26a3ab1d468",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 19,
+      "at": 640,
+      "generated_sha256": "b2f967928967dd984c865c7e7c69934ec23bff188f34e51a86978b2943cda53a",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 20,
+      "at": 650,
+      "generated_sha256": "0f1abbffbca6fa5dfe307447be035dcdb1d45d1d4eae7429ec7605fe6fd59c26",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 21,
+      "at": 660,
+      "generated_sha256": "458e4e92583c8f4881891891052f0a2e6c9c1191f1e947eb85db7f062a954d41",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 22,
+      "at": 590,
+      "generated_sha256": "dace7b733620c81e14c88dfa8ace94675202a67bda3912407c4476fae0de589b",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 23,
+      "at": 610,
+      "generated_sha256": "d5c6fac9fcf0988335306bcd590e4486c70d3ae16c79a7cee33f54c1a5a879ee",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 24,
+      "at": 620,
+      "generated_sha256": "36afe2f6e18d8c89f9eb9abc6b286500e7534b77165984577e77295bce9f90d1",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 25,
+      "at": 630,
+      "generated_sha256": "dd6ba31b3c899949f1e8456306834fd00906c37a7dcd706215cc549774fcf7cc",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 26,
+      "at": 640,
+      "generated_sha256": "11d5cbef43bad208e135fb3d7d39554d120f83eb5815f37c6585fef795f2fd23",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 27,
+      "at": 650,
+      "generated_sha256": "8058cc9e22bc8460778dc17a715700025767ba2a24f316ae11ea786092d42e45",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 28,
+      "at": 660,
+      "generated_sha256": "a9a42d14c305c20d8342797874a1e4909ca8dc965a0a8d45ff52d18fa6d25489",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 29,
+      "at": 590,
+      "generated_sha256": "2f6cd46fbc724639d5489592b331dc689464a32556452508877ac6fde6ad32e7",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 30,
+      "at": 610,
+      "generated_sha256": "41b0fd77c596924315c6d830d98c946d68adad6fa798ffd034e0b69418f6b12b",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 31,
+      "at": 620,
+      "generated_sha256": "4d8460bae31132408ed318d0c8753702547028f2f1d48edd62950b62f0ed9f48",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 32,
+      "at": 630,
+      "generated_sha256": "4d8460bae31132408ed318d0c8753702547028f2f1d48edd62950b62f0ed9f48",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 33,
+      "at": 640,
+      "generated_sha256": "4d8460bae31132408ed318d0c8753702547028f2f1d48edd62950b62f0ed9f48",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 34,
+      "at": 650,
+      "generated_sha256": "4d8460bae31132408ed318d0c8753702547028f2f1d48edd62950b62f0ed9f48",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 35,
+      "at": 660,
+      "generated_sha256": "4d8460bae31132408ed318d0c8753702547028f2f1d48edd62950b62f0ed9f48",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 36,
+      "at": 590,
+      "generated_sha256": "5025342198a155eeadab3a77ceffd14e9b48d1b59ece1e019e62d1599140b622",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 37,
+      "at": 610,
+      "generated_sha256": "11e10fcd27b8e19be5914da6b33a2277319e9984958e9ebb738c85dc5f6f0509",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 38,
+      "at": 620,
+      "generated_sha256": "f62059383271a814f14d36586404b2fe1b43ed74fa791c7d55e0c36fe236156f",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 39,
+      "at": 630,
+      "generated_sha256": "0ca05fc6adcb312d3a7ea7d6b504d5b86ee4e0c232155ada08cee12355b2873d",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 40,
+      "at": 640,
+      "generated_sha256": "45e90c6382ed1db98c1b769dad65e31dceee250133da6f23069f29f90b5caf90",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 41,
+      "at": 650,
+      "generated_sha256": "fe96207cc080e8281d6cf91444f856bd4d56798345857efdb7d9a12aeeaec146",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 42,
+      "at": 660,
+      "generated_sha256": "c30b5a40fb18e7961fde33e078ead7ac120ae37e47b6a9521c2b9bb37f229392",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 43,
+      "at": 590,
+      "generated_sha256": "7525e0ff1199b6160c57f43c5781364caaa5ab94fb69cee8c66b9a9389ae43ef",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 44,
+      "at": 610,
+      "generated_sha256": "635e40097b3608bc75eec466839800f491ad55899629ed7c62bb7b33d1412911",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 45,
+      "at": 620,
+      "generated_sha256": "76424a113551d21f23326cb1cb566682d7d8daaa14c8d9b5d04c00821301e9c8",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 46,
+      "at": 630,
+      "generated_sha256": "964412a8242fa20bb901e98e95aa8776f26524c408d1b2d1ca928f57e202f8e0",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 47,
+      "at": 640,
+      "generated_sha256": "e708e43d426f62647ab368939d7f4b418c08d4860b235898a14aa7ddc84ec1c3",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 48,
+      "at": 650,
+      "generated_sha256": "8e2c8bde246f88d52061124b2098638372f9c53595eaf699ca0633b3cfc2b34c",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 49,
+      "at": 660,
+      "generated_sha256": "a2e571a18b5a04e61c02ac3174ea268cad5060935f72c81ae8d8f4b9add2aa5e",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 50,
+      "at": 590,
+      "generated_sha256": "5025342198a155eeadab3a77ceffd14e9b48d1b59ece1e019e62d1599140b622",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 51,
+      "at": 610,
+      "generated_sha256": "bd7aa6bd0815f3923a57c0f156c35b7383fe8084ba378801659ee48a477d38a0",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 52,
+      "at": 620,
+      "generated_sha256": "ce8510603221fb85856f7e4842686f2609dcdc4a50e8cee34c33f4021fac35bf",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 53,
+      "at": 630,
+      "generated_sha256": "f914da8b82bba4222f27906c80ee23125d4e6ff8e857e39e2221a6a721e3731d",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 54,
+      "at": 640,
+      "generated_sha256": "119151668c6306c7caabb472a9a337ba30d0fdfdb6e31f7ab4aac6efc7089506",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 55,
+      "at": 650,
+      "generated_sha256": "809dcc2680169e292dac927260eb5de579b200c3a5aaea1113f75c308e98c494",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 56,
+      "at": 660,
+      "generated_sha256": "9186e4bdb31ec8c1318f98060aa1fcc4c60f252554a1096da8e219ef244f8536",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 57,
+      "at": 590,
+      "generated_sha256": "7525e0ff1199b6160c57f43c5781364caaa5ab94fb69cee8c66b9a9389ae43ef",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 58,
+      "at": 610,
+      "generated_sha256": "b20c46f81d60a94260df6a9177ae7d003880ab95edd7323d84f5eb718c4cb6b6",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 59,
+      "at": 620,
+      "generated_sha256": "21b91416f5cb044d358d1a1a81704a48e841ca5a56cbc5a14fc615fd204ca3a4",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 60,
+      "at": 630,
+      "generated_sha256": "68023a34b91cc8a320e4b7af1d26570575cbbd2d5366b33bf7251de79017b849",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 61,
+      "at": 640,
+      "generated_sha256": "4437694a369ab420baec6e3e67947facd392222b978353ee04bc4be9a5225381",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 62,
+      "at": 650,
+      "generated_sha256": "4b5dc1be81cb573a232c9c3ae41076c483ddf70061e8dcb36ac17c2426cc75c1",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "original64",
+      "index": 63,
+      "at": 660,
+      "generated_sha256": "4b5dc1be81cb573a232c9c3ae41076c483ddf70061e8dcb36ac17c2426cc75c1",
+      "use_whole_trace_for_training": false,
+      "reason": "Ends at the generation cap without a complete note object"
+    },
+    {
+      "group": "completion10",
+      "index": 0,
+      "at": 640,
+      "generated_sha256": "a6662e7627ec10c226c7c24da8eed43448cd929ed4916a2c1e12cc9942a47e38",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 1,
+      "at": 640,
+      "generated_sha256": "676da54b78d2e48e7d2cf636f8cf8b4a4a0ff7da31902b15410f79943a725312",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 2,
+      "at": 100.69,
+      "generated_sha256": "ebd826334eaecf501c0bfa56fa4ebcbd18ee6ca2fcebbbb9b625af8faf487e18",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 3,
+      "at": 115.67,
+      "generated_sha256": "1ceeaba557879926b090fc3f0374a9cb999ac3c8e61baf656768171a26b29f3f",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 4,
+      "at": 115.67,
+      "generated_sha256": "1abc7c89c4de37f890db2a0ea39d22ef1907c3d4802ba5c9499050d5b6cdafdb",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 5,
+      "at": 115.67,
+      "generated_sha256": "05bb4d3c834c916364a1b4354ceaf572031b369401aec54af069dcb8f0099215",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 6,
+      "at": 1795.87,
+      "generated_sha256": "2e5072a96f9cee739bbdcd44715ddc4c4a41073f1b0e40e0f1dc4510f99c0bc0",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 7,
+      "at": 1829.92,
+      "generated_sha256": "28333e07382b02f71f6261fc79eadf318f0ac06bfc651a9e9587e7b1fc596db7",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 8,
+      "at": 1829.92,
+      "generated_sha256": "d729db85d165e0c5425b45f52c7490817ebaeb1a5e17953bfe0070453bf9b993",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    },
+    {
+      "group": "completion10",
+      "index": 9,
+      "at": 1829.92,
+      "generated_sha256": "3125f59669c3562e857a06101a5c9ca494c13b717c62926c647c76436619e116",
+      "use_whole_trace_for_training": false,
+      "reason": "Completion does not certify all claims: reviewed outputs include shifted quotations, stale updates, uncertainty loss, or content-free note items"
+    }
+  ],
+  "structured_targets": [
+    {
+      "id": "call-volunteer",
+      "meeting": "EN2003a",
+      "available_source_time": 100.69,
+      "said_by": "A",
+      "person_responsible": "A",
+      "status": "proposed",
+      "claim": "A volunteers to prepare the call for abstracts/titles.",
+      "replaces": null,
+      "evidence": [
+        {
+          "id": "chunk-0023",
+          "speaker": "A",
+          "start": 78.16,
+          "end": 91.5,
+          "available": 92.0,
+          "text": "Well, I think the first thing is Well, the first thing I think is we need to uh sort out the call for abstracts or the c the call for titles, because I think that's kind of overdue."
+        },
+        {
+          "id": "chunk-0026",
+          "speaker": "A",
+          "start": 93.49,
+          "end": 100.19,
+          "available": 100.69,
+          "text": "Um so I volunteer to do that if you like."
+        }
+      ],
+      "curator": "Codex",
+      "kind": "Small structured fact target, not a retained private reasoning trace",
+      "eligible_development_candidate": true,
+      "training_executed": false,
+      "contains_evaluation_meeting": false
+    },
+    {
+      "id": "call-deadline",
+      "meeting": "EN2003a",
+      "available_source_time": 115.67,
+      "said_by": "A",
+      "person_responsible": "A",
+      "status": "committed",
+      "claim": "A adds an end-of-week deadline to that volunteered task; no exact date is inferred.",
+      "replaces": "call-volunteer",
+      "evidence": [
+        {
+          "id": "chunk-0023",
+          "speaker": "A",
+          "start": 78.16,
+          "end": 91.5,
+          "available": 92.0,
+          "text": "Well, I think the first thing is Well, the first thing I think is we need to uh sort out the call for abstracts or the c the call for titles, because I think that's kind of overdue."
+        },
+        {
+          "id": "chunk-0026",
+          "speaker": "A",
+          "start": 93.49,
+          "end": 100.19,
+          "available": 100.69,
+          "text": "Um so I volunteer to do that if you like."
+        },
+        {
+          "id": "chunk-0031",
+          "speaker": "A",
+          "start": 104.12,
+          "end": 115.17,
+          "available": 115.67,
+          "text": "So And I'll do that by Trying to think, what is it Thursday today, I'll d I'll do that by the end of the week anyway."
+        }
+      ],
+      "curator": "Codex",
+      "kind": "Small structured fact target, not a retained private reasoning trace",
+      "eligible_development_candidate": true,
+      "training_executed": false,
+      "contains_evaluation_meeting": false
+    },
+    {
+      "id": "linguistics-count",
+      "meeting": "EN2003a",
+      "available_source_time": 640,
+      "said_by": "A",
+      "person_responsible": null,
+      "status": "estimate",
+      "claim": "A says there are probably about thirty names on the linguistics postgraduate list; this is not a count of confirmed talks.",
+      "replaces": null,
+      "evidence": [
+        {
+          "id": "chunk-0171",
+          "speaker": "A",
+          "start": 607.61,
+          "end": 619.09,
+          "available": 619.59,
+          "text": "Uh Well I could look 'cause I I've got that there's the list, isn't there, of post-graduates I maintain in in linguistics."
+        },
+        {
+          "id": "chunk-0172",
+          "speaker": "A",
+          "start": 619.09,
+          "end": 622.64,
+          "available": 623.14,
+          "text": "Um there are probably about thirty on there."
+        }
+      ],
+      "curator": "Codex",
+      "kind": "Small structured fact target, not a retained private reasoning trace",
+      "eligible_development_candidate": true,
+      "training_executed": false,
+      "contains_evaluation_meeting": false
+    },
+    {
+      "id": "presentation-intention",
+      "meeting": "EN2003a",
+      "available_source_time": 640,
+      "said_by": "A",
+      "person_responsible": "A",
+      "status": "uncertain",
+      "claim": "A says they are probably not presenting; do not make that a certain group-wide decision.",
+      "replaces": null,
+      "evidence": [
+        {
+          "id": "chunk-0179",
+          "speaker": "A",
+          "start": 634.35,
+          "end": 635.62,
+          "available": 636.12,
+          "text": "And I'm probably not."
+        }
+      ],
+      "curator": "Codex",
+      "kind": "Small structured fact target, not a retained private reasoning trace",
+      "eligible_development_candidate": true,
+      "training_executed": false,
+      "contains_evaluation_meeting": false
+    },
+    {
+      "id": "title-abstract-sequence",
+      "meeting": "EN2003a",
+      "available_source_time": 1829.92,
+      "said_by": "A",
+      "person_responsible": null,
+      "status": "proposed",
+      "claim": "A suggests about ten days for the title and another week for the abstract. This is a proposal, not a fixed calendar deadline.",
+      "replaces": null,
+      "evidence": [
+        {
+          "id": "chunk-0518",
+          "speaker": "A",
+          "start": 1818.36,
+          "end": 1829.42,
+          "available": 1829.92,
+          "text": "So give them something like give them something like ten days or whatever to get the title in, and then give them a week on top of that to get the actual abstract done."
+        }
+      ],
+      "curator": "Codex",
+      "kind": "Small structured fact target, not a retained private reasoning trace",
+      "eligible_development_candidate": true,
+      "training_executed": false,
+      "contains_evaluation_meeting": false
+    }
+  ],
+  "limits": [
+    "Five fact records are not a reasoning-training dataset.",
+    "Source copying prevents fabricated quotations, but interpreting commitments, uncertainty and changes still requires content review.",
+    "Do not treat an existing source ID or a parseable object as proof that its claim is correct."
+  ]
+}

@@ -1,18 +1,21 @@
 {
   "title": "Project implementation plan",
   "scope": "Build a reliable meeting-assistant evaluation, establish what its history supports, compare reactive and background reasoning, then add tools and learn when to act.",
-  "current_state": "The broad bank contains 105 distinct questions across 26 conversations. A twenty-question subset is frozen across six meetings, with a separate meeting/speaker split from earlier F5 development. Current exports include the spoken Assistant cue and question audio; independent reliability review, silence controls, history retention and the four system conditions remain unfinished.",
+  "current_state": "Steps 1–2 are complete for the simplified operational pilot: twenty frozen recorded questions, four separate text probes, six ordinary-discussion controls, source-based answer criteria, matched transcript-reader checks and an audited note prototype. Independent human listening ratings remain optional and uncollected. The initial note cache is not reliable enough for a speech experiment; step 3 now separates when to prepare from what work to prepare, with explicit repair and capacity gates.",
   "choices": [
     "Use a separate meeting assistant and an existing participant as the requester.",
     "Freeze the existing F5-TTS checkpoint and inference recipe; do not tune the model on the evaluation meetings or speakers.",
     "Start with pause and resume. Reference-answer audio stays deferred; score against short source-verified fact checklists.",
     "Background preparation must not see the future question or its scoring labels.",
-    "Count the entire preparation cost, including work that is cancelled or never becomes useful."
+    "Count the entire preparation cost, including work that is cancelled or never becomes useful.",
+    "For this pilot, reuse completed audio checks and use Codex’s documented source/motivation review. Independent human ratings are not claimed and remain optional.",
+    "Keep the four new text probes separate from the frozen twenty and the existing 105-question audio bank.",
+    "Use the same S2 checkpoint when comparing policies; the 30B offline reader is quality-control evidence, not an unreported model upgrade in a speech condition."
   ],
   "next": [
-    "Review the frozen twenty-question subset and its source fact checklists, add ordinary-discussion silence controls, and obtain human naturalness/voice ratings.",
-    "Finish matched transcript-history controls and maintain an explicit meeting state before using teacher traces as training targets.",
-    "Qualify bounded history retention, then run the original three audio questions through the four controlled conditions below."
+    "Discuss the two experiment axes, a cheaper S2-only text replay and the full paced-audio cost before submitting a new inference experiment.",
+    "Repair source copying, responsibility fields and durable-fact retention; the first note cache gives only four complete answers out of twenty.",
+    "Qualify the larger S2 context and S1 rolling-history/audio behavior, then run the original three-question system comparison before the schedule/work-content sweep."
   ],
   "meeting_state_schema": "speaker · fact/commitment · proposed/agreed/superseded · evidence · source time",
   "conditions": [
@@ -48,101 +51,136 @@
     {
       "id": "evaluation",
       "title": "1. Build a small, reliable evaluation set",
-      "status": "partial",
-      "goal": "Freeze about twenty reviewed questions across four to six meetings, covering commitments, revised decisions and constraints across speakers.",
+      "status": "complete",
+      "goal": "A source-checked operational pilot: twenty frozen recorded questions over six meetings, with extra text diagnostics and ordinary-discussion controls. This is not an independently human-rated benchmark.",
       "tasks": [
         {
           "status": "complete",
-          "text": "Keep the broad reviewed question bank and its source evidence.",
-          "evidence": "105 distinct questions are available across all four retained studies; this larger inventory is not itself the small evaluation split.",
+          "text": "Preserve the current question bank and all existing cue-bearing audio.",
+          "evidence": "105 distinct retained questions across 26 conversations; original source/model records and all published audio are unchanged.",
           "url": "question-overview.html"
         },
         {
           "status": "complete",
-          "text": "Freeze the current F5 recipe and a meeting/speaker-disjoint evaluation subset before tuning.",
-          "evidence": "Twenty reviewed question IDs are frozen across six new meetings, disjoint from the five earlier audio-development meetings and their participants. Source and human reliability checks remain separate tasks."
+          "text": "Keep the meeting/speaker split and F5 recipe frozen.",
+          "evidence": "Twenty questions over six meetings; official AMI participant IDs show no overlap with the five earlier F5-development meetings. No F5 inference or tuning was rerun.",
+          "url": "question-checks.html#dataset"
         },
         {
           "status": "complete",
-          "text": "Finish the missing spoken Assistant cue and question audio.",
-          "evidence": "All 105 distinct questions have representative recordings beginning with Assistant. All 129 current text records include the cue. Eleven new questions use separately authorized later same-speaker enrollment only for offline TTS; the frozen twenty-question subset uses earlier conditioning speech throughout. Automatic transcription disagreements remain visible for review.",
-          "url": "question-audio.html"
+          "text": "Review source support, motivation, uncertainty and the facts needed for scoring.",
+          "evidence": "Codex reviewed all twenty against earlier source speech. Optional examples in old references do not become mandatory scoring facts. Delayed self-reminders are explicitly noted.",
+          "url": "question-checks.html#inspect"
         },
         {
-          "status": "pending",
-          "text": "Review the frozen subset for who committed to what, revised plans and constraints spread across speakers.",
-          "evidence": "Use short verified fact checklists for scoring, with uncertainty retained. Reference-answer audio remains deferred."
+          "status": "complete",
+          "text": "Add responsibility and revision diagnostics without changing the frozen twenty.",
+          "evidence": "Four text-only probes check two responsibilities, a follow-up commitment and a proposal that changes again. They remain separate from the recorded question-bank count.",
+          "url": "question-checks.html#reader"
         },
         {
-          "status": "pending",
-          "text": "Include ordinary discussion where the assistant should stay silent.",
-          "evidence": "Store these as explicit non-request controls, rather than inventing a question at every point."
+          "status": "complete",
+          "text": "Add ordinary discussion where the assistant should remain silent.",
+          "evidence": "Six original 18-second clips contain no Assistant wake cue. The expected outward action is to listen; private preparation is allowed. No duplex inference is claimed.",
+          "url": "question-checks.html#silence"
         },
         {
-          "status": "pending",
-          "text": "Obtain independent naturalness, requester-motivation and voice/acoustic review of the frozen examples."
+          "status": "complete",
+          "text": "Reuse the completed question-audio diagnostics.",
+          "evidence": "The twenty clips have 20/20 Parakeet Assistant-first results, 16/20 normalized full-question matches, 18/20 with declared spelling equivalence, and 19/20 Whisper cue recognition. Every conditioning clip is earlier speech.",
+          "url": "question-checks.html#dataset"
+        },
+        {
+          "status": "optional",
+          "text": "Collect independent human naturalness, requester-motivation and voice/acoustic ratings.",
+          "evidence": "Not collected. The user-authorized simplification uses Codex review and existing automatic checks for this pilot; independent listener validation is still needed for stronger perceptual claims."
         }
       ]
     },
     {
       "id": "history",
       "title": "2. Establish whether available history supports correct answers",
-      "status": "partial",
-      "goal": "Compare full ground-truth transcript history, recent history and history without speaker labels; source evidence determines correctness.",
+      "status": "complete",
+      "goal": "Complete the matched text diagnostics and identify what source history, ownership and note quality still fail to support. These are not streaming speech results.",
       "tasks": [
         {
           "status": "complete",
-          "text": "Use the stronger Qwen3-30B Instruct reader for the newer transcript diagnostics.",
-          "evidence": "The earlier 4B reader made ownership and plan-revision errors; the 30B reader also makes source-binding errors. Model approval is not the scoring reference.",
-          "url": "question-pilot.html#reader"
+          "text": "Run the same questions with full, recent and no-speaker-field transcript history.",
+          "evidence": "Qwen3-30B Instruct/vLLM completed all 96 outputs: twenty frozen questions plus four separate probes, under four conditions including notes plus new speech. In the twenty, full history gives 13 complete answers, the last 60 seconds gives one, and full without speaker fields eleven. Codex judged every answer against the source.",
+          "url": "question-checks.html#reader"
         },
         {
-          "status": "pending",
-          "text": "Run matched full-history, recent-history and no-speaker-label controls on the frozen evaluation set.",
-          "evidence": "Earlier studies contain some of these comparisons, but they do not constitute a complete matched evaluation of the new frozen subset."
+          "status": "complete",
+          "text": "Build and audit an explicit question-blind meeting-state prototype.",
+          "evidence": "Sixty-seven fixed two-minute updates proposed 410 note changes; 299 passed the source-ID, exact-quotation and speaker checks and 111 were left unused. The initial 32-record cache yields only 4/20 complete answers. This implementation/audit is done; its quality has not passed.",
+          "url": "question-checks.html#state"
         },
         {
-          "status": "pending",
-          "text": "Maintain an explicit meeting state with speaker, fact or commitment, decision status, evidence and source time.",
-          "evidence": "Track proposed, agreed and superseded items separately so an older proposal cannot silently replace a later decision."
+          "status": "complete",
+          "text": "Curate the earlier teacher material before treating it as training targets.",
+          "evidence": "The 64 unfinished teacher traces and 10 later completion outputs are excluded as whole targets. Five small source-checked development fact records preserve owner, uncertainty, time and an explicit deadline update. No training has run and evaluation meetings remain excluded.",
+          "url": "question-checks.html#teacher"
         },
         {
-          "status": "pending",
-          "text": "Curate earlier teacher traces before using them as training targets.",
-          "evidence": "Reject fabricated quotations and stale facts. Verify copied evidence and updates against the history available at that time."
+          "status": "complete",
+          "text": "Separate storage errors, reading errors and missing information in the report.",
+          "evidence": "Correct source IDs and valid JSON did not prevent a €50 million total-profit goal being called a per-unit margin, lost old rules, or wrong task owners. Full answers and appropriate no-answer behavior are reported separately.",
+          "url": "question-checks.html#examples"
         }
       ]
     },
     {
       "id": "comparison",
-      "title": "3. Run the original three audio questions through a controlled comparison",
-      "status": "pending",
-      "goal": "Compare S1 alone, reactive S2 with oracle history, reactive S2 with causal ASR history and background preparation with that same ASR history.",
+      "title": "3. Decide when and what to think, then run controlled comparisons",
+      "status": "partial",
+      "goal": "Design prepared for discussion; no new streaming speech experiment is run. First qualify the history and note interface, then hold preparation content fixed to test timing, and hold timing fixed to test content.",
       "tasks": [
         {
-          "status": "pending",
-          "text": "Qualify history retention before attempting the full 18–35-minute prefixes.",
-          "evidence": "Short listening clips do not demonstrate long-context retention. Start with bounded histories and verify that earlier facts remain accessible as more conversation arrives."
+          "status": "complete",
+          "text": "Review close prior work and prepare the two-axis experiment design.",
+          "evidence": "Ten primary papers are checked. LTS-VoiceAgent already studies semantic thought triggers and maintained state, so those ideas alone are not a novelty claim. The proposed emphasis is controlled multi-speaker updates under causal ASR, with full cost accounting."
+        },
+        {
+          "status": "complete",
+          "text": "Check the current prototype’s context limits on CPU.",
+          "evidence": "The three full-transcript prompts need 11,251 / 16,554 / 22,500 input tokens plus 4,096 output tokens. None fits the current S2 model’s 8,192-token window. A 32,768-token window needs an estimated 4.5 GiB BF16 KV for one sequence, before runtime overhead. No inference config was changed. Extending to all 24 text cases needs a 49,152-token context, estimated 6.75 GiB KV for one sequence, before runtime memory."
         },
         {
           "status": "pending",
-          "text": "Run the original three synthesized questions under all four conditions.",
-          "evidence": "These three question events already have reviewed audio. The four-condition AMI system comparison has not been run.",
+          "text": "Repair note construction and state meaning before measuring a timing benefit.",
+          "evidence": "Copy source text by code; separate who spoke from who is responsible; preserve durable constraints until changed; check meaning and uncertainty, not just literal quotes."
+        },
+        {
+          "status": "pending",
+          "text": "Qualify retained history, token/audio capacity and S1 listening throughput.",
+          "evidence": "Start bounded and verify older facts remain accessible as context grows. Current S1 has 4,096 tokens/40 history turns. Raise and qualify the S2 context/KV allocation before calling a condition full history.",
+          "url": "question-checks.html#state"
+        },
+        {
+          "status": "pending",
+          "text": "Run the original three questions through the four system conditions below.",
+          "evidence": "Keep this as a plumbing, perception and history study before a larger policy comparison. Short listening excerpts do not establish 18–35-minute retention.",
           "url": "ami-question-audio.html"
         },
         {
           "status": "pending",
-          "text": "Keep future question text and scoring checklists hidden from background preparation until the request arrives."
+          "text": "Test when to think with one fixed preparation task.",
+          "evidence": "Compare reactive-only, fixed intervals, and meaningful-change triggers; use pause/random controls where helpful. Choose a few natural request moments shortly after real updates as well as later, rather than inventing an arbitrary question at every point."
         },
         {
           "status": "pending",
-          "text": "Count the entire pre-request cost, including preparation that becomes stale, is cancelled or is never useful.",
-          "evidence": "Include input processing, reasoning and retained state. Do not charge only for preparation that later helps."
+          "text": "Test what to think at identical update times.",
+          "evidence": "Compare a plain summary, facts with owners/status/evidence, and that ledger plus a few reference-resolution or conditional-calculation checks. Keep raw speaker-attributed ASR as an extra low-preparation baseline."
         },
         {
           "status": "pending",
-          "text": "Measure correct answer facts and attribution together with response latency, listening deadlines and compute.",
-          "evidence": "Use the same causal ASR history in the reactive and background conditions so extra future information cannot explain a gain."
+          "text": "Cross the two main timing policies with the three work types after the separate controls work.",
+          "evidence": "Six preparation conditions, plus reactive/raw-transcript baselines; freeze budgets and prompts on development meetings. Variants of a question are not independent new questions."
+        },
+        {
+          "status": "pending",
+          "text": "Enforce causal input, cancellation and complete cost/latency accounting.",
+          "evidence": "The preparation worker must never receive future question text, schedules, scoring labels or selected answer facts. Count all prompt/private/output tokens and unused or cancelled work. Measure first correct useful audible fact and complete supported answer, including wrong answers and timeouts."
         }
       ]
     },
@@ -181,6 +219,225 @@
       ]
     }
   ],
-  "resource_note": "Audio completion uses the frozen F5 model on up to two L40S 48 GB GPUs, one per synthesis job; F5 and Vocos share GPU 0 in each job. ASR and speaker checks follow on one GPU. No S1/S2 comparison or policy training is part of this data-completion work.",
-  "update_rule": "Update stage status only when the stated evidence exists. A larger corpus, completed synthesis or parsed model response does not mark the controlled system evaluation complete."
+  "resource_note": "This update used one A100-SXM4 80 GB job: Qwen3-30B Instruct weights and KV cache share GPU 0; question-blind note updates then matched readers run in sequential vLLM stages. Maximum one GPU active; 479 allocated seconds / 0.133056 GPU hours, all finished. Source extraction/review, curation, CPU token checks and publication use 0 GPUs. Step 3 proposes isolated S1/S2 GPUs but no speech experiment is submitted.",
+  "update_rule": "Update stage status only when the stated evidence exists. A larger corpus, completed synthesis or parsed model response does not mark the controlled system evaluation complete.",
+  "comparison_design": {
+    "status": "proposal_for_discussion_not_executed",
+    "main_questions": [
+      {
+        "question": "When to think?",
+        "meaning": "Decide whether a newly observed event is worth private computation now, and when to stop, cancel or update that work."
+      },
+      {
+        "question": "What to think?",
+        "meaning": "Choose the useful job: retain a responsibility, track a changed decision, resolve a reference, check a constraint, or derive a simple consequence."
+      }
+    ],
+    "input_vs_work": "Speaker-attributed ASR is an input representation: it helps preserve who said what. The preparation task decides what to do with that information. Correct transcription/diarization is not itself useful reasoning.",
+    "current_evidence": [
+      "The text study uses ground-truth transcripts and speaker labels, not a measured streaming ASR feed.",
+      "Existing S1/S2 examples establish selected short interactions; the current S1 configuration keeps 40 history turns with a 4096-token window.",
+      "Current deployed S2 configuration uses an 8192-token window. A full meeting prefix cannot be silently truncated to fit it.",
+      "New source-reviewed text results: full history 13/20 complete; recent 60 seconds 1/20; full without speaker fields 11/20; question-blind notes plus new speech 4/20. These are Codex pilot judgments, not streaming results.",
+      "The original three full-transcript S2 inputs need 11251, 16554 and 22500 input tokens before reserving 4096 output tokens. None fits the current 8192 configuration; a 32768 window needs an estimated 4.5 GiB BF16 KV for one sequence, before other runtime memory.",
+      "Extending the oracle-transcript check to all 24 text cases reaches 37,309 input tokens; with 4,096 output tokens it requires a 49,152-token context, with an estimated 6.75 GiB single-sequence BF16 KV."
+    ],
+    "recommendation": "First keep the original three-question/four-condition comparison as a plumbing and history check. Then separate schedule and work-content experiments, followed by a small crossed comparison. Start with controllers and verified notes; do not train a policy yet.",
+    "when": {
+      "hold_fixed": "Same source history, S2 checkpoint, note-writing prompt, memory limit, request-time answer procedure and speech handoff.",
+      "policies": [
+        {
+          "name": "React only",
+          "rule": "Do no private preparation before the real request; reason when it arrives.",
+          "purpose": "Baseline with no background compute."
+        },
+        {
+          "name": "Every 30 seconds",
+          "rule": "Update notes at fixed source-clock intervals.",
+          "purpose": "Simple preparation baseline."
+        },
+        {
+          "name": "After a meaningful change",
+          "rule": "Use a cheap gate on completed new speech: a responsibility, constraint, correction, changed proposal, or unresolved reference. Suppress repeated unchanged text.",
+          "purpose": "Test whether choosing better moments improves quality/delay or saves work."
+        },
+        {
+          "name": "Pause-based or random schedule",
+          "rule": "Use ordinary speech pauses, or seeded times with the same preset rate cap.",
+          "purpose": "Check whether semantic timing helps beyond simply running in the background."
+        }
+      ],
+      "budget": "Proposed starting limits: two updates per source minute, 1024 retained note tokens and one outstanding S2 job. Use development meetings to choose a total generation cap that produces complete notes; start by checking 1024 tokens per update, counting private reasoning when present. Freeze this before comparing policies. A shared cap is not a claim of equal spent compute: measure all prefill, decoding and service time, including calls that return no usable note.",
+      "question_timing": "Existing questions often follow evidence by minutes, so periodic preparation may already be finished. Add a few reviewed branches shortly after a real update and later in the same discussion. Reuse the same question intent and audio where appropriate; timing variants are not new questions.",
+      "success": "Better fraction of correct supported answers by a fixed useful-answer deadline, or equal quality with less measured preparation work. Report failures and timeouts, not only delays of successful answers."
+    },
+    "what": {
+      "hold_fixed": "Use identical update times, available speaker-attributed ASR, S2 checkpoint, output cap and memory allowance.",
+      "tasks": [
+        {
+          "name": "Plain summary",
+          "work": "Keep a short running account of the discussion.",
+          "output": "A general summary; language-model preparation control under the same output and memory caps. Compare actual compute as well."
+        },
+        {
+          "name": "Facts with owners and status",
+          "work": "Keep who said a claim, who must do the task, whether it is proposed/agreed/superseded, and its source/time.",
+          "output": "A compact ledger; distinguish the speaker from the responsible person."
+        },
+        {
+          "name": "Facts plus small checks",
+          "work": "Keep that ledger, and resolve open references, check changed plans and derive a few conditional implications when the ingredients are available.",
+          "output": "For example, derive 4:2:1 from two twice-as-important statements; record the assumptions and source links."
+        }
+      ],
+      "extra_baseline": "Keep speaker-attributed ASR without an LLM summary as a low-preparation baseline. Reading it at request time still has a cost; it is not compute-matched to the three preparation tasks.",
+      "success": "Fewer wrong owners, stale decisions, invented certainty and lost constraints at comparable measured cost. A shorter note or fluent answer alone is not a success."
+    },
+    "crossed_comparison": "After the separate controls work, cross periodic versus meaningful-change timing with summary, ledger and ledger-plus-checks: six preparation conditions. Keep reactive and raw-transcript baselines. This tests whether a useful kind of preparation depends on choosing the right moment.",
+    "examples": [
+      {
+        "title": "A proposal changes, then changes again",
+        "meeting": "TS3006c",
+        "events": [
+          {
+            "time": 1181.58,
+            "source_ids": [
+              "TS3006c-s0469"
+            ],
+            "text": "A proposes a single-curved compromise instead of double curved.",
+            "safe_note": "Single curved is a proposal, not a settled replacement."
+          },
+          {
+            "time": 1209.45,
+            "source_ids": [
+              "TS3006c-s0492",
+              "TS3006c-s0493"
+            ],
+            "text": "C prefers double curved; A agrees.",
+            "safe_note": "The latest endorsed preference is double curved. Do not leave the earlier single-curved proposal as the current decision."
+          }
+        ],
+        "question": "Assistant, are we still going with the double-curved case, or did that change?",
+        "timing_note": "The present text probe is at 21:40. A near-update replay around 20:20–20:30 could be informative only after selecting a natural, word-safe gap. That new timing is proposed, not executed.",
+        "lesson": "When: refresh after a real revision. What: preserve the distinction between a proposal and the latest preference, with who supported it."
+      },
+      {
+        "title": "Two statements imply a useful ratio",
+        "meeting": "TS3006c",
+        "events": [
+          {
+            "time": 327.82,
+            "source_ids": [
+              "TS3006c-s0080",
+              "TS3006c-s0081",
+              "TS3006c-s0086",
+              "TS3006c-s0088"
+            ],
+            "text": "Fancy look-and-feel is twice innovation, which is twice ease of use.",
+            "safe_note": "In that named order the ratio is 4:2:1. This is a derived relation, not three invented percentages."
+          }
+        ],
+        "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+        "lesson": "Attribution helps identify the input; deriving and retaining the ratio is the preparation job."
+      },
+      {
+        "title": "A commitment needs an owner and a delivery route",
+        "meeting": "EN2004a",
+        "events": [
+          {
+            "time": 1631.08,
+            "source_ids": [
+              "EN2004a-s0591",
+              "EN2004a-s0603"
+            ],
+            "text": "B will consult Melissa and Jean about speech with laughter, then post on the wiki or email.",
+            "safe_note": "B owns the follow-up; Melissa and Jean are the people to consult. The annotation rule is still unresolved."
+          }
+        ],
+        "question": "Assistant, who's checking how we should mark speech with laughter, and how will they share the rule?",
+        "lesson": "A flat summary can confuse the people mentioned with the person who promised to act."
+      }
+    ],
+    "protocol": [
+      {
+        "name": "Keep future questions hidden",
+        "rule": "The preparation process receives only released speech and prior notes. It does not receive question text, insertion schedule, answer labels or selected evidence. A guessed future question must be generated from the past and charged as speculation."
+      },
+      {
+        "name": "Version the ASR and speaker labels",
+        "rule": "Use only words and speaker assignments emitted by that instant. Later transcript/identity corrections are new events. Oracle speaker labels attached to ASR must be labeled as an upper-bound condition, not a causal diarizer."
+      },
+      {
+        "name": "Separate preparation from speaking",
+        "rule": "The six ordinary-discussion controls allow private work while requiring no outward speech. The real Assistant wake cue permits a response; a pause or thought trigger does not."
+      },
+      {
+        "name": "Count the complete cost",
+        "rule": "Include ASR, speaker attribution, gating, all prompt/prefill and generated/private tokens, note storage, invalidated/cancelled calls and unused work. Report allocated GPU hours separately from active inference/service-time proxies."
+      },
+      {
+        "name": "Measure useful audible answers",
+        "rule": "Time from question end to the first correct useful fact and to a complete supported answer. Also report deadline success over every case, wrong answers, silence, cancellations, native STOP events, S1 queue lag and audio dropouts. An acknowledgement does not count as a useful fact."
+      },
+      {
+        "name": "Control models and costs",
+        "rule": "Hold the same S2 model in all cells. Use shared budget caps, plot quality and delay against measured cost, and compare overlapping cost ranges before claiming a timing benefit. Token-matched runs can still spend different compute on reading history."
+      },
+      {
+        "name": "Qualify retention and integration first",
+        "rule": "Separate S1 keeping up with audio from S2 remembering earlier facts. Start bounded, test older-fact access as history grows, verify processor token/audio limits and enough KV memory, then extend. A preloaded history replay is a useful controlled diagnostic, not proof of full 18–35-minute listening."
+      },
+      {
+        "name": "Report the small-sample limit",
+        "rule": "The first three questions are case studies. Variants of the same question do not add independent cases. Use paired outcomes and meeting-level summaries; six meetings cannot establish general policy superiority."
+      }
+    ],
+    "resources": {
+      "now": "One A100 SXM4 80 GB text diagnostic only; all Qwen weights/KV share GPU 0, sequential stages.",
+      "planned": "For a future integrated replay, propose 2 H100 SXM 80 GB: S1 Thinker, Talker, MTP and Code2Wav share GPU 0; the existing Qwen3-4B Thinking S2 reasoner is isolated on GPU 1. ASR/speaker traces are produced in a separate sequential job and replayed from CPU for controlled comparisons, explicitly distinct from live ASR. The 30B reader remains an offline quality check. No such job is submitted.",
+      "gates": "CPU caller/history/cancellation checks and S2 context preflight before any new speech inference; measured S1 latency/queue qualification under S2 load before interpreting behavior.",
+      "full_prefix_cost_estimate": "At 1× playback the three original prefixes total 79.82 minutes per condition. Reserving two GPUs for each of the four system conditions would require at least 10.64 GPU hours before startup, request/answer time and ASR preparation. A one-GPU S1-only allocation reduces that bound; all actual allocation and preparation still count.",
+      "cheaper_diagnostic": "A cheaper first schedule/work study can use one isolated S2 worker and a causal text-event replay, skipping idle waits with a virtual clock. Label readiness/latency as simulated until selected two-GPU paced-audio cases validate it. A preloaded-history or bounded-window replay tests that declared setup; it does not prove continuous full-meeting listening."
+    },
+    "discussion": [
+      {
+        "question": "Should private work mainly maintain reliable facts, or also prepare likely answers?",
+        "recommendation": "Start with facts/owners/status plus a few cheap derived checks. Keep speculative answer planning as an explicitly costed later control; it is less reliable when the future request is unknown."
+      },
+      {
+        "question": "What should count as a good time to think?",
+        "recommendation": "Start with completed meaningful updates, compared with fixed intervals under the same caps. Acoustic silence is an opportunity for scheduling, not evidence that thought is useful."
+      },
+      {
+        "question": "How much preparation should be allowed?",
+        "recommendation": "Use a small predeclared cap and report the full cost curve, then adjust on development meetings only. Discuss the quality/latency/compute trade-off before a larger sweep."
+      },
+      {
+        "question": "What might eventually be learned?",
+        "recommendation": "Learn a gate choosing whether to update/derive/verify now, and a work selector choosing the job and relevant facts. Train from source-checked state edits and measured utility on separate development meetings; do not imitate the quarantined free-form traces."
+      }
+    ],
+    "literature_ids": [
+      "lts",
+      "proactive",
+      "duplex",
+      "talker",
+      "convfill",
+      "longmem",
+      "groupmem",
+      "compute",
+      "async",
+      "mem0"
+    ],
+    "before_inference": [
+      "Use source text copied by code rather than asking the model to reproduce transcript quotes. Check whether the summarized claim follows from it; exact source text alone does not prove the claim.",
+      "Separate who spoke, who owns the task, and who endorsed a proposal. The initial single speaker field was insufficient to prevent ownership mistakes.",
+      "Retain durable rules/constraints until contradicted, instead of keeping only the latest 32 notes; compare alternatives under the same memory cap.",
+      "Check note completion under the chosen token cap on development meetings. In a Thinking model the cap includes private reasoning; an empty or unfinished note is a budget/completion failure, not evidence against a timing policy.",
+      "Audit the source meaning of updates before testing timing. The initial notes missed useful facts and sometimes upgraded proposals or lost uncertainty.",
+      "Qualify the larger S2 context/KV allocation and S1 rolling audio/history behavior. No current inference config has been changed.",
+      "Keep a genuinely new meeting split for a later confirmatory policy evaluation if these pilot results are used repeatedly to refine prompts or gates."
+    ]
+  },
+  "study_evidence_url": "question-checks.html"
 }

@@ -1,0 +1,2141 @@
+{
+  "status": "source_review_complete_not_a_duplex_result",
+  "job": "1308851",
+  "rater": "Codex",
+  "independent_human_rater": false,
+  "conditions": {
+    "full": "All causally available ground-truth transcript, with speaker fields.",
+    "recent60": "Only segments released in the last 60 seconds, with speakers.",
+    "no_speakers": "The identical full transcript with speaker fields removed; actual spoken names remain.",
+    "state_plus_new": "Question-blind generated notes from fixed 120-second checkpoints plus all transcript released since the last checkpoint. Not a timing-matched or live-ASR result."
+  },
+  "grade_definitions": {
+    "complete": "Required answer facts are recovered without a material unsupported claim; a correct uncertainty answer is allowed for missing-information controls.",
+    "partial": "Some required facts/qualifications are missing or unsupported extra claims weaken an otherwise useful answer.",
+    "incorrect": "Central fact, owner, decision state or number is wrong.",
+    "no_answer": "The output cannot recover an answer supported by the full source. This is often appropriate caution given restricted context, not necessarily a model error."
+  },
+  "summaries": [
+    {
+      "cohort": "frozen20",
+      "condition": "full",
+      "n": 20,
+      "complete": 13,
+      "partial": 5,
+      "incorrect": 2,
+      "no_answer": 0,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    },
+    {
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "n": 20,
+      "complete": 1,
+      "partial": 2,
+      "incorrect": 1,
+      "no_answer": 16,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    },
+    {
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "n": 20,
+      "complete": 11,
+      "partial": 8,
+      "incorrect": 1,
+      "no_answer": 0,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    },
+    {
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "n": 20,
+      "complete": 4,
+      "partial": 8,
+      "incorrect": 0,
+      "no_answer": 8,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 5
+    },
+    {
+      "cohort": "text_diagnostic4",
+      "condition": "full",
+      "n": 4,
+      "complete": 2,
+      "partial": 2,
+      "incorrect": 0,
+      "no_answer": 0,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    },
+    {
+      "cohort": "text_diagnostic4",
+      "condition": "recent60",
+      "n": 4,
+      "complete": 0,
+      "partial": 1,
+      "incorrect": 0,
+      "no_answer": 3,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    },
+    {
+      "cohort": "text_diagnostic4",
+      "condition": "no_speakers",
+      "n": 4,
+      "complete": 2,
+      "partial": 0,
+      "incorrect": 2,
+      "no_answer": 0,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    },
+    {
+      "cohort": "text_diagnostic4",
+      "condition": "state_plus_new",
+      "n": 4,
+      "complete": 1,
+      "partial": 2,
+      "incorrect": 1,
+      "no_answer": 0,
+      "answers_with_outside_context_citations": 0,
+      "answers_using_note_aliases": 0
+    }
+  ],
+  "note_guard": {
+    "proposed_changes": 410,
+    "not_retained": 111,
+    "retained": 299,
+    "reasons": {
+      "quote_not_verbatim": 110,
+      "speaker_not_supported_by_cited_segments": 3
+    },
+    "reasons_overlap": true,
+    "meaning": "A note change is not retained if a quoted substring is absent from its cited source or its claimed speaker has no cited speech. This is a provenance guard, not a semantic truth judgment. All surviving claims still need content review."
+  },
+  "decisions": [
+    {
+      "id": "scale:EN2004a-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Chooses one interpretation.",
+      "answer": "If a word is ambiguous but fits multiple contexts, pick one. The speaker states, 'Choose one, it c I mean y think of it from a speech recognition point of view again. And always this should be this should motivate you.' This indicates a preference for making a definitive choice rather than leaving it uncertain.",
+      "evidence_ids": [
+        "EN2004a-s0095",
+        "EN2004a-s0097",
+        "EN2004a-s0098",
+        "EN2004a-s0099",
+        "EN2004a-s0101"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "fab8d5245b0a8113e807d3aa284e0641c6f37431de6df51f75dac15deeeb2b69",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Choose one interpretation when both are equally plausible."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Appropriate caution, but the older rule is absent.",
+      "answer": "The meeting material does not address how to handle ambiguous words that fit multiple contexts. No guidance is provided on selecting one interpretation or leaving it uncertain.",
+      "evidence_ids": [],
+      "missing_information": "No information on handling ambiguous words in context.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "20b2bf44c0b77664c61bca1e7af95ec0dfb5e70591074ff524766fd3bd93987d",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Choose one interpretation when both are equally plausible."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Recovers the rule without speaker fields.",
+      "answer": "If a word is ambiguous but fits multiple contexts, choose one and leave it, as per segment EN2004a-s0094. Do not leave it uncertain.",
+      "evidence_ids": [
+        "EN2004a-s0094"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "b62494b43053a208736c2269013eb27271dd1bf1a3690638382403aca835a253",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Choose one interpretation when both are equally plausible."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The useful earlier rule was not retained in the notes.",
+      "answer": "Not addressed in the provided meeting material.",
+      "evidence_ids": [],
+      "missing_information": "No discussion on handling ambiguous words with multiple contexts.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "bf103973f03bae4811776d8f0d1d0ca36a6b6846ab06eea2f90220c6366e339e",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Choose one interpretation when both are equally plausible."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct rule and clear-continuation limit.",
+      "answer": "When a sentence continues into the next segment, do not capitalize the start of the new segment. This applies when it is clear the sentence is being carried on from the previous segment. Otherwise, capitalize as normal. [EN2004a-s0145, EN2004a-s0149]",
+      "evidence_ids": [
+        "EN2004a-s0145",
+        "EN2004a-s0149"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "13c464e78eae05811c2b789d7e1cc931ba5f0b34e9db5ed38ce4316bdbe41908",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Do not capitalize the next segment when it clearly continues the same sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Does not recover the older rule.",
+      "answer": "Not decided. The meeting material does not contain any discussion or decision about capital letters when a sentence continues into the next segment.",
+      "evidence_ids": [],
+      "missing_information": "No information provided on capitalization rules for continued sentences across segments.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "474279ad495a5d076c921b4949d19d2e9adf8adc85a9cca22a38f7153ad09ad1",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Do not capitalize the next segment when it clearly continues the same sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Correct capitalization rule but adds a misleading suggestion to use a hyphen for continuation.",
+      "answer": "When a sentence continues into the next segment, you do not capitalize the beginning of the next segment. This is only done when the sentence is clearly continuing from the previous one, and a hyphen may be used in such cases. Otherwise, capitalize as normal.",
+      "evidence_ids": [
+        "EN2004a-s0130",
+        "EN2004a-s0131",
+        "EN2004a-s0132",
+        "EN2004a-s0133",
+        "EN2004a-s0134",
+        "EN2004a-s0135"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "cdf7ac8ad52ac48c61e2bb3916c58b3e448b363e1b4e16b2f553d0ad7cd5ecfc",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Do not capitalize the next segment when it clearly continues the same sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "Notes do not recover the capitalization rule.",
+      "answer": "Not decided. No information provided in the transcript or notes about capital letters when a sentence continues into the next segment.",
+      "evidence_ids": [],
+      "missing_information": "No discussion or decision on capitalization rules for continuing sentences across segments.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "ca6ce765394ecedf28d79633275f13fd68a222fbdd49be7da26c8be8520a52d0",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Do not capitalize the next segment when it clearly continues the same sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correctly includes phrase-level restarts.",
+      "answer": "Restarted phrases or clauses, not necessarily full sentences, were to be marked with a hyphen if they involved a back-track or restart of speech, even if the syntactic structure didn't return to the main sentence node. This includes any restart of a phrase or utterance, regardless of whether it continues the same sentence.",
+      "evidence_ids": [
+        "EN2004a-s0373",
+        "EN2004a-s0377",
+        "EN2004a-s0383",
+        "EN2004a-s0393",
+        "EN2004a-s0404",
+        "EN2004a-s0408"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "1eff8a2ea659bcbfc89b162c7be8760e0dd6cde9df056aa6e3e92251be9ae5b5",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A phrase-level restart also counts; it need not restart the entire sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older restart guidance is absent.",
+      "answer": "The meeting material does not specify what kinds of restarts should be marked with a hyphen. No information about marking restarts with hyphens was discussed.",
+      "evidence_ids": [],
+      "missing_information": "No discussion on marking restarts with hyphens was found in the provided transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "5d5346c5698c06c397246dbb5a0f6edf200658de4b7734a707c46f8fd9bfcee2",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A phrase-level restart also counts; it need not restart the entire sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Adds hesitations as a category without requiring an actual restart.",
+      "answer": "We were supposed to mark any restarts, including backtracks or hesitations, with a hyphen, even if the sentence continuation is not syntactically complete. This includes phrases that restart mid-sentence, not just full sentence restarts.",
+      "evidence_ids": [
+        "EN2004a-s0373",
+        "EN2004a-s0377",
+        "EN2004a-s0383",
+        "EN2004a-s0393",
+        "EN2004a-s0394",
+        "EN2004a-s0404"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "f720577fff92b7e6e89406b32fc6b4ab2bc3670d0bf12da2c289f62b01d82f68",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A phrase-level restart also counts; it need not restart the entire sentence."
+      ]
+    },
+    {
+      "id": "scale:EN2004a-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The restart rule is missing from notes.",
+      "answer": "The meeting did not specify which kinds of restarts should be marked with a hyphen. No explicit guidance on hyphen usage for restarts was provided in the transcript or notes.",
+      "evidence_ids": [],
+      "missing_information": "No information on hyphen marking for restarts was discussed or agreed upon in the meeting.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "d3161f28664a6b27aa990e4bdaa27ac99b483bb8c6106e70d9463a75470278ba",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A phrase-level restart also counts; it need not restart the entire sentence."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Concern and watch/remote movement comparison are correct.",
+      "answer": "The concern was that a kinetic battery, like those used in watches, might not supply enough power for the remote control, as the movement required to generate power in watches is greater than what a remote would typically experience.",
+      "evidence_ids": [
+        "ES2003c-s0057",
+        "ES2003c-s0060",
+        "ES2003c-s0063",
+        "ES2003c-s0064",
+        "ES2003c-s0065",
+        "ES2003c-s0068"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e43ba7fb0c5c76cd8d8c015087d476811852fe33dafec4261ea1b23374ca5621",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Concern that ordinary remote movement may not provide enough power."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older concern is absent.",
+      "answer": "The meeting transcript does not mention a kinetic battery or any concerns about using one for the remote.",
+      "evidence_ids": [],
+      "missing_information": "No information about kinetic batteries was provided in the meeting material.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "14e4ef85d30176c458b87a70bffef247854c9ca252081a543bd2bd8721bcab71",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Concern that ordinary remote movement may not provide enough power."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct concern.",
+      "answer": "The concern was whether a kinetic battery, like those in watches, would supply enough power for the remote control, as the movement required for such batteries might not be sufficient in a remote control context.",
+      "evidence_ids": [
+        "ES2003c-s0057",
+        "ES2003c-s0063",
+        "ES2003c-s0064",
+        "ES2003c-s0065",
+        "ES2003c-s0066",
+        "ES2003c-s0067"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "1120d95f6b156d2658d743fc83d5b966a6dbc4d01a398e95ee38f34df8abb403",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Concern that ordinary remote movement may not provide enough power."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Recovers a power concern but upgrades the exchange into an agreement.",
+      "answer": "D expressed doubt that a kinetic battery would be sufficient for the remote, stating 'I don't think it would.' This concern was agreed upon in the meeting.",
+      "evidence_ids": [
+        "ES2003c-s0063"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e04a1e564e4f3c52e0be86608cdf2ddf91b58e640c0b5d68c6f75b20b2751592",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Concern that ordinary remote movement may not provide enough power."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "incorrect",
+      "reason": "Invents a definite significant price increase; the source leaves the cost comparison open.",
+      "answer": "The advanced chip for the LCD requires a much more powerful chip compared to the basic button chip, which sends simple infrared signals. This implies a significant cost increase, though the exact amount was not specified. The team acknowledged the trade-off, noting that using an LCD display would be more expensive due to the advanced chip needed.",
+      "evidence_ids": [
+        "ES2003c-s0135",
+        "ES2003c-s0140",
+        "ES2003c-s0146",
+        "ES2003c-s0149"
+      ],
+      "missing_information": "The exact cost difference between the advanced chip and the basic button chip was not provided.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "62b2a25868a4055aa78e3598efc9ad228d261f31ad3d5172dd6d21ef8fd15f5b",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "No actual price difference between the chips is established."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "complete",
+      "reason": "Correctly declines a price comparison not supplied by this context.",
+      "answer": "The meeting material does not provide a comparison of the cost between the advanced chip for LCD and the basic button chip. No pricing information was discussed.",
+      "evidence_ids": [],
+      "missing_information": "Cost comparison between the advanced LCD chip and the basic button chip",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e13e4e5b17ca57d746ded9b7afde776e9c94802bd71a8d7fa571297fc65a71c3",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "No actual price difference between the chips is established."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Preserves the missing price comparison.",
+      "answer": "The advanced chip for the LCD requires a much more powerful chip compared to the basic chip used for pressing buttons, but the exact cost difference was not quantified in the discussion.",
+      "evidence_ids": [
+        "ES2003c-s0141",
+        "ES2003c-s0146",
+        "ES2003c-s0147"
+      ],
+      "missing_information": "The specific cost difference between the advanced LCD chip and the basic button chip was not stated.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "b75ed26612e48c1aade0480d56bac86537ca814ef93bd00b8e34459ede220251",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "No actual price difference between the chips is established."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "complete",
+      "reason": "Preserves the missing price comparison.",
+      "answer": "The transcript does not provide a direct cost comparison between the advanced chip for LCD and the basic button chip. It only states that the LCD requires an advanced chip, similar to a 386 model, and that cost impact of advanced features needs further discussion. No specific prices or relative costs are mentioned.",
+      "evidence_ids": [
+        "ES2003c-s0137",
+        "ES2003c-s0141",
+        "ES2003c-s0135",
+        "ES2003c-s0136",
+        "ES2003c-s0128"
+      ],
+      "missing_information": "No cost data for either chip is provided.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "4b02747667b6be1221ecf1e83717b62f55c875c2bfd066198eaab8a9a5d8126f",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "No actual price difference between the chips is established."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Grip/battery proposal is recovered, but balance/ergonomics and spatial requirements are added without support.",
+      "answer": "A double curved design necessitates careful battery placement due to the contoured internal space. The battery is likely to be positioned in the grip section, which is the bulkiest part, to maintain balance and ergonomics. This area must accommodate the battery while allowing for articulation points and internal components like the chip and circuitry. The spongy rubber outer layer requires an inner frame for structural integrity, which may further constrain internal layout. No specific dimensions or exact battery type were agreed upon.",
+      "evidence_ids": [
+        "ES2003c-s0249",
+        "ES2003c-s0250",
+        "ES2003c-s0374",
+        "ES2003c-s0375",
+        "ES2003c-s0384",
+        "ES2003c-s0385"
+      ],
+      "missing_information": "Exact battery size, internal frame design, or spatial constraints beyond the grip section.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "efa4b74c1a9feed5d3228f1e42814cdfcf8cac985e294d14256970f43951e5fb",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The grip was proposed for the battery and described as the bulkiest part."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older layout discussion is absent.",
+      "answer": "The meeting material does not contain information about the impact of a double curved design on battery placement or internal space. No discussion of design geometry, component layout, or spatial constraints was recorded.",
+      "evidence_ids": [],
+      "missing_information": "No data on double curved design, battery placement, or internal space constraints was provided in the meeting transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "3002f4079b6258b4297b8c671f256f26d7c34af86b95116934502e98809cf600",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The grip was proposed for the battery and described as the bulkiest part."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Turns a suggestion into a requirement and invents balance/ergonomic consequences.",
+      "answer": "A double curved design impacts battery placement by requiring the bulkiest component, the battery, to be positioned in the grip section, which is the most accessible area for the hand. This placement maintains balance and ergonomics. Internal space must accommodate articulation points and the flexible, spongy rubber outer layer, potentially necessitating an inner frame for structural integrity. The L_C_D_ and joystick are placed at articulated ends to allow adjustment for left or right-handed users, which may limit internal routing options.",
+      "evidence_ids": [
+        "ES2003c-s0249",
+        "ES2003c-s0250",
+        "ES2003c-s0252",
+        "ES2003c-s0255",
+        "ES2003c-s0374",
+        "ES2003c-s0375"
+      ],
+      "missing_information": "No specific dimensions or exact internal layout details are provided for the double curved design.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "3fbb35a9987531455359edf775650c10b8042a68eb0489a8191ffb690baeccb6",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The grip was proposed for the battery and described as the bulkiest part."
+      ]
+    },
+    {
+      "id": "scale:ES2003c-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The relevant grip/battery proposal was not retained.",
+      "answer": "The double curved design's impact on battery placement and internal space is not discussed in the provided meeting material. No information is available on how articulation or curvature affects component layout, including the battery.",
+      "evidence_ids": [],
+      "missing_information": "No discussion of battery placement or internal space constraints related to the double curved design.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "2e1875046564b802484357d4f32108e5b60eb04134774785b2c7bb94591a1a73",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The grip was proposed for the battery and described as the bulkiest part."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-slide-reasons",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Rationale is mostly correct but adds room for comments as a design benefit.",
+      "answer": "We were leaning toward a slide-open design because it provides more internal space, making it easier to use and allowing room for additional functions and comments. It was also considered stronger and more usable for remote controls, as noted in segments TS3004d-s0030, TS3004d-s0033, and TS3004d-s0037.",
+      "evidence_ids": [
+        "TS3004d-s0030",
+        "TS3004d-s0033",
+        "TS3004d-s0037"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "2473cab1b7a272c7e5fc8045f793ffc9315dc4c67e922e6043010fb1a44cb2a0",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Give at least two of usability, possible strength, and internal room."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-slide-reasons",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "partial",
+      "reason": "Only the internal-room reason is recovered; other details are speculative.",
+      "answer": "We were leaning toward a slide-open design because it provides ample room for components, such as at least four buttons, and allows flexibility in placement, including on the back or as a separate unit. This design accommodates configuration needs and potential button arrangements without space constraints.",
+      "evidence_ids": [
+        "TS3004d-s0111",
+        "TS3004d-s0102",
+        "TS3004d-s0114",
+        "TS3004d-s0103",
+        "TS3004d-s0101",
+        "TS3004d-s0104"
+      ],
+      "missing_information": "No specific reason was given for preferring slide-open over other designs beyond space and placement flexibility.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "f95ccd70b1e6db7b9fe5fa81ec45906d8684c83d20eaa565740794faef536761",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Give at least two of usability, possible strength, and internal room."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-slide-reasons",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Recovers the supported rationale.",
+      "answer": "We were leaning toward a slide-open design because it provides more internal space, making it easier to use and allowing room for additional functions and comments. It was also considered stronger and more usable for remote controls compared to a fold-open design.",
+      "evidence_ids": [
+        "TS3004d-s0030",
+        "TS3004d-s0031",
+        "TS3004d-s0032",
+        "TS3004d-s0033",
+        "TS3004d-s0034",
+        "TS3004d-s0035"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "a1cea0e514e878147cb81cd0f872101256c1774bd79134794fc45cc4e5621a0c",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Give at least two of usability, possible strength, and internal room."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-slide-reasons",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "complete",
+      "reason": "Usability and possible strength provide two supported reasons.",
+      "answer": "We were leaning toward a slide-open design because it was considered more usable for remote controls and potentially stronger than alternative designs like fold-open, as agreed by speakers A and B, with C also concurring after discussion.",
+      "evidence_ids": [
+        "TS3004d-s0030",
+        "TS3004d-s0033",
+        "TS3004d-s0036"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "3cadd0b51b4037fede594d89b2b49b3f225258b0df0e6cd11fd645f23ac2a9d2",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Give at least two of usability, possible strength, and internal room."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Unfinished design is recovered but unknown button requirements are missed, and a decision time is invented from the request timestamp.",
+      "answer": "The team agreed to use a slide-open mechanism for the remote control case, as it provides more internal space and is more usable and stronger than a fold-open design. However, the detailed design of the slide mechanism has not yet been completed due to time constraints. The decision was made during the meeting at 445.92s, but no further design work was specified.",
+      "evidence_ids": [
+        "TS3004d-s0026",
+        "TS3004d-s0027",
+        "TS3004d-s0028",
+        "TS3004d-s0029",
+        "TS3004d-s0030",
+        "TS3004d-s0031"
+      ],
+      "missing_information": "No specific design details or completion status for the slide-open mechanism were provided beyond the agreement to use it.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e65c3654386bf3c6909c7e3a6fb0b5e61f7431e07ca356ca132a9b118213cd59",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The slide pad was not yet designed; required button count/types were still unknown."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older design-status discussion is absent.",
+      "answer": "The meeting transcript does not contain information about the slide-open mechanism design. No discussion or decision regarding this component was recorded in the provided material.",
+      "evidence_ids": [],
+      "missing_information": "No information on slide-open mechanism design was discussed in the meeting transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "3099174402c1c729ac42cc52ad6dad3f63fd1ccbd80ef4a29e7bf80ad1f5c148",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The slide pad was not yet designed; required button count/types were still unknown."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Misses the explicit unfinished slide pad and unknown button requirements.",
+      "answer": "The slide-open mechanism is under consideration, with discussion favoring a slide-open design over a fold-open one due to better usability and structural strength. However, the design has not been finalized, and no specific details on the mechanism's implementation have been agreed upon. The team acknowledged the need to design the internal structure to accommodate the slide function, but no completed work or final decision has been documented.",
+      "evidence_ids": [
+        "TS3004d-s0026",
+        "TS3004d-s0027",
+        "TS3004d-s0030",
+        "TS3004d-s0031",
+        "TS3004d-s0032",
+        "TS3004d-s0033"
+      ],
+      "missing_information": "No final design or implementation details for the slide-open mechanism have been confirmed.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "7f513956bd7d76e9fc09b18d6065939f1542f1773b5d694a688a34a761393c51",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The slide pad was not yet designed; required button count/types were still unknown."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Recalls the preference but does not report the stated unfinished work clearly.",
+      "answer": "The slide-open mechanism is agreed upon as the preferred design for device access, supported by A and C, and noted by B as potentially stronger than alternatives. No further design details were discussed after the consensus.",
+      "evidence_ids": [
+        "TS3004d-s0030",
+        "TS3004d-s0033",
+        "TS3004d-s0036",
+        "TS3004d-s0108",
+        "TS3004d-s0111"
+      ],
+      "missing_information": "No updates on specific implementation or structural details beyond the consensus.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "d88d01c375cd6068e36bce21af047d8bb12ad884c657980763fc1f8ca28c4610",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The slide pad was not yet designed; required button count/types were still unknown."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Smiddle-Q3",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Left side is correct, but most intuitive for users is an unsupported extra usability claim.",
+      "answer": "Yes, the scrollwheel is still planned to be on the left side as originally stated. B confirmed this placement, noting it is the standard position and most intuitive for users.",
+      "evidence_ids": [
+        "TS3004d-s0124",
+        "TS3004d-s0125",
+        "TS3004d-s0127",
+        "TS3004d-s0128",
+        "TS3004d-s0129",
+        "TS3004d-s0130"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "dae5c5d373a2c7a4c4d55921c0103762da91bc776c312a6042be5fe954e27b96",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The earlier specified location was the left side, with no stated relocation before this request."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Smiddle-Q3",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Earlier placement is absent.",
+      "answer": "The meeting material does not contain information about the scrollwheel's position. No discussion of scrollwheel placement, left or right, is present in the provided transcript segments.",
+      "evidence_ids": [],
+      "missing_information": "The scrollwheel's planned position is not addressed in the meeting material.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "5a79da7c2192334a6fd4dd77d48e668528a7f8529e012e24b044b44f2adf794c",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The earlier specified location was the left side, with no stated relocation before this request."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Smiddle-Q3",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct left-side placement without inventing a change.",
+      "answer": "Yes, the scrollwheel is still planned to be on the left side as originally discussed.",
+      "evidence_ids": [
+        "TS3004d-s0124",
+        "TS3004d-s0125",
+        "TS3004d-s0127",
+        "TS3004d-s0129"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "65f86a1c8a842729bb256309e4790fb2544d2c45a8053cbfa65683463a27f54d",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The earlier specified location was the left side, with no stated relocation before this request."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Smiddle-Q3",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The notes omit the stated left-side location.",
+      "answer": "The meeting transcript does not confirm the scrollwheel's position. No segment discusses left-side placement specifically. The scrollwheel was agreed as a new feature, but its location was not decided.",
+      "evidence_ids": [],
+      "missing_information": "Scrollwheel position (left side) not confirmed in meeting transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "2f6bfc4b6b2bbd689dcc4651e597b201b8502492a2da1acbe7222646884c259e",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The earlier specified location was the left side, with no stated relocation before this request."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct opening-triggered interior lighting; green or blue is left as alternatives.",
+      "answer": "The final decision was to add a green or blue backlight to illuminate the entire slide panel when opened, not just the buttons, to enhance visibility and create a fancy effect. This was agreed upon despite initial concerns about reachability, with the team concluding it was usable and desirable.",
+      "evidence_ids": [
+        "TS3004d-s0526",
+        "TS3004d-s0527",
+        "TS3004d-s0528",
+        "TS3004d-s0529",
+        "TS3004d-s0530",
+        "TS3004d-s0531"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "944a9518772fd17e5f21e91f4f31e1a352c89fe96f2d55b3ebaf81514fa2861b",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Lighting comes on when the panel opens and lights the interior, rather than just individual buttons."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older decision is absent.",
+      "answer": "The meeting material does not contain a final decision on the slide panel's backlighting after the discussion. No agreement or completed work is stated regarding backlighting.",
+      "evidence_ids": [
+        "TS3004d-s1020",
+        "TS3004d-s1021",
+        "TS3004d-s1022"
+      ],
+      "missing_information": "Final decision on slide panel backlighting",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "c36d94eab5de97a42300fc867442261e686ae8feeb33beb9d49b3ed0e12d53b1",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Lighting comes on when the panel opens and lights the interior, rather than just individual buttons."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct interior-lighting decision.",
+      "answer": "The final decision was to include a backlight for the slide panel to light it up when opened, as it was considered fancy and usable. This was agreed upon despite initial uncertainty about reachability.",
+      "evidence_ids": [
+        "TS3004d-s0519",
+        "TS3004d-s0525",
+        "TS3004d-s0526",
+        "TS3004d-s0527",
+        "TS3004d-s0528",
+        "TS3004d-s0529"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "ade930d1f639fe7b4034a62da6013afb71eb6fc2eaac73d1cec932e6890927cf",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Lighting comes on when the panel opens and lights the interior, rather than just individual buttons."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The earlier lighting decision is absent from the notes.",
+      "answer": "The meeting transcript and private notes do not contain any discussion or decision regarding the slide panel's backlighting. No segment addresses this topic.",
+      "evidence_ids": [],
+      "missing_information": "No information on slide panel backlighting was provided in the meeting material.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "9384f4b84e34e2cfe71bd32c461cd6ab16d3c5cd139f3e6cffd135143c09484d",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Lighting comes on when the panel opens and lights the interior, rather than just individual buttons."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Score one and lighting rationale are correct; some purported verbatim quote text is reconstructed, flagged separately.",
+      "answer": "We settled on a score of one for the 'fancy look-and-feel' criterion because the team agreed that the changing lights and colors, especially the backlighting when the slide panel opens, made it very fancy. D stated, 'I think it's one' and 'So I'll give it a one,' citing the ability to choose colors and the visual appeal of the lighting as key reasons. The team generally supported this view, with B noting, 'We've done a lot of detail in light,' and A agreeing it was 'cool.'",
+      "evidence_ids": [
+        "TS3004d-s0555",
+        "TS3004d-s0558",
+        "TS3004d-s0551",
+        "TS3004d-s0548",
+        "TS3004d-s0549",
+        "TS3004d-s0550"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "eaad23f66248330b90c81eba4b329fd8b4903486a1af37c5ea48fe993e039169",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The score was one; lighting detail or selectable light/color was the stated reason."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older score/rationale is absent.",
+      "answer": "The meeting transcript does not contain information on how the number for the 'fancy look-and-feel' criterion was settled. No discussion or decision regarding this criterion's value is present in the provided segments.",
+      "evidence_ids": [],
+      "missing_information": "How the number for the 'fancy look-and-feel' criterion was determined.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "6dc753233ac607bee70f6b4003c306fedd32517b991bcb5925ff2a14aaf26bdd",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The score was one; lighting detail or selectable light/color was the stated reason."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Adds a highest-score interpretation and extra lighting claims not established for this criterion.",
+      "answer": "We settled on a '1' for the 'fancy look-and-feel' criterion because the remote control features changeable lights, flashing LEDs, and customizable colors, which were considered highly fancy. The team agreed that these elements, especially the backlighting that activates when the slide panel opens, contribute significantly to the fancy appearance, justifying the highest score.",
+      "evidence_ids": [
+        "TS3004d-s0496",
+        "TS3004d-s0548",
+        "TS3004d-s0555",
+        "TS3004d-s0557",
+        "TS3004d-s0558",
+        "TS3004d-s0559"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "8425d7ca573fa1b19cd6563ce6c18bf5f771c0699db517d946ef56b4b6f0b408",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The score was one; lighting detail or selectable light/color was the stated reason."
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The score/rationale is not retained.",
+      "answer": "The meeting material does not contain information on how the number for the 'fancy look-and-feel' criterion was settled. No discussion or agreement regarding this specific criterion's value or method of determination is recorded in the provided transcript or private notes.",
+      "evidence_ids": [],
+      "missing_information": "No information on the 'fancy look-and-feel' criterion's number or decision process is available in the provided data.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "bf912c39ca6427d5f65e1be070fd37f6e7dc8fbd101a42623eec1b772f7bd123",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "The score was one; lighting detail or selectable light/color was the stated reason."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correctly distinguishes C’s upload report from D’s visibility problem; access/sync is only offered as a possibility.",
+      "answer": "C confirmed the conceptual design was placed in the shared folder, but D initially could not see it, indicating possible access or synchronization issues. No resolution was stated.",
+      "evidence_ids": [
+        "TS3006c-s0017",
+        "TS3006c-s0022",
+        "TS3006c-s0024",
+        "TS3006c-s0033",
+        "TS3006c-s0034",
+        "TS3006c-s0035"
+      ],
+      "missing_information": "Whether the files were successfully accessed after the initial issue.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "0cedbe7f28067dfbfb551a4aa5bf5700453d3243f88f1bee41bc28d28cecaca7",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "C reported putting the files in the shared folder; D initially saw only their own presentation."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Does not recover the earlier upload report.",
+      "answer": "The status of the shared folder is unknown. The conceptual design files could not be found, and no information was provided about the folder's current state or resolution of the missing files.",
+      "evidence_ids": [],
+      "missing_information": "Status of shared folder, resolution of missing files",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "5c98c6d1aa50f09ee74fdbc5ffdc341574a79dfa15eec771b99c99919983097e",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "C reported putting the files in the shared folder; D initially saw only their own presentation."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct reported placement and visibility limitation.",
+      "answer": "The conceptual design was placed in the shared folder, but it was not visible initially. The speaker confirmed it should be there, and the issue may be related to accessing the correct file or folder location. No further confirmation of successful access was provided.",
+      "evidence_ids": [
+        "TS3006c-s0017",
+        "TS3006c-s0022",
+        "TS3006c-s0024",
+        "TS3006c-s0033"
+      ],
+      "missing_information": "Whether the files were successfully accessed after being placed in the shared folder.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "de7c4b28acca622b30c890f1c06a90ee5383fd60d0b6c549dd8abee03efdfefa",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "C reported putting the files in the shared folder; D initially saw only their own presentation."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S05-Q3",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Recovers the observations but promotes them into an unresolved folder-access problem.",
+      "answer": "The shared folder was intended to contain the conceptual design files, as C confirmed placing the presentation there (TS3006c-s0017). However, D observed only their own presentation was visible in the shared folder (TS3006c-s0022), and D could not cut and paste into the other folder despite shared access (TS3006c-s0033). The status of the shared folder remains unresolved due to access and visibility issues.",
+      "evidence_ids": [
+        "TS3006c-s0017",
+        "TS3006c-s0022",
+        "TS3006c-s0033"
+      ],
+      "missing_information": "No confirmation that other presentations were successfully shared or accessible.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "4dcd741159f2b085e910e3c7116c53d00811ed045b4b08e9783ceb0207e495eb",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "C reported putting the files in the shared folder; D initially saw only their own presentation."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct 4:2:1 in named order.",
+      "answer": "Marketing assigned a priority ratio where fancy look-and-feel was twice as important as technological innovation, which was twice as important as ease of use. This results in a ratio of 4:2:1 for fancy look-and-feel : innovation : ease of use.",
+      "evidence_ids": [
+        "TS3006c-s0088",
+        "TS3006c-s0091",
+        "TS3006c-s0092",
+        "TS3006c-s0093",
+        "TS3006c-s0094",
+        "TS3006c-s0095"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "147d1d2462fed54de668ec5e1cc1ec27d242501c6d3ae95c14cbb83fa54858cd",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Fancy look-and-feel : innovation : ease of use = 4:2:1, or an equivalent statement of both twice-as-important relations."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older numeric relation is absent.",
+      "answer": "The meeting material does not specify the priority ratio given by marketing for fancy look-and-feel, innovation, and ease of use. No explicit values or rankings were provided.",
+      "evidence_ids": [],
+      "missing_information": "Marketing's priority ratio for fancy look-and-feel, innovation, and ease of use",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "fa9711a475b115b79fd616345c64764ecb4f555513035155a7bb5e71958e038a",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Fancy look-and-feel : innovation : ease of use = 4:2:1, or an equivalent statement of both twice-as-important relations."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct ratio.",
+      "answer": "Marketing gave a priority ratio of 4:2:1 for fancy look-and-feel, innovation, and ease of use, respectively.",
+      "evidence_ids": [
+        "TS3006c-s0088",
+        "TS3006c-s0090",
+        "TS3006c-s0091",
+        "TS3006c-s0092",
+        "TS3006c-s0093",
+        "TS3006c-s0094"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "4f24b53e044a38de484e8e801a8433ae0005549936ebd11cf0a1bd2cbe76f264",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Fancy look-and-feel : innovation : ease of use = 4:2:1, or an equivalent statement of both twice-as-important relations."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-S10-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "no_answer",
+      "reason": "The ratio was not retained/derived in the notes.",
+      "answer": "The meeting transcript does not specify the priority ratio marketing assigned to fancy look-and-feel, innovation, and ease of use. No explicit ranking or weighting of these factors was discussed or agreed upon.",
+      "evidence_ids": [],
+      "missing_information": "Priority ratio for fancy look-and-feel, innovation, and ease of use",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "f8ef3ab752fd6364d3cc341161ec5503b93160884142e043a994cb7a9d02aac9",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Fancy look-and-feel : innovation : ease of use = 4:2:1, or an equivalent statement of both twice-as-important relations."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Mapping proposal and lack of readiness confirmation are correct, but not-yet-finalized is stronger than the source establishes.",
+      "answer": "Speech recognition is planned for implementation but not yet finalized. B noted uncertainty about how to integrate it into the remote control, and A suggested matching speech commands with existing functions, implying the interface design is still pending. No confirmation of readiness is given.",
+      "evidence_ids": [
+        "TS3006c-s0248",
+        "TS3006c-s0254",
+        "TS3006c-s0257"
+      ],
+      "missing_information": "No agreement on final implementation details or completion status.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "69b2f138ce2c3fe1b605429f883b97f4c03e4bbd9bf0c169d5532e9f4427aa11",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "They discussed mapping speech commands to existing functions; completion/readiness is not reported."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "No implementation information in this context.",
+      "answer": "The meeting transcript does not contain any information about the status of speech recognition implementation. No discussion of speech recognition, its development, testing, or readiness for the interface is present in the provided material.",
+      "evidence_ids": [],
+      "missing_information": "No information on speech recognition implementation status is available in the meeting transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "f435ede9bc2f03763a5da8a78770ed66d53b4224e8bdd563c00b5bee17b58842",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "They discussed mapping speech commands to existing functions; completion/readiness is not reported."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Adds a firm not-finalized status and future implementation details.",
+      "answer": "Speech recognition is planned for implementation but not yet finalized. It will be matched with existing functions and integrated into the interface, though specific design details for the visual representation remain unclear. No completion status is confirmed.",
+      "evidence_ids": [
+        "TS3006c-s0248",
+        "TS3006c-s0254",
+        "TS3006c-s0257",
+        "TS3006c-s0261",
+        "TS3006c-s0267",
+        "TS3006c-s0272"
+      ],
+      "missing_information": "No confirmation of implementation readiness or completion.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "16954e74f84aeb46b2c645e87aec70a6970f25bea98dec26217aed267f3ccf7b",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "They discussed mapping speech commands to existing functions; completion/readiness is not reported."
+      ]
+    },
+    {
+      "id": "scale:TS3006c-Smiddle-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Preserves missing readiness but overstates the settled scope and who confirmed it.",
+      "answer": "Speech recognition is planned to match existing functions without requiring new design. It will be used for basic options and simple buttons, as confirmed by B. No decision was made on extending speech commands to advanced options. The implementation status is pending further clarification on scope.",
+      "evidence_ids": [
+        "TS3006c-s0254",
+        "TS3006c-s0257",
+        "TS3006c-s0259",
+        "TS3006c-s0260",
+        "TS3006c-s0261",
+        "TS3006c-s0262"
+      ],
+      "missing_information": "No confirmation on whether speech recognition is implemented or tested; no details on technical readiness or integration status.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "4f2ae3abf3f20d0d31f05c4fe68538b6a47834a92b4a43999160f3353cee7cce",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "They discussed mapping speech commands to existing functions; completion/readiness is not reported."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct phase order.",
+      "answer": "The detailed design phase begins after the functional and conceptual design phases, as the team will 'pull it all together' following those stages. No specific timeline or dependency beyond this sequence is provided.",
+      "evidence_ids": [
+        "ES2006a-s0031",
+        "ES2006a-s0032"
+      ],
+      "missing_information": "No specific start date or duration for the detailed design phase is mentioned.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "a554fd923f8ef55101cd55d62ed924c15c947121befc444c74b45a5ca856fd1c",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Detailed design follows functional and conceptual design."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "partial",
+      "reason": "Lists the phase order but also says the relative sequence is not given.",
+      "answer": "The meeting material does not specify when the detailed design phase begins relative to other phases. It only lists the detailed design phase as including product evaluation, following conceptual design and user requirements specification.",
+      "evidence_ids": [
+        "ES2006a-s0089"
+      ],
+      "missing_information": "The sequence or timing of the detailed design phase relative to other phases is not provided in the transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e283ca51563941ee0c0d57bed6c7684051a197510ed6e4aa2e06e8b0803bda80",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Detailed design follows functional and conceptual design."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Gives the correct order and then contradicts that by saying the sequence is unspecified.",
+      "answer": "The detailed design phase begins after the functional and conceptual design phases, as stated in segment ES2006a-s0032: 'We'll pull it all together.' However, the exact timing or sequence relative to the completion of the other phases is not specified in the provided material.",
+      "evidence_ids": [
+        "ES2006a-s0032"
+      ],
+      "missing_information": "The specific timing or sequence of the detailed design phase relative to the completion of functional and conceptual design phases is not provided.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e4c86cf223ca9846761d7bb20f4e759e62876c620cbf3a593b73dfd41c02bdf3",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Detailed design follows functional and conceptual design."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-S075-Q3",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "complete",
+      "reason": "Correct relative order; the note citation is resolvable although it violates the requested original-ID format.",
+      "answer": "The detailed design phase begins after the conceptual design phase, as confirmed by the agreed project phase order.",
+      "evidence_ids": [
+        "note-56"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [
+        "note-56"
+      ],
+      "answer_sha256": "bd350264ae188bb367628fafbe04ef37537ca4a890b0cfde416c389e7c0355e8",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Detailed design follows functional and conceptual design."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "incorrect",
+      "reason": "Confuses the €50 million total target with a per-unit margin.",
+      "answer": "The exact profit margin is 50 million Euros, based on a selling price of 25 Euros per unit and maximum production costs of 12.5 Euros per unit, as stated in segment ES2006a-s0220 and ES2006a-s0223.",
+      "evidence_ids": [
+        "ES2006a-s0220",
+        "ES2006a-s0223"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "5f2960261d262ffc53f97264b53eb08eab2b9f1da2ab3d962a42710a405a57b7",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "At €25 selling price and €12.50 maximum production cost, €12.50 remains per unit, 50% of selling price, before unspecified other costs."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Does not recover price and cost.",
+      "answer": "The exact profit margin targeting based on selling price and production cost was not discussed or agreed upon in the provided meeting material.",
+      "evidence_ids": [],
+      "missing_information": "Profit margin target",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "7bcb49f54c58c0cc15c0c2a68273c27c6c99fb26c58d06012e1e0c2e98c48364",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "At €25 selling price and €12.50 maximum production cost, €12.50 remains per unit, 50% of selling price, before unspecified other costs."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "incorrect",
+      "reason": "Same total-target/per-unit error.",
+      "answer": "The exact profit margin is 50 million Euros, calculated from a selling price of 25 Euros per unit and maximum production costs of 12.5 Euros per unit, as stated in segment ES2006a-s0220 and ES2006a-s0223.",
+      "evidence_ids": [
+        "ES2006a-s0220",
+        "ES2006a-s0223"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "ba97d7689605be6d236c4ac72ad8c463dfd94876cd2cb785d935070ced1fe827",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "At €25 selling price and €12.50 maximum production cost, €12.50 remains per unit, 50% of selling price, before unspecified other costs."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Recovers the cost ceiling and uncertainty, but loses selling price and the conditional per-unit calculation.",
+      "answer": "The exact profit margin cannot be determined from the provided information. While the maximum production cost is set at 12.5 Euro, the target selling price or profit margin is not specified in the transcript or notes.",
+      "evidence_ids": [
+        "ES2006a-s0222",
+        "ES2006a-s0223",
+        "ES2006a-s0224"
+      ],
+      "missing_information": "Selling price or profit margin value",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "28e247f0049fa42308d4f914e1b6e7e602b99fc2284e3826f12126298b129c4b",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "At €25 selling price and €12.50 maximum production cost, €12.50 remains per unit, 50% of selling price, before unspecified other costs."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct functions-versus-use distinction, with role-specific interface-concept support.",
+      "answer": "The functional design focuses on identifying required functions and specific capabilities of the remote control, while the conceptual design addresses how users will interact with it, including usability and overall user experience. Deliverables for functional design include function specifications; for conceptual design, deliverables include interface concepts and user interaction models. [ES2006a-s0037, ES2006a-s0039, ES2006a-s0139, ES2006a-s0140]",
+      "evidence_ids": [
+        "ES2006a-s0037",
+        "ES2006a-s0039",
+        "ES2006a-s0139",
+        "ES2006a-s0140"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "2bf042f1955b09f3649792161498f7526d97dce94b2ced5ed5429ec03f6868ee",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Functional design specifies functions/tasks; conceptual design concerns how people will use it."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older explanation is absent.",
+      "answer": "The meeting material does not specify the deliverables for the functional and conceptual design phases. No information is provided about differences in outputs or artifacts between these phases.",
+      "evidence_ids": [],
+      "missing_information": "Deliverables for functional and conceptual design phases",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "5814de5e98c86456d50e19b531aa0435c8546606c9193e57b9a298a2f150fee6",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Functional design specifies functions/tasks; conceptual design concerns how people will use it."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "partial",
+      "reason": "Blurs use with implementation and adds an unsupported both-phases component account.",
+      "answer": "The functional design focuses on identifying the required functions and specific tasks the remote control must perform, while the conceptual design addresses how these functions will be implemented, including user interaction and overall product concept. Components are identified during both phases, with initial identification in functional design and further development in conceptual design. No specific deliverables are named in the transcript.",
+      "evidence_ids": [
+        "ES2006a-s0037",
+        "ES2006a-s0038",
+        "ES2006a-s0043"
+      ],
+      "missing_information": "Specific deliverables for each phase are not defined in the provided material.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "7ed21ed985845d0db89b76f341aae8cc52b59725bd695871786b3e787594a512",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Functional design specifies functions/tasks; conceptual design concerns how people will use it."
+      ]
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Replaces the stated use distinction with a firmer component-identification account from tentative discussion.",
+      "answer": "The functional design phase focuses on initial functionality and user needs, while the conceptual design phase identifies the components and overall structure. Deliverables in functional design include user requirements and basic functionality, whereas conceptual design produces component identification and design concepts. This distinction is supported by the agreed project phase order and methodology.",
+      "evidence_ids": [
+        "ES2006a-s0041",
+        "ES2006a-s0043",
+        "ES2006a-s0026",
+        "ES2006a-s0028",
+        "ES2006a-s0031",
+        "note-56"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [
+        "note-56"
+      ],
+      "answer_sha256": "c3e4cc2d22e8ba37694d9c6c7ac372cb3c474fa617d31497a4b9a4144e31c51c",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Functional design specifies functions/tasks; conceptual design concerns how people will use it."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S05-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct keep/annotate Hubble agreement.",
+      "answer": "Yes, we decided to keep Hubble annotated. Segment EN2006b-s0046 states: 'We agreed for to keep hubble.'",
+      "evidence_ids": [
+        "EN2006b-s0046"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "6d510ba00710d7a8bafea37c7ac3f652df3a2decd102df650752b28e0ca076ac",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Yes, keep/annotate Hubble; C and B say they agreed."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S05-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Does not recover the older agreement.",
+      "answer": "No decision was made about annotating Hubble in the provided meeting material. The discussion focused on stellar classifications and emission lines, with no mention of Hubble annotation.",
+      "evidence_ids": [
+        "EN2006b-s0105",
+        "EN2006b-s0106",
+        "EN2006b-s0107",
+        "EN2006b-s0109",
+        "EN2006b-s0111",
+        "EN2006b-s0112"
+      ],
+      "missing_information": "No information about Hubble annotation was discussed or decided.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "0c740cf3fc8c4f7b4be198c98805b894f914a666bf3bfe4662bc9293901e012e",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Yes, keep/annotate Hubble; C and B say they agreed."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S05-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct agreement.",
+      "answer": "Yes, we decided to keep Hubble annotated.",
+      "evidence_ids": [
+        "EN2006b-s0046",
+        "EN2006b-s0048"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "ea72bfb01f4bc696b4ebb2c74d71e02139c47eb0eb575a689339763fe147612c",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Yes, keep/annotate Hubble; C and B say they agreed."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S05-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "complete",
+      "reason": "Correct agreement; a supplied note ID is used instead of the requested source ID.",
+      "answer": "Yes, Hubble was agreed to be kept in the list.",
+      "evidence_ids": [
+        "note-10"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [
+        "note-10"
+      ],
+      "answer_sha256": "df3a4da5d1df461036a45a8b478605af2b9208050036b3d1bf16760e85cf7c59",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Yes, keep/annotate Hubble; C and B say they agreed."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct underline-goo, exclude-and rule.",
+      "answer": "The earlier agreement was to underline the 'goo' in each case, but not the 'and'. This was confirmed by C in segment EN2006b-s0022, following discussion in segments EN2006b-s0009, EN2006b-s0011, and EN2006b-s0016.",
+      "evidence_ids": [
+        "EN2006b-s0022",
+        "EN2006b-s0009",
+        "EN2006b-s0011",
+        "EN2006b-s0016"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "717f9d9fa92ac521040829ee6df07bbc47eb8bd9e50881c01353dafff6eeae53",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Underline the HTML material in each case but not the word and."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "incorrect",
+      "reason": "Applies an unrelated emission-feature marking discussion to the HTML question.",
+      "answer": "The earlier agreement was not to mark features differently, as per segment EN2006b-s0186. However, it was later agreed to extend marking emission line features, as they are not altering the manual content, per segments EN2006b-s0191, EN2006b-s0193, and EN2006b-s0200. No prior agreement on underlining HTML goo was explicitly stated.",
+      "evidence_ids": [
+        "EN2006b-s0186",
+        "EN2006b-s0191",
+        "EN2006b-s0193",
+        "EN2006b-s0200"
+      ],
+      "missing_information": "No explicit prior agreement on underlining HTML goo was mentioned in the provided transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "f29b25fe151634bdeb6a917b7ccf9e2fe131ac86ee0db99f9369765ab4b9dfdd",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Underline the HTML material in each case but not the word and."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct earlier rule.",
+      "answer": "The earlier agreement was to underline the 'goo' in each case, but not the 'and'. This was confirmed in segment EN2006b-s0022, which states: 'I would agree that you underline the you underline the goo in each case but not the and.'",
+      "evidence_ids": [
+        "EN2006b-s0022"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "6c770a7187d1b43f1c758b8734b9c37d7de78046d64f38be69767d1239967ca1",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Underline the HTML material in each case but not the word and."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q1",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Misses the and exception and attributes C’s source statement to B.",
+      "answer": "The agreement was that 'goo' should be underlined in each instance, as noted in private note-5 and confirmed by speaker B's statement in EN2006b-s0022: 'you underline the goo in each case'.",
+      "evidence_ids": [
+        "note-5",
+        "EN2006b-s0022"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [
+        "note-5"
+      ],
+      "answer_sha256": "8590b6ac124d524b1d83ff9a666fadb033a8f0078921104a278a216ff8d53f90",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "Underline the HTML material in each case but not the word and."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct exclusion; nearby C acknowledgements support the local agreement wording.",
+      "answer": "We agreed that absorption line systems should not be included, as they were not considered appropriate for annotation in this context.",
+      "evidence_ids": [
+        "EN2006b-s0058",
+        "EN2006b-s0059",
+        "EN2006b-s0060",
+        "EN2006b-s0061",
+        "EN2006b-s0062",
+        "EN2006b-s0063"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "c97760fde13f14cb29c199d8d55d9b5a7aae6b45d991c614e085f39734f9a0e5",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B said absorption line systems should not be included."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Does not recover the older exclusion.",
+      "answer": "We agreed to annotate emission line features, as they were previously marked, even though the manual does not specify. However, we did not discuss annotating absorption line systems directly. No decision was made on absorption line systems.",
+      "evidence_ids": [
+        "EN2006b-s0183",
+        "EN2006b-s0185",
+        "EN2006b-s0196",
+        "EN2006b-s0199",
+        "EN2006b-s0200",
+        "EN2006b-s0203"
+      ],
+      "missing_information": "No discussion or decision on absorption line systems was recorded.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e6d36e367c7d7b26dc3974fa942bae41575b28ceb7515ce30dba4cc7becda8c1",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B said absorption line systems should not be included."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "Correct exclusion.",
+      "answer": "We agreed to remove 'absorption line systems' as it should not be included.",
+      "evidence_ids": [
+        "EN2006b-s0058",
+        "EN2006b-s0059",
+        "EN2006b-s0060",
+        "EN2006b-s0061",
+        "EN2006b-s0062",
+        "EN2006b-s0063"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "4044cb4fc5eefac854390e1e9faea03e268bfa947e98c050cedfca80a801bfa0",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B said absorption line systems should not be included."
+      ]
+    },
+    {
+      "id": "scale:EN2006b-S075-Q2",
+      "cohort": "frozen20",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Correct exclusion but claims a later reiteration/confirmation that the cited later feature discussion does not establish.",
+      "answer": "Absorption line systems should be removed from the list. This was agreed upon, with B stating they shouldn't be there and C confirming the agreement. The decision was reiterated later in the meeting.",
+      "evidence_ids": [
+        "note-27",
+        "note-52",
+        "EN2006b-s0058",
+        "EN2006b-s0059",
+        "EN2006b-s0135"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [
+        "note-27",
+        "note-52"
+      ],
+      "answer_sha256": "c901f9bd78c216bb97a4641ec36b2467424093b2f0465e85da0e8b4274a776d5",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B said absorption line systems should not be included."
+      ]
+    },
+    {
+      "id": "probe:ownership-report",
+      "cohort": "text_diagnostic4",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Correct report responsibility belongs to A.",
+      "answer": "A is keeping track of the decisions in the final report.",
+      "evidence_ids": [
+        "TS3006c-s0036"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "aa10ea6805b50ec8cdb20f4543874cec7cd95b0945638e19bea0eb21b8bfe310",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A says they have to record the decisions in the final report."
+      ]
+    },
+    {
+      "id": "probe:ownership-report",
+      "cohort": "text_diagnostic4",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Older responsibility statement is absent.",
+      "answer": "The meeting transcript does not specify who is responsible for tracking decisions in the final report.",
+      "evidence_ids": [],
+      "missing_information": "No information provided about who is responsible for tracking decisions in the final report.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "197c67046e098d1700a1c9646c773c66049f04078fbb997fefc325dc21a60ea0",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A says they have to record the decisions in the final report."
+      ]
+    },
+    {
+      "id": "probe:ownership-report",
+      "cohort": "text_diagnostic4",
+      "condition": "no_speakers",
+      "grade": "incorrect",
+      "reason": "Assigns A’s I statement to the current requester B.",
+      "answer": "The requester (B) is keeping track of decisions in the final report, as stated in segment TS3006c-s0036: 'You can look at the final report, 'cause I have to record everything we are deciding and such, so I'm trying to write it down between everything else.'",
+      "evidence_ids": [
+        "TS3006c-s0036"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "784d16ac52164b6e72563799d60a1b7af2bca7c74489f6a9eeb03a3b6fe87067",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A says they have to record the decisions in the final report."
+      ]
+    },
+    {
+      "id": "probe:ownership-report",
+      "cohort": "text_diagnostic4",
+      "condition": "state_plus_new",
+      "grade": "incorrect",
+      "reason": "Adds B as report owner; the cited me-too segment is spoken by D, not B.",
+      "answer": "A and B are recording decisions for the final report.",
+      "evidence_ids": [
+        "TS3006c-s0036",
+        "TS3006c-s0038"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "6c950991133c8d52cbcc1405fe083131e01e53d6cce0728a37ecd19e1d8c4488",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A says they have to record the decisions in the final report."
+      ]
+    },
+    {
+      "id": "probe:commitment-followup",
+      "cohort": "text_diagnostic4",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Gets B and the sharing channel but misses the consultation detail and contradicts itself about an assigned person.",
+      "answer": "B will figure out the rule for marking speech with laughter and share it via the wiki or email. C raised the question about distinguishing laughter interrupting speech versus speech spoken while laughing.",
+      "evidence_ids": [
+        "EN2004a-s0590",
+        "EN2004a-s0591",
+        "EN2004a-s0592",
+        "EN2004a-s0593",
+        "EN2004a-s0594",
+        "EN2004a-s0595"
+      ],
+      "missing_information": "No specific person is assigned to check the rule; B will determine and share it.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "45346b0387dc1f7fdb87ae93c8645c80b3d4e0ade590a947f54c43bf26ba9e74",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B says they will talk to Melissa and Jean.",
+        "B says they will put the result on the wiki or email it; the rule is not yet resolved."
+      ]
+    },
+    {
+      "id": "probe:commitment-followup",
+      "cohort": "text_diagnostic4",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Earlier commitment is absent.",
+      "answer": "No information is provided about who is checking how to mark speech with laughter or how they will share the rule. The meeting transcript does not mention laughter marking or related decisions.",
+      "evidence_ids": [],
+      "missing_information": "No discussion on marking speech with laughter or rule-sharing method was present in the provided transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "1d24843c1a3c666579a4650e4d823d87c67088ef248d847da7427e1271535df5",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B says they will talk to Melissa and Jean.",
+        "B says they will put the result on the wiki or email it; the rule is not yet resolved."
+      ]
+    },
+    {
+      "id": "probe:commitment-followup",
+      "cohort": "text_diagnostic4",
+      "condition": "no_speakers",
+      "grade": "incorrect",
+      "reason": "Makes Melissa/Jean the people who will share the result; B made that commitment.",
+      "answer": "Melissa and Jean will determine the rule for marking speech with laughter, and they will share it via the wiki or email.",
+      "evidence_ids": [
+        "EN2004a-s0591",
+        "EN2004a-s0603"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "9f204bac34c8e6b038e2624da044ffe714346869ec2665afb315eceb1b7f831d",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B says they will talk to Melissa and Jean.",
+        "B says they will put the result on the wiki or email it; the rule is not yet resolved."
+      ]
+    },
+    {
+      "id": "probe:commitment-followup",
+      "cohort": "text_diagnostic4",
+      "condition": "state_plus_new",
+      "grade": "complete",
+      "reason": "Correct B, consultation, and wiki-or-email follow-up.",
+      "answer": "B will consult Melissa and Jean to clarify handling of laughter during speech and share the decision via wiki or email.",
+      "evidence_ids": [
+        "EN2004a-s0591",
+        "EN2004a-s0603"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "7110a4ccae0455e36e5519bc369174a67110da6456380c9283061def231d1215",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "B says they will talk to Melissa and Jean.",
+        "B says they will put the result on the wiki or email it; the rule is not yet resolved."
+      ]
+    },
+    {
+      "id": "probe:ownership-interface",
+      "cohort": "text_diagnostic4",
+      "condition": "full",
+      "grade": "complete",
+      "reason": "Maarika is D’s spoken self-introduction, followed by interface concept and later UI-design duties.",
+      "answer": "Maarika is responsible for the interface concept. After that, she will be responsible for the user interface design in the last stage of the project.",
+      "evidence_ids": [
+        "ES2006a-s0139",
+        "ES2006a-s0140"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "675fc96314e22ffad9bd5a12c79b13ceee6bd61206ff98f0477281ba0f7e2655",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "D is responsible for the interface concept during conceptual design.",
+        "D is responsible for user-interface design in the final stage."
+      ]
+    },
+    {
+      "id": "probe:ownership-interface",
+      "cohort": "text_diagnostic4",
+      "condition": "recent60",
+      "grade": "no_answer",
+      "reason": "Earlier role statement is absent.",
+      "answer": "The meeting material does not specify who is responsible for the interface concept or the next steps for that person. No assignment or follow-up task is mentioned.",
+      "evidence_ids": [],
+      "missing_information": "Responsibility for interface concept and subsequent tasks",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "f1f1565ae539c3594481836229d2fbf86156de0b569d97833363a2389b1d4654",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "D is responsible for the interface concept during conceptual design.",
+        "D is responsible for user-interface design in the final stage."
+      ]
+    },
+    {
+      "id": "probe:ownership-interface",
+      "cohort": "text_diagnostic4",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "The actual spoken name survives this ablation, so a correct identity can still be recovered without the speaker field.",
+      "answer": "Maarika is responsible for the interface concept. After that, she will be responsible for the user interface design in the detailed design stage.",
+      "evidence_ids": [
+        "ES2006a-s0139",
+        "ES2006a-s0140"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "9823a81455fc5b5eb563894a9ab311664cf0f36585c09c245adf990e07374207",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "D is responsible for the interface concept during conceptual design.",
+        "D is responsible for user-interface design in the final stage."
+      ]
+    },
+    {
+      "id": "probe:ownership-interface",
+      "cohort": "text_diagnostic4",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "Gets D but substitutes the next project phase for that person’s next responsibility.",
+      "answer": "D is responsible for the interface concept. After the conceptual design phase, the detailed design phase follows.",
+      "evidence_ids": [
+        "ES2006a-s0114",
+        "ES2006a-s0031",
+        "ES2006a-s0026",
+        "ES2006a-s0041",
+        "ES2006a-s0043",
+        "ES2006a-s0028"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "33ca1c93b1415841ff1d2ab65277e79824dbc65d9f4ba3819d964053f513c4b1",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "D is responsible for the interface concept during conceptual design.",
+        "D is responsible for user-interface design in the final stage."
+      ]
+    },
+    {
+      "id": "probe:revision-curve",
+      "cohort": "text_diagnostic4",
+      "condition": "full",
+      "grade": "partial",
+      "reason": "Latest double-curved preference is recovered, but a question about single curvature is narrated as a confirmation.",
+      "answer": "The team decided to keep the double-curved case. C stated, 'I would go for the double curved,' and A agreed, saying, 'Yeah I'd agree.' D confirmed, 'Yeah so we keep it singly curved then?' to which A responded, 'Yeah that would be an option,' but C reiterated, 'I would go for the double curved.'",
+      "evidence_ids": [
+        "TS3006c-s0492",
+        "TS3006c-s0493",
+        "TS3006c-s0483",
+        "TS3006c-s0484",
+        "TS3006c-s0487",
+        "TS3006c-s0488"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "1d49ac3a9a371a4cbb81071c871066b574ef7b8ba95e3336294e4fdbec6ab77a",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A proposes a single-curved compromise.",
+        "C subsequently prefers double curved and A agrees; single curved is not the latest endorsed preference.",
+        "Do not turn this preference into a completed engineering design."
+      ]
+    },
+    {
+      "id": "probe:revision-curve",
+      "cohort": "text_diagnostic4",
+      "condition": "recent60",
+      "grade": "partial",
+      "reason": "Only the latest local shape discussion is available; it cannot reconstruct the earlier compromise and return.",
+      "answer": "The double-curved case was proposed and discussed, with D suggesting a double-curved shape to position the screen toward the user for better visibility. No decision was made to change this proposal. The idea was supported by A and C, but no final agreement or rejection was stated.",
+      "evidence_ids": [
+        "TS3006c-s0530",
+        "TS3006c-s0524",
+        "TS3006c-s0527",
+        "TS3006c-s0513",
+        "TS3006c-s0515",
+        "TS3006c-s0516"
+      ],
+      "missing_information": "No explicit agreement or change to the double-curved case was confirmed in the transcript.",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e28749a4352007c39e8675fbf2ed8e59dc30250ef0c80dc5811d470c53e061a3",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A proposes a single-curved compromise.",
+        "C subsequently prefers double curved and A agrees; single curved is not the latest endorsed preference.",
+        "Do not turn this preference into a completed engineering design."
+      ]
+    },
+    {
+      "id": "probe:revision-curve",
+      "cohort": "text_diagnostic4",
+      "condition": "no_speakers",
+      "grade": "complete",
+      "reason": "The later preference and agreement are recovered; the agreement’s second citation is omitted.",
+      "answer": "The team decided to keep the double-curved case. This was confirmed in segment TS3006c-s0492, where one speaker stated, 'I would go for the double curved,' and another agreed, 'Yeah I'd agree.'",
+      "evidence_ids": [
+        "TS3006c-s0492"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "55a08dd25a3ce0d0c9f9a7a503765df99c28600db324fc9633ec39809bb93bca",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A proposes a single-curved compromise.",
+        "C subsequently prefers double curved and A agrees; single curved is not the latest endorsed preference.",
+        "Do not turn this preference into a completed engineering design."
+      ]
+    },
+    {
+      "id": "probe:revision-curve",
+      "cohort": "text_diagnostic4",
+      "condition": "state_plus_new",
+      "grade": "partial",
+      "reason": "The answer happens to end at double curved, but supports current status with older pre-compromise statements.",
+      "answer": "Yes, the double-curved case remains the agreed-upon design. This was confirmed by speaker A in segment TS3006c-s0315 and reiterated in TS3006c-s0336.",
+      "evidence_ids": [
+        "TS3006c-s0315",
+        "TS3006c-s0336"
+      ],
+      "missing_information": "",
+      "outside_supplied_context_ids": [],
+      "note_ids_instead_of_original_ids": [],
+      "answer_sha256": "e03f1004c2582337a49058373d3b0f4e28688da3eeeecd222392ff2f622e0442",
+      "reviewer": "Codex",
+      "source_rubric": [
+        "A proposes a single-curved compromise.",
+        "C subsequently prefers double curved and A agrees; single curved is not the latest endorsed preference.",
+        "Do not turn this preference into a completed engineering design."
+      ]
+    }
+  ],
+  "limits": [
+    "Small selected set, one temperature-zero run and Codex adjudication; no population accuracy claim.",
+    "Questions about missing information can be answered cautiously without finding an older fact; do not count that as evidence of useful memory.",
+    "State-plus-new contains a different recent span from recent60; it is a storage diagnostic, not a matched test of preparation timing.",
+    "Source IDs are checked mechanically, but valid IDs and exact quotes do not certify claim meaning.",
+    "The four diagnostic probes are separate from the original twenty and from the 105 audio-bank questions."
+  ]
+}

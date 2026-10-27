@@ -1,0 +1,1490 @@
+{
+  "reviewer": "Codex",
+  "scope": "Operational source-checked pilot, not an independently human-rated benchmark",
+  "frozen_questions": 20,
+  "text_diagnostic_probes": 4,
+  "meetings": 6,
+  "ordinary_discussion_controls": 6,
+  "source_supported_questions": 20,
+  "source_provenance_checks": 24,
+  "split": {
+    "eval_meetings": [
+      "EN2004a",
+      "EN2006b",
+      "ES2003c",
+      "ES2006a",
+      "TS3004d",
+      "TS3006c"
+    ],
+    "development_meetings": [
+      "EN2002b",
+      "EN2003a",
+      "ES2002b",
+      "IS1000b",
+      "TS3003b"
+    ],
+    "meeting_overlap": [],
+    "participant_overlap": [],
+    "evaluation_people": 24,
+    "development_people": 19
+  },
+  "audio_checks_reused": {
+    "new_GPU_jobs": 0,
+    "clips": 20,
+    "Parakeet_Assistant_first": 20,
+    "normalized_question_matches": 16,
+    "orthographic_question_matches": 18,
+    "Whisper_Assistant_first": 19,
+    "minimum_ECAPA_cosine": 0.45450833439826965,
+    "conditioning_is_earlier_for_all": true
+  },
+  "limits": [
+    "Codex reviewed source support, motivation and naturalness; independent human listening ratings remain optional and uncollected.",
+    "The original twenty emphasize rules/constraints. Four separate text probes add explicit responsibility, a commitment and a revised proposal; they are not added to the 105-question audio-bank count.",
+    "Neither citation count nor recent-reader failure proves multi-hop reasoning."
+  ],
+  "scoring": {
+    "full": "All required answer facts are present and no unsupported material changes the answer.",
+    "partial": "Some required facts are missing, an attribution/qualification is incomplete, or extra ungrounded detail materially weakens an otherwise useful answer.",
+    "incorrect": "The main fact, owner, decision state, number or answerability is wrong.",
+    "unsupported": "Citation correctness is checked separately from answer correctness; a real segment ID does not make a claim supported."
+  },
+  "questions": [
+    {
+      "id": "scale:EN2004a-S05-Q3",
+      "cohort": "frozen20",
+      "meeting": "EN2004a",
+      "requester": "A",
+      "at": 561.16,
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "category": "Recall rule",
+      "required_facts": [
+        "Choose one interpretation when both are equally plausible."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not claim every ambiguous word must be marked uncertain."
+      ],
+      "motivation_review": "Delayed reminder of a rule the requester raised; plausible, but weaker motivation than asking about another speaker’s task.",
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0094",
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+        },
+        {
+          "id": "EN2004a-s0095",
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:EN2004a-S075-Q2",
+      "cohort": "frozen20",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "at": 640.16,
+      "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+      "category": "Recall rule",
+      "required_facts": [
+        "Do not capitalize the next segment when it clearly continues the same sentence."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not invent a universal default for an ambiguous pause."
+      ],
+      "motivation_review": "The requester had raised the continuation problem.",
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0145",
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise."
+        },
+        {
+          "id": "EN2004a-s0154",
+          "speaker": "A",
+          "start": 516.25,
+          "end": 518.65,
+          "text": "As in like it's"
+        },
+        {
+          "id": "EN2004a-s0130",
+          "speaker": "D",
+          "start": 472.16,
+          "end": 484.53,
+          "text": "You know, when you get like um someone's talking and there's they sort of pause in the middle of a sentence that's long enough for it to put a break in, but they're actually sort of carrying on the sentence, do you have to capitalise each time you transcribe"
+        },
+        {
+          "id": "EN2004a-s0139",
+          "speaker": "B",
+          "start": 489.5,
+          "end": 495.52,
+          "text": "Um but no, it it can continue into the next segment and that's perfectly fine."
+        },
+        {
+          "id": "EN2004a-s0147",
+          "speaker": "C",
+          "start": 510.21,
+          "end": 510.92,
+          "text": "Otherwise you do."
+        },
+        {
+          "id": "EN2004a-s0149",
+          "speaker": "A",
+          "start": 510.38,
+          "end": 514.87,
+          "text": "And you only use the hyphen I think when the sentence is definitely not continuing anywhere."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:EN2004a-Smiddle-Q2",
+      "cohort": "frozen20",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "at": 1697.61,
+      "question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
+      "category": "Distinguish cases",
+      "required_facts": [
+        "A phrase-level restart also counts; it need not restart the entire sentence."
+      ],
+      "unsupported_claims_to_avoid": [
+        "A pause alone is not a restart."
+      ],
+      "motivation_review": "Fits the requester’s earlier question about continuation and hyphens.",
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0373",
+          "speaker": "B",
+          "start": 1134.6,
+          "end": 1139.84,
+          "text": "So it's not necessarily restarting the sentence, but just a restart of any type."
+        },
+        {
+          "id": "EN2004a-s0374",
+          "speaker": "B",
+          "start": 1139.84,
+          "end": 1140.62,
+          "text": "A phrase."
+        },
+        {
+          "id": "EN2004a-s0130",
+          "speaker": "D",
+          "start": 472.16,
+          "end": 484.53,
+          "text": "You know, when you get like um someone's talking and there's they sort of pause in the middle of a sentence that's long enough for it to put a break in, but they're actually sort of carrying on the sentence, do you have to capitalise each time you transcribe"
+        },
+        {
+          "id": "EN2004a-s0140",
+          "speaker": "D",
+          "start": 494.37,
+          "end": 496.14,
+          "text": "So it's put the hyphen and then"
+        },
+        {
+          "id": "EN2004a-s0139",
+          "speaker": "B",
+          "start": 489.5,
+          "end": 495.52,
+          "text": "Um but no, it it can continue into the next segment and that's perfectly fine."
+        },
+        {
+          "id": "EN2004a-s0145",
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise."
+        },
+        {
+          "id": "EN2004a-s0377",
+          "speaker": "C",
+          "start": 1137.88,
+          "end": 1149.92,
+          "text": "Yeah, I think of it in terms of, you know, not even maybe to well, if I th if you think of it in terms of a syntactic tree, it n doesn't have to go back all the way to the S_ node, but it just m it might go back to the last node or"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:ES2003c-S075-Q3",
+      "cohort": "frozen20",
+      "meeting": "ES2003c",
+      "requester": "B",
+      "at": 453.53,
+      "question": "Assistant, what was the concern about using a kinetic battery for this remote?",
+      "category": "Constraint / uncertainty",
+      "required_facts": [
+        "Concern that ordinary remote movement may not provide enough power."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not describe a tested failure or a final ban on kinetic power."
+      ],
+      "motivation_review": "The requester previously raised the power concern. The watch comparison is useful explanation, not a mandatory extra answer.",
+      "source_evidence": [
+        {
+          "id": "ES2003c-s0057",
+          "speaker": "B",
+          "start": 227.36,
+          "end": 231.53,
+          "text": "Is a kinetic one going to be able to supply enough power?"
+        },
+        {
+          "id": "ES2003c-s0060",
+          "speaker": "A",
+          "start": 232.63,
+          "end": 234.77,
+          "text": "There's also a watch moves around a great deal more."
+        },
+        {
+          "id": "ES2003c-s0055",
+          "speaker": "B",
+          "start": 219.48,
+          "end": 227.36,
+          "text": "Um the bat uh the battery for a a watch wouldn't require a lot of power, would be my one query."
+        },
+        {
+          "id": "ES2003c-s0063",
+          "speaker": "D",
+          "start": 236.02,
+          "end": 238.74,
+          "text": "Yeah, I don't think it would."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:ES2003c-S10-Q1",
+      "cohort": "frozen20",
+      "meeting": "ES2003c",
+      "requester": "C",
+      "at": 605.14,
+      "question": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
+      "category": "Missing information",
+      "required_facts": [
+        "No actual price difference between the chips is established."
+      ],
+      "unsupported_claims_to_avoid": [
+        "More powerful does not establish a specific or measured price increase."
+      ],
+      "motivation_review": "A cost clarification is plausible while the team is discussing feasibility.",
+      "source_evidence": [
+        {
+          "id": "ES2003c-s0140",
+          "speaker": "B",
+          "start": 482.35,
+          "end": 485.43,
+          "text": "Well I think compared to say just pressing buttons."
+        },
+        {
+          "id": "ES2003c-s0139",
+          "speaker": "D",
+          "start": 483.01,
+          "end": 483.46,
+          "text": "Yep."
+        },
+        {
+          "id": "ES2003c-s0153",
+          "speaker": "C",
+          "start": 516.16,
+          "end": 518.45,
+          "text": "twelve Euros, not even twelve Pounds."
+        },
+        {
+          "id": "ES2003c-s0154",
+          "speaker": "C",
+          "start": 518.45,
+          "end": 521.42,
+          "text": "Twelve Euros, what's that, like eight pounds or something like that, nine Pounds?"
+        },
+        {
+          "id": "ES2003c-s0135",
+          "speaker": "B",
+          "start": 468.42,
+          "end": 478.46,
+          "text": "Um, do you have any idea so far, like when we're saying that we'd need an advanced chip for an L_C_D_, does that in shoot the cost up by a drastic amount?"
+        },
+        {
+          "id": "ES2003c-s0142",
+          "speaker": "B",
+          "start": 487.25,
+          "end": 497.65,
+          "text": "if you press a button that sends a certain transmission through the infra-red, whereas I think if we're controlling the L_C_D_ we definitely require a much more powerful chip."
+        },
+        {
+          "id": "ES2003c-s0146",
+          "speaker": "B",
+          "start": 497.65,
+          "end": 502.83,
+          "text": "Just compared to the chip you would use for pushing buttons I think is the the point being made."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:ES2003c-Slater-Q2",
+      "cohort": "frozen20",
+      "meeting": "ES2003c",
+      "requester": "B",
+      "at": 1798.74,
+      "question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
+      "category": "Design proposal",
+      "required_facts": [
+        "The grip was proposed for the battery and described as the bulkiest part."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not call the internal layout finalized or invent balance calculations."
+      ],
+      "motivation_review": "Related to the requester’s concern about the articulated design.",
+      "source_evidence": [
+        {
+          "id": "ES2003c-s0223",
+          "speaker": "B",
+          "start": 838.75,
+          "end": 842.45,
+          "text": "That would suggest the double curved design's probably going to be most appropriate, then."
+        },
+        {
+          "id": "ES2003c-s0250",
+          "speaker": "A",
+          "start": 975.84,
+          "end": 979.59,
+          "text": "Probably where you'd want to have the battery as well."
+        },
+        {
+          "id": "ES2003c-s0371",
+          "speaker": "B",
+          "start": 1482.78,
+          "end": 1485.53,
+          "text": "Looks like we going for a double curved design."
+        },
+        {
+          "id": "ES2003c-s0244",
+          "speaker": "A",
+          "start": 950.71,
+          "end": 959.04,
+          "text": "You then have a grip section that can be more or less the same irrespective of handedness."
+        },
+        {
+          "id": "ES2003c-s0248",
+          "speaker": "A",
+          "start": 973.41,
+          "end": 975.84,
+          "text": "This would be the actual grip."
+        },
+        {
+          "id": "ES2003c-s0251",
+          "speaker": "A",
+          "start": 979.59,
+          "end": 982.31,
+          "text": "That would be probably the bulkiest part."
+        },
+        {
+          "id": "ES2003c-s0226",
+          "speaker": "A",
+          "start": 844.29,
+          "end": 856.37,
+          "text": "Um, basi basically what I basically what the what be having um, I would say, the the whole thing articulated at two points, so that"
+        },
+        {
+          "id": "ES2003c-s0227",
+          "speaker": "A",
+          "start": 856.37,
+          "end": 866.04,
+          "text": "if you if you're handing it from a lef uh left or right handed user you can adjust it so that the um the L_C_ the L_C_D_ and the uh"
+        },
+        {
+          "id": "ES2003c-s0228",
+          "speaker": "A",
+          "start": 869.01,
+          "end": 871.0,
+          "text": "The joystick would be in the right place."
+        },
+        {
+          "id": "ES2003c-s0229",
+          "speaker": "B",
+          "start": 872.41,
+          "end": 872.99,
+          "text": "Mm."
+        },
+        {
+          "id": "ES2003c-s0230",
+          "speaker": "A",
+          "start": 872.25,
+          "end": 884.67,
+          "text": "And also this is a rather nicer de uh design gimmick that the the um you know the whole thing you know it should have sort of organic feel to it that it should be, you know, soft"
+        },
+        {
+          "id": "ES2003c-s0231",
+          "speaker": "A",
+          "start": 884.67,
+          "end": 889.21,
+          "text": "to touch and can be moved around all nice."
+        },
+        {
+          "id": "ES2003c-s0232",
+          "speaker": "B",
+          "start": 889.65,
+          "end": 890.17,
+          "text": "Okay."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3004d-slide-reasons",
+      "cohort": "frozen20",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "at": 304.46,
+      "question": "Assistant, why were we leaning toward a slide-open design?",
+      "category": "Rationale",
+      "required_facts": [
+        "Give at least two of usability, possible strength, and internal room."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Strength was a suggestion, not a measured result."
+      ],
+      "motivation_review": "The requester proposed the mechanism earlier; a delayed reminder is plausible.",
+      "source_evidence": [
+        {
+          "id": "TS3004d-s0030",
+          "speaker": "A",
+          "start": 104.35,
+          "end": 107.88,
+          "text": "Slide open is uh quite usable for remote controls."
+        },
+        {
+          "id": "TS3004d-s0033",
+          "speaker": "B",
+          "start": 111.62,
+          "end": 113.83,
+          "text": "It's may maybe uh a bit stronger as well."
+        },
+        {
+          "id": "TS3004d-s0026",
+          "speaker": "C",
+          "start": 97.32,
+          "end": 101.7,
+          "text": "Yeah, and Or are we making a slide open, like underneath?"
+        },
+        {
+          "id": "TS3004d-s0029",
+          "speaker": "C",
+          "start": 105.4,
+          "end": 106.5,
+          "text": "It's probably better."
+        },
+        {
+          "id": "TS3004d-s0037",
+          "speaker": "B",
+          "start": 115.99,
+          "end": 119.59,
+          "text": "Okay, so when you have a lot of room inside."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3004d-S075-Q1",
+      "cohort": "frozen20",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "at": 445.92,
+      "question": "Assistant, what's the latest on the slide-open mechanism design?",
+      "category": "Unfinished work",
+      "required_facts": [
+        "The slide pad was not yet designed; required button count/types were still unknown."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not describe a finished mechanism."
+      ],
+      "motivation_review": "Fits the industrial designer’s current task.",
+      "source_evidence": [
+        {
+          "id": "TS3004d-s0109",
+          "speaker": "B",
+          "start": 279.87,
+          "end": 283.91,
+          "text": "We also don't know how many buttons are required, or what kind of buttons."
+        },
+        {
+          "id": "TS3004d-s0108",
+          "speaker": "C",
+          "start": 276.24,
+          "end": 280.4,
+          "text": "Well we haven't had time to design that, the slide pad."
+        },
+        {
+          "id": "TS3004d-s0026",
+          "speaker": "C",
+          "start": 97.32,
+          "end": 101.7,
+          "text": "Yeah, and Or are we making a slide open, like underneath?"
+        },
+        {
+          "id": "TS3004d-s0027",
+          "speaker": "C",
+          "start": 101.7,
+          "end": 103.6,
+          "text": "Or fold open?"
+        },
+        {
+          "id": "TS3004d-s0030",
+          "speaker": "A",
+          "start": 104.35,
+          "end": 107.88,
+          "text": "Slide open is uh quite usable for remote controls."
+        },
+        {
+          "id": "TS3004d-s0031",
+          "speaker": "C",
+          "start": 108.24,
+          "end": 112.83,
+          "text": "Yeah, s Like underneath uh you can slide it open and you other functions."
+        },
+        {
+          "id": "TS3004d-s0111",
+          "speaker": "B",
+          "start": 285.47,
+          "end": 287.81,
+          "text": "You have a lot of room if you can slide it open."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3004d-Smiddle-Q3",
+      "cohort": "frozen20",
+      "meeting": "TS3004d",
+      "requester": "B",
+      "at": 1370.57,
+      "question": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
+      "category": "Check for a change",
+      "required_facts": [
+        "The earlier specified location was the left side, with no stated relocation before this request."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not treat absence of a relocation as proof that the final product was built that way."
+      ],
+      "motivation_review": "The requester originally described the location; this is a delayed self-reminder.",
+      "source_evidence": [
+        {
+          "id": "TS3004d-s0124",
+          "speaker": "B",
+          "start": 330.3,
+          "end": 332.92,
+          "text": "Uh scrollwheel is on the left side."
+        },
+        {
+          "id": "TS3004d-s0125",
+          "speaker": "B",
+          "start": 332.92,
+          "end": 337.89,
+          "text": "It's basically the be standard place for scrollwheel, as far as I know."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q1",
+      "cohort": "frozen20",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "at": 2189.66,
+      "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+      "category": "Latest supported decision",
+      "required_facts": [
+        "Lighting comes on when the panel opens and lights the interior, rather than just individual buttons."
+      ],
+      "unsupported_claims_to_avoid": [
+        "No single final blue/green color is fixed."
+      ],
+      "motivation_review": "The requester had asked about panel lighting.",
+      "source_evidence": [
+        {
+          "id": "TS3004d-s0525",
+          "speaker": "D",
+          "start": 1116.05,
+          "end": 1118.86,
+          "text": "Then we do it."
+        },
+        {
+          "id": "TS3004d-s0529",
+          "speaker": "B",
+          "start": 1123.4,
+          "end": 1125.94,
+          "text": "Not just not re on the buttons or something."
+        },
+        {
+          "id": "TS3004d-s0502",
+          "speaker": "C",
+          "start": 1083.3,
+          "end": 1090.19,
+          "text": "Are w are we changing uh Or are they there uh backlights on the slide panel too?"
+        },
+        {
+          "id": "TS3004d-s0519",
+          "speaker": "D",
+          "start": 1104.96,
+          "end": 1108.76,
+          "text": "If you slide it open, it lights up."
+        },
+        {
+          "id": "TS3004d-s0521",
+          "speaker": "D",
+          "start": 1108.76,
+          "end": 1113.08,
+          "text": "That's that's really fancy, but I don't know if it's reachable."
+        },
+        {
+          "id": "TS3004d-s0522",
+          "speaker": "B",
+          "start": 1113.47,
+          "end": 1114.45,
+          "text": "Of course it's reachable."
+        },
+        {
+          "id": "TS3004d-s0536",
+          "speaker": "C",
+          "start": 1131.62,
+          "end": 1133.29,
+          "text": "Yeah, just backlight."
+        },
+        {
+          "id": "TS3004d-s0526",
+          "speaker": "B",
+          "start": 1117.68,
+          "end": 1121.28,
+          "text": "Okay, maybe just some light uh to to light it all up."
+        },
+        {
+          "id": "TS3004d-s0527",
+          "speaker": "B",
+          "start": 1121.28,
+          "end": 1123.4,
+          "text": "So you can see what's really there."
+        },
+        {
+          "id": "TS3004d-s0528",
+          "speaker": "A",
+          "start": 1125.22,
+          "end": 1125.75,
+          "text": "No."
+        },
+        {
+          "id": "TS3004d-s0530",
+          "speaker": "A",
+          "start": 1125.75,
+          "end": 1126.13,
+          "text": "Yeah."
+        },
+        {
+          "id": "TS3004d-s0531",
+          "speaker": "B",
+          "start": 1125.94,
+          "end": 1128.38,
+          "text": "Just a green light or some blue light."
+        },
+        {
+          "id": "TS3004d-s0532",
+          "speaker": "B",
+          "start": 1129.64,
+          "end": 1130.34,
+          "text": "To light it all up."
+        },
+        {
+          "id": "TS3004d-s0533",
+          "speaker": "D",
+          "start": 1129.65,
+          "end": 1130.93,
+          "text": "Yeah, but"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q2",
+      "cohort": "frozen20",
+      "meeting": "TS3004d",
+      "requester": "D",
+      "at": 2189.66,
+      "question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
+      "category": "Decision and rationale",
+      "required_facts": [
+        "The score was one; lighting detail or selectable light/color was the stated reason."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not invent whether one is best/worst without the scoring scale."
+      ],
+      "motivation_review": "The requester led this evaluation; a delayed recap is plausible.",
+      "source_evidence": [
+        {
+          "id": "TS3004d-s0558",
+          "speaker": "D",
+          "start": 1159.44,
+          "end": 1160.16,
+          "text": "I think it's one."
+        },
+        {
+          "id": "TS3004d-s0554",
+          "speaker": "B",
+          "start": 1158.17,
+          "end": 1158.38,
+          "text": "Yeah."
+        },
+        {
+          "id": "TS3004d-s0494",
+          "speaker": "D",
+          "start": 1069.93,
+          "end": 1071.88,
+          "text": "The fancy look-and-feel."
+        },
+        {
+          "id": "TS3004d-s0548",
+          "speaker": "D",
+          "start": 1148.15,
+          "end": 1151.0,
+          "text": "So I I think it's very fancy."
+        },
+        {
+          "id": "TS3004d-s0549",
+          "speaker": "A",
+          "start": 1150.62,
+          "end": 1151.61,
+          "text": "Yeah, that's how I think."
+        },
+        {
+          "id": "TS3004d-s0550",
+          "speaker": "D",
+          "start": 1151.0,
+          "end": 1152.0,
+          "text": "So I'll give it a"
+        },
+        {
+          "id": "TS3004d-s0551",
+          "speaker": "B",
+          "start": 1151.17,
+          "end": 1154.69,
+          "text": "Yeah, w we've done a a lot of detail in light, so"
+        },
+        {
+          "id": "TS3004d-s0552",
+          "speaker": "A",
+          "start": 1155.9,
+          "end": 1156.04,
+          "text": "Ye"
+        },
+        {
+          "id": "TS3004d-s0553",
+          "speaker": "D",
+          "start": 1155.48,
+          "end": 1157.63,
+          "text": "Yeah, and you can uh also choose your light, so"
+        },
+        {
+          "id": "TS3004d-s0555",
+          "speaker": "A",
+          "start": 1157.8,
+          "end": 1158.91,
+          "text": "Yeah, this It is a one."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3006c-S05-Q3",
+      "cohort": "frozen20",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "at": 309.03,
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "category": "Attribution / status",
+      "required_facts": [
+        "C reported putting the files in the shared folder; D initially saw only their own presentation."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not infer a general outage or failed upload."
+      ],
+      "motivation_review": "Directly addresses the requester’s difficulty finding the files.",
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0017",
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so."
+        },
+        {
+          "id": "TS3006c-s0022",
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah."
+        },
+        {
+          "id": "TS3006c-s0015",
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations?"
+        },
+        {
+          "id": "TS3006c-s0018",
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design."
+        },
+        {
+          "id": "TS3006c-s0024",
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3006c-S10-Q1",
+      "cohort": "frozen20",
+      "meeting": "TS3006c",
+      "requester": "C",
+      "at": 606.19,
+      "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+      "category": "Combine numeric relations",
+      "required_facts": [
+        "Fancy look-and-feel : innovation : ease of use = 4:2:1, or an equivalent statement of both twice-as-important relations."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not reorder the named priorities."
+      ],
+      "motivation_review": "Relevant to the requester’s components-design choices.",
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0088",
+          "speaker": "D",
+          "start": 318.48,
+          "end": 327.32,
+          "text": "Well the first aspect uh was twice as important as the second aspect,w which was twice as important as the third aspect."
+        },
+        {
+          "id": "TS3006c-s0137",
+          "speaker": "C",
+          "start": 404.95,
+          "end": 408.83,
+          "text": "So I'm dealing with the components design."
+        },
+        {
+          "id": "TS3006c-s0080",
+          "speaker": "D",
+          "start": 281.65,
+          "end": 287.26,
+          "text": "Um well fancy stands for an original look-and-feel of the case and the interface."
+        },
+        {
+          "id": "TS3006c-s0081",
+          "speaker": "D",
+          "start": 287.74,
+          "end": 295.76,
+          "text": "And the second most important aspect is that a remote control should be technological uh innovative."
+        },
+        {
+          "id": "TS3006c-s0086",
+          "speaker": "D",
+          "start": 309.16,
+          "end": 315.37,
+          "text": "And the third development um is that the remote control should be easy to use."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:TS3006c-Smiddle-Q2",
+      "cohort": "frozen20",
+      "meeting": "TS3006c",
+      "requester": "B",
+      "at": 1300.07,
+      "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "category": "Missing completion evidence",
+      "required_facts": [
+        "They discussed mapping speech commands to existing functions; completion/readiness is not reported."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not turn an absent completion report into proof that no implementation exists."
+      ],
+      "motivation_review": "A reasonable follow-up to the interface designer’s stated uncertainty.",
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0254",
+          "speaker": "A",
+          "start": 727.6,
+          "end": 735.72,
+          "text": "I think you can just uh match the speech commands with the functions that are already present."
+        },
+        {
+          "id": "TS3006c-s0257",
+          "speaker": "A",
+          "start": 735.72,
+          "end": 739.15,
+          "text": "So I don't think you have to design anything else for that."
+        },
+        {
+          "id": "TS3006c-s0248",
+          "speaker": "B",
+          "start": 709.54,
+          "end": 718.66,
+          "text": "Yeah um yeah that's one thing uh which I'm not sure uh of how to implement it uh into the remote control."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:ES2006a-S075-Q3",
+      "cohort": "frozen20",
+      "meeting": "ES2006a",
+      "requester": "C",
+      "at": 452.23,
+      "question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+      "category": "Sequence",
+      "required_facts": [
+        "Detailed design follows functional and conceptual design."
+      ],
+      "unsupported_claims_to_avoid": [
+        "No calendar start date is established."
+      ],
+      "motivation_review": "The requester announced the phases earlier; accept as a delayed reminder, with weaker requester motivation.",
+      "source_evidence": [
+        {
+          "id": "ES2006a-s0032",
+          "speaker": "C",
+          "start": 186.88,
+          "end": 188.11,
+          "text": "We'll pull it all together."
+        },
+        {
+          "id": "ES2006a-s0031",
+          "speaker": "C",
+          "start": 181.63,
+          "end": 186.88,
+          "text": "Um and then the detailed design will come after that."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q1",
+      "cohort": "frozen20",
+      "meeting": "ES2006a",
+      "requester": "D",
+      "at": 1033.85,
+      "question": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
+      "category": "Conditional calculation",
+      "required_facts": [
+        "At €25 selling price and €12.50 maximum production cost, €12.50 remains per unit, 50% of selling price, before unspecified other costs."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not claim an exact net margin, or use the €50 million total target as a per-unit margin."
+      ],
+      "motivation_review": "A natural design-budget clarification, but its word exact requires a qualified answer.",
+      "source_evidence": [
+        {
+          "id": "ES2006a-s0220",
+          "speaker": "C",
+          "start": 944.61,
+          "end": 949.95,
+          "text": "Um and with that we're aiming for a profit of fifty million Euros."
+        },
+        {
+          "id": "ES2006a-s0223",
+          "speaker": "C",
+          "start": 971.3,
+          "end": 972.63,
+          "text": "target."
+        },
+        {
+          "id": "ES2006a-s0231",
+          "speaker": "D",
+          "start": 1021.37,
+          "end": 1032.2,
+          "text": "I'm just wondering whether whether there is like any special feature that we want to have w want this remote control have as opposed to the already existing ones."
+        },
+        {
+          "id": "ES2006a-s0219",
+          "speaker": "C",
+          "start": 938.27,
+          "end": 943.34,
+          "text": "Um we're planning to sell the remote controls for twenty five Euros each."
+        },
+        {
+          "id": "ES2006a-s0222",
+          "speaker": "C",
+          "start": 957.83,
+          "end": 971.3,
+          "text": "Um so to do that our finance people estimate that we need production costs of maximum twelve and a half Euro so that we can reach that profit"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:ES2006a-Slater-Q2",
+      "cohort": "frozen20",
+      "meeting": "ES2006a",
+      "requester": "A",
+      "at": 1033.85,
+      "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+      "category": "Compare roles of stages",
+      "required_facts": [
+        "Functional design specifies functions/tasks; conceptual design concerns how people will use it."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not replace this distinction with only vague levels of detail."
+      ],
+      "motivation_review": "The requester explicitly asked about the distinction earlier.",
+      "source_evidence": [
+        {
+          "id": "ES2006a-s0037",
+          "speaker": "C",
+          "start": 205.82,
+          "end": 218.08,
+          "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is"
+        },
+        {
+          "id": "ES2006a-s0039",
+          "speaker": "C",
+          "start": 218.08,
+          "end": 225.83,
+          "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing."
+        },
+        {
+          "id": "ES2006a-s0033",
+          "speaker": "A",
+          "start": 188.69,
+          "end": 194.05,
+          "text": "I'm a bit confused about uh what's the difference between the functional design and conceptual design?"
+        },
+        {
+          "id": "ES2006a-s0043",
+          "speaker": "C",
+          "start": 244.45,
+          "end": 251.9,
+          "text": "Um I think we'll we'll start that initially with the functional design already but then yeah."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:EN2006b-S05-Q1",
+      "cohort": "frozen20",
+      "meeting": "EN2006b",
+      "requester": "C",
+      "at": 300.97,
+      "question": "Assistant, did we decide to annotate Hubble?",
+      "category": "Recorded agreement",
+      "required_facts": [
+        "Yes, keep/annotate Hubble; C and B say they agreed."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not invent an astronomical interpretation beyond this annotation decision."
+      ],
+      "motivation_review": "The requester stated the agreement earlier; accept as a short delayed self-reminder.",
+      "source_evidence": [
+        {
+          "id": "EN2006b-s0046",
+          "speaker": "C",
+          "start": 108.52,
+          "end": 111.56,
+          "text": "We agreed for to keep hubble."
+        },
+        {
+          "id": "EN2006b-s0047",
+          "speaker": "C",
+          "start": 111.56,
+          "end": 111.79,
+          "text": "Yep."
+        },
+        {
+          "id": "EN2006b-s0048",
+          "speaker": "B",
+          "start": 111.49,
+          "end": 113.59,
+          "text": "To not yes, to keep hubble."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:EN2006b-S075-Q1",
+      "cohort": "frozen20",
+      "meeting": "EN2006b",
+      "requester": "C",
+      "at": 440.13,
+      "question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
+      "category": "Recall rule",
+      "required_facts": [
+        "Underline the HTML material in each case but not the word and."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not apply the later unrelated rule about mechanisms."
+      ],
+      "motivation_review": "A consistency check while discussing annotation rules.",
+      "source_evidence": [
+        {
+          "id": "EN2006b-s0016",
+          "speaker": "C",
+          "start": 27.11,
+          "end": 28.55,
+          "text": "I think there should be a break for and."
+        },
+        {
+          "id": "EN2006b-s0022",
+          "speaker": "C",
+          "start": 37.28,
+          "end": 45.9,
+          "text": "And this isn't a separate thing, so I w I would agree that you underline the you underline the goo in each case but not the and."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "scale:EN2006b-S075-Q2",
+      "cohort": "frozen20",
+      "meeting": "EN2006b",
+      "requester": "B",
+      "at": 440.13,
+      "question": "Assistant, what did we say about annotating absorption line systems?",
+      "category": "Speaker statement",
+      "required_facts": [
+        "B said absorption line systems should not be included."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not generalize this to every absorption-related spectral feature or claim a newly unanimous agreement."
+      ],
+      "motivation_review": "A delayed check of the requester’s prior statement; keep the attribution narrow.",
+      "source_evidence": [
+        {
+          "id": "EN2006b-s0058",
+          "speaker": "B",
+          "start": 128.43,
+          "end": 131.97,
+          "text": "Absorption line systems shouldn't be there."
+        },
+        {
+          "id": "EN2006b-s0059",
+          "speaker": "B",
+          "start": 131.97,
+          "end": 133.33,
+          "text": "Absorption line systems."
+        },
+        {
+          "id": "EN2006b-s0060",
+          "speaker": "B",
+          "start": 135.84,
+          "end": 136.75,
+          "text": "And again."
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "probe:ownership-report",
+      "cohort": "text_diagnostic4",
+      "meeting": "TS3006c",
+      "requester": "B",
+      "at": 606.19,
+      "question": "Assistant, who's keeping track of our decisions in the final report?",
+      "category": "Targeted text diagnostic",
+      "required_facts": [
+        "A says they have to record the decisions in the final report."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not infer a completed implementation or a final decision beyond the cited exchange."
+      ],
+      "motivation_review": "Source-checked extra probe for ownership or a changed proposal; not a new retained audio-bank question.",
+      "source_evidence": [
+        {
+          "speaker": "A",
+          "start": 151.31,
+          "end": 162.65,
+          "available": 163.15,
+          "text": "You can look at the final report, 'cause I have to record everything we are deciding and such, so I'm trying to write it down between everything else.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0036"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "probe:commitment-followup",
+      "cohort": "text_diagnostic4",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "at": 1697.61,
+      "question": "Assistant, who's checking how we should mark speech with laughter, and how will they share the rule?",
+      "category": "Targeted text diagnostic",
+      "required_facts": [
+        "B says they will talk to Melissa and Jean.",
+        "B says they will put the result on the wiki or email it; the rule is not yet resolved."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not infer a completed implementation or a final decision beyond the cited exchange."
+      ],
+      "motivation_review": "Source-checked extra probe for ownership or a changed proposal; not a new retained audio-bank question.",
+      "source_evidence": [
+        {
+          "speaker": "B",
+          "start": 1592.78,
+          "end": 1597.43,
+          "available": 1597.93,
+          "text": "Okay, so laughter during speech.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-s0590"
+        },
+        {
+          "speaker": "B",
+          "start": 1597.43,
+          "end": 1600.24,
+          "available": 1600.74,
+          "text": "I'll f I'll talk to Melissa and Jean.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-s0591"
+        },
+        {
+          "speaker": "B",
+          "start": 1625.79,
+          "end": 1630.58,
+          "available": 1631.08,
+          "text": "I'll figure that one out and put it up on the wiki or email you.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-s0603"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "probe:ownership-interface",
+      "cohort": "text_diagnostic4",
+      "meeting": "ES2006a",
+      "requester": "A",
+      "at": 1033.85,
+      "question": "Assistant, who's responsible for the interface concept, and what comes after that for them?",
+      "category": "Targeted text diagnostic",
+      "required_facts": [
+        "D is responsible for the interface concept during conceptual design.",
+        "D is responsible for user-interface design in the final stage."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not infer a completed implementation or a final decision beyond the cited exchange."
+      ],
+      "motivation_review": "Source-checked extra probe for ownership or a changed proposal; not a new retained audio-bank question.",
+      "source_evidence": [
+        {
+          "speaker": "D",
+          "start": 602.41,
+          "end": 615.18,
+          "available": 615.68,
+          "text": "Oh, right, my roles, um so um in the different um stages of the design, so at first I will be responsible for um for",
+          "boundary": "12s_cap",
+          "id": "ES2006a-s0138"
+        },
+        {
+          "speaker": "D",
+          "start": 615.18,
+          "end": 628.01,
+          "available": 628.51,
+          "text": "yeah, designing the technical functions of the um um of the remote control uh then in the in the conceptual design stage I need to",
+          "boundary": "12s_cap",
+          "id": "ES2006a-s0139"
+        },
+        {
+          "speaker": "D",
+          "start": 628.01,
+          "end": 638.45,
+          "available": 638.95,
+          "text": "um come up with uh interface concept and then in the last um stage I will be responsible for the int infa for the user interface design.",
+          "boundary": "sentence_end",
+          "id": "ES2006a-s0140"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    },
+    {
+      "id": "probe:revision-curve",
+      "cohort": "text_diagnostic4",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "at": 1300.07,
+      "question": "Assistant, are we still going with the double-curved case, or did that change?",
+      "category": "Targeted text diagnostic",
+      "required_facts": [
+        "A proposes a single-curved compromise.",
+        "C subsequently prefers double curved and A agrees; single curved is not the latest endorsed preference.",
+        "Do not turn this preference into a completed engineering design."
+      ],
+      "unsupported_claims_to_avoid": [
+        "Do not infer a completed implementation or a final decision beyond the cited exchange."
+      ],
+      "motivation_review": "Source-checked extra probe for ownership or a changed proposal; not a new retained audio-bank question.",
+      "source_evidence": [
+        {
+          "speaker": "A",
+          "start": 1168.93,
+          "end": 1171.77,
+          "available": 1172.27,
+          "text": "Well we could make a compromise between that.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0466"
+        },
+        {
+          "speaker": "A",
+          "start": 1177.59,
+          "end": 1181.08,
+          "available": 1181.58,
+          "text": "Uh instead of doubly curved we take a single curved.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0469"
+        },
+        {
+          "speaker": "D",
+          "start": 1191.9,
+          "end": 1195.99,
+          "available": 1196.49,
+          "text": "Yeah so we keep it singly c single curved then?",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0483"
+        },
+        {
+          "speaker": "A",
+          "start": 1195.94,
+          "end": 1196.99,
+          "available": 1197.49,
+          "text": "Yeah that would be an option.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0484"
+        },
+        {
+          "speaker": "C",
+          "start": 1205.19,
+          "end": 1207.91,
+          "available": 1208.41,
+          "text": "I would go for the double curved.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0492"
+        },
+        {
+          "speaker": "A",
+          "start": 1208.12,
+          "end": 1208.95,
+          "available": 1209.45,
+          "text": "Yeah I'd agree.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-s0493"
+        }
+      ],
+      "reviewer": "Codex",
+      "source_review": "Source-supported with the listed uncertainty limits",
+      "naturalness_review": "Plausible brief request; delayed self-reminders and the more formal/wordy items remain visible for human review",
+      "independent_human_rating": false,
+      "train_on_this_evaluation_case": false
+    }
+  ]
+}
