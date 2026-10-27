@@ -76,7 +76,7 @@ def main():
     explanations=read('question-explanations.json');reasoning=read('reasoning-literature.json')
     tools=read('tool-fixtures.json');datasets=read('literature.json');s=timing['cohorts']['information_needs']['summary']
     body='<header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>'+project_tabs('experiments','../')+'</div></header>'
-    body+='<div class="container collection-nav">'+experiment_subtabs('ami')+'</div><main id="main"><div class="container">'
+    body+='<div class="container collection-nav">'+experiment_subtabs('ami-expansion')+'</div><main id="main"><div class="container">'
     body+='<header class="hero"><span class="eyebrow">Meeting-question study · 26 October 2026</span><h1>What questions did we create, and when would they be asked?</h1><p class="lede">We kept 15 distinct questions in six conversations. Eight alternative phrasings are saved underneath the same questions. This version tests recall of earlier discussion. It does not yet establish questions that require multiple reasoning steps.</p></header>'
 
     body+='<p>This is the earlier text-only study; its captured question and reader-input texts are preserved. The <a href="question-pilot.html">current pilot</a> includes the spoken “Assistant,” cue and regenerated audio.</p>'

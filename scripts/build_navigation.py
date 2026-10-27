@@ -26,12 +26,14 @@ EXPERIMENT_KEYS = {
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
     's1-reproduction.html': 'reproduction', 'prethinking-pilot.html': 'prethinking',
-    'ami-questions.html': 'ami', 'ami-question-audio.html': 'ami-audio',
-    'question-expansion.html': 'ami',
+    'ami-questions.html': 'ami-original', 'ami-question-audio.html': 'ami-audio',
+    'question-expansion.html': 'ami-expansion',
+    'question-pilot.html': 'ami-pilot', 'question-scale.html': 'ami-scale',
+    'question-overview.html': 'ami-overview', 'question-plan.html': 'ami-plan',
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
-    'DuplexOmni experiments', 'Proposal pages',
+    'DuplexOmni experiments', 'Proposal pages', 'AMI question pages',
 )
 
 
@@ -63,6 +65,10 @@ def build_collections():
         ('Earlier studies', 'Earlier failures and timing tests, kept with their original evidence and limitations.', 'archive.html'),
     ]
     ami = [
+        ('Question overview and aggregate statistics', 'All retained questions, insertion-time distributions, source coverage and audio coverage.', 'question-overview.html'),
+        ('Larger AMI batch', 'Forty additional questions from twenty more meetings, with source checks and recorded Codex edits.', 'question-scale.html'),
+        ('Question/audio pilot', 'Earlier checkpoints, reader controls and ten inserted questions in eight requester voices.', 'question-pilot.html'),
+        ('TODO and staged implementation plan', 'What is complete, what remains, and the sequence from question generation through speech, streaming evaluation and tools.', 'question-plan.html'),
         ('More meeting questions', 'Four new AMI meetings and two earnings calls, checked with a 30B Instruct reader and document retrieval fixtures.', 'question-expansion.html'),
         ('AMI questions', 'Questions that require earlier meeting details, with supporting transcripts and a review of generated answers.', 'ami-questions.html'),
         ('AMI question audio', 'Compare three TTS models inserting the same questions into the meeting in the requester’s voice.', 'ami-question-audio.html'),
@@ -125,7 +131,7 @@ def simplify_prose(source):
     return ''.join(pieces)
 
 
-def refresh_pages():
+def refresh_pages(navigation_only=False):
     changed = []
     for path in sorted(ROOT.rglob('*.html')):
         if any(part in {'preview', '.git', 'vendor', 'protocol-source'} for part in path.relative_to(ROOT).parts):
@@ -158,7 +164,7 @@ def refresh_pages():
             page = page.replace('<div class="container collection-nav"></div>', '')
             page = page.replace('<div class="container"></div>', '')
             page = page.replace('</header>', '</header><div class="container collection-nav">' + subnav + '</div>', 1)
-        if native:
+        if native and not navigation_only:
             page = simplify_prose(page)
         css = prefix + 'assets/site.css'
         digest = hashlib.sha256((ROOT/'assets/site.css').read_bytes()).hexdigest()[:12]

@@ -1,0 +1,215 @@
+{
+  "title": "Staged implementation plan",
+  "scope": "Build and evaluate natural participant questions for a separate duplex meeting assistant, then extend to document tools and preparation before requests.",
+  "current_state": "Text questions and speaker-matched question audio have working pilots. Evaluation on a duplex model using the AMI insertions, broader audio coverage, independent human ratings and a learned action-timing policy remain unfinished.",
+  "choices": [
+    "The requester is an existing participant; the assistant is a separate listening agent.",
+    "Use only conversation history available before the question. Preserve uncertainty and the original speaker roles.",
+    "Include the spoken Assistant cue before audio evaluation.",
+    "Pause the meeting for the first question-answering tests, then test continued streaming.",
+    "Count questions by the facts requested. Alternative phrasings and repeated tests do not create extra questions.",
+    "Prioritize question quality and requester voice. Spoken answer synthesis remains deferred."
+  ],
+  "next": [
+    "Continue expanding the question bank while improving source checks and reducing the need for Codex repairs.",
+    "Add the cue to the older texts before further synthesis, then extend requester-matched TTS to a balanced selection from the new batch.",
+    "Run the existing inserted questions through the duplex model and measure whether it notices the cue, answers the correct participant and uses the earlier discussion."
+  ],
+  "stages": [
+    {
+      "id": "questions",
+      "title": "1. Expand the question bank",
+      "status": "partial",
+      "goal": "Produce many different, natural questions with explicit requester, source time and supporting history.",
+      "tasks": [
+        {
+          "status": "complete",
+          "text": "Retain and group the existing questions across all four studies.",
+          "evidence": "105 distinct questions, 22 alternatives or later repeats, and 26 conversations with retained questions.",
+          "url": "question-overview.html"
+        },
+        {
+          "status": "complete",
+          "text": "Run the larger local-model batch through vLLM and review its output.",
+          "evidence": "20 additional meetings; 294 drafts; 40 distinct retained questions after source review. Nineteen primary texts needed Codex edits.",
+          "url": "question-scale.html#review"
+        },
+        {
+          "status": "pending",
+          "text": "Improve automated source selection and checking, then continue scaling across meetings.",
+          "evidence": "The current model still invents decisions, misbinds numbers and asks the assistant for new advice. A complete JSON response is insufficient."
+        },
+        {
+          "status": "pending",
+          "text": "Add the spoken cue to the 15 older primary texts before using them for new TTS or duplex tests.",
+          "evidence": "The original saved study records stay preserved; the current cue coverage is 90 of 105 primary texts.",
+          "url": "question-overview.html#coverage"
+        }
+      ]
+    },
+    {
+      "id": "difficulty",
+      "title": "2. Check difficulty and use of history",
+      "status": "partial",
+      "goal": "Separate ordinary recall from questions that genuinely require connecting earlier information.",
+      "tasks": [
+        {
+          "status": "complete",
+          "text": "Test a stronger 30B Instruct transcript reader and controlled amounts of history.",
+          "evidence": "Existing studies include full history, recent context, evidence removal and later replays of eight stable early questions. Historical reader trials did not all include the spoken cue.",
+          "url": "question-pilot.html#reader"
+        },
+        {
+          "status": "partial",
+          "text": "Try person-to-commitment links, changed plans and comparisons between discussions.",
+          "evidence": "Source-linked candidates and numerical controls exist, but there is no certified count of multi-hop questions.",
+          "url": "question-expansion.html#harder-questions"
+        },
+        {
+          "status": "pending",
+          "text": "Check whether one recap already contains the complete answer; remove repeated mentions when testing each required fact.",
+          "evidence": "A recent-context failure, multiple citations or an indirect description does not establish a necessary reasoning chain."
+        },
+        {
+          "status": "pending",
+          "text": "Add plausible alternative people, proposals and metrics to test whether the question selects the right evidence."
+        },
+        {
+          "status": "pending",
+          "text": "Obtain independent human ratings of naturalness, requester motivation and question timing.",
+          "evidence": "Current decisions are Codex source review plus model diagnostics, not independent human ratings."
+        }
+      ]
+    },
+    {
+      "id": "speech",
+      "title": "3. Generate and insert requester-matched speech",
+      "status": "partial",
+      "goal": "Make each question sound like its requester and fit the original recording.",
+      "tasks": [
+        {
+          "status": "complete",
+          "text": "Compare Qwen3-TTS, Chatterbox and F5-TTS on the first three questions.",
+          "evidence": "Reference selection and inference/acoustic tuning were tested; no model weights were trained.",
+          "url": "ami-question-audio.html"
+        },
+        {
+          "status": "complete",
+          "text": "Synthesize ten further questions with F5-TTS, including the spoken Assistant cue.",
+          "evidence": "The ten clips cover four meetings and eight requester voices. Both ASR models recover the cue.",
+          "url": "question-pilot.html#audio"
+        },
+        {
+          "status": "complete",
+          "text": "Implement pause, insertion and resumption with separate source and playback clocks.",
+          "evidence": "Original context and continuation samples are preserved exactly; local full replays can recover the original meeting after removing insertions.",
+          "url": "question-pilot.html#method"
+        },
+        {
+          "status": "pending",
+          "text": "Extend TTS to the new question batch using only earlier speech for voice conditioning.",
+          "evidence": "The 40 questions in the latest batch currently have no new audio."
+        },
+        {
+          "status": "pending",
+          "text": "Collect blind listening ratings of requester identity, pronunciation and acoustic match.",
+          "evidence": "ASR and voice-similarity scores are diagnostics; they do not establish a human perceptual pass."
+        }
+      ]
+    },
+    {
+      "id": "streaming",
+      "title": "4. Evaluate the duplex model on the inserted questions",
+      "status": "pending",
+      "goal": "Test actual request detection, speaker tracking, answer quality and response timing in the streaming system.",
+      "tasks": [
+        {
+          "status": "pending",
+          "text": "Replay the prepared AMI question clips through the duplex model with pause and resume.",
+          "evidence": "Separate S1 speech and S2 reasoning examples already work, but transcript-reader results and a spoken cue do not prove AMI replay behavior.",
+          "url": "duplexomni.html"
+        },
+        {
+          "status": "pending",
+          "text": "Measure cue detection, correct requester, answer support, missing-information handling and response latency."
+        },
+        {
+          "status": "pending",
+          "text": "Compare full history with short context and speaker-label controls; repeat stable questions as context grows.",
+          "evidence": "Keep question identity fixed across later cutoffs so extra tests do not inflate the question count."
+        },
+        {
+          "status": "pending",
+          "text": "After the paused tests, let the original discussion continue while the assistant answers and test interruptions.",
+          "evidence": "This is the second audio setting, following the user-selected pause/resume baseline."
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "5. Extend earnings calls to document tools",
+      "status": "partial",
+      "goal": "Use long technical calls and their accompanying documents to test when retrieval is needed.",
+      "tasks": [
+        {
+          "status": "complete",
+          "text": "Prepare two calls, associated document records and scripted search/open examples.",
+          "evidence": "The existing examples check document availability times; their search queries and page choices were supplied by Codex.",
+          "url": "question-expansion.html#documents"
+        },
+        {
+          "status": "pending",
+          "text": "Audit the actual earnings-call recordings, speaker boundaries and incomplete automatic alignments before inserting audio."
+        },
+        {
+          "status": "pending",
+          "text": "Let a model decide whether to search and which document/page to open, recording the actual tool trace."
+        },
+        {
+          "status": "pending",
+          "text": "Compare questions that require a document, can be answered from speech alone, or ask for information unavailable at that time."
+        },
+        {
+          "status": "pending",
+          "text": "Check numeric units, reporting periods and which company or business segment each value belongs to."
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "title": "6. Study preparation and learn when to act",
+      "status": "planned",
+      "goal": "After the evaluation data is reliable, compare reacting to requests with preparing useful work while listening.",
+      "tasks": [
+        {
+          "status": "pending",
+          "text": "Compare request-triggered reasoning with bounded preparation under matched total compute and listening deadlines.",
+          "url": "../prethinking.html#proposal-implementation"
+        },
+        {
+          "status": "partial",
+          "text": "Build teacher examples using only the history available at each update, keeping private notes separate from spoken replies.",
+          "url": "prethinking-pilot.html",
+          "evidence": "A preliminary text-teacher and timing study exists. A larger causal training set and an audio student remain unfinished."
+        },
+        {
+          "status": "pending",
+          "text": "Choose an audio-conditioned student and measure its training memory and cost before planning weight adaptation.",
+          "evidence": "Inference fit is not a training-capacity measurement; no student training has been run for this question dataset."
+        },
+        {
+          "status": "pending",
+          "text": "Evaluate a learned policy for when to answer, prepare or request a tool, including stale plans and interruptions.",
+          "evidence": "This is later research, not a completed behavior of the current question pipeline."
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "gpus": 0,
+    "maximum_active_gpus": 0,
+    "gpu_roles": [],
+    "gpu_dependencies": []
+  },
+  "update_rule": "Regenerate this page from the saved stage records when evidence or task status changes. A queued job or parsed model response does not mark a task complete."
+}

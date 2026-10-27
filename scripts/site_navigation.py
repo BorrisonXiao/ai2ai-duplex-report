@@ -51,17 +51,32 @@ DUPLEX_PAGES = [
 ]
 
 
+AMI_PAGES = [
+    ('ami-overview', 'Overview &amp; stats', 'question-overview.html'),
+    ('ami-scale', 'Larger batch', 'question-scale.html'),
+    ('ami-pilot', 'Question/audio pilot', 'question-pilot.html'),
+    ('ami-expansion', 'Earlier expansion', 'question-expansion.html'),
+    ('ami-original', 'First pilot', 'ami-questions.html'),
+    ('ami-audio', 'TTS comparison', 'ami-question-audio.html'),
+    ('ami-plan', 'TODO &amp; plan', 'question-plan.html'),
+]
+
+
 def experiment_subtabs(current):
     duplex = current in {key for key, _, _ in DUPLEX_PAGES}
+    ami = current in {key for key, _, _ in AMI_PAGES}
+    parent = 'ami' if ami and current != 'ami-audio' else current
     result = tabs([
         ('overview', 'All experiments', 'index.html'),
         ('duplex', 'DuplexOmni', 'duplexomni.html'),
         ('prethinking', 'Pre-thinking pilot', 'prethinking-pilot.html'),
-        ('ami', 'AMI questions', 'ami-questions.html'),
+        ('ami', 'AMI questions', 'question-overview.html'),
         ('ami-audio', 'AMI question audio', 'ami-question-audio.html'),
-    ], 'duplex' if duplex else current, 'Experiment sub-tabs')
+    ], 'duplex' if duplex else parent, 'Experiment sub-tabs')
     if duplex:
         result += tabs(DUPLEX_PAGES, current, 'DuplexOmni experiments', css='review-tabs secondary-tabs')
+    if ami:
+        result += tabs(AMI_PAGES, current, 'AMI question pages', css='review-tabs secondary-tabs')
     return result
 
 

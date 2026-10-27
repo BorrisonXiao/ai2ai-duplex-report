@@ -1,0 +1,99 @@
+{
+  "rule": "Same meeting and same facts needed for a complete answer count as one question. Similar topics, partial fact overlap and generic request templates do not by themselves imply the same question.",
+  "reviewer": "Codex",
+  "same_conversation_comparisons": [
+    {
+      "earlier_question": "EN-times",
+      "closest_newer_question": "P-EN-timeline",
+      "decision": "different_requested_facts",
+      "reason": "Extracting segment start/end times differs from whether a project schedule was updated."
+    },
+    {
+      "earlier_question": "EN-results",
+      "closest_newer_question": "P-EN-order",
+      "decision": "different_requested_facts",
+      "reason": "The three result types differ from the rule for ordering results."
+    },
+    {
+      "earlier_question": "EN-xml",
+      "closest_newer_question": "M-P-EN-same-person-concise_base",
+      "decision": "different_requested_facts",
+      "reason": "An XML transformation tool differs from the person compiling written sections."
+    },
+    {
+      "earlier_question": "ES-colour",
+      "closest_newer_question": "P-ES-slogan",
+      "decision": "different_requested_facts",
+      "reason": "The company color differs from whether its slogan should appear on the remote."
+    },
+    {
+      "earlier_question": "ES-teletext",
+      "closest_newer_question": "P-ES-voice-open",
+      "decision": "different_requested_facts",
+      "reason": "The company instruction about teletext differs from a decision about voice recognition."
+    },
+    {
+      "earlier_question": "ES-devices",
+      "closest_newer_question": "P-ES-numbers",
+      "decision": "different_requested_facts",
+      "reason": "Which devices the remote controls differs from whether number buttons are essential."
+    },
+    {
+      "earlier_question": "IS-receiver",
+      "closest_newer_question": "P-IS-components",
+      "decision": "different_requested_facts",
+      "reason": "What may be changed on the TV receiver differs from whether remote components are final choices."
+    },
+    {
+      "earlier_question": "IS-lost",
+      "closest_newer_question": "P-IS-learning",
+      "decision": "different_requested_facts",
+      "reason": "The percentage losing remotes differs from the percentage finding a new remote hard to learn."
+    },
+    {
+      "earlier_question": "IS-voice",
+      "closest_newer_question": "M-IS1000b-P075-reminder-2",
+      "decision": "different_requested_facts",
+      "reason": "A survey age group’s willingness to pay for voice control differs from an agreed product audience."
+    },
+    {
+      "earlier_question": "TS-target",
+      "closest_newer_question": "P-TS-target-change",
+      "decision": "different_requested_facts",
+      "reason": "The original audience alone differs from comparing original and revised audiences; the newer simple control asks only for the revised audience."
+    },
+    {
+      "earlier_question": "TS-looks",
+      "closest_newer_question": "P-TS-buttons",
+      "decision": "different_requested_facts",
+      "reason": "Willingness to pay for appearance differs from the fraction of buttons people use."
+    },
+    {
+      "earlier_question": "DH-growth",
+      "closest_newer_question": "P-DH-cepheid",
+      "decision": "different_requested_facts",
+      "reason": "Group revenue-growth guidance differs from Cepheid shipment counts."
+    },
+    {
+      "earlier_question": "DH-basis",
+      "closest_newer_question": "P-DH-documents",
+      "decision": "different_requested_facts",
+      "reason": "The accounting basis for Cytiva in core growth differs from where documents are available."
+    },
+    {
+      "earlier_question": "MO-performance",
+      "closest_newer_question": "P-MO-comparison",
+      "decision": "different_requested_facts",
+      "reason": "Results for re-imaged stores differ from comparing January sales with the full quarter."
+    },
+    {
+      "earlier_question": "MO-selection",
+      "closest_newer_question": "P-MO-completion",
+      "decision": "different_requested_facts",
+      "reason": "Criteria for choosing rebranding versus re-imaging differ from completion of California conversions."
+    }
+  ],
+  "cross_batch_merges": 0,
+  "original_pilot": "EN2003a is absent from the later two current batches.",
+  "scale_batch": "New meeting and participant groups do not overlap with the previous meetings."
+}
