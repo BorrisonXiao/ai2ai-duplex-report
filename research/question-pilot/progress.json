@@ -1,6 +1,6 @@
 {
   "title": "Larger question pilot with early checkpoints and speaker-matched audio",
-  "updated_utc": "2026-10-26T23:52:28.172044+00:00",
+  "updated_utc": "2026-10-27T00:02:14.803035+00:00",
   "tasks": [
     {
       "id": "preserve",
@@ -54,9 +54,9 @@
     {
       "id": "publish",
       "label": "Publish questions, results and playable audio; verify the live page",
-      "status": "in_progress",
-      "note": "Preparing the final audio page, source-copy hashes, responsive browser checks and live deployment verification.",
-      "updated_utc": "2026-10-26T23:52:28.172027+00:00"
+      "status": "complete",
+      "note": "Validated 50 HTML pages, responsive filters and all ten main audio players. Pages deployment 40423219182 succeeded and 181 live files matched; final task-list sync and playback verification follow.",
+      "updated_utc": "2026-10-27T00:02:14.803018+00:00"
     }
   ],
   "scope": "New pilot; earlier questions and audio are preserved.",

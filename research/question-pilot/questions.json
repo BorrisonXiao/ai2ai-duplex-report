@@ -1545,7 +1545,7 @@
     "requester_reason": "A private reminder or comparison for the existing participant, grounded in the earlier speech; source and role checked during selection.",
     "kind": "recall",
     "fact_groups": [],
-    "origin": "qwen30b_instruct_human_source_selection",
+    "origin": "qwen30b_instruct_assistant_selected_sources",
     "source_candidate_id": "P-TS-dock-anchored_base-1",
     "method": "anchored_base",
     "at": 583.52,
@@ -1595,7 +1595,7 @@
         "IS1000b-u0482"
       ]
     ],
-    "origin": "qwen30b_instruct_human_source_selection",
+    "origin": "qwen30b_instruct_assistant_selected_sources",
     "source_candidate_id": "P-IS-teletext-usage-anchored_rewrite-1",
     "method": "anchored_rewrite",
     "at": 1855.31,
