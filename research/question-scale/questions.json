@@ -1,4 +1,3660 @@
 {
-  "distinct_questions": 0,
-  "questions": []
+  "distinct_questions": 40,
+  "questions": [
+    {
+      "id": "EN2001b-Slater-Q2",
+      "meeting": "EN2001b",
+      "requester": "B",
+      "role": null,
+      "at": 2769.16,
+      "percent": 80.22025837020625,
+      "cohort": "later",
+      "question": "Assistant, how were we going to store the information-density values alongside the segments?",
+      "generator_question": "Assistant, do we know if the system expects the information density annotation to be tied directly to the segment I_D_ or to a separate file?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "B is trying to clarify the expected structure of the annotation file, which is critical for integration but has been discussed with some ambiguity.",
+      "codex_review": "Removed a false choice between a segment ID and a separate file: the proposal uses both. The reader also blurred the file/link distinction.",
+      "question_group": "EN2001b-Slater-Q2",
+      "reference_answer": "The suggestion was to create a separate file linking each value to the segment ID. It was a proposed representation, not proof of an implemented storage format.",
+      "generator_proposed_answer": "The system expects a new file that references the segment I_D_ and adds an attribute for the density value, as discussed in excerpts EN2001b-s0271 and EN2001b-s0287.",
+      "full_history_check": {
+        "id": "EN2001b-Slater-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, the system likely expects the annotation tied directly to the segment I_D_. B suggests creating a file linking to the segment I_D_ with an additional value, implying direct attachment to the segments file (EN2001b-s0271, EN2001b-s0272).",
+        "evidence_ids": [
+          "EN2001b-s0271",
+          "EN2001b-s0272"
+        ],
+        "missing_information": "No explicit confirmation from the system's documentation is provided.",
+        "naturalness_note": "Brief, direct, and fits the ongoing discussion about file structure.",
+        "connection_assessment": "Directly linked to prior discussion on segment I_D_ and file structure.",
+        "window_id": "EN2001b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2001b-Slater-Q2",
+        "answer": "The transcript does not specify whether the information density annotation is tied directly to the segment I_D_ or to a separate file. No information is provided on the file structure or annotation placement.",
+        "evidence_ids": [
+          "EN2001b-s0723",
+          "EN2001b-s0727"
+        ],
+        "missing_information": "Yes, the system's annotation file structure is not clarified in the latest minute.",
+        "window_id": "EN2001b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2001b-s0271",
+          "speaker": "B",
+          "start": 962.21,
+          "end": 973.46,
+          "text": "if we have here a link to the segment, a like an I_D_ for that segment, that we just create another file which links to the segment and then has an additional value which is the number."
+        },
+        {
+          "id": "EN2001b-s0287",
+          "speaker": "B",
+          "start": 1030.23,
+          "end": 1036.15,
+          "text": "And then we would create the file of that type, which we probably couldn't call it segment."
+        },
+        {
+          "id": "EN2001b-s0272",
+          "speaker": "C",
+          "start": 975.64,
+          "end": 978.18,
+          "text": "So you mean an a an attribute."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2004a-S05-Q3",
+      "meeting": "EN2004a",
+      "requester": "A",
+      "role": null,
+      "at": 561.16,
+      "percent": 16.28572514806062,
+      "cohort": "early",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "generator_question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "A raised a similar concern earlier about uncertainty and context, but now seeks confirmation on whether to resolve ambiguity or leave it, showing progression in their understanding.",
+      "codex_review": "The earlier transcription rule answers this natural clarification. The latest minute concerns other annotation examples.",
+      "question_group": "EN2004a-S05-Q3",
+      "reference_answer": "For two equally plausible interpretations, choose one and leave it. The discussion uses the example of “ice cream” versus “I scream”.",
+      "generator_proposed_answer": "Choose one based on your best judgment, especially if it’s robust for speech recognition; don’t leave it ambiguous.",
+      "full_history_check": {
+        "id": "EN2004a-S05-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Choose one interpretation if uncertain, as advised in EN2004a-s0094. Do not leave ambiguous if a choice is possible.",
+        "evidence_ids": [
+          "EN2004a-s0094"
+        ],
+        "missing_information": "None.",
+        "naturalness_note": "Concise and reflects prior concern about ambiguity.",
+        "connection_assessment": "Directly follows A's earlier hesitation and B's guidance on uncertain words.",
+        "window_id": "EN2004a-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2004a-S05-Q3",
+        "answer": "The latest transcript does not provide guidance on handling ambiguous words that fit multiple contexts; no instruction is given on whether to pick one or leave it uncertain.",
+        "evidence_ids": [],
+        "missing_information": "The transcript does not address how to handle ambiguous words with multiple possible contexts.",
+        "window_id": "EN2004a-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2004a-s0094",
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+        },
+        {
+          "id": "EN2004a-s0095",
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2004a-S075-Q2",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "role": null,
+      "at": 640.16,
+      "percent": 18.57842649294762,
+      "cohort": "early",
+      "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+      "generator_question": "Assistant, if a speaker pauses mid-sentence but we can't tell if it's a break or continuation, what should we do?",
+      "edited": true,
+      "kind": "comparison",
+      "why_now": "D raised a similar issue earlier about mid-sentence pauses and now seeks clarification on a related but distinct handling rule.",
+      "codex_review": "Narrowed the question to the rule actually stated; the original draft asked about an uncertain pause and the models invented a default for that case.",
+      "question_group": "EN2004a-S075-Q2",
+      "reference_answer": "Do not capitalize the start of the next segment when it clearly continues the same sentence. The cited discussion does not settle every ambiguous-pause case.",
+      "generator_proposed_answer": "Do not capitalise if the sentence is clearly continuing; use a hyphen only if the sentence is definitely not continuing.",
+      "full_history_check": {
+        "id": "EN2004a-S075-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "If mid-sentence pause is unclear, do not capitalize; continue the sentence. Use hyphen only if sentence definitely not continuing. Follow context and speaker flow.",
+        "evidence_ids": [
+          "EN2004a-s0139",
+          "EN2004a-s0145",
+          "EN2004a-s0147",
+          "EN2004a-s0149"
+        ],
+        "missing_information": "No guidance on documenting ambiguous cases.",
+        "naturalness_note": "Concise, matches prior discussion on capitalization and sentence flow.",
+        "connection_assessment": "Directly follows earlier exchange on sentence continuation.",
+        "window_id": "EN2004a-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2004a-S075-Q2",
+        "answer": "The transcript does not specify a procedure for ambiguous mid-sentence pauses. B acknowledges uncertainty about whether a pause is a break or continuation, but no resolution or protocol is given. Excerpt ID: EN2004a-s0194.",
+        "evidence_ids": [
+          "EN2004a-s0194"
+        ],
+        "missing_information": "No clear directive on handling uncertain pauses between sentence segments.",
+        "window_id": "EN2004a-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2004a-s0145",
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise."
+        },
+        {
+          "id": "EN2004a-s0154",
+          "speaker": "A",
+          "start": 516.25,
+          "end": 518.65,
+          "text": "As in like it's"
+        },
+        {
+          "id": "EN2004a-s0130",
+          "speaker": "D",
+          "start": 472.16,
+          "end": 484.53,
+          "text": "You know, when you get like um someone's talking and there's they sort of pause in the middle of a sentence that's long enough for it to put a break in, but they're actually sort of carrying on the sentence, do you have to capitalise each time you transcribe"
+        },
+        {
+          "id": "EN2004a-s0139",
+          "speaker": "B",
+          "start": 489.5,
+          "end": 495.52,
+          "text": "Um but no, it it can continue into the next segment and that's perfectly fine."
+        },
+        {
+          "id": "EN2004a-s0147",
+          "speaker": "C",
+          "start": 510.21,
+          "end": 510.92,
+          "text": "Otherwise you do."
+        },
+        {
+          "id": "EN2004a-s0149",
+          "speaker": "A",
+          "start": 510.38,
+          "end": 514.87,
+          "text": "And you only use the hyphen I think when the sentence is definitely not continuing anywhere."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2004a-Smiddle-Q2",
+      "meeting": "EN2004a",
+      "requester": "D",
+      "role": null,
+      "at": 1697.61,
+      "percent": 49.26724974802051,
+      "cohort": "middle",
+      "question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
+      "generator_question": "Assistant, if a sentence continues after a pause, should I still use a hyphen even if it's not a full restart?",
+      "edited": true,
+      "kind": "comparison",
+      "why_now": "D previously asked about capitalization after pauses (EN2004a-s0130), and now seeks to clarify the hyphen rule in the context of sentence continuation, which is a different but related task.",
+      "codex_review": "Corrected the original question’s conflation of a pause with a restart. The source explicitly distinguishes phrase-level restarts from whole-sentence restarts.",
+      "question_group": "EN2004a-Smiddle-Q2",
+      "reference_answer": "Restarts can be at phrase level, not only whole-sentence level. An ordinary pause with a continuing sentence is not itself a restart.",
+      "generator_proposed_answer": "Yes, use a hyphen if the speaker restarts a phrase, even if the sentence continues, as long as it's not a full sentence restart.",
+      "full_history_check": {
+        "id": "EN2004a-Smiddle-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, use a hyphen if the sentence continues after a pause, even without a full restart. B clarifies that a hyphen indicates a restart of any type, not just a new sentence. C confirms this aligns with syntactic structure, not just sentence boundaries. (EN2004a-s0373, EN2004a-s0377)",
+        "evidence_ids": [
+          "EN2004a-s0373",
+          "EN2004a-s0377"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Brief, direct, and matches prior discussion on hyphens and sentence continuation.",
+        "connection_assessment": "Links to prior discussion on hyphens and sentence continuation.",
+        "window_id": "EN2004a-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2004a-Smiddle-Q2",
+        "answer": "The recent transcript does not establish whether a hyphen should be used after a pause if a sentence continues, as the discussion focuses on identifying speech content and uncertainty about utterances, not transcription conventions for pauses within sentences.",
+        "evidence_ids": [],
+        "missing_information": "No explicit guidance on hyphen usage for continuing sentences after pauses is provided in the latest minute.",
+        "window_id": "EN2004a-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2004a-s0373",
+          "speaker": "B",
+          "start": 1134.6,
+          "end": 1139.84,
+          "text": "So it's not necessarily restarting the sentence, but just a restart of any type."
+        },
+        {
+          "id": "EN2004a-s0374",
+          "speaker": "B",
+          "start": 1139.84,
+          "end": 1140.62,
+          "text": "A phrase."
+        },
+        {
+          "id": "EN2004a-s0130",
+          "speaker": "D",
+          "start": 472.16,
+          "end": 484.53,
+          "text": "You know, when you get like um someone's talking and there's they sort of pause in the middle of a sentence that's long enough for it to put a break in, but they're actually sort of carrying on the sentence, do you have to capitalise each time you transcribe"
+        },
+        {
+          "id": "EN2004a-s0140",
+          "speaker": "D",
+          "start": 494.37,
+          "end": 496.14,
+          "text": "So it's put the hyphen and then"
+        },
+        {
+          "id": "EN2004a-s0139",
+          "speaker": "B",
+          "start": 489.5,
+          "end": 495.52,
+          "text": "Um but no, it it can continue into the next segment and that's perfectly fine."
+        },
+        {
+          "id": "EN2004a-s0145",
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise."
+        },
+        {
+          "id": "EN2004a-s0377",
+          "speaker": "C",
+          "start": 1137.88,
+          "end": 1149.92,
+          "text": "Yeah, I think of it in terms of, you know, not even maybe to well, if I th if you think of it in terms of a syntactic tree, it n doesn't have to go back all the way to the S_ node, but it just m it might go back to the last node or"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2009b-S10-Q3",
+      "meeting": "EN2009b",
+      "requester": "B",
+      "role": null,
+      "at": 732.14,
+      "percent": 29.589484000687058,
+      "cohort": "early",
+      "question": "Assistant, is Nynke available to help with the pilot test when she returns tomorrow?",
+      "generator_question": "Assistant, is Nynke available to help with the pilot test when she returns tomorrow?",
+      "edited": false,
+      "kind": "missing_information",
+      "why_now": "B offered Nynke as a volunteer but now seeks confirmation of her availability after her hike.",
+      "codex_review": "A useful uncertainty control: expected return and willingness to help are different facts. The reader wrongly treats the offer to ask as confirmation.",
+      "question_group": "EN2009b-S10-Q3",
+      "reference_answer": "B said Nynke was expected back tomorrow and offered to ask whether she would help. This does not confirm her availability or agreement to the pilot.",
+      "generator_proposed_answer": "Nynke is climbing Ben Nevis today but will be back tomorrow.",
+      "full_history_check": {
+        "id": "EN2009b-S10-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, Nynke is expected to be available tomorrow after climbing Ben Nevis. B mentions she’ll be back then and offers to ask her to help (EN2009b-s0131, EN2009b-s0132, EN2009b-s0141).",
+        "evidence_ids": [
+          "EN2009b-s0131",
+          "EN2009b-s0132",
+          "EN2009b-s0141"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Concise, fits B’s prior offer to check availability, and uses natural phrasing.",
+        "connection_assessment": "Directly follows B’s earlier statement about Nynke’s return and willingness to volunteer.",
+        "window_id": "EN2009b-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2009b-S10-Q3",
+        "answer": "Missing information. The recent transcript does not mention Nynke or her availability for the pilot test.",
+        "evidence_ids": [
+          "EN2009b-s0324",
+          "EN2009b-s0325",
+          "EN2009b-s0326",
+          "EN2009b-s0327",
+          "EN2009b-s0328",
+          "EN2009b-s0329",
+          "EN2009b-s0330",
+          "EN2009b-s0331"
+        ],
+        "missing_information": "The recent transcript does not mention Nynke or her availability for the pilot test.",
+        "window_id": "EN2009b-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2009b-s0131",
+          "speaker": "B",
+          "start": 237.19,
+          "end": 244.73,
+          "text": "So um uh mine is well, she's actually climbing Ben Nevis today, I think."
+        },
+        {
+          "id": "EN2009b-s0132",
+          "speaker": "B",
+          "start": 244.73,
+          "end": 247.16,
+          "text": "But uh she'll be uh back tomorrow."
+        },
+        {
+          "id": "EN2009b-s0141",
+          "speaker": "B",
+          "start": 256.94,
+          "end": 261.94,
+          "text": "So um I I'll I'll see if if she'd be willing to"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2009b-Smiddle-Q2",
+      "meeting": "EN2009b",
+      "requester": "A",
+      "role": null,
+      "at": 1228.22,
+      "percent": 49.6385883018601,
+      "cohort": "middle",
+      "question": "Assistant, what exactly does the ten kilo-hertz sound need to do in the setup to be detected properly?",
+      "generator_question": "Assistant, what exactly does the ten kilo-hertz sound need to do in the setup to be detected properly?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "A discussed the sound setup but did not specify the exact role of the ten kilo-hertz tone in the signal chain, which is critical for the pilot test.",
+      "codex_review": "Kept the technical reminder but removed the invented box requirement from its reference.",
+      "question_group": "EN2009b-Smiddle-Q2",
+      "reference_answer": "The method described was to play a ten-kilohertz sound over the speech and compare the two signals; the beep made its timing clear. The source does not establish the extra sound-proof-box requirement in the proposed answer.",
+      "generator_proposed_answer": "The ten kilo-hertz sound must be played through the speakers inside the sound-proof box so it can be picked up by the audio signal for comparison with the speech.",
+      "full_history_check": {
+        "id": "EN2009b-Smiddle-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The ten kilo-hertz sound must be played over the speech and detected by Matlab to compare with the audio signal. It should be clear enough to pinpoint the exact timing of the beep.",
+        "evidence_ids": [
+          "EN2009b-s0197",
+          "EN2009b-s0199"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is concise and matches the speaker's prior discussion.",
+        "connection_assessment": "Directly linked to A's earlier explanation about sound detection.",
+        "window_id": "EN2009b-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2009b-Smiddle-Q2",
+        "answer": "Missing information. The transcript does not mention anything about a ten kilo-hertz sound or its requirements for detection.",
+        "evidence_ids": [],
+        "missing_information": "The transcript does not contain any information about a ten kilo-hertz sound or its setup requirements.",
+        "window_id": "EN2009b-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2009b-s0173",
+          "speaker": "A",
+          "start": 326.15,
+          "end": 330.62,
+          "text": "Uh so but uh it should be the yeah, the audio signal should be coming out the speakers once it's set up properly."
+        },
+        {
+          "id": "EN2009b-s0197",
+          "speaker": "A",
+          "start": 378.81,
+          "end": 383.69,
+          "text": "Did it with ten kilo-hertz and it's just really clear, where you can tell exactly where exactly where the beep is now."
+        },
+        {
+          "id": "EN2009b-s0199",
+          "speaker": "A",
+          "start": 384.54,
+          "end": 393.83,
+          "text": "So tha it's ju just a matter of um yeah, you just ba basically just play it, just play a ten kilo-hertz sound over the over the speech and then just um compare the two signals basically."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "IN1005-S075-Q1",
+      "meeting": "IN1005",
+      "requester": "C",
+      "role": null,
+      "at": 502.38,
+      "percent": 17.94962159903499,
+      "cohort": "early",
+      "question": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link-based iteration starts?",
+      "generator_question": "Assistant, can you clarify how the initial P_L_S_A_ topic distribution is used before the link-based iteration starts?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "C is seeking to understand the starting point of the algorithm, which is a key step in the process described earlier but not fully explained in the current flow.",
+      "codex_review": "Replaced corpus spelling notation P_L_S_A_ with the spoken acronym. The answer is stated before the cutoff.",
+      "question_group": "IN1005-S075-Q1",
+      "reference_answer": "PLSA supplies the initial topic probabilities for each document. The link-based algorithm then iterates from that initial distribution.",
+      "generator_proposed_answer": "The initial P_L_S_A_ distribution is used to start the iterative process, providing the first estimate of topic probabilities for each page before adjusting them based on link information.",
+      "full_history_check": {
+        "id": "IN1005-S075-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The initial P_L_S_A_ topic distribution is used to initialize the topic probabilities for each page before the link-based iteration begins. As stated in passage IN1005-s0102, this provides the starting point for the iterative algorithm that combines text-based and link-based topic signals.",
+        "evidence_ids": [
+          "IN1005-s0102"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, contextually relevant, and matches the speaker's prior focus on model initialization.",
+        "connection_assessment": "Directly linked to earlier discussion on model initialization and iterative refinement.",
+        "window_id": "IN1005-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IN1005-S075-Q1",
+        "answer": "The transcript does not provide information on how the initial P_L_S_A_ topic distribution is used before the link-based iteration starts. The discussion focuses on evaluation methods like perplexity and likelihood, but not on the initial use of the topic distribution.",
+        "evidence_ids": [
+          "IN1005-s0129",
+          "IN1005-s0130",
+          "IN1005-s0136"
+        ],
+        "missing_information": "How the initial P_L_S_A_ topic distribution is used before link-based iteration.",
+        "window_id": "IN1005-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IN1005-s0102",
+          "speaker": "B",
+          "start": 397.38,
+          "end": 402.14,
+          "text": "So this this is what P_L_S_A_ gives you to start with, and then you iterate this and it becomes something else."
+        },
+        {
+          "id": "IN1005-s0114",
+          "speaker": "B",
+          "start": 425.55,
+          "end": 436.28,
+          "text": "So it gives you a probability of a topic given a document, which is Z_ given D_ and a probability of a word given a topic."
+        },
+        {
+          "id": "IN1005-s0127",
+          "speaker": "C",
+          "start": 453.57,
+          "end": 458.79,
+          "text": "So th yeah, you you you were saying that you would like to evaluate that now."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "IN1005-Smiddle-Q1",
+      "meeting": "IN1005",
+      "requester": "C",
+      "role": null,
+      "at": 1504.36,
+      "percent": 53.749537698006044,
+      "cohort": "middle",
+      "question": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
+      "generator_question": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "C is the one who proposed the evaluation method and needs to confirm the separation between training and labeling.",
+      "codex_review": "The source separates training from evaluation and describes comparing category membership. This asks for that earlier method, without claiming certified multi-hop difficulty.",
+      "question_group": "IN1005-directory-evaluation",
+      "reference_answer": "The directory categories are reserved for evaluation, not supplied during model training. They support checking whether the learned representation relates documents that belong in the same category.",
+      "generator_proposed_answer": "The directory labels are only used for evaluation, not in training, to assess similarity between documents based on known categories.",
+      "full_history_check": {
+        "id": "IN1005-Smiddle-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The Yahoo directory labels are used solely for evaluation, not training. As stated in passage IN1005-s0164, the directory is not used in the model's training step. Instead, it serves as a benchmark to assess whether pages in the same category are closer in representation than those in different categories, enabling evaluation of the model's clustering quality without influencing its learning process.",
+        "evidence_ids": [
+          "IN1005-s0164",
+          "IN1005-s0166",
+          "IN1005-s0197",
+          "IN1005-s0209"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and matches the conversational tone of the transcript.",
+        "connection_assessment": "The question directly follows C's earlier explanation of the evaluation setup, making it a natural continuation.",
+        "window_id": "IN1005-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IN1005-Smiddle-Q1",
+        "answer": "The provided transcript does not contain information about how Yahoo directory labels are used in evaluation or their impact on model training. No excerpt addresses this topic.",
+        "evidence_ids": [],
+        "missing_information": "No information on Yahoo directory labels or their use in evaluation.",
+        "window_id": "IN1005-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IN1005-s0164",
+          "speaker": "C",
+          "start": 612.6,
+          "end": 622.93,
+          "text": "But you you would not use this you will not use the Yahoo directory or n the directory in the training step of i of the model, okay."
+        },
+        {
+          "id": "IN1005-s0197",
+          "speaker": "C",
+          "start": 721.86,
+          "end": 731.31,
+          "text": "So so so w what what you would have have basically would be to have a directory which give you labels for some part of the documents."
+        },
+        {
+          "id": "IN1005-s0225",
+          "speaker": "C",
+          "start": 863.0,
+          "end": 871.22,
+          "text": "So you you would train it you this is this is t t all all those links are known."
+        },
+        {
+          "id": "IN1005-s0166",
+          "speaker": "C",
+          "start": 622.93,
+          "end": 635.08,
+          "text": "This is something you have just for evaluation, and then for example you you your task would be to say I have some page and and I know where"
+        },
+        {
+          "id": "IN1005-s0209",
+          "speaker": "C",
+          "start": 811.47,
+          "end": 820.4,
+          "text": "Then you can evaluate how wrong you are or cu how close you are from the real assignment, the right directory category."
+        }
+      ],
+      "alternatives": [
+        {
+          "id": "IN1005-Slater-Q1",
+          "meeting": "IN1005",
+          "requester": "C",
+          "role": null,
+          "at": 2166.4,
+          "percent": 77.40367895248498,
+          "cohort": "later",
+          "question": "Assistant, can you clarify how the evaluation task uses the Yahoo directory labels without including them in training?",
+          "generator_question": "Assistant, can you clarify how the evaluation task uses the Yahoo directory labels without including them in training?",
+          "edited": false,
+          "kind": "connection",
+          "why_now": "C is the one who proposed the evaluation method using directory labels and needs to confirm the setup's validity.",
+          "codex_review": "Same requested facts as the earlier directory-evaluation question; kept as an alternative at a later cutoff, without another distinct-question count.",
+          "question_group": "IN1005-directory-evaluation",
+          "reference_answer": "The directory categories are used to evaluate the learned representation, not supplied during model training. They allow checking whether related documents belong in the same category.",
+          "generator_proposed_answer": "The Yahoo directory labels are used only for evaluation, not in training, to assess how well the model clusters pages into known categories.",
+          "full_history_check": {
+            "id": "IN1005-Slater-Q1",
+            "premise_supported": true,
+            "requester_plausible": true,
+            "natural_spoken_question": true,
+            "answer": "The Yahoo directory labels are used only for evaluation, not training. As stated in passage IN1005-s0164, the directory is not used in the model's training step. Instead, it serves as a benchmark to assess whether pages in the same category are closer in the model's representation. The evaluation compares the model's output to the directory's human-labeled categories to test similarity, not to train the model.",
+            "evidence_ids": [
+              "IN1005-s0164",
+              "IN1005-s0166",
+              "IN1005-s0168",
+              "IN1005-s0174",
+              "IN1005-s0176",
+              "IN1005-s0178",
+              "IN1005-s0186",
+              "IN1005-s0192"
+            ],
+            "missing_information": "None.",
+            "naturalness_note": "The question is brief, clear, and fits the ongoing discussion about evaluation methods.",
+            "connection_assessment": "Directly linked to prior discussion on evaluation using directory labels.",
+            "window_id": "IN1005-Slater",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "recent_minute_check": {
+            "id": "IN1005-Slater-Q1",
+            "answer": "The transcript does not provide information on how the evaluation task uses Yahoo directory labels without including them in training. No relevant excerpt addresses this specific method or setup.",
+            "evidence_ids": [],
+            "missing_information": "The transcript lacks details about the use of Yahoo directory labels in evaluation or their exclusion from training.",
+            "window_id": "IN1005-Slater",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "evidence": [
+            {
+              "id": "IN1005-s0159",
+              "speaker": "C",
+              "start": 584.08,
+              "end": 593.16,
+              "text": "so f like Yahoo or entries, so you have categories and and entries, so for example you have I dunno, cars, S_U_V_, etcetera."
+            },
+            {
+              "id": "IN1005-s0164",
+              "speaker": "C",
+              "start": 612.6,
+              "end": 622.93,
+              "text": "But you you would not use this you will not use the Yahoo directory or n the directory in the training step of i of the model, okay."
+            },
+            {
+              "id": "IN1005-s0166",
+              "speaker": "C",
+              "start": 622.93,
+              "end": 635.08,
+              "text": "This is something you have just for evaluation, and then for example you you your task would be to say I have some page and and I know where"
+            },
+            {
+              "id": "IN1005-s0168",
+              "speaker": "C",
+              "start": 647.09,
+              "end": 652.75,
+              "text": "in the same category as the first one, just by comparing their uh aspects."
+            },
+            {
+              "id": "IN1005-s0174",
+              "speaker": "C",
+              "start": 662.07,
+              "end": 674.16,
+              "text": "So basically what you would like to check if is is is there some similarity in the in the in the aspect distribution, tells me uh something about uh the sim the the fact that"
+            },
+            {
+              "id": "IN1005-s0176",
+              "speaker": "C",
+              "start": 674.16,
+              "end": 681.31,
+              "text": "they could be on the same category in the the this end end label categories."
+            },
+            {
+              "id": "IN1005-s0178",
+              "speaker": "B",
+              "start": 681.75,
+              "end": 683.18,
+              "text": "Okay."
+            },
+            {
+              "id": "IN1005-s0186",
+              "speaker": "B",
+              "start": 697.68,
+              "end": 702.37,
+              "text": "Uh thi this these labels, the Yahoo categories, that's that's a clustering."
+            },
+            {
+              "id": "IN1005-s0192",
+              "speaker": "D",
+              "start": 706.95,
+              "end": 720.29,
+              "text": "No no no, i no no no no, it's doesn't have to be that if if you use the latent representations or distribution over aspects, you could use this to save two documents uh in the same directory or not"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IN1007-S05-Q2",
+      "meeting": "IN1007",
+      "requester": "D",
+      "role": null,
+      "at": 328.62,
+      "percent": 13.628136864862915,
+      "cohort": "early",
+      "question": "Assistant, do we still have the original MATLAB code from Marios and Petr’s joint work?",
+      "generator_question": "Assistant, do we still have the original MATLAB code from Marios and Petr’s joint work?",
+      "edited": false,
+      "kind": "missing_information",
+      "why_now": "D previously rewrote part of the code in C++ and now needs to know if the original MATLAB version exists to understand dependencies or rework the process.",
+      "codex_review": "The reader infers present availability from past development. Earlier speech establishes authorship and a rewrite, not current access to the files.",
+      "question_group": "IN1007-matlab-availability",
+      "reference_answer": "The prefix says Marios programmed in MATLAB and Petr rewrote work in C++. It does not establish whether the original MATLAB files are still available.",
+      "generator_proposed_answer": "We don’t know if it’s still available, but it was mostly in MATLAB with some C++ translation later.",
+      "full_history_check": {
+        "id": "IN1007-S05-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, the original MATLAB code from Marios and Petr's joint work is still available. D mentions rewriting it in C++ later, implying the original existed and was accessible.",
+        "evidence_ids": [
+          "IN1007-s0104",
+          "IN1007-s0102"
+        ],
+        "missing_information": "None.",
+        "naturalness_note": "The question is brief, contextually relevant, and matches D's prior mention of code implementation.",
+        "connection_assessment": "Directly supported by D's statement about rewriting the code, confirming its existence.",
+        "window_id": "IN1007-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IN1007-S05-Q2",
+        "answer": "Missing information. The latest transcript does not mention the original MATLAB code from Marios and Petr's joint work or its availability.",
+        "evidence_ids": [
+          "IN1007-s0149"
+        ],
+        "missing_information": "The transcript does not address the existence or availability of the original MATLAB code from Marios and Petr's joint work.",
+        "window_id": "IN1007-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IN1007-s0104",
+          "speaker": "A",
+          "start": 219.6,
+          "end": 231.65,
+          "text": "So they were working little bit together, mainly M Marios was uh programming in MATLAB and Petr was putting it into fancy is yeah and uh but uh and but"
+        },
+        {
+          "id": "IN1007-s0102",
+          "speaker": "D",
+          "start": 225.0,
+          "end": 227.38,
+          "text": "Yeah, I just re-wrote in in C_ plus plus."
+        }
+      ],
+      "alternatives": [
+        {
+          "id": "IN1007-Slater-Q2",
+          "meeting": "IN1007",
+          "requester": "D",
+          "role": null,
+          "at": 1942.18,
+          "percent": 80.54377352625968,
+          "cohort": "later",
+          "question": "Assistant, do we still have the original MATLAB code for the TRAP compression experiments?",
+          "generator_question": "Assistant, do we still have the original MATLAB code for the TRAP compression experiments?",
+          "edited": false,
+          "kind": "connection",
+          "why_now": "D previously rewrote code in C++ and now seeks original MATLAB files.",
+          "codex_review": "Same availability question at a later point, when new speech establishes the answer. This is retained under the earlier question rather than counted twice.",
+          "question_group": "IN1007-matlab-availability",
+          "reference_answer": "At this later cutoff, D explicitly says that all the files and MATLAB implementations are still there.",
+          "generator_proposed_answer": "Yes, all MATLAB implementations are still here.",
+          "full_history_check": {
+            "id": "IN1007-Slater-Q2",
+            "premise_supported": true,
+            "requester_plausible": true,
+            "natural_spoken_question": true,
+            "answer": "Yes, the original MATLAB code for the TRAP compression experiments is still available. D confirms that all files, including MATLAB implementations, are present and accessible, as noted in passage IN1007-s0836–IN1007-s0841.",
+            "evidence_ids": [
+              "IN1007-s0836",
+              "IN1007-s0837",
+              "IN1007-s0838",
+              "IN1007-s0839",
+              "IN1007-s0840",
+              "IN1007-s0841"
+            ],
+            "missing_information": "",
+            "naturalness_note": "The question is brief, contextually appropriate, and matches D's prior role in discussing code availability.",
+            "connection_assessment": "Directly supported by D's statement that all files, including MATLAB code, are still here.",
+            "window_id": "IN1007-Slater",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "recent_minute_check": {
+            "id": "IN1007-Slater-Q2",
+            "answer": "Missing information. The transcript does not confirm whether the original MATLAB code for the TRAP compression experiments is still available.",
+            "evidence_ids": [
+              "IN1007-s0975"
+            ],
+            "missing_information": "The transcript mentions D offering to share code but does not specify if it includes the original MATLAB code for the TRAP compression experiments.",
+            "window_id": "IN1007-Slater",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "evidence": [
+            {
+              "id": "IN1007-s0841",
+              "speaker": "D",
+              "start": 1663.97,
+              "end": 1667.76,
+              "text": "So all the m MATLAB implementations of these are here."
+            },
+            {
+              "id": "IN1007-s0102",
+              "speaker": "D",
+              "start": 225.0,
+              "end": 227.38,
+              "text": "Yeah, I just re-wrote in in C_ plus plus."
+            },
+            {
+              "id": "IN1007-s0836",
+              "speaker": "D",
+              "start": 1654.7,
+              "end": 1661.4,
+              "text": "Also I can um before Marius left, he he has he had actually left himself."
+            },
+            {
+              "id": "IN1007-s0837",
+              "speaker": "C",
+              "start": 1663.33,
+              "end": 1663.74,
+              "text": "Mm-hmm."
+            },
+            {
+              "id": "IN1007-s0838",
+              "speaker": "D",
+              "start": 1661.4,
+              "end": 1663.77,
+              "text": "But all the files are here."
+            },
+            {
+              "id": "IN1007-s0839",
+              "speaker": "D",
+              "start": 1663.77,
+              "end": 1663.97,
+              "text": "You know."
+            },
+            {
+              "id": "IN1007-s0840",
+              "speaker": "C",
+              "start": 1666.7,
+              "end": 1667.09,
+              "text": "Okay."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IB4001-S05-Q1",
+      "meeting": "IB4001",
+      "requester": "C",
+      "role": null,
+      "at": 298.01,
+      "percent": 16.735844786425776,
+      "cohort": "early",
+      "question": "Assistant, what's the exact deadline for the final plan submission again? I want to make sure I'm not missing anything from earlier.",
+      "generator_question": "Assistant, what's the exact deadline for the final plan submission again? I want to make sure I'm not missing anything from earlier.",
+      "edited": false,
+      "kind": "recall",
+      "why_now": "C has just agreed to the plan and needs to confirm a time-sensitive constraint before moving forward.",
+      "codex_review": "Natural early reminder of the planning deadline, which was stated near the start of the meeting.",
+      "question_group": "IB4001-S05-Q1",
+      "reference_answer": "They need to say where people will be placed by November second, described as next Tuesday.",
+      "generator_proposed_answer": "The final plan must be ready by November second, which is next Tuesday.",
+      "full_history_check": {
+        "id": "IB4001-S05-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The final plan submission deadline is November second, which is next Tuesday. This was stated in passage IB4001-s0008 and confirmed in IB4001-s0009.",
+        "evidence_ids": [
+          "IB4001-s0008",
+          "IB4001-s0009"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, contextually appropriate, and matches the speaker's role and timing.",
+        "connection_assessment": "Directly supported by two consecutive passages.",
+        "window_id": "IB4001-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IB4001-S05-Q1",
+        "answer": "The transcript does not specify a deadline for the final plan submission.",
+        "evidence_ids": [
+          "IB4001-s0070",
+          "IB4001-s0073"
+        ],
+        "missing_information": "No mention of a deadline in the provided minute.",
+        "window_id": "IB4001-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IB4001-s0008",
+          "speaker": "B",
+          "start": 38.82,
+          "end": 42.17,
+          "text": "And they want to know where we're gonna do all this by November second."
+        },
+        {
+          "id": "IB4001-s0009",
+          "speaker": "B",
+          "start": 42.91,
+          "end": 47.52,
+          "text": "So that means basically next Tuesday."
+        },
+        {
+          "id": "IB4001-s0072",
+          "speaker": "C",
+          "start": 295.1,
+          "end": 295.55,
+          "text": "Okay."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "IB4001-Slater-Q2",
+      "meeting": "IB4001",
+      "requester": "D",
+      "role": null,
+      "at": 1436.84,
+      "percent": 80.69102118361133,
+      "cohort": "later",
+      "question": "Assistant, does the plan still allow for the reading room to be used for short meetings if needed?",
+      "generator_question": "Assistant, does the plan still allow for the reading room to be used for short meetings if needed?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "D had earlier raised concerns about the overhead of crossing the building for short meetings, and now seeks confirmation that the reading room can serve as an informal meeting space.",
+      "codex_review": "Both the permission and its limitation are explicit in the earlier discussion.",
+      "question_group": "IB4001-Slater-Q2",
+      "reference_answer": "The room can be used for a meeting if it is empty. It should not be reserved in advance or used by displacing someone already reading there.",
+      "generator_proposed_answer": "Yes, the reading room can be used for short meetings if no one is reading there, but it shouldn't be reserved in advance.",
+      "full_history_check": {
+        "id": "IB4001-Slater-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, the plan allows the reading room to be used for short meetings if needed. B states that if the room is empty, it's fine to use for a meeting, though it shouldn't displace someone reading. The room is not reserved exclusively for reading.",
+        "evidence_ids": [
+          "IB4001-s0187",
+          "IB4001-s0193",
+          "IB4001-s0194"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, contextually relevant, and matches D's prior speaking style.",
+        "connection_assessment": "Directly linked to earlier discussion about the reading room's dual purpose.",
+        "window_id": "IB4001-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IB4001-Slater-Q2",
+        "answer": "The transcript does not provide information about whether the reading room can be used for short meetings. No mention of a reading room or its intended use is made in the latest minute.",
+        "evidence_ids": [],
+        "missing_information": "No information about the reading room or its use for meetings is present in the provided transcript.",
+        "window_id": "IB4001-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IB4001-s0187",
+          "speaker": "B",
+          "start": 590.56,
+          "end": 598.81,
+          "text": "I think it's not a question of reserving it, because there's other rooms at the university that you can reserve for a meeting, but if it's empty, then sure you can use it for a meeting."
+        },
+        {
+          "id": "IB4001-s0193",
+          "speaker": "B",
+          "start": 599.88,
+          "end": 605.83,
+          "text": "But I think if someone's already reading in there, it's not fair to go and kick them out just because you want to have a meeting 'cause"
+        },
+        {
+          "id": "IB4001-s0183",
+          "speaker": "D",
+          "start": 583.38,
+          "end": 587.85,
+          "text": "'Kay uh will it be dedicated for reading and for studying or can we have meetings there."
+        },
+        {
+          "id": "IB4001-s0196",
+          "speaker": "D",
+          "start": 606.18,
+          "end": 617.75,
+          "text": "Well, the the problem is if you have to go across the building and it adds some overhead every time you want to have some short meeting and discuss some issues."
+        },
+        {
+          "id": "IB4001-s0194",
+          "speaker": "A",
+          "start": 615.41,
+          "end": 615.84,
+          "text": "No."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "IB4003-S075-Q3",
+      "meeting": "IB4003",
+      "requester": "A",
+      "role": null,
+      "at": 436.54,
+      "percent": 21.57525986786179,
+      "cohort": "early",
+      "question": "Assistant, how many people were we finding offices for again?",
+      "generator_question": "Assistant, can we confirm the total number of people again? I think it's eighteen, right?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "A is seeking confirmation of a number they previously stated but may have doubted, based on conflicting input from others.",
+      "codex_review": "Removed the answer value from the question. The source counts eighteen people; this must not be confused with the later slots/person comparison.",
+      "question_group": "IB4003-S075-Q3",
+      "reference_answer": "Eighteen people were counted. The later discussion of sixteen slots for fifteen people is a different capacity/occupancy statement, not a correction of that headcount.",
+      "generator_proposed_answer": "Yes, the total number of people is eighteen, as confirmed during the earlier discussion.",
+      "full_history_check": {
+        "id": "IB4003-S075-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "A asks to confirm the total number of people, citing 18. C counts aloud: 18 people (IB4003-s0053). A’s initial count was 18 (IB4003-s0051), later confirmed by C. The premise is supported. The question is brief, natural, and fits A’s role in clarifying numbers.",
+        "evidence_ids": [
+          "IB4003-s0051",
+          "IB4003-s0053"
+        ],
+        "missing_information": "No, all needed info is present.",
+        "naturalness_note": "Yes, fits A’s role in summarizing and verifying.",
+        "connection_assessment": "Directly follows A’s earlier count and C’s confirmation.",
+        "window_id": "IB4003-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IB4003-S075-Q3",
+        "answer": "The transcript does not confirm the total number of people as eighteen. Speaker A mentions having a list of people but does not state the total count. Therefore, the information is missing.",
+        "evidence_ids": [
+          "IB4003-s0086",
+          "IB4003-s0087",
+          "IB4003-s0089",
+          "IB4003-s0090",
+          "IB4003-s0091"
+        ],
+        "missing_information": "The total number of people is not explicitly stated in the transcript.",
+        "window_id": "IB4003-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IB4003-s0051",
+          "speaker": "A",
+          "start": 281.62,
+          "end": 284.44,
+          "text": "oh, actually, eighteen persons in the offices."
+        },
+        {
+          "id": "IB4003-s0049",
+          "speaker": "A",
+          "start": 269.6,
+          "end": 281.62,
+          "text": "Uh yeah, I uh yeah, I counted so we have um fifteen pers physical persons and about uh sixteen, I think, uh persons"
+        },
+        {
+          "id": "IB4003-s0053",
+          "speaker": "C",
+          "start": 283.99,
+          "end": 287.95,
+          "text": "Six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "IB4003-S10-Q3",
+      "meeting": "IB4003",
+      "requester": "A",
+      "role": null,
+      "at": 656.27,
+      "percent": 32.43504786155142,
+      "cohort": "early",
+      "question": "Assistant, had we picked a room for the reading lounge?",
+      "generator_question": "Assistant, do we have a clear list of which rooms are designated for the reading lounge or can we assign one now?",
+      "edited": true,
+      "kind": "missing_information",
+      "why_now": "A introduced the idea of a reading room but hasn’t assigned a specific room yet.",
+      "codex_review": "Removed the request to assign a room now. A listening assistant can recall the proposed arrangement but cannot choose a room for the group.",
+      "question_group": "IB4003-S10-Q3",
+      "reference_answer": "A reading lounge was proposed, including using a two-person room, but no particular room is designated in the available discussion.",
+      "generator_proposed_answer": "A proposed creating a reading room in one of the existing rooms, but no room is yet designated.",
+      "full_history_check": {
+        "id": "IB4003-S10-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, we can assign a room now. A proposed the reading lounge as one of the rooms, and D noted that a two-person room could serve this purpose, leaving 16 slots for 15 people. No room is yet designated, so assignment is open. (IB4003-s0055, IB4003-s0068, IB4003-s0071)",
+        "evidence_ids": [
+          "IB4003-s0055",
+          "IB4003-s0068",
+          "IB4003-s0071"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and fits the meeting's flow of decision-making.",
+        "connection_assessment": "The question directly follows the discussion about the reading lounge and room allocation.",
+        "window_id": "IB4003-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IB4003-S10-Q3",
+        "answer": "Missing information. The latest transcript does not mention any designated rooms for a reading lounge or provide authority to assign one now.",
+        "evidence_ids": [
+          "IB4003-s0152"
+        ],
+        "missing_information": "No mention of reading lounge designation or assignment authority in the latest minute.",
+        "window_id": "IB4003-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IB4003-s0055",
+          "speaker": "A",
+          "start": 286.98,
+          "end": 299.06,
+          "text": "Exactly, it so one of the issues uh here, it's probably not on the slides, is that we would like to have uh, unlike what had until now, a lounge or reading room uh in one of the the"
+        },
+        {
+          "id": "IB4003-s0068",
+          "speaker": "D",
+          "start": 329.12,
+          "end": 341.21,
+          "text": "Uh because fifteen people to put in there eighteen positions, so uh to the best uh if you take uh two people room for the reading"
+        },
+        {
+          "id": "IB4003-s0071",
+          "speaker": "A",
+          "start": 342.98,
+          "end": 346.36,
+          "text": "Well, sixteen slots for fifteen people."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "IB4003-Smiddle-Q3",
+      "meeting": "IB4003",
+      "requester": "B",
+      "role": null,
+      "at": 1078.12,
+      "percent": 53.28427903225168,
+      "cohort": "middle",
+      "question": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
+      "generator_question": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "B expressed a need for personal space and drawers, and the earlier constraint about not sharing desks is older than 60 seconds and still relevant.",
+      "codex_review": "A supported reminder of a workspace constraint while the group considers shared rooms.",
+      "question_group": "IB4003-Smiddle-Q3",
+      "reference_answer": "People should have their own desks. A explicitly says that two people cannot be put at the same desk, agreeing with B’s concern about drawers and sharing.",
+      "generator_proposed_answer": "Each person must have their own desk, and two people cannot share a single desk.",
+      "full_history_check": {
+        "id": "IB4003-Smiddle-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, confirmed. A explicitly states in s0177 that there is no way two persons could share the same desk. B's need for individual desk and drawers aligns with this constraint, as noted in s0170–172.",
+        "evidence_ids": [
+          "IB4003-s0170",
+          "IB4003-s0171",
+          "IB4003-s0172",
+          "IB4003-s0177"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and matches B's earlier concern about personal space and equipment.",
+        "connection_assessment": "Directly linked to B's prior statement and A's confirmation of no shared desks.",
+        "window_id": "IB4003-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "IB4003-Smiddle-Q3",
+        "answer": "The recent transcript does not establish whether desk sharing will occur, even in a two-person room. No information is provided about desk allocation or sharing policies.",
+        "evidence_ids": [
+          "IB4003-s0275",
+          "IB4003-s0276"
+        ],
+        "missing_information": "Confirmation on desk sharing policy or individual desk allocation is not addressed in the latest minute.",
+        "window_id": "IB4003-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "IB4003-s0170",
+          "speaker": "B",
+          "start": 755.46,
+          "end": 761.51,
+          "text": "What uh I don't think it's a good idea to share uh t to ha to share the same desk."
+        },
+        {
+          "id": "IB4003-s0177",
+          "speaker": "A",
+          "start": 779.42,
+          "end": 782.88,
+          "text": "It's no no way we we could put two persons at the same desk."
+        },
+        {
+          "id": "IB4003-s0164",
+          "speaker": "B",
+          "start": 727.03,
+          "end": 739.13,
+          "text": "Yeah uh, okay uh, me personally I would like to to to share the other peopl n uh the room with assistants as when you have problems of normal life, like uh the printer doesn't work, uh I don't want to ask this to"
+        },
+        {
+          "id": "IB4003-s0171",
+          "speaker": "B",
+          "start": 761.51,
+          "end": 764.61,
+          "text": "Uh I still would like to have my drawers and these things."
+        },
+        {
+          "id": "IB4003-s0172",
+          "speaker": "A",
+          "start": 765.78,
+          "end": 767.12,
+          "text": "Yeah, I think so too."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2003c-S075-Q3",
+      "meeting": "ES2003c",
+      "requester": "B",
+      "role": "project manager",
+      "at": 453.53,
+      "percent": 20.147934251443804,
+      "cohort": "early",
+      "question": "Assistant, what was the concern about using a kinetic battery for this remote?",
+      "generator_question": "Assistant, what’s the reasoning behind ruling out the kinetic battery for this remote?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "B raised the power concern and now seeks confirmation of the reasoning behind the decision.",
+      "codex_review": "Changed “ruling out” to “concern”: the cited exchange expresses doubt and gives a comparison, without a formal final rejection.",
+      "question_group": "ES2003c-S075-Q3",
+      "reference_answer": "The concern was whether movement of a remote would provide enough power; a watch moves around much more. These remarks express doubt rather than a measured power result.",
+      "generator_proposed_answer": "It likely won’t supply enough power, especially compared to how much movement a watch gets.",
+      "full_history_check": {
+        "id": "ES2003c-S075-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The kinetic battery was ruled out because it wouldn't supply enough power, as watches move more than a remote control would. D stated, 'I don't think it would' (ES2003c-s0063), and A noted watches move more (ES2003c-s0060).",
+        "evidence_ids": [
+          "ES2003c-s0060",
+          "ES2003c-s0063"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and fits the project manager's role in seeking clarification.",
+        "connection_assessment": "The premise is supported by D's explicit doubt and A's comparative observation.",
+        "window_id": "ES2003c-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2003c-S075-Q3",
+        "answer": "The transcript does not contain any information about a kinetic battery or its exclusion. Therefore, the reasoning cannot be determined from the provided minute.",
+        "evidence_ids": [
+          "ES2003c-s0130"
+        ],
+        "missing_information": "No mention of kinetic battery or related reasoning in the latest minute.",
+        "window_id": "ES2003c-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2003c-s0057",
+          "speaker": "B",
+          "start": 227.36,
+          "end": 231.53,
+          "text": "Is a kinetic one going to be able to supply enough power?"
+        },
+        {
+          "id": "ES2003c-s0060",
+          "speaker": "A",
+          "start": 232.63,
+          "end": 234.77,
+          "text": "There's also a watch moves around a great deal more."
+        },
+        {
+          "id": "ES2003c-s0055",
+          "speaker": "B",
+          "start": 219.48,
+          "end": 227.36,
+          "text": "Um the bat uh the battery for a a watch wouldn't require a lot of power, would be my one query."
+        },
+        {
+          "id": "ES2003c-s0063",
+          "speaker": "D",
+          "start": 236.02,
+          "end": 238.74,
+          "text": "Yeah, I don't think it would."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2003c-S10-Q1",
+      "meeting": "ES2003c",
+      "requester": "C",
+      "role": "marketing expert",
+      "at": 605.14,
+      "percent": 26.88316303864949,
+      "cohort": "early",
+      "question": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
+      "generator_question": "Assistant, how does the cost of the advanced chip for L_C_D_ compare to the basic button chip, based on what was said earlier?",
+      "edited": true,
+      "kind": "missing_information",
+      "why_now": "C is the marketing expert who raised cost concerns earlier; this question seeks a clear comparison to assess feasibility within budget constraints.",
+      "codex_review": "Both model answers turn an open cost question into a definite comparison. The retained question is valid; its reference preserves the missing price information.",
+      "question_group": "ES2003c-S10-Q1",
+      "reference_answer": "No price difference is given. The team asks whether the LCD would raise costs substantially and says it requires a more powerful chip than simple buttons. That does not establish a quoted or measured cost increase.",
+      "generator_proposed_answer": "The advanced chip for L_C_D_ requires more power and is more expensive than the basic chip used for simple button presses. (Excerpt ID: ES2003c-s0140, ES2003c-s0139)",
+      "full_history_check": {
+        "id": "ES2003c-S10-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The advanced chip for L_C_D_ is significantly more expensive than the basic button chip, as it requires more power and complexity to control the display, unlike simple button presses that send basic infrared signals. (Citations: ES2003c-s0135, ES2003c-s0142, ES2003c-s0146)",
+        "evidence_ids": [
+          "ES2003c-s0135",
+          "ES2003c-s0142",
+          "ES2003c-s0146"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and matches the context of cost discussion. No artificial phrasing or multi-hop logic.",
+        "connection_assessment": "Links directly to prior cost and chip discussion.",
+        "window_id": "ES2003c-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2003c-S10-Q1",
+        "answer": "Missing information. The transcript does not provide any comparison of costs between the advanced chip for L_C_D_ and the basic button chip.",
+        "evidence_ids": [
+          "ES2003c-s0171"
+        ],
+        "missing_information": "Cost comparison between the advanced chip for L_C_D_ and the basic button chip",
+        "window_id": "ES2003c-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2003c-s0140",
+          "speaker": "B",
+          "start": 482.35,
+          "end": 485.43,
+          "text": "Well I think compared to say just pressing buttons."
+        },
+        {
+          "id": "ES2003c-s0139",
+          "speaker": "D",
+          "start": 483.01,
+          "end": 483.46,
+          "text": "Yep."
+        },
+        {
+          "id": "ES2003c-s0153",
+          "speaker": "C",
+          "start": 516.16,
+          "end": 518.45,
+          "text": "twelve Euros, not even twelve Pounds."
+        },
+        {
+          "id": "ES2003c-s0154",
+          "speaker": "C",
+          "start": 518.45,
+          "end": 521.42,
+          "text": "Twelve Euros, what's that, like eight pounds or something like that, nine Pounds?"
+        },
+        {
+          "id": "ES2003c-s0135",
+          "speaker": "B",
+          "start": 468.42,
+          "end": 478.46,
+          "text": "Um, do you have any idea so far, like when we're saying that we'd need an advanced chip for an L_C_D_, does that in shoot the cost up by a drastic amount?"
+        },
+        {
+          "id": "ES2003c-s0142",
+          "speaker": "B",
+          "start": 487.25,
+          "end": 497.65,
+          "text": "if you press a button that sends a certain transmission through the infra-red, whereas I think if we're controlling the L_C_D_ we definitely require a much more powerful chip."
+        },
+        {
+          "id": "ES2003c-s0146",
+          "speaker": "B",
+          "start": 497.65,
+          "end": 502.83,
+          "text": "Just compared to the chip you would use for pushing buttons I think is the the point being made."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2003c-Slater-Q2",
+      "meeting": "ES2003c",
+      "requester": "B",
+      "role": "project manager",
+      "at": 1798.74,
+      "percent": 79.90848511772546,
+      "cohort": "later",
+      "question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
+      "generator_question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "B questioned structural implications of articulation, and earlier design choices about battery placement and curvature were made over 60 seconds ago.",
+      "codex_review": "The earlier grip/battery suggestion supports the design question. Removed unsupported claims about balance and a finalized layout.",
+      "question_group": "ES2003c-Slater-Q2",
+      "reference_answer": "In the articulated design proposal, the grip would be the bulkiest part and was suggested as the place for the battery. The source describes a suggestion, not a verified internal layout or balance calculation.",
+      "generator_proposed_answer": "The double curved design may require the battery to be placed in the grip section to maintain balance and fit within the curved form.",
+      "full_history_check": {
+        "id": "ES2003c-Slater-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The double curved design allows the battery to be placed in the grip section, which is the bulkiest part. This placement maintains internal space balance and supports the articulated structure. The design accommodates the battery without compromising ergonomics or articulation points.",
+        "evidence_ids": [
+          "ES2003c-s0250",
+          "ES2003c-s0226",
+          "ES2003c-s0227",
+          "ES2003c-s0228",
+          "ES2003c-s0229",
+          "ES2003c-s0230",
+          "ES2003c-s0231",
+          "ES2003c-s0232"
+        ],
+        "missing_information": "No specific dimensions or weight distribution details are provided.",
+        "naturalness_note": "The question is brief, contextually relevant, and matches the project manager's role and timing in the meeting.",
+        "connection_assessment": "The question directly follows the discussion on double curved design and its structural implications, making it a natural continuation.",
+        "window_id": "ES2003c-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2003c-Slater-Q2",
+        "answer": "Missing information. The latest transcript does not discuss double curved design, battery placement, or internal space.",
+        "evidence_ids": [],
+        "missing_information": "The transcript does not contain any information about double curved design, battery placement, or internal space.",
+        "window_id": "ES2003c-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2003c-s0223",
+          "speaker": "B",
+          "start": 838.75,
+          "end": 842.45,
+          "text": "That would suggest the double curved design's probably going to be most appropriate, then."
+        },
+        {
+          "id": "ES2003c-s0250",
+          "speaker": "A",
+          "start": 975.84,
+          "end": 979.59,
+          "text": "Probably where you'd want to have the battery as well."
+        },
+        {
+          "id": "ES2003c-s0371",
+          "speaker": "B",
+          "start": 1482.78,
+          "end": 1485.53,
+          "text": "Looks like we going for a double curved design."
+        },
+        {
+          "id": "ES2003c-s0244",
+          "speaker": "A",
+          "start": 950.71,
+          "end": 959.04,
+          "text": "You then have a grip section that can be more or less the same irrespective of handedness."
+        },
+        {
+          "id": "ES2003c-s0248",
+          "speaker": "A",
+          "start": 973.41,
+          "end": 975.84,
+          "text": "This would be the actual grip."
+        },
+        {
+          "id": "ES2003c-s0251",
+          "speaker": "A",
+          "start": 979.59,
+          "end": 982.31,
+          "text": "That would be probably the bulkiest part."
+        },
+        {
+          "id": "ES2003c-s0226",
+          "speaker": "A",
+          "start": 844.29,
+          "end": 856.37,
+          "text": "Um, basi basically what I basically what the what be having um, I would say, the the whole thing articulated at two points, so that"
+        },
+        {
+          "id": "ES2003c-s0227",
+          "speaker": "A",
+          "start": 856.37,
+          "end": 866.04,
+          "text": "if you if you're handing it from a lef uh left or right handed user you can adjust it so that the um the L_C_ the L_C_D_ and the uh"
+        },
+        {
+          "id": "ES2003c-s0228",
+          "speaker": "A",
+          "start": 869.01,
+          "end": 871.0,
+          "text": "The joystick would be in the right place."
+        },
+        {
+          "id": "ES2003c-s0229",
+          "speaker": "B",
+          "start": 872.41,
+          "end": 872.99,
+          "text": "Mm."
+        },
+        {
+          "id": "ES2003c-s0230",
+          "speaker": "A",
+          "start": 872.25,
+          "end": 884.67,
+          "text": "And also this is a rather nicer de uh design gimmick that the the um you know the whole thing you know it should have sort of organic feel to it that it should be, you know, soft"
+        },
+        {
+          "id": "ES2003c-s0231",
+          "speaker": "A",
+          "start": 884.67,
+          "end": 889.21,
+          "text": "to touch and can be moved around all nice."
+        },
+        {
+          "id": "ES2003c-s0232",
+          "speaker": "B",
+          "start": 889.65,
+          "end": 890.17,
+          "text": "Okay."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3004d-S05-Q1",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "role": "industrial designer",
+      "at": 304.46,
+      "percent": 11.091438979963568,
+      "cohort": "early",
+      "question": "Assistant, why were we leaning toward a slide-open design?",
+      "generator_question": "Assistant, what was the exact reason we chose slide open over fold open for the internal access?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "C had just proposed the slide open option and now seeks confirmation of the earlier rationale, which was discussed more than 60 seconds prior.",
+      "codex_review": "Removed the claim of an exact final decision between slide and fold. The earlier exchange gives several reasons for the preference.",
+      "question_group": "TS3004d-slide-reasons",
+      "reference_answer": "Participants called slide-open usable, suggested it might be stronger and noted the room it gives inside. The remarks support a preference, not an experimentally established superiority.",
+      "generator_proposed_answer": "Slide open is more usable and stronger, and provides more room inside.",
+      "full_history_check": {
+        "id": "TS3004d-S05-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The team agreed slide open is more usable and stronger, allowing more internal space for functions and comments (TS3004d-s0030, TS3004d-s0033, TS3004d-s0037). No explicit reason was given for rejecting fold open.",
+        "evidence_ids": [
+          "TS3004d-s0030",
+          "TS3004d-s0033",
+          "TS3004d-s0037"
+        ],
+        "missing_information": "No mention of fold open being considered or why it was rejected.",
+        "naturalness_note": "The question is brief, direct, and fits a real team discussion.",
+        "connection_assessment": "The premise is supported by the transcript, and the question logically follows the prior discussion on access methods.",
+        "window_id": "TS3004d-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3004d-S05-Q1",
+        "answer": "The transcript does not provide the exact reason for choosing slide open over fold open for internal access. No discussion about fold open or a comparison between slide and fold mechanisms is present.",
+        "evidence_ids": [],
+        "missing_information": "Reason for choosing slide open over fold open is not mentioned in the provided transcript.",
+        "window_id": "TS3004d-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3004d-s0030",
+          "speaker": "A",
+          "start": 104.35,
+          "end": 107.88,
+          "text": "Slide open is uh quite usable for remote controls."
+        },
+        {
+          "id": "TS3004d-s0033",
+          "speaker": "B",
+          "start": 111.62,
+          "end": 113.83,
+          "text": "It's may maybe uh a bit stronger as well."
+        },
+        {
+          "id": "TS3004d-s0026",
+          "speaker": "C",
+          "start": 97.32,
+          "end": 101.7,
+          "text": "Yeah, and Or are we making a slide open, like underneath?"
+        },
+        {
+          "id": "TS3004d-s0029",
+          "speaker": "C",
+          "start": 105.4,
+          "end": 106.5,
+          "text": "It's probably better."
+        },
+        {
+          "id": "TS3004d-s0037",
+          "speaker": "B",
+          "start": 115.99,
+          "end": 119.59,
+          "text": "Okay, so when you have a lot of room inside."
+        }
+      ],
+      "alternatives": [
+        {
+          "id": "TS3004d-S10-Q1",
+          "meeting": "TS3004d",
+          "requester": "C",
+          "role": "industrial designer",
+          "at": 595.85,
+          "percent": 21.706739526411656,
+          "cohort": "early",
+          "question": "Assistant, what were the reasons for preferring a slide-open inner panel?",
+          "generator_question": "Assistant, what's the exact reason we chose slide open over fold open for the inner panel?",
+          "edited": true,
+          "kind": "connection",
+          "why_now": "C previously raised the question of mechanism type and now seeks clarification on the decision rationale, which was only partially explained earlier.",
+          "codex_review": "Same answer facts as the earlier slide-open question; kept as an alternative at a later time.",
+          "question_group": "TS3004d-slide-reasons",
+          "reference_answer": "Usability, possibly greater strength and more room inside were given as reasons for preferring slide-open.",
+          "generator_proposed_answer": "Slide open is more usable and provides stronger structure for the remote control.",
+          "full_history_check": {
+            "id": "TS3004d-S10-Q1",
+            "premise_supported": true,
+            "requester_plausible": true,
+            "natural_spoken_question": true,
+            "answer": "Slide open was chosen because it offers more usable space inside and is stronger than fold open. C noted it's better for holding additional functions, and A and B agreed it's more practical and robust. (TS3004d-s0030, TS3004d-s0031, TS3004d-s0033, TS3004d-s0035)",
+            "evidence_ids": [
+              "TS3004d-s0030",
+              "TS3004d-s0031",
+              "TS3004d-s0033",
+              "TS3004d-s0035"
+            ],
+            "missing_information": "None.",
+            "naturalness_note": "The question is brief, contextually relevant, and matches C's role as industrial designer.",
+            "connection_assessment": "Directly linked to prior discussion on panel mechanism.",
+            "window_id": "TS3004d-S10",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "recent_minute_check": {
+            "id": "TS3004d-S10-Q1",
+            "answer": "Missing information. The recent transcript does not mention 'slide open' or 'fold open' for the inner panel, nor does it discuss the reasoning behind choosing one over the other.",
+            "evidence_ids": [],
+            "missing_information": "The transcript does not contain any discussion about the inner panel's opening mechanism or the rationale for selecting slide open over fold open.",
+            "window_id": "TS3004d-S10",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "evidence": [
+            {
+              "id": "TS3004d-s0030",
+              "speaker": "A",
+              "start": 104.35,
+              "end": 107.88,
+              "text": "Slide open is uh quite usable for remote controls."
+            },
+            {
+              "id": "TS3004d-s0033",
+              "speaker": "B",
+              "start": 111.62,
+              "end": 113.83,
+              "text": "It's may maybe uh a bit stronger as well."
+            },
+            {
+              "id": "TS3004d-s0026",
+              "speaker": "C",
+              "start": 97.32,
+              "end": 101.7,
+              "text": "Yeah, and Or are we making a slide open, like underneath?"
+            },
+            {
+              "id": "TS3004d-s0028",
+              "speaker": "C",
+              "start": 103.6,
+              "end": 104.05,
+              "text": "I don't know."
+            },
+            {
+              "id": "TS3004d-s0031",
+              "speaker": "C",
+              "start": 108.24,
+              "end": 112.83,
+              "text": "Yeah, s Like underneath uh you can slide it open and you other functions."
+            },
+            {
+              "id": "TS3004d-s0035",
+              "speaker": "A",
+              "start": 114.66,
+              "end": 116.15,
+              "text": "Yeah, that's that's a very good point."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TS3004d-S075-Q1",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "role": "industrial designer",
+      "at": 445.92,
+      "percent": 16.2448087431694,
+      "cohort": "early",
+      "question": "Assistant, what's the latest on the slide-open mechanism design?",
+      "generator_question": "Assistant, what's the latest on the slide-open mechanism design? We haven’t finalized how it works yet.",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "C is the industrial designer who raised the open mechanism question earlier and hasn’t seen a resolution, making this a natural follow-up.",
+      "codex_review": "Removed the second sentence that supplied the unresolved-status answer. The source explicitly states what remained undesigned.",
+      "question_group": "TS3004d-S075-Q1",
+      "reference_answer": "They had not yet had time to design the slide pad and did not know how many buttons or what kinds of buttons it needed.",
+      "generator_proposed_answer": "C: We also don't know how many buttons are required, or what kind of buttons.",
+      "full_history_check": {
+        "id": "TS3004d-S075-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The slide-open mechanism is still under discussion. C and B agree it offers more internal space and usability, but no final design has been confirmed. C suggests it could be underneath or fold open, and A notes slide open is usable for remote controls. No decision has been made yet.",
+        "evidence_ids": [
+          "TS3004d-s0026",
+          "TS3004d-s0027",
+          "TS3004d-s0030",
+          "TS3004d-s0031",
+          "TS3004d-s0108",
+          "TS3004d-s0111"
+        ],
+        "missing_information": "No specific mechanism (e.g., slide vs. fold) or technical implementation details have been finalized.",
+        "naturalness_note": "The question is brief, contextually relevant, and matches the speaker's role and timing.",
+        "connection_assessment": "Directly linked to prior discussion on slide-open vs. fold-open mechanisms and internal space.",
+        "window_id": "TS3004d-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3004d-S075-Q1",
+        "answer": "Missing information. The recent transcript does not mention the slide-open mechanism design or its status.",
+        "evidence_ids": [
+          "TS3004d-s0172"
+        ],
+        "missing_information": "The slide-open mechanism design has not been discussed in the latest minute.",
+        "window_id": "TS3004d-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3004d-s0109",
+          "speaker": "B",
+          "start": 279.87,
+          "end": 283.91,
+          "text": "We also don't know how many buttons are required, or what kind of buttons."
+        },
+        {
+          "id": "TS3004d-s0108",
+          "speaker": "C",
+          "start": 276.24,
+          "end": 280.4,
+          "text": "Well we haven't had time to design that, the slide pad."
+        },
+        {
+          "id": "TS3004d-s0026",
+          "speaker": "C",
+          "start": 97.32,
+          "end": 101.7,
+          "text": "Yeah, and Or are we making a slide open, like underneath?"
+        },
+        {
+          "id": "TS3004d-s0027",
+          "speaker": "C",
+          "start": 101.7,
+          "end": 103.6,
+          "text": "Or fold open?"
+        },
+        {
+          "id": "TS3004d-s0030",
+          "speaker": "A",
+          "start": 104.35,
+          "end": 107.88,
+          "text": "Slide open is uh quite usable for remote controls."
+        },
+        {
+          "id": "TS3004d-s0031",
+          "speaker": "C",
+          "start": 108.24,
+          "end": 112.83,
+          "text": "Yeah, s Like underneath uh you can slide it open and you other functions."
+        },
+        {
+          "id": "TS3004d-s0111",
+          "speaker": "B",
+          "start": 285.47,
+          "end": 287.81,
+          "text": "You have a lot of room if you can slide it open."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3004d-Smiddle-Q3",
+      "meeting": "TS3004d",
+      "requester": "B",
+      "role": "user-interface designer",
+      "at": 1370.57,
+      "percent": 49.92969034608379,
+      "cohort": "middle",
+      "question": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
+      "generator_question": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
+      "edited": false,
+      "kind": "comparison",
+      "why_now": "B previously established the scrollwheel's position; now confirms if it remains unchanged.",
+      "codex_review": "Checked the other mentions of the scrollwheel; the relevant earlier placement is not repeated in the recent minute.",
+      "question_group": "TS3004d-Smiddle-Q3",
+      "reference_answer": "The earlier placement stated by B was on the left side. Later mentions of the scrollwheel in this prefix do not state a relocation.",
+      "generator_proposed_answer": "TS3004d-s0124: It's basically the be standard place for scrollwheel, as far as I know.",
+      "full_history_check": {
+        "id": "TS3004d-Smiddle-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, the scrollwheel is still planned for the left side. B confirmed it's the standard place and no alternative was proposed. The position remains unchanged from earlier discussion.",
+        "evidence_ids": [
+          "TS3004d-s0124",
+          "TS3004d-s0125"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is concise and fits the flow of design confirmation.",
+        "connection_assessment": "Directly supported by prior agreement on placement.",
+        "window_id": "TS3004d-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3004d-Smiddle-Q3",
+        "answer": "Missing information",
+        "evidence_ids": [
+          "TS3004d-s0647",
+          "TS3004d-s0648",
+          "TS3004d-s0649",
+          "TS3004d-s0650",
+          "TS3004d-s0651",
+          "TS3004d-s0652",
+          "TS3004d-s0653",
+          "TS3004d-s0654"
+        ],
+        "missing_information": "The transcript does not mention the scrollwheel or its placement on the remote control.",
+        "window_id": "TS3004d-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3004d-s0124",
+          "speaker": "B",
+          "start": 330.3,
+          "end": 332.92,
+          "text": "Uh scrollwheel is on the left side."
+        },
+        {
+          "id": "TS3004d-s0125",
+          "speaker": "B",
+          "start": 332.92,
+          "end": 337.89,
+          "text": "It's basically the be standard place for scrollwheel, as far as I know."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3004d-Slater-Q1",
+      "meeting": "TS3004d",
+      "requester": "C",
+      "role": "industrial designer",
+      "at": 2189.66,
+      "percent": 79.76903460837887,
+      "cohort": "later",
+      "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+      "generator_question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "C raised the issue of slide panel backlighting earlier and now seeks confirmation of the final decision, which was not clearly stated in the last exchange.",
+      "codex_review": "The proposed answer incorrectly removed panel lighting. The source supports lighting the open interior; color suggestions remain tentative.",
+      "question_group": "TS3004d-Slater-Q1",
+      "reference_answer": "They agreed to add backlighting when the panel opens, illuminating the interior rather than only individual buttons. Green or blue light was suggested; no single final color is fixed in the cited exchange.",
+      "generator_proposed_answer": "The slide panel does not need a backlight; only the buttons and number areas have lighting.",
+      "full_history_check": {
+        "id": "TS3004d-Slater-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The team decided to add a green or blue backlight to the slide panel when opened, to illuminate the entire interior. This was seen as fancy and usable, despite some concern about reachability. No backlight was planned for the slide panel itself.",
+        "evidence_ids": [
+          "TS3004d-s0526",
+          "TS3004d-s0527",
+          "TS3004d-s0528",
+          "TS3004d-s0529",
+          "TS3004d-s0530",
+          "TS3004d-s0531",
+          "TS3004d-s0532",
+          "TS3004d-s0533"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Brief, direct, and matches the speaker's role and timing.",
+        "connection_assessment": "Links to prior discussion on slide panel lighting.",
+        "window_id": "TS3004d-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3004d-Slater-Q1",
+        "answer": "The transcript does not contain information about the final decision on the slide panel's backlighting.",
+        "evidence_ids": [
+          "TS3004d-s1022"
+        ],
+        "missing_information": "Final decision on slide panel's backlighting",
+        "window_id": "TS3004d-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3004d-s0525",
+          "speaker": "D",
+          "start": 1116.05,
+          "end": 1118.86,
+          "text": "Then we do it."
+        },
+        {
+          "id": "TS3004d-s0529",
+          "speaker": "B",
+          "start": 1123.4,
+          "end": 1125.94,
+          "text": "Not just not re on the buttons or something."
+        },
+        {
+          "id": "TS3004d-s0502",
+          "speaker": "C",
+          "start": 1083.3,
+          "end": 1090.19,
+          "text": "Are w are we changing uh Or are they there uh backlights on the slide panel too?"
+        },
+        {
+          "id": "TS3004d-s0519",
+          "speaker": "D",
+          "start": 1104.96,
+          "end": 1108.76,
+          "text": "If you slide it open, it lights up."
+        },
+        {
+          "id": "TS3004d-s0521",
+          "speaker": "D",
+          "start": 1108.76,
+          "end": 1113.08,
+          "text": "That's that's really fancy, but I don't know if it's reachable."
+        },
+        {
+          "id": "TS3004d-s0522",
+          "speaker": "B",
+          "start": 1113.47,
+          "end": 1114.45,
+          "text": "Of course it's reachable."
+        },
+        {
+          "id": "TS3004d-s0536",
+          "speaker": "C",
+          "start": 1131.62,
+          "end": 1133.29,
+          "text": "Yeah, just backlight."
+        },
+        {
+          "id": "TS3004d-s0526",
+          "speaker": "B",
+          "start": 1117.68,
+          "end": 1121.28,
+          "text": "Okay, maybe just some light uh to to light it all up."
+        },
+        {
+          "id": "TS3004d-s0527",
+          "speaker": "B",
+          "start": 1121.28,
+          "end": 1123.4,
+          "text": "So you can see what's really there."
+        },
+        {
+          "id": "TS3004d-s0528",
+          "speaker": "A",
+          "start": 1125.22,
+          "end": 1125.75,
+          "text": "No."
+        },
+        {
+          "id": "TS3004d-s0530",
+          "speaker": "A",
+          "start": 1125.75,
+          "end": 1126.13,
+          "text": "Yeah."
+        },
+        {
+          "id": "TS3004d-s0531",
+          "speaker": "B",
+          "start": 1125.94,
+          "end": 1128.38,
+          "text": "Just a green light or some blue light."
+        },
+        {
+          "id": "TS3004d-s0532",
+          "speaker": "B",
+          "start": 1129.64,
+          "end": 1130.34,
+          "text": "To light it all up."
+        },
+        {
+          "id": "TS3004d-s0533",
+          "speaker": "D",
+          "start": 1129.65,
+          "end": 1130.93,
+          "text": "Yeah, but"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3004d-Slater-Q2",
+      "meeting": "TS3004d",
+      "requester": "D",
+      "role": "marketing expert",
+      "at": 2189.66,
+      "percent": 79.76903460837887,
+      "cohort": "later",
+      "question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
+      "generator_question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "D initiated the evaluation of 'fancy look-and-feel' and now seeks clarification on the reasoning behind the score, which was briefly mentioned but not fully explained.",
+      "codex_review": "The score and the reason appear together in the source. Kept as a grounded planning reminder.",
+      "question_group": "TS3004d-Slater-Q2",
+      "reference_answer": "They gave fancy look-and-feel a score of one, citing the lighting details and the ability to choose a light/color. The reference does not infer whether one is globally the best or worst score.",
+      "generator_proposed_answer": "We agreed on a 'one' for fancy look-and-feel because of the customizable lights and color options.",
+      "full_history_check": {
+        "id": "TS3004d-Slater-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The team settled on a '1' for 'fancy look-and-feel' because the changing lights and colors were considered very fancy, and the ability to choose colors made it appealing. The discussion concluded it was a strong feature.",
+        "evidence_ids": [
+          "TS3004d-s0548",
+          "TS3004d-s0549",
+          "TS3004d-s0550",
+          "TS3004d-s0551",
+          "TS3004d-s0552",
+          "TS3004d-s0553",
+          "TS3004d-s0554",
+          "TS3004d-s0555"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Concise, fits the speaker's role, and matches the flow of evaluation.",
+        "connection_assessment": "Directly follows the evaluation of 'fancy look-and-feel'.",
+        "window_id": "TS3004d-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3004d-Slater-Q2",
+        "answer": "The transcript does not contain information about how the number for the 'fancy look-and-feel' criterion was settled.",
+        "evidence_ids": [
+          "TS3004d-s1022"
+        ],
+        "missing_information": "Settling of the number for 'fancy look-and-feel' criterion",
+        "window_id": "TS3004d-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3004d-s0558",
+          "speaker": "D",
+          "start": 1159.44,
+          "end": 1160.16,
+          "text": "I think it's one."
+        },
+        {
+          "id": "TS3004d-s0554",
+          "speaker": "B",
+          "start": 1158.17,
+          "end": 1158.38,
+          "text": "Yeah."
+        },
+        {
+          "id": "TS3004d-s0494",
+          "speaker": "D",
+          "start": 1069.93,
+          "end": 1071.88,
+          "text": "The fancy look-and-feel."
+        },
+        {
+          "id": "TS3004d-s0548",
+          "speaker": "D",
+          "start": 1148.15,
+          "end": 1151.0,
+          "text": "So I I think it's very fancy."
+        },
+        {
+          "id": "TS3004d-s0549",
+          "speaker": "A",
+          "start": 1150.62,
+          "end": 1151.61,
+          "text": "Yeah, that's how I think."
+        },
+        {
+          "id": "TS3004d-s0550",
+          "speaker": "D",
+          "start": 1151.0,
+          "end": 1152.0,
+          "text": "So I'll give it a"
+        },
+        {
+          "id": "TS3004d-s0551",
+          "speaker": "B",
+          "start": 1151.17,
+          "end": 1154.69,
+          "text": "Yeah, w we've done a a lot of detail in light, so"
+        },
+        {
+          "id": "TS3004d-s0552",
+          "speaker": "A",
+          "start": 1155.9,
+          "end": 1156.04,
+          "text": "Ye"
+        },
+        {
+          "id": "TS3004d-s0553",
+          "speaker": "D",
+          "start": 1155.48,
+          "end": 1157.63,
+          "text": "Yeah, and you can uh also choose your light, so"
+        },
+        {
+          "id": "TS3004d-s0555",
+          "speaker": "A",
+          "start": 1157.8,
+          "end": 1158.91,
+          "text": "Yeah, this It is a one."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2004d-S075-Q1",
+      "meeting": "ES2004d",
+      "requester": "C",
+      "role": "industrial designer",
+      "at": 450.92,
+      "percent": 20.311711711711713,
+      "cohort": "early",
+      "question": "Assistant, where were we planning to put the infrared sender?",
+      "generator_question": "Assistant, can you confirm where the infrared sender is placed on the bottom layer? I want to make sure it’s correctly positioned for the presentation.",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "C is presenting the design and needs to verify a detail about component placement for accuracy in the demo, based on an earlier statement.",
+      "codex_review": "Corrected planned placement versus actual placement and removed an invented hinge detail from both model answers.",
+      "question_group": "ES2004d-infrared-location",
+      "reference_answer": "At the front of the bottom layer. C explicitly says they had not actually put it on the prototype. No hinge location is established by these excerpts.",
+      "generator_proposed_answer": "The infrared sender is on the front side of the bottom layer, near the hinge, as shown earlier.",
+      "full_history_check": {
+        "id": "ES2004d-S075-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The infrared sender is on the front of the bottom layer, near the hinge, to ensure it points toward the TV when the device is open. This placement was confirmed during the discussion of signal transmission (ES2004d-s0103, ES2004d-s0108, ES2004d-s0110).",
+        "evidence_ids": [
+          "ES2004d-s0103",
+          "ES2004d-s0108",
+          "ES2004d-s0110"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, contextually relevant, and matches the speaker's role as industrial designer.",
+        "connection_assessment": "Directly linked to prior discussion on infrared placement and device functionality.",
+        "window_id": "ES2004d-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2004d-S075-Q1",
+        "answer": "The transcript does not specify the placement of the infrared sender on the bottom layer. No information is provided about its position or location within the remote-control design.",
+        "evidence_ids": [
+          "ES2004d-s0147"
+        ],
+        "missing_information": "Placement of infrared sender on the bottom layer",
+        "window_id": "ES2004d-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2004d-s0103",
+          "speaker": "C",
+          "start": 319.88,
+          "end": 329.72,
+          "text": "um sender would be on the on one of the bot the bottom layer, just at the front of the we haven't I don't think we actually put it on."
+        },
+        {
+          "id": "ES2004d-s0108",
+          "speaker": "C",
+          "start": 334.2,
+          "end": 336.51,
+          "text": "Yeah, on the front on the front side of that, yeah."
+        },
+        {
+          "id": "ES2004d-s0110",
+          "speaker": "B",
+          "start": 336.62,
+          "end": 338.4,
+          "text": "Oh right, yeah, okay, yeah, I've got you."
+        }
+      ],
+      "alternatives": [
+        {
+          "id": "ES2004d-S10-Q1",
+          "meeting": "ES2004d",
+          "requester": "C",
+          "role": "industrial designer",
+          "at": 609.51,
+          "percent": 27.455405405405404,
+          "cohort": "early",
+          "question": "Assistant, where was the infrared sender supposed to go on the prototype?",
+          "generator_question": "Assistant, can you confirm the exact location of the infrared sender on the prototype as discussed earlier?",
+          "edited": true,
+          "kind": "connection",
+          "why_now": "C needs to verify the placement for accuracy in the prototype, which was mentioned earlier but not clearly confirmed.",
+          "codex_review": "Same placement question at a later cutoff; retained as an alternative, with the same planned-versus-installed correction.",
+          "question_group": "ES2004d-infrared-location",
+          "reference_answer": "At the front of the bottom layer; it had not actually been installed. The source does not specify a hinge location.",
+          "generator_proposed_answer": "The infrared sender is on the front side of the bottom layer, near the hinge.",
+          "full_history_check": {
+            "id": "ES2004d-S10-Q1",
+            "premise_supported": true,
+            "requester_plausible": true,
+            "natural_spoken_question": true,
+            "answer": "The infrared sender is on the front of the bottom layer, near the hinge, as confirmed in passages ES2004d-s0103 and ES2004d-s0108.",
+            "evidence_ids": [
+              "ES2004d-s0103",
+              "ES2004d-s0108"
+            ],
+            "missing_information": "",
+            "naturalness_note": "The question is brief, direct, and matches the context of a team member seeking clarification during a prototype review.",
+            "connection_assessment": "The question directly references prior discussion about the infrared sender's placement, which was explicitly stated in two consecutive passages.",
+            "window_id": "ES2004d-S10",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "recent_minute_check": {
+            "id": "ES2004d-S10-Q1",
+            "answer": "The transcript does not contain information about the location of the infrared sender on the prototype.",
+            "evidence_ids": [],
+            "missing_information": "Location of infrared sender on prototype",
+            "window_id": "ES2004d-S10",
+            "invalid_ids": [],
+            "unknown_question_id": false
+          },
+          "evidence": [
+            {
+              "id": "ES2004d-s0103",
+              "speaker": "C",
+              "start": 319.88,
+              "end": 329.72,
+              "text": "um sender would be on the on one of the bot the bottom layer, just at the front of the we haven't I don't think we actually put it on."
+            },
+            {
+              "id": "ES2004d-s0108",
+              "speaker": "C",
+              "start": 334.2,
+              "end": 336.51,
+              "text": "Yeah, on the front on the front side of that, yeah."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TS3005b-Slater-Q3",
+      "meeting": "TS3005b",
+      "requester": "D",
+      "role": "marketing expert",
+      "at": 1954.13,
+      "percent": 80.09005228048834,
+      "cohort": "later",
+      "question": "Assistant, did we confirm whether the LCD screen can be made with large buttons for elderly users? That was part of the user needs.",
+      "generator_question": "Assistant, did we confirm whether the L_C_D_ screen can be made with large buttons for elderly users? That was part of the user needs.",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "D is the marketing expert who introduced elderly user needs and emphasized large buttons, and the solution was proposed over 60 seconds ago, making it a pending responsibility.",
+      "codex_review": "Normalized LCD spelling. A suggestion and favorable reaction are not proof that the feature has been implemented or tested.",
+      "question_group": "TS3005b-Slater-Q3",
+      "reference_answer": "C proposed enlarging on-screen controls for older users, and D thought this should be standard. The discussion does not verify implementation or technical feasibility.",
+      "generator_proposed_answer": "Yes, it was discussed that the L_C_D_ screen could be configured to display large buttons for elderly users, as mentioned in TS3005b-s0558.",
+      "full_history_check": {
+        "id": "TS3005b-Slater-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, the team discussed making the L_C_D_ screen support large buttons for elderly users. C mentioned enabling button enlargement, and D agreed it should be standard. The screen can display fewer, larger buttons for easier use by older users, as noted in passages TS3005b-s0555, TS3005b-s0557, and TS3005b-s0558.",
+        "evidence_ids": [
+          "TS3005b-s0555",
+          "TS3005b-s0557",
+          "TS3005b-s0558"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and matches the flow of a real meeting discussion.",
+        "connection_assessment": "The question links directly to prior discussion about elderly user needs and L_C_D_ screen functionality.",
+        "window_id": "TS3005b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3005b-Slater-Q3",
+        "answer": "Missing information. The recent transcript does not mention large buttons for elderly users or confirm any design adjustments related to accessibility for this group.",
+        "evidence_ids": [],
+        "missing_information": "The transcript does not address large buttons for elderly users or any related accessibility features.",
+        "window_id": "TS3005b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3005b-s0558",
+          "speaker": "D",
+          "start": 1635.07,
+          "end": 1637.31,
+          "text": "Large button large buttons."
+        },
+        {
+          "id": "TS3005b-s0555",
+          "speaker": "C",
+          "start": 1619.92,
+          "end": 1632.01,
+          "text": "Functional designs uh for the elderly uh you could make it possible to enlarge the screen, so make it possible to not uh display uh a button at ten points"
+        },
+        {
+          "id": "TS3005b-s0557",
+          "speaker": "D",
+          "start": 1632.7,
+          "end": 1635.07,
+          "text": "Well I think that this should be standard."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2005b-Slater-Q3",
+      "meeting": "ES2005b",
+      "requester": "B",
+      "role": "marketing expert",
+      "at": 1859.39,
+      "percent": 80.56282495667244,
+      "cohort": "later",
+      "question": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
+      "generator_question": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "The marketing expert needs to assess user behavior around voice features, but no data on actual usage was shared, only general preferences.",
+      "codex_review": "The proposed answer retrieved unrelated survey figures. The actual later discussion supplies a reliability anecdote; it does not establish how many people use voice control.",
+      "question_group": "ES2005b-Slater-Q3",
+      "reference_answer": "No adoption rate for voice commands is given. A describes a prior voice-controlled remote that responded incorrectly to TV speech or noise. This is an anecdote about reliability, not the unrelated percentages about appearance or button use.",
+      "generator_proposed_answer": "Seventy-five percent of users dislike the current remote designs, and fifty percent use only ten percent of the buttons, but specific data on voice command usage was not provided.",
+      "full_history_check": {
+        "id": "ES2005b-Slater-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "We have data from a prior remote with basic speech recognition: it worked poorly due to noise interference, often triggering unintentionally during TV content. Users reported it turning off or changing volume unexpectedly. This suggests voice commands are unreliable in real-world settings, affecting our design choice to avoid standalone voice recognition.",
+        "evidence_ids": [
+          "ES2005b-s0461",
+          "ES2005b-s0463",
+          "ES2005b-s0465",
+          "ES2005b-s0467",
+          "ES2005b-s0468",
+          "ES2005b-s0472"
+        ],
+        "missing_information": "No data on current user adoption rates or satisfaction with modern voice-enabled remotes beyond the cited example.",
+        "naturalness_note": "The question is brief, contextually relevant, and matches the speaker's role and timing.",
+        "connection_assessment": "Directly links to prior discussion on voice recognition reliability and design trade-offs.",
+        "window_id": "ES2005b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2005b-Slater-Q3",
+        "answer": "The recent transcript does not contain any data or discussion about whether people use voice commands on remotes. No information is provided on this topic.",
+        "evidence_ids": [],
+        "missing_information": "No data on voice command usage by users.",
+        "window_id": "ES2005b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2005b-s0055",
+          "speaker": "B",
+          "start": 202.08,
+          "end": 207.49,
+          "text": "Seventy five percent of users they do find it that the remote controls available in the market are ugly."
+        },
+        {
+          "id": "ES2005b-s0066",
+          "speaker": "B",
+          "start": 290.87,
+          "end": 304.03,
+          "text": "Because mostly it has been found that fifty percent of the users they use only ten percent of the buttons, so there is no point of having ninety percent buttons making the remote controls too bulky, too complicated too expensive"
+        },
+        {
+          "id": "ES2005b-s0461",
+          "speaker": "A",
+          "start": 1583.52,
+          "end": 1589.62,
+          "text": "They're act there there was a remote control that came out two years ago that had a some basic speech recognition on it."
+        },
+        {
+          "id": "ES2005b-s0463",
+          "speaker": "A",
+          "start": 1589.62,
+          "end": 1596.69,
+          "text": "You could programme it with your channels and then you say you know like uh B_B_C_ one and it goes to that channel."
+        },
+        {
+          "id": "ES2005b-s0465",
+          "speaker": "A",
+          "start": 1596.69,
+          "end": 1600.02,
+          "text": "Yeah, it didn't work very well though because of this noise interference problem."
+        },
+        {
+          "id": "ES2005b-s0467",
+          "speaker": "A",
+          "start": 1600.02,
+          "end": 1604.19,
+          "text": "They mentioned you know if the television says you are listening to B_B_C_ one."
+        },
+        {
+          "id": "ES2005b-s0468",
+          "speaker": "C",
+          "start": 1603.49,
+          "end": 1608.64,
+          "text": "Yeah, or a yeah an advert an advert for B_B_C_ two on B_B_C_ one'll switch the channel for you kinda thing."
+        },
+        {
+          "id": "ES2005b-s0472",
+          "speaker": "A",
+          "start": 1608.8,
+          "end": 1620.0,
+          "text": "Right, right, and so there was a lot of this, you'd be watching the T_V_ and then all of a sudden it'd it'd pick up a noise and turn it off or you know or turn the volume off or something, but if you can work around that that noise problem"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3006c-S05-Q3",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "role": "marketing expert",
+      "at": 309.03,
+      "percent": 11.95827316081039,
+      "cohort": "early",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "generator_question": "Assistant, what’s the status on the shared folder for the conceptual design files after the earlier upload issue?",
+      "edited": true,
+      "kind": "comparison",
+      "why_now": "D raised a concern about file access earlier and still needs confirmation that the upload succeeded, which affects their ability to review materials. This is an unresolved responsibility.",
+      "codex_review": "Replaced an assumed upload failure with the observed trouble finding files. The reference separates that problem from whether the folder itself failed.",
+      "question_group": "TS3006c-S05-Q3",
+      "reference_answer": "C said the files were in the shared folder. D initially saw only their own presentation, and C then identified a components-design PowerPoint. The exchange does not establish a general folder outage or an upload failure.",
+      "generator_proposed_answer": "C confirmed the files were uploaded to the shared folder, but D had trouble accessing them initially and later confirmed they were present.",
+      "full_history_check": {
+        "id": "TS3006c-S05-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The conceptual design files are in the shared folder, as confirmed by C in TS3006c-s0017. D had earlier trouble accessing them, but C stated they were uploaded there. No further issues were reported after that.",
+        "evidence_ids": [
+          "TS3006c-s0017",
+          "TS3006c-s0022"
+        ],
+        "missing_information": "No evidence of current access issues or file updates post-upload.",
+        "naturalness_note": "Brief, direct, and matches D's prior concern about file visibility.",
+        "connection_assessment": "Directly follows from prior discussion about folder access and upload.",
+        "window_id": "TS3006c-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3006c-S05-Q3",
+        "answer": "The recent transcript does not provide information about the status of the shared folder for the conceptual design files or the earlier upload issue.",
+        "evidence_ids": [],
+        "missing_information": "Status of shared folder and upload issue",
+        "window_id": "TS3006c-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3006c-s0017",
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so."
+        },
+        {
+          "id": "TS3006c-s0022",
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah."
+        },
+        {
+          "id": "TS3006c-s0015",
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations?"
+        },
+        {
+          "id": "TS3006c-s0018",
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design."
+        },
+        {
+          "id": "TS3006c-s0024",
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3006c-S10-Q1",
+      "meeting": "TS3006c",
+      "requester": "C",
+      "role": "industrial designer",
+      "at": 606.19,
+      "percent": 23.45722294713022,
+      "cohort": "early",
+      "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+      "generator_question": "Assistant, what was the exact ratio you mentioned between fancy look-and-feel, innovation, and ease of use?",
+      "edited": true,
+      "kind": "calculation",
+      "why_now": "C needs the exact priority ratio to align component choices with marketing priorities, and this detail was stated over 60 seconds ago.",
+      "codex_review": "Removed “you mentioned,” since the assistant never spoke. Checked the named ordering before converting the two comparisons to 4:2:1.",
+      "question_group": "TS3006c-S10-Q1",
+      "reference_answer": "Fancy look-and-feel was twice innovation, which was twice ease of use: 4:2:1 in that order.",
+      "generator_proposed_answer": "Fancy look-and-feel was twice as important as innovation, which was twice as important as ease of use.",
+      "full_history_check": {
+        "id": "TS3006c-S10-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The ratio was: fancy look-and-feel was twice as important as innovation, which was twice as important as ease of use. So the ratio is 4:2:1.",
+        "evidence_ids": [
+          "TS3006c-s0088"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, direct, and matches the speaker's role and context.",
+        "connection_assessment": "The premise is directly supported by passage TS3006c-s0088, which states the exact ratio.",
+        "window_id": "TS3006c-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3006c-S10-Q1",
+        "answer": "The transcript does not contain the requested ratio between fancy look-and-feel, innovation, and ease of use. No such ratio was mentioned by speaker C or any other speaker in the provided minute.",
+        "evidence_ids": [
+          "TS3006c-s0173",
+          "TS3006c-s0174",
+          "TS3006c-s0175",
+          "TS3006c-s0176",
+          "TS3006c-s0177",
+          "TS3006c-s0178",
+          "TS3006c-s0179",
+          "TS3006c-s0180"
+        ],
+        "missing_information": "The exact ratio between fancy look-and-feel, innovation, and ease of use was not mentioned in the provided transcript.",
+        "window_id": "TS3006c-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3006c-s0088",
+          "speaker": "D",
+          "start": 318.48,
+          "end": 327.32,
+          "text": "Well the first aspect uh was twice as important as the second aspect,w which was twice as important as the third aspect."
+        },
+        {
+          "id": "TS3006c-s0137",
+          "speaker": "C",
+          "start": 404.95,
+          "end": 408.83,
+          "text": "So I'm dealing with the components design."
+        },
+        {
+          "id": "TS3006c-s0080",
+          "speaker": "D",
+          "start": 281.65,
+          "end": 287.26,
+          "text": "Um well fancy stands for an original look-and-feel of the case and the interface."
+        },
+        {
+          "id": "TS3006c-s0081",
+          "speaker": "D",
+          "start": 287.74,
+          "end": 295.76,
+          "text": "And the second most important aspect is that a remote control should be technological uh innovative."
+        },
+        {
+          "id": "TS3006c-s0086",
+          "speaker": "D",
+          "start": 309.16,
+          "end": 315.37,
+          "text": "And the third development um is that the remote control should be easy to use."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "TS3006c-Smiddle-Q2",
+      "meeting": "TS3006c",
+      "requester": "B",
+      "role": "user-interface designer",
+      "at": 1300.07,
+      "percent": 50.30771183436807,
+      "cohort": "middle",
+      "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "generator_question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "B expressed uncertainty about how to implement speech commands and needs clarification on whether it's already decided.",
+      "codex_review": "The reader turns lack of a completion report into “not implemented”. The reference preserves the narrower supported status.",
+      "question_group": "TS3006c-Smiddle-Q2",
+      "reference_answer": "The team discussed mapping speech commands to functions already present. The available discussion does not report a finished implementation or demonstrate that it is ready for interface integration.",
+      "generator_proposed_answer": "The speech recognition was already covered in the discussion, and it's to be matched with existing functions.",
+      "full_history_check": {
+        "id": "TS3006c-Smiddle-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Speech recognition is planned but not yet implemented. B expresses uncertainty about implementation, and A confirms it can be matched with existing functions. No evidence of a working prototype or final integration. Status: pending implementation.",
+        "evidence_ids": [
+          "TS3006c-s0248",
+          "TS3006c-s0254",
+          "TS3006c-s0257"
+        ],
+        "missing_information": "No update on technical progress or testing.",
+        "naturalness_note": "Concise, fits user's role, and matches spoken tone.",
+        "connection_assessment": "B's question is timely and supported by prior discussion on speech features.",
+        "window_id": "TS3006c-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "TS3006c-Smiddle-Q2",
+        "answer": "The recent transcript does not mention speech recognition implementation or its status. No information is provided about whether it is ready for the interface.",
+        "evidence_ids": [],
+        "missing_information": "Speech recognition implementation status is not discussed in the latest minute.",
+        "window_id": "TS3006c-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "TS3006c-s0254",
+          "speaker": "A",
+          "start": 727.6,
+          "end": 735.72,
+          "text": "I think you can just uh match the speech commands with the functions that are already present."
+        },
+        {
+          "id": "TS3006c-s0257",
+          "speaker": "A",
+          "start": 735.72,
+          "end": 739.15,
+          "text": "So I don't think you have to design anything else for that."
+        },
+        {
+          "id": "TS3006c-s0248",
+          "speaker": "B",
+          "start": 709.54,
+          "end": 718.66,
+          "text": "Yeah um yeah that's one thing uh which I'm not sure uh of how to implement it uh into the remote control."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2006a-S075-Q3",
+      "meeting": "ES2006a",
+      "requester": "C",
+      "role": "project manager",
+      "at": 452.23,
+      "percent": 35.05658914728682,
+      "cohort": "early",
+      "question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+      "generator_question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "C is seeking to confirm the sequence of phases, which was stated earlier but not yet verified by the group.",
+      "codex_review": "A short reminder of the announced project sequence. No date is invented.",
+      "question_group": "ES2006a-S075-Q3",
+      "reference_answer": "Detailed design follows functional and conceptual design, bringing those strands together. No calendar start date is given.",
+      "generator_proposed_answer": "The detailed design phase comes after the functional and conceptual designs are merged, as stated in the project plan.",
+      "full_history_check": {
+        "id": "ES2006a-S075-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The detailed design phase comes after the functional and conceptual design phases, as stated in passage ES2006a-s0031: 'We'll pull it all together.' No specific timing is given.",
+        "evidence_ids": [
+          "ES2006a-s0031"
+        ],
+        "missing_information": "Exact start time or duration for the detailed design phase.",
+        "naturalness_note": "Brief, direct, and fits the project manager's role and timing context.",
+        "connection_assessment": "Single-passage support; no multi-hop reasoning needed.",
+        "window_id": "ES2006a-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2006a-S075-Q3",
+        "answer": "The transcript does not specify when the detailed design phase begins relative to the other phases.",
+        "evidence_ids": [
+          "ES2006a-s0089"
+        ],
+        "missing_information": "The timing of the detailed design phase in relation to other phases is not established in the provided transcript.",
+        "window_id": "ES2006a-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2006a-s0032",
+          "speaker": "C",
+          "start": 186.88,
+          "end": 188.11,
+          "text": "We'll pull it all together."
+        },
+        {
+          "id": "ES2006a-s0031",
+          "speaker": "C",
+          "start": 181.63,
+          "end": 186.88,
+          "text": "Um and then the detailed design will come after that."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2006a-Slater-Q1",
+      "meeting": "ES2006a",
+      "requester": "D",
+      "role": "user-interface designer",
+      "at": 1033.85,
+      "percent": 80.14341085271317,
+      "cohort": "later",
+      "question": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
+      "generator_question": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
+      "edited": false,
+      "kind": "calculation",
+      "why_now": "D is seeking clarity on a financial constraint from an earlier part of the discussion, which affects conceptual design decisions. The budget target was stated over 60 seconds ago and is relevant to whether features are feasible.",
+      "codex_review": "Corrected the proposed answer’s confusion between a company-wide profit target and a per-unit amount; the calculation is qualified to exclude unspecified other costs.",
+      "question_group": "ES2006a-Slater-Q1",
+      "reference_answer": "At the maximum production cost of €12.50 and selling price of €25, €12.50 per unit remains before other costs: 50% of the selling price. The separate €50 million total-profit goal is not a per-unit margin, and an exact net margin is not established.",
+      "generator_proposed_answer": "We're aiming for a profit of fifty million Euros with a selling price of twenty five Euros each and maximum production costs of twelve and a half Euros per unit.",
+      "full_history_check": {
+        "id": "ES2006a-Slater-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The profit margin is 50 million Euros on a 25 Euro selling price with 12.5 Euro production cost. This yields a 50% margin per unit (12.5 / 25).",
+        "evidence_ids": [
+          "ES2006a-s0219",
+          "ES2006a-s0222"
+        ],
+        "missing_information": "No missing information; all data is present in the transcript.",
+        "naturalness_note": "The question is brief, direct, and fits the context of a team discussion.",
+        "connection_assessment": "The question links directly to the budget discussion and is asked by the interface designer, who is engaged in the project's financial constraints.",
+        "window_id": "ES2006a-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2006a-Slater-Q1",
+        "answer": "Missing information. The transcript does not mention profit margin, selling price, or production cost.",
+        "evidence_ids": [
+          "ES2006a-s0231"
+        ],
+        "missing_information": "Profit margin, selling price, and production cost details are not discussed in the provided transcript.",
+        "window_id": "ES2006a-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2006a-s0220",
+          "speaker": "C",
+          "start": 944.61,
+          "end": 949.95,
+          "text": "Um and with that we're aiming for a profit of fifty million Euros."
+        },
+        {
+          "id": "ES2006a-s0223",
+          "speaker": "C",
+          "start": 971.3,
+          "end": 972.63,
+          "text": "target."
+        },
+        {
+          "id": "ES2006a-s0231",
+          "speaker": "D",
+          "start": 1021.37,
+          "end": 1032.2,
+          "text": "I'm just wondering whether whether there is like any special feature that we want to have w want this remote control have as opposed to the already existing ones."
+        },
+        {
+          "id": "ES2006a-s0219",
+          "speaker": "C",
+          "start": 938.27,
+          "end": 943.34,
+          "text": "Um we're planning to sell the remote controls for twenty five Euros each."
+        },
+        {
+          "id": "ES2006a-s0222",
+          "speaker": "C",
+          "start": 957.83,
+          "end": 971.3,
+          "text": "Um so to do that our finance people estimate that we need production costs of maximum twelve and a half Euro so that we can reach that profit"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2006a-Slater-Q2",
+      "meeting": "ES2006a",
+      "requester": "A",
+      "role": "industrial designer",
+      "at": 1033.85,
+      "percent": 80.14341085271317,
+      "cohort": "later",
+      "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+      "generator_question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "A previously asked about the difference between the two phases and now seeks a clearer distinction in deliverables, using an earlier explanation that is over 60 seconds old.",
+      "codex_review": "The two phases are distinguished explicitly in the earlier exchange; retained as an ordinary comparison, without a multi-hop claim.",
+      "question_group": "ES2006a-Slater-Q2",
+      "reference_answer": "Functional design specifies what functions and tasks the remote must perform. Conceptual design covers how people will use it. The speaker notes that some work on use may already begin during functional design.",
+      "generator_proposed_answer": "Functional design focuses on what functions the remote must have and what it must do, while conceptual design includes how users will interact with it and the overall user experience.",
+      "full_history_check": {
+        "id": "ES2006a-Slater-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Functional design focuses on required functions and what the remote must do. Conceptual design addresses how users will interact with it and the overall user experience, including component integration.",
+        "evidence_ids": [
+          "ES2006a-s0037",
+          "ES2006a-s0039",
+          "ES2006a-s0043"
+        ],
+        "missing_information": "No missing information; the distinction is clearly explained in the transcript.",
+        "naturalness_note": "The question is concise and reflects a genuine clarification need after the design phase explanation.",
+        "connection_assessment": "The industrial designer (A) is directly involved in both phases and seeks to clarify deliverables, which is plausible at this stage.",
+        "window_id": "ES2006a-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2006a-Slater-Q2",
+        "answer": "Missing information. The transcript does not define or differentiate between functional and conceptual design phases or their deliverables.",
+        "evidence_ids": [
+          "ES2006a-s0231"
+        ],
+        "missing_information": "No information is provided about the functional and conceptual design phases or their respective deliverables.",
+        "window_id": "ES2006a-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2006a-s0037",
+          "speaker": "C",
+          "start": 205.82,
+          "end": 218.08,
+          "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is"
+        },
+        {
+          "id": "ES2006a-s0039",
+          "speaker": "C",
+          "start": 218.08,
+          "end": 225.83,
+          "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing."
+        },
+        {
+          "id": "ES2006a-s0033",
+          "speaker": "A",
+          "start": 188.69,
+          "end": 194.05,
+          "text": "I'm a bit confused about uh what's the difference between the functional design and conceptual design?"
+        },
+        {
+          "id": "ES2006a-s0043",
+          "speaker": "C",
+          "start": 244.45,
+          "end": 251.9,
+          "text": "Um I think we'll we'll start that initially with the functional design already but then yeah."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2006b-S05-Q1",
+      "meeting": "EN2006b",
+      "requester": "C",
+      "role": null,
+      "at": 300.97,
+      "percent": 9.860565567994067,
+      "cohort": "early",
+      "question": "Assistant, did we decide to annotate Hubble?",
+      "generator_question": "Assistant, what was the earlier agreement about keeping Hubble in the annotation list?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "C had previously confirmed the agreement and now seeks to confirm the detail for consistency.",
+      "codex_review": "Removed the answer-revealing “agreement about keeping” construction. The source explicitly supports the decision.",
+      "question_group": "EN2006b-S05-Q1",
+      "reference_answer": "Yes. C and B say that they agreed to keep Hubble in the annotation.",
+      "generator_proposed_answer": "We agreed to keep Hubble.",
+      "full_history_check": {
+        "id": "EN2006b-S05-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "C refers to the earlier agreement in passage EN2006b-s0046–s0048, where it is stated: 'We agreed for to keep hubble' and 'to not yes, to keep hubble.' This confirms the prior decision to retain 'Hubble' in the annotation list.",
+        "evidence_ids": [
+          "EN2006b-s0046",
+          "EN2006b-s0047",
+          "EN2006b-s0048"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, contextually grounded, and matches C's prior role in confirming agreements.",
+        "connection_assessment": "Directly linked to prior discussion on annotation inclusion.",
+        "window_id": "EN2006b-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2006b-S05-Q1",
+        "answer": "Missing information. The recent transcript does not mention Hubble or any agreement about keeping it in the annotation list.",
+        "evidence_ids": [
+          "EN2006b-s0134"
+        ],
+        "missing_information": "The transcript does not contain any discussion about Hubble or annotation list agreements.",
+        "window_id": "EN2006b-S05",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2006b-s0046",
+          "speaker": "C",
+          "start": 108.52,
+          "end": 111.56,
+          "text": "We agreed for to keep hubble."
+        },
+        {
+          "id": "EN2006b-s0047",
+          "speaker": "C",
+          "start": 111.56,
+          "end": 111.79,
+          "text": "Yep."
+        },
+        {
+          "id": "EN2006b-s0048",
+          "speaker": "B",
+          "start": 111.49,
+          "end": 113.59,
+          "text": "To not yes, to keep hubble."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2006b-S075-Q1",
+      "meeting": "EN2006b",
+      "requester": "C",
+      "role": null,
+      "at": 440.13,
+      "percent": 14.419811687016075,
+      "cohort": "early",
+      "question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
+      "generator_question": "Assistant, what was the earlier agreement about underlining the H_T_M_L_ goo in the annotation rules?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "C had previously suggested underlining the goo and agreed with B on this point, but now seeks confirmation of the earlier consensus to ensure consistency.",
+      "codex_review": "Normalized HTML spelling and corrected the reference. The recent-minute reader applied an unrelated rule about mechanisms to this earlier text-marking instruction.",
+      "question_group": "EN2006b-S075-Q1",
+      "reference_answer": "Underline the HTML material in each case, but not the word “and”. The source is discussing how to mark the text, not a later rule about physical mechanisms.",
+      "generator_proposed_answer": "C: I think there should be a break for and.",
+      "full_history_check": {
+        "id": "EN2006b-S075-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "C asked about the earlier agreement on underlining H_T_M_L_ goo. In s0022, C stated: 'I would agree that you underline the goo in each case but not the and.' This confirms the agreement to underline the goo.",
+        "evidence_ids": [
+          "EN2006b-s0022"
+        ],
+        "missing_information": "None.",
+        "naturalness_note": "The question is brief, contextually relevant, and matches C's prior role in discussing annotation rules.",
+        "connection_assessment": "Directly linked to prior discussion on underlining H_T_M_L_ goo.",
+        "window_id": "EN2006b-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2006b-S075-Q1",
+        "answer": "The earlier agreement was not to underline H_T_M_L_ goo, as it was considered a mechanism and mechanisms do not count. This is supported by excerpt IDs EN2006b-s0175, EN2006b-s0176, and EN2006b-s0177, where C states 'Those are mechanisms' and 'So they don't count.'",
+        "evidence_ids": [
+          "EN2006b-s0175",
+          "EN2006b-s0176",
+          "EN2006b-s0177"
+        ],
+        "missing_information": "",
+        "window_id": "EN2006b-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2006b-s0016",
+          "speaker": "C",
+          "start": 27.11,
+          "end": 28.55,
+          "text": "I think there should be a break for and."
+        },
+        {
+          "id": "EN2006b-s0022",
+          "speaker": "C",
+          "start": 37.28,
+          "end": 45.9,
+          "text": "And this isn't a separate thing, so I w I would agree that you underline the you underline the goo in each case but not the and."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "EN2006b-S075-Q2",
+      "meeting": "EN2006b",
+      "requester": "B",
+      "role": null,
+      "at": 440.13,
+      "percent": 14.419811687016075,
+      "cohort": "early",
+      "question": "Assistant, what did we say about annotating absorption line systems?",
+      "generator_question": "Assistant, do we still agree that absorption line systems shouldn't be included in the annotation?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "B raised this point earlier and confirmed it, but now wants to verify if the decision stands amid ongoing discussion about feature marking.",
+      "codex_review": "Replaced an assumed collective agreement with a question about the recorded statement. The reference retains the attribution to B.",
+      "question_group": "EN2006b-S075-Q2",
+      "reference_answer": "B said absorption line systems should not be included. The later recent-minute discussion of marking features does not explicitly reverse that specific earlier statement.",
+      "generator_proposed_answer": "B: Absorption line systems shouldn't be there.",
+      "full_history_check": {
+        "id": "EN2006b-S075-Q2",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "B asked if the agreement on excluding absorption line systems still holds. In s0058–s0060, B stated: 'Absorption line systems shouldn't be there.' C agreed: 'Yep.' This confirms the prior agreement.",
+        "evidence_ids": [
+          "EN2006b-s0058",
+          "EN2006b-s0060"
+        ],
+        "missing_information": "None.",
+        "naturalness_note": "The question is concise and fits B's pattern of checking prior consensus.",
+        "connection_assessment": "Directly references earlier agreement on exclusion of absorption line systems.",
+        "window_id": "EN2006b-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "EN2006b-S075-Q2",
+        "answer": "Yes, we still agree that absorption line systems shouldn't be included in the annotation, as they were not marked previously and are not explicitly covered in the manual. This is indicated in excerpt IDs EN2006b-s0196 and EN2006b-s0197, where B states 'we marked features' when we saw them, implying that absorption line systems were not included.",
+        "evidence_ids": [
+          "EN2006b-s0196",
+          "EN2006b-s0197"
+        ],
+        "missing_information": "",
+        "window_id": "EN2006b-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "EN2006b-s0058",
+          "speaker": "B",
+          "start": 128.43,
+          "end": 131.97,
+          "text": "Absorption line systems shouldn't be there."
+        },
+        {
+          "id": "EN2006b-s0059",
+          "speaker": "B",
+          "start": 131.97,
+          "end": 133.33,
+          "text": "Absorption line systems."
+        },
+        {
+          "id": "EN2006b-s0060",
+          "speaker": "B",
+          "start": 135.84,
+          "end": 136.75,
+          "text": "And again."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2007a-S075-Q3",
+      "meeting": "ES2007a",
+      "requester": "A",
+      "role": "project manager",
+      "at": 444.0,
+      "percent": 36.36363636363637,
+      "cohort": "early",
+      "question": "Assistant, what was the next step after the tool training exercise according to the agenda?",
+      "generator_question": "Assistant, what was the next step after the tool training exercise according to the agenda?",
+      "edited": false,
+      "kind": "comparison",
+      "why_now": "A is the project manager who set the agenda but may need a reminder; the agenda was stated over 60 seconds ago.",
+      "codex_review": "A short agenda reminder using a clearly stated earlier sequence.",
+      "question_group": "ES2007a-S075-Q3",
+      "reference_answer": "The announced agenda placed project plan and discussion after tool training, followed by closing.",
+      "generator_proposed_answer": "The next step was the project plan discussion.",
+      "full_history_check": {
+        "id": "ES2007a-S075-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The next step after tool training was 'project plan, discussion and then closing.' (Passage: ES2007a-s0034)",
+        "evidence_ids": [
+          "ES2007a-s0034"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Concise, fits a project manager's role and timing.",
+        "connection_assessment": "Directly follows agenda sequence, contextually sound.",
+        "window_id": "ES2007a-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2007a-S075-Q3",
+        "answer": "Missing information. The transcript does not contain any agenda or mention of a tool training exercise or the next step after it.",
+        "evidence_ids": [
+          "ES2007a-s0105",
+          "ES2007a-s0106",
+          "ES2007a-s0107",
+          "ES2007a-s0108",
+          "ES2007a-s0109",
+          "ES2007a-s0110",
+          "ES2007a-s0111",
+          "ES2007a-s0112"
+        ],
+        "missing_information": "The agenda, tool training exercise, and subsequent steps were not referenced in the transcript.",
+        "window_id": "ES2007a-S075",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2007a-s0034",
+          "speaker": "A",
+          "start": 177.3,
+          "end": 184.2,
+          "text": "Opening, acquaintance, tool training and project plan, discussion and then closing."
+        },
+        {
+          "id": "ES2007a-s0033",
+          "speaker": "A",
+          "start": 173.83,
+          "end": 177.3,
+          "text": "So is the agenda?"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2007a-Slater-Q3",
+      "meeting": "ES2007a",
+      "requester": "B",
+      "role": "industrial designer",
+      "at": 997.74,
+      "percent": 81.71498771498771,
+      "cohort": "later",
+      "question": "Assistant, was it agreed that the remote should control only TV or also connected devices like DVD players?",
+      "generator_question": "Assistant, was it agreed that the remote should control only TV or also connected devices like D_V_D_ players?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "B is proposing a dual-sided design and needs clarity on the scope of functionality to avoid overcomplicating the design.",
+      "codex_review": "Normalized DVD spelling; the earlier commitment is explicit and falls outside the recent-minute excerpt.",
+      "question_group": "ES2007a-Slater-Q3",
+      "reference_answer": "C says the functions they are sure they want include controlling the TV and devices connected to it, giving DVD players as an example.",
+      "generator_proposed_answer": "It can control the T_V_, but also devices connected to the T_V_, like D_V_D_ players.",
+      "full_history_check": {
+        "id": "ES2007a-Slater-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "Yes, it was discussed that the remote should control not only TV but also connected devices like D_V_D_ players (ES2007a-s0266, ES2007a-s0269).",
+        "evidence_ids": [
+          "ES2007a-s0266",
+          "ES2007a-s0269"
+        ],
+        "missing_information": "No final agreement confirmed; discussion ongoing.",
+        "naturalness_note": "Concise, fits industrial designer's role and timing.",
+        "connection_assessment": "Multi-passage, but premise is supported by explicit mention.",
+        "window_id": "ES2007a-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2007a-Slater-Q3",
+        "answer": "It was not agreed that the remote should control only TV. The discussion includes ideas for a remote that could serve a niche market, such as people with poor vision or disabilities, and mentions features like big buttons and ease of use, but there is no explicit agreement on limiting functionality to TV only. The possibility of controlling other devices like DVD players is not addressed. Excerpt IDs: ES2007a-s0274, ES2007a-s0286, ES2007a-s0289.",
+        "evidence_ids": [
+          "ES2007a-s0274",
+          "ES2007a-s0286",
+          "ES2007a-s0289"
+        ],
+        "missing_information": "No agreement is stated regarding control of devices beyond TV.",
+        "window_id": "ES2007a-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2007a-s0266",
+          "speaker": "C",
+          "start": 910.9,
+          "end": 922.94,
+          "text": "Um so I mean we still have time in our next meeting to come up with the actual concept for the user interface, but the the functions that we're sure that we want are that it can control the T_V_, but also devices connected to the"
+        },
+        {
+          "id": "ES2007a-s0240",
+          "speaker": "B",
+          "start": 831.25,
+          "end": 843.26,
+          "text": "Um have uh one very complicated one on one side with all the D_V_D_ and V_C_R_ access and stuff, and then on the other side o one uh a remote control"
+        },
+        {
+          "id": "ES2007a-s0269",
+          "speaker": "C",
+          "start": 926.29,
+          "end": 928.55,
+          "text": "D_V_D_ players, things like that."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2008b-Smiddle-Q3",
+      "meeting": "ES2008b",
+      "requester": "D",
+      "role": "marketing expert",
+      "at": 1007.48,
+      "percent": 47.95240361732508,
+      "cohort": "middle",
+      "question": "Assistant, what exactly did the usability lab find about the frequency of channel changing during an hour of use?",
+      "generator_question": "Assistant, what exactly did the usability lab find about the frequency of channel changing during an hour of use?",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "D needs to confirm the specific usage metric to support design prioritization of channel controls.",
+      "codex_review": "Retained the survey reminder with the source’s ambiguity. Both model answers repeat the percentage without explaining what is unspecified.",
+      "question_group": "ES2008b-Smiddle-Q3",
+      "reference_answer": "D reported “about sixty five per cent during an hour of use”. The transcript does not clearly define the denominator. It should not be silently converted into 65 channel changes per hour or 65% of users.",
+      "generator_proposed_answer": "People zap like to change the channel, about sixty five per cent during an hour of use.",
+      "full_history_check": {
+        "id": "ES2008b-Smiddle-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The usability lab found that people zap (change the channel) about sixty-five per cent during an hour of use. [ES2008b-s0093]",
+        "evidence_ids": [
+          "ES2008b-s0093"
+        ],
+        "missing_information": "",
+        "naturalness_note": "The question is brief, directly references a specific data point, and matches the speaker's role and timing in the meeting.",
+        "connection_assessment": "The question links directly to D's own presentation, where the statistic was just stated.",
+        "window_id": "ES2008b-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2008b-Smiddle-Q3",
+        "answer": "Missing information. The recent transcript does not mention any findings from a usability lab regarding the frequency of channel changing during an hour of use.",
+        "evidence_ids": [],
+        "missing_information": "The transcript does not contain any data about usability lab findings or channel changing frequency.",
+        "window_id": "ES2008b-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2008b-s0093",
+          "speaker": "D",
+          "start": 411.51,
+          "end": 419.52,
+          "text": "People also zap like to change the channel, about um sixty five per cent during an hour of use."
+        },
+        {
+          "id": "ES2008b-s0092",
+          "speaker": "D",
+          "start": 406.02,
+          "end": 411.51,
+          "text": "And what people do most often is changing the channel and changing the volume."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2008b-Slater-Q1",
+      "meeting": "ES2008b",
+      "requester": "C",
+      "role": "user-interface designer",
+      "at": 1689.56,
+      "percent": 80.41694431223227,
+      "cohort": "later",
+      "question": "Assistant, can you clarify what the exact price cap is for producing the remote control? I want to make sure I’m not missing it.",
+      "generator_question": "Assistant, can you clarify what the exact price cap is for producing the remote control? I want to make sure I’m not missing it.",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "C is the user-interface designer who just discussed production cost concerns and needs the precise figure to assess feasibility.",
+      "codex_review": "Added the excerpt that actually states the amount; the original cited acknowledgment alone was insufficient. The question naturally relates to cost concerns about voice recognition.",
+      "question_group": "ES2008b-Slater-Q1",
+      "reference_answer": "The production-cost limit is €12.50 per remote. This is not a retail selling-price cap.",
+      "generator_proposed_answer": "The price cap for producing the remote control is twelve and a half Euros.",
+      "full_history_check": {
+        "id": "ES2008b-Slater-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The production cost cap is twelve and a half Euros, as stated in passage ES2008b-s0378. This was confirmed during discussion about voice recognition feasibility.",
+        "evidence_ids": [
+          "ES2008b-s0378"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Brief, direct, and fits user role.",
+        "connection_assessment": "Directly tied to prior cost discussion.",
+        "window_id": "ES2008b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2008b-Slater-Q1",
+        "answer": "Missing information. The transcript does not mention a price cap for producing the remote control.",
+        "evidence_ids": [
+          "ES2008b-s0406",
+          "ES2008b-s0407",
+          "ES2008b-s0408",
+          "ES2008b-s0409",
+          "ES2008b-s0410",
+          "ES2008b-s0411",
+          "ES2008b-s0412",
+          "ES2008b-s0413"
+        ],
+        "missing_information": "Price cap not discussed.",
+        "window_id": "ES2008b-Slater",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2008b-s0378",
+          "speaker": "A",
+          "start": 1561.67,
+          "end": 1562.86,
+          "text": "To produce it, yes."
+        },
+        {
+          "id": "ES2008b-s0377",
+          "speaker": "C",
+          "start": 1550.61,
+          "end": 1562.71,
+          "text": "Especially if we are marketing it as a separate product, people are gonna be paying uh, well, uh we've got a price limit of was it twelve twelve and a half Euros for to produce it"
+        },
+        {
+          "id": "ES2008b-s0380",
+          "speaker": "C",
+          "start": 1562.71,
+          "end": 1569.1,
+          "text": "And I wonder if we can get voice recognition into that twelve and a half Euros without having to make too many other compromises."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2009a-S10-Q1",
+      "meeting": "ES2009a",
+      "requester": "C",
+      "role": "user-interface designer",
+      "at": 594.37,
+      "percent": 42.12402551381999,
+      "cohort": "early",
+      "question": "Assistant, what's the current plan for moving from basic features to the sleeker design phase? Need to know the next steps.",
+      "generator_question": "Assistant, what's the current plan for moving from basic features to the sleeker design phase? Need to know the next steps.",
+      "edited": false,
+      "kind": "connection",
+      "why_now": "C is the User Interface Designer and needs to understand the transition from basics to enhanced design, which was mentioned earlier but not fully explained.",
+      "codex_review": "The earlier explanation supports a process reminder. Removed the reader’s unsupported product examples from the reference.",
+      "question_group": "ES2009a-S10-Q1",
+      "reference_answer": "Begin with necessary functions, move on to desirable improvements, then bring the industrial and interface design work together around what can be built. This is a broad project sequence, not a dated implementation schedule.",
+      "generator_proposed_answer": "A: We'll work up from what is necessary to more like what would be good, you know like um I I think you guys probably got the same emails I did but the idea of um",
+      "full_history_check": {
+        "id": "ES2009a-S10-Q1",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The plan moves from basics to sleeker design by first establishing necessary functions, then enhancing them for user-friendliness and style. The industrial and UI designers will guide feasibility, ensuring the final product is both functional and fashionable, as per the corporate strategy of elevating ordinary items. (ES2009a-s0056, ES2009a-s0060, ES2009a-s0062)",
+        "evidence_ids": [
+          "ES2009a-s0056",
+          "ES2009a-s0060",
+          "ES2009a-s0062"
+        ],
+        "missing_information": "",
+        "naturalness_note": "Brief, direct, and fits the context of a team member seeking clarity on workflow.",
+        "connection_assessment": "Links directly to prior discussion on design stages and roles.",
+        "window_id": "ES2009a-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2009a-S10-Q1",
+        "answer": "The latest transcript does not contain information about the current plan for moving from basic features to the sleeker design phase or the next steps. No excerpt addresses this topic.",
+        "evidence_ids": [],
+        "missing_information": "No information provided in the latest minute about the transition plan or next steps.",
+        "window_id": "ES2009a-S10",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2009a-s0058",
+          "speaker": "A",
+          "start": 274.15,
+          "end": 286.71,
+          "text": "And then um we'll work up from what is necessary to more like what would be good, you know like um I I think you guys probably got the same emails I did but the idea of um"
+        },
+        {
+          "id": "ES2009a-s0059",
+          "speaker": "A",
+          "start": 286.71,
+          "end": 296.54,
+          "text": ", yes a coffee pot needs to be able to hold coffee but it's also better if it's not like really cheap glass so that it if you touch it you hurt your hand, or something like that."
+        },
+        {
+          "id": "ES2009a-s0083",
+          "speaker": "C",
+          "start": 392.86,
+          "end": 400.75,
+          "text": "I uh once upon a time studied in Victoria and I am the User Interface Designer."
+        },
+        {
+          "id": "ES2009a-s0056",
+          "speaker": "A",
+          "start": 259.08,
+          "end": 271.17,
+          "text": "Industrial Designer hey right on alright, getting into it um to guide me and guide us on this project 'cause you're gonna be you're g you guys are the bottom you know you're like no you can't do that you can't have you know"
+        },
+        {
+          "id": "ES2009a-s0060",
+          "speaker": "A",
+          "start": 296.84,
+          "end": 309.66,
+          "text": "Um and so we'll work up from there and um then we'll meet on and talk about it and then finally we'll incorporate as kind of the last stage you know where you guys build or tell me tell us what's possible and then you tell"
+        },
+        {
+          "id": "ES2009a-s0062",
+          "speaker": "A",
+          "start": 321.71,
+          "end": 329.23,
+          "text": "at the cutting edge of how to get about maximising what is possible um to try t of sync it all up."
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "ES2010b-Smiddle-Q3",
+      "meeting": "ES2010b",
+      "requester": "B",
+      "role": "industrial designer",
+      "at": 887.55,
+      "percent": 50.314625850340136,
+      "cohort": "middle",
+      "question": "Assistant, what battery options had we discussed, and did anyone say they needed to be rechargeable?",
+      "generator_question": "Assistant, what was the agreed-upon power source for the remote, and does it need to be rechargeable or just standard batteries?",
+      "edited": true,
+      "kind": "connection",
+      "why_now": "B mentioned batteries as a power source but didn’t confirm the final decision, so a follow-up on the agreed-upon type is needed.",
+      "codex_review": "Changed “agreed-upon” to “discussed”. The source presents a proposal and typical configurations, without establishing a final selection or rechargeability requirement.",
+      "question_group": "ES2010b-Smiddle-Q3",
+      "reference_answer": "B proposed batteries because they are easily available, citing typical remotes with two AA or four AAA batteries, sometimes three. No rechargeable requirement or final choice is established in the available discussion.",
+      "generator_proposed_answer": "The agreed-upon power source is standard batteries—either two AA or four AAA—based on availability and common remote control design.",
+      "full_history_check": {
+        "id": "ES2010b-Smiddle-Q3",
+        "premise_supported": true,
+        "requester_plausible": true,
+        "natural_spoken_question": true,
+        "answer": "The agreed power source is standard batteries (AA or AAA). No mention of rechargeable batteries was made. The design assumes standard, easily available batteries, with no indication of a need for rechargeability.",
+        "evidence_ids": [
+          "ES2010b-s0208",
+          "ES2010b-s0209"
+        ],
+        "missing_information": "No discussion on rechargeable alternatives or their feasibility.",
+        "naturalness_note": "The question is brief and fits the context of a design decision.",
+        "connection_assessment": "Directly supported by B's statement on battery types.",
+        "window_id": "ES2010b-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "recent_minute_check": {
+        "id": "ES2010b-Smiddle-Q3",
+        "answer": "The transcript does not specify the agreed-upon power source for the remote, nor does it clarify whether it needs to be rechargeable or use standard batteries.",
+        "evidence_ids": [
+          "ES2010b-s0217",
+          "ES2010b-s0218",
+          "ES2010b-s0219",
+          "ES2010b-s0220",
+          "ES2010b-s0221",
+          "ES2010b-s0222",
+          "ES2010b-s0223",
+          "ES2010b-s0224"
+        ],
+        "missing_information": "The specific power source (e.g., standard batteries, rechargeable) was not discussed or agreed upon in the provided transcript.",
+        "window_id": "ES2010b-Smiddle",
+        "invalid_ids": [],
+        "unknown_question_id": false
+      },
+      "evidence": [
+        {
+          "id": "ES2010b-s0208",
+          "speaker": "B",
+          "start": 770.32,
+          "end": 776.06,
+          "text": "Um power source, I figured, batteries, 'cause they're easily available."
+        },
+        {
+          "id": "ES2010b-s0209",
+          "speaker": "B",
+          "start": 776.06,
+          "end": 781.31,
+          "text": "Typically a remote has either two double A_s or four triple A_s, sometimes three."
+        },
+        {
+          "id": "ES2010b-s0210",
+          "speaker": "B",
+          "start": 781.31,
+          "end": 785.82,
+          "text": "Uh it really kinda depends on the size of the actual remote itself."
+        }
+      ],
+      "alternatives": []
+    }
+  ]
 }

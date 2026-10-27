@@ -1,1 +1,1879 @@
-[]
+[
+  {
+    "id": "EN2001b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2001b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2001b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Addresses the assistant as if it made the earlier XML proposal; it never spoke."
+  },
+  {
+    "id": "EN2001b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2001b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_unknown_answer_evidence, missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_unknown_answer_evidence, missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_unknown_answer_evidence, missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Asks for a new software recommendation rather than recalling a recorded choice."
+  },
+  {
+    "id": "EN2001b-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Turns a suggested extension of a timing file into an already available file with all fields."
+  },
+  {
+    "id": "EN2001b-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2001b-Slater-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, how were we going to store the information-density values alongside the segments?",
+    "reference_answer": "The suggestion was to create a separate file linking each value to the segment ID. It was a proposed representation, not proof of an implemented storage format.",
+    "note": "Removed a false choice between a segment ID and a separate file: the proposal uses both. The reader also blurred the file/link distinction."
+  },
+  {
+    "id": "EN2001b-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The cited speaker-label fragments do not establish a complete answer about file contents."
+  },
+  {
+    "id": "EN2004a-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Mixes silence checking with a specific unclear-breath labeling rule that is not established by the cited early excerpts."
+  },
+  {
+    "id": "EN2004a-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2004a-S05-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "For two equally plausible interpretations, choose one and leave it. The discussion uses the example of “ice cream” versus “I scream”.",
+    "note": "The earlier transcription rule answers this natural clarification. The latest minute concerns other annotation examples."
+  },
+  {
+    "id": "EN2004a-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The proposed policy for unmarked false starts is not stated in the cited discussion."
+  },
+  {
+    "id": "EN2004a-S075-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+    "reference_answer": "Do not capitalize the start of the next segment when it clearly continues the same sentence. The cited discussion does not settle every ambiguous-pause case.",
+    "note": "Narrowed the question to the rule actually stated; the original draft asked about an uncertain pause and the models invented a default for that case."
+  },
+  {
+    "id": "EN2004a-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2004a-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2004a-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Combines silence checking and sentence continuation without a supported common rule."
+  },
+  {
+    "id": "EN2004a-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2004a-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2004a-Smiddle-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
+    "reference_answer": "Restarts can be at phrase level, not only whole-sentence level. An ordinary pause with a continuing sentence is not itself a restart.",
+    "additional_evidence_ids": [
+      "EN2004a-s0139",
+      "EN2004a-s0145",
+      "EN2004a-s0374"
+    ],
+    "note": "Corrected the original question’s conflation of a pause with a restart. The source explicitly distinguishes phrase-level restarts from whole-sentence restarts."
+  },
+  {
+    "id": "EN2004a-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2009b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2009b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2009b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2009b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2009b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2009b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2009b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The mailing-list warning is about storing sensitive or valued data on machines, not an established backup-reminder service."
+  },
+  {
+    "id": "EN2009b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2009b-S10-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "B said Nynke was expected back tomorrow and offered to ask whether she would help. This does not confirm her availability or agreement to the pilot.",
+    "kind": "missing_information",
+    "note": "A useful uncertainty control: expected return and willingness to help are different facts. The reader wrongly treats the offer to ask as confirmation."
+  },
+  {
+    "id": "EN2009b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2009b-Smiddle-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "The method described was to play a ten-kilohertz sound over the speech and compare the two signals; the beep made its timing clear. The source does not establish the extra sound-proof-box requirement in the proposed answer.",
+    "note": "Kept the technical reminder but removed the invented box requirement from its reference."
+  },
+  {
+    "id": "EN2009b-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2009b-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Addresses the assistant as if it had reported the mailing-list update."
+  },
+  {
+    "id": "EN2009b-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2009b-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S075-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link-based iteration starts?",
+    "reference_answer": "PLSA supplies the initial topic probabilities for each document. The link-based algorithm then iterates from that initial distribution.",
+    "note": "Replaced corpus spelling notation P_L_S_A_ with the spoken acronym. The answer is stated before the cutoff."
+  },
+  {
+    "id": "IN1005-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Asks for a new general inference about popularity bias rather than a clearly recorded earlier result."
+  },
+  {
+    "id": "IN1005-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-Smiddle-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
+    "question_group": "IN1005-directory-evaluation",
+    "reference_answer": "The directory categories are reserved for evaluation, not supplied during model training. They support checking whether the learned representation relates documents that belong in the same category.",
+    "note": "The source separates training from evaluation and describes comparing category membership. This asks for that earlier method, without claiming certified multi-hop difficulty."
+  },
+  {
+    "id": "IN1005-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Asks the assistant to devise an evaluation method, rather than recall one established by the source."
+  },
+  {
+    "id": "IN1005-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1005-Slater-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question_group": "IN1005-directory-evaluation",
+    "reference_answer": "The directory categories are used to evaluate the learned representation, not supplied during model training. They allow checking whether related documents belong in the same category.",
+    "note": "Same requested facts as the earlier directory-evaluation question; kept as an alternative at a later cutoff, without another distinct-question count."
+  },
+  {
+    "id": "IN1005-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The hypothetical no-text/mixed-links case does not have an established answer in the cited passages."
+  },
+  {
+    "id": "IN1005-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S05-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question_group": "IN1007-matlab-availability",
+    "reference_answer": "The prefix says Marios programmed in MATLAB and Petr rewrote work in C++. It does not establish whether the original MATLAB files are still available.",
+    "kind": "missing_information",
+    "note": "The reader infers present availability from past development. Earlier speech establishes authorship and a rewrite, not current access to the files."
+  },
+  {
+    "id": "IN1007-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The source gives a range of tested lengths, not the reason the question asks for."
+  },
+  {
+    "id": "IN1007-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The speaker explicitly forgot the issue; the draft gives an artificial exact-recall request for an issue never specified in this meeting."
+  },
+  {
+    "id": "IN1007-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "IN1007-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IN1007-Slater-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question_group": "IN1007-matlab-availability",
+    "reference_answer": "At this later cutoff, D explicitly says that all the files and MATLAB implementations are still there.",
+    "note": "Same availability question at a later point, when new speech establishes the answer. This is retained under the earlier question rather than counted twice."
+  },
+  {
+    "id": "IN1007-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-S05-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "They need to say where people will be placed by November second, described as next Tuesday.",
+    "note": "Natural early reminder of the planning deadline, which was stated near the start of the meeting."
+  },
+  {
+    "id": "IB4001-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "IB4001-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Room identification depends on a partly described floorplan; the model also attached corner/window details to the wrong room type."
+  },
+  {
+    "id": "IB4001-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "IB4001-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4001-Slater-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "The room can be used for a meeting if it is empty. It should not be reserved in advance or used by displacing someone already reading there.",
+    "note": "Both the permission and its limitation are explicit in the earlier discussion."
+  },
+  {
+    "id": "IB4001-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The text names room types but not the requested count; this item depends too heavily on unavailable layout information."
+  },
+  {
+    "id": "IB4003-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Asks the listening assistant to decide whether the reading room is necessary, instead of recalling an established decision."
+  },
+  {
+    "id": "IB4003-S075-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, how many people were we finding offices for again?",
+    "reference_answer": "Eighteen people were counted. The later discussion of sixteen slots for fifteen people is a different capacity/occupancy statement, not a correction of that headcount.",
+    "note": "Removed the answer value from the question. The source counts eighteen people; this must not be confused with the later slots/person comparison."
+  },
+  {
+    "id": "IB4003-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-S10-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, had we picked a room for the reading lounge?",
+    "reference_answer": "A reading lounge was proposed, including using a two-person room, but no particular room is designated in the available discussion.",
+    "kind": "missing_information",
+    "note": "Removed the request to assign a room now. A listening assistant can recall the proposed arrangement but cannot choose a room for the group."
+  },
+  {
+    "id": "IB4003-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-Smiddle-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "People should have their own desks. A explicitly says that two people cannot be put at the same desk, agreeing with B’s concern about drawers and sharing.",
+    "note": "A supported reminder of a workspace constraint while the group considers shared rooms."
+  },
+  {
+    "id": "IB4003-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IB4003-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2003c-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-S075-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what was the concern about using a kinetic battery for this remote?",
+    "reference_answer": "The concern was whether movement of a remote would provide enough power; a watch moves around much more. These remarks express doubt rather than a measured power result.",
+    "note": "Changed “ruling out” to “concern”: the cited exchange expresses doubt and gives a comparison, without a formal final rejection."
+  },
+  {
+    "id": "ES2003c-S10-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
+    "reference_answer": "No price difference is given. The team asks whether the LCD would raise costs substantially and says it requires a more powerful chip than simple buttons. That does not establish a quoted or measured cost increase.",
+    "kind": "missing_information",
+    "note": "Both model answers turn an open cost question into a definite comparison. The retained question is valid; its reference preserves the missing price information."
+  },
+  {
+    "id": "ES2003c-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2003c-Slater-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "In the articulated design proposal, the grip would be the bulkiest part and was suggested as the place for the battery. The source describes a suggestion, not a verified internal layout or balance calculation.",
+    "additional_evidence_ids": [
+      "ES2003c-s0244",
+      "ES2003c-s0248",
+      "ES2003c-s0251"
+    ],
+    "note": "The earlier grip/battery suggestion supports the design question. Removed unsupported claims about balance and a finalized layout."
+  },
+  {
+    "id": "ES2003c-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3004d-S05-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, why were we leaning toward a slide-open design?",
+    "question_group": "TS3004d-slide-reasons",
+    "reference_answer": "Participants called slide-open usable, suggested it might be stronger and noted the room it gives inside. The remarks support a preference, not an experimentally established superiority.",
+    "note": "Removed the claim of an exact final decision between slide and fold. The earlier exchange gives several reasons for the preference."
+  },
+  {
+    "id": "TS3004d-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3004d-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3004d-S075-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what's the latest on the slide-open mechanism design?",
+    "reference_answer": "They had not yet had time to design the slide pad and did not know how many buttons or what kinds of buttons it needed.",
+    "note": "Removed the second sentence that supplied the unresolved-status answer. The source explicitly states what remained undesigned."
+  },
+  {
+    "id": "TS3004d-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3004d-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Claims the missing buttons were not confirmed, although the cited exchange explicitly corrects the design to twelve buttons."
+  },
+  {
+    "id": "TS3004d-S10-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what were the reasons for preferring a slide-open inner panel?",
+    "question_group": "TS3004d-slide-reasons",
+    "reference_answer": "Usability, possibly greater strength and more room inside were given as reasons for preferring slide-open.",
+    "note": "Same answer facts as the earlier slide-open question; kept as an alternative at a later time."
+  },
+  {
+    "id": "TS3004d-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "TS3004d-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3004d-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3004d-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "TS3004d-Smiddle-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "The earlier placement stated by B was on the left side. Later mentions of the scrollwheel in this prefix do not state a relocation.",
+    "note": "Checked the other mentions of the scrollwheel; the relevant earlier placement is not repeated in the recent minute."
+  },
+  {
+    "id": "TS3004d-Slater-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "They agreed to add backlighting when the panel opens, illuminating the interior rather than only individual buttons. Green or blue light was suggested; no single final color is fixed in the cited exchange.",
+    "additional_evidence_ids": [
+      "TS3004d-s0519",
+      "TS3004d-s0521",
+      "TS3004d-s0522",
+      "TS3004d-s0536"
+    ],
+    "note": "The proposed answer incorrectly removed panel lighting. The source supports lighting the open interior; color suggestions remain tentative."
+  },
+  {
+    "id": "TS3004d-Slater-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "They gave fancy look-and-feel a score of one, citing the lighting details and the ability to choose a light/color. The reference does not infer whether one is globally the best or worst score.",
+    "note": "The score and the reason appear together in the source. Kept as a grounded planning reminder."
+  },
+  {
+    "id": "TS3004d-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2004d-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-S075-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, where were we planning to put the infrared sender?",
+    "question_group": "ES2004d-infrared-location",
+    "reference_answer": "At the front of the bottom layer. C explicitly says they had not actually put it on the prototype. No hinge location is established by these excerpts.",
+    "note": "Corrected planned placement versus actual placement and removed an invented hinge detail from both model answers."
+  },
+  {
+    "id": "ES2004d-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-S10-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, where was the infrared sender supposed to go on the prototype?",
+    "question_group": "ES2004d-infrared-location",
+    "reference_answer": "At the front of the bottom layer; it had not actually been installed. The source does not specify a hinge location.",
+    "note": "Same placement question at a later cutoff; retained as an alternative, with the same planned-versus-installed correction."
+  },
+  {
+    "id": "ES2004d-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2004d-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "TS3005b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "TS3005b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The lack of cost data is stated inside the latest minute, so this version does not need earlier history."
+  },
+  {
+    "id": "TS3005b-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3005b-Slater-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, did we confirm whether the LCD screen can be made with large buttons for elderly users? That was part of the user needs.",
+    "reference_answer": "C proposed enlarging on-screen controls for older users, and D thought this should be standard. The discussion does not verify implementation or technical feasibility.",
+    "note": "Normalized LCD spelling. A suggestion and favorable reaction are not proof that the feature has been implemented or tested."
+  },
+  {
+    "id": "ES2005b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2005b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2005b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2005b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2005b-Slater-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "No adoption rate for voice commands is given. A describes a prior voice-controlled remote that responded incorrectly to TV speech or noise. This is an anecdote about reliability, not the unrelated percentages about appearance or button use.",
+    "note": "The proposed answer retrieved unrelated survey figures. The actual later discussion supplies a reliability anecdote; it does not establish how many people use voice control."
+  },
+  {
+    "id": "TS3006c-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-S05-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+    "reference_answer": "C said the files were in the shared folder. D initially saw only their own presentation, and C then identified a components-design PowerPoint. The exchange does not establish a general folder outage or an upload failure.",
+    "additional_evidence_ids": [
+      "TS3006c-s0015",
+      "TS3006c-s0018",
+      "TS3006c-s0024"
+    ],
+    "note": "Replaced an assumed upload failure with the observed trouble finding files. The reference separates that problem from whether the folder itself failed."
+  },
+  {
+    "id": "TS3006c-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The speaker says they intend to record decisions; this does not establish that a final report was updated."
+  },
+  {
+    "id": "TS3006c-S10-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
+    "reference_answer": "Fancy look-and-feel was twice innovation, which was twice ease of use: 4:2:1 in that order.",
+    "additional_evidence_ids": [
+      "TS3006c-s0080",
+      "TS3006c-s0081",
+      "TS3006c-s0086"
+    ],
+    "kind": "calculation",
+    "note": "Removed “you mentioned,” since the assistant never spoke. Checked the named ordering before converting the two comparisons to 4:2:1."
+  },
+  {
+    "id": "TS3006c-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "TS3006c-Smiddle-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "The team discussed mapping speech commands to functions already present. The available discussion does not report a finished implementation or demonstrate that it is ready for interface integration.",
+    "note": "The reader turns lack of a completion report into “not implemented”. The reference preserves the narrower supported status."
+  },
+  {
+    "id": "TS3006c-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "TS3006c-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "TS3006c-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "IS1004b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "IS1004b-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "IS1004b-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Adds an unrecorded causal claim about component selection to a general description of functional design."
+  },
+  {
+    "id": "ES2006a-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S075-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "Detailed design follows functional and conceptual design, bringing those strands together. No calendar start date is given.",
+    "note": "A short reminder of the announced project sequence. No date is invented."
+  },
+  {
+    "id": "ES2006a-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The requester asks for the role they themselves just introduced; weak natural motivation for this development item."
+  },
+  {
+    "id": "ES2006a-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2006a-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The recent minute contains the relevant interface role descriptions, and the earlier source does not give the requested practical distinction."
+  },
+  {
+    "id": "ES2006a-Slater-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "At the maximum production cost of €12.50 and selling price of €25, €12.50 per unit remains before other costs: 50% of the selling price. The separate €50 million total-profit goal is not a per-unit margin, and an exact net margin is not established.",
+    "kind": "calculation",
+    "note": "Corrected the proposed answer’s confusion between a company-wide profit target and a per-unit amount; the calculation is qualified to exclude unspecified other costs."
+  },
+  {
+    "id": "ES2006a-Slater-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "Functional design specifies what functions and tasks the remote must perform. Conceptual design covers how people will use it. The speaker notes that some work on use may already begin during functional design.",
+    "note": "The two phases are distinguished explicitly in the earlier exchange; retained as an ordinary comparison, without a multi-hop claim."
+  },
+  {
+    "id": "ES2006a-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2006b-S05-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, did we decide to annotate Hubble?",
+    "reference_answer": "Yes. C and B say that they agreed to keep Hubble in the annotation.",
+    "note": "Removed the answer-revealing “agreement about keeping” construction. The source explicitly supports the decision."
+  },
+  {
+    "id": "EN2006b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2006b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2006b-S075-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
+    "reference_answer": "Underline the HTML material in each case, but not the word “and”. The source is discussing how to mark the text, not a later rule about physical mechanisms.",
+    "note": "Normalized HTML spelling and corrected the reference. The recent-minute reader applied an unrelated rule about mechanisms to this earlier text-marking instruction."
+  },
+  {
+    "id": "EN2006b-S075-Q2",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what did we say about annotating absorption line systems?",
+    "reference_answer": "B said absorption line systems should not be included. The later recent-minute discussion of marking features does not explicitly reverse that specific earlier statement.",
+    "note": "Replaced an assumed collective agreement with a question about the recorded statement. The reference retains the attribution to B."
+  },
+  {
+    "id": "EN2006b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2006b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2006b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "EN2006b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The cited permission to correct annotations does not establish a specific classification rule for soft excess."
+  },
+  {
+    "id": "EN2006b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2006b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "EN2006b-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Unclear object reference in the opening activity; the source fragments do not establish a remote-control design fact."
+  },
+  {
+    "id": "ES2007a-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Uses a transcript speaker letter in speech and asks icebreaker trivia rather than a useful project reminder."
+  },
+  {
+    "id": "ES2007a-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-S075-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "The announced agenda placed project plan and discussion after tool training, followed by closing.",
+    "note": "A short agenda reminder using a clearly stated earlier sequence."
+  },
+  {
+    "id": "ES2007a-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2007a-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2007a-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2007a-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The question largely gives away its own answer: the source only says the aim is user-friendly."
+  },
+  {
+    "id": "ES2007a-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2007a-Slater-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, was it agreed that the remote should control only TV or also connected devices like DVD players?",
+    "reference_answer": "C says the functions they are sure they want include controlling the TV and devices connected to it, giving DVD players as an example.",
+    "note": "Normalized DVD spelling; the earlier commitment is explicit and falls outside the recent-minute excerpt."
+  },
+  {
+    "id": "ES2008b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2008b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2008b-Smiddle-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "D reported “about sixty five per cent during an hour of use”. The transcript does not clearly define the denominator. It should not be silently converted into 65 channel changes per hour or 65% of users.",
+    "note": "Retained the survey reminder with the source’s ambiguity. Both model answers repeat the percentage without explaining what is unspecified."
+  },
+  {
+    "id": "ES2008b-Slater-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "The production-cost limit is €12.50 per remote. This is not a retail selling-price cap.",
+    "additional_evidence_ids": [
+      "ES2008b-s0377",
+      "ES2008b-s0380"
+    ],
+    "note": "Added the excerpt that actually states the amount; the original cited acknowledgment alone was insufficient. The question naturally relates to cost concerns about voice recognition."
+  },
+  {
+    "id": "ES2008b-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2008b-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Turns a mention of repetitive strain injury into a formally established design requirement."
+  },
+  {
+    "id": "ES2009a-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2009a-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "The opening “fallen off” fragments do not establish a remote falling during a test or its cause."
+  },
+  {
+    "id": "ES2009a-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-S10-Q1",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "reference_answer": "Begin with necessary functions, move on to desirable improvements, then bring the industrial and interface design work together around what can be built. This is a broad project sequence, not a dated implementation schedule.",
+    "note": "The earlier explanation supports a process reminder. Removed the reader’s unsupported product examples from the reference."
+  },
+  {
+    "id": "ES2009a-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Treats a coffee-pot analogy as concrete physical constraints on this remote."
+  },
+  {
+    "id": "ES2009a-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "Codex",
+    "note": "Turns corporate positioning into measured preferences of the target customers."
+  },
+  {
+    "id": "ES2009a-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-Smiddle-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2009a-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S05-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S05-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S05-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S075-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S075-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S075-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S10-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S10-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-S10-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-Smiddle-Q1",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2010b-Smiddle-Q2",
+    "decision": "exclude",
+    "reviewer": "local_model_screen",
+    "note": "The local model did not approve the premise, requester or spoken naturalness, or cited an unavailable passage. These drafts did not receive a full Codex source review."
+  },
+  {
+    "id": "ES2010b-Smiddle-Q3",
+    "decision": "retain",
+    "reviewer": "Codex",
+    "question": "Assistant, what battery options had we discussed, and did anyone say they needed to be rechargeable?",
+    "reference_answer": "B proposed batteries because they are easily available, citing typical remotes with two AA or four AAA batteries, sometimes three. No rechargeable requirement or final choice is established in the available discussion.",
+    "additional_evidence_ids": [
+      "ES2010b-s0210"
+    ],
+    "note": "Changed “agreed-upon” to “discussed”. The source presents a proposal and typical configurations, without establishing a final selection or rechargeability requirement."
+  },
+  {
+    "id": "ES2010b-Slater-Q1",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-Slater-Q2",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence, no_cited_older_fact. This is not an independent judgment of question naturalness."
+  },
+  {
+    "id": "ES2010b-Slater-Q3",
+    "decision": "exclude",
+    "reviewer": "source_annotation_checks",
+    "note": "Did not proceed because the draft source annotations failed: missing_or_wrong_requester_evidence. This is not an independent judgment of question naturalness."
+  }
+]
