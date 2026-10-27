@@ -14,6 +14,8 @@ def project_tabs(current, prefix=""):
         ("literature", "Literature Review", "index.html"),
         ("experiments", "Experiments", "experiments/index.html"),
         ("proposal", "Proposal", "proposals/index.html"),
+        ("todo", "TODO", "todo.html"),
+        ("log", "Daily log", "daily-log.html"),
     ], current, "Project tabs", prefix, "nav-links")
 
 
@@ -59,7 +61,6 @@ AMI_PAGES = [
     ('ami-expansion', 'Earlier expansion', 'question-expansion.html'),
     ('ami-original', 'First pilot', 'ami-questions.html'),
     ('ami-audio', 'TTS comparison', 'ami-question-audio.html'),
-    ('ami-plan', 'TODO &amp; plan', 'question-plan.html'),
 ]
 
 

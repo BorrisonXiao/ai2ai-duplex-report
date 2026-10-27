@@ -3,7 +3,6 @@ from html import escape as e
 import json
 from pathlib import Path
 from site_navigation import project_tabs,experiment_subtabs
-import thinking_design
 ROOT=Path(__file__).resolve().parents[1];D=ROOT/'research/question-catalog'
 def read(name):return json.loads((D/name).read_text())
 def p(text):return '<p>'+e(str(text))+'</p>'
@@ -43,21 +42,8 @@ def overview():
  js='''const data=JSON.parse(document.getElementById('catalog-data').textContent),dataset=document.getElementById('dataset-filter'),batch=document.getElementById('batch-filter');const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function bars(rows){const max=Math.max(1,...rows.map(r=>r[1]));return '<ul class="catalog-bars">'+rows.map(([name,n])=>'<li><span>'+esc(name)+'</span><span class="bar-track"><span class="bar" style="width:'+(100*n/max)+'%"></span></span><strong>'+n+'</strong></li>').join('')+'</ul>';}function hist(rows,bins,key,unit){return bars(bins.slice(0,-1).map((a,i)=>[a+'–'+bins[i+1]+' '+unit,rows.filter(q=>q[key]>=a&&(q[key]<bins[i+1]||(i===bins.length-2&&q[key]===bins[i+1]))).length]));}function update(){const rows=data.questions.filter(q=>(dataset.value==='all'||q.dataset===dataset.value)&&(batch.value==='all'||q.batch===batch.value)),n=rows.length;const put=(id,t)=>document.getElementById(id).textContent=t;put('stat-questions',n);put('stat-meetings',new Set(rows.map(q=>q.meeting)).size);put('stat-mean-time',n?(rows.reduce((s,q)=>s+q.minutes,0)/n).toFixed(2)+' min':'—');put('stat-mean-percent',n?(rows.reduce((s,q)=>s+q.percent,0)/n).toFixed(2)+'%':'—');put('stat-early',rows.filter(q=>q.minutes>=4.5&&q.minutes<=10.5).length);put('stat-audio',rows.filter(q=>q.has_audio).length);document.getElementById('elapsed-chart').innerHTML=hist(rows,data.time_bins,'minutes','min');document.getElementById('percent-chart').innerHTML=hist(rows,data.percent_bins,'percent','%');document.getElementById('dataset-chart').innerHTML=bars(['AMI','Earnings calls'].map(d=>[d,rows.filter(q=>q.dataset===d).length]));document.getElementById('batch-chart').innerHTML=bars(data.batches.map(b=>[b.label,rows.filter(q=>q.batch===b.id).length]));put('filter-state',dataset.options[dataset.selectedIndex].text+' · '+batch.options[batch.selectedIndex].text);put('browse-count',n+' distinct questions shown');for(const c of document.querySelectorAll('.catalog-question'))c.hidden=!((dataset.value==='all'||c.dataset.dataset===dataset.value)&&(batch.value==='all'||c.dataset.batch===batch.value));}dataset.addEventListener('change',update);batch.addEventListener('change',update);update();'''
  document('question-overview.html','All questions and aggregate statistics','ami-overview',body,js)
 def plan():
- r=read('plan.json');labels={'complete':'Done','partial':'Partly complete','pending':'To do','planned':'Later stage','optional':'Optional; not collected'}
- body='<header class="hero"><span class="eyebrow">Implementation roadmap</span><h1>TODO and staged implementation plan</h1><p class="lede">'+e(r['scope'])+'</p>'+p(r['current_state'])+'</header><section class="section" id="next"><h2>Next work</h2><ol>'+''.join('<li>'+e(t)+'</li>' for t in r['next'])+'</ol><p>The list below tracks the broader implementation. Completed pilot checklists are evidence for individual steps; they do not mean the whole project is finished.</p></section><nav class="jump-links" aria-label="Implementation stages">'+''.join('<a href="#'+s['id']+'">'+e(s['title'])+'</a>' for s in r['stages'])+'</nav><section class="section" id="choices"><h2>Choices already made</h2><ul>'+''.join('<li>'+e(t)+'</li>' for t in r['choices'])+'</ul></section>'
- body+=table(1,'Implementation stages and current status. “Partly complete” means working pilot evidence exists while listed tasks remain unfinished; no stage status implies a general model capability.',['Stage','Status','What it establishes'],[[f'<a href="#{s["id"]}">'+e(s['title'])+'</a>',labels[s['status']],e(s['goal'])] for s in r['stages']])
- for s in r['stages']:
-  body+='<section class="stage" id="'+s['id']+'"><h2>'+e(s['title'])+'</h2><span class="status">'+labels[s['status']]+'</span>'+p(s['goal'])
-  if s['id']=='history':body+='<p><strong>Meeting-state record</strong></p><code class="state-schema">'+e(r['meeting_state_schema'])+'</code>'
-  if s['id']=='comparison':body+=table(2,'Four matched system conditions for the original three audio questions. These are planned conditions, not completed AMI results.',['Condition','Available history','What it establishes'],[[e(c['condition']),e(c['history']),e(c['establishes'])] for c in r['conditions']])+'<p><strong>The preparation process must not see the future question.</strong> Count its full pre-request compute, including preparation that never becomes useful. Qualify bounded history retention before extending to 18–35 minutes.</p>'
-  if s['id']=='actions':body+='<p><strong>Action choices:</strong> '+e(' · '.join(r['actions']))+'</p>'
-  body+='<ul>'
-  for t in s['tasks']:body+='<li data-status="'+t['status']+'"><strong>'+labels[t['status']]+' · '+e(t['text'])+'</strong>'+(p(t['evidence']) if t.get('evidence') else '')+('<p><a href="'+e(t['url'])+'">Related evidence or proposal</a></p>' if t.get('url') else '')+'</li>'
-  body+='</ul>'
-  if s['id']=='comparison' and r.get('comparison_design'):body+=thinking_design.render(r['comparison_design'],table)
-  body+='</section>'
- body+='<footer class="section"><h2>Keep the plan synchronized</h2>'+p(r['update_rule'])+'<p><a href="../research/question-catalog/plan.json">Saved stage and task records</a> · <a href="question-overview.html">All question statistics</a> · <a href="../research/question-pilot/progress.json">Earlier completed pilot checklist</a>.</p><p>'+e(r.get('resource_note','Page generation uses 0 GPUs.'))+'</p></footer>'
- document('question-plan.html','TODO and staged implementation plan','ami-plan',body,thinking_design.JS)
- path=ROOT/'experiments/question-plan.html';page=path.read_text().replace('</style>',thinking_design.CSS+'</style>');path.write_text(page)
+ from build_project_progress import build_plan
+ build_plan()
+
 def main():overview();plan();print('Rendered aggregate overview and',len(read('plan.json')['stages']),'project stages.')
 if __name__=='__main__':main()

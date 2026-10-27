@@ -1,0 +1,108 @@
+{
+  "updated": "2026-10-27",
+  "date_basis": "Recorded project milestone dates; older entries are selected milestones, not a reconstruction of every work day.",
+  "days": [
+    {
+      "date": "2026-10-27",
+      "items": [
+        {
+          "text": "Completed audio for all 105 retained questions, each starting with the Assistant cue.",
+          "url": "experiments/question-audio.html"
+        },
+        {
+          "text": "Reviewed 20 test questions, added four questions about task owners or changed plans, and selected six clips for testing silence.",
+          "url": "experiments/question-checks.html#dataset"
+        },
+        {
+          "text": "Found that the 30B reader gives 13 complete answers with full transcripts but four with the current notes.",
+          "url": "experiments/question-checks.html#reader"
+        },
+        {
+          "text": "Kept 74 earlier teacher outputs out of training and checked five small development fact records.",
+          "url": "experiments/question-checks.html#teacher"
+        },
+        {
+          "text": "Proposed separate tests for when to start pre-thinking and what work to do, without running new speech experiments.",
+          "url": "todo.html#thinking-design"
+        },
+        {
+          "text": "Moved the TODO into the project navigation, added this daily log and shortened the main checklist.",
+          "url": "todo.html"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "items": [
+        {
+          "text": "Added questions that connect a person to a later promise or compare an earlier plan with its revision.",
+          "url": "#question-complexity"
+        },
+        {
+          "text": "Added natural question opportunities near five to ten minutes to test growing conversation history.",
+          "url": "experiments/question-pilot.html#timing"
+        },
+        {
+          "text": "Generated 40 additional distinct questions from 20 more AMI meetings, with retained questions in 19 meetings.",
+          "url": "experiments/question-scale.html"
+        },
+        {
+          "text": "Used a local Qwen3-30B Instruct reader and tested incomplete evidence as well as full history.",
+          "url": "experiments/question-pilot.html#reader"
+        },
+        {
+          "text": "Added earnings-call questions and scripted document lookup examples for later tool-use tests.",
+          "url": "experiments/question-expansion.html#documents"
+        },
+        {
+          "text": "Separated distinct questions from alternative phrasings and added the spoken Assistant cue to the current pilot recordings.",
+          "url": "experiments/question-pilot.html#spoken-cue"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-20",
+      "items": [
+        {
+          "text": "Compared three TTS models, tuned requester voices and inserted three questions into paused meeting audio.",
+          "url": "experiments/ami-question-audio.html"
+        },
+        {
+          "text": "Added diagrams showing each question-generation and audio module, its inputs and its outputs.",
+          "url": "experiments/ami-questions.html"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-16",
+      "items": [
+        {
+          "text": "Completed the first source-checked AMI question pilot using local models and questions written by Codex.",
+          "url": "experiments/ami-questions.html"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-09",
+      "items": [
+        {
+          "text": "Demonstrated a model-triggered S2 calculation that S1 spoke aloud in one controlled arithmetic case.",
+          "url": "experiments/s2-single.html"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "items": [
+        {
+          "text": "Verified one natural interruption where S1 stopped its old reply and responded to the clarification.",
+          "url": "experiments/natural-study.html"
+        },
+        {
+          "text": "Published the S1 reproduction steps, caller comparisons and inference-loop explanation.",
+          "url": "experiments/s1-reproduction.html"
+        }
+      ]
+    }
+  ]
+}

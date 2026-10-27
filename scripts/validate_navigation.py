@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
 
-from build_navigation import ROOT, REVIEW_KEYS, EXPERIMENT_KEYS
+from build_navigation import ROOT, REVIEW_KEYS, EXPERIMENT_KEYS, page_category
 from site_navigation import project_tabs, review_tabs, experiment_subtabs, proposal_tabs
 from validate_site import Parser
 
@@ -22,14 +22,14 @@ def main():
         relative = path.relative_to(ROOT).as_posix()
         prefix = os.path.relpath(ROOT, path.parent).replace(os.sep, '/') + '/'
         if prefix == './': prefix = ''
-        category = 'proposal' if relative == 'prethinking.html' or relative.startswith('proposals/') else 'experiments' if relative.startswith(('experiments/', 'research/')) else 'literature'
+        category = page_category(relative)
         expected = project_tabs(category, prefix)
         assert text.count('aria-label="Project tabs"') == 1, relative
         assert expected in text, (relative, 'stale project tabs')
         if path.parent == ROOT and path.name in REVIEW_KEYS:
             assert review_tabs(REVIEW_KEYS[path.name]) in text, relative
             assert 'Pre-thinking proposal</a>' not in re.search(r'<nav[^>]*aria-label="Literature review sub-tabs"[^>]*>.*?</nav>', text, re.S)[0]
-        elif path.parent == ROOT/'experiments':
+        elif path.parent == ROOT/'experiments' and category == 'experiments':
             assert experiment_subtabs(EXPERIMENT_KEYS.get(path.name, 'archive')) in text, relative
             assert '>AMI questions</a>' in text and '>AMI question audio</a>' in text, relative
         elif category == 'proposal':

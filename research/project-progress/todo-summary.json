@@ -1,0 +1,111 @@
+{
+  "updated": "2026-10-27",
+  "now": [
+    {
+      "text": "We have 105 distinct questions with recorded speech and the spoken Assistant cue.",
+      "url": "experiments/question-audio.html"
+    },
+    {
+      "text": "The 30B reader gives 13 complete answers out of 20 with full transcripts, but only four with our current notes.",
+      "url": "experiments/question-checks.html#reader"
+    },
+    {
+      "text": "Next, fix the notes and check longer histories before running speech experiments.",
+      "url": "#comparison"
+    },
+    {
+      "text": "Then compare when to start pre-thinking and what work it should do.",
+      "url": "#thinking-design"
+    },
+    {
+      "text": "Pre-thinking means doing useful private work before a user asks a question.",
+      "url": "#thinking-flow"
+    }
+  ],
+  "stages": [
+    {
+      "id": "evaluation",
+      "title": "1. Build a reliable evaluation set",
+      "items": [
+        {
+          "text": "Done: keep 20 reviewed questions across six meetings, with answer facts and six clips of ordinary discussion.",
+          "url": "experiments/question-checks.html#dataset"
+        },
+        {
+          "text": "Done: preserve the question recordings and keep evaluation speakers separate from earlier voice-tuning speakers.",
+          "url": "experiments/question-checks.html#dataset"
+        },
+        {
+          "text": "Optional: collect independent listening ratings before making stronger claims about voice quality and naturalness.",
+          "url": "#evaluation-details"
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "title": "2. Check what the history supports",
+      "items": [
+        {
+          "text": "Done: compare full transcripts, recent speech, transcripts without speaker labels and automatic notes.",
+          "url": "experiments/question-checks.html#reader"
+        },
+        {
+          "text": "Done: review task owners, changed decisions, missing facts and unreliable earlier reasoning outputs.",
+          "url": "experiments/question-checks.html#examples"
+        },
+        {
+          "text": "Found: the first note system loses useful facts and is not ready for speech tests.",
+          "url": "experiments/question-checks.html#state"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "3. Test when and what to think",
+      "items": [
+        {
+          "text": "Next: fix task owners, changed decisions and forgotten rules in the notes.",
+          "url": "#comparison-details"
+        },
+        {
+          "text": "Next: check that S1 keeps listening and S2 can access older facts as history grows.",
+          "url": "#comparison-details"
+        },
+        {
+          "text": "Planned: run the original three audio questions through the four system conditions.",
+          "url": "#catalog-table-2"
+        },
+        {
+          "text": "Planned: compare waiting for the request with pre-thinking every 30 seconds or after a meaningful change.",
+          "url": "#catalog-table-3"
+        },
+        {
+          "text": "Planned: compare summaries, facts with owners and status, and small deductions while keeping update times fixed.",
+          "url": "#catalog-table-4"
+        },
+        {
+          "text": "Required: hide future questions, count all pre-thinking work and measure the first correct useful answer.",
+          "url": "#thinking-design"
+        }
+      ]
+    },
+    {
+      "id": "actions",
+      "title": "4. Add tools and learn when to act",
+      "items": [
+        {
+          "text": "Next: add one document lookup with known results and a case where later speech changes the request.",
+          "url": "#actions-details"
+        },
+        {
+          "text": "Then compare simple rules for listening, pre-thinking, answering, asking, using a tool and cancelling work.",
+          "url": "#actions-details"
+        },
+        {
+          "text": "Train an action policy only after the rules and scoring are reliable.",
+          "url": "#actions-details"
+        }
+      ]
+    }
+  ]
+}

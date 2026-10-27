@@ -12,6 +12,7 @@ import re
 from site_navigation import (
     project_tabs, review_tabs, experiment_subtabs, proposal_tabs,
 )
+from project_language import prethinking_prose
 
 ROOT = Path(__file__).resolve().parents[1]
 REVIEW_KEYS = {
@@ -29,7 +30,7 @@ EXPERIMENT_KEYS = {
     'ami-questions.html': 'ami-original', 'ami-question-audio.html': 'ami-audio',
     'question-expansion.html': 'ami-expansion',
     'question-pilot.html': 'ami-pilot', 'question-scale.html': 'ami-scale',
-    'question-audio.html': 'ami-library', 'question-overview.html': 'ami-overview', 'question-plan.html': 'ami-plan', 'question-checks.html': 'ami-plan',
+    'question-audio.html': 'ami-library', 'question-overview.html': 'ami-overview',
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
@@ -69,7 +70,6 @@ def build_collections():
         ('All question audio', 'All 105 question events, with short source excerpts and original-voice comparisons.', 'question-audio.html'),
         ('Larger AMI batch', 'Forty additional questions from twenty more meetings, with source checks and recorded Codex edits.', 'question-scale.html'),
         ('Question/audio pilot', 'Earlier checkpoints, reader controls and ten inserted questions in eight requester voices.', 'question-pilot.html'),
-        ('TODO and staged implementation plan', 'What is complete, what remains, and the sequence from question generation through speech, streaming evaluation and tools.', 'question-plan.html'),
         ('More meeting questions', 'Four new AMI meetings and two earnings calls, checked with a 30B Instruct reader and document retrieval fixtures.', 'question-expansion.html'),
         ('AMI questions', 'Questions that require earlier meeting details, with supporting transcripts and a review of generated answers.', 'ami-questions.html'),
         ('AMI question audio', 'Compare three TTS models inserting the same questions into the meeting in the requester’s voice.', 'ami-question-audio.html'),
@@ -77,6 +77,9 @@ def build_collections():
     pilot = [('Pre-thinking pilot', 'A preliminary study of preparing for likely requests while listening to a group conversation.', 'prethinking-pilot.html')]
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
+        section('Project progress', 'The project plan and daily work record.', [
+            ('Project TODO', 'The four project stages and the next pre-thinking experiments.', '../todo.html'),
+            ('Daily log', 'One-sentence updates with links to results and examples.', '../daily-log.html')]) +
         section('DuplexOmni', 'Tests of speech generation, interruption handling and reasoning with the DuplexOmni model.', [
             ('DuplexOmni experiments', 'Start with the overview, then choose S1 speech, interruption or S2 reasoning tests.', 'duplexomni.html')]) +
         section('Meeting questions', 'Text questions and synthetic speech based on the AMI Meeting Corpus.', ami) +
@@ -132,51 +135,72 @@ def simplify_prose(source):
     return ''.join(pieces)
 
 
+def page_category(relative):
+    if relative in {'todo.html', 'experiments/question-plan.html', 'experiments/question-checks.html'}:
+        return 'todo'
+    if relative == 'daily-log.html':
+        return 'log'
+    if relative == 'prethinking.html' or relative.startswith('proposals/'):
+        return 'proposal'
+    return 'experiments' if relative.startswith(('experiments/', 'research/')) else 'literature'
+
+
+def refresh_page(path, original, navigation_only=False):
+    """Apply the shared navigation to one document without changing its body."""
+    relative = path.relative_to(ROOT).as_posix()
+    native = path.parent == ROOT or path.parent in {ROOT/'experiments', ROOT/'proposals'}
+    if not native and 'aria-label="Project tabs"' not in original:
+        return original
+    prefix = os.path.relpath(ROOT, path.parent).replace(os.sep, '/') + '/'
+    if prefix == './':
+        prefix = ''
+    category = page_category(relative)
+    project = project_tabs(category, prefix)
+    page = re.sub(r'<nav\b[^>]*aria-label="Project tabs"[^>]*>.*?</nav>', lambda _: project, original, flags=re.S)
+    if native and 'aria-label="Project tabs"' not in page:
+        header = '<header class="site-nav"><div class="nav-inner"><a class="brand" href="' + prefix + 'index.html">AI2AI Duplex</a>' + project + '</div></header>'
+        page = page.replace('<body>', '<body>' + header, 1)
+    subnav = None
+    if category in {'todo', 'log'}:
+        pattern = r'<nav\b[^>]*aria-label="(?:' + '|'.join(SUBNAV_LABELS) + r')"[^>]*>.*?</nav>'
+        page = re.sub(pattern, '', page, flags=re.S)
+    elif path.parent == ROOT and path.name in REVIEW_KEYS:
+        subnav = review_tabs(REVIEW_KEYS[path.name])
+    elif path.parent == ROOT/'experiments':
+        subnav = experiment_subtabs(EXPERIMENT_KEYS.get(path.name, 'archive'))
+    elif category == 'proposal':
+        subnav = proposal_tabs('prethinking' if path.name == 'prethinking.html' else 'overview', prefix)
+    if subnav is not None:
+        pattern = r'<nav\b[^>]*aria-label="(?:' + '|'.join(SUBNAV_LABELS) + r')"[^>]*>.*?</nav>'
+        # Always put collection menus before the page title, including replays.
+        page = re.sub(pattern, '', page, flags=re.S)
+        page = page.replace('<div class="container collection-nav"></div>', '')
+        page = page.replace('<div class="container"></div>', '')
+        page = page.replace('</header>', '</header><div class="container collection-nav">' + subnav + '</div>', 1)
+    if native and not navigation_only:
+        page = simplify_prose(page)
+    if relative in {'todo.html', 'daily-log.html', 'prethinking.html', 'experiments/prethinking-pilot.html', 'experiments/question-checks.html'}:
+        page = prethinking_prose(page)
+    css = prefix + 'assets/site.css'
+    digest = hashlib.sha256((ROOT/'assets/site.css').read_bytes()).hexdigest()[:12]
+    pattern = r'href="' + re.escape(css) + r'(?:\?[^"]*)?"'
+    if re.search(pattern, page):
+        page = re.sub(pattern, 'href="' + css + '?v=' + digest + '"', page)
+    else:
+        page = page.replace('</head>', '<link rel="stylesheet" href="' + css + '?v=' + digest + '"></head>', 1)
+    return page
+
+
 def refresh_pages(navigation_only=False):
     changed = []
     for path in sorted(ROOT.rglob('*.html')):
         if any(part in {'preview', '.git', 'vendor', 'protocol-source'} for part in path.relative_to(ROOT).parts):
             continue
         original = path.read_text()
-        relative = path.relative_to(ROOT).as_posix()
-        native = path.parent == ROOT or path.parent in {ROOT/'experiments', ROOT/'proposals'}
-        if not native and 'aria-label="Project tabs"' not in original:
-            continue
-        prefix = os.path.relpath(ROOT, path.parent).replace(os.sep, '/') + '/'
-        if prefix == './':
-            prefix = ''
-        category = 'proposal' if relative == 'prethinking.html' or relative.startswith('proposals/') else 'experiments' if relative.startswith(('experiments/', 'research/')) else 'literature'
-        project = project_tabs(category, prefix)
-        page = re.sub(r'<nav\b[^>]*aria-label="Project tabs"[^>]*>.*?</nav>', lambda _: project, original, flags=re.S)
-        if native and 'aria-label="Project tabs"' not in page:
-            header = '<header class="site-nav"><div class="nav-inner"><a class="brand" href="' + prefix + 'index.html">AI2AI Duplex</a>' + project + '</div></header>'
-            page = page.replace('<body>', '<body>' + header, 1)
-        subnav = None
-        if path.parent == ROOT and path.name in REVIEW_KEYS:
-            subnav = review_tabs(REVIEW_KEYS[path.name])
-        elif path.parent == ROOT/'experiments':
-            subnav = experiment_subtabs(EXPERIMENT_KEYS.get(path.name, 'archive'))
-        elif category == 'proposal':
-            subnav = proposal_tabs('prethinking' if path.name == 'prethinking.html' else 'overview', prefix)
-        if subnav is not None:
-            pattern = r'<nav\b[^>]*aria-label="(?:' + '|'.join(SUBNAV_LABELS) + r')"[^>]*>.*?</nav>'
-            # Always put collection menus before the page title, including replays.
-            page = re.sub(pattern, '', page, flags=re.S)
-            page = page.replace('<div class="container collection-nav"></div>', '')
-            page = page.replace('<div class="container"></div>', '')
-            page = page.replace('</header>', '</header><div class="container collection-nav">' + subnav + '</div>', 1)
-        if native and not navigation_only:
-            page = simplify_prose(page)
-        css = prefix + 'assets/site.css'
-        digest = hashlib.sha256((ROOT/'assets/site.css').read_bytes()).hexdigest()[:12]
-        pattern = r'href="' + re.escape(css) + r'(?:\?[^"]*)?"'
-        if re.search(pattern, page):
-            page = re.sub(pattern, 'href="' + css + '?v=' + digest + '"', page)
-        else:
-            page = page.replace('</head>', '<link rel="stylesheet" href="' + css + '?v=' + digest + '"></head>', 1)
+        page = refresh_page(path, original, navigation_only)
         if page != original:
             path.write_text(page)
-            changed.append(relative)
+            changed.append(path.relative_to(ROOT).as_posix())
     return changed
 
 

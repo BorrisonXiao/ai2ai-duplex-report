@@ -10,7 +10,7 @@
       "meaning": "Choose the useful job: retain a responsibility, track a changed decision, resolve a reference, check a constraint, or derive a simple consequence."
     }
   ],
-  "input_vs_work": "Speaker-attributed ASR is an input representation: it helps preserve who said what. The preparation task decides what to do with that information. Correct transcription/diarization is not itself useful reasoning.",
+  "input_vs_work": "Speaker-attributed ASR is an input representation: it helps preserve who said what. The pre-thinking task decides what to do with that information. Correct transcription/diarization is not itself useful reasoning.",
   "current_evidence": [
     "The text study uses ground-truth transcripts and speaker labels, not a measured streaming ASR feed.",
     "Existing S1/S2 examples establish selected short interactions; the current S1 configuration keeps 40 history turns with a 4096-token window.",
@@ -25,13 +25,13 @@
     "policies": [
       {
         "name": "React only",
-        "rule": "Do no private preparation before the real request; reason when it arrives.",
+        "rule": "Do no private pre-thinking before the real request; reason when it arrives.",
         "purpose": "Baseline with no background compute."
       },
       {
         "name": "Every 30 seconds",
         "rule": "Update notes at fixed source-clock intervals.",
-        "purpose": "Simple preparation baseline."
+        "purpose": "Simple pre-thinking baseline."
       },
       {
         "name": "After a meaningful change",
@@ -45,8 +45,8 @@
       }
     ],
     "budget": "Proposed starting limits: two updates per source minute, 1024 retained note tokens and one outstanding S2 job. Use development meetings to choose a total generation cap that produces complete notes; start by checking 1024 tokens per update, counting private reasoning when present. Freeze this before comparing policies. A shared cap is not a claim of equal spent compute: measure all prefill, decoding and service time, including calls that return no usable note.",
-    "question_timing": "Existing questions often follow evidence by minutes, so periodic preparation may already be finished. Add a few reviewed branches shortly after a real update and later in the same discussion. Reuse the same question intent and audio where appropriate; timing variants are not new questions.",
-    "success": "Better fraction of correct supported answers by a fixed useful-answer deadline, or equal quality with less measured preparation work. Report failures and timeouts, not only delays of successful answers."
+    "question_timing": "Existing questions often follow evidence by minutes, so periodic pre-thinking may already be finished. Add a few reviewed branches shortly after a real update and later in the same discussion. Reuse the same question intent and audio where appropriate; timing variants are not new questions.",
+    "success": "Better fraction of correct supported answers by a fixed useful-answer deadline, or equal quality with less measured pre-thinking work. Report failures and timeouts, not only delays of successful answers."
   },
   "what": {
     "hold_fixed": "Use identical update times, available speaker-attributed ASR, S2 checkpoint, output cap and memory allowance.",
@@ -54,7 +54,7 @@
       {
         "name": "Plain summary",
         "work": "Keep a short running account of the discussion.",
-        "output": "A general summary; language-model preparation control under the same output and memory caps. Compare actual compute as well."
+        "output": "A general summary; language-model pre-thinking control under the same output and memory caps. Compare actual compute as well."
       },
       {
         "name": "Facts with owners and status",
@@ -67,10 +67,10 @@
         "output": "For example, derive 4:2:1 from two twice-as-important statements; record the assumptions and source links."
       }
     ],
-    "extra_baseline": "Keep speaker-attributed ASR without an LLM summary as a low-preparation baseline. Reading it at request time still has a cost; it is not compute-matched to the three preparation tasks.",
+    "extra_baseline": "Keep speaker-attributed ASR without an LLM summary as a low-pre-thinking baseline. Reading it at request time still has a cost; it is not compute-matched to the three pre-thinking tasks.",
     "success": "Fewer wrong owners, stale decisions, invented certainty and lost constraints at comparable measured cost. A shorter note or fluent answer alone is not a success."
   },
-  "crossed_comparison": "After the separate controls work, cross periodic versus meaningful-change timing with summary, ledger and ledger-plus-checks: six preparation conditions. Keep reactive and raw-transcript baselines. This tests whether a useful kind of preparation depends on choosing the right moment.",
+  "crossed_comparison": "After the separate controls work, cross periodic versus meaningful-change timing with summary, ledger and ledger-plus-checks: six pre-thinking conditions. Keep reactive and raw-transcript baselines. This tests whether a useful kind of pre-thinking depends on choosing the right moment.",
   "examples": [
     {
       "title": "A proposal changes, then changes again",
@@ -115,7 +115,7 @@
         }
       ],
       "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
-      "lesson": "Attribution helps identify the input; deriving and retaining the ratio is the preparation job."
+      "lesson": "Attribution helps identify the input; deriving and retaining the ratio is the pre-thinking job."
     },
     {
       "title": "A commitment needs an owner and a delivery route",
@@ -138,14 +138,14 @@
   "protocol": [
     {
       "name": "Keep future questions hidden",
-      "rule": "The preparation process receives only released speech and prior notes. It does not receive question text, insertion schedule, answer labels or selected evidence. A guessed future question must be generated from the past and charged as speculation."
+      "rule": "The pre-thinking process receives only released speech and prior notes. It does not receive question text, insertion schedule, answer labels or selected evidence. A guessed future question must be generated from the past and charged as speculation."
     },
     {
       "name": "Version the ASR and speaker labels",
       "rule": "Use only words and speaker assignments emitted by that instant. Later transcript/identity corrections are new events. Oracle speaker labels attached to ASR must be labeled as an upper-bound condition, not a causal diarizer."
     },
     {
-      "name": "Separate preparation from speaking",
+      "name": "Separate pre-thinking from speaking",
       "rule": "The six ordinary-discussion controls allow private work while requiring no outward speech. The real Assistant wake cue permits a response; a pause or thought trigger does not."
     },
     {
@@ -173,7 +173,7 @@
     "now": "One A100 SXM4 80 GB text diagnostic only; all Qwen weights/KV share GPU 0, sequential stages.",
     "planned": "For a future integrated replay, propose 2 H100 SXM 80 GB: S1 Thinker, Talker, MTP and Code2Wav share GPU 0; the existing Qwen3-4B Thinking S2 reasoner is isolated on GPU 1. ASR/speaker traces are produced in a separate sequential job and replayed from CPU for controlled comparisons, explicitly distinct from live ASR. The 30B reader remains an offline quality check. No such job is submitted.",
     "gates": "CPU caller/history/cancellation checks and S2 context preflight before any new speech inference; measured S1 latency/queue qualification under S2 load before interpreting behavior.",
-    "full_prefix_cost_estimate": "At 1× playback the three original prefixes total 79.82 minutes per condition. Reserving two GPUs for each of the four system conditions would require at least 10.64 GPU hours before startup, request/answer time and ASR preparation. A one-GPU S1-only allocation reduces that bound; all actual allocation and preparation still count.",
+    "full_prefix_cost_estimate": "At 1× playback the three original prefixes total 79.82 minutes per condition. Reserving two GPUs for each of the four system conditions would require at least 10.64 GPU hours before startup, request/answer time and ASR processing. A one-GPU S1-only allocation reduces that bound; all actual allocation and pre-thinking still count.",
     "cheaper_diagnostic": "A cheaper first schedule/work study can use one isolated S2 worker and a causal text-event replay, skipping idle waits with a virtual clock. Label readiness/latency as simulated until selected two-GPU paced-audio cases validate it. A preloaded-history or bounded-window replay tests that declared setup; it does not prove continuous full-meeting listening."
   },
   "discussion": [
@@ -186,7 +186,7 @@
       "recommendation": "Start with completed meaningful updates, compared with fixed intervals under the same caps. Acoustic silence is an opportunity for scheduling, not evidence that thought is useful."
     },
     {
-      "question": "How much preparation should be allowed?",
+      "question": "How much pre-thinking should be allowed?",
       "recommendation": "Use a small predeclared cap and report the full cost curve, then adjust on development meetings only. Discuss the quality/latency/compute trade-off before a larger sweep."
     },
     {
