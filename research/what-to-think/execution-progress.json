@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "updated": "2026-10-28",
   "status": "implementation_underway",
-  "snapshot_label": "Matched S1 and sentence-based pressure test running",
-  "active_job": "1355163",
+  "snapshot_label": "Matched caller and P01 context-pressure tests completed and reviewed",
+  "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
   "planned_final_answers": 3465,
@@ -60,7 +60,7 @@
       "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
       "status": "partial",
       "url": "study-progress.html#s1-listening",
-      "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated."
+      "evidence": "Matched caller reproduces all 40 short-example response records; all 41 pressure contexts produce speech, but question recognition is unstable and 0/11 eligible answers are complete within the recorded window."
     },
     {
       "id": "s1-listening-comparison",
@@ -79,16 +79,16 @@
     {
       "id": "s1-pressure",
       "text": "Test P01 with request-only audio and every sentence-based increase in earlier context.",
-      "status": "partial",
+      "status": "complete",
       "url": "study-progress.html#s1-pressure",
-      "evidence": "19/41 pressure outputs saved; 10 questions recognized; source-answer reviews remain separate."
+      "evidence": "41/41 contexts reviewed for one question; 20 preserve question meaning in ASR, and 0/11 eligible contexts give complete reference answers within 19.2 s."
     },
     {
       "id": "gate",
       "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
       "url": "what-to-think.html#evaluation-first",
-      "evidence": "Fresh pilot found missing request recognition, rejected response format and inconsistent automatic fact verdicts; protocol remains unvalidated."
+      "evidence": "Matched caller reproduced and pressure outputs reviewed; validate all 105 references, qualify automatic judging and check the other S1 callers before full-bank evaluation."
     },
     {
       "id": "references",
@@ -115,7 +115,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T19:36:27.475920+00:00",
+  "updated_at": "2026-10-28T20:45:37.720055+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -152,18 +152,13 @@
     "state": "completed_source_reviewed",
     "active_gpus": 0
   },
-  "active_jobs": [
-    "1355163",
-    "1355164",
-    "1355165",
-    "1355166"
-  ],
+  "active_jobs": [],
   "context_pressure": {
-    "state": "running",
+    "state": "completed_source_reviewed",
     "planned_levels": 41,
-    "completed_levels": 19,
-    "recognized_levels": 10,
-    "active_gpus": 4,
+    "completed_levels": 41,
+    "recognized_levels": 12,
+    "active_gpus": 0,
     "maximum_active_gpus": 4
   }
 }

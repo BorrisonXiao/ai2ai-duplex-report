@@ -14,8 +14,16 @@
           "url": "study-progress.html#pressure-matched-audio"
         },
         {
-          "text": "Started the 41-level sentence-based context sweep after input checks and matched-control review.",
+          "text": "Completed and reviewed 41 nested P01 contexts; question meaning survives in 20 ASR outputs and can recover after earlier failures.",
           "url": "study-progress.html#s1-pressure"
+        },
+        {
+          "text": "Found no complete answer within 19.2 seconds in the 11 contexts containing all required evidence; all 41 contexts nevertheless produce speech.",
+          "url": "study-progress.html#pressure-criteria"
+        },
+        {
+          "text": "Fresh sessions still answer an earlier translation topic; clearing earlier ASR changes the reply to a greeting without restoring the folder answer.",
+          "url": "study-progress.html#frozen-feedback"
         },
         {
           "text": "Implemented decode-and-clear and constrained listening, preserving native ASR and forcing answer start after the question.",

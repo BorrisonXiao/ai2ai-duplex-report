@@ -12,9 +12,14 @@
       "url": "study-progress.html#fresh-pilot"
     },
     {
-      "status": "partial",
-      "text": "Match the working short-request recipe, then test growing context before broader S1 evaluation.",
+      "status": "complete",
+      "text": "Matched the working short-request caller and reviewed all 41 P01 context lengths, finding unstable recognition and incomplete meeting answers.",
       "url": "study-progress.html#s1-pressure"
+    },
+    {
+      "status": "pending",
+      "text": "Validate all 105 reference answers and automatic judging before the full comparison.",
+      "url": "what-to-think.html#evaluation-first"
     },
     {
       "status": "complete",
@@ -124,7 +129,7 @@
           "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
           "status": "partial",
           "url": "study-progress.html#s1-listening",
-          "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated."
+          "evidence": "Matched caller reproduces all 40 short-example response records; all 41 pressure contexts produce speech, but question recognition is unstable and 0/11 eligible answers are complete within the recorded window."
         },
         {
           "id": "s1-listening-comparison",
@@ -143,16 +148,16 @@
         {
           "id": "s1-pressure",
           "text": "Test P01 with request-only audio and every sentence-based increase in earlier context.",
-          "status": "partial",
+          "status": "complete",
           "url": "study-progress.html#s1-pressure",
-          "evidence": "19/41 pressure outputs saved; 10 questions recognized; source-answer reviews remain separate."
+          "evidence": "41/41 contexts reviewed for one question; 20 preserve question meaning in ASR, and 0/11 eligible contexts give complete reference answers within 19.2 s."
         },
         {
           "id": "gate",
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "url": "what-to-think.html#evaluation-first",
-          "evidence": "Fresh pilot found missing request recognition, rejected response format and inconsistent automatic fact verdicts; protocol remains unvalidated."
+          "evidence": "Matched caller reproduced and pressure outputs reviewed; validate all 105 references, qualify automatic judging and check the other S1 callers before full-bank evaluation."
         },
         {
           "id": "references",

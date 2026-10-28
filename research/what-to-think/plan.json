@@ -94,14 +94,15 @@
     "A helper or selector that uses the actual request performs request-time work: count its native reasoning and ordinary output, never relabel it amortized thinking. The main history selector uses fixed rules."
   ],
   "resources": {
-    "current_GPU_count": 4,
+    "current_GPU_count": 0,
     "current_maximum_active_GPUs": 4,
     "current_roles": {
-      "each job / GPU 0": "All S1 components, then independent Parakeet ASR after S1 shutdown; S2 disabled."
+      "primary job / GPU 0": "Thinker, Talker, MTP and Code2Wav, then independent Parakeet ASR after S1 shutdown; S2 disabled.",
+      "later fresh-session diagnostic / GPU 0": "Thinker only; no speech generation, external ASR or S2."
     },
-    "current_dependencies": "A matched one-GPU control qualifies up to four independent one-GPU pressure workers; exact GPU types and current allocations are in the progress report.",
+    "current_dependencies": "The matched control precedes four independent one-H100 SXM 80 GB pressure workers; a later one-H100 SXM 80 GB diagnostic uses Thinker only. Exact allocations and costs are in the progress report.",
     "planned_maximum_active_GPUs": 4,
-    "policy": "Full-matrix stages are sequential; transcript tools and reference validation precede evaluation, and judges follow generation. The current repair pilot uses two independent one-GPU method jobs, with a maximum of two GPUs active. No concurrent S1+S2 integration is part of this matrix.",
+    "policy": "The matched one-H100 SXM 80 GB run precedes four independent one-H100 pressure workers, with maximum four GPUs active; a later diagnostic uses one H100 with Thinker only. Future full-matrix stages remain sequential, with references and transcript tools before evaluation and judges after generation. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
   },
   "execution_order": [
@@ -121,7 +122,7 @@
     "source": "https://arxiv.org/abs/2510.05150"
   },
   "evaluation_gate": {
-    "status": "pilot_reviewed_caller_and_judge_not_qualified",
+    "status": "matched_caller_reproduced_pressure_reviewed_full_protocol_pending",
     "first_model": "DuplexOmni S1, using the existing verified S1 caller with S2 disabled",
     "scope": "First implement and validate the shared evaluation scripts on saved real S1 outputs, then run a small end-to-end S1 pilot on separately checked question examples; these checks do not replace the final 105-question evaluation.",
     "checks": [
@@ -137,10 +138,10 @@
       "Verify that the progress report and checklists match the saved run records, including failure cases and update times."
     ],
     "pass_rule": "Proceed only after every pipeline check is verified and an inspected real S1 pilot example is linked; a wrong model answer can still demonstrate correct evaluation, but a successful process exit alone cannot pass this gate.",
-    "next": "First qualify full-history S1 request recognition and the judge using empty, partial and correct real outputs; then validate all 105 references and qualify the other S1 callers before full-bank evaluation."
+    "next": "The matched short-request caller is reproduced and P01 pressure results are reviewed; next validate all 105 references, qualify automatic judging against source evidence, and check other S1 callers before full-bank evaluation. Wrong model answers remain valid negative results when inputs and scoring are verified."
   },
   "progress_reporting": {
-    "status": "local_evaluation_worker_implemented_inference_integration_pending",
+    "status": "native_packet_progress_checklists_and_published_snapshots_connected",
     "page": "study-progress.html",
     "requirements": [
       "Maintain a run-time report from the same saved run records that determine checklist states and aggregate results.",
