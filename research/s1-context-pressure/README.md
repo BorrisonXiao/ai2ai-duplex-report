@@ -1,0 +1,9 @@
+# S1 matched and context-pressure tests
+
+The protocol defines 41 independent nested audio suffixes, using sentence punctuation and merging overlapping sentences. Transcripts choose audio boundaries and score outputs; their words and speaker labels are absent from model inputs. Native 480 ms packets are preserved, with zero padding only before the selected first boundary. Request speech packets are identical at every level. No future audio, answer facts or S2 are supplied. These diagnostic groups do not change the 10–40 second amortized-thinking chunk plan.
+
+Request recognition and meeting-answer correctness are separate. WER must be at most 0.25 and include Assistant, shared folder and conceptual design; this rule measures the question, not answer quality. Answer evidence is absent from shorter prefixes. All levels are evaluated without assuming monotonic failure. Capacity and format failures are separate from recognition failure.
+
+The matched stage reproduces the earlier DailyTalk native helper, then compares the new native runner, quiet constrained and decode-and-clear runs at temperature zero, and a sampled constrained control. Short engine context is 4096; pressure context is 49152 on H100 or 65536 on RTX, with every selected packet retained and no trimming. This is an accuracy test; unpaced suffix replay has no real-time latency interpretation. Speech is actual Talker output and independently transcribed after S1 shuts down.
+
+Each job requests one H100 SXM 80 GB or RTX PRO 6000 Blackwell 96 GB as recorded per job: Thinker, Talker, MTP and Code2Wav share GPU 0, followed by independent Parakeet ASR on GPU 0. Matched qualification precedes up to four independent pressure workers; no shared services or S2. Exact allocation/cost records include cancelled and failed attempts. CPU checks and publication use zero GPUs.

@@ -94,12 +94,12 @@
     "A helper or selector that uses the actual request performs request-time work: count its native reasoning and ordinary output, never relabel it amortized thinking. The main history selector uses fixed rules."
   ],
   "resources": {
-    "current_GPU_count": 0,
-    "current_maximum_active_GPUs": 2,
+    "current_GPU_count": 4,
+    "current_maximum_active_GPUs": 4,
     "current_roles": {
-      "each job / GPU 0": "Thinker, Talker, MTP and Code2Wav share the GPU; independent Parakeet ASR follows after S1 shuts down; S2 is disabled."
+      "each job / GPU 0": "All S1 components, then independent Parakeet ASR after S1 shutdown; S2 disabled."
     },
-    "current_dependencies": "Two independent one-RTX PRO 6000 Blackwell 96 GB jobs compare listening methods; each runs S1 then ASR on GPU 0, with no shared model service, maximum two GPUs. Source checks follow actual output transcription.",
+    "current_dependencies": "A matched one-GPU control qualifies up to four independent one-GPU pressure workers; exact GPU types and current allocations are in the progress report.",
     "planned_maximum_active_GPUs": 4,
     "policy": "Full-matrix stages are sequential; transcript tools and reference validation precede evaluation, and judges follow generation. The current repair pilot uses two independent one-GPU method jobs, with a maximum of two GPUs active. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."

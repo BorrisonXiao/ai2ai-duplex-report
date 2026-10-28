@@ -1,0 +1,1417 @@
+{
+  "status": "prepared_not_run",
+  "question": {
+    "id": "P01",
+    "question_id": "scale:TS3006c-S05-Q3",
+    "meeting": "TS3006c",
+    "requester": "D",
+    "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+    "source_cutoff_seconds": 309.03,
+    "request_start_seconds": 309.21,
+    "request_end_seconds": 314.5886875,
+    "input_seconds": 314.8386875,
+    "prefix_pcm_exact": true,
+    "future_meeting_audio": false,
+    "enrollment_audio_in_history": false,
+    "reference_facts_starting_evidence": [
+      "C said the files were in the shared folder.",
+      "D initially saw only their own presentation, and C then identified a components-design PowerPoint.",
+      "The exchange does not establish a general folder outage or an upload failure."
+    ],
+    "source_evidence": [
+      {
+        "id": "TS3006c-s0017",
+        "speaker": "C",
+        "start": 115.86,
+        "end": 122.85,
+        "text": "I just put it in the in the shared folder so it should be yeah I think so."
+      },
+      {
+        "id": "TS3006c-s0022",
+        "speaker": "D",
+        "start": 126.02,
+        "end": 132.42,
+        "text": "Because I see only my own presentation yeah."
+      },
+      {
+        "id": "TS3006c-s0015",
+        "speaker": "D",
+        "start": 112.4,
+        "end": 114.7,
+        "text": "Where are are all the other presentations?"
+      },
+      {
+        "id": "TS3006c-s0018",
+        "speaker": "C",
+        "start": 122.85,
+        "end": 124.72,
+        "text": "Yeah, conceptual design."
+      },
+      {
+        "id": "TS3006c-s0024",
+        "speaker": "C",
+        "start": 132.07,
+        "end": 136.44,
+        "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+      }
+    ]
+  },
+  "levels": [
+    {
+      "id": "P01-L00",
+      "index": 0,
+      "source_start_seconds": 309.03,
+      "context_seconds": 0.0,
+      "added_group": null,
+      "groups": 0,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 13,
+      "first_packet_zero_padding_seconds": 0.38999999999998636
+    },
+    {
+      "id": "P01-L01",
+      "index": 1,
+      "source_start_seconds": 301.36,
+      "context_seconds": 7.669999999999959,
+      "added_group": "G39",
+      "groups": 1,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 29,
+      "first_packet_zero_padding_seconds": 0.4000000000000341
+    },
+    {
+      "id": "P01-L02",
+      "index": 2,
+      "source_start_seconds": 295.76,
+      "context_seconds": 13.269999999999982,
+      "added_group": "G38",
+      "groups": 2,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 40,
+      "first_packet_zero_padding_seconds": 0.07999999999998408
+    },
+    {
+      "id": "P01-L03",
+      "index": 3,
+      "source_start_seconds": 287.74,
+      "context_seconds": 21.289999999999964,
+      "added_group": "G37",
+      "groups": 3,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 57,
+      "first_packet_zero_padding_seconds": 0.22000000000002728
+    },
+    {
+      "id": "P01-L04",
+      "index": 4,
+      "source_start_seconds": 281.65,
+      "context_seconds": 27.379999999999995,
+      "added_group": "G36",
+      "groups": 4,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 70,
+      "first_packet_zero_padding_seconds": 0.37000000000000455
+    },
+    {
+      "id": "P01-L05",
+      "index": 5,
+      "source_start_seconds": 278.71,
+      "context_seconds": 30.319999999999993,
+      "added_group": "G35",
+      "groups": 5,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 76,
+      "first_packet_zero_padding_seconds": 0.3100000000000023
+    },
+    {
+      "id": "P01-L06",
+      "index": 6,
+      "source_start_seconds": 272.9,
+      "context_seconds": 36.129999999999995,
+      "added_group": "G34",
+      "groups": 6,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 88,
+      "first_packet_zero_padding_seconds": 0.2599999999999909
+    },
+    {
+      "id": "P01-L07",
+      "index": 7,
+      "source_start_seconds": 270.56,
+      "context_seconds": 38.46999999999997,
+      "added_group": "G33",
+      "groups": 7,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 93,
+      "first_packet_zero_padding_seconds": 0.3199999999999932
+    },
+    {
+      "id": "P01-L08",
+      "index": 8,
+      "source_start_seconds": 268.37,
+      "context_seconds": 40.65999999999997,
+      "added_group": "G32",
+      "groups": 8,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 97,
+      "first_packet_zero_padding_seconds": 0.05000000000001137
+    },
+    {
+      "id": "P01-L09",
+      "index": 9,
+      "source_start_seconds": 265.93,
+      "context_seconds": 43.099999999999966,
+      "added_group": "G31",
+      "groups": 9,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 102,
+      "first_packet_zero_padding_seconds": 0.009999999999990905
+    },
+    {
+      "id": "P01-L10",
+      "index": 10,
+      "source_start_seconds": 258.23,
+      "context_seconds": 50.799999999999955,
+      "added_group": "G30",
+      "groups": 10,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 119,
+      "first_packet_zero_padding_seconds": 0.4700000000000273
+    },
+    {
+      "id": "P01-L11",
+      "index": 11,
+      "source_start_seconds": 255.09,
+      "context_seconds": 53.93999999999997,
+      "added_group": "G29",
+      "groups": 11,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 125,
+      "first_packet_zero_padding_seconds": 0.21000000000000796
+    },
+    {
+      "id": "P01-L12",
+      "index": 12,
+      "source_start_seconds": 247.92,
+      "context_seconds": 61.109999999999985,
+      "added_group": "G28",
+      "groups": 12,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 140,
+      "first_packet_zero_padding_seconds": 0.2400000000000091
+    },
+    {
+      "id": "P01-L13",
+      "index": 13,
+      "source_start_seconds": 241.68,
+      "context_seconds": 67.34999999999997,
+      "added_group": "G27",
+      "groups": 13,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 153,
+      "first_packet_zero_padding_seconds": 0.2400000000000091
+    },
+    {
+      "id": "P01-L14",
+      "index": 14,
+      "source_start_seconds": 238.36,
+      "context_seconds": 70.66999999999996,
+      "added_group": "G26",
+      "groups": 14,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 160,
+      "first_packet_zero_padding_seconds": 0.28000000000002956
+    },
+    {
+      "id": "P01-L15",
+      "index": 15,
+      "source_start_seconds": 236.5,
+      "context_seconds": 72.52999999999997,
+      "added_group": "G25",
+      "groups": 15,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 164,
+      "first_packet_zero_padding_seconds": 0.3400000000000034
+    },
+    {
+      "id": "P01-L16",
+      "index": 16,
+      "source_start_seconds": 231.31,
+      "context_seconds": 77.71999999999997,
+      "added_group": "G24",
+      "groups": 16,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 175,
+      "first_packet_zero_padding_seconds": 0.4300000000000068
+    },
+    {
+      "id": "P01-L17",
+      "index": 17,
+      "source_start_seconds": 226.89,
+      "context_seconds": 82.13999999999999,
+      "added_group": "G23",
+      "groups": 17,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 184,
+      "first_packet_zero_padding_seconds": 0.3299999999999841
+    },
+    {
+      "id": "P01-L18",
+      "index": 18,
+      "source_start_seconds": 223.43,
+      "context_seconds": 85.59999999999997,
+      "added_group": "G22",
+      "groups": 18,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 191,
+      "first_packet_zero_padding_seconds": 0.2300000000000182
+    },
+    {
+      "id": "P01-L19",
+      "index": 19,
+      "source_start_seconds": 212.06,
+      "context_seconds": 96.96999999999997,
+      "added_group": "G21",
+      "groups": 19,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 215,
+      "first_packet_zero_padding_seconds": 0.3800000000000239
+    },
+    {
+      "id": "P01-L20",
+      "index": 20,
+      "source_start_seconds": 208.97,
+      "context_seconds": 100.05999999999997,
+      "added_group": "G20",
+      "groups": 20,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 221,
+      "first_packet_zero_padding_seconds": 0.17000000000001592
+    },
+    {
+      "id": "P01-L21",
+      "index": 21,
+      "source_start_seconds": 202.99,
+      "context_seconds": 106.03999999999996,
+      "added_group": "G19",
+      "groups": 21,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 234,
+      "first_packet_zero_padding_seconds": 0.4300000000000068
+    },
+    {
+      "id": "P01-L22",
+      "index": 22,
+      "source_start_seconds": 201.89,
+      "context_seconds": 107.13999999999999,
+      "added_group": "G18",
+      "groups": 22,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 236,
+      "first_packet_zero_padding_seconds": 0.28999999999999204
+    },
+    {
+      "id": "P01-L23",
+      "index": 23,
+      "source_start_seconds": 195.98,
+      "context_seconds": 113.04999999999998,
+      "added_group": "G17",
+      "groups": 23,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 248,
+      "first_packet_zero_padding_seconds": 0.13999999999998636
+    },
+    {
+      "id": "P01-L24",
+      "index": 24,
+      "source_start_seconds": 182.84,
+      "context_seconds": 126.18999999999997,
+      "added_group": "G16",
+      "groups": 24,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 276,
+      "first_packet_zero_padding_seconds": 0.4399999999999977
+    },
+    {
+      "id": "P01-L25",
+      "index": 25,
+      "source_start_seconds": 180.45,
+      "context_seconds": 128.57999999999998,
+      "added_group": "G15",
+      "groups": 25,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 281,
+      "first_packet_zero_padding_seconds": 0.44999999999998863
+    },
+    {
+      "id": "P01-L26",
+      "index": 26,
+      "source_start_seconds": 178.83,
+      "context_seconds": 130.19999999999996,
+      "added_group": "G14",
+      "groups": 26,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 284,
+      "first_packet_zero_padding_seconds": 0.27000000000001023
+    },
+    {
+      "id": "P01-L27",
+      "index": 27,
+      "source_start_seconds": 177.87,
+      "context_seconds": 131.15999999999997,
+      "added_group": "G13",
+      "groups": 27,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 286,
+      "first_packet_zero_padding_seconds": 0.27000000000001023
+    },
+    {
+      "id": "P01-L28",
+      "index": 28,
+      "source_start_seconds": 142.63,
+      "context_seconds": 166.39999999999998,
+      "added_group": "G12",
+      "groups": 28,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 359,
+      "first_packet_zero_padding_seconds": 0.06999999999999318
+    },
+    {
+      "id": "P01-L29",
+      "index": 29,
+      "source_start_seconds": 115.86,
+      "context_seconds": 193.16999999999996,
+      "added_group": "G11",
+      "groups": 29,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 415,
+      "first_packet_zero_padding_seconds": 0.18000000000000682
+    },
+    {
+      "id": "P01-L30",
+      "index": 30,
+      "source_start_seconds": 110.12,
+      "context_seconds": 198.90999999999997,
+      "added_group": "G10",
+      "groups": 30,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 427,
+      "first_packet_zero_padding_seconds": 0.20000000000000284
+    },
+    {
+      "id": "P01-L31",
+      "index": 31,
+      "source_start_seconds": 106.41,
+      "context_seconds": 202.61999999999998,
+      "added_group": "G09",
+      "groups": 31,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 435,
+      "first_packet_zero_padding_seconds": 0.3299999999999983
+    },
+    {
+      "id": "P01-L32",
+      "index": 32,
+      "source_start_seconds": 104.1,
+      "context_seconds": 204.92999999999998,
+      "added_group": "G08",
+      "groups": 32,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 440,
+      "first_packet_zero_padding_seconds": 0.4200000000000017
+    },
+    {
+      "id": "P01-L33",
+      "index": 33,
+      "source_start_seconds": 102.92,
+      "context_seconds": 206.10999999999996,
+      "added_group": "G07",
+      "groups": 33,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 442,
+      "first_packet_zero_padding_seconds": 0.20000000000000284
+    },
+    {
+      "id": "P01-L34",
+      "index": 34,
+      "source_start_seconds": 98.35,
+      "context_seconds": 210.67999999999998,
+      "added_group": "G06",
+      "groups": 34,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 452,
+      "first_packet_zero_padding_seconds": 0.4299999999999926
+    },
+    {
+      "id": "P01-L35",
+      "index": 35,
+      "source_start_seconds": 95.66,
+      "context_seconds": 213.36999999999998,
+      "added_group": "G05",
+      "groups": 35,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 457,
+      "first_packet_zero_padding_seconds": 0.14000000000000057
+    },
+    {
+      "id": "P01-L36",
+      "index": 36,
+      "source_start_seconds": 90.38,
+      "context_seconds": 218.64999999999998,
+      "added_group": "G04",
+      "groups": 36,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 468,
+      "first_packet_zero_padding_seconds": 0.14000000000000057
+    },
+    {
+      "id": "P01-L37",
+      "index": 37,
+      "source_start_seconds": 85.74,
+      "context_seconds": 223.28999999999996,
+      "added_group": "G03",
+      "groups": 37,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 478,
+      "first_packet_zero_padding_seconds": 0.29999999999999716
+    },
+    {
+      "id": "P01-L38",
+      "index": 38,
+      "source_start_seconds": 82.13,
+      "context_seconds": 226.89999999999998,
+      "added_group": "G02",
+      "groups": 38,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 485,
+      "first_packet_zero_padding_seconds": 0.04999999999999716
+    },
+    {
+      "id": "P01-L39",
+      "index": 39,
+      "source_start_seconds": 74.89,
+      "context_seconds": 234.14,
+      "added_group": "G01",
+      "groups": 39,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 500,
+      "first_packet_zero_padding_seconds": 0.010000000000005116
+    },
+    {
+      "id": "P01-L40",
+      "index": 40,
+      "source_start_seconds": 0.0,
+      "context_seconds": 309.03,
+      "added_group": null,
+      "groups": 39,
+      "initial_recording_silence_added": true,
+      "source_evidence_fully_available": true,
+      "source_frames": 656,
+      "first_packet_zero_padding_seconds": 0.0
+    }
+  ],
+  "sentence_groups": [
+    {
+      "start": 74.89,
+      "end": 76.27,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 74.89,
+          "end": 76.27,
+          "text": "Hello",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G01"
+    },
+    {
+      "start": 82.13,
+      "end": 84.3,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 82.13,
+          "end": 84.3,
+          "text": "Yes I made it",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G02"
+    },
+    {
+      "start": 85.74,
+      "end": 88.91,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 85.74,
+          "end": 88.91,
+          "text": "English from now on",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G03"
+    },
+    {
+      "start": 90.38,
+      "end": 93.25,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 90.38,
+          "end": 93.25,
+          "text": "Drawing or Yeah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 91.53,
+          "end": 92.51,
+          "text": "Yeah just testing",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G04"
+    },
+    {
+      "start": 95.66,
+      "end": 96.15,
+      "sentences": [
+        {
+          "speaker": "A",
+          "start": 95.66,
+          "end": 96.15,
+          "text": "Mm",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G05"
+    },
+    {
+      "start": 98.35,
+      "end": 100.17,
+      "sentences": [
+        {
+          "speaker": "C",
+          "start": 98.35,
+          "end": 100.17,
+          "text": "Just kidding",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 98.37,
+          "end": 99.04,
+          "text": "English",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G06"
+    },
+    {
+      "start": 102.92,
+      "end": 103.69,
+      "sentences": [
+        {
+          "speaker": "C",
+          "start": 102.92,
+          "end": 103.69,
+          "text": "So annoying",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G07"
+    },
+    {
+      "start": 104.1,
+      "end": 105.37,
+      "sentences": [
+        {
+          "speaker": "A",
+          "start": 104.1,
+          "end": 105.37,
+          "text": "Break is over",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G08"
+    },
+    {
+      "start": 106.41,
+      "end": 110.12,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 106.41,
+          "end": 107.48,
+          "text": "Ooh it works",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 107.06,
+          "end": 110.12,
+          "text": "Whoo",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G09"
+    },
+    {
+      "start": 110.12,
+      "end": 114.7,
+      "sentences": [
+        {
+          "speaker": "A",
+          "start": 110.12,
+          "end": 114.61,
+          "text": "Spicy",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 110.91,
+          "end": 111.69,
+          "text": "Spicy",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G10"
+    },
+    {
+      "start": 115.86,
+      "end": 139.68,
+      "sentences": [
+        {
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 119.56,
+          "end": 126.02,
+          "text": "The conceptual or Ah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah conceptual design",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 124.72,
+          "end": 130.84,
+          "text": "What or whatever does it No no no can you go back one",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design that's it",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 134.59,
+          "end": 135.1,
+          "text": "This",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 136.13,
+          "end": 139.46,
+          "text": "I'll just put it in there",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 138.74,
+          "end": 139.68,
+          "text": "So he's coming",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G11"
+    },
+    {
+      "start": 142.63,
+      "end": 177.62,
+      "sentences": [
+        {
+          "speaker": "C",
+          "start": 142.63,
+          "end": 173.82,
+          "text": "I did get a bit more done than the last time 'cause I knew that I didn't have time so I just copy and paste everything into the Sometimes I have these pop-ups or these sounds and there's nothing there and also with I don't know how to use PowerPoint so it takes me forever to get something done with it",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 143.26,
+          "end": 143.98,
+          "text": "Or not",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "B",
+          "start": 144.55,
+          "end": 145.39,
+          "text": "Okay",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 145.16,
+          "end": 145.97,
+          "text": "Oh okay",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 148.82,
+          "end": 160.18,
+          "text": "Ah I can't cut and paste it into the other folder but Move to meeting room",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 149.98,
+          "end": 151.2,
+          "text": "Ah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 151.2,
+          "end": 151.31,
+          "text": "She",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 151.31,
+          "end": 162.65,
+          "text": "You can look at the final report 'cause I have to record everything we are deciding and such so I'm trying to write it down between everything else",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 162.33,
+          "end": 162.63,
+          "text": "Yeah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 167.13,
+          "end": 167.56,
+          "text": "Oh",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 168.04,
+          "end": 169.43,
+          "text": "Yeah me too",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "B",
+          "start": 173.71,
+          "end": 177.62,
+          "text": "I I've got the same problem as well",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 175.78,
+          "end": 176.05,
+          "text": "Yeah",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G12"
+    },
+    {
+      "start": 177.87,
+      "end": 178.83,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 177.87,
+          "end": 178.8,
+          "text": "Yeah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 178.35,
+          "end": 178.83,
+          "text": "Yeah",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G13"
+    },
+    {
+      "start": 178.83,
+      "end": 180.45,
+      "sentences": [
+        {
+          "speaker": "A",
+          "start": 178.83,
+          "end": 180.45,
+          "text": "Here we go again",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G14"
+    },
+    {
+      "start": 180.45,
+      "end": 182.84,
+      "sentences": [
+        {
+          "speaker": "A",
+          "start": 180.45,
+          "end": 182.84,
+          "text": "Welcome",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G15"
+    },
+    {
+      "start": 182.84,
+      "end": 195.57,
+      "sentences": [
+        {
+          "speaker": "A",
+          "start": 182.84,
+          "end": 193.83,
+          "text": "Uh we have again three presentations and then we have to decide on what concepts the mobile phone has to uh f the remote control has to support",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 182.93,
+          "end": 194.49,
+          "text": "Thi Mm-hmm",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 193.83,
+          "end": 195.57,
+          "text": "So who wants go",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G16"
+    },
+    {
+      "start": 195.98,
+      "end": 201.89,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 195.98,
+          "end": 197.33,
+          "text": "Yes",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 196.72,
+          "end": 197.45,
+          "text": "Who wants to start",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 196.73,
+          "end": 197.13,
+          "text": "Yes",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 197.33,
+          "end": 201.89,
+          "text": "Me first again or yeah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 198.49,
+          "end": 199.39,
+          "text": "Yeah sure",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "B",
+          "start": 198.68,
+          "end": 199.24,
+          "text": "Oh",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "B",
+          "start": 199.24,
+          "end": 199.69,
+          "text": "No",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 199.39,
+          "end": 200.11,
+          "text": "Doesn't matter",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "B",
+          "start": 199.69,
+          "end": 200.13,
+          "text": "Yeah",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "B",
+          "start": 200.13,
+          "end": 200.92,
+          "text": "No problem",
+          "boundary": "past_tail"
+        }
+      ],
+      "id": "G17"
+    },
+    {
+      "start": 201.89,
+      "end": 202.99,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 201.89,
+          "end": 202.99,
+          "text": "Alright",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G18"
+    },
+    {
+      "start": 202.99,
+      "end": 205.13,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 202.99,
+          "end": 204.67,
+          "text": "Did you open it already or no",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "A",
+          "start": 204.34,
+          "end": 204.92,
+          "text": "No",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "D",
+          "start": 204.67,
+          "end": 205.13,
+          "text": "Ah",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G19"
+    },
+    {
+      "start": 208.97,
+      "end": 209.81,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 208.97,
+          "end": 209.81,
+          "text": "Ah",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G20"
+    },
+    {
+      "start": 212.06,
+      "end": 212.51,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 212.06,
+          "end": 212.51,
+          "text": "Yes",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G21"
+    },
+    {
+      "start": 223.43,
+      "end": 226.89,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 223.43,
+          "end": 226.89,
+          "text": "So welcome to the marketing presentation once again",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G22"
+    },
+    {
+      "start": 226.89,
+      "end": 229.36,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 226.89,
+          "end": 229.36,
+          "text": "Um this time about trendwatching",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G23"
+    },
+    {
+      "start": 231.31,
+      "end": 236.5,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 231.31,
+          "end": 236.5,
+          "text": "Uh well there has been inv investigation again in the in the remote control market",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G24"
+    },
+    {
+      "start": 236.5,
+      "end": 238.36,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 236.5,
+          "end": 238.36,
+          "text": "Uh it shows a number of developments",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G25"
+    },
+    {
+      "start": 238.36,
+      "end": 241.68,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 238.36,
+          "end": 241.68,
+          "text": "Uh I will address them uh in a moment",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G26"
+    },
+    {
+      "start": 241.68,
+      "end": 247.55,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 241.68,
+          "end": 247.55,
+          "text": "Um fashion watch watchers uh have detected the trends for young public because that's our public",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G27"
+    },
+    {
+      "start": 247.92,
+      "end": 255.09,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 247.92,
+          "end": 255.09,
+          "text": "Um well fruit and vegetables will be will be the most important theme for clothing uh shoes and furniture",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G28"
+    },
+    {
+      "start": 255.09,
+      "end": 258.23,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 255.09,
+          "end": 258.23,
+          "text": "And the feel of the material is expected to be spongey",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G29"
+    },
+    {
+      "start": 258.23,
+      "end": 265.93,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 258.23,
+          "end": 265.93,
+          "text": "So um the developments I will address them oh yeah well this is the fruit and vegetables looks of fresh bright colours",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G30"
+    },
+    {
+      "start": 265.93,
+      "end": 267.25,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 265.93,
+          "end": 267.25,
+          "text": "So to give you an idea",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G31"
+    },
+    {
+      "start": 268.37,
+      "end": 270.56,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 268.37,
+          "end": 270.56,
+          "text": "Um well the developments",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G32"
+    },
+    {
+      "start": 270.56,
+      "end": 272.9,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 270.56,
+          "end": 272.9,
+          "text": "Uh development one",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G33"
+    },
+    {
+      "start": 272.9,
+      "end": 278.71,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 272.9,
+          "end": 278.71,
+          "text": "Uh well most important aspect for remote control happens to be a fancy look-and-feel",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G34"
+    },
+    {
+      "start": 278.71,
+      "end": 281.65,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 278.71,
+          "end": 281.65,
+          "text": "Instead of the current uh functional look-and-feel",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G35"
+    },
+    {
+      "start": 281.65,
+      "end": 287.26,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 281.65,
+          "end": 287.26,
+          "text": "Um well fancy stands for an original look-and-feel of the case and the interface",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G36"
+    },
+    {
+      "start": 287.74,
+      "end": 295.76,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 287.74,
+          "end": 295.76,
+          "text": "And the second most important aspect is that a remote control should be technological uh innovative",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G37"
+    },
+    {
+      "start": 295.76,
+      "end": 301.36,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 295.76,
+          "end": 301.36,
+          "text": "Um well it stands for the use of technical features that do not exist in current remote controls",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G38"
+    },
+    {
+      "start": 301.36,
+      "end": 308.48,
+      "sentences": [
+        {
+          "speaker": "D",
+          "start": 301.36,
+          "end": 308.48,
+          "text": "I think we pretty much covered that with our screen and um and speech recognition so I don't expect that to be a problem",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 304.74,
+          "end": 305.5,
+          "text": "Sound",
+          "boundary": "sentence_end"
+        },
+        {
+          "speaker": "C",
+          "start": 306.54,
+          "end": 307.53,
+          "text": "Yeah yeah uh uh",
+          "boundary": "sentence_end"
+        }
+      ],
+      "id": "G39"
+    }
+  ],
+  "sentence_count": 80,
+  "boundary_rule": "Punctuation-delimited sentences per speaker; merge all overlapping sentences, then prepend one complete group at a time. Each input is a continuous audio suffix, retaining silence and overlap. The final control adds the original recording lead-in.",
+  "packet_rule": "Keep the original global 480 ms grid; zero-pad only the partial first packet before the selected boundary. Spoken request packets remain bit-identical across levels.",
+  "model_input": "Audio and prior native responses only; transcript text, speaker labels, boundaries, question text and source answers are not supplied.",
+  "request_level_gain_db": 2.9203186630209776,
+  "pressure_method": "constrained",
+  "temperature": 0.0,
+  "max_tokens_per_call": 256,
+  "answer_frames": 40,
+  "answer_start": "Known question end; force a nonempty first speech fragment without prescribing words.",
+  "history": "Keep every packet in the selected suffix, without trimming or summaries; record capacity failures separately.",
+  "recognition_rule": "Question WER <= 0.25, Assistant cue present, and shared folder plus conceptual design both recognized. Recognition is scored separately from meeting-answer correctness.",
+  "answer_rule": "Score full meeting-answer correctness only where the listed evidence is present; request-only is not answerable from the recording.",
+  "threshold_rule": "Evaluate all levels; report first failure, later recovery and complete curve rather than assuming monotonic failure.",
+  "resources": {
+    "gpus_per_job": 1,
+    "type_vram": "H100 SXM 80 GB or RTX PRO 6000 Blackwell 96 GB; exact type per job",
+    "roles": {
+      "0": "Thinker, Talker, MTP and Code2Wav share GPU 0; independent Parakeet follows after S1 shutdown"
+    },
+    "maximum_active_gpus": 4,
+    "dependency": "One short matched job qualifies the pressure recipe before up to four independent one-GPU pressure shards. No S2 service."
+  },
+  "pressure_engine_context_tokens": {
+    "H100_80GB": 49152,
+    "RTX_96GB": 65536
+  },
+  "scope_note": "Sentence-based suffix groups are for this diagnostic only; the 10–40 second amortized-thinking chunk plan is unchanged.",
+  "lead_in_note": "The final level includes the original audio before the first annotated sentence; no acoustic silence assumption is made."
+}

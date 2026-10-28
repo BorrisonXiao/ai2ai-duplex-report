@@ -2,8 +2,8 @@
   "schema_version": "1.0",
   "updated": "2026-10-28",
   "status": "implementation_underway",
-  "snapshot_label": "Controlled native listening comparison inspected",
-  "active_job": null,
+  "snapshot_label": "Matched S1 and sentence-based pressure test running",
+  "active_job": "1355163",
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
   "planned_final_answers": 3465,
@@ -70,6 +70,20 @@
       "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
     },
     {
+      "id": "s1-matched",
+      "text": "Reproduce the working DailyTalk recipe and compare it with the current S1 runner.",
+      "status": "complete",
+      "url": "study-progress.html#matched-controls",
+      "evidence": "The original helper and new native runner match all 40 response-field records; their spoken discount/full-price answers agree. P01 request-only recognition passes (WER 0.063), while its folder-status answer is unsupported without earlier evidence."
+    },
+    {
+      "id": "s1-pressure",
+      "text": "Test P01 with request-only audio and every sentence-based increase in earlier context.",
+      "status": "partial",
+      "url": "study-progress.html#s1-pressure",
+      "evidence": "19/41 pressure outputs saved; 10 questions recognized; source-answer reviews remain separate."
+    },
+    {
       "id": "gate",
       "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
@@ -101,7 +115,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T17:46:56.859361+00:00",
+  "updated_at": "2026-10-28T19:36:27.475920+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -138,5 +152,18 @@
     "state": "completed_source_reviewed",
     "active_gpus": 0
   },
-  "active_jobs": []
+  "active_jobs": [
+    "1355163",
+    "1355164",
+    "1355165",
+    "1355166"
+  ],
+  "context_pressure": {
+    "state": "running",
+    "planned_levels": 41,
+    "completed_levels": 19,
+    "recognized_levels": 10,
+    "active_gpus": 4,
+    "maximum_active_gpus": 4
+  }
 }

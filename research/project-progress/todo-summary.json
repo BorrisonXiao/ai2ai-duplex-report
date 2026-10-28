@@ -12,9 +12,9 @@
       "url": "study-progress.html#fresh-pilot"
     },
     {
-      "status": "pending",
-      "text": "Compare two native listening methods before broader S1 evaluation.",
-      "url": "study-progress.html#s1-listening"
+      "status": "partial",
+      "text": "Match the working short-request recipe, then test growing context before broader S1 evaluation.",
+      "url": "study-progress.html#s1-pressure"
     },
     {
       "status": "complete",
@@ -132,6 +132,20 @@
           "url": "study-progress.html#listening-examples",
           "status": "complete",
           "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
+        },
+        {
+          "id": "s1-matched",
+          "text": "Reproduce the working DailyTalk recipe and compare it with the current S1 runner.",
+          "status": "complete",
+          "url": "study-progress.html#matched-controls",
+          "evidence": "The original helper and new native runner match all 40 response-field records; their spoken discount/full-price answers agree. P01 request-only recognition passes (WER 0.063), while its folder-status answer is unsupported without earlier evidence."
+        },
+        {
+          "id": "s1-pressure",
+          "text": "Test P01 with request-only audio and every sentence-based increase in earlier context.",
+          "status": "partial",
+          "url": "study-progress.html#s1-pressure",
+          "evidence": "19/41 pressure outputs saved; 10 questions recognized; source-answer reviews remain separate."
         },
         {
           "id": "gate",

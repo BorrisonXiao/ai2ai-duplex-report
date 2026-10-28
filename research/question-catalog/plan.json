@@ -188,6 +188,18 @@
           "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
         },
         {
+          "text": "Reproduce the working DailyTalk recipe and compare it with the current S1 runner.",
+          "status": "complete",
+          "project_url": "study-progress.html#matched-controls",
+          "evidence": "The original helper and new native runner match all 40 response-field records; their spoken discount/full-price answers agree. P01 request-only recognition passes (WER 0.063), while its folder-status answer is unsupported without earlier evidence."
+        },
+        {
+          "text": "Test P01 with request-only audio and every sentence-based increase in earlier context.",
+          "status": "partial",
+          "project_url": "study-progress.html#s1-pressure",
+          "evidence": "19/41 pressure outputs saved; 10 questions recognized; source-answer reviews remain separate."
+        },
+        {
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "project_url": "what-to-think.html#evaluation-first",
