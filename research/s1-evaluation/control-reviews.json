@@ -1,0 +1,38 @@
+{
+  "saved-repeat": {
+    "candidate_sha256": "f9ec90bf493f6e0277618586afb6867e0fe03c25ad55df3579194fd2f3466f04",
+    "reference_sha256": "4d502faad8740f09676e7798f275b19e6e08718f7e2aa275ebb5322df89d8290",
+    "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
+    "version": "saved-control-review-v2-finish-metadata",
+    "complete_answer": true,
+    "fact_verdicts": {
+      "requested_content": "supported"
+    },
+    "unsupported_claims": [],
+    "reason": "The independent speech transcript is the requested sentence, with no extra material."
+  },
+  "saved-sky": {
+    "candidate_sha256": "47d6c0abc19bc87bbd966b3ac4d88a749c1d64d868d1f06fee4689e794d9df78",
+    "reference_sha256": "ea79f46a3c2f2e738a3060c4b3e45823e8374a813b7bf7971dae301b21e3d8ea",
+    "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
+    "version": "saved-control-review-v2-finish-metadata",
+    "complete_answer": true,
+    "fact_verdicts": {
+      "requested_content": "supported"
+    },
+    "unsupported_claims": [],
+    "reason": "The recorded speech identifies blue and gives the standard Rayleigh-scattering explanation; the required color is present."
+  },
+  "saved-greeting": {
+    "candidate_sha256": "45b3921e3cd87746903011db134585610be30032bf95807d8f7dfad6c7e3dbeb",
+    "reference_sha256": "cfa81d0a44da565d5c6abf6a6686affec724e95df295c873c38833c7fb773958",
+    "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
+    "version": "saved-control-review-v2-finish-metadata",
+    "complete_answer": false,
+    "fact_verdicts": {
+      "requested_content": "missing"
+    },
+    "unsupported_claims": [],
+    "reason": "The recorded speech is only a generic greeting; it gives neither a bread recipe nor a recipe-specific clarification."
+  }
+}

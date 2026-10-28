@@ -1,0 +1,82 @@
+{
+  "saved-sky": {
+    "case_id": "saved-sky",
+    "question": "What color is the sky on a clear day?",
+    "status": "verified",
+    "version": "control-reference-v1",
+    "reviewer": "Codex review of the authored control and existing saved-output audit; not an independent human rating",
+    "answer": "The sky is blue on a clear day.",
+    "required_facts": [
+      {
+        "id": "requested_content",
+        "text": "Identify blue as the clear-day sky color.",
+        "any_patterns": [
+          "\\bblue\\b"
+        ],
+        "contradiction_patterns": [
+          "\\b(?:not|never)\\b.{0,12}\\bblue\\b"
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "source": "experiments/single-request.html",
+        "text": "What color is the sky on a clear day?",
+        "kind": "authored_control_request"
+      }
+    ],
+    "scope": "Software validation on an earlier short control; excluded from the 105-question evaluation."
+  },
+  "saved-repeat": {
+    "case_id": "saved-repeat",
+    "question": "Please say exactly: The sky is blue.",
+    "status": "verified",
+    "version": "control-reference-v1",
+    "reviewer": "Codex review of the authored control and existing saved-output audit; not an independent human rating",
+    "answer": "The sky is blue.",
+    "required_facts": [
+      {
+        "id": "requested_content",
+        "text": "Repeat the requested sentence.",
+        "any_patterns": [
+          "^the sky is blue[.!]?\\s*$"
+        ],
+        "contradiction_patterns": []
+      }
+    ],
+    "evidence": [
+      {
+        "source": "experiments/single-request.html",
+        "text": "Please say exactly: The sky is blue.",
+        "kind": "authored_control_request"
+      }
+    ],
+    "scope": "Software validation on an earlier short control; excluded from the 105-question evaluation."
+  },
+  "saved-greeting": {
+    "case_id": "saved-greeting",
+    "question": "Do you know any easy recipes for homemade bread?",
+    "status": "verified",
+    "version": "control-reference-v1",
+    "reviewer": "Codex review of the authored control and existing saved-output audit; not an independent human rating",
+    "answer": "Give an easy bread recipe or ask a recipe-specific clarification.",
+    "required_facts": [
+      {
+        "id": "requested_content",
+        "text": "Address the bread-recipe request with a recipe or relevant clarification.",
+        "any_patterns": [
+          "\\b(bread|flour|yeast|recipe)\\b"
+        ],
+        "contradiction_patterns": []
+      }
+    ],
+    "evidence": [
+      {
+        "source": "experiments/handoff.html",
+        "text": "Do you know any easy recipes for homemade bread?",
+        "kind": "authored_control_request"
+      }
+    ],
+    "scope": "Software validation on an earlier short control; excluded from the 105-question evaluation."
+  }
+}

@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 
 from site_navigation import (
-    project_tabs, review_tabs, experiment_subtabs, proposal_tabs,
+    project_tabs, review_tabs, experiment_subtabs, proposal_tabs, progress_tabs,
 )
 from project_language import prethinking_prose
 
@@ -34,7 +34,7 @@ EXPERIMENT_KEYS = {
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
-    'DuplexOmni experiments', 'Proposal pages', 'AMI question pages',
+    'DuplexOmni experiments', 'Proposal pages', 'AMI question pages', 'Project progress pages',
 )
 
 
@@ -164,6 +164,9 @@ def refresh_page(path, original, navigation_only=False):
     if category in {'todo', 'log'}:
         pattern = r'<nav\b[^>]*aria-label="(?:' + '|'.join(SUBNAV_LABELS) + r')"[^>]*>.*?</nav>'
         page = re.sub(pattern, '', page, flags=re.S)
+        if category == 'todo':
+            current = {'todo.html':'roadmap','what-to-think.html':'plan','study-progress.html':'progress','notation.html':'notation','experiments/question-checks.html':'checks'}.get(relative)
+            subnav = progress_tabs(current, prefix)
     elif path.parent == ROOT and path.name in REVIEW_KEYS:
         subnav = review_tabs(REVIEW_KEYS[path.name])
     elif path.parent == ROOT/'experiments':

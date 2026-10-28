@@ -1,0 +1,44 @@
+{
+  "schema_version": "s1-eval-manifest/v1",
+  "evaluation_set": "historical_pipeline_check",
+  "condition_id": "saved-s1-controls-v1",
+  "references": "research/s1_evaluation/control-references.json",
+  "cases": [
+    {
+      "id": "saved-sky",
+      "question": "What color is the sky on a clear day?",
+      "evaluation_set": "historical_pipeline_check",
+      "public_page": "experiments/single-request.html",
+      "source": {
+        "format": "published_trace",
+        "path": "site/research/current-s1.json",
+        "trace_id": "S1-01",
+        "media_id": "played"
+      }
+    },
+    {
+      "id": "saved-repeat",
+      "question": "Please say exactly: The sky is blue.",
+      "evaluation_set": "historical_pipeline_check",
+      "public_page": "experiments/single-request.html",
+      "source": {
+        "format": "published_trace",
+        "path": "site/research/current-s1.json",
+        "trace_id": "S1-02",
+        "media_id": "played"
+      }
+    },
+    {
+      "id": "saved-greeting",
+      "question": "Do you know any easy recipes for homemade bread?",
+      "evaluation_set": "historical_pipeline_check",
+      "public_page": "experiments/handoff.html",
+      "source": {
+        "format": "published_trace",
+        "path": "site/research/current-handoff.json",
+        "trace_id": "E1a",
+        "media_id": "played"
+      }
+    }
+  ]
+}

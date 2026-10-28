@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from site_navigation import project_tabs
+from site_navigation import project_tabs, progress_tabs
 from project_language import prethinking_prose
 import thinking_design
 
@@ -43,7 +43,7 @@ def table(number, caption, headers, rows):
 
 def document(name, title, category, body, js=''):
     css_version = hashlib.sha256((ROOT / 'assets/site.css').read_bytes()).hexdigest()[:12]
-    text = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="' + e(title) + '"><title>' + e(title) + ' · AI2AI Duplex</title><link rel="stylesheet" href="assets/site.css?v=' + css_version + '"><style>' + CSS + thinking_design.CSS + '</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="index.html">AI2AI Duplex</a>' + project_tabs(category) + '</div></header><main id="main" class="progress-page"><div class="container">' + body + '</div></main><script>' + JS + js + '</script></body></html>\n'
+    text = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="' + e(title) + '"><title>' + e(title) + ' · AI2AI Duplex</title><link rel="stylesheet" href="assets/site.css?v=' + css_version + '"><style>' + CSS + thinking_design.CSS + '</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="index.html">AI2AI Duplex</a>' + project_tabs(category) + '</div></header>' + ('<div class="container collection-nav">' + progress_tabs({'todo.html':'roadmap','what-to-think.html':'plan','study-progress.html':'progress','notation.html':'notation'}.get(name)) + '</div>' if category=='todo' else '') + '<main id="main" class="progress-page"><div class="container">' + body + '</div></main><script>' + JS + js + '</script></body></html>\n'
     text = prethinking_prose(text)
     (ROOT / name).write_text(text)
     return text

@@ -74,6 +74,7 @@ def experiment_subtabs(current):
         ('prethinking', 'Amortized thinking pilot', 'prethinking-pilot.html'),
         ('ami', 'AMI questions', 'question-overview.html'),
         ('ami-library', 'AMI question audio', 'question-audio.html'),
+        ('progress', 'Experiment progress', '../study-progress.html'),
     ], 'duplex' if duplex else parent, 'Experiment sub-tabs')
     if duplex:
         result += tabs(DUPLEX_PAGES, current, 'DuplexOmni experiments', css='review-tabs secondary-tabs')
@@ -87,3 +88,13 @@ def proposal_tabs(current, prefix=""):
         ('overview', 'All proposals', 'proposals/index.html'),
         ('prethinking', 'Amortized thinking', 'prethinking.html'),
     ], current, 'Proposal pages', prefix)
+
+
+def progress_tabs(current, prefix=''):
+    return tabs([
+        ('roadmap', 'Project TODO', 'todo.html'),
+        ('plan', 'Experiment plan', 'what-to-think.html'),
+        ('progress', 'Experiment progress', 'study-progress.html'),
+        ('notation', 'Notation', 'notation.html'),
+        ('checks', 'Question checks', 'experiments/question-checks.html'),
+    ], current, 'Project progress pages', prefix)

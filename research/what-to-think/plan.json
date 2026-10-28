@@ -1,7 +1,7 @@
 {
   "title": "What to think: a 105-question experiment plan",
   "date": "2026-10-27",
-  "status": "plan_only_no_inference_or_experiment_implementation",
+  "status": "s1_evaluator_saved_output_checks_passed",
   "confirmed_choices": [
     "Reactive S2 baselines reason only when the actual user request arrives.",
     "Amortized thinking variants generate earlier earlier results and reuse them.",
@@ -11,7 +11,7 @@
   "summary": [
     "Start with S1 and validate the evaluation pipeline on real model outputs before running more experiments.",
     "Use all 105 distinct questions for the final evaluation, after checking every reference answer.",
-    "Use shared 20–45 second chunks for amortized thinking, while keeping each S1 model’s native audio frames.",
+    "Use shared 10–40 second chunks for amortized thinking, while keeping each S1 model’s native audio frames.",
     "Compare S1-only responses with reactive S2 and S2 that reuses results generated while listening.",
     "Measure answer accuracy and request-time thinking tokens, and count earlier work separately.",
     "Keep the progress report, examples and checklists synchronized as runs finish."
@@ -32,21 +32,22 @@
   },
   "chunking": {
     "status": "proposed_starting_rule_not_tuned",
-    "minimum_elapsed_seconds": 20,
+    "minimum_elapsed_seconds": 10,
     "minimum_active_speech_seconds": 8,
-    "target_seconds": 30,
-    "maximum_seconds": 45,
+    "target_seconds": 25,
+    "maximum_seconds": 40,
     "pause_seconds": 0.5,
-    "rule": "After at least 20 elapsed seconds and eight seconds of voiced speech, close at the next completed pause of at least 0.5 seconds; target roughly 30 seconds. A hard 45-second cap bounds continuous speech.",
-    "cap_rule": "At 45 seconds, close at the current causal audio frame. If speech is still continuing, mark the last speech unit partial and let the next prefix supply its continuation; do not look ahead or create a shorter retrospective chunk.",
+    "rule": "Use at least 10 elapsed seconds and eight seconds of voiced speech; close early after an observed two-second pause, otherwise close at the first observed pause of at least 0.5 seconds after the 25-second target, with a hard cap at 40 seconds.",
+    "cap_rule": "At 40 seconds, close at the current audio frame without looking ahead; mark continuing speech as partial and let the next chunk include its continuation.",
     "low_activity": "A capped interval with less than eight seconds of speech is a passive chunk: keep all its samples in history but skip a thinking call; the next active call still has that earlier audio available.",
     "fillers": "Short backchannels and fillers are accumulated with surrounding speech rather than becoming their own calls; a long low-information block may return NO_UPDATE, with its tokens counted.",
     "request": "At request onset, stop launching amortized thinking. Put the unclosed meeting tail and the complete request into the final input, even if the tail is shorter than the normal minimum.",
     "common_schedule": "Use one causal audio-VAD boundary manifest across GT text, both ASR tools and speech S2; no GT sentence boundaries or question-specific evidence may choose the cuts.",
     "causality": "A pause is used only after its silence has been observed; text prefixes include only already available words, never the complete future part of an intersecting utterance.",
     "same_content": "Macro chunks and native S1 frames cover the same original samples, request and source horizon; preserve an interval/hash ledger with no dropped or duplicated speech.",
-    "development": "Compare 15/30/45 and 20/30/60 second settings on separate development meetings, then freeze one schedule for the main what-to-think study.",
-    "not_when_study": "The schedule is fixed across all conditions; learned semantic trigger timing is deferred."
+    "development": "Keep all development settings within the user-approved 10–40 second range; compare 20-, 25- and 30-second targets, then freeze one schedule.",
+    "not_when_study": "The schedule is fixed across all conditions; learned semantic trigger timing is deferred.",
+    "early_pause_seconds": 2
   },
   "gold_steps": [
     "Keep one evaluation record per distinct question, verify the actual spoken request and its retained intent, and preserve requester and actual insertion time.",
@@ -95,7 +96,7 @@
     "current_GPU_count": 0,
     "current_maximum_active_GPUs": 0,
     "current_roles": {},
-    "current_dependencies": "Plan/report editing and CPU validation only; no new inference, model downloads or GPU jobs.",
+    "current_dependencies": "CPU evaluator replay, regression checks and report generation; no new model calls, downloads or GPU jobs.",
     "planned_maximum_active_GPUs": 4,
     "policy": "All GPU jobs sequential; transcript tools and reference validation precede evaluation; judges follow generation. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
@@ -117,7 +118,7 @@
     "source": "https://arxiv.org/abs/2510.05150"
   },
   "evaluation_gate": {
-    "status": "not_started",
+    "status": "software_checked_end_to_end_pilot_pending",
     "first_model": "DuplexOmni S1, using the existing verified S1 caller with S2 disabled",
     "scope": "First implement and validate the shared evaluation scripts on saved real S1 outputs, then run a small end-to-end S1 pilot on separately checked question examples; these checks do not replace the final 105-question evaluation.",
     "checks": [
@@ -136,7 +137,7 @@
     "next": "Validate all 105 references before full S1 evaluation; qualify the other S1 callers against the same evaluator, then extend to text and speech S2."
   },
   "progress_reporting": {
-    "status": "specified_not_implemented",
+    "status": "local_evaluation_worker_implemented_inference_integration_pending",
     "page": "study-progress.html",
     "requirements": [
       "Maintain a run-time report from the same saved run records that determine checklist states and aggregate results.",

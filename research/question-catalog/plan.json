@@ -147,21 +147,21 @@
         },
         {
           "text": "Implement shared S1 answer extraction, scoring and token accounting.",
-          "status": "pending",
-          "project_url": "what-to-think.html#evaluation-first",
-          "evidence": "Plan requirement; not yet executed."
+          "status": "complete",
+          "project_url": "study-progress.html#software-checks",
+          "evidence": "Three earlier real outputs and 42 CPU checks pass."
         },
         {
           "text": "Implement run-time progress updates from the same saved records as the checklists.",
-          "status": "pending",
-          "project_url": "what-to-think.html#progress-updates",
-          "evidence": "Plan requirement; not yet executed."
+          "status": "partial",
+          "project_url": "study-progress.html#reporting",
+          "evidence": "Per-example snapshots, 30-second heartbeat and local viewer implemented; new inference-job integration remains pending."
         },
         {
           "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
-          "status": "pending",
-          "project_url": "what-to-think.html#evaluation-first",
-          "evidence": "Plan requirement; not yet executed."
+          "status": "complete",
+          "project_url": "study-progress.html#software-checks",
+          "evidence": "Three earlier real outputs and 42 CPU checks pass."
         },
         {
           "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",

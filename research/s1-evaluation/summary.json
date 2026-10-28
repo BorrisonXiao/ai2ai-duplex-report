@@ -1,0 +1,403 @@
+{
+  "status": "saved_output_software_checks_passed",
+  "updated_at": "2026-10-28T00:47:56Z",
+  "scope": "CPU evaluation software checks, not a new model run or a completed evaluation protocol.",
+  "saved_outputs": 3,
+  "answers_supported": 2,
+  "task_failures_detected": 1,
+  "regression": {
+    "status": "pass",
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "wall_seconds": 0.23430367792025208,
+    "gpus": 0,
+    "scope": "Synthetic script fixtures, not new model outputs or benchmark results."
+  },
+  "examples": [
+    {
+      "id": "saved-sky",
+      "question": "What color is the sky on a clear day?",
+      "native_text": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+      "spoken_answer": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+      "reference": "The sky is blue on a clear day.",
+      "required_facts": [
+        {
+          "id": "requested_content",
+          "text": "Identify blue as the clear-day sky color.",
+          "any_patterns": [
+            "\\bblue\\b"
+          ],
+          "contradiction_patterns": [
+            "\\b(?:not|never)\\b.{0,12}\\bblue\\b"
+          ]
+        }
+      ],
+      "score": 1,
+      "state": "scored_review",
+      "reason": "The recorded speech identifies blue and gives the standard Rayleigh-scattering explanation; the required color is present.",
+      "fact_checks": [
+        {
+          "fact_id": "requested_content",
+          "fact": "Identify blue as the clear-day sky color.",
+          "pattern_match": true,
+          "contradiction_flag": false
+        }
+      ],
+      "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
+      "candidate_sha256": "47d6c0abc19bc87bbd966b3ac4d88a749c1d64d868d1f06fee4689e794d9df78",
+      "reference_sha256": "ea79f46a3c2f2e738a3060c4b3e45823e8374a813b7bf7971dae301b21e3d8ea",
+      "audio": {
+        "sha256": "0c0580a2141ee68b189b9348b9b2cb1bb97f5fc2503989f3a7392590644cf710",
+        "sample_rate": 24000,
+        "channels": 1,
+        "full_duration_seconds": 19.915166666666668,
+        "window_seconds": [
+          0.0,
+          19.915166666666668
+        ],
+        "scored_samples": 477964,
+        "nonquiet_seconds": 8.02,
+        "silence_threshold_rms": 0.001,
+        "frame_seconds": 0.02,
+        "peak": 0.793701171875,
+        "status": "speech_or_sound",
+        "scope": "Energy is a silence diagnostic; nonquiet audio alone does not prove speech."
+      },
+      "tokens": {
+        "thinking": {
+          "status": "not_applicable",
+          "count": null
+        },
+        "answer_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "control_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "auxiliary_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "input_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "input_audio_codes": {
+          "status": "unavailable",
+          "count": null
+        },
+        "output_audio_codes": {
+          "status": "unavailable",
+          "count": null
+        },
+        "amortized_output_text": {
+          "status": "not_run",
+          "count": 0
+        },
+        "request_output_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "note": "ASR words, native speech text and acoustic codes are not thinking tokens."
+      },
+      "source": {
+        "page": "experiments/single-request.html",
+        "json": "research/current-s1.json",
+        "trace_id": "S1-01",
+        "source_sha256": "c54d598bddc3c07d756f1f2648cdcd13c8ed8e57331492e7515d540f4ca62dca",
+        "job_id": "1034130",
+        "gpus": 1,
+        "gpu_type": "NVIDIA A100-SXM4-80GB",
+        "roles": "Thinker, Talker, MTP and Code2Wav share GPU 0; S2 absent."
+      },
+      "scope": "Historical software check, excluded from the 105-question evaluation."
+    },
+    {
+      "id": "saved-repeat",
+      "question": "Please say exactly: The sky is blue.",
+      "native_text": "The sky is blue.",
+      "spoken_answer": "The sky is blue.",
+      "reference": "The sky is blue.",
+      "required_facts": [
+        {
+          "id": "requested_content",
+          "text": "Repeat the requested sentence.",
+          "any_patterns": [
+            "^the sky is blue[.!]?\\s*$"
+          ],
+          "contradiction_patterns": []
+        }
+      ],
+      "score": 1,
+      "state": "scored_review",
+      "reason": "The independent speech transcript is the requested sentence, with no extra material.",
+      "fact_checks": [
+        {
+          "fact_id": "requested_content",
+          "fact": "Repeat the requested sentence.",
+          "pattern_match": true,
+          "contradiction_flag": false
+        }
+      ],
+      "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
+      "candidate_sha256": "f9ec90bf493f6e0277618586afb6867e0fe03c25ad55df3579194fd2f3466f04",
+      "reference_sha256": "4d502faad8740f09676e7798f275b19e6e08718f7e2aa275ebb5322df89d8290",
+      "audio": {
+        "sha256": "9e1de78c874188db95be1ca79076414fd03ce8d5c0e4f2c7571c1dfc73a85548",
+        "sample_rate": 24000,
+        "channels": 1,
+        "full_duration_seconds": 19.899041666666665,
+        "window_seconds": [
+          0.0,
+          19.899041666666665
+        ],
+        "scored_samples": 477577,
+        "nonquiet_seconds": 1.38,
+        "silence_threshold_rms": 0.001,
+        "frame_seconds": 0.02,
+        "peak": 0.723175048828125,
+        "status": "speech_or_sound",
+        "scope": "Energy is a silence diagnostic; nonquiet audio alone does not prove speech."
+      },
+      "tokens": {
+        "thinking": {
+          "status": "not_applicable",
+          "count": null
+        },
+        "answer_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "control_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "auxiliary_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "input_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "input_audio_codes": {
+          "status": "unavailable",
+          "count": null
+        },
+        "output_audio_codes": {
+          "status": "unavailable",
+          "count": null
+        },
+        "amortized_output_text": {
+          "status": "not_run",
+          "count": 0
+        },
+        "request_output_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "note": "ASR words, native speech text and acoustic codes are not thinking tokens."
+      },
+      "source": {
+        "page": "experiments/single-request.html",
+        "json": "research/current-s1.json",
+        "trace_id": "S1-02",
+        "source_sha256": "c54d598bddc3c07d756f1f2648cdcd13c8ed8e57331492e7515d540f4ca62dca",
+        "job_id": "1034130",
+        "gpus": 1,
+        "gpu_type": "NVIDIA A100-SXM4-80GB",
+        "roles": "Thinker, Talker, MTP and Code2Wav share GPU 0; S2 absent."
+      },
+      "scope": "Historical software check, excluded from the 105-question evaluation."
+    },
+    {
+      "id": "saved-greeting",
+      "question": "Do you know any easy recipes for homemade bread?",
+      "native_text": "Hello, this is your voice assistant. How can I help you today?",
+      "spoken_answer": "Oh, this is your voice assistant. How can I help you today?",
+      "reference": "Give an easy bread recipe or ask a recipe-specific clarification.",
+      "required_facts": [
+        {
+          "id": "requested_content",
+          "text": "Address the bread-recipe request with a recipe or relevant clarification.",
+          "any_patterns": [
+            "\\b(bread|flour|yeast|recipe)\\b"
+          ],
+          "contradiction_patterns": []
+        }
+      ],
+      "score": 0,
+      "state": "scored_review",
+      "reason": "The recorded speech is only a generic greeting; it gives neither a bread recipe nor a recipe-specific clarification.",
+      "fact_checks": [
+        {
+          "fact_id": "requested_content",
+          "fact": "Address the bread-recipe request with a recipe or relevant clarification.",
+          "pattern_match": false,
+          "contradiction_flag": false
+        }
+      ],
+      "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
+      "candidate_sha256": "45b3921e3cd87746903011db134585610be30032bf95807d8f7dfad6c7e3dbeb",
+      "reference_sha256": "cfa81d0a44da565d5c6abf6a6686affec724e95df295c873c38833c7fb773958",
+      "audio": {
+        "sha256": "66f4410d98efe0f9e99b331306a24c435fcb7cfb52683f6a19b47e0ccc390ac4",
+        "sample_rate": 24000,
+        "channels": 1,
+        "full_duration_seconds": 36.00020833333333,
+        "window_seconds": [
+          0.0,
+          36.00020833333333
+        ],
+        "scored_samples": 864005,
+        "nonquiet_seconds": 3.76,
+        "silence_threshold_rms": 0.001,
+        "frame_seconds": 0.02,
+        "peak": 0.928863525390625,
+        "status": "speech_or_sound",
+        "scope": "Energy is a silence diagnostic; nonquiet audio alone does not prove speech."
+      },
+      "tokens": {
+        "thinking": {
+          "status": "not_applicable",
+          "count": null
+        },
+        "answer_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "control_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "auxiliary_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "input_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "input_audio_codes": {
+          "status": "unavailable",
+          "count": null
+        },
+        "output_audio_codes": {
+          "status": "unavailable",
+          "count": null
+        },
+        "amortized_output_text": {
+          "status": "not_run",
+          "count": 0
+        },
+        "request_output_text": {
+          "status": "unavailable",
+          "count": null
+        },
+        "note": "ASR words, native speech text and acoustic codes are not thinking tokens."
+      },
+      "source": {
+        "page": "experiments/handoff.html",
+        "json": "research/current-handoff.json",
+        "trace_id": "E1a",
+        "source_sha256": "f41668331def996a0f0ab191ffe8c558c53574e4c1690b45a937d659b66212f7",
+        "job_id": "1030269",
+        "gpus": 3,
+        "gpu_type": "H100 SXM 80 GB",
+        "roles": "Thinker GPU 0; Talker/MTP/Code2Wav GPU 1; S2 GPU 2, with dispatch disabled for this case."
+      },
+      "scope": "Historical software check, excluded from the 105-question evaluation."
+    }
+  ],
+  "review_method": "Codex review of stored independent transcripts; no new ASR or LLM-judge inference.",
+  "token_summary": {
+    "thinking": {
+      "known_cases": 0,
+      "status_counts": {
+        "not_applicable": 3
+      },
+      "mean_all_known_attempts": null,
+      "median_all_known_attempts": null,
+      "correct_only_known_cases": 0,
+      "mean_correct_only": null
+    },
+    "answer_text": {
+      "known_cases": 0,
+      "status_counts": {
+        "unavailable": 3
+      },
+      "mean_all_known_attempts": null,
+      "median_all_known_attempts": null,
+      "correct_only_known_cases": 0,
+      "mean_correct_only": null
+    },
+    "request_output_text": {
+      "known_cases": 0,
+      "status_counts": {
+        "unavailable": 3
+      },
+      "mean_all_known_attempts": null,
+      "median_all_known_attempts": null,
+      "correct_only_known_cases": 0,
+      "mean_correct_only": null
+    },
+    "input_text": {
+      "known_cases": 0,
+      "status_counts": {
+        "unavailable": 3
+      },
+      "mean_all_known_attempts": null,
+      "median_all_known_attempts": null,
+      "correct_only_known_cases": 0,
+      "mean_correct_only": null
+    },
+    "amortized_output_text": {
+      "known_cases": 3,
+      "status_counts": {
+        "not_run": 3
+      },
+      "mean_all_known_attempts": 0,
+      "median_all_known_attempts": 0,
+      "correct_only_known_cases": 2,
+      "mean_correct_only": 0
+    },
+    "output_audio_codes": {
+      "known_cases": 0,
+      "status_counts": {
+        "unavailable": 3
+      },
+      "mean_all_known_attempts": null,
+      "median_all_known_attempts": null,
+      "correct_only_known_cases": 0,
+      "mean_correct_only": null
+    }
+  },
+  "cost": {
+    "wall_seconds": 0.32146571413613856,
+    "cases_per_second": 9.332254943771455,
+    "gpus": 0,
+    "maximum_active_gpus": 0,
+    "GPU_roles": {},
+    "shared_GPU_components": [],
+    "GPU_dependencies": [],
+    "scope": "CPU replay/scoring only; original speech inference and transcription costs are excluded."
+  },
+  "pending": [
+    "Run and inspect the small end-to-end S1 pilot.",
+    "Connect and validate the local vLLM judge and new ASR outputs.",
+    "Check actual Moshi and MiniCPM caller exports.",
+    "Generate or repair and validate all 105 reference answers.",
+    "Qualify long history and any declared capacity fallback.",
+    "Integrate new inference jobs with the progress exporter, then freeze the full evaluator."
+  ],
+  "code_hashes": {
+    "code/s1_eval/__init__.py": "a31af2dce74ec2944554c14a732f82d7085f10a7939cd05a2c1a50b45503cdf8",
+    "code/s1_eval/core.py": "f8001e8d4a75f28e7543d8b5220298643735a96d55a41d64eb08f531899e58e0",
+    "code/s1_eval/runner.py": "a86844eb69b774040e29c9fae34e0421f1c6e38c0ddb4c70351905d5e74eee14",
+    "code/run_s1_evaluation.py": "9a06f41be2cdeec58aecd66c180eea0097226a87806460d7db362502651fa48f",
+    "code/check_s1_evaluation.py": "629a741d43d04251420a32eb77500dc231a8680abf79858efdb0cbdaa4308b4a"
+  }
+}

@@ -103,7 +103,7 @@
       "id": "chunk_index",
       "tex": "i",
       "name": "Larger thinking-chunk index",
-      "definition": "i is an integer from 1 to K_e; it counts the shared 20–45 second chunks, not native S1 frames or generated tokens."
+      "definition": "i is an integer from 1 to K_e; it counts the shared 10–40 second chunks, not native S1 frames or generated tokens."
     },
     {
       "id": "chunk_end",

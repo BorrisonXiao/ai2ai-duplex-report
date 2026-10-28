@@ -6,7 +6,7 @@ import re
 from urllib.parse import unquote, urlsplit
 
 from build_navigation import ROOT, REVIEW_KEYS, EXPERIMENT_KEYS, page_category
-from site_navigation import project_tabs, review_tabs, experiment_subtabs, proposal_tabs
+from site_navigation import project_tabs, review_tabs, experiment_subtabs, proposal_tabs, progress_tabs
 from validate_site import Parser
 
 
@@ -34,6 +34,9 @@ def main():
             assert '>AMI questions</a>' in text and '>AMI question audio</a>' in text, relative
         elif category == 'proposal':
             assert proposal_tabs('prethinking' if path.name == 'prethinking.html' else 'overview', prefix) in text, relative
+        if category == 'todo':
+            current = {'todo.html':'roadmap','what-to-think.html':'plan','study-progress.html':'progress','notation.html':'notation','experiments/question-checks.html':'checks'}.get(relative)
+            assert progress_tabs(current, prefix) in text, (relative,'missing project progress menu')
         assert prefix+'assets/site.css?v='+css_hash in text, (relative, 'stale stylesheet')
         # All navigation links must work beneath the GitHub Pages project prefix.
         for nav in re.findall(r'<nav\b[^>]*>.*?</nav>', text, re.S):
