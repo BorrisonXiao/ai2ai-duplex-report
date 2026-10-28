@@ -309,13 +309,28 @@ class EvaluationChecks(unittest.TestCase):
         bank = self.root/'site/research/what-to-think/answer-validation-template.json'
         atomic_json(self.root/'references.json', references); atomic_json(bank, {'questions': inventory}); atomic_json(path, data)
         with self.assertRaisesRegex(ValueError, 'must be validated'):load_manifest(path, self.root)
-        for q in inventory:q.update(reference_status='verified', validated_answer='Fixture answer.')
+        for q in inventory:q.update(reference_status='verified', validated_answer=references[q['id']]['answer'], required_facts=references[q['id']]['required_facts'], evidence=references[q['id']]['evidence'])
         bank_data = {'questions': inventory}; atomic_json(bank, bank_data)
-        data['frozen_inventory_sha256'] = fingerprint(bank_data); atomic_json(path, data)
+        data['frozen_inventory_sha256'] = fingerprint(bank_data); data['frozen_references_sha256'] = fingerprint(references); atomic_json(path, data)
         self.assertEqual(len(load_manifest(path, self.root)[0]['cases']), 105)
+        self.valid_frozen_fixture = (path, data, references, bank, bank_data)
         inventory[0]['question'] = 'A changed recorded question.'
         atomic_json(bank, bank_data); data['frozen_inventory_sha256'] = fingerprint(bank_data); atomic_json(path, data)
         with self.assertRaisesRegex(ValueError, 'request version'):load_manifest(path, self.root)
+
+    def test_scoring_references_must_match_frozen_answers_and_facts(self):
+        self.test_full_bank_cannot_use_draft_inventory_or_a_different_request()
+        path, data, references, bank, bank_data = self.valid_frozen_fixture
+        bank_data['questions'][0]['question'] = references['0']['question']
+        atomic_json(bank, bank_data); data['frozen_inventory_sha256'] = fingerprint(bank_data)
+        original = copy.deepcopy(references['0'])
+        for field in ['answer', 'required_facts', 'evidence']:
+            references['0'] = copy.deepcopy(original)
+            references['0'][field] = ('Different answer.' if field=='answer' else [{'id':'changed','text':'Different fact.','source':'fixture'}])
+            atomic_json(self.root/'references.json', references)
+            data['frozen_references_sha256'] = fingerprint(references); atomic_json(path, data)
+            with self.assertRaisesRegex(ValueError, 'differs from the frozen answer'):
+                load_manifest(path, self.root)
 
 
 def main():

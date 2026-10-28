@@ -8,7 +8,7 @@
     },
     {
       "status": "complete",
-      "text": "The S1 evaluator passes 42 script checks and checks three earlier real outputs.",
+      "text": "The S1 evaluator passes 43 script checks and checks three earlier real outputs.",
       "url": "study-progress.html#software-checks"
     },
     {
@@ -89,7 +89,7 @@
           "text": "Implement shared S1 answer extraction, scoring and token accounting.",
           "status": "complete",
           "url": "study-progress.html#software-checks",
-          "evidence": "Three earlier real outputs and 42 CPU checks pass."
+          "evidence": "Three earlier real outputs and 43 CPU checks pass."
         },
         {
           "id": "report",
@@ -103,7 +103,7 @@
           "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
           "status": "complete",
           "url": "study-progress.html#software-checks",
-          "evidence": "Three earlier real outputs and 42 CPU checks pass."
+          "evidence": "Three earlier real outputs and 43 CPU checks pass."
         },
         {
           "id": "s1-pilot",

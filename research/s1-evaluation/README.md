@@ -28,11 +28,11 @@ envs/data/bin/python scripts/check_s1_evaluation.py /tmp/s1-evaluator-checks.jso
 envs/data/bin/python scripts/run_s1_evaluation.py evaluate \
   --manifest research/s1_evaluation/saved-output-manifest.json \
   --reviews research/s1_evaluation/control-reviews.json \
-  --output exp/s1_evaluation/saved_outputs_v2 \
+  --output exp/s1_evaluation/saved_outputs_v3 \
   --project-progress site/research/what-to-think/execution-progress.json
 
 envs/data/bin/python scripts/run_s1_evaluation.py serve \
-  --directory exp/s1_evaluation/saved_outputs_v2 --port 8765
+  --directory exp/s1_evaluation/saved_outputs_v3 --port 8765
 ```
 
 The last command serves the local report at `http://127.0.0.1:8765/live.html`. The evaluation worker writes progress; the viewer polls every five seconds and marks stale running updates after 60 seconds. Public report pages are dated snapshots published at checkpoints.
@@ -43,6 +43,6 @@ Use `source.format = run_record` and export `s1-eval-run/v1` with `case_id`, `qu
 
 Moshi, MiniCPM and DuplexOmni S1 share this contract; their actual new inference adapters still need end-to-end pilot checks. The first pilot starts with the existing DuplexOmni caller. Native token IDs must be explicitly limited to request-time output with `token_scope: request_time`; absent IDs remain unavailable, and output audio codes stay separate. A native S1 text stream is never relabeled as a thinking trace.
 
-Before `main105` evaluation, every reference-inventory row must be verified and contain a validated answer, the manifest must bind that frozen inventory, and all 105 IDs and request versions must match it. Historical published traces are rejected as main evaluation inputs. Missing runs remain pending until `--finalize`; then they count as failures. Missing judgments or unclear ASR keep final accuracy pending. Quiet audio requires listening; all-zero audio is a failure. Truncated answers need explicit completeness review.
+Before `main105` evaluation, every reference-inventory row must be verified and contain a validated answer, the manifest must bind that frozen inventory and scoring-reference file, the scoring answers/facts/evidence must exactly match the inventory, and all 105 IDs and request versions must match it. Historical published traces are rejected as main evaluation inputs. Missing runs remain pending until `--finalize`; then they count as failures. Missing judgments or unclear ASR keep final accuracy pending. Quiet audio requires listening; all-zero audio is a failure. Truncated answers need explicit completeness review.
 
 The scoring interface exports blinded judge inputs but does not launch a judge model. Current saved-output judgments are Codex reviews of stored independent transcripts; connecting a local vLLM judge and checking its judgments are still pending. Software checks do not demonstrate long-history retention or validate the full evaluation protocol.

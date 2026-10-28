@@ -89,6 +89,14 @@ def load_manifest(path, root):
             raise ValueError('Main question text differs from the frozen request version')
         if set(ids) != {q['id'] for q in inventory['questions']}:
             raise ValueError('Main evaluation differs from the frozen question inventory')
+        if manifest.get('frozen_references_sha256') != fingerprint(references):
+            raise ValueError('Main manifest must bind the frozen scoring references')
+        for q in inventory['questions']:
+            reference = references[q['id']]
+            if (reference['answer'] != q['validated_answer'] or
+                    reference['required_facts'] != q.get('required_facts') or
+                    reference['evidence'] != q.get('evidence')):
+                raise ValueError('Scoring reference differs from the frozen answer/facts/evidence')
     return manifest, references
 
 

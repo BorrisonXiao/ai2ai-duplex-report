@@ -25,7 +25,7 @@
       "text": "Implement shared S1 answer extraction, scoring and token accounting.",
       "status": "complete",
       "url": "study-progress.html#software-checks",
-      "evidence": "Three earlier real outputs and 42 CPU checks pass."
+      "evidence": "Three earlier real outputs and 43 CPU checks pass."
     },
     {
       "id": "report",
@@ -39,7 +39,7 @@
       "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
       "status": "complete",
       "url": "study-progress.html#software-checks",
-      "evidence": "Three earlier real outputs and 42 CPU checks pass."
+      "evidence": "Three earlier real outputs and 43 CPU checks pass."
     },
     {
       "id": "s1-pilot",
@@ -84,7 +84,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T00:47:56Z",
+  "updated_at": "2026-10-28T00:57:44Z",
   "runtime_reporting": "local_evaluation_worker_implemented_inference_integration_pending",
   "software_checks": {
     "status": "completed",
@@ -94,8 +94,8 @@
     "scored": 3,
     "correct": 2,
     "scope": "Earlier real outputs; excluded from the new 105-question evaluation.",
-    "regression_tests": 42,
+    "regression_tests": 43,
     "public_summary": "research/s1-evaluation/summary.json"
   },
-  "last_worker_update": "2026-10-28T00:44:35Z"
+  "last_worker_update": "2026-10-28T00:56:06Z"
 }

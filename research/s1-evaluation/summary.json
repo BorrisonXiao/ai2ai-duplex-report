@@ -1,16 +1,17 @@
 {
   "status": "saved_output_software_checks_passed",
-  "updated_at": "2026-10-28T00:47:56Z",
+  "updated_at": "2026-10-28T00:57:44Z",
   "scope": "CPU evaluation software checks, not a new model run or a completed evaluation protocol.",
+  "evaluator_version": "0.1.1",
   "saved_outputs": 3,
   "answers_supported": 2,
   "task_failures_detected": 1,
   "regression": {
     "status": "pass",
-    "tests": 42,
+    "tests": 43,
     "failures": 0,
     "errors": 0,
-    "wall_seconds": 0.23430367792025208,
+    "wall_seconds": 0.3064928778912872,
     "gpus": 0,
     "scope": "Synthetic script fixtures, not new model outputs or benchmark results."
   },
@@ -18,6 +19,7 @@
     {
       "id": "saved-sky",
       "question": "What color is the sky on a clear day?",
+      "evaluator_version": "0.1.1",
       "native_text": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
       "spoken_answer": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
       "reference": "The sky is blue on a clear day.",
@@ -45,7 +47,7 @@
         }
       ],
       "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
-      "candidate_sha256": "47d6c0abc19bc87bbd966b3ac4d88a749c1d64d868d1f06fee4689e794d9df78",
+      "candidate_sha256": "a16332492696635f7cf34262531ca1c159961dd963382604250fc06228f0c9fb",
       "reference_sha256": "ea79f46a3c2f2e738a3060c4b3e45823e8374a813b7bf7971dae301b21e3d8ea",
       "audio": {
         "sha256": "0c0580a2141ee68b189b9348b9b2cb1bb97f5fc2503989f3a7392590644cf710",
@@ -118,6 +120,7 @@
     {
       "id": "saved-repeat",
       "question": "Please say exactly: The sky is blue.",
+      "evaluator_version": "0.1.1",
       "native_text": "The sky is blue.",
       "spoken_answer": "The sky is blue.",
       "reference": "The sky is blue.",
@@ -143,7 +146,7 @@
         }
       ],
       "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
-      "candidate_sha256": "f9ec90bf493f6e0277618586afb6867e0fe03c25ad55df3579194fd2f3466f04",
+      "candidate_sha256": "84734b679c4a76139f282bf2cd5784c819fcfe2bb13be03f352ec99723abf842",
       "reference_sha256": "4d502faad8740f09676e7798f275b19e6e08718f7e2aa275ebb5322df89d8290",
       "audio": {
         "sha256": "9e1de78c874188db95be1ca79076414fd03ce8d5c0e4f2c7571c1dfc73a85548",
@@ -216,6 +219,7 @@
     {
       "id": "saved-greeting",
       "question": "Do you know any easy recipes for homemade bread?",
+      "evaluator_version": "0.1.1",
       "native_text": "Hello, this is your voice assistant. How can I help you today?",
       "spoken_answer": "Oh, this is your voice assistant. How can I help you today?",
       "reference": "Give an easy bread recipe or ask a recipe-specific clarification.",
@@ -241,7 +245,7 @@
         }
       ],
       "reviewer": "Codex review of the stored independent transcript; no new model or ASR inference",
-      "candidate_sha256": "45b3921e3cd87746903011db134585610be30032bf95807d8f7dfad6c7e3dbeb",
+      "candidate_sha256": "312078ba6d4f9a1b4ed544c958ec101656059f41152c19d91bc79dbdd5e5115a",
       "reference_sha256": "cfa81d0a44da565d5c6abf6a6686affec724e95df295c873c38833c7fb773958",
       "audio": {
         "sha256": "66f4410d98efe0f9e99b331306a24c435fcb7cfb52683f6a19b47e0ccc390ac4",
@@ -376,8 +380,8 @@
     }
   },
   "cost": {
-    "wall_seconds": 0.32146571413613856,
-    "cases_per_second": 9.332254943771455,
+    "wall_seconds": 0.2949014022015035,
+    "cases_per_second": 10.17289160921021,
     "gpus": 0,
     "maximum_active_gpus": 0,
     "GPU_roles": {},
@@ -394,10 +398,10 @@
     "Integrate new inference jobs with the progress exporter, then freeze the full evaluator."
   ],
   "code_hashes": {
-    "code/s1_eval/__init__.py": "a31af2dce74ec2944554c14a732f82d7085f10a7939cd05a2c1a50b45503cdf8",
+    "code/s1_eval/__init__.py": "a82051c9fd845738625b28deb538830ca834079ce14a7b17e1ae009f700f437d",
     "code/s1_eval/core.py": "f8001e8d4a75f28e7543d8b5220298643735a96d55a41d64eb08f531899e58e0",
-    "code/s1_eval/runner.py": "a86844eb69b774040e29c9fae34e0421f1c6e38c0ddb4c70351905d5e74eee14",
+    "code/s1_eval/runner.py": "26becf19230f2273c5ea6dea167c95afe8c7358ccf953815402bb6b94555fea3",
     "code/run_s1_evaluation.py": "9a06f41be2cdeec58aecd66c180eea0097226a87806460d7db362502651fa48f",
-    "code/check_s1_evaluation.py": "629a741d43d04251420a32eb77500dc231a8680abf79858efdb0cbdaa4308b4a"
+    "code/check_s1_evaluation.py": "04ee9cfc5e7d0b7cb77ba46266e585d5753bc5e18b836acc7cb5acafff0381e5"
   }
 }
