@@ -13,8 +13,8 @@
     },
     {
       "status": "pending",
-      "text": "Qualify S1 input, grounding and automatic judging before broader experiments.",
-      "url": "study-progress.html#s1-empty"
+      "text": "Compare two native listening methods before broader S1 evaluation.",
+      "url": "study-progress.html#s1-listening"
     },
     {
       "status": "complete",
@@ -123,12 +123,19 @@
           "id": "s1-repair",
           "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
           "status": "partial",
-          "url": "study-progress.html#s1-empty",
-          "evidence": "Speech activation improved but complete grounded answers remain0/3 in the combined buffered condition; native history, decoding and meeting-role controls remain unreliable. Diagnose native behavior separately from a proposed explicit answer-now content control."
+          "url": "study-progress.html#s1-listening",
+          "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated."
+        },
+        {
+          "id": "s1-listening-comparison",
+          "text": "Run both listening methods and inspect their meeting answers against source facts.",
+          "url": "study-progress.html#listening-examples",
+          "status": "complete",
+          "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
         },
         {
           "id": "gate",
-          "text": "Qualify full-history S1 input and automatic judging, then freeze the evaluation protocol before broader experiments.",
+          "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "url": "what-to-think.html#evaluation-first",
           "evidence": "Fresh pilot found missing request recognition, rejected response format and inconsistent automatic fact verdicts; protocol remains unvalidated."

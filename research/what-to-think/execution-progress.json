@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "updated": "2026-10-28",
   "status": "implementation_underway",
-  "snapshot_label": "S1 diagnosis complete; reliable grounded-speech repair unresolved",
+  "snapshot_label": "Controlled native listening comparison inspected",
   "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
@@ -59,12 +59,19 @@
       "id": "s1-repair",
       "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
       "status": "partial",
-      "url": "study-progress.html#s1-empty",
-      "evidence": "Speech activation improved but complete grounded answers remain0/3 in the combined buffered condition; native history, decoding and meeting-role controls remain unreliable. Diagnose native behavior separately from a proposed explicit answer-now content control."
+      "url": "study-progress.html#s1-listening",
+      "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated."
+    },
+    {
+      "id": "s1-listening-comparison",
+      "text": "Run both listening methods and inspect their meeting answers against source facts.",
+      "url": "study-progress.html#listening-examples",
+      "status": "complete",
+      "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
     },
     {
       "id": "gate",
-      "text": "Qualify full-history S1 input and automatic judging, then freeze the evaluation protocol before broader experiments.",
+      "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
       "url": "what-to-think.html#evaluation-first",
       "evidence": "Fresh pilot found missing request recognition, rejected response format and inconsistent automatic fact verdicts; protocol remains unvalidated."
@@ -94,8 +101,8 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T05:37:52Z",
-  "runtime_reporting": "native_phase_case_and_heartbeat_connected",
+  "updated_at": "2026-10-28T17:46:56.859361+00:00",
+  "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
     "evaluation_set": "historical_pipeline_check",
@@ -123,5 +130,13 @@
     "conditions_recorded": 22,
     "status": "completed_content_review_required",
     "public_progress": "research/s1-empty-diagnosis/progress.json"
-  }
+  },
+  "listening_comparison": {
+    "public_progress": "research/s1-listening/progress.json",
+    "outputs_saved": 4,
+    "outputs_reviewed": 4,
+    "state": "completed_source_reviewed",
+    "active_gpus": 0
+  },
+  "active_jobs": []
 }

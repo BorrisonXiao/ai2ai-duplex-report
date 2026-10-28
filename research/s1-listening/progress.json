@@ -1,0 +1,2296 @@
+{
+  "updated_at": "2026-10-28T17:46:56.859361+00:00",
+  "state": "completed_source_reviewed",
+  "stage": "meeting_comparison",
+  "active_gpus": 0,
+  "job": "1353280",
+  "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+  "maximum_active_gpus": 2,
+  "roles": {
+    "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+  },
+  "dependencies": "Short control produces correct S1 text and nonquiet audio; independent ASR shows pronunciation problems, so spoken review stays separate. Two independent one-GPU jobs may overlap; each has private ports/sessions, all S1 on GPU 0 then ASR on GPU 0, no shared model service. Native decode and known-end first-speech rule match both methods.",
+  "allocated_seconds": 3885,
+  "allocated_gpu_hours": 2.6016666666666666,
+  "distinct_questions": 2,
+  "methods": 2,
+  "cases": [
+    {
+      "case": "P01",
+      "method": "decode_clear",
+      "run_source_job": "1353279",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "required_facts": [
+        "C said the files were in the shared folder.",
+        "D initially saw only their own presentation, and C then identified a components-design PowerPoint.",
+        "The exchange does not establish a general folder outage or an upload failure."
+      ],
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0017",
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so."
+        },
+        {
+          "id": "TS3006c-s0022",
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah."
+        },
+        {
+          "id": "TS3006c-s0015",
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations?"
+        },
+        {
+          "id": "TS3006c-s0018",
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design."
+        },
+        {
+          "id": "TS3006c-s0024",
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+        }
+      ],
+      "request_minutes": 5.150499999999999,
+      "status": "completed_content_review_required",
+      "spoken_transcript": "Day, just to confirm you want me to stop the work and not proceed further?",
+      "source_review": {
+        "reviewer": "Codex source, native-text and independent-ASR inspection; not a human listening rating",
+        "native_text_sha256": "308a0d7d6e4a974a65976612aa774919a3146bce38b02ad68124d2d71e881d94",
+        "audio_sha256": "3512ddf739b03cadd595dec474e7be6fb47ddfc6e88f262cb9ffe54c65993e05",
+        "speech_transcript_sha256": "b36604b988349a409abdb41329ac7984876ec90ab061e22fa9cad7ba3060207c",
+        "native_text_complete": false,
+        "native_text_score": 0,
+        "spoken_answer_score": 0,
+        "spoken_score_basis": "Independent Parakeet transcription, checked against listed source evidence; no human clarity rating.",
+        "spoken_review": "No required fact recovered in the independent speech transcript.",
+        "short_result": "No required fact in text or speech transcript",
+        "reason": "Neither the native answer text nor the independent speech transcript gives the shared-folder statement or identifies the PowerPoint; the reply is unrelated to the question. Native ASR contains no request words, including subsequent silence packets. All earlier history was retained.",
+        "required_facts": [
+          {
+            "fact": "A participant said the files were in the shared folder.",
+            "native_text_supported": false,
+            "speech_transcript_supported": false
+          },
+          {
+            "fact": "A components-design PowerPoint was identified.",
+            "native_text_supported": false,
+            "speech_transcript_supported": false
+          }
+        ],
+        "listed_source_evidence_retained": true
+      },
+      "phase": "answering",
+      "frames_completed": 696,
+      "listening_frames": 656,
+      "answer_frames": 40,
+      "trimmed_frames": 0,
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 37731,
+      "question_asr": "",
+      "speech_text": "I understand. Just to confirm, you want me to stop the work and not proceed further?",
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 657,
+        "conservative_prompt_bound": 36910,
+        "trimmed_frames": 0,
+        "messages_sha256": "67f095e3dff18d547cf8c6ec796c83eb36606976fb774b8c8f19d23ab458fa90"
+      },
+      "response_seconds": 19.176875,
+      "answer_enabled_at_seconds": 314.88,
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "input_level_gain_db": 2.9203186630209776,
+      "audio_sha256": "3512ddf739b03cadd595dec474e7be6fb47ddfc6e88f262cb9ffe54c65993e05",
+      "wall_seconds": 682.5914795640856,
+      "question_turns": [
+        {
+          "frame": 643,
+          "phase": "listening",
+          "start_seconds": 308.64,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 644,
+          "phase": "listening",
+          "start_seconds": 309.12,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 645,
+          "phase": "listening",
+          "start_seconds": 309.59999999999997,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 646,
+          "phase": "listening",
+          "start_seconds": 310.08,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 647,
+          "phase": "listening",
+          "start_seconds": 310.56,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 648,
+          "phase": "listening",
+          "start_seconds": 311.03999999999996,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 649,
+          "phase": "listening",
+          "start_seconds": 311.52,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 650,
+          "phase": "listening",
+          "start_seconds": 312.0,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 651,
+          "phase": "listening",
+          "start_seconds": 312.47999999999996,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 652,
+          "phase": "listening",
+          "start_seconds": 312.96,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 653,
+          "phase": "listening",
+          "start_seconds": 313.44,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 654,
+          "phase": "listening",
+          "start_seconds": 313.92,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 655,
+          "phase": "listening",
+          "start_seconds": 314.4,
+          "raw_text": "{'asr': ''",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 656,
+          "phase": "answering",
+          "start_seconds": 314.88,
+          "raw_text": "{'asr': '', 'tts': 'I understand. ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'I understand. ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 657,
+          "phase": "answering",
+          "start_seconds": 315.36,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 658,
+          "phase": "answering",
+          "start_seconds": 315.84,
+          "raw_text": "{'asr': '', 'tts': 'Just to ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'Just to ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 659,
+          "phase": "answering",
+          "start_seconds": 316.32,
+          "raw_text": "{'asr': '', 'tts': 'confirm, ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'confirm, ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 660,
+          "phase": "answering",
+          "start_seconds": 316.8,
+          "raw_text": "{'asr': '', 'tts': 'you want ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'you want ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 661,
+          "phase": "answering",
+          "start_seconds": 317.28,
+          "raw_text": "{'asr': '', 'tts': 'me to stop ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'me to stop ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 662,
+          "phase": "answering",
+          "start_seconds": 317.76,
+          "raw_text": "{'asr': '', 'tts': 'the work ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'the work ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 663,
+          "phase": "answering",
+          "start_seconds": 318.24,
+          "raw_text": "{'asr': '', 'tts': 'and not ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'and not ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 664,
+          "phase": "answering",
+          "start_seconds": 318.71999999999997,
+          "raw_text": "{'asr': '', 'tts': 'proceed ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'proceed ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 665,
+          "phase": "answering",
+          "start_seconds": 319.2,
+          "raw_text": "{'asr': '', 'tts': 'further?', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'further?', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 666,
+          "phase": "answering",
+          "start_seconds": 319.68,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 667,
+          "phase": "answering",
+          "start_seconds": 320.15999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 668,
+          "phase": "answering",
+          "start_seconds": 320.64,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 669,
+          "phase": "answering",
+          "start_seconds": 321.12,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 670,
+          "phase": "answering",
+          "start_seconds": 321.59999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 671,
+          "phase": "answering",
+          "start_seconds": 322.08,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 672,
+          "phase": "answering",
+          "start_seconds": 322.56,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 673,
+          "phase": "answering",
+          "start_seconds": 323.03999999999996,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 674,
+          "phase": "answering",
+          "start_seconds": 323.52,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 675,
+          "phase": "answering",
+          "start_seconds": 324.0,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 676,
+          "phase": "answering",
+          "start_seconds": 324.47999999999996,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 677,
+          "phase": "answering",
+          "start_seconds": 324.96,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 678,
+          "phase": "answering",
+          "start_seconds": 325.44,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 679,
+          "phase": "answering",
+          "start_seconds": 325.92,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 680,
+          "phase": "answering",
+          "start_seconds": 326.4,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 681,
+          "phase": "answering",
+          "start_seconds": 326.88,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 682,
+          "phase": "answering",
+          "start_seconds": 327.36,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 683,
+          "phase": "answering",
+          "start_seconds": 327.84,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 684,
+          "phase": "answering",
+          "start_seconds": 328.32,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 685,
+          "phase": "answering",
+          "start_seconds": 328.8,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 686,
+          "phase": "answering",
+          "start_seconds": 329.28,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 687,
+          "phase": "answering",
+          "start_seconds": 329.76,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 688,
+          "phase": "answering",
+          "start_seconds": 330.24,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 689,
+          "phase": "answering",
+          "start_seconds": 330.71999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 690,
+          "phase": "answering",
+          "start_seconds": 331.2,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 691,
+          "phase": "answering",
+          "start_seconds": 331.68,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 692,
+          "phase": "answering",
+          "start_seconds": 332.15999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 693,
+          "phase": "answering",
+          "start_seconds": 332.64,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 694,
+          "phase": "answering",
+          "start_seconds": 333.12,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 695,
+          "phase": "answering",
+          "start_seconds": 333.59999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        }
+      ],
+      "listening_rule_violations": 0,
+      "ASR_text_changes": 0,
+      "retained_start_at_answer_end": 0.0,
+      "audio_peak": 0.920928955078125,
+      "audio_rms": 0.09201421681633877,
+      "audio": "research/s1-listening/audio/P01-decode_clear.wav",
+      "source_evidence_fully_retained": true
+    },
+    {
+      "case": "P01",
+      "method": "constrained",
+      "run_source_job": "1353280",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "required_facts": [
+        "C said the files were in the shared folder.",
+        "D initially saw only their own presentation, and C then identified a components-design PowerPoint.",
+        "The exchange does not establish a general folder outage or an upload failure."
+      ],
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0017",
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so."
+        },
+        {
+          "id": "TS3006c-s0022",
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah."
+        },
+        {
+          "id": "TS3006c-s0015",
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations?"
+        },
+        {
+          "id": "TS3006c-s0018",
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design."
+        },
+        {
+          "id": "TS3006c-s0024",
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+        }
+      ],
+      "request_minutes": 5.150499999999999,
+      "status": "completed_content_review_required",
+      "spoken_transcript": "Just send me the problem statement.",
+      "source_review": {
+        "reviewer": "Codex source, native-text and independent-ASR inspection; not a human listening rating",
+        "native_text_sha256": "84d23a589c141dbe29c1f1e00026b4e9ce1f9016af9a5e31b1a5e2084e734765",
+        "audio_sha256": "f5808f91b780b9bbabdba0019abd9879aa17ea9cb81303986e27b4768013da77",
+        "speech_transcript_sha256": "a8c992599ac81ae7c1c41cb7a511227eaa2b21279ae162530c72de40415bc808",
+        "native_text_complete": false,
+        "native_text_score": 0,
+        "spoken_answer_score": 0,
+        "spoken_score_basis": "Independent Parakeet transcription, checked against listed source evidence; no human clarity rating.",
+        "spoken_review": "No required fact recovered in the independent speech transcript.",
+        "short_result": "No required fact in text or speech transcript",
+        "reason": "Neither the native answer text nor the independent speech transcript gives the shared-folder statement or identifies the PowerPoint; the reply is unrelated to the question. Native ASR contains no request words, including subsequent silence packets. All earlier history was retained.",
+        "required_facts": [
+          {
+            "fact": "A participant said the files were in the shared folder.",
+            "native_text_supported": false,
+            "speech_transcript_supported": false
+          },
+          {
+            "fact": "A components-design PowerPoint was identified.",
+            "native_text_supported": false,
+            "speech_transcript_supported": false
+          }
+        ],
+        "listed_source_evidence_retained": true
+      },
+      "phase": "answering",
+      "frames_completed": 696,
+      "listening_frames": 656,
+      "answer_frames": 40,
+      "trimmed_frames": 0,
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 37711,
+      "question_asr": "",
+      "speech_text": "No problem. Just send me the problem statement.",
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 657,
+        "conservative_prompt_bound": 36906,
+        "trimmed_frames": 0,
+        "messages_sha256": "d3fef2f55f9ae61410d623b69697b432910d7f4cc2ea37962b7fa31f06e5753a"
+      },
+      "response_seconds": 19.176875,
+      "answer_enabled_at_seconds": 314.88,
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "input_level_gain_db": 2.9203186630209776,
+      "audio_sha256": "f5808f91b780b9bbabdba0019abd9879aa17ea9cb81303986e27b4768013da77",
+      "wall_seconds": 729.2116041430272,
+      "question_turns": [
+        {
+          "frame": 643,
+          "phase": "listening",
+          "start_seconds": 308.64,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 644,
+          "phase": "listening",
+          "start_seconds": 309.12,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 645,
+          "phase": "listening",
+          "start_seconds": 309.59999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 646,
+          "phase": "listening",
+          "start_seconds": 310.08,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 647,
+          "phase": "listening",
+          "start_seconds": 310.56,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 648,
+          "phase": "listening",
+          "start_seconds": 311.03999999999996,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 649,
+          "phase": "listening",
+          "start_seconds": 311.52,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 650,
+          "phase": "listening",
+          "start_seconds": 312.0,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 651,
+          "phase": "listening",
+          "start_seconds": 312.47999999999996,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 652,
+          "phase": "listening",
+          "start_seconds": 312.96,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 653,
+          "phase": "listening",
+          "start_seconds": 313.44,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 654,
+          "phase": "listening",
+          "start_seconds": 313.92,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 655,
+          "phase": "listening",
+          "start_seconds": 314.4,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 656,
+          "phase": "answering",
+          "start_seconds": 314.88,
+          "raw_text": "{'asr': '', 'tts': 'No problem. ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'No problem. ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 657,
+          "phase": "answering",
+          "start_seconds": 315.36,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 658,
+          "phase": "answering",
+          "start_seconds": 315.84,
+          "raw_text": "{'asr': '', 'tts': 'Just send ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'Just send ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 659,
+          "phase": "answering",
+          "start_seconds": 316.32,
+          "raw_text": "{'asr': '', 'tts': 'me the problem ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'me the problem ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 660,
+          "phase": "answering",
+          "start_seconds": 316.8,
+          "raw_text": "{'asr': '', 'tts': 'statement.', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': 'statement.', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 661,
+          "phase": "answering",
+          "start_seconds": 317.28,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 662,
+          "phase": "answering",
+          "start_seconds": 317.76,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 663,
+          "phase": "answering",
+          "start_seconds": 318.24,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 664,
+          "phase": "answering",
+          "start_seconds": 318.71999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 665,
+          "phase": "answering",
+          "start_seconds": 319.2,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 666,
+          "phase": "answering",
+          "start_seconds": 319.68,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 667,
+          "phase": "answering",
+          "start_seconds": 320.15999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 668,
+          "phase": "answering",
+          "start_seconds": 320.64,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 669,
+          "phase": "answering",
+          "start_seconds": 321.12,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 670,
+          "phase": "answering",
+          "start_seconds": 321.59999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 671,
+          "phase": "answering",
+          "start_seconds": 322.08,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 672,
+          "phase": "answering",
+          "start_seconds": 322.56,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 673,
+          "phase": "answering",
+          "start_seconds": 323.03999999999996,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 674,
+          "phase": "answering",
+          "start_seconds": 323.52,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 675,
+          "phase": "answering",
+          "start_seconds": 324.0,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 676,
+          "phase": "answering",
+          "start_seconds": 324.47999999999996,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 677,
+          "phase": "answering",
+          "start_seconds": 324.96,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 678,
+          "phase": "answering",
+          "start_seconds": 325.44,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 679,
+          "phase": "answering",
+          "start_seconds": 325.92,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 680,
+          "phase": "answering",
+          "start_seconds": 326.4,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 681,
+          "phase": "answering",
+          "start_seconds": 326.88,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 682,
+          "phase": "answering",
+          "start_seconds": 327.36,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 683,
+          "phase": "answering",
+          "start_seconds": 327.84,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 684,
+          "phase": "answering",
+          "start_seconds": 328.32,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 685,
+          "phase": "answering",
+          "start_seconds": 328.8,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 686,
+          "phase": "answering",
+          "start_seconds": 329.28,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 687,
+          "phase": "answering",
+          "start_seconds": 329.76,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 688,
+          "phase": "answering",
+          "start_seconds": 330.24,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 689,
+          "phase": "answering",
+          "start_seconds": 330.71999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 690,
+          "phase": "answering",
+          "start_seconds": 331.2,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 691,
+          "phase": "answering",
+          "start_seconds": 331.68,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 692,
+          "phase": "answering",
+          "start_seconds": 332.15999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 693,
+          "phase": "answering",
+          "start_seconds": 332.64,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 694,
+          "phase": "answering",
+          "start_seconds": 333.12,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 695,
+          "phase": "answering",
+          "start_seconds": 333.59999999999997,
+          "raw_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': '', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        }
+      ],
+      "listening_rule_violations": 0,
+      "ASR_text_changes": 0,
+      "retained_start_at_answer_end": 0.0,
+      "audio_peak": 0.801300048828125,
+      "audio_rms": 0.060982669443477876,
+      "audio": "research/s1-listening/audio/P01-constrained.wav",
+      "source_evidence_fully_retained": true
+    },
+    {
+      "case": "P02",
+      "method": "decode_clear",
+      "run_source_job": "1353279",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "required_facts": [
+        "For two equally plausible interpretations, choose one and leave it.",
+        "The discussion uses the example of \u201cice cream\u201d versus \u201cI scream\u201d."
+      ],
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0094",
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+        },
+        {
+          "id": "EN2004a-s0095",
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+        }
+      ],
+      "request_minutes": 9.352666666666666,
+      "status": "completed_content_review_required",
+      "spoken_transcript": "Let me take a look at this text and see how I can help. I see a lot of repetition here. Would you like me to extract the any nuke parts or just analyze the web trommel channel? Any new channel, channel, channel, any new channel, channel, any new channel, channel, channel, channel, channel, channel, new channel, channel, channel, channel, any new.",
+      "source_review": {
+        "reviewer": "Codex source, native-text and independent-ASR inspection; not a human listening rating",
+        "native_text_sha256": "6dbe8a54c6cea8d33551ee23303651e56c31cc88a6fd3d334516bfbc6d5884f0",
+        "audio_sha256": "d6482c0a566d8abe2387cd79912e32700c9959b9e78b4ee3bb78778165919c9f",
+        "speech_transcript_sha256": "ebee7a7d7b53d78d5a020317ca2f28f94b9acf733c5426f3b575254a58c6ca6f",
+        "native_text_complete": false,
+        "native_text_score": 0,
+        "spoken_answer_score": 0,
+        "spoken_score_basis": "Independent Parakeet transcription, checked against listed source evidence; no human clarity rating.",
+        "spoken_review": "No required fact recovered in the independent speech transcript.",
+        "short_result": "No required fact in text or speech transcript",
+        "reason": "Neither the native answer text nor the independent speech transcript states the agreed rule to choose one interpretation and leave it; the reply instead offers to inspect text. Native ASR repeats unrelated words during the request. The first 96 seconds were dropped at the context limit, but the required source passage at 6:20\u20136:32 remained available. The speech transcript also contains repeated channel words that are absent from the native answer text.",
+        "required_facts": [
+          {
+            "fact": "Choose one equally plausible interpretation and leave it; do not leave the word uncertain.",
+            "native_text_supported": false,
+            "speech_transcript_supported": false
+          }
+        ],
+        "listed_source_evidence_retained": true
+      },
+      "phase": "answering",
+      "frames_completed": 1217,
+      "listening_frames": 1177,
+      "answer_frames": 40,
+      "trimmed_frames": 200,
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 62149,
+      "question_asr": "channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new ",
+      "speech_text": "Alright, let me take a look at this text and see how I can help. I see a lot of repetition here. Would you like me to extract the unique parts or just analyze the structure?",
+      "answer_context": {
+        "oldest_retained_seconds": 96.0,
+        "retained_audio_pairs": 978,
+        "conservative_prompt_bound": 59653,
+        "trimmed_frames": 200,
+        "messages_sha256": "42ba0b8eced822c82780eb6df6627e88057aafef9665ed2c69bba2a5b6060a4a"
+      },
+      "response_seconds": 19.176875,
+      "answer_enabled_at_seconds": 564.9599999999999,
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "input_level_gain_db": 18.017995089895088,
+      "audio_sha256": "d6482c0a566d8abe2387cd79912e32700c9959b9e78b4ee3bb78778165919c9f",
+      "wall_seconds": 2722.3215592189226,
+      "question_turns": [
+        {
+          "frame": 1169,
+          "phase": "listening",
+          "start_seconds": 561.12,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1170,
+          "phase": "listening",
+          "start_seconds": 561.6,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1171,
+          "phase": "listening",
+          "start_seconds": 562.0799999999999,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1172,
+          "phase": "listening",
+          "start_seconds": 562.56,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1173,
+          "phase": "listening",
+          "start_seconds": 563.04,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1174,
+          "phase": "listening",
+          "start_seconds": 563.52,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1175,
+          "phase": "listening",
+          "start_seconds": 564.0,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1176,
+          "phase": "listening",
+          "start_seconds": 564.48,
+          "raw_text": "{'asr': 'channel channel any new '",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1177,
+          "phase": "answering",
+          "start_seconds": 564.9599999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'Alright, ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'Alright, ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1178,
+          "phase": "answering",
+          "start_seconds": 565.4399999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'let ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'let ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1179,
+          "phase": "answering",
+          "start_seconds": 565.92,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'me take a ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'me take a ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1180,
+          "phase": "answering",
+          "start_seconds": 566.4,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'look at ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'look at ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1181,
+          "phase": "answering",
+          "start_seconds": 566.88,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'this text ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'this text ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1182,
+          "phase": "answering",
+          "start_seconds": 567.36,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'and ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'and ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1183,
+          "phase": "answering",
+          "start_seconds": 567.84,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'see ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'see ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1184,
+          "phase": "answering",
+          "start_seconds": 568.3199999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'how I can ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'how I can ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1185,
+          "phase": "answering",
+          "start_seconds": 568.8,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'help. ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'help. ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1186,
+          "phase": "answering",
+          "start_seconds": 569.28,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'I ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'I ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1187,
+          "phase": "answering",
+          "start_seconds": 569.76,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'see a ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'see a ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1188,
+          "phase": "answering",
+          "start_seconds": 570.24,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'lot of ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'lot of ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1189,
+          "phase": "answering",
+          "start_seconds": 570.72,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'repetition ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'repetition ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1190,
+          "phase": "answering",
+          "start_seconds": 571.1999999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'here. ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'here. ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1191,
+          "phase": "answering",
+          "start_seconds": 571.68,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1192,
+          "phase": "answering",
+          "start_seconds": 572.16,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'Would you ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'Would you ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1193,
+          "phase": "answering",
+          "start_seconds": 572.64,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'like me ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'like me ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1194,
+          "phase": "answering",
+          "start_seconds": 573.12,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'to extract ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'to extract ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1195,
+          "phase": "answering",
+          "start_seconds": 573.6,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'the ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'the ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1196,
+          "phase": "answering",
+          "start_seconds": 574.0799999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'unique ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'unique ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1197,
+          "phase": "answering",
+          "start_seconds": 574.56,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'parts ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'parts ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1198,
+          "phase": "answering",
+          "start_seconds": 575.04,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'or just ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'or just ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1199,
+          "phase": "answering",
+          "start_seconds": 575.52,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'analyze ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'analyze ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1200,
+          "phase": "answering",
+          "start_seconds": 576.0,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'the ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'the ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1201,
+          "phase": "answering",
+          "start_seconds": 576.48,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': 'structure?', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': 'structure?', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1202,
+          "phase": "answering",
+          "start_seconds": 576.9599999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1203,
+          "phase": "answering",
+          "start_seconds": 577.4399999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1204,
+          "phase": "answering",
+          "start_seconds": 577.92,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1205,
+          "phase": "answering",
+          "start_seconds": 578.4,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1206,
+          "phase": "answering",
+          "start_seconds": 578.88,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1207,
+          "phase": "answering",
+          "start_seconds": 579.36,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1208,
+          "phase": "answering",
+          "start_seconds": 579.84,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1209,
+          "phase": "answering",
+          "start_seconds": 580.3199999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1210,
+          "phase": "answering",
+          "start_seconds": 580.8,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1211,
+          "phase": "answering",
+          "start_seconds": 581.28,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1212,
+          "phase": "answering",
+          "start_seconds": 581.76,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1213,
+          "phase": "answering",
+          "start_seconds": 582.24,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1214,
+          "phase": "answering",
+          "start_seconds": 582.72,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1215,
+          "phase": "answering",
+          "start_seconds": 583.1999999999999,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1216,
+          "phase": "answering",
+          "start_seconds": 583.68,
+          "raw_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'channel channel any new ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        }
+      ],
+      "listening_rule_violations": 0,
+      "ASR_text_changes": 0,
+      "retained_start_at_answer_end": 96.0,
+      "audio_peak": 0.899200439453125,
+      "audio_rms": 0.186866756563339,
+      "audio": "research/s1-listening/audio/P02-decode_clear.wav",
+      "source_evidence_fully_retained": true
+    },
+    {
+      "case": "P02",
+      "method": "constrained",
+      "run_source_job": "1353280",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "required_facts": [
+        "For two equally plausible interpretations, choose one and leave it.",
+        "The discussion uses the example of \u201cice cream\u201d versus \u201cI scream\u201d."
+      ],
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0094",
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+        },
+        {
+          "id": "EN2004a-s0095",
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+        }
+      ],
+      "request_minutes": 9.352666666666666,
+      "status": "completed_content_review_required",
+      "spoken_transcript": "Let me take a look at this text and see how it how it matches your instructions for checking and resolving uncertainties.",
+      "source_review": {
+        "reviewer": "Codex source, native-text and independent-ASR inspection; not a human listening rating",
+        "native_text_sha256": "82f7f1c6443814eb8dbe2f96a6b4884da4a188b8e099b4c64facb5f08036ff3d",
+        "audio_sha256": "f62c431c38f15eb978ab5413a7c190b091e938433f27a03b3bf2c170d9f6f487",
+        "speech_transcript_sha256": "15d1d5f2e7b39dbd92d06cc7fb234c57995cd4eeb2fe7cc2e4e26484d6f04430",
+        "native_text_complete": false,
+        "native_text_score": 0,
+        "spoken_answer_score": 0,
+        "spoken_score_basis": "Independent Parakeet transcription, checked against listed source evidence; no human clarity rating.",
+        "spoken_review": "No required fact recovered in the independent speech transcript.",
+        "short_result": "No required fact in text or speech transcript",
+        "reason": "Neither the native answer text nor the independent speech transcript states the agreed rule to choose one interpretation and leave it; the reply instead offers to inspect text. Native ASR repeats unrelated words during the request. The first 96 seconds were dropped at the context limit, but the required source passage at 6:20\u20136:32 remained available.",
+        "required_facts": [
+          {
+            "fact": "Choose one equally plausible interpretation and leave it; do not leave the word uncertain.",
+            "native_text_supported": false,
+            "speech_transcript_supported": false
+          }
+        ],
+        "listed_source_evidence_retained": true
+      },
+      "phase": "answering",
+      "frames_completed": 1217,
+      "listening_frames": 1177,
+      "answer_frames": 40,
+      "trimmed_frames": 200,
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 62068,
+      "question_asr": "then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, then, any, ",
+      "speech_text": "Alright, let me take a look at this text and see how it matches your instructions for checking and resolving uncertainties.",
+      "answer_context": {
+        "oldest_retained_seconds": 96.0,
+        "retained_audio_pairs": 978,
+        "conservative_prompt_bound": 59072,
+        "trimmed_frames": 200,
+        "messages_sha256": "8489892df0513123d476728ccde83520406831eecbb2d6e42b7ddf0c02d6bda0"
+      },
+      "response_seconds": 19.176875,
+      "answer_enabled_at_seconds": 564.9599999999999,
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "input_level_gain_db": 18.017995089895088,
+      "audio_sha256": "f62c431c38f15eb978ab5413a7c190b091e938433f27a03b3bf2c170d9f6f487",
+      "wall_seconds": 2804.883741940139,
+      "question_turns": [
+        {
+          "frame": 1169,
+          "phase": "listening",
+          "start_seconds": 561.12,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1170,
+          "phase": "listening",
+          "start_seconds": 561.6,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1171,
+          "phase": "listening",
+          "start_seconds": 562.0799999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1172,
+          "phase": "listening",
+          "start_seconds": 562.56,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1173,
+          "phase": "listening",
+          "start_seconds": 563.04,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1174,
+          "phase": "listening",
+          "start_seconds": 563.52,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1175,
+          "phase": "listening",
+          "start_seconds": 564.0,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1176,
+          "phase": "listening",
+          "start_seconds": 564.48,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1177,
+          "phase": "answering",
+          "start_seconds": 564.9599999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'Alright, ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'Alright, ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1178,
+          "phase": "answering",
+          "start_seconds": 565.4399999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'let ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'let ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1179,
+          "phase": "answering",
+          "start_seconds": 565.92,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'me take a ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'me take a ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1180,
+          "phase": "answering",
+          "start_seconds": 566.4,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'look at ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'look at ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1181,
+          "phase": "answering",
+          "start_seconds": 566.88,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'this text ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'this text ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1182,
+          "phase": "answering",
+          "start_seconds": 567.36,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'and ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'and ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1183,
+          "phase": "answering",
+          "start_seconds": 567.84,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'see ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'see ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1184,
+          "phase": "answering",
+          "start_seconds": 568.3199999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'how it ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'how it ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1185,
+          "phase": "answering",
+          "start_seconds": 568.8,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'matches ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'matches ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1186,
+          "phase": "answering",
+          "start_seconds": 569.28,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'your instructions ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'your instructions ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1187,
+          "phase": "answering",
+          "start_seconds": 569.76,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'for ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'for ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1188,
+          "phase": "answering",
+          "start_seconds": 570.24,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'checking ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'checking ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1189,
+          "phase": "answering",
+          "start_seconds": 570.72,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'and ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'and ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1190,
+          "phase": "answering",
+          "start_seconds": 571.1999999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'resolving ', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'resolving ', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1191,
+          "phase": "answering",
+          "start_seconds": 571.68,
+          "raw_text": "{'asr': 'then, any, ', 'tts': 'uncertainties.', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': 'uncertainties.', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1192,
+          "phase": "answering",
+          "start_seconds": 572.16,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1193,
+          "phase": "answering",
+          "start_seconds": 572.64,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1194,
+          "phase": "answering",
+          "start_seconds": 573.12,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1195,
+          "phase": "answering",
+          "start_seconds": 573.6,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1196,
+          "phase": "answering",
+          "start_seconds": 574.0799999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1197,
+          "phase": "answering",
+          "start_seconds": 574.56,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1198,
+          "phase": "answering",
+          "start_seconds": 575.04,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1199,
+          "phase": "answering",
+          "start_seconds": 575.52,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1200,
+          "phase": "answering",
+          "start_seconds": 576.0,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1201,
+          "phase": "answering",
+          "start_seconds": 576.48,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1202,
+          "phase": "answering",
+          "start_seconds": 576.9599999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1203,
+          "phase": "answering",
+          "start_seconds": 577.4399999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1204,
+          "phase": "answering",
+          "start_seconds": 577.92,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1205,
+          "phase": "answering",
+          "start_seconds": 578.4,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1206,
+          "phase": "answering",
+          "start_seconds": 578.88,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1207,
+          "phase": "answering",
+          "start_seconds": 579.36,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1208,
+          "phase": "answering",
+          "start_seconds": 579.84,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1209,
+          "phase": "answering",
+          "start_seconds": 580.3199999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1210,
+          "phase": "answering",
+          "start_seconds": 580.8,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1211,
+          "phase": "answering",
+          "start_seconds": 581.28,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1212,
+          "phase": "answering",
+          "start_seconds": 581.76,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1213,
+          "phase": "answering",
+          "start_seconds": 582.24,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1214,
+          "phase": "answering",
+          "start_seconds": 582.72,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1215,
+          "phase": "answering",
+          "start_seconds": 583.1999999999999,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        },
+        {
+          "frame": 1216,
+          "phase": "answering",
+          "start_seconds": 583.68,
+          "raw_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}",
+          "saved_text": "{'asr': 'then, any, ', 'tts': '', 'tts_control': '', 'system2_control': ''}"
+        }
+      ],
+      "listening_rule_violations": 0,
+      "ASR_text_changes": 0,
+      "retained_start_at_answer_end": 96.0,
+      "audio_peak": 0.785400390625,
+      "audio_rms": 0.08388669023023532,
+      "audio": "research/s1-listening/audio/P02-constrained.wav",
+      "source_evidence_fully_retained": true
+    },
+    {
+      "case": "P03",
+      "method": "decode_clear",
+      "run_source_job": "1353279",
+      "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "required_facts": [
+        "The team discussed mapping speech commands to functions already present.",
+        "The available discussion does not report a finished implementation or demonstrate that it is ready for interface integration."
+      ],
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0254",
+          "speaker": "A",
+          "start": 727.6,
+          "end": 735.72,
+          "text": "I think you can just uh match the speech commands with the functions that are already present."
+        },
+        {
+          "id": "TS3006c-s0257",
+          "speaker": "A",
+          "start": 735.72,
+          "end": 739.15,
+          "text": "So I don't think you have to design anything else for that."
+        },
+        {
+          "id": "TS3006c-s0248",
+          "speaker": "B",
+          "start": 709.54,
+          "end": 718.66,
+          "text": "Yeah um yeah that's one thing uh which I'm not sure uh of how to implement it uh into the remote control."
+        }
+      ],
+      "request_minutes": 21.66783333333333,
+      "status": "deferred",
+      "spoken_transcript": null,
+      "source_review": null,
+      "deferred_reason": "The native full prefix exceeds the model context even with empty ASR fields; the recent-history fallback would discard the listed older evidence. Defer this case until the memory protocol is defined rather than treating shortened history as full history."
+    },
+    {
+      "case": "P03",
+      "method": "constrained",
+      "run_source_job": "1353280",
+      "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "required_facts": [
+        "The team discussed mapping speech commands to functions already present.",
+        "The available discussion does not report a finished implementation or demonstrate that it is ready for interface integration."
+      ],
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0254",
+          "speaker": "A",
+          "start": 727.6,
+          "end": 735.72,
+          "text": "I think you can just uh match the speech commands with the functions that are already present."
+        },
+        {
+          "id": "TS3006c-s0257",
+          "speaker": "A",
+          "start": 735.72,
+          "end": 739.15,
+          "text": "So I don't think you have to design anything else for that."
+        },
+        {
+          "id": "TS3006c-s0248",
+          "speaker": "B",
+          "start": 709.54,
+          "end": 718.66,
+          "text": "Yeah um yeah that's one thing uh which I'm not sure uh of how to implement it uh into the remote control."
+        }
+      ],
+      "request_minutes": 21.66783333333333,
+      "status": "deferred",
+      "spoken_transcript": null,
+      "source_review": null,
+      "deferred_reason": "The native full prefix exceeds the model context even with empty ASR fields; the recent-history fallback would discard the listed older evidence. Defer this case until the memory protocol is defined rather than treating shortened history as full history."
+    }
+  ],
+  "cpu_preflight": {
+    "status": "pass",
+    "gpus": 0,
+    "constraint_examples": [
+      "listening:True",
+      "listening:False",
+      "listening:False",
+      "answering:True",
+      "answering:False",
+      "native_format:True"
+    ],
+    "saved_ASR_unchanged": true,
+    "unexecuted_actions_removed": true,
+    "sampling_rules_connected": true,
+    "real_processor_prompt_tokens": [
+      54,
+      113
+    ],
+    "conservative_bounds": [
+      56,
+      117
+    ],
+    "request_boundary_cases": 3
+  },
+  "S2_enabled": false,
+  "protocol_status": "not_validated",
+  "controls": [
+    {
+      "method": "decode_clear",
+      "status": "completed_content_review_required",
+      "question_asr": "What color is the sky on a clear day?",
+      "speech_text": "The sky appears blue on a clear day.",
+      "first_answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "spoken_transcript": "The s appear blue on a clear day.",
+      "audio": "research/s1-listening/audio/sky-decode_clear.wav"
+    },
+    {
+      "method": "constrained",
+      "status": "completed_content_review_required",
+      "question_asr": "What color is the sky on a clear day?",
+      "speech_text": "On a clear day, the sky appears blue.",
+      "first_answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "spoken_transcript": "On a cl day, the sk appears blue.",
+      "audio": "research/s1-listening/audio/sky-constrained.wav"
+    }
+  ],
+  "allocations": [
+    {
+      "job": "1350966",
+      "state": "FAILED",
+      "allocated_seconds": 130,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T11:12:40",
+      "end": "2026-10-28T11:14:50"
+    },
+    {
+      "job": "1352700",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 0,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 0,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "None",
+      "end": "2026-10-28T12:06:26"
+    },
+    {
+      "job": "1351143",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 745,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T11:18:08",
+      "end": "2026-10-28T11:30:33"
+    },
+    {
+      "job": "1350683",
+      "state": "FAILED",
+      "allocated_seconds": 99,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T11:07:34",
+      "end": "2026-10-28T11:09:13"
+    },
+    {
+      "job": "1352552",
+      "state": "FAILED",
+      "allocated_seconds": 113,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T11:44:28",
+      "end": "2026-10-28T11:46:21"
+    },
+    {
+      "job": "1351836",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 0,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 0,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "None",
+      "end": "2026-10-28T11:30:33"
+    },
+    {
+      "job": "1352949",
+      "state": "COMPLETED",
+      "allocated_seconds": 393,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T12:06:39",
+      "end": "2026-10-28T12:13:12"
+    },
+    {
+      "job": "1353279",
+      "state": "FAILED",
+      "allocated_seconds": 3773,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T12:31:10",
+      "end": "2026-10-28T13:34:03",
+      "controlled_stop": {
+        "job": "1353279",
+        "stopped_after_case": "P02",
+        "method": "decode_clear",
+        "reason": "Bounded two-question pilot complete; P03 deferred because the native context limit would discard its listed evidence. Stop S1 via KeyboardInterrupt so its existing cleanup runs and the job wrapper proceeds to independent ASR.",
+        "target_driver_pid": 2971913,
+        "time": "2026-10-28T17:33:38.549532+00:00",
+        "additional_GPUs": 0
+      }
+    },
+    {
+      "job": "1352439",
+      "state": "FAILED",
+      "allocated_seconds": 114,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T11:32:32",
+      "end": "2026-10-28T11:34:26"
+    },
+    {
+      "job": "1352512",
+      "state": "FAILED",
+      "allocated_seconds": 114,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "H200 NVL 141 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T11:37:38",
+      "end": "2026-10-28T11:39:32"
+    },
+    {
+      "job": "1353280",
+      "state": "FAILED",
+      "allocated_seconds": 3885,
+      "requested_gpu_count": 1,
+      "allocated_gpu_count": 1,
+      "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+      "roles": {
+        "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after all S1 exits, independent Parakeet ASR uses GPU 0"
+      },
+      "start": "2026-10-28T12:31:10",
+      "end": "2026-10-28T13:35:55",
+      "controlled_stop": {
+        "job": "1353280",
+        "stopped_after_case": "P02",
+        "method": "constrained",
+        "reason": "Bounded two-question pilot complete; P03 deferred because the native context limit would discard its listed evidence. Stop S1 via KeyboardInterrupt so its existing cleanup runs and the job wrapper proceeds to independent ASR.",
+        "target_driver_pid": 156302,
+        "time": "2026-10-28T17:35:32.039885+00:00",
+        "additional_GPUs": 0
+      }
+    }
+  ],
+  "planned_maximum_active_gpus": 2,
+  "selected_sources": {
+    "decode_clear": "1353279",
+    "constrained": "1353280"
+  },
+  "planned_meeting_questions": 2,
+  "planned_meeting_outputs": 4,
+  "deferred_case": {
+    "status": "deferred",
+    "case": "P03",
+    "request_minutes": 21.66783333333333,
+    "native_frame_seconds": 0.48,
+    "full_prefix_frames": 2724,
+    "empty_ASR_prompt_estimate_tokens": 147150,
+    "model_context_tokens": 65536,
+    "listed_evidence_seconds": [
+      [
+        727.6,
+        735.72
+      ],
+      [
+        735.72,
+        739.15
+      ],
+      [
+        709.54,
+        718.66
+      ]
+    ],
+    "pilot_cases": [
+      "P01",
+      "P02"
+    ],
+    "reason": "The native full prefix exceeds the model context even with empty ASR fields; the recent-history fallback would discard the listed older evidence. Defer this case until the memory protocol is defined rather than treating shortened history as full history.",
+    "gpus": 0
+  },
+  "recorded_meeting_questions": 2,
+  "completed_meeting_outputs": 4,
+  "source_reviewed_outputs": 4,
+  "native_text_complete_outputs": 0,
+  "recognition_probes": [
+    {
+      "case": "P01",
+      "parent_job": "1353279",
+      "scope": "Recognition-only diagnostic, exact original question packets and four silence packets; no meeting history, no answer generation, no new GPU/model service. Primary question was already completed.",
+      "shared_model_service": true,
+      "additional_GPU_count": 0,
+      "method": "decode_clear",
+      "source_input_sha256": "af03f12416da54777a62bd06d70313e2fd3dc19e35b8b9dc05648a61d07d1376",
+      "gain_db": 2.9203186630209776,
+      "request_ASR": "Hi, Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "delayed_ASR": "",
+      "wall_seconds": 38.127772466046736
+    },
+    {
+      "case": "P01",
+      "parent_job": "1353280",
+      "scope": "Recognition-only diagnostic, exact original question packets and four silence packets; the partial boundary packet is preserved, with no long meeting history, no answer generation and no new GPU/model service. Primary question was already completed.",
+      "source_context_leadin_seconds": 0.38999999999998636,
+      "shared_model_service": true,
+      "additional_GPU_count": 0,
+      "method": "constrained",
+      "source_input_sha256": "af03f12416da54777a62bd06d70313e2fd3dc19e35b8b9dc05648a61d07d1376",
+      "gain_db": 2.9203186630209776,
+      "request_ASR": "Hi, assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "delayed_ASR": "",
+      "wall_seconds": 54.79490999807604
+    }
+  ],
+  "source_audio_check": {
+    "gpus": 0,
+    "model": "Whisper-base",
+    "source": "Original P01 input, source time110\u2013140s, no gain or acoustic edit",
+    "text": "I see spicy or are all the other presentations I just put it in the in the shared folder, so which conceptual or yeah, I think so yeah conceptual design or whatever I see only my own presentation No, no, can you go back one? Yeah Because it has to be PowerPoint. Yeah components design. That's it. I just put it in there. He's coming",
+    "purpose": "Check correspondence between the supplied recording and the manually annotated folder discussion; independent ASR is not a human transcript."
+  },
+  "runtime_qualification": {
+    "qualified": true,
+    "checks": [
+      {
+        "method": "constrained",
+        "recognized_request": "what color is the sky on a clear day?",
+        "speech_text": "On a clear day, the sky appears blue.",
+        "ASR_pass": true,
+        "speech_text_pass": true,
+        "nonquiet_audio": true,
+        "status": "completed_content_review_required"
+      }
+    ],
+    "independent_speech_transcription": "After all S1 exits; no factual speech pass claimed yet"
+  },
+  "activation_controls": [
+    {
+      "method": "decode_clear",
+      "status": "completed_content_review_required",
+      "question_asr": "What color is the sky on a clear day?",
+      "speech_text": "",
+      "first_answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "spoken_transcript": ""
+    },
+    {
+      "method": "constrained",
+      "status": "completed_content_review_required",
+      "question_asr": "What color is the sky on a clear day?",
+      "speech_text": "",
+      "first_answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "spoken_transcript": ""
+    }
+  ],
+  "short_control_review": {
+    "native_text_correct": 2,
+    "control_questions": 1,
+    "speech_quality": "Pronunciation errors; independent ASR and actual audio retained, no human listening rating.",
+    "whisper": {
+      "model": "Whisper-base",
+      "gpus": 0,
+      "wall_seconds": 1.8156160998623818,
+      "scope": "Second independent full-output ASR; no human listening rating. Original audio unchanged.",
+      "records": [
+        {
+          "method": "decode_clear",
+          "audio_sha256": "30cee6638818b3cd2f968c8decf37dcd4e8f980d268b0d452958ff21651d640e",
+          "text": "on a clit-y the scalp appears blue."
+        },
+        {
+          "method": "constrained",
+          "audio_sha256": "4518ad03686c76d832296cddc073b8dc9dd1e18d2e00e7fec2fff6316c546c96",
+          "text": "on a day the scuck blew."
+        }
+      ]
+    },
+    "native": {
+      "qualified": true,
+      "checks": [
+        {
+          "method": "decode_clear",
+          "recognized_request": "what color is the sky on a clear day?",
+          "speech_text": "On a clear day, the sky appears blue.",
+          "ASR_pass": true,
+          "speech_text_pass": true,
+          "nonquiet_audio": true,
+          "status": "completed_content_review_required"
+        },
+        {
+          "method": "constrained",
+          "recognized_request": "what color is the sky on a clear day?",
+          "speech_text": "On a clear day, the sky appears blue.",
+          "ASR_pass": true,
+          "speech_text_pass": true,
+          "nonquiet_audio": true,
+          "status": "completed_content_review_required"
+        }
+      ],
+      "independent_speech_transcription": "After all S1 exits; no factual speech pass claimed yet"
+    },
+    "cases": [
+      {
+        "method": "decode_clear",
+        "speech_text": "On a clear day, the sky appears blue.",
+        "spoken_transcript": "On a clay, the sky appears blue.",
+        "audio": "research/s1-listening/audio/calibration-sky-decode_clear.wav",
+        "audio_sha256": "30cee6638818b3cd2f968c8decf37dcd4e8f980d268b0d452958ff21651d640e"
+      },
+      {
+        "method": "constrained",
+        "speech_text": "On a clear day, the sky appears blue.",
+        "spoken_transcript": "On a day the skug a blew.",
+        "audio": "research/s1-listening/audio/calibration-sky-constrained.wav",
+        "audio_sha256": "4518ad03686c76d832296cddc073b8dc9dd1e18d2e00e7fec2fff6316c546c96"
+      }
+    ]
+  }
+}

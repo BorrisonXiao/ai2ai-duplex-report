@@ -95,13 +95,13 @@
   ],
   "resources": {
     "current_GPU_count": 0,
-    "current_maximum_active_GPUs": 1,
+    "current_maximum_active_GPUs": 2,
     "current_roles": {
-      "0": "DuplexOmni S1 Thinker with an explicit meeting-listener prompt and native frame history via vLLM; no Talker, MTP, Code2Wav, ASR or S2"
+      "each job / GPU 0": "Thinker, Talker, MTP and Code2Wav share the GPU; independent Parakeet ASR follows after S1 shuts down; S2 is disabled."
     },
-    "current_dependencies": "S1 diagnosis uses sequential one-H200 141 GB jobs: Thinker-only first, then the full S1 stack and independent ASR, then same-S1 oracle and native-history controls. S2 is disabled; source-checked speech review determines correctness.",
+    "current_dependencies": "Two independent one-RTX PRO 6000 Blackwell 96 GB jobs compare listening methods; each runs S1 then ASR on GPU 0, with no shared model service, maximum two GPUs. Source checks follow actual output transcription.",
     "planned_maximum_active_GPUs": 4,
-    "policy": "All GPU jobs sequential; transcript tools and reference validation precede evaluation; judges follow generation. No concurrent S1+S2 integration is part of this matrix.",
+    "policy": "Full-matrix stages are sequential; transcript tools and reference validation precede evaluation, and judges follow generation. The current repair pilot uses two independent one-GPU method jobs, with a maximum of two GPUs active. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
   },
   "execution_order": [
