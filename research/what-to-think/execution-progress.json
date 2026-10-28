@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "updated": "2026-10-27",
   "status": "implementation_underway",
-  "snapshot_label": "S1 evaluation software checks complete; new evaluation not started",
+  "snapshot_label": "Fresh one-A100 S1 pilot: reviewed; protocol not validated",
   "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
@@ -25,14 +25,14 @@
       "text": "Implement shared S1 answer extraction, scoring and token accounting.",
       "status": "complete",
       "url": "study-progress.html#software-checks",
-      "evidence": "Three earlier real outputs and 43 CPU checks pass."
+      "evidence": "Evaluator v0.1.2 passes 46 CPU checks; original 43-check snapshot and three historical examples are retained separately."
     },
     {
       "id": "report",
       "text": "Implement run-time progress updates from the same saved records as the checklists.",
-      "status": "partial",
+      "status": "complete",
       "url": "study-progress.html#reporting",
-      "evidence": "Per-example snapshots, 30-second heartbeat and local viewer implemented; new inference-job integration remains pending."
+      "evidence": "Native GPU-job phase/case updates and 30-second heartbeat are connected; public checkpoints use actual Slurm status and saved output records."
     },
     {
       "id": "saved-output-tests",
@@ -44,20 +44,23 @@
     {
       "id": "s1-pilot",
       "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",
-      "status": "pending",
-      "url": "what-to-think.html#evaluation-first"
+      "status": "complete",
+      "url": "study-progress.html#fresh-pilot",
+      "evidence": "Three real meeting requests tested on one A100 80 GB; raw outputs, recorded speech and source facts reviewed. Full protocol remains unvalidated."
     },
     {
       "id": "pilot-example",
       "text": "Publish an actual pilot output with its request, answer facts, score and explanation.",
-      "status": "pending",
-      "url": "study-progress.html#examples"
+      "status": "complete",
+      "url": "study-progress.html#fresh-pilot",
+      "evidence": "Actual input excerpts, S1 response audio, source facts, raw text and score explanations are published together."
     },
     {
       "id": "gate",
-      "text": "Validate and freeze the evaluation protocol before expanding experiments.",
+      "text": "Qualify full-history S1 input and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
-      "url": "what-to-think.html#evaluation-first"
+      "url": "what-to-think.html#evaluation-first",
+      "evidence": "Fresh pilot found missing request recognition, rejected response format and inconsistent automatic fact verdicts; protocol remains unvalidated."
     },
     {
       "id": "references",
@@ -84,8 +87,8 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T00:57:44Z",
-  "runtime_reporting": "local_evaluation_worker_implemented_inference_integration_pending",
+  "updated_at": "2026-10-28T02:54:06Z",
+  "runtime_reporting": "native_phase_case_and_heartbeat_connected",
   "software_checks": {
     "status": "completed",
     "evaluation_set": "historical_pipeline_check",
@@ -97,5 +100,14 @@
     "regression_tests": 43,
     "public_summary": "research/s1-evaluation/summary.json"
   },
-  "last_worker_update": "2026-10-28T00:56:06Z"
+  "last_worker_update": "2026-10-28T02:49:14Z",
+  "fresh_s1_pilot": {
+    "job": "1317667",
+    "state": "COMPLETED",
+    "phase": "pilot_review_complete_protocol_unvalidated",
+    "pilot_outputs": 3,
+    "pilot_scored": 2,
+    "active_gpus": 0,
+    "public_progress": "research/s1-meeting-pilot/progress.json"
+  }
 }

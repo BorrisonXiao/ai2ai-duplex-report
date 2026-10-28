@@ -1,0 +1,689 @@
+{
+  "updated_at": "2026-10-28T02:54:06Z",
+  "job": "1317667",
+  "job_state": "COMPLETED",
+  "phase": "pilot_review_complete_protocol_unvalidated",
+  "current_case": null,
+  "requested_gpus": 1,
+  "active_gpus": 0,
+  "maximum_active_gpus": 1,
+  "gpu_type_vram": "A100 SXM 80 GB",
+  "roles": {
+    "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after S1 shutdown Parakeet ASR, then offline Qwen3-30B Instruct judge on GPU 0"
+  },
+  "stages": "S1 together on GPU 0, then Parakeet ASR, then offline Qwen3-30B judge after S1 exits; S2 disabled.",
+  "cases": [
+    {
+      "id": "P01",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "source_cutoff_seconds": 309.03,
+      "input_seconds": 314.8386875,
+      "input_sha256": "af03f12416da54777a62bd06d70313e2fd3dc19e35b8b9dc05648a61d07d1376",
+      "prompt_tokens": 4141,
+      "status": "completed",
+      "complete_input": true,
+      "turns": 17,
+      "native_text": "",
+      "raw_text_output": null,
+      "spoken_transcript": "",
+      "score": null,
+      "score_state": "awaiting_listening",
+      "score_reason": "Low-energy audio requires listening; energy alone cannot distinguish quiet speech from decoder noise.",
+      "request_transcript": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "input_preview": "research/s1-meeting-pilot/audio/P01-input-preview.wav",
+      "response_audio": "research/s1-meeting-pilot/audio/P01-response.wav",
+      "reference": {
+        "case_id": "scale:TS3006c-S05-Q3",
+        "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+        "status": "verified",
+        "version": "pilot-source-v1",
+        "reviewer": "Codex inspection of earlier source-reviewed transcript evidence; not an independent human rating",
+        "answer": "C said the files were in the shared folder and identified a components-design PowerPoint; D had initially seen only their own presentation.",
+        "required_facts": [
+          {
+            "id": "shared",
+            "text": "C said the files had been put in the shared folder."
+          },
+          {
+            "id": "identified",
+            "text": "C identified the components-design PowerPoint; the discussion does not establish a general folder outage."
+          }
+        ],
+        "evidence": [
+          {
+            "source": "TS3006c-s0017",
+            "speaker": "C",
+            "start_seconds": 115.86,
+            "end_seconds": 122.85,
+            "text": "I just put it in the in the shared folder so it should be yeah I think so."
+          },
+          {
+            "source": "TS3006c-s0022",
+            "speaker": "D",
+            "start_seconds": 126.02,
+            "end_seconds": 132.42,
+            "text": "Because I see only my own presentation yeah."
+          },
+          {
+            "source": "TS3006c-s0015",
+            "speaker": "D",
+            "start_seconds": 112.4,
+            "end_seconds": 114.7,
+            "text": "Where are are all the other presentations?"
+          },
+          {
+            "source": "TS3006c-s0018",
+            "speaker": "C",
+            "start_seconds": 122.85,
+            "end_seconds": 124.72,
+            "text": "Yeah, conceptual design."
+          },
+          {
+            "source": "TS3006c-s0024",
+            "speaker": "C",
+            "start_seconds": 132.07,
+            "end_seconds": 136.44,
+            "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+          }
+        ]
+      },
+      "native_completion_tokens": 408,
+      "thinking_tokens": "not applicable; S1 has no separate native thinking channel"
+    },
+    {
+      "id": "P02",
+      "question_id": "scale:EN2004a-S05-Q3",
+      "meeting": "EN2004a",
+      "requester": "A",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "source_cutoff_seconds": 561.16,
+      "input_seconds": 565.0246875,
+      "input_sha256": "e8fc7b027523762cfeb85f2ae7d7616b772d477cb833db3d980b91254d5c6aab",
+      "prompt_tokens": 7394,
+      "status": "failed",
+      "complete_input": true,
+      "turns": 1,
+      "native_text": "",
+      "raw_text_output": "If a word is ambiguous but fits multiple contexts, you should pick one and leave it as is. If there's a chance it could be something else, just choose one and leave it. The goal is to make it robust for speech recognition.",
+      "spoken_transcript": "",
+      "score": 0,
+      "score_state": "scored_failure",
+      "score_reason": "The full input was processed, but the caller or model failed before a usable response was recorded.",
+      "request_transcript": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "input_preview": "research/s1-meeting-pilot/audio/P02-input-preview.wav",
+      "response_audio": null,
+      "reference": {
+        "case_id": "scale:EN2004a-S05-Q3",
+        "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+        "status": "verified",
+        "version": "pilot-source-v1",
+        "reviewer": "Codex inspection of earlier source-reviewed transcript evidence; not an independent human rating",
+        "answer": "When two interpretations are equally plausible, choose one and leave it.",
+        "required_facts": [
+          {
+            "id": "choose",
+            "text": "For equally plausible interpretations, choose one rather than leaving the annotation uncertain."
+          }
+        ],
+        "evidence": [
+          {
+            "source": "EN2004a-s0094",
+            "speaker": "A",
+            "start_seconds": 379.73,
+            "end_seconds": 388.69,
+            "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+          },
+          {
+            "source": "EN2004a-s0095",
+            "speaker": "B",
+            "start_seconds": 387.59,
+            "end_seconds": 392.26,
+            "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+          }
+        ]
+      },
+      "native_completion_tokens": 50,
+      "thinking_tokens": "not applicable; S1 has no separate native thinking channel"
+    },
+    {
+      "id": "P03",
+      "question_id": "scale:TS3006c-Smiddle-Q2",
+      "meeting": "TS3006c",
+      "requester": "B",
+      "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "source_cutoff_seconds": 1300.07,
+      "input_seconds": 1307.4,
+      "input_sha256": "e541e7b53dbe4e3d541f775d916987c69800b4c12da8a3ac49851daaa01a41f2",
+      "prompt_tokens": 17044,
+      "status": "completed",
+      "complete_input": true,
+      "turns": 17,
+      "native_text": "Hello, I'm your assistant. How can I help you?",
+      "raw_text_output": null,
+      "spoken_transcript": "Oh, I'm your how can I help you?",
+      "score": 0,
+      "score_state": "scored_review",
+      "score_reason": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+      "request_transcript": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+      "input_preview": "research/s1-meeting-pilot/audio/P03-input-preview.wav",
+      "response_audio": "research/s1-meeting-pilot/audio/P03-response.wav",
+      "reference": {
+        "case_id": "scale:TS3006c-Smiddle-Q2",
+        "question": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+        "status": "verified",
+        "version": "pilot-source-v1",
+        "reviewer": "Codex inspection of earlier source-reviewed transcript evidence; not an independent human rating",
+        "answer": "They discussed mapping speech commands to existing functions, but the available discussion does not establish a completed implementation or readiness for interface integration.",
+        "required_facts": [
+          {
+            "id": "mapping",
+            "text": "The proposed approach maps speech commands to functions already present."
+          },
+          {
+            "id": "readiness",
+            "text": "No completed implementation or readiness for integration is established by the available discussion."
+          }
+        ],
+        "evidence": [
+          {
+            "source": "TS3006c-s0254",
+            "speaker": "A",
+            "start_seconds": 727.6,
+            "end_seconds": 735.72,
+            "text": "I think you can just uh match the speech commands with the functions that are already present."
+          },
+          {
+            "source": "TS3006c-s0257",
+            "speaker": "A",
+            "start_seconds": 735.72,
+            "end_seconds": 739.15,
+            "text": "So I don't think you have to design anything else for that."
+          },
+          {
+            "source": "TS3006c-s0248",
+            "speaker": "B",
+            "start_seconds": 709.54,
+            "end_seconds": 718.66,
+            "text": "Yeah um yeah that's one thing uh which I'm not sure uh of how to implement it uh into the remote control."
+          }
+        ]
+      },
+      "native_completion_tokens": 425,
+      "thinking_tokens": "not applicable; S1 has no separate native thinking channel"
+    }
+  ],
+  "calibration": {
+    "job": "1317618",
+    "question": "What color is the sky on a clear day?",
+    "spoken_transcript": "On a clear day, the sky is blue because of Rayleigh scattering. The blue light is scattered more than other colors, so we see it.",
+    "audio": "research/s1-meeting-pilot/audio/calibration-response.wav",
+    "source_sha256": "0383648019c404c90bc3a7757807140f25623c448cd9f086ed3536259d1dda38",
+    "scope": "Fresh native 480 ms S1 calibration, separate from the meeting questions."
+  },
+  "pilot_outputs": 3,
+  "pilot_scored": 2,
+  "method": "Buffered full meeting history and the recorded request are supplied before generation; the original meeting does not resume. Native silence frames can continue the answer. This is not a streaming-retention or real-time latency result.",
+  "input_integrity": "Original past meeting PCM and the exact existing question insertion are retained; no enrollment clip or later meeting speech enters the model.",
+  "history_mode": "full",
+  "overall_protocol_status": "not_validated",
+  "initial_attempt": {
+    "job": "1317618",
+    "finding": "Native sky control succeeded; all three long inputs were rejected by the 1024-token encoder-cache limit before generation. The retry raises this limit to 20480; this was not CUDA OOM.",
+    "elapsed_seconds": 325,
+    "gpus": 1,
+    "gpu_type_vram": "A100 SXM 80 GB"
+  },
+  "public_scope": "Dated snapshot; the GPU worker writes phase/case updates and a 30-second heartbeat locally.",
+  "native_packet_diagnostic": {
+    "job": "1317837",
+    "job_state": "COMPLETED",
+    "elapsed_seconds": 384,
+    "phase": "gpu_stages_complete_content_audit_pending",
+    "current_case": null,
+    "requested_gpus": 1,
+    "active_gpus": 0,
+    "cases": [
+      {
+        "id": "P01-full-history",
+        "question_id": "scale:TS3006c-S05-Q3",
+        "condition": "full-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "Let me check the shared folder for you.",
+        "model_asr": "Assist in what's the status of the shared folder after we couldn't find the conceptual design file?",
+        "spoken_transcript": "Let me check the shared folder for you.",
+        "request_transcript": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design file?",
+        "score": 0,
+        "score_state": "scored_review",
+        "score_reason": "The reply offers to check the folder but gives neither the earlier shared-folder statement nor the identified PowerPoint; no lookup tool was called.",
+        "response_audio": "research/s1-meeting-pilot/audio/gated-P01-full-history-response.wav"
+      },
+      {
+        "id": "P01-no-history",
+        "question_id": "scale:TS3006c-S05-Q3",
+        "condition": "no-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "Let me check the status of the shared folder after the concept design file was defined. One moment.",
+        "model_asr": "Hey, what does the status of the shared folder after we defined the concept design file?",
+        "spoken_transcript": "Let me check the status of the shared folder after the concept design file was defined. One moment.",
+        "request_transcript": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design file?",
+        "score": null,
+        "score_state": null,
+        "score_reason": "",
+        "response_audio": "research/s1-meeting-pilot/audio/gated-P01-no-history-response.wav"
+      },
+      {
+        "id": "P02-full-history",
+        "question_id": "scale:EN2004a-S05-Q3",
+        "condition": "full-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "",
+        "model_asr": "",
+        "spoken_transcript": "",
+        "request_transcript": "",
+        "score": null,
+        "score_state": "awaiting_listening",
+        "score_reason": "Low-energy audio requires listening; energy alone cannot distinguish quiet speech from decoder noise.",
+        "response_audio": "research/s1-meeting-pilot/audio/gated-P02-full-history-response.wav"
+      },
+      {
+        "id": "P02-no-history",
+        "question_id": "scale:EN2004a-S05-Q3",
+        "condition": "no-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "",
+        "model_asr": "",
+        "spoken_transcript": "",
+        "request_transcript": "",
+        "score": null,
+        "score_state": null,
+        "score_reason": "",
+        "response_audio": "research/s1-meeting-pilot/audio/gated-P02-no-history-response.wav"
+      },
+      {
+        "id": "P03-full-history",
+        "question_id": "scale:TS3006c-Smiddle-Q2",
+        "condition": "full-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "",
+        "model_asr": "",
+        "spoken_transcript": "",
+        "request_transcript": "I think that you have to anything more than ready for the money.",
+        "score": null,
+        "score_state": "awaiting_listening",
+        "score_reason": "Low-energy audio requires listening; energy alone cannot distinguish quiet speech from decoder noise.",
+        "response_audio": "research/s1-meeting-pilot/audio/gated-P03-full-history-response.wav"
+      },
+      {
+        "id": "P03-no-history",
+        "question_id": "scale:TS3006c-Smiddle-Q2",
+        "condition": "no-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "",
+        "model_asr": "",
+        "spoken_transcript": "",
+        "request_transcript": "I think that you have to anything more than ready for the money.",
+        "score": null,
+        "score_state": null,
+        "score_reason": "",
+        "response_audio": "research/s1-meeting-pilot/audio/gated-P03-no-history-response.wav"
+      }
+    ],
+    "method": "The request arrives in native 480 ms packets after retained meeting audio. The stock microphone noise gate is active. Question-only controls diagnose the input path and are not scored against missing meeting facts."
+  },
+  "native_ungated_diagnostic": {
+    "job": "1317930",
+    "job_state": "COMPLETED",
+    "elapsed_seconds": 297,
+    "phase": "gpu_stages_complete_content_audit_pending",
+    "current_case": null,
+    "requested_gpus": 1,
+    "active_gpus": 0,
+    "cases": [
+      {
+        "id": "P01-full-history",
+        "question_id": "scale:TS3006c-S05-Q3",
+        "condition": "full-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "Let me check the shared folder status for you.",
+        "model_asr": "Assist ant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+        "spoken_transcript": "Let me check the shared folder status for you.",
+        "request_transcript": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+        "score": 0,
+        "score_state": "scored_review",
+        "score_reason": "The reply offers to check the folder but gives neither the earlier shared-folder statement nor the identified PowerPoint; no lookup tool was called.",
+        "response_audio": "research/s1-meeting-pilot/audio/ungated-P01-full-history-response.wav"
+      },
+      {
+        "id": "P02-full-history",
+        "question_id": "scale:EN2004a-S05-Q3",
+        "condition": "full-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "Hi there, I'm your assistant. I heard you needed some help with a transcription check?",
+        "model_asr": "",
+        "spoken_transcript": "There, I am your assistant. I heard you needed some help with a transcription check.",
+        "request_transcript": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+        "score": 0,
+        "score_state": "scored_review",
+        "score_reason": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "response_audio": "research/s1-meeting-pilot/audio/ungated-P02-full-history-response.wav"
+      },
+      {
+        "id": "P03-full-history",
+        "question_id": "scale:TS3006c-Smiddle-Q2",
+        "condition": "full-history",
+        "status": "completed",
+        "complete_input": true,
+        "native_text": "Hello, I'm your assistant. How can I help you?",
+        "model_asr": "",
+        "spoken_transcript": "I'm your assistant. How can I help you? You can make a cup of music.",
+        "request_transcript": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
+        "score": 0,
+        "score_state": "scored_review",
+        "score_reason": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "response_audio": "research/s1-meeting-pilot/audio/ungated-P03-full-history-response.wav"
+      }
+    ],
+    "method": "Full earlier meeting audio is retained, and the request arrives in native 480 ms packets. The microphone noise gate is disabled to preserve quiet prerecorded speech; resampling, prompt and greedy decoding stay the same."
+  },
+  "allocations": [
+    {
+      "job": "1317618",
+      "state": "COMPLETED",
+      "elapsed_seconds": 325,
+      "node": "ga133",
+      "gpus": 1,
+      "gpu_type_vram": "A100 SXM 80 GB"
+    },
+    {
+      "job": "1317667",
+      "state": "COMPLETED",
+      "elapsed_seconds": 285,
+      "node": "ga137",
+      "gpus": 1,
+      "gpu_type_vram": "A100 SXM 80 GB"
+    },
+    {
+      "job": "1317837",
+      "state": "COMPLETED",
+      "elapsed_seconds": 384,
+      "node": "ga138",
+      "gpus": 1,
+      "gpu_type_vram": "A100 SXM 80 GB"
+    },
+    {
+      "job": "1317930",
+      "state": "COMPLETED",
+      "elapsed_seconds": 297,
+      "node": "ga138",
+      "gpus": 1,
+      "gpu_type_vram": "A100 SXM 80 GB"
+    }
+  ],
+  "allocated_gpu_hours": 0.35861111111111116,
+  "all_jobs_complete": true,
+  "content_audit": {
+    "reviewer": "Codex",
+    "evaluator_version": "0.1.2",
+    "distinct_questions": 3,
+    "full_bank_run": false,
+    "overall_protocol_status": "not_validated",
+    "completed_native_no_gate_questions": 3,
+    "complete_native_no_gate_answers": 0,
+    "interpretation": "These runs do not establish a usable long-history S1 baseline. The requests remain intelligible to independent ASR, while S1 fails to transcribe two requests in the native-packet check; input format, request recognition and answer generation still need to be separated before drawing conclusions about history retention.",
+    "judge_finding": "The automatic judge sometimes marked absent facts as supported, and once marked an empty spoken answer complete; Codex checked every pilot judgment against the source passages and response transcripts. New script checks reject these inconsistent verdicts, while the original verdicts are retained.",
+    "audit_scope": "Source evidence, raw S1 fields, independent Parakeet transcripts and waveform measurements; quiet audio still needs listening, and no human listening rating is claimed.",
+    "thinking_tokens": "not applicable: no separate native thinking channel",
+    "request_output_tokens": "Engine totals are available for the buffered condition (408, 50, 425), including transcription/control text; channel-specific token IDs were not exposed.",
+    "amortized_thinking": "not run",
+    "full_history_cases": [
+      {
+        "job": "1317667",
+        "case": "P01",
+        "condition": "buffered",
+        "score": null,
+        "state": "awaiting_listening",
+        "explanation": "No complete answer can be established from this quiet recording: native speech text and independent ASR are empty; retain the pending listening check.",
+        "reference_sha256": "7bdc65396825987bad14f8129aa5d43d341258735dbf57ffab3d535c8d27768b",
+        "candidate_sha256": "a038e1c65cb581ac3b134be4316272a4ff51769cf62fb1d687eda5bea614f7f8",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317667",
+        "case": "P02",
+        "condition": "buffered",
+        "score": 0,
+        "state": "scored_failure",
+        "explanation": "The complete input was processed and raw S1 text gives the supported choose-one answer, but it is outside the four-field speech format; no usable spoken answer was produced.",
+        "reference_sha256": "7a0287a102095f88efd73ce72f9e6663fdb8e73db918ed89c2f4f88c0e7e61d4",
+        "candidate_sha256": "da4ba70015a7a0a1c0ed296e99729f03efb86eacd8991b31c7df93643ee94a55",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317667",
+        "case": "P03",
+        "condition": "buffered",
+        "score": 0,
+        "state": "scored_review",
+        "explanation": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "reference_sha256": "3e9b166187c37c5ea3ab071ba3f909592011ffc44234437fd24f7b6723e600f4",
+        "candidate_sha256": "1d334739ad211d438a0152bb13f1d17c4cafc1e8438cf33654fbf8a4af7b3044",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317837",
+        "case": "P01",
+        "condition": "native_stock_gate",
+        "score": 0,
+        "state": "scored_review",
+        "explanation": "The reply offers to check the folder but gives neither the earlier shared-folder statement nor the identified PowerPoint; no lookup tool was called.",
+        "reference_sha256": "93d6ade2bfc908569358eaa37a93347545dae15f9f74a430bf1abbe8b5de73b7",
+        "candidate_sha256": "cd130086396d81350beb25f46d18cf01b30a877bdf38998158242001f8ad2430",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317837",
+        "case": "P02",
+        "condition": "native_stock_gate",
+        "score": null,
+        "state": "awaiting_listening",
+        "explanation": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "reference_sha256": "70490ee7d495162292d885de81c72545d536c4293cfa5695a157d7de2802fe46",
+        "candidate_sha256": "1476d62efd472a82be2dab7c04a48053dcffa2fabeaab97892e7b45f06a942d9",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317837",
+        "case": "P03",
+        "condition": "native_stock_gate",
+        "score": null,
+        "state": "awaiting_listening",
+        "explanation": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "reference_sha256": "db4df8e30d0d85711f244abea26eb89596316d6ee7fb660eca79a26cd031ddf7",
+        "candidate_sha256": "5a9ecae7acab79ab913c3de6fb4d39d98f33a0ecd2e8979335b90fc5222463f2",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317930",
+        "case": "P01",
+        "condition": "native_no_gate",
+        "score": 0,
+        "state": "scored_review",
+        "explanation": "The reply offers to check the folder but gives neither the earlier shared-folder statement nor the identified PowerPoint; no lookup tool was called.",
+        "reference_sha256": "93d6ade2bfc908569358eaa37a93347545dae15f9f74a430bf1abbe8b5de73b7",
+        "candidate_sha256": "665ff52bfbb31860decbad59e2dc54f67b5f7e65306564b7bf3c66072e6c80cc",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317930",
+        "case": "P02",
+        "condition": "native_no_gate",
+        "score": 0,
+        "state": "scored_review",
+        "explanation": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "reference_sha256": "70490ee7d495162292d885de81c72545d536c4293cfa5695a157d7de2802fe46",
+        "candidate_sha256": "cbd69fb5fc779cb3af0d0223cbae6e7aa6d6fad86df271f05607943ddd1c375c",
+        "automatic_review_preserved": true
+      },
+      {
+        "job": "1317930",
+        "case": "P03",
+        "condition": "native_no_gate",
+        "score": 0,
+        "state": "scored_review",
+        "explanation": "The reply contains a greeting or an unrelated offer of help and does not supply the required answer facts.",
+        "reference_sha256": "db4df8e30d0d85711f244abea26eb89596316d6ee7fb660eca79a26cd031ddf7",
+        "candidate_sha256": "cecc02a55ebe35f4638c32eae1c0372cc22cad2bdc628e70852860aa72522cf2",
+        "automatic_review_preserved": true
+      }
+    ],
+    "automatic_judge_findings": [
+      {
+        "job": "1317667",
+        "case": "P01",
+        "finding": "Incomplete verdict conflicts with all facts supported and no unsupported claims"
+      },
+      {
+        "job": "1317667",
+        "case": "P01",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "shared": "supported",
+          "identified": "supported"
+        },
+        "source_checked_verdicts": {
+          "shared": "missing",
+          "identified": "missing"
+        }
+      },
+      {
+        "job": "1317667",
+        "case": "P02",
+        "finding": "An empty candidate transcript cannot be a complete answer"
+      },
+      {
+        "job": "1317667",
+        "case": "P02",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "choose": "supported"
+        },
+        "source_checked_verdicts": {
+          "choose": "missing"
+        }
+      },
+      {
+        "job": "1317667",
+        "case": "P03",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "mapping": "missing",
+          "readiness": "supported"
+        },
+        "source_checked_verdicts": {
+          "mapping": "missing",
+          "readiness": "missing"
+        }
+      },
+      {
+        "job": "1317837",
+        "case": "P01",
+        "finding": "Incomplete verdict conflicts with all facts supported and no unsupported claims"
+      },
+      {
+        "job": "1317837",
+        "case": "P01",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "shared": "supported",
+          "identified": "supported"
+        },
+        "source_checked_verdicts": {
+          "shared": "missing",
+          "identified": "missing"
+        }
+      },
+      {
+        "job": "1317837",
+        "case": "P02",
+        "finding": "An empty candidate transcript cannot be a complete answer"
+      },
+      {
+        "job": "1317837",
+        "case": "P02",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "choose": "supported"
+        },
+        "source_checked_verdicts": {
+          "choose": "missing"
+        }
+      },
+      {
+        "job": "1317837",
+        "case": "P03",
+        "finding": "An empty candidate transcript cannot be a complete answer"
+      },
+      {
+        "job": "1317837",
+        "case": "P03",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "mapping": "supported",
+          "readiness": "supported"
+        },
+        "source_checked_verdicts": {
+          "mapping": "missing",
+          "readiness": "missing"
+        }
+      },
+      {
+        "job": "1317930",
+        "case": "P01",
+        "finding": "Incomplete verdict conflicts with all facts supported and no unsupported claims"
+      },
+      {
+        "job": "1317930",
+        "case": "P01",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "shared": "supported",
+          "identified": "supported"
+        },
+        "source_checked_verdicts": {
+          "shared": "missing",
+          "identified": "missing"
+        }
+      },
+      {
+        "job": "1317930",
+        "case": "P03",
+        "finding": "The automatic fact verdicts mark an absent answer fact as supported.",
+        "automatic_verdicts": {
+          "mapping": "supported",
+          "readiness": "supported"
+        },
+        "source_checked_verdicts": {
+          "mapping": "missing",
+          "readiness": "missing"
+        }
+      }
+    ],
+    "software_checks": 46,
+    "software_code_sha256": {
+      "s1_eval/core.py": "d605fd93a523f81ea42fe8b9c27e0d1fbd8ae2a6e2fff4b79e1c7921c2b053b4",
+      "s1_eval/__init__.py": "c30aa1dbe401822909f01baed4bb8968047895a5abd78edf06640cf991730a4f",
+      "scripts/check_s1_evaluation.py": "049ba484689ee9fdcc8588d50876b5c9beacee498ae78773c1cb0a25763683c8"
+    }
+  }
+}

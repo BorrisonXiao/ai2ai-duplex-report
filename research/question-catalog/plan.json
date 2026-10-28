@@ -149,13 +149,13 @@
           "text": "Implement shared S1 answer extraction, scoring and token accounting.",
           "status": "complete",
           "project_url": "study-progress.html#software-checks",
-          "evidence": "Three earlier real outputs and 43 CPU checks pass."
+          "evidence": "Evaluator v0.1.2 passes 46 CPU checks; original 43-check snapshot and three historical examples are retained separately."
         },
         {
           "text": "Implement run-time progress updates from the same saved records as the checklists.",
-          "status": "partial",
+          "status": "complete",
           "project_url": "study-progress.html#reporting",
-          "evidence": "Per-example snapshots, 30-second heartbeat and local viewer implemented; new inference-job integration remains pending."
+          "evidence": "Native GPU-job phase/case updates and 30-second heartbeat are connected; public checkpoints use actual Slurm status and saved output records."
         },
         {
           "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
@@ -165,21 +165,21 @@
         },
         {
           "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",
-          "status": "pending",
-          "project_url": "what-to-think.html#evaluation-first",
-          "evidence": "Plan requirement; not yet executed."
+          "status": "complete",
+          "project_url": "study-progress.html#fresh-pilot",
+          "evidence": "Three real meeting requests tested on one A100 80 GB; raw outputs, recorded speech and source facts reviewed. Full protocol remains unvalidated."
         },
         {
           "text": "Publish an actual pilot output with its request, answer facts, score and explanation.",
-          "status": "pending",
-          "project_url": "study-progress.html#examples",
-          "evidence": "Plan requirement; not yet executed."
+          "status": "complete",
+          "project_url": "study-progress.html#fresh-pilot",
+          "evidence": "Actual input excerpts, S1 response audio, source facts, raw text and score explanations are published together."
         },
         {
-          "text": "Validate and freeze the evaluation protocol before expanding experiments.",
+          "text": "Qualify full-history S1 input and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "project_url": "what-to-think.html#evaluation-first",
-          "evidence": "Plan requirement; not yet executed."
+          "evidence": "Fresh pilot found missing request recognition, rejected response format and inconsistent automatic fact verdicts; protocol remains unvalidated."
         },
         {
           "text": "Generate or repair and validate all 105 reference answers.",

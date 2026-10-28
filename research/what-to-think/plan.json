@@ -94,9 +94,11 @@
   ],
   "resources": {
     "current_GPU_count": 0,
-    "current_maximum_active_GPUs": 0,
-    "current_roles": {},
-    "current_dependencies": "CPU evaluator replay, regression checks and report generation; no new model calls, downloads or GPU jobs.",
+    "current_maximum_active_GPUs": 1,
+    "current_roles": {
+      "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after S1 shutdown Parakeet ASR, then offline Qwen3-30B Instruct judge on GPU 0"
+    },
+    "current_dependencies": "Four sequential one-A100 80 GB jobs: S1, then ASR, then offline judging on GPU 0 in each allocation; S2 disabled. All GPU jobs finished; full evaluation protocol remains unvalidated.",
     "planned_maximum_active_GPUs": 4,
     "policy": "All GPU jobs sequential; transcript tools and reference validation precede evaluation; judges follow generation. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
@@ -118,7 +120,7 @@
     "source": "https://arxiv.org/abs/2510.05150"
   },
   "evaluation_gate": {
-    "status": "software_checked_end_to_end_pilot_pending",
+    "status": "pilot_reviewed_caller_and_judge_not_qualified",
     "first_model": "DuplexOmni S1, using the existing verified S1 caller with S2 disabled",
     "scope": "First implement and validate the shared evaluation scripts on saved real S1 outputs, then run a small end-to-end S1 pilot on separately checked question examples; these checks do not replace the final 105-question evaluation.",
     "checks": [
@@ -134,7 +136,7 @@
       "Verify that the progress report and checklists match the saved run records, including failure cases and update times."
     ],
     "pass_rule": "Proceed only after every pipeline check is verified and an inspected real S1 pilot example is linked; a wrong model answer can still demonstrate correct evaluation, but a successful process exit alone cannot pass this gate.",
-    "next": "Validate all 105 references before full S1 evaluation; qualify the other S1 callers against the same evaluator, then extend to text and speech S2."
+    "next": "First qualify full-history S1 request recognition and the judge using empty, partial and correct real outputs; then validate all 105 references and qualify the other S1 callers before full-bank evaluation."
   },
   "progress_reporting": {
     "status": "local_evaluation_worker_implemented_inference_integration_pending",

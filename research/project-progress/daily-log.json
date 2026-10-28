@@ -6,6 +6,26 @@
       "date": "2026-10-27",
       "items": [
         {
+          "text": "Ran three real meeting questions at 5:09, 9:21 and 21:40 through DuplexOmni S1 with full earlier audio.",
+          "url": "study-progress.html#fresh-pilot"
+        },
+        {
+          "text": "Found no complete spoken answer, although one buffered request produced a correct text answer outside the speech format.",
+          "url": "study-progress.html#pilot-audio"
+        },
+        {
+          "text": "Checked native request packets and disabled the microphone noise gate to preserve quiet recordings.",
+          "url": "study-progress.html#pilot-methods"
+        },
+        {
+          "text": "Reviewed incorrect automatic fact judgments against source passages and added three evaluator checks, bringing the total to 46.",
+          "url": "study-progress.html#fresh-pilot"
+        },
+        {
+          "text": "Finished four sequential one-A100 80 GB jobs, using 0.35861 GPU hours including transcription and offline judging.",
+          "url": "study-progress.html#pilot-resources"
+        },
+        {
           "text": "Completed audio for all 105 retained questions, each starting with the Assistant cue.",
           "url": "experiments/question-audio.html"
         },
