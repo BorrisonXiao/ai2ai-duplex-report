@@ -78,7 +78,8 @@
     "For a paired comparison, use the same selected raw-history intervals and output reserve; list which earlier results were retained or removed.",
     "Keep full-history and budgeted results separate while reporting an all-105 total; log selector version, omitted intervals, cause and actual input counts.",
     "Never silently truncate, use gold evidence to select history, change precision/checkpoint, or omit a question; if even the declared minimum cannot run, record a capacity failure in the all-105 ledger.",
-    "Distinguish a model-native rolling context from caller-selected history: consuming a full recording does not prove that every earlier state remains directly accessible. Record native rolling/eviction separately from a selected-history fallback."
+    "Distinguish a model-native rolling context from caller-selected history: consuming a full recording does not prove that every earlier state remains directly accessible. Record native rolling/eviction separately from a selected-history fallback.",
+    "DuplexOmni’s released bridge retains150 native turns (about72seconds) by default; its full-history native controls deliberately extend that policy. Count all audio-message, ASR and control tokens, not only the audio expansion of one large WAV, and qualify this extended mode before treating it as an accuracy baseline."
   ],
   "metrics": [
     "Primary accuracy: a complete source-supported answer without a material unsupported claim, judged using verified facts, rules and a blinded LLM judge.",
@@ -96,9 +97,9 @@
     "current_GPU_count": 0,
     "current_maximum_active_GPUs": 1,
     "current_roles": {
-      "0": "S1 Thinker/Talker/MTP/Code2Wav share GPU 0; after S1 shutdown Parakeet ASR, then offline Qwen3-30B Instruct judge on GPU 0"
+      "0": "DuplexOmni S1 Thinker with an explicit meeting-listener prompt and native frame history via vLLM; no Talker, MTP, Code2Wav, ASR or S2"
     },
-    "current_dependencies": "Four sequential one-A100 80 GB jobs: S1, then ASR, then offline judging on GPU 0 in each allocation; S2 disabled. All GPU jobs finished; full evaluation protocol remains unvalidated.",
+    "current_dependencies": "S1 diagnosis uses sequential one-H200 141 GB jobs: Thinker-only first, then the full S1 stack and independent ASR, then same-S1 oracle and native-history controls. S2 is disabled; source-checked speech review determines correctness.",
     "planned_maximum_active_GPUs": 4,
     "policy": "All GPU jobs sequential; transcript tools and reference validation precede evaluation; judges follow generation. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."

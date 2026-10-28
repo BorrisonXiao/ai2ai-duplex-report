@@ -1,7 +1,44 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "date_basis": "Recorded project milestone dates; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-10-28",
+      "items": [
+        {
+          "text": "Traced the empty-output pilot to DuplexOmni S1 language generation, request recognition, format rejection and waiting for disabled S2.",
+          "url": "study-progress.html#s1-empty"
+        },
+        {
+          "text": "Ran 22 Thinker conditions, 16 speech conditions and nine same-checkpoint oracle controls on the same three questions.",
+          "url": "study-progress.html#s1-empty-method"
+        },
+        {
+          "text": "Gain and a direct-answer prompt elicited speech on all three questions, but none gave a complete source-supported spoken answer.",
+          "url": "study-progress.html#s1-speech-repair"
+        },
+        {
+          "text": "Found that the written question helps one answer, while a correct transcript still leaves unsupported status claims.",
+          "url": "study-progress.html#s1-oracle-controls"
+        },
+        {
+          "text": "The initial controls used 0.17528 GPU hours on sequential one-H200 jobs, including a stopped partial run.",
+          "url": "study-progress.html#s1-diagnosis-cost"
+        },
+        {
+          "text": "The native greedy replay repeated ASR text and stopped before the question, while the released decoding settings completed the five-minute history.",
+          "url": "study-progress.html#s1-native-history"
+        },
+        {
+          "text": "Meeting-listener instructions kept the reply in English, but the written-question oracle still requested the unavailable S2.",
+          "url": "study-progress.html#s1-native-history"
+        },
+        {
+          "text": "All investigation jobs finished after 0.69583 GPU hours, with a maximum of one H200141GB active.",
+          "url": "study-progress.html#s1-diagnosis-cost"
+        }
+      ]
+    },
     {
       "date": "2026-10-27",
       "items": [

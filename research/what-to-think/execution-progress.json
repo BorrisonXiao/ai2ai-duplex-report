@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "status": "implementation_underway",
-  "snapshot_label": "Fresh one-A100 S1 pilot: reviewed; protocol not validated",
+  "snapshot_label": "S1 diagnosis complete; reliable grounded-speech repair unresolved",
   "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
@@ -56,6 +56,13 @@
       "evidence": "Actual input excerpts, S1 response audio, source facts, raw text and score explanations are published together."
     },
     {
+      "id": "s1-repair",
+      "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
+      "status": "partial",
+      "url": "study-progress.html#s1-empty",
+      "evidence": "Speech activation improved but complete grounded answers remain0/3 in the combined buffered condition; native history, decoding and meeting-role controls remain unreliable. Diagnose native behavior separately from a proposed explicit answer-now content control."
+    },
+    {
       "id": "gate",
       "text": "Qualify full-history S1 input and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
@@ -87,7 +94,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T02:54:06Z",
+  "updated_at": "2026-10-28T05:37:52Z",
   "runtime_reporting": "native_phase_case_and_heartbeat_connected",
   "software_checks": {
     "status": "completed",
@@ -109,5 +116,12 @@
     "pilot_scored": 2,
     "active_gpus": 0,
     "public_progress": "research/s1-meeting-pilot/progress.json"
+  },
+  "s1_empty_diagnosis": {
+    "job": "1318396",
+    "state": "COMPLETED",
+    "conditions_recorded": 22,
+    "status": "completed_content_review_required",
+    "public_progress": "research/s1-empty-diagnosis/progress.json"
   }
 }

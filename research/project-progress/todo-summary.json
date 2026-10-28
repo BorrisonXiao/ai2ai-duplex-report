@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "now": [
     {
       "status": "complete",
@@ -13,8 +13,8 @@
     },
     {
       "status": "pending",
-      "text": "Qualify the long-history input path and automatic judge before broader experiments.",
-      "url": "what-to-think.html#evaluation-first"
+      "text": "Qualify S1 input, grounding and automatic judging before broader experiments.",
+      "url": "study-progress.html#s1-empty"
     },
     {
       "status": "complete",
@@ -118,6 +118,13 @@
           "status": "complete",
           "url": "study-progress.html#fresh-pilot",
           "evidence": "Actual input excerpts, S1 response audio, source facts, raw text and score explanations are published together."
+        },
+        {
+          "id": "s1-repair",
+          "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
+          "status": "partial",
+          "url": "study-progress.html#s1-empty",
+          "evidence": "Speech activation improved but complete grounded answers remain0/3 in the combined buffered condition; native history, decoding and meeting-role controls remain unreliable. Diagnose native behavior separately from a proposed explicit answer-now content control."
         },
         {
           "id": "gate",

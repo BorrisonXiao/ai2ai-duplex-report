@@ -1,0 +1,17 @@
+"""Audit native-history diagnostics without treating text as verified speech."""
+import json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];D=ROOT/'research/s1_empty_diagnosis'
+def read(p):return json.loads(p.read_text())
+def save(p,x):p.write_text(json.dumps(x,indent=2,ensure_ascii=False)+'\n')
+records=[]
+for filename in ['native-history-greedy-submission.json','native-history-sampling-submission.json','native-history-submission.json']:
+ sub=read(D/filename);base=ROOT/'exp/s1_native_history_diagnosis'/sub['job'];summary=read(base/'summary.json');turns=[json.loads(s) for s in (base/'turns.jsonl').read_text().splitlines()];prefix=[t for t in turns if t['id'].startswith('prefix')]
+ review={'job':sub['job'],'reviewer':'Codex inspection of actual native fields and earlier source facts; no speech synthesis in this diagnostic','prefix_complete':len(prefix)==summary['prefill_frames_planned'],'prefix_frames':len(prefix),'prefix_calls_requesting_speech':sum(bool((t['fields'] or {}).get('tts')) for t in prefix),'length_stopped_calls':sum(t['finish_reason']=='length' for t in turns),'unstructured_calls':sum(t['fields'] is None for t in turns),'question_branches':[]}
+ for branch in summary['branches']:
+  reason=('The model acknowledges checking and requests the unavailable S2; it gives neither required source fact.' if branch['S2_requests'] else 'The reply gives no shared-folder resolution or identified PowerPoint; the request is absent from its ASR output.')
+  review['question_branches'].append({'id':branch['id'],'oracle_question_text':branch.get('oracle_question_text',False),'complete_text_answer_score':0,'reason':reason,'native_text':branch['native_text']})
+ save(base/'source-review.json',review);records.append(review)
+audit=read(D/'audit.json');audit['native_history_reviews']=records;audit['upstream_history_policy']={'default_turns':150,'frame_seconds':.48,'approximate_seconds':72,'source':'https://github.com/MuyeHuang/DuplexOmni/blob/33bfba1a821b09c5aa66790944f9098584979d34/inference_framework/realtime_serving/omni_realtime_server.py#L81','note':'The extended-history controls preserve more input than the released default; executable token capacity does not establish understanding.'}
+audit['native_history_findings']=['The original one-WAV call is an unqualified input path for this native streaming checkpoint; native-format controls are reported separately.','The released bridge defaults to 150 audio turns, about 72 seconds, while the full-history controls deliberately retain all earlier frames.','Greedy native decoding entered an ASR repetition loop and hit the conservative context guard after620/643 earlier frames; it never reached the question.','The released decoding recipe completed643 earlier frames with no output-limit stops, but generated a false Ukrainian-translation request in ASR and later generated Ukrainian response text.','The explicit meeting-listener prompt kept response text in English but gave only a generic acknowledgement; the written-question oracle triggered [THINK] and waited for disabled S2.','These native-history controls use only the S1 language component; their text is not a verified spoken-answer result.']
+audit['remaining'].insert(0,'Separate native S1 behavior from an explicit answer-now content control before interpreting silence as reasoning or memory failure.');save(D/'audit.json',audit);print(json.dumps({'native_jobs':len(records),'question_branches_completed':sum(len(r['question_branches']) for r in records),'complete_native_text_answers':0}))
