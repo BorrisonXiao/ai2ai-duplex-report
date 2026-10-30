@@ -34,12 +34,15 @@ def intro_sections(p,progress):
 def build_progress(progress,p):
  import re
  import s1_listening_view, s1_context_pressure_view
+ array_review=ROOT/'research/s1-array-contrast/review.json'
+ if array_review.exists():progress={**progress,'updated_at':max(progress['updated_at'],json.loads(array_review.read_text())['reviewed_utc'])}
  t=Tables();d=s1_listening_view.load()
  completed=sum(c['status']=='completed_content_review_required' for c in d['cases']) if d else 0
  body='<header class="hero"><h1>Experiment progress</h1></header><section class="section" id="summary">'+bullets([dict(text='Tested decode and clear and constrained decoding to keep DuplexOmni listening until the question ends.'),dict(text='Both methods missed the required facts in all four meeting outputs at 5:09 and 9:21; answer text and independent speech transcripts are linked below.'),dict(text='The single-WAV history shortcut is retired, and the full 105-question evaluation remains unvalidated.')])+'<p><a href="#s1-listening">Current comparison</a> · <a href="#listening-examples">Questions and audio</a> · <a href="#checklist">Project checklist</a></p><p>Published snapshot: '+e(progress['updated_at'])+'.</p></section>'
  pressure=s1_context_pressure_view.load()
  if pressure:
   body='<header class="hero"><h1>Experiment progress</h1></header><section class="section" id="summary">'+bullets([dict(text=x) for x in s1_context_pressure_view.summary(pressure)])+'<p><a href="#s1-pressure">Current pressure test</a> · <a href="#matched-controls">Matched controls</a> · <a href="todo.html">Project checklist</a></p><p>Published snapshot: '+e(progress['updated_at'])+'.</p></section>'
+  if array_review.exists():body=body.replace('<a href="#s1-pressure">Current pressure test</a>','<a href="#ami-array-contrast">AMI microphone contrast</a> · <a href="#s1-pressure">Current pressure test</a>')
   body+=s1_context_pressure_view.render(t)
   body+='<details id="earlier-listening"><summary>Earlier two-method meeting pilot: four outputs, no complete answer</summary>'+s1_listening_view.render(t)+'</details>'
  else:body+=s1_listening_view.render(t)

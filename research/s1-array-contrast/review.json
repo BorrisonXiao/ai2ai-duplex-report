@@ -1,0 +1,773 @@
+{
+  "status": "completed_source_reviewed",
+  "job": "1373709",
+  "reviewed_utc": "2026-10-30T02:10:42.587522+00:00",
+  "reviewer": "Codex source review of native text and independent Parakeet transcripts; no human listening rating",
+  "finding": "At the same 198.91-second P01 context, the released eight-microphone beamformed audio restores exact question ASR (WER 0); the headset mix and one distant microphone have empty question ASR. None gives a complete source-grounded answer. The beamformed reply incorrectly says that the shared folder is empty.",
+  "cases": [
+    {
+      "id": "headset_mix",
+      "label": "Headset mix",
+      "gain_db": 0.0,
+      "question_asr": "",
+      "recognition": {
+        "WER": 1.0,
+        "key_terms_present": false,
+        "recognized": false,
+        "recognized_text": ""
+      },
+      "speech_text": "Yes, all other presentations are in the shared folder. You can access them anytime.",
+      "spoken_transcript": "Yet, all other presentations are in the shared folder. You can access them anytime.",
+      "audio_sha256": "9bccd389ea9479da6bd23ae371043628185fe081477d86a5eeed58fee45d2f1b",
+      "native_facts": 1,
+      "spoken_facts": 1,
+      "reason": "The headset rerun repeats the earlier partial answer: it places presentations in the shared folder, but omits the identified components-design PowerPoint and broadly asserts availability. The independent speech transcript preserves the same folder claim. Question ASR is empty.",
+      "question_meaning_in_ASR": false,
+      "wall_seconds": 308.15953272301704,
+      "max_prompt_tokens": 25337,
+      "evidence_ASR": [
+        {
+          "source_frame": 234,
+          "asr": "Hey, "
+        },
+        {
+          "source_frame": 235,
+          "asr": "are "
+        },
+        {
+          "source_frame": 236,
+          "asr": "all the "
+        },
+        {
+          "source_frame": 237,
+          "asr": "other "
+        },
+        {
+          "source_frame": 238,
+          "asr": "presentations "
+        },
+        {
+          "source_frame": 239,
+          "asr": ""
+        },
+        {
+          "source_frame": 240,
+          "asr": ""
+        },
+        {
+          "source_frame": 241,
+          "asr": ""
+        },
+        {
+          "source_frame": 242,
+          "asr": "just "
+        },
+        {
+          "source_frame": 243,
+          "asr": ""
+        },
+        {
+          "source_frame": 244,
+          "asr": "put it "
+        },
+        {
+          "source_frame": 245,
+          "asr": ""
+        },
+        {
+          "source_frame": 246,
+          "asr": "into "
+        },
+        {
+          "source_frame": 247,
+          "asr": "shared "
+        },
+        {
+          "source_frame": 248,
+          "asr": "folder "
+        },
+        {
+          "source_frame": 249,
+          "asr": "so we can "
+        },
+        {
+          "source_frame": 250,
+          "asr": "access "
+        },
+        {
+          "source_frame": 251,
+          "asr": "them "
+        },
+        {
+          "source_frame": 252,
+          "asr": ""
+        },
+        {
+          "source_frame": 253,
+          "asr": "anytime?"
+        },
+        {
+          "source_frame": 254,
+          "asr": ""
+        },
+        {
+          "source_frame": 255,
+          "asr": ""
+        },
+        {
+          "source_frame": 256,
+          "asr": ""
+        },
+        {
+          "source_frame": 257,
+          "asr": ""
+        },
+        {
+          "source_frame": 258,
+          "asr": ""
+        },
+        {
+          "source_frame": 259,
+          "asr": ""
+        },
+        {
+          "source_frame": 260,
+          "asr": ""
+        },
+        {
+          "source_frame": 261,
+          "asr": ""
+        },
+        {
+          "source_frame": 262,
+          "asr": ""
+        },
+        {
+          "source_frame": 263,
+          "asr": ""
+        },
+        {
+          "source_frame": 264,
+          "asr": ""
+        },
+        {
+          "source_frame": 265,
+          "asr": ""
+        },
+        {
+          "source_frame": 266,
+          "asr": ""
+        },
+        {
+          "source_frame": 267,
+          "asr": ""
+        },
+        {
+          "source_frame": 268,
+          "asr": ""
+        },
+        {
+          "source_frame": 269,
+          "asr": ""
+        },
+        {
+          "source_frame": 270,
+          "asr": ""
+        },
+        {
+          "source_frame": 271,
+          "asr": ""
+        },
+        {
+          "source_frame": 272,
+          "asr": ""
+        },
+        {
+          "source_frame": 273,
+          "asr": ""
+        },
+        {
+          "source_frame": 274,
+          "asr": ""
+        },
+        {
+          "source_frame": 275,
+          "asr": ""
+        },
+        {
+          "source_frame": 276,
+          "asr": ""
+        },
+        {
+          "source_frame": 277,
+          "asr": ""
+        },
+        {
+          "source_frame": 278,
+          "asr": ""
+        },
+        {
+          "source_frame": 279,
+          "asr": ""
+        },
+        {
+          "source_frame": 280,
+          "asr": ""
+        },
+        {
+          "source_frame": 281,
+          "asr": ""
+        },
+        {
+          "source_frame": 282,
+          "asr": ""
+        },
+        {
+          "source_frame": 283,
+          "asr": ""
+        },
+        {
+          "source_frame": 284,
+          "asr": ""
+        },
+        {
+          "source_frame": 285,
+          "asr": ""
+        },
+        {
+          "source_frame": 286,
+          "asr": ""
+        },
+        {
+          "source_frame": 287,
+          "asr": ""
+        }
+      ],
+      "last_answer_packet_speaking": false,
+      "audio": "research/s1-array-contrast/audio/headset_mix-response.wav",
+      "input_preview": "research/s1-array-contrast/audio/headset_mix-input.wav",
+      "evidence_audio": "research/s1-array-contrast/audio/headset_mix-evidence.wav"
+    },
+    {
+      "id": "distant_01",
+      "label": "One distant microphone",
+      "gain_db": 16.51919619519682,
+      "question_asr": "",
+      "recognition": {
+        "WER": 1.0,
+        "key_terms_present": false,
+        "recognized": false,
+        "recognized_text": ""
+      },
+      "speech_text": "Let me check the folder structure for you.",
+      "spoken_transcript": "Let me do the folder structure for you.",
+      "audio_sha256": "f7ce12a09add33f2dfdad8ff3ce040acb2f861b8cddf291758ae8c37934f1588",
+      "native_facts": 0,
+      "spoken_facts": 0,
+      "reason": "The reply offers to check the folder structure but reports neither the earlier folder placement nor the identified components-design PowerPoint. The independent speech transcript says “Let me do” rather than “Let me check”; it also supplies neither fact. Question ASR is empty.",
+      "question_meaning_in_ASR": false,
+      "wall_seconds": 300.7205354219768,
+      "max_prompt_tokens": 25262,
+      "evidence_ASR": [
+        {
+          "source_frame": 234,
+          "asr": ""
+        },
+        {
+          "source_frame": 235,
+          "asr": "Are "
+        },
+        {
+          "source_frame": 236,
+          "asr": "all the "
+        },
+        {
+          "source_frame": 237,
+          "asr": "other "
+        },
+        {
+          "source_frame": 238,
+          "asr": ""
+        },
+        {
+          "source_frame": 239,
+          "asr": "representations "
+        },
+        {
+          "source_frame": 240,
+          "asr": ""
+        },
+        {
+          "source_frame": 241,
+          "asr": ""
+        },
+        {
+          "source_frame": 242,
+          "asr": "just "
+        },
+        {
+          "source_frame": 243,
+          "asr": ""
+        },
+        {
+          "source_frame": 244,
+          "asr": "folded "
+        },
+        {
+          "source_frame": 245,
+          "asr": "into "
+        },
+        {
+          "source_frame": 246,
+          "asr": "the "
+        },
+        {
+          "source_frame": 247,
+          "asr": "inertia "
+        },
+        {
+          "source_frame": 248,
+          "asr": "group "
+        },
+        {
+          "source_frame": 249,
+          "asr": "or "
+        },
+        {
+          "source_frame": 250,
+          "asr": ""
+        },
+        {
+          "source_frame": 251,
+          "asr": "inertial "
+        },
+        {
+          "source_frame": 252,
+          "asr": ""
+        },
+        {
+          "source_frame": 253,
+          "asr": "group?"
+        },
+        {
+          "source_frame": 254,
+          "asr": ""
+        },
+        {
+          "source_frame": 255,
+          "asr": ""
+        },
+        {
+          "source_frame": 256,
+          "asr": ""
+        },
+        {
+          "source_frame": 257,
+          "asr": ""
+        },
+        {
+          "source_frame": 258,
+          "asr": ""
+        },
+        {
+          "source_frame": 259,
+          "asr": ""
+        },
+        {
+          "source_frame": 260,
+          "asr": ""
+        },
+        {
+          "source_frame": 261,
+          "asr": ""
+        },
+        {
+          "source_frame": 262,
+          "asr": ""
+        },
+        {
+          "source_frame": 263,
+          "asr": ""
+        },
+        {
+          "source_frame": 264,
+          "asr": ""
+        },
+        {
+          "source_frame": 265,
+          "asr": ""
+        },
+        {
+          "source_frame": 266,
+          "asr": ""
+        },
+        {
+          "source_frame": 267,
+          "asr": ""
+        },
+        {
+          "source_frame": 268,
+          "asr": ""
+        },
+        {
+          "source_frame": 269,
+          "asr": ""
+        },
+        {
+          "source_frame": 270,
+          "asr": ""
+        },
+        {
+          "source_frame": 271,
+          "asr": ""
+        },
+        {
+          "source_frame": 272,
+          "asr": ""
+        },
+        {
+          "source_frame": 273,
+          "asr": ""
+        },
+        {
+          "source_frame": 274,
+          "asr": ""
+        },
+        {
+          "source_frame": 275,
+          "asr": ""
+        },
+        {
+          "source_frame": 276,
+          "asr": ""
+        },
+        {
+          "source_frame": 277,
+          "asr": ""
+        },
+        {
+          "source_frame": 278,
+          "asr": ""
+        },
+        {
+          "source_frame": 279,
+          "asr": ""
+        },
+        {
+          "source_frame": 280,
+          "asr": ""
+        },
+        {
+          "source_frame": 281,
+          "asr": ""
+        },
+        {
+          "source_frame": 282,
+          "asr": ""
+        },
+        {
+          "source_frame": 283,
+          "asr": ""
+        },
+        {
+          "source_frame": 284,
+          "asr": ""
+        },
+        {
+          "source_frame": 285,
+          "asr": ""
+        },
+        {
+          "source_frame": 286,
+          "asr": ""
+        },
+        {
+          "source_frame": 287,
+          "asr": ""
+        }
+      ],
+      "last_answer_packet_speaking": false,
+      "audio": "research/s1-array-contrast/audio/distant_01-response.wav",
+      "input_preview": "research/s1-array-contrast/audio/distant_01-input.wav",
+      "evidence_audio": "research/s1-array-contrast/audio/distant_01-evidence.wav"
+    },
+    {
+      "id": "beamformed_mdm8",
+      "label": "Eight-microphone beamformed audio",
+      "gain_db": -6.001306077353963,
+      "question_asr": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "recognition": {
+        "WER": 0.0,
+        "key_terms_present": true,
+        "recognized": true,
+        "recognized_text": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?"
+      },
+      "speech_text": "Let me check the shared folder status for you. The shared folder is currently empty. I can help you set up a new one or check if there are any other locations where the files might be.",
+      "spoken_transcript": "Let me check the shared folder status for you. The shared folder is currently empty. I can help you set up a new one or check if there are any other locations where the files might be.",
+      "audio_sha256": "304a1af81ac471f93bcdab821c3654396388080e1000ad06a49b97185614b4a4",
+      "native_facts": 0,
+      "spoken_facts": 0,
+      "reason": "The complete request is recognized exactly, but both native text and independent speech say the folder is currently empty. That assertion is unsupported and conflicts with C reporting that a presentation was placed there. The response omits the components-design PowerPoint and offers to create a new folder.",
+      "question_meaning_in_ASR": true,
+      "wall_seconds": 301.0255553040188,
+      "max_prompt_tokens": 25342,
+      "evidence_ASR": [
+        {
+          "source_frame": 234,
+          "asr": ""
+        },
+        {
+          "source_frame": 235,
+          "asr": "Are "
+        },
+        {
+          "source_frame": 236,
+          "asr": "all the "
+        },
+        {
+          "source_frame": 237,
+          "asr": "other "
+        },
+        {
+          "source_frame": 238,
+          "asr": "presentations "
+        },
+        {
+          "source_frame": 239,
+          "asr": ""
+        },
+        {
+          "source_frame": 240,
+          "asr": ""
+        },
+        {
+          "source_frame": 241,
+          "asr": ""
+        },
+        {
+          "source_frame": 242,
+          "asr": "I just "
+        },
+        {
+          "source_frame": 243,
+          "asr": ""
+        },
+        {
+          "source_frame": 244,
+          "asr": "put it "
+        },
+        {
+          "source_frame": 245,
+          "asr": "into "
+        },
+        {
+          "source_frame": 246,
+          "asr": "the "
+        },
+        {
+          "source_frame": 247,
+          "asr": "shared "
+        },
+        {
+          "source_frame": 248,
+          "asr": "folder "
+        },
+        {
+          "source_frame": 249,
+          "asr": "so it shows "
+        },
+        {
+          "source_frame": 250,
+          "asr": ""
+        },
+        {
+          "source_frame": 251,
+          "asr": "up "
+        },
+        {
+          "source_frame": 252,
+          "asr": ""
+        },
+        {
+          "source_frame": 253,
+          "asr": "in the "
+        },
+        {
+          "source_frame": 254,
+          "asr": "system?"
+        },
+        {
+          "source_frame": 255,
+          "asr": ""
+        },
+        {
+          "source_frame": 256,
+          "asr": ""
+        },
+        {
+          "source_frame": 257,
+          "asr": ""
+        },
+        {
+          "source_frame": 258,
+          "asr": ""
+        },
+        {
+          "source_frame": 259,
+          "asr": ""
+        },
+        {
+          "source_frame": 260,
+          "asr": ""
+        },
+        {
+          "source_frame": 261,
+          "asr": ""
+        },
+        {
+          "source_frame": 262,
+          "asr": ""
+        },
+        {
+          "source_frame": 263,
+          "asr": ""
+        },
+        {
+          "source_frame": 264,
+          "asr": ""
+        },
+        {
+          "source_frame": 265,
+          "asr": ""
+        },
+        {
+          "source_frame": 266,
+          "asr": ""
+        },
+        {
+          "source_frame": 267,
+          "asr": ""
+        },
+        {
+          "source_frame": 268,
+          "asr": ""
+        },
+        {
+          "source_frame": 269,
+          "asr": ""
+        },
+        {
+          "source_frame": 270,
+          "asr": ""
+        },
+        {
+          "source_frame": 271,
+          "asr": ""
+        },
+        {
+          "source_frame": 272,
+          "asr": ""
+        },
+        {
+          "source_frame": 273,
+          "asr": ""
+        },
+        {
+          "source_frame": 274,
+          "asr": ""
+        },
+        {
+          "source_frame": 275,
+          "asr": ""
+        },
+        {
+          "source_frame": 276,
+          "asr": ""
+        },
+        {
+          "source_frame": 277,
+          "asr": ""
+        },
+        {
+          "source_frame": 278,
+          "asr": ""
+        },
+        {
+          "source_frame": 279,
+          "asr": ""
+        },
+        {
+          "source_frame": 280,
+          "asr": ""
+        },
+        {
+          "source_frame": 281,
+          "asr": ""
+        },
+        {
+          "source_frame": 282,
+          "asr": ""
+        },
+        {
+          "source_frame": 283,
+          "asr": ""
+        },
+        {
+          "source_frame": 284,
+          "asr": ""
+        },
+        {
+          "source_frame": 285,
+          "asr": ""
+        },
+        {
+          "source_frame": 286,
+          "asr": ""
+        },
+        {
+          "source_frame": 287,
+          "asr": ""
+        }
+      ],
+      "last_answer_packet_speaking": false,
+      "audio": "research/s1-array-contrast/audio/beamformed_mdm8-response.wav",
+      "input_preview": "research/s1-array-contrast/audio/beamformed_mdm8-input.wav",
+      "evidence_audio": "research/s1-array-contrast/audio/beamformed_mdm8-evidence.wav"
+    }
+  ],
+  "original_headset_field_agreement": {
+    "identical": 467,
+    "total": 467
+  },
+  "request_packet_hashes_identical": 13,
+  "response_window_seconds": 19.2,
+  "accounting": {
+    "job": "1373709",
+    "state": "COMPLETED",
+    "elapsed_seconds": 1223,
+    "extern_elapsed_seconds": 1225,
+    "start": "2026-10-29T21:49:14-04:00",
+    "end": "2026-10-29T22:09:37-04:00",
+    "node": "gh105",
+    "gpu_count": 1,
+    "gpu_type_vram": "H100 SXM 80 GB",
+    "maximum_active_gpus": 1
+  },
+  "gpu_hours": 0.3397222222222222,
+  "maximum_active_gpus": 1,
+  "gpu_type_vram": "H100 SXM 80 GB",
+  "roles": {
+    "0": "Thinker, Talker, MTP and Code2Wav; then independent Parakeet after S1 exits"
+  },
+  "dependencies": "CPU preparation/preflight before S1; ASR after S1 shutdown; content review after ASR",
+  "cases_wall_seconds": 909.9056234490126,
+  "native_calls": 1401,
+  "native_calls_per_case_wall_second": 1.5397201246976426,
+  "limitations": [
+    "One meeting, one question, one context level and one greedy replay per condition.",
+    "Released MDM8 beamforming is offline; full-recording preprocessing may use later-audio statistics. No streaming beamformer claim.",
+    "No per-speaker oracle steering or transcript-driven enhancement.",
+    "Raw and beamformed distant audio are RMS matched to headset audio over the selected context; gain is recorded.",
+    "The final partial source packet shares the original headset signal to keep all question-containing packets identical."
+  ]
+}

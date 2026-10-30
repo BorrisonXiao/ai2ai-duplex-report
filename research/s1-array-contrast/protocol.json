@@ -1,0 +1,82 @@
+{
+  "meeting": "TS3006c",
+  "level": 30,
+  "matched": {
+    "source_start_seconds": 110.12,
+    "context_seconds": 198.90999999999997,
+    "contrast_end_seconds": 308.62,
+    "source_cutoff_seconds": 309.03,
+    "request_and_boundary_packet_identical": true,
+    "request_gain_db": 2.9203186630209776,
+    "temperature": 0,
+    "answer_frames": 40,
+    "S2": false,
+    "history_trimmed": false
+  },
+  "limitations": [
+    "One meeting, one question, one context level and one greedy replay per condition.",
+    "Released MDM8 beamforming is offline; full-recording preprocessing may use later-audio statistics. No streaming beamformer claim.",
+    "No per-speaker oracle steering or transcript-driven enhancement.",
+    "Raw and beamformed distant audio are RMS matched to headset audio over the selected context; gain is recorded.",
+    "The final partial source packet shares the original headset signal to keep all question-containing packets identical."
+  ],
+  "sources": {
+    "distant_01": {
+      "url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3006c/audio/TS3006c.Array1-01.wav",
+      "etag": "\"4edd97e-40c59d9877b00\"",
+      "samplerate": 16000,
+      "channels": 1,
+      "source_frames": 41347754,
+      "prefix_frames": 4944480,
+      "prefix_sha256": "1bceb897e441179e5bd715ce2773ac274a12b1037883ab3d7ff9e2d4aa629cd2",
+      "source_data_offset": 44
+    },
+    "beamformed_mdm8": {
+      "url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/beamformed/TS3006c/TS3006c_MDM8.wav",
+      "etag": "\"4edd580-576c671f46ec0\"",
+      "samplerate": 16000,
+      "channels": 1,
+      "source_frames": 41347754,
+      "prefix_frames": 4944480,
+      "prefix_sha256": "b8cdd456445520ee1701712f2faa48e1ee273106da5319cebfe3d79c89e8c7b6",
+      "source_data_offset": 44
+    }
+  },
+  "conditions": [
+    {
+      "id": "headset_mix",
+      "gain_db": 0.0,
+      "context_rms": 0.022562123227041573,
+      "context_peak": 0.458587646484375
+    },
+    {
+      "id": "distant_01",
+      "gain_db": 16.51919619519682,
+      "context_rms": 0.022562099665546474,
+      "context_peak": 0.5721435546875
+    },
+    {
+      "id": "beamformed_mdm8",
+      "gain_db": -6.001306077353963,
+      "context_rms": 0.022562122311962543,
+      "context_peak": 0.4825439453125
+    }
+  ],
+  "engine": {
+    "gpus": 1,
+    "audio_limit": 1250,
+    "max_model_len": 49152,
+    "max_num_batched_tokens": 20480,
+    "thinker_kv_cache_memory_bytes": 6442450944,
+    "talker_kv_cache_memory_bytes": 268435456,
+    "thinker_gpu_memory_utilization": 0.8,
+    "talker_gpu_memory_utilization": 0.12,
+    "sequential_startup": true,
+    "talker_max_model_len": 8192,
+    "streaming_decoder": "bounded_context",
+    "decoder_context_frames": 25,
+    "thinker_tp": 1,
+    "thinker_cuda_graphs": true,
+    "gpu_type": "H100 SXM 80 GB"
+  }
+}
