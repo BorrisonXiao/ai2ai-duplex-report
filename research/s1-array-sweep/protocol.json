@@ -1,0 +1,601 @@
+{
+  "meeting": "TS3006c",
+  "source_license": "AMI Meeting Corpus, CC BY 4.0",
+  "sources": {
+    "distant_01": {
+      "url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/TS3006c/audio/TS3006c.Array1-01.wav",
+      "etag": "\"4edd97e-40c59d9877b00\"",
+      "samplerate": 16000,
+      "channels": 1,
+      "source_frames": 41347754,
+      "prefix_frames": 4944480,
+      "prefix_sha256": "1bceb897e441179e5bd715ce2773ac274a12b1037883ab3d7ff9e2d4aa629cd2",
+      "source_data_offset": 44
+    },
+    "beamformed_mdm8": {
+      "url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/beamformed/TS3006c/TS3006c_MDM8.wav",
+      "etag": "\"4edd580-576c671f46ec0\"",
+      "samplerate": 16000,
+      "channels": 1,
+      "source_frames": 41347754,
+      "prefix_frames": 4944480,
+      "prefix_sha256": "b8cdd456445520ee1701712f2faa48e1ee273106da5319cebfe3d79c89e8c7b6",
+      "source_data_offset": 44
+    }
+  },
+  "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+  "reference": {
+    "case_id": "scale:TS3006c-S05-Q3",
+    "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+    "status": "verified",
+    "version": "pilot-source-v1",
+    "reviewer": "Codex inspection of earlier source-reviewed transcript evidence; not an independent human rating",
+    "answer": "C said the files were in the shared folder and identified a components-design PowerPoint; D had initially seen only their own presentation.",
+    "required_facts": [
+      {
+        "id": "shared",
+        "text": "C said the files had been put in the shared folder."
+      },
+      {
+        "id": "identified",
+        "text": "C identified the components-design PowerPoint; the discussion does not establish a general folder outage."
+      }
+    ],
+    "evidence": [
+      {
+        "source": "TS3006c-s0017",
+        "speaker": "C",
+        "start_seconds": 115.86,
+        "end_seconds": 122.85,
+        "text": "I just put it in the in the shared folder so it should be yeah I think so."
+      },
+      {
+        "source": "TS3006c-s0022",
+        "speaker": "D",
+        "start_seconds": 126.02,
+        "end_seconds": 132.42,
+        "text": "Because I see only my own presentation yeah."
+      },
+      {
+        "source": "TS3006c-s0015",
+        "speaker": "D",
+        "start_seconds": 112.4,
+        "end_seconds": 114.7,
+        "text": "Where are are all the other presentations?"
+      },
+      {
+        "source": "TS3006c-s0018",
+        "speaker": "C",
+        "start_seconds": 122.85,
+        "end_seconds": 124.72,
+        "text": "Yeah, conceptual design."
+      },
+      {
+        "source": "TS3006c-s0024",
+        "speaker": "C",
+        "start_seconds": 132.07,
+        "end_seconds": 136.44,
+        "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+      }
+    ]
+  },
+  "levels": [
+    {
+      "id": "P01-L00",
+      "index": 0,
+      "source_start_seconds": 309.03,
+      "context_seconds": 0.0,
+      "added_group": null,
+      "groups": 0,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 13,
+      "first_packet_zero_padding_seconds": 0.38999999999998636
+    },
+    {
+      "id": "P01-L01",
+      "index": 1,
+      "source_start_seconds": 301.36,
+      "context_seconds": 7.669999999999959,
+      "added_group": "G39",
+      "groups": 1,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 29,
+      "first_packet_zero_padding_seconds": 0.4000000000000341
+    },
+    {
+      "id": "P01-L02",
+      "index": 2,
+      "source_start_seconds": 295.76,
+      "context_seconds": 13.269999999999982,
+      "added_group": "G38",
+      "groups": 2,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 40,
+      "first_packet_zero_padding_seconds": 0.07999999999998408
+    },
+    {
+      "id": "P01-L03",
+      "index": 3,
+      "source_start_seconds": 287.74,
+      "context_seconds": 21.289999999999964,
+      "added_group": "G37",
+      "groups": 3,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 57,
+      "first_packet_zero_padding_seconds": 0.22000000000002728
+    },
+    {
+      "id": "P01-L04",
+      "index": 4,
+      "source_start_seconds": 281.65,
+      "context_seconds": 27.379999999999995,
+      "added_group": "G36",
+      "groups": 4,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 70,
+      "first_packet_zero_padding_seconds": 0.37000000000000455
+    },
+    {
+      "id": "P01-L05",
+      "index": 5,
+      "source_start_seconds": 278.71,
+      "context_seconds": 30.319999999999993,
+      "added_group": "G35",
+      "groups": 5,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 76,
+      "first_packet_zero_padding_seconds": 0.3100000000000023
+    },
+    {
+      "id": "P01-L06",
+      "index": 6,
+      "source_start_seconds": 272.9,
+      "context_seconds": 36.129999999999995,
+      "added_group": "G34",
+      "groups": 6,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 88,
+      "first_packet_zero_padding_seconds": 0.2599999999999909
+    },
+    {
+      "id": "P01-L07",
+      "index": 7,
+      "source_start_seconds": 270.56,
+      "context_seconds": 38.46999999999997,
+      "added_group": "G33",
+      "groups": 7,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 93,
+      "first_packet_zero_padding_seconds": 0.3199999999999932
+    },
+    {
+      "id": "P01-L08",
+      "index": 8,
+      "source_start_seconds": 268.37,
+      "context_seconds": 40.65999999999997,
+      "added_group": "G32",
+      "groups": 8,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 97,
+      "first_packet_zero_padding_seconds": 0.05000000000001137
+    },
+    {
+      "id": "P01-L09",
+      "index": 9,
+      "source_start_seconds": 265.93,
+      "context_seconds": 43.099999999999966,
+      "added_group": "G31",
+      "groups": 9,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 102,
+      "first_packet_zero_padding_seconds": 0.009999999999990905
+    },
+    {
+      "id": "P01-L10",
+      "index": 10,
+      "source_start_seconds": 258.23,
+      "context_seconds": 50.799999999999955,
+      "added_group": "G30",
+      "groups": 10,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 119,
+      "first_packet_zero_padding_seconds": 0.4700000000000273
+    },
+    {
+      "id": "P01-L11",
+      "index": 11,
+      "source_start_seconds": 255.09,
+      "context_seconds": 53.93999999999997,
+      "added_group": "G29",
+      "groups": 11,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 125,
+      "first_packet_zero_padding_seconds": 0.21000000000000796
+    },
+    {
+      "id": "P01-L12",
+      "index": 12,
+      "source_start_seconds": 247.92,
+      "context_seconds": 61.109999999999985,
+      "added_group": "G28",
+      "groups": 12,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 140,
+      "first_packet_zero_padding_seconds": 0.2400000000000091
+    },
+    {
+      "id": "P01-L13",
+      "index": 13,
+      "source_start_seconds": 241.68,
+      "context_seconds": 67.34999999999997,
+      "added_group": "G27",
+      "groups": 13,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 153,
+      "first_packet_zero_padding_seconds": 0.2400000000000091
+    },
+    {
+      "id": "P01-L14",
+      "index": 14,
+      "source_start_seconds": 238.36,
+      "context_seconds": 70.66999999999996,
+      "added_group": "G26",
+      "groups": 14,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 160,
+      "first_packet_zero_padding_seconds": 0.28000000000002956
+    },
+    {
+      "id": "P01-L15",
+      "index": 15,
+      "source_start_seconds": 236.5,
+      "context_seconds": 72.52999999999997,
+      "added_group": "G25",
+      "groups": 15,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 164,
+      "first_packet_zero_padding_seconds": 0.3400000000000034
+    },
+    {
+      "id": "P01-L16",
+      "index": 16,
+      "source_start_seconds": 231.31,
+      "context_seconds": 77.71999999999997,
+      "added_group": "G24",
+      "groups": 16,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 175,
+      "first_packet_zero_padding_seconds": 0.4300000000000068
+    },
+    {
+      "id": "P01-L17",
+      "index": 17,
+      "source_start_seconds": 226.89,
+      "context_seconds": 82.13999999999999,
+      "added_group": "G23",
+      "groups": 17,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 184,
+      "first_packet_zero_padding_seconds": 0.3299999999999841
+    },
+    {
+      "id": "P01-L18",
+      "index": 18,
+      "source_start_seconds": 223.43,
+      "context_seconds": 85.59999999999997,
+      "added_group": "G22",
+      "groups": 18,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 191,
+      "first_packet_zero_padding_seconds": 0.2300000000000182
+    },
+    {
+      "id": "P01-L19",
+      "index": 19,
+      "source_start_seconds": 212.06,
+      "context_seconds": 96.96999999999997,
+      "added_group": "G21",
+      "groups": 19,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 215,
+      "first_packet_zero_padding_seconds": 0.3800000000000239
+    },
+    {
+      "id": "P01-L20",
+      "index": 20,
+      "source_start_seconds": 208.97,
+      "context_seconds": 100.05999999999997,
+      "added_group": "G20",
+      "groups": 20,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 221,
+      "first_packet_zero_padding_seconds": 0.17000000000001592
+    },
+    {
+      "id": "P01-L21",
+      "index": 21,
+      "source_start_seconds": 202.99,
+      "context_seconds": 106.03999999999996,
+      "added_group": "G19",
+      "groups": 21,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 234,
+      "first_packet_zero_padding_seconds": 0.4300000000000068
+    },
+    {
+      "id": "P01-L22",
+      "index": 22,
+      "source_start_seconds": 201.89,
+      "context_seconds": 107.13999999999999,
+      "added_group": "G18",
+      "groups": 22,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 236,
+      "first_packet_zero_padding_seconds": 0.28999999999999204
+    },
+    {
+      "id": "P01-L23",
+      "index": 23,
+      "source_start_seconds": 195.98,
+      "context_seconds": 113.04999999999998,
+      "added_group": "G17",
+      "groups": 23,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 248,
+      "first_packet_zero_padding_seconds": 0.13999999999998636
+    },
+    {
+      "id": "P01-L24",
+      "index": 24,
+      "source_start_seconds": 182.84,
+      "context_seconds": 126.18999999999997,
+      "added_group": "G16",
+      "groups": 24,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 276,
+      "first_packet_zero_padding_seconds": 0.4399999999999977
+    },
+    {
+      "id": "P01-L25",
+      "index": 25,
+      "source_start_seconds": 180.45,
+      "context_seconds": 128.57999999999998,
+      "added_group": "G15",
+      "groups": 25,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 281,
+      "first_packet_zero_padding_seconds": 0.44999999999998863
+    },
+    {
+      "id": "P01-L26",
+      "index": 26,
+      "source_start_seconds": 178.83,
+      "context_seconds": 130.19999999999996,
+      "added_group": "G14",
+      "groups": 26,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 284,
+      "first_packet_zero_padding_seconds": 0.27000000000001023
+    },
+    {
+      "id": "P01-L27",
+      "index": 27,
+      "source_start_seconds": 177.87,
+      "context_seconds": 131.15999999999997,
+      "added_group": "G13",
+      "groups": 27,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 286,
+      "first_packet_zero_padding_seconds": 0.27000000000001023
+    },
+    {
+      "id": "P01-L28",
+      "index": 28,
+      "source_start_seconds": 142.63,
+      "context_seconds": 166.39999999999998,
+      "added_group": "G12",
+      "groups": 28,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 359,
+      "first_packet_zero_padding_seconds": 0.06999999999999318
+    },
+    {
+      "id": "P01-L29",
+      "index": 29,
+      "source_start_seconds": 115.86,
+      "context_seconds": 193.16999999999996,
+      "added_group": "G11",
+      "groups": 29,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": false,
+      "source_frames": 415,
+      "first_packet_zero_padding_seconds": 0.18000000000000682
+    },
+    {
+      "id": "P01-L30",
+      "index": 30,
+      "source_start_seconds": 110.12,
+      "context_seconds": 198.90999999999997,
+      "added_group": "G10",
+      "groups": 30,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 427,
+      "first_packet_zero_padding_seconds": 0.20000000000000284
+    },
+    {
+      "id": "P01-L31",
+      "index": 31,
+      "source_start_seconds": 106.41,
+      "context_seconds": 202.61999999999998,
+      "added_group": "G09",
+      "groups": 31,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 435,
+      "first_packet_zero_padding_seconds": 0.3299999999999983
+    },
+    {
+      "id": "P01-L32",
+      "index": 32,
+      "source_start_seconds": 104.1,
+      "context_seconds": 204.92999999999998,
+      "added_group": "G08",
+      "groups": 32,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 440,
+      "first_packet_zero_padding_seconds": 0.4200000000000017
+    },
+    {
+      "id": "P01-L33",
+      "index": 33,
+      "source_start_seconds": 102.92,
+      "context_seconds": 206.10999999999996,
+      "added_group": "G07",
+      "groups": 33,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 442,
+      "first_packet_zero_padding_seconds": 0.20000000000000284
+    },
+    {
+      "id": "P01-L34",
+      "index": 34,
+      "source_start_seconds": 98.35,
+      "context_seconds": 210.67999999999998,
+      "added_group": "G06",
+      "groups": 34,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 452,
+      "first_packet_zero_padding_seconds": 0.4299999999999926
+    },
+    {
+      "id": "P01-L35",
+      "index": 35,
+      "source_start_seconds": 95.66,
+      "context_seconds": 213.36999999999998,
+      "added_group": "G05",
+      "groups": 35,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 457,
+      "first_packet_zero_padding_seconds": 0.14000000000000057
+    },
+    {
+      "id": "P01-L36",
+      "index": 36,
+      "source_start_seconds": 90.38,
+      "context_seconds": 218.64999999999998,
+      "added_group": "G04",
+      "groups": 36,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 468,
+      "first_packet_zero_padding_seconds": 0.14000000000000057
+    },
+    {
+      "id": "P01-L37",
+      "index": 37,
+      "source_start_seconds": 85.74,
+      "context_seconds": 223.28999999999996,
+      "added_group": "G03",
+      "groups": 37,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 478,
+      "first_packet_zero_padding_seconds": 0.29999999999999716
+    },
+    {
+      "id": "P01-L38",
+      "index": 38,
+      "source_start_seconds": 82.13,
+      "context_seconds": 226.89999999999998,
+      "added_group": "G02",
+      "groups": 38,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 485,
+      "first_packet_zero_padding_seconds": 0.04999999999999716
+    },
+    {
+      "id": "P01-L39",
+      "index": 39,
+      "source_start_seconds": 74.89,
+      "context_seconds": 234.14,
+      "added_group": "G01",
+      "groups": 39,
+      "initial_recording_silence_added": false,
+      "source_evidence_fully_available": true,
+      "source_frames": 500,
+      "first_packet_zero_padding_seconds": 0.010000000000005116
+    },
+    {
+      "id": "P01-L40",
+      "index": 40,
+      "source_start_seconds": 0.0,
+      "context_seconds": 309.03,
+      "added_group": null,
+      "groups": 39,
+      "initial_recording_silence_added": true,
+      "source_evidence_fully_available": true,
+      "source_frames": 656,
+      "first_packet_zero_padding_seconds": 0.0
+    }
+  ],
+  "gain_policy": "Use the same fixed L30 context-RMS gain from the completed contrast for every context length. No gain adaptation across lengths.",
+  "answer_scoring": "LLM scores independent response-ASR transcripts only at levels 30–40, where all reference evidence is supplied. Shorter contexts are not fully answerable and receive no correctness score.",
+  "response_window_seconds": 19.2,
+  "limitations": [
+    "One question, one greedy run per signal and context; no statistical robustness claim.",
+    "Released MDM8 beamforming is offline and may use later-audio statistics.",
+    "Request-only waveforms are identical and reused; L30 variants and all headset levels are reused from completed exact-setting runs."
+  ],
+  "conditions": [
+    {
+      "id": "headset_mix",
+      "gain_db": 0.0,
+      "input_sha256": "af03f12416da54777a62bd06d70313e2fd3dc19e35b8b9dc05648a61d07d1376"
+    },
+    {
+      "id": "distant_01",
+      "gain_db": 16.51919619519682,
+      "input_sha256": "bb41cef57189fa7df83facdd79a1c1a7a75b7c6b8ac84773cc85de09ccf032ce"
+    },
+    {
+      "id": "beamformed_mdm8",
+      "gain_db": -6.001306077353963,
+      "input_sha256": "69dd2ea69d56951930827f8cb74ea48d60107ad36089a7d25ba2d790f4a6ff80"
+    }
+  ]
+}

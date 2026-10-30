@@ -1,0 +1,30 @@
+{
+  "scope": "The original three-request S1 pilot and this one-question extension; selected question-bank meetings, not a named official ASR split.",
+  "recordings": [
+    {
+      "meeting": "TS3006c",
+      "meeting_type": "scenario",
+      "pilot_cases": [
+        "P01",
+        "P03"
+      ],
+      "filename": "TS3006c.Mix-Headset.wav",
+      "channels": 1,
+      "sample_rate_hz": 16000,
+      "source_url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/HeadsetAudio/TS3006c.Mix-Headset.wav"
+    },
+    {
+      "meeting": "EN2004a",
+      "meeting_type": "nonscenario",
+      "pilot_cases": [
+        "P02"
+      ],
+      "filename": "EN2004a.Mix-Headset.wav",
+      "channels": 1,
+      "sample_rate_hz": 16000,
+      "source_url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/HeadsetAudio/EN2004a.Mix-Headset.wav"
+    }
+  ],
+  "metadata_sha256": "8ab6cdcf03ed863e839418f31c7380392397a2eed892d73b9bc1b438c7ec520a",
+  "documentation": "https://groups.inf.ed.ac.uk/ami/download/"
+}

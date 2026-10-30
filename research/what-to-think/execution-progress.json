@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-10-28",
+  "updated": "2026-10-30",
   "status": "implementation_underway",
-  "snapshot_label": "Matched caller and P01 context-pressure tests completed and reviewed",
+  "snapshot_label": "P01 microphone/history curves and spoken-response content reviewed",
   "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
@@ -84,11 +84,18 @@
       "evidence": "41/41 contexts reviewed for one question; 20 preserve question meaning in ASR, and 0/11 eligible contexts give complete reference answers within 19.2 s."
     },
     {
+      "id": "s1-array-sweep",
+      "text": "Compare microphone signals across all 41 histories and inspect actual spoken-response content.",
+      "status": "complete",
+      "url": "study-progress.html#ami-array-sweep",
+      "evidence": "Three signals at 41 lengths: 78 new native replays, 3 generation failures shown as gaps, 33 eligible spoken answers scored by a qualified local judge and audited against the source; 0 complete. One question; full protocol remains unvalidated."
+    },
+    {
       "id": "gate",
       "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
       "url": "what-to-think.html#evaluation-first",
-      "evidence": "Matched caller reproduced and pressure outputs reviewed; validate all 105 references, qualify automatic judging and check the other S1 callers before full-bank evaluation."
+      "evidence": "The one-question microphone sweep is reviewed and the revised local judge passed twelve authored checks; validate all 105 references, qualify judging on distinct questions and check the other S1 callers before full-bank evaluation."
     },
     {
       "id": "references",
@@ -115,7 +122,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-10-28T20:45:37.720055+00:00",
+  "updated_at": "2026-10-30T04:20:44.800420+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -158,6 +165,16 @@
     "planned_levels": 41,
     "completed_levels": 41,
     "recognized_levels": 12,
+    "active_gpus": 0,
+    "maximum_active_gpus": 4
+  },
+  "microphone_sweep": {
+    "state": "completed_source_reviewed",
+    "public_progress": "research/s1-array-sweep/review.json",
+    "new_replays": 78,
+    "generation_failures": 3,
+    "scored_responses": 33,
+    "source_audited_complete": 0,
     "active_gpus": 0,
     "maximum_active_gpus": 4
   }

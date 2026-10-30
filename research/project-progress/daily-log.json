@@ -1,7 +1,28 @@
 {
-  "updated": "2026-10-28",
-  "date_basis": "Recorded project milestone dates; older entries are selected milestones, not a reconstruction of every work day.",
+  "updated": "2026-10-30",
+  "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-10-30",
+      "items": [
+        {
+          "text": "Repeated the P01 stress test across 41 history lengths for one distant microphone and released eight-microphone beamformed audio.",
+          "url": "study-progress.html#ami-array-sweep"
+        },
+        {
+          "text": "Scored actual spoken responses using independent ASR and a local LLM judge, with separate source audits and disagreements preserved.",
+          "url": "study-progress.html#array-response-content"
+        },
+        {
+          "text": "Source review found 0 complete answers among 33 scored responses containing all required evidence; the full 105-question evaluation remains unvalidated.",
+          "url": "study-progress.html#array-response-content"
+        },
+        {
+          "text": "Kept 3 generation-limit failures as unscored gaps rather than word-error-rate measurements.",
+          "url": "study-progress.html#array-sweep-examples"
+        }
+      ]
+    },
     {
       "date": "2026-10-28",
       "items": [
