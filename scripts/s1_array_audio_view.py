@@ -1,0 +1,36 @@
+"""Visible microphone demos and a browser of saved response audio/ASR."""
+import hashlib
+import json
+from html import escape as e
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+LABELS = {'headset_mix': 'Headset mix', 'distant_01': 'One distant microphone', 'beamformed_mdm8': 'Eight-microphone beamformed audio'}
+CSS = '''#array-audio-demos,#array-response-browser{scroll-margin-top:10rem}.array-demo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0}.array-demo-card,.array-response-player{min-width:0;padding:1rem;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.array-demo-card h4{margin:.2rem 0 1rem}.array-demo-card audio,.array-response-player audio{display:block;width:100%;max-width:100%;margin:.5rem 0 1rem}.array-demo-card p{overflow-wrap:anywhere}.array-demo-asr>summary,.array-case-button,.array-response-controls button{font:inherit;line-height:1.4;cursor:pointer;padding:.55rem .8rem;border:1px solid var(--accent);border-radius:7px;background:var(--accent-soft);color:var(--text)}.array-case-button{white-space:normal;min-width:9rem}.array-response-controls{display:flex;flex-wrap:wrap;align-items:end;gap:.7rem;margin:1rem 0}.array-response-controls label{display:grid;gap:.35rem;min-width:0;flex:1 1 240px}.array-response-controls select{font:inherit;max-width:100%;min-width:0;width:100%;padding:.65rem;border:1px solid var(--border);border-radius:7px;background:var(--surface);color:var(--text)}.array-response-controls button:disabled{opacity:.55;cursor:default}.array-response-player blockquote{margin:1rem 0;padding:1rem;border-left:3px solid var(--accent);background:var(--surface-2);overflow-wrap:anywhere}.array-response-player [hidden]{display:none!important}.array-response-player h4{margin:1rem 0 .5rem}.array-response-player:focus{outline:none}.array-response-player :focus-visible,.array-case-button:focus-visible,.array-demo-asr>summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:800px){.array-demo-grid{grid-template-columns:1fr}}'''
+
+
+def case_button(row):
+    label = 'Response + ASR' if row['response_valid'] else 'View failed case'
+    return '<button type="button" class="array-case-button" data-open-response="'+e(row['id'])+'" aria-label="Open '+e(LABELS[row['condition']])+' level '+str(row['index'])+' response and ASR">'+label+'</button> <a href="#sweep-'+e(row['id'])+'">Saved details</a>'
+
+
+def render(review):
+    contrast = json.loads((ROOT/'research/s1-array-contrast/review.json').read_text())
+    by_id = {row['id']: row for row in review['cases']}
+    body = '<style>'+CSS+'</style><section id="array-audio-demos"><h3>Listen: headset, distant microphone and beamformed audio</h3><p>Compare the same TS3006c excerpts using the fixed gains from the experiment. Each card has earlier meeting evidence, the immediate context plus the identical synthetic question, and the actual model response at level 30 (198.91 seconds of preceding audio). The input demos are short excerpts from that context.</p><div class="array-demo-grid">'
+    for source in contrast['cases']:
+        name = source['id']; row = by_id[name+'-L30']; label = LABELS[name]
+        body += '<article class="array-demo-card" id="audio-demo-'+name+'"><h4>'+e(label)+'</h4>'
+        for title, url, aria in [('Earlier meeting evidence · source 110.12–140.00 s', source['evidence_audio'], 'meeting evidence demo'), ('Immediate context + question · source 291.03 s onward', source['input_preview'], 'context and question demo'), ('Actual model response · level 30', row['audio'], 'level 30 response demo')]:
+            body += '<p><strong>'+e(title)+'</strong></p><audio controls preload="none" src="'+e(url)+'" aria-label="'+e(label+' '+aria)+'"></audio>'
+        body += '<details class="array-demo-asr"><summary>Show response ASR</summary><p><strong>Parakeet transcript of this response:</strong> '+e(row['spoken_transcript'] or '(empty transcript)')+'</p></details></article>'
+    body += '</div><p><a href="#array-response-browser">Choose another context length and inspect its response ASR</a>.</p></section>'
+    options = ''.join('<option value="'+name+'">'+e(label)+'</option>' for name,label in LABELS.items())
+    levels = [r for r in review['cases'] if r['condition']=='headset_mix']
+    contexts = ''.join('<option value="'+str(r['index'])+'"'+(' selected' if r['index']==30 else '')+'>Level '+str(r['index'])+' · '+format(r['context_seconds'],'.2f')+' s preceding audio'+(' · request only' if r['index']==0 else '')+'</option>' for r in levels)
+    body += '<section id="array-response-browser" class="array-response-player" tabindex="-1"><h3>Every response: select a recording setting and context length</h3><p><strong>Figure 1 and Figures 2–3 evaluate question transcription. Figure 4 evaluates response content.</strong> Here, “response ASR” means the independent Parakeet transcript of the audio the model actually generated. The question-ASR field and intended response text are shown separately below.</p><div class="array-response-controls"><label>Recording setting<select id="response-setting">'+options+'</select></label><label>Preceding audio length<select id="response-context">'+contexts+'</select></label><button type="button" id="previous-response-context">Previous context</button><button type="button" id="next-response-context">Next context</button></div><p id="response-case-status" aria-live="polite"></p><audio id="selected-response-audio" controls preload="none" aria-label="Selected actual model response"></audio><div class="array-response-controls"><button type="button" id="show-response-asr" aria-expanded="false" aria-controls="selected-response-asr-panel">Show response ASR</button></div><div id="selected-response-asr-panel" hidden><h4>ASR of the actual spoken response</h4><blockquote id="selected-response-asr"></blockquote><p id="selected-response-score"></p><p id="selected-response-audit"></p></div><details><summary>Question ASR · the metric in Figures 1–3</summary><p id="selected-question-asr"></p><p id="selected-question-wer"></p></details><details><summary>Intended response text from S1</summary><p id="selected-native-response"></p></details><p><a href="#array-response-content">Open Figure 4: response-content evaluation</a> · <a id="selected-response-link" href="#sweep-headset_mix-L30">Saved details for this response</a> · <a href="#array-sweep-examples">All exact values and saved details</a></p><noscript><p>Enable JavaScript to use the selector, or open the saved details below for each setting and context.</p></noscript></section>'
+    data = {'labels': LABELS, 'cases': [{k:r.get(k) for k in ['id','condition','index','context_seconds','response_valid','WER_valid','audio','spoken_transcript','question_asr','speech_text','recognition','source_evidence_fully_available','judge','source_audit']} for r in review['cases']]}
+    payload = json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
+    js = ROOT/'assets/s1-array-responses.js';version = hashlib.sha256(js.read_bytes()).hexdigest()[:12]
+    body += '<script type="application/json" id="array-response-data">'+payload+'</script><script defer src="assets/s1-array-responses.js?v='+version+'"></script>'
+    return body

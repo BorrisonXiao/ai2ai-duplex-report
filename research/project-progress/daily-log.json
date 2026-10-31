@@ -1,7 +1,20 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-10-31",
+      "items": [
+        {
+          "text": "Added side-by-side headset, distant-microphone and beamformed audio demos, with a response-ASR button for every recording setting and context length.",
+          "url": "study-progress.html#array-audio-demos"
+        },
+        {
+          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "url": "study-progress.html#array-response-content"
+        }
+      ]
+    },
     {
       "date": "2026-10-30",
       "items": [
