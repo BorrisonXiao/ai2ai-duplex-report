@@ -17,7 +17,7 @@ def case_button(row):
 def render(review):
     contrast = json.loads((ROOT/'research/s1-array-contrast/review.json').read_text())
     by_id = {row['id']: row for row in review['cases']}
-    body = '<style>'+CSS+'</style><section id="array-audio-demos"><h3>Listen: headset, distant microphone and beamformed audio</h3><p>Compare the same TS3006c excerpts using the fixed gains from the experiment. Each card has earlier meeting evidence, the immediate context plus the identical synthetic question, and the actual model response at level 30 (198.91 seconds of preceding audio). The input demos are short excerpts from that context.</p><div class="array-demo-grid">'
+    body = '<style>'+CSS+'</style><section id="array-audio-demos"><h3>Original source excerpts and model responses</h3><p>Compare the same TS3006c excerpts using the fixed gains from the experiment. Each card has earlier meeting evidence, the immediate context plus the identical synthetic question, and the actual model response at level 30 (198.91 seconds of preceding audio). The input demos are short excerpts from that context.</p><div class="array-demo-grid">'
     for source in contrast['cases']:
         name = source['id']; row = by_id[name+'-L30']; label = LABELS[name]
         body += '<article class="array-demo-card" id="audio-demo-'+name+'"><h4>'+e(label)+'</h4>'
