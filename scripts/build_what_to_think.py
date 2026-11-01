@@ -40,7 +40,10 @@ def build_progress(progress,p):
  if sweep_review.exists():progress={**progress,'updated_at':max(progress['updated_at'],json.loads(sweep_review.read_text())['reviewed_utc'])}
  t=Tables();d=s1_listening_view.load()
  revised_review=ROOT/'research/s1-revised-sweep/review.json'
- if revised_review.exists():
+ if (ROOT/'research/s1-context-judge/review.json').exists():
+  from s1_context_judge_view import render as context_judge
+  body=context_judge(t)
+ elif revised_review.exists():
   from s1_revised_sweep_view import render as revised_sweep
   body=revised_sweep(t)
  else:

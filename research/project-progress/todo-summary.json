@@ -1,30 +1,25 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "now": [
     {
       "status": "complete",
-      "text": "The acoustic revision covers all 105 primary questions and six published voice alternatives.",
-      "url": "experiments/question-audio.html#checks"
+      "text": "Figures 1–3 show question WER; the same headset curve is the baseline in Figures 2–3.",
+      "url": "study-progress.html#ami-array-sweep"
     },
     {
       "status": "complete",
-      "text": "The fresh 123-position sweep is source-reviewed; 0/33 eligible answers are complete.",
+      "text": "The local context/question/reference judge provides ratings for 120/120 saved spoken responses.",
       "url": "study-progress.html#array-response-content"
     },
     {
       "status": "complete",
-      "text": "Earlier eligible pilot controls are rerun; the 21-minute full prefix remains capacity-excluded.",
-      "url": "study-progress.html#revised-pilot-controls"
+      "text": "Response buttons expose actual ASR, separate ratings and judge feedback.",
+      "url": "study-progress.html#array-response-browser"
     },
     {
       "status": "pending",
-      "text": "Validate all 105 reference answers and automatic judging before the full comparison.",
+      "text": "Validate all 105 references and the full evaluator before the main comparison.",
       "url": "what-to-think.html#evaluation-first"
-    },
-    {
-      "status": "complete",
-      "text": "Current demos, responses, figures and checklists use the same reviewed records.",
-      "url": "study-progress.html"
     }
   ],
   "definition": {
@@ -179,6 +174,13 @@
           "status": "complete",
           "url": "study-progress.html#revised-pilot-controls",
           "evidence": "Both native listening methods attempted P01/P02; 0/4 source-reviewed answers complete. P03 remains excluded by the unchanged full-prefix context limit."
+        },
+        {
+          "id": "context-response-judge",
+          "text": "Evaluate saved spoken responses using context, question and reference with separate quality dimensions.",
+          "status": "complete",
+          "url": "study-progress.html#array-response-content",
+          "evidence": "Local Qwen3 judge: 120/120 ratings passing output/citation checks, anchored relevance/support/adequacy, qualification and 12 prompt-order probes; no new S1 speech. Full-bank evaluator validation remains pending."
         },
         {
           "id": "gate",

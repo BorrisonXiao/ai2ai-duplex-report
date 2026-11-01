@@ -1,7 +1,24 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-01",
+      "items": [
+        {
+          "text": "Simplified the three question-WER figures and identified their shared headset baseline.",
+          "url": "study-progress.html#ami-array-sweep"
+        },
+        {
+          "text": "Obtained local-LLM relevance, factual-support and adequacy ratings for 120/120 saved spoken responses using their context, question and reference.",
+          "url": "study-progress.html#array-response-content"
+        },
+        {
+          "text": "Published exact judge prompts, source contexts, references, anchored criteria, calibration cases and prompt-order probes alongside the response browser.",
+          "url": "study-progress.html#judge-method"
+        }
+      ]
+    },
     {
       "date": "2026-10-31",
       "items": [

@@ -37,12 +37,16 @@
     text('selected-response-asr', row.spoken_transcript || '(empty transcript)');
     let score = 'Response content is unscored: this shorter history does not contain all required source evidence.';
     if (!row.response_valid) score = 'Response content is unscored because the replay did not complete.';
-    else if (row.source_evidence_fully_available) {
+    else if (row.quality) {
+      const q = row.quality;
+      const rating = value => value == null ? 'N/A' : `${value} / 5`;
+      score = q.valid ? `Local LLM judge: question relevance ${rating(q.scores.relevance)}; factual support ${rating(q.scores.support)}; answer adequacy ${rating(q.scores.adequacy)}. Factual support is N/A without a material factual assertion.` : 'The new judge output is unscored because its validation checks failed.';
+    } else if (row.source_evidence_fully_available) {
       const facts = record => record && record.fact_score != null ? `${record.fact_score * 2} / 2` : 'unscored';
       score = `Response facts: LLM ${facts(row.judge)}; Codex source review ${facts(row.source_audit)}. See Figure 4 for response-content evaluation and judge limitations.`;
     }
     text('selected-response-score', score);
-    text('selected-response-audit', row.source_audit ? row.source_audit.reason : '');
+    text('selected-response-audit', row.quality ? Object.entries(row.quality.feedback || {}).map(([name, value]) => `${name}: ${value}`).join(' ') + ' ' + (row.quality.reference_comparison || '') : row.source_audit ? row.source_audit.reason : '');
     text('selected-question-asr', row.WER_valid ? row.question_asr || '(empty question transcript)' : 'Unscored: the question-recognition window was not reached.');
     text('selected-question-wer', row.WER_valid ? `Question WER: ${row.recognition.WER.toFixed(4)}. This is question transcription, not response-content scoring.` : '');
     text('selected-native-response', row.response_valid ? row.speech_text || '(empty intended response text)' : 'No completed response.');

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-10-31",
+  "updated": "2026-11-01",
   "status": "implementation_underway",
-  "snapshot_label": "All question audio revised; fresh microphone/context responses and eligible pilot controls reviewed",
+  "snapshot_label": "Continuous question WER and context-aware response quality",
   "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
@@ -112,6 +112,13 @@
       "evidence": "Both native listening methods attempted P01/P02; 0/4 source-reviewed answers complete. P03 remains excluded by the unchanged full-prefix context limit."
     },
     {
+      "id": "context-response-judge",
+      "text": "Evaluate saved spoken responses using context, question and reference with separate quality dimensions.",
+      "status": "complete",
+      "url": "study-progress.html#array-response-content",
+      "evidence": "Local Qwen3 judge: 120/120 ratings passing output/citation checks, anchored relevance/support/adequacy, qualification and 12 prompt-order probes; no new S1 speech. Full-bank evaluator validation remains pending."
+    },
+    {
       "id": "gate",
       "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
@@ -143,7 +150,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-01T01:15:59.869230+00:00",
+  "updated_at": "2026-11-01T07:28:26.452870+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -217,5 +224,16 @@
     "exact_transcripts": 88,
     "background_controls_empty": 111,
     "active_gpus": 0
+  },
+  "context_response_judge": {
+    "state": "completed_content_reviewed",
+    "model": "Qwen3-30B-A3B-Instruct-2507",
+    "valid_responses": 120,
+    "attempted_responses": 120,
+    "job": "1408388",
+    "gpu_hours": 0.47,
+    "maximum_active_gpus": 1,
+    "current_gpus": 0,
+    "public_progress": "research/s1-context-judge/review.json"
   }
 }
