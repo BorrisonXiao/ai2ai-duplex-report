@@ -1,0 +1,59 @@
+{
+  "status": "pilot_launched_full_bank_evaluation_gated",
+  "primary_questions": 105,
+  "pilot_questions": 6,
+  "native_models": [
+    "moshi",
+    "minicpm",
+    "duplexomni"
+  ],
+  "text_models": [
+    "Qwen3-30B-A3B-Instruct-2507",
+    "Qwen3-30B-A3B-Thinking-2507"
+  ],
+  "reference_status": "proposal_and_check_then_Codex_source_review",
+  "pilot_conditions": [
+    "supporting_audio_then_question",
+    "original_full_history_then_question"
+  ],
+  "response_capture": "60 s maximum input-clock silence; retain 19.2 s checkpoint and final-frame speech flags; native termination metadata is recorded, never assumed.",
+  "text_conditions": [
+    "reactive",
+    "amortized_summary",
+    "amortized_structured_notes"
+  ],
+  "chunking": {
+    "min_seconds": 10,
+    "target_seconds": 25,
+    "max_seconds": 40,
+    "rule": "Use the first observed sentence boundary at or after 25 s; otherwise close at 40 s. Do not query on empty chunks; do not close on tiny filler turns."
+  },
+  "evaluation_gate": "Pilot and held-out scoring checks precede full-bank inference; model failures remain legitimate outcomes after caller qualification.",
+  "maximum_active_GPUs": 4,
+  "reference_inputs": "Past speaker-attributed transcript; draft answer hidden from first proposer.",
+  "amortized_inputs": "Past transcript, previous saved results and fixed goal only; no future user question.",
+  "primary_metric": "Source-supported complete answer correctness; three ordinal judge dimensions remain diagnostics.",
+  "thinking_tokens": "Only native request-time thinking tokens; Instruct unexposed thinking is N/A, ordinary output separate.",
+  "history": "Retain all available history; record capacity failures and any explicit fallback, never silently trim.",
+  "S2_notes_budget": "Instruct: 2048 total generated tokens per earlier call; Thinking: 8192 native thinking plus note tokens per earlier call; compact final notes, all actual compute recorded.",
+  "S2_request_budget": "Instruct 2048; Thinking 16384 native reasoning plus final output; native reasoning not forced for Instruct.",
+  "S1_prompts": "A fixed question-blind meeting instruction for MiniCPM and DuplexOmni; original native control prompt retained; Moshi native interface has no system-text prompt.",
+  "source_audio_attribution": "AMI corpus audio; existing source/copy and licensing records in the question audio library; synthetic question audio and generated model speech are labeled separately.",
+  "main_bank_file": "bank-v2.json",
+  "pilot_bank_file": "bank.json",
+  "corrected_Earnings_questions": [
+    "expansion:DH-growth",
+    "expansion:DH-basis",
+    "expansion:MO-performance",
+    "expansion:MO-selection",
+    "pilot:P-MO-comparison",
+    "pilot:P-MO-pricing",
+    "pilot:P-MO-completion",
+    "pilot:P-DH-documents",
+    "pilot:P-DH-replay",
+    "pilot:P-DH-cepheid",
+    "pilot:P-DH-idt",
+    "pilot:Q-MO-weather"
+  ],
+  "reference_input_correction": "The audio-enrollment word list omits untimed words and must not be used as a complete text oracle. Corrected Earnings21 chunks preserve all words with conservative release; all 382 cited source passages now match. AMI pilot inputs are unchanged."
+}

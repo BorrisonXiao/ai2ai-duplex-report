@@ -1,0 +1,2000 @@
+{
+  "updated_utc": "2026-11-01T20:20:07.609397+00:00",
+  "scope": "Development/diagnostic answering pilot; no full-bank benchmark score.",
+  "question_bank": 105,
+  "pilot_questions": 6,
+  "pilot_meetings": 5,
+  "source_reviewed_references": 105,
+  "reference_proposals": 105,
+  "reference_model_checks": 105,
+  "reference_model_agreement_is_not_validation": true,
+  "active_GPUs": 1,
+  "maximum_active_GPUs_observed": 4,
+  "maximum_active_GPUs_allowed": 4,
+  "allocated_GPU_hours": 2.5716666666666668,
+  "jobs": [
+    {
+      "job": "1412942",
+      "stage": "references",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct weights and 8 GiB KV; vLLM graphs; no speech/ASR/S2 service sharing"
+      },
+      "dependencies": "Frozen causal transcript bank and CPU token preflight; source review follows model checks.",
+      "state": "COMPLETED",
+      "allocated_seconds": 441,
+      "start": "2026-11-01T13:56:24",
+      "end": "2026-11-01T14:03:45",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "scheduler_dependency": null
+    },
+    {
+      "job": "1413065",
+      "stage": "s1-duplexomni",
+      "gpu_count": 1,
+      "gpu_type_vram": "A100 SXM4 80 GB",
+      "roles": {
+        "0": "All duplexomni native LM/codec/speech components; independent Parakeet ASR after model shutdown"
+      },
+      "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
+      "state": "RUNNING",
+      "allocated_seconds": 4195,
+      "start": "2026-11-01T14:10:12",
+      "end": "Unknown",
+      "allocated_TRES": "billing=999,cpu=18,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1",
+      "scheduler_dependency": null
+    },
+    {
+      "job": "1413066",
+      "stage": "s1-moshi",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "All moshi native LM/codec/speech components; independent Parakeet ASR after model shutdown"
+      },
+      "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
+      "state": "COMPLETED",
+      "allocated_seconds": 1083,
+      "start": "2026-11-01T14:08:40",
+      "end": "2026-11-01T14:26:43",
+      "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+      "scheduler_dependency": null
+    },
+    {
+      "job": "1413085",
+      "stage": "s1-minicpm",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "All minicpm native LM/codec/speech components; independent Parakeet ASR after model shutdown"
+      },
+      "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
+      "state": "COMPLETED",
+      "allocated_seconds": 1119,
+      "start": "2026-11-01T14:12:14",
+      "end": "2026-11-01T14:30:53",
+      "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+      "scheduler_dependency": null
+    },
+    {
+      "job": "1413130",
+      "stage": "s2-instruct",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B instruct weights and 8 GiB KV; vLLM graphs; earlier notes then readers; no S1 or ASR sharing"
+      },
+      "dependencies": "Completed reference allocation 1412942 verified through accounting; no active scheduler dependency. The six pilot references are separately source-checked; this does not validate the full bank.",
+      "state": "COMPLETED",
+      "allocated_seconds": 256,
+      "start": "2026-11-01T14:25:24",
+      "end": "2026-11-01T14:29:40",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "scheduler_dependency": null
+    },
+    {
+      "job": "1413131",
+      "stage": "s2-thinking",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B thinking weights and 8 GiB KV; vLLM graphs; earlier notes then readers; no S1 or ASR sharing"
+      },
+      "dependencies": "afterok:1413130; question-blind notes finish before the request file is opened; both text jobs occupy one sequential lane.",
+      "state": "COMPLETED",
+      "allocated_seconds": 2043,
+      "start": "2026-11-01T14:29:44",
+      "end": "2026-11-01T15:03:47",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "scheduler_dependency": "afterok:1413130"
+    },
+    {
+      "job": "1413876",
+      "stage": "references-earnings-v2",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct reference proposals/checks with complete corrected Earnings21 text; no speech services"
+      },
+      "dependencies": "afterany:1413131; rerun only the twelve text-corrupted reference cases, keeping the reference/text GPU lane sequential.",
+      "state": "COMPLETED",
+      "allocated_seconds": 121,
+      "start": "2026-11-01T15:04:15",
+      "end": "2026-11-01T15:06:16",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "scheduler_dependency": "afterany:1413131"
+    },
+    {
+      "job": "1414096",
+      "stage": "judge-holdout",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct weights and 8 GiB KV; vLLM graphs; no S1, speech or ASR sharing"
+      },
+      "dependencies": "All 105 references source-checked; frozen earlier real-output labels from five meetings separate from the current audio pilot; no scheduler dependency because the earlier text lane has completed.",
+      "state": "PENDING",
+      "allocated_seconds": 0,
+      "start": "Unknown",
+      "end": "Unknown",
+      "allocated_TRES": "",
+      "scheduler_dependency": null
+    }
+  ],
+  "native_models": [
+    {
+      "model": "duplexomni",
+      "state": "RUNNING",
+      "planned_outputs": 13,
+      "completed_outputs": 8,
+      "transcribed_outputs": 0,
+      "reviewed_outputs": 0,
+      "cases": [
+        {
+          "id": "M01-full",
+          "question_id": "pilot:P-EN-notes",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "speech_text": "Let me check the meeting notes for the specific task details.",
+          "question_asr": "",
+          "frames_completed": 763,
+          "listening_frames": 638,
+          "answer_frames": 125,
+          "max_prompt_tokens": 41311,
+          "history_trimmed": false,
+          "wall_seconds": 1381.9009219836444,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M01-full.flac"
+        },
+        {
+          "id": "M01-support",
+          "question_id": "pilot:P-EN-notes",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "speech_text": "Hello, I'm your meeting assistant. How can I help you today?",
+          "question_asr": "",
+          "frames_completed": 136,
+          "listening_frames": 11,
+          "answer_frames": 125,
+          "max_prompt_tokens": 7428,
+          "history_trimmed": false,
+          "wall_seconds": 92.09177920315415,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M01-support.flac"
+        },
+        {
+          "id": "M02-full",
+          "status": "running",
+          "speech_text": "",
+          "question_asr": "",
+          "frames_completed": 961,
+          "listening_frames": 988,
+          "answer_frames": 125,
+          "history_trimmed": false,
+          "wall_seconds": 1763.6615959634073,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null
+        },
+        {
+          "id": "M02-support",
+          "question_id": "pilot:P-EN-audio",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "speech_text": "So you're suggesting we skip the audio file cleanup entirely. Is that correct?",
+          "question_asr": "",
+          "frames_completed": 205,
+          "listening_frames": 80,
+          "answer_frames": 125,
+          "max_prompt_tokens": 11221,
+          "history_trimmed": false,
+          "wall_seconds": 132.33594725793228,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M02-support.flac"
+        },
+        {
+          "id": "M03-support",
+          "question_id": "pilot:P-ES-slogan",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "speech_text": "Let me check the discussion notes for that. One moment, please.",
+          "question_asr": "we they want the actual slogan on the remote, or just the idea behind it?",
+          "frames_completed": 200,
+          "listening_frames": 75,
+          "answer_frames": 125,
+          "max_prompt_tokens": 10999,
+          "history_trimmed": false,
+          "wall_seconds": 130.91889510303736,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M03-support.flac"
+        },
+        {
+          "id": "M04-support",
+          "question_id": "pilot:P-TS-time",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "speech_text": "Okay, so you suggest seven minutes per presentation and then discussion. Is that the plan?",
+          "question_asr": "I suggest we take about seven minutes per presentation and then we can have a little discussion. About a new project requirements. We have been sent to me. ",
+          "frames_completed": 182,
+          "listening_frames": 57,
+          "answer_frames": 125,
+          "max_prompt_tokens": 10348,
+          "history_trimmed": false,
+          "wall_seconds": 127.1451249490492,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M04-support.flac"
+        },
+        {
+          "id": "M05-support",
+          "question_id": "first:authored-W1-2",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "speech_text": "So you want to know why Clare is sending a separate email instead of just replying to the main one?",
+          "question_asr": "",
+          "frames_completed": 216,
+          "listening_frames": 91,
+          "answer_frames": 125,
+          "max_prompt_tokens": 11805,
+          "history_trimmed": false,
+          "wall_seconds": 137.47811186499894,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M05-support.flac"
+        },
+        {
+          "id": "M06-support",
+          "question_id": "scale:TS3006c-S05-Q3",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "speech_text": "Let me check the shared folder for the conceptual design file. One moment.",
+          "question_asr": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design file? I think I put it in there.",
+          "frames_completed": 190,
+          "listening_frames": 65,
+          "answer_frames": 125,
+          "max_prompt_tokens": 10480,
+          "history_trimmed": false,
+          "wall_seconds": 119.86159610981122,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-M06-support.flac"
+        },
+        {
+          "id": "native-control",
+          "status": "completed_content_review_required",
+          "speech_text": "An outlet is a store that sells products at a discount, often from previous seasons or with minor defects. A regular store sells new items at full price. The main difference is the pricing and the type of products.",
+          "question_asr": "Um, what's the difference between an outlet and a regular store?",
+          "frames_completed": 136,
+          "listening_frames": 11,
+          "answer_frames": 125,
+          "max_prompt_tokens": 7434,
+          "history_trimmed": false,
+          "wall_seconds": 107.39734779624268,
+          "spoken_transcript": null,
+          "model": "duplexomni",
+          "job": "1413065",
+          "source_review": null,
+          "audio": "research/answering-study/audio/duplexomni-1413065-native-control.flac"
+        }
+      ]
+    },
+    {
+      "model": "moshi",
+      "state": "COMPLETED",
+      "planned_outputs": 13,
+      "completed_outputs": 13,
+      "transcribed_outputs": 13,
+      "reviewed_outputs": 0,
+      "cases": [
+        {
+          "id": "M01-full",
+          "question_id": "pilot:P-EN-notes",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " Oh, that's interesting. What did they say? So,",
+          "processed_frames": 4574,
+          "expected_frames": 4574,
+          "wall_seconds": 102.04300283966586,
+          "spoken_transcript": "Oh, that's interesting. What did they say?",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M01-full.flac"
+        },
+        {
+          "id": "M01-support",
+          "question_id": "pilot:P-EN-notes",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " Hey. Yeah, I was. I just finished a call with a medical professional. They were quite helpful, actually. Just like you wanted. I'm doing some research on different types of training for my job. I think it's important to stay up to date with the latest developments.",
+          "processed_frames": 813,
+          "expected_frames": 813,
+          "wall_seconds": 18.43310082098469,
+          "spoken_transcript": "I yeah, I was. I just finished a call with a medical professional. They were quite helpful, actually. Just nice you wanted. I'm doing some research on different types of training for my job. I think it's important to stay up to date with the latest development.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M01-support.flac"
+        },
+        {
+          "id": "M02-full",
+          "question_id": "pilot:P-EN-audio",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " I' not sure. I thought it was a priority. Yeah. I'm good with it. I'm good with it. Yeah.",
+          "processed_frames": 6676,
+          "expected_frames": 6676,
+          "wall_seconds": 148.90513169392943,
+          "spoken_transcript": "I'm not sure. I thought it was a priority. Yeah, I'm good with it. I'm good with it.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M02-full.flac"
+        },
+        {
+          "id": "M02-support",
+          "question_id": "pilot:P-EN-audio",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " Yeah, I think that's a good point. I think we could have maybe done more with the audio files. I think we kind of got to the point where we were just kind of like trying to figure out what to do with them, and we just kind of like gave up on it. Yeah. Yeah. Yeah. Yeah.",
+          "processed_frames": 1228,
+          "expected_frames": 1228,
+          "wall_seconds": 27.290372280869633,
+          "spoken_transcript": "Yeah, I think that's a good point. I think we could have maybe done more with the audio files. I think we kind of got to the point where we were just kind of like trying to figure out what to do with them, and we just kind of like gave up on it. Yeah. Yeah. Yeah. Yeah.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M02-support.flac"
+        },
+        {
+          "id": "M03-full",
+          "question_id": "pilot:P-ES-slogan",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " when you're trying to find a specific item in the store, but it can be really difficult to find.",
+          "processed_frames": 4662,
+          "expected_frames": 4662,
+          "wall_seconds": 103.67272668192163,
+          "spoken_transcript": "When you're trying to find a specific item in the store, but it can be really difficult to find.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M03-full.flac"
+        },
+        {
+          "id": "M03-support",
+          "question_id": "pilot:P-ES-slogan",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": "",
+          "processed_frames": 1200,
+          "expected_frames": 1200,
+          "wall_seconds": 26.613817098084837,
+          "spoken_transcript": "",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M03-support.flac"
+        },
+        {
+          "id": "M04-full",
+          "question_id": "pilot:P-TS-time",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " Maybe we can make some improvements. I think we need to stick to a time limit. Otherwise, we'll be here for hours. Thank you. I appreciate your help. So, what's next? I",
+          "processed_frames": 4579,
+          "expected_frames": 4579,
+          "wall_seconds": 101.48961417423561,
+          "spoken_transcript": "Maybe we can make some improvements. I think we need to stick to a time limit, otherwise, we'll be here for hours. Thank you. I appreciate your help. So, what's next?",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M04-full.flac"
+        },
+        {
+          "id": "M04-support",
+          "question_id": "pilot:P-TS-time",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " Yeah, I actually do. I was thinking ten minutes per presentation. Sure, there are several ways to add a small step to a longer one. One common method is to combine two or more steps into one, which can make the overall process more efficient. Yes, it's a simple way to break down a larger task into smaller, manageable steps.",
+          "processed_frames": 1087,
+          "expected_frames": 1087,
+          "wall_seconds": 24.241870016790926,
+          "spoken_transcript": "Yeah, I actually do. I was thinking ten minutes per presentation. Sure, there are several ways to add a small step to a longer one. One common method is to combine two or more steps into one, which can make the overall process more efficient. Yes, it's a simple way to break down a larger task into smaller, manageable steps.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M04-support.flac"
+        },
+        {
+          "id": "M05-full",
+          "question_id": "first:authored-W1-2",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": "",
+          "processed_frames": 5259,
+          "expected_frames": 5259,
+          "wall_seconds": 117.31464867433533,
+          "spoken_transcript": "",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M05-full.flac"
+        },
+        {
+          "id": "M05-support",
+          "question_id": "first:authored-W1-2",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " easier if she was on the same page. Well, we don't want any information to get mixed up or lost in transit. It's better to be safe than sorry. Absolutely. And it's not just about the contents of the emails, but also about the security of our information. We don't want anything to get compromised.",
+          "processed_frames": 1293,
+          "expected_frames": 1293,
+          "wall_seconds": 28.89715279871598,
+          "spoken_transcript": "Easier if she was on the same page. Well, we don't want any information to get mixed up or lost in transit. It's better to be safe than sorry. Absolutely. And it's not just about the contents of the emails, but also about the security of our information. We don't want anything to get complicated.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M05-support.flac"
+        },
+        {
+          "id": "M06-full",
+          "question_id": "scale:TS3006c-S05-Q3",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": ". I think that's a good one. Yes. Well, the shared folder is still in the process of being developed. However, we are still working on it.",
+          "processed_frames": 4686,
+          "expected_frames": 4686,
+          "wall_seconds": 104.84787665819749,
+          "spoken_transcript": "With you, I think that's a good one. Yes. Well, the shared folder is still in the process of being developed. However, we are still working on it.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M06-full.flac"
+        },
+        {
+          "id": "M06-support",
+          "question_id": "scale:TS3006c-S05-Q3",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " and come back to it later. I'd say it's good to go. Then that means you should just focus on finding the design you like. There's no point in trying to force a shirt that doesn't suit you. Maybe it's time for you to try new ones. But if you know, I think you should just go with the shirts that you like. Alright, let's try this. We've gone through a lot of different shirts, right? You've picked out some that you like, but you still don't have a concept design.",
+          "processed_frames": 1140,
+          "expected_frames": 1140,
+          "wall_seconds": 25.701320253312588,
+          "spoken_transcript": "And come back to it later. I'd say it's good to go. Then that means you should just focus on finding the design you like. There's no point in trying to force a shirt that doesn't suit you. Maybe it's time for you to try new ones. But if you know, I think you should just go with the shirts that you like. All right, let's try this. We've gone through a lot of different shirts, right? You've picked out some that you like, but you still don't have a concept design.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-M06-support.flac"
+        },
+        {
+          "id": "native-control",
+          "question_id": "control:DailyTalk-outlet",
+          "variant": "control",
+          "status": "completed_content_review_required",
+          "generated_text": " Hi there, how's your day? Well, an outlet is a special type of socket that's used to connect a power tool or appliance to the electrical grid. It' designed to provide a higher voltage output than a regular wall socket, which is typically used for low-powered devices. outlet is typically found in a different location than a regular outlet, as it's designed to be used with specific power tools and appliances. Yeah, it's interesting to note that there are different types of outlets, such as the NEMA 10, 11, and 14, which are used for different applications. Yeah, it's also worth mentioning that some outlets may have different voltages or currents, so it's important to check the specifications of your appliance before plugging it into an outlet.",
+          "processed_frames": 813,
+          "expected_frames": 813,
+          "wall_seconds": 65.57248610490933,
+          "spoken_transcript": "Hi there, how's your day? Well, an outlet is a special type of socket that's used to connect a power tool or appliance to the electrical grid. It's designed to provide a higher voltage output than a regular wall socket, which is typically used for low-power devices. An outlet is typically found in a different location than a regular outlet, as it's designed to be used with specific power tools and appliances. Yeah, it's interesting to note that there are different types of outlets, such as the NME10, 11, and 14, which are used for different applications. Yeah, it's also worth mentioning that some outlets may have different voltages or currents, so it's important to check the specifications of your appliance before plugging it into an outlet.",
+          "model": "moshi",
+          "job": "1413066",
+          "source_review": null,
+          "audio": "research/answering-study/audio/moshi-1413066-native-control.flac"
+        }
+      ]
+    },
+    {
+      "model": "minicpm",
+      "state": "COMPLETED",
+      "planned_outputs": 13,
+      "completed_outputs": 13,
+      "transcribed_outputs": 13,
+      "reviewed_outputs": 0,
+      "cases": [
+        {
+          "id": "M01-full",
+          "question_id": "pilot:P-EN-notes",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " I did. Yeah, I took notes. I just didn't put them in the document yet. But yeah, we can do that later. We'll get to it.",
+          "processed_frames": 366,
+          "expected_frames": 366,
+          "wall_seconds": 78.2096514320001,
+          "spoken_transcript": "I did the actor codes. I just didn't put them in the document yet, but yeah, we can do that later. We'll get to it.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M01-full.flac"
+        },
+        {
+          "id": "M01-support",
+          "question_id": "pilot:P-EN-notes",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " Okay. So we're going to talk about the future of space travel, and I'll start with a little bit of history. And so this is the first rocket that went into orbit in 1957. It was called Sput nik. And it was launched by the Soviet Union. And you can see here, it's just a small little ball. And then they sent up a dog named Laika. And then shortly after that, Yuri Gagarin became the first human in space. And then shortly after that, the Americans sent up Alan She pard, who was the first American in space. And then John Glenn became the first American to orbit the Earth. And then shortly after that, Neil Armstrong became the first man on the moon. And then shortly after that, the Americans and the Soviets started launching space station s. And then shortly after that, they started sending up space shuttles.And then shortly after that, they started sending up satellites. And then shortly after that, they started sending up space stations again. And then shortly after that, they started sending up more satellites. And then shortly after that, they started sending up more",
+          "processed_frames": 65,
+          "expected_frames": 65,
+          "wall_seconds": 65.60794243821874,
+          "spoken_transcript": "Okay, so we're going to talk about the future of space travel and I'll start with a little bit of history. And so this is the first rocket that went into orbit in 1957. It was called Skutnik and it was launched by the Soviet Union. And you can see here it's just a small little ball. And then they sent up a dog named Laika. And then shortly after that, Yuri Gagarin became the first human in space. And then shortly after that, the Americans sent up Alan Shepard, who was the first American in space. And then John Glenn became the first American to orbit the Earth. And then shortly after that, Neil Armstrong became the first man on the moon. And then shortly after that, the Americans and the Soviets started launching space stations. And then shortly after that, they started sending up space shuttles. And then shortly after that, they're setting up satellites. And then shortly after that, they started sending up space stations again. And then shortly after that, they started sending up more satellites. And then shortly after that, they started selling sales.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M01-support.flac"
+        },
+        {
+          "id": "M02-full",
+          "question_id": "pilot:P-EN-audio",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " Because we don't have time. We can do it later, but not now.",
+          "processed_frames": 534,
+          "expected_frames": 534,
+          "wall_seconds": 108.60133164282888,
+          "spoken_transcript": "Because we don't have time. We can do it later, but not now.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M02-full.flac"
+        },
+        {
+          "id": "M02-support",
+          "question_id": "pilot:P-EN-audio",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " Yeah, so assistant, why were we dropping the work on the audio files? Because they're too long. They're too long. They're too long. They're too long. They're too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They' re too long. They're too long. They'",
+          "processed_frames": 99,
+          "expected_frames": 99,
+          "wall_seconds": 106.77150339214131,
+          "spoken_transcript": "Yeah, sister. Why are we dropping the word on the audio files? Because they're too long, they're too long, they're too long, they're too long, they're too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that alone, that too long, that too long, that too long, that alone, that too long, that along, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that along, that too long, that too long, that too long, that too long, that too wrong, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, that too long, dead too long, that too long could that too wrong, dead too long, that too long, yet too long, they're too long, they're too long, dead too long, dead too long, that too long, that too wrong, that too wrong, that too long, that too long, that too long, that too long, that too wrong, dead too long, they're too wrong, they're too long, they're too wrong, they're too long, they're too wrong, they're too long, they're too wrong, they're too long, they're too long, they're too wrong, just along, dear too long. Oh, dear too long, they're too long, they're too wrong, they're too wrong, they're too wrong, they're too wrong, they're too long, they're too long, they're too long, they're too long, they're too long, they're too long, they're too wrong, they're too wrong, they're too wrong, get too long, they're too wrong, dear too long, just too long, detail, jet too long, dead too long.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M02-support.flac"
+        },
+        {
+          "id": "M03-full",
+          "question_id": "pilot:P-ES-slogan",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " I think they want the actual slogan. They said bring fashion and electronics together, so I think that's what they want on there.",
+          "processed_frames": 373,
+          "expected_frames": 373,
+          "wall_seconds": 78.84638687502593,
+          "spoken_transcript": "I think they want the action slogan. They said bring fashion electronics together, so I think that's what they want on there.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M03-full.flac"
+        },
+        {
+          "id": "M03-support",
+          "question_id": "pilot:P-ES-slogan",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " I think it's just the idea behind it. The actual slogan is putting the fashion in electronic s, but they don't want that written on there. They just want to embody the idea of that.",
+          "processed_frames": 96,
+          "expected_frames": 96,
+          "wall_seconds": 27.601329568773508,
+          "spoken_transcript": "I think it's just the idea behind it. The actual slogan is putting the threshold in electronics, but the HAVE don't want that written on there. They just want to embody the idea of that.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M03-support.flac"
+        },
+        {
+          "id": "M04-full",
+          "question_id": "pilot:P-TS-time",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " Seven minutes.",
+          "processed_frames": 367,
+          "expected_frames": 367,
+          "wall_seconds": 73.18871888611466,
+          "spoken_transcript": "",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M04-full.flac"
+        },
+        {
+          "id": "M04-support",
+          "question_id": "pilot:P-TS-time",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " I think we're allowing seven minutes per presentation.",
+          "processed_frames": 87,
+          "expected_frames": 87,
+          "wall_seconds": 19.540975573007017,
+          "spoken_transcript": "I think we're now seven minutes per presentation.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M04-support.flac"
+        },
+        {
+          "id": "M05-full",
+          "question_id": "first:authored-W1-2",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " I think it's just to make sure that the psycholingu ists know that they're invited. And we don't want them to miss out because they might not see our main call, which is going to be sent by me. So I think it' s just a matter of making sure that they get an invitation as well.",
+          "processed_frames": 421,
+          "expected_frames": 421,
+          "wall_seconds": 95.66101918602362,
+          "spoken_transcript": "I think it's just to make sure that the cyclingists know that they're invited, and we don't want them to miss out because they might not see our main call, which is going to be sent by me. So I think it's just a matter of making sure that they get an invitation as well.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M05-full.flac"
+        },
+        {
+          "id": "M05-support",
+          "question_id": "first:authored-W1-2",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " know her. Because she's the one who knows how to get in touch with them, and it might be more relevant if it comes from her. And also, we're not sure what their email address is. So I think that's why we're asking her to send a separate one.",
+          "processed_frames": 104,
+          "expected_frames": 104,
+          "wall_seconds": 31.999408463947475,
+          "spoken_transcript": "No her. Because she's the one who knows how to get in touch with them, and it might be more relevant if it comes from her but and and also we're not sure what their email address is. So I think that's why we're asking her to send a separate one.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M05-support.flac"
+        },
+        {
+          "id": "M06-full",
+          "question_id": "scale:TS3006c-S05-Q3",
+          "variant": "full",
+          "status": "completed_content_review_required",
+          "generated_text": " I have them. They're in the shared folder, but they are not named correctly. So if you want to look at them, you can look at the final report because I have to record everything. And then we'll decide on which ones we want to use. But there's three of them. There' s one that is a little bit more like a remote control, and then there's two others that are kind of like a phone or something else. So it's up to you guys to decide what you want to do with it.",
+          "processed_frames": 375,
+          "expected_frames": 375,
+          "wall_seconds": 95.00901591684669,
+          "spoken_transcript": "I have them there in the shared folder, but they are not named correctly. So if you want to look at them, you can look at the final report because I'll have to record everything, and then we'll decide on which ones we want to use. But there's three of them. There's one that is a little bit more like remote control, and then there's two others that are kind of like a phone or something else. So it's up to you guys to decide what you want to do with it.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M06-full.flac"
+        },
+        {
+          "id": "M06-support",
+          "question_id": "scale:TS3006c-S05-Q3",
+          "variant": "support",
+          "status": "completed_content_review_required",
+          "generated_text": " I don't know. I think it's still there, but maybe you have to go back one more time.",
+          "processed_frames": 92,
+          "expected_frames": 92,
+          "wall_seconds": 22.369014131370932,
+          "spoken_transcript": "Juan, I think it's still there, but maybe you have to go back one more time.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-M06-support.flac"
+        },
+        {
+          "id": "native-control",
+          "question_id": "control:DailyTalk-outlet",
+          "variant": "control",
+          "status": "completed_content_review_required",
+          "generated_text": " An outlet is a store that sells products at lower prices than regular stores. They often have items that are over stock, dis continued, or close to exp iring, so they need to sell them quickly. Regular stores usually sell new items at their standard price s. Out lets might also be located in special shopping centers called outlet mall s, which focus on discounted goods. So, the main difference is the pricing and the types of items sold.",
+          "processed_frames": 66,
+          "expected_frames": 66,
+          "wall_seconds": 36.68753826012835,
+          "spoken_transcript": "An outlet is so that sells products at lower prices than regular stores. They often have items that are overstocked, discontinued, or close to expiring, so they need to sell them quickly. Regular stores usually sell new items at their standard prices. Outlets might also be located in special shopping centers called outlet malls, which focus on discounted goods. So the main difference is the pricing and the types of items sold.",
+          "model": "minicpm",
+          "job": "1413085",
+          "source_review": null,
+          "audio": "research/answering-study/audio/minicpm-1413085-native-control.flac"
+        }
+      ]
+    }
+  ],
+  "text_models": [
+    {
+      "model": "instruct",
+      "state": "COMPLETED",
+      "note_calls": 104,
+      "planned_note_calls": 104,
+      "format_and_source_ID_valid_notes": 104,
+      "request_outputs": 24,
+      "planned_request_outputs": 24,
+      "reviewed_outputs": 24,
+      "answers": [
+        {
+          "id": "pilot:P-EN-notes|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 218,
+          "generated_tokens": 38,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 38,
+          "maximum_output_tokens": 2048,
+          "answer": "D said they'd take the notes today.",
+          "evidence_ids": [
+            "EN2002b-u0015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-notes|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 5445,
+          "generated_tokens": 53,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 53,
+          "maximum_output_tokens": 2048,
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-notes|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 8193,
+          "generated_tokens": 53,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 53,
+          "maximum_output_tokens": 2048,
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-notes|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 11336,
+          "generated_tokens": 53,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 53,
+          "maximum_output_tokens": 2048,
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 487,
+          "generated_tokens": 95,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 95,
+          "maximum_output_tokens": 2048,
+          "answer": "We decided to drop the work on removing things from the audio files because we didn't know how to approach it at the moment, and we felt there were more important things to do with our time.",
+          "evidence_ids": [
+            "EN2002b-u0174",
+            "EN2002b-u0177",
+            "EN2002b-u0199"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives at least one recorded reason for dropping the audio work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 9860,
+          "generated_tokens": 225,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 225,
+          "maximum_output_tokens": 2048,
+          "answer": "We decided to drop the work on removing things from audio files because it was too big a task, we didn't know how to approach it, and we didn't have enough time. It was suggested to mention it only as a future work idea if we had more time.",
+          "evidence_ids": [
+            "EN2002b-U00167",
+            "EN2002b-U00170",
+            "EN2002b-U00173",
+            "EN2002b-U00175",
+            "EN2002b-U00182",
+            "EN2002b-U00185",
+            "EN2002b-U00191",
+            "EN2002b-U00193",
+            "EN2002b-U00199",
+            "EN2002b-U00200",
+            "EN2002b-U00205"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives at least one recorded reason for dropping the audio work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 14597,
+          "generated_tokens": 240,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 240,
+          "maximum_output_tokens": 2048,
+          "answer": "We decided to drop the work on removing things from audio files because it was considered too ambitious and not feasible within the available time. The group agreed it was better suited for future work, as they didn't have a clear approach and felt there were more important tasks to focus on.",
+          "evidence_ids": [
+            "EN2002b-U00167",
+            "EN2002b-U00170",
+            "EN2002b-U00171",
+            "EN2002b-U00172",
+            "EN2002b-U00173",
+            "EN2002b-U00174",
+            "EN2002b-U00175",
+            "EN2002b-U00176",
+            "EN2002b-U00177",
+            "EN2002b-U00178",
+            "EN2002b-U00179",
+            "EN2002b-U00180"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives at least one recorded reason for dropping the audio work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 19276,
+          "generated_tokens": 231,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 231,
+          "maximum_output_tokens": 2048,
+          "answer": "We decided to drop the work on removing things from the audio files because it was too big a task, we didn't know how to approach it at the moment, and we felt there were more important things to do with our time.",
+          "evidence_ids": [
+            "EN2002b-U00167",
+            "EN2002b-U00170",
+            "EN2002b-U00171",
+            "EN2002b-U00173",
+            "EN2002b-U00174",
+            "EN2002b-U00175",
+            "EN2002b-U00176",
+            "EN2002b-U00177",
+            "EN2002b-U00178",
+            "EN2002b-U00179",
+            "EN2002b-U00180",
+            "EN2002b-U00181"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives at least one recorded reason for dropping the audio work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 445,
+          "generated_tokens": 83,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 83,
+          "maximum_output_tokens": 2048,
+          "answer": "B is uncertain whether the company wants the actual written slogan on the remote or just the idea behind it, noting the slogan is quite long.",
+          "evidence_ids": [
+            "ES2002b-u0027",
+            "ES2002b-u0030",
+            "ES2002b-u0031"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves the unresolved distinction between literal slogan and design idea.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 2722,
+          "generated_tokens": 81,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 81,
+          "maximum_output_tokens": 2048,
+          "answer": "B is unsure whether the company wants the actual slogan written on the remote or just the idea embodied in the design.",
+          "evidence_ids": [
+            "ES2002b-U00027",
+            "ES2002b-U00032",
+            "ES2002b-U00033"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves the unresolved distinction between literal slogan and design idea.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 5511,
+          "generated_tokens": 109,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 109,
+          "maximum_output_tokens": 2048,
+          "answer": "B is unsure whether the company wants the actual slogan written on the remote or just the idea embodied in the design. D also asks for clarification, and B confirms they are not certain.",
+          "evidence_ids": [
+            "ES2002b-U00026",
+            "ES2002b-U00027",
+            "ES2002b-U00030",
+            "ES2002b-U00032"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves the unresolved distinction between literal slogan and design idea.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 7826,
+          "generated_tokens": 110,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 110,
+          "maximum_output_tokens": 2048,
+          "answer": "It's unresolved whether the slogan should be physically written on the remote or just embodied conceptually. B expressed uncertainty, and D asked for clarification on the implementation approach.",
+          "evidence_ids": [
+            "ES2002b-U00027",
+            "ES2002b-U00030",
+            "ES2002b-U00032"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves the unresolved distinction between literal slogan and design idea.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 333,
+          "generated_tokens": 38,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 38,
+          "maximum_output_tokens": 2048,
+          "answer": "We were allowing about seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-u0030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of about seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 2890,
+          "generated_tokens": 39,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 39,
+          "maximum_output_tokens": 2048,
+          "answer": "We were allowing about seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-U00030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of about seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 5735,
+          "generated_tokens": 39,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 39,
+          "maximum_output_tokens": 2048,
+          "answer": "We were allowing about seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-U00030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of about seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 8448,
+          "generated_tokens": 39,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 39,
+          "maximum_output_tokens": 2048,
+          "answer": "We were allowing about seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-U00030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of about seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 433,
+          "generated_tokens": 115,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 115,
+          "maximum_output_tokens": 2048,
+          "answer": "A is sending the main call, and will do so today or tomorrow. We're asking Claire to send a separate email for Psychology because she knows the correct email address and will make it look more relevant to the Psychology team, as they already know her.",
+          "evidence_ids": [
+            "chunk-0044",
+            "chunk-0045",
+            "chunk-0046",
+            "chunk-0050",
+            "chunk-0088",
+            "chunk-0090"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct sender, today/tomorrow timing and Psychology rationale.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 4896,
+          "generated_tokens": 139,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 139,
+          "maximum_output_tokens": 2048,
+          "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for psychology people because she knows the right email addresses and can make the message seem more relevant to them, increasing the chance they'll respond.",
+          "evidence_ids": [
+            "EN2003a-U00034",
+            "EN2003a-U00051",
+            "EN2003a-U00056",
+            "EN2003a-U00105",
+            "EN2003a-U00112"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "incorrect",
+            "complete": false,
+            "reason": "Returns end of week instead of the main-call commitment of today/tomorrow.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 8014,
+          "generated_tokens": 180,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 180,
+          "maximum_output_tokens": 2048,
+          "answer": "Participant A is sending the main call for abstracts or titles by the end of the week. We're asking Claire to send a separate call for Psychology because she knows the right email addresses and can write a version that feels relevant to psychology researchers, increasing engagement.",
+          "evidence_ids": [
+            "EN2003a-U00027",
+            "EN2003a-U00034",
+            "EN2003a-U00051",
+            "EN2003a-U00056",
+            "EN2003a-U00058",
+            "EN2003a-U00105",
+            "EN2003a-U00108",
+            "EN2003a-U00110"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "incorrect",
+            "complete": false,
+            "reason": "Saved summaries do not prevent the wrong end-of-week timing.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 12077,
+          "generated_tokens": 171,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 171,
+          "maximum_output_tokens": 2048,
+          "answer": "A will send the main call for abstracts by the end of the week. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the chance of response.",
+          "evidence_ids": [
+            "EN2003a-U00027",
+            "EN2003a-U00034",
+            "EN2003a-U00051",
+            "EN2003a-U00056",
+            "EN2003a-U00059",
+            "EN2003a-U00105",
+            "EN2003a-U00108"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "incorrect",
+            "complete": false,
+            "reason": "Structured notes do not prevent the wrong end-of-week timing.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 397,
+          "generated_tokens": 113,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 113,
+          "maximum_output_tokens": 2048,
+          "answer": "The conceptual design files were placed in the shared folder by C, but D still cannot see them, only their own presentation. C confirms the files should be there, specifically noting the folder contains PowerPoint pre-components design files.",
+          "evidence_ids": [
+            "TS3006c-s0017",
+            "TS3006c-s0022",
+            "TS3006c-s0024"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Distinguishes C's placement report from D's inability to see the files; the PowerPoint description is not required.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 3656,
+          "generated_tokens": 130,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 130,
+          "maximum_output_tokens": 2048,
+          "answer": "C confirmed that the conceptual design was uploaded to the shared folder, but D initially couldn't see it and had trouble accessing it. C later clarified that the file should be in the folder under the name 'PowerPoint pre components design'.",
+          "evidence_ids": [
+            "TS3006c-U00021",
+            "TS3006c-U00022",
+            "TS3006c-U00026",
+            "TS3006c-U00028"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "partial",
+            "complete": false,
+            "reason": "Recovers placement and visibility but invents a literal file name from a disfluent PowerPoint description.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 5914,
+          "generated_tokens": 180,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 180,
+          "maximum_output_tokens": 2048,
+          "answer": "C confirmed the conceptual design was uploaded to the shared folder with the name 'PowerPoint pre components design'. D and C both reported difficulties accessing or moving the file, citing cut-and-paste issues and technical problems with PowerPoint. Despite the upload, the file was not visible to D initially, and transfer attempts failed.",
+          "evidence_ids": [
+            "TS3006c-U00021",
+            "TS3006c-U00022",
+            "TS3006c-U00026",
+            "TS3006c-U00028",
+            "TS3006c-U00029",
+            "TS3006c-U00038"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "partial",
+            "complete": false,
+            "reason": "Adds an unsupported literal file name and broad failed-transfer/access claims.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 7618,
+          "generated_tokens": 154,
+          "native_thinking_tokens": null,
+          "ordinary_output_tokens": 154,
+          "maximum_output_tokens": 2048,
+          "answer": "The conceptual design presentation was placed in the shared folder and should be accessible, according to C. However, D reports only seeing their own presentation, and there is an unresolved issue with cutting and pasting the file into the other folder. The correct file format (PowerPoint with components design) was specified.",
+          "evidence_ids": [
+            "TS3006c-U00021",
+            "TS3006c-U00026",
+            "TS3006c-U00028",
+            "TS3006c-U00038"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves the placement report and unresolved visibility/copy issue.",
+            "unavailable_citation_ids": []
+          }
+        }
+      ],
+      "request_thinking_tokens": null,
+      "request_output_tokens": 2708,
+      "amortized_generated_tokens": 43985,
+      "summary_status": "inference_complete_source_review_required"
+    },
+    {
+      "model": "thinking",
+      "state": "COMPLETED",
+      "note_calls": 104,
+      "planned_note_calls": 104,
+      "format_and_source_ID_valid_notes": 83,
+      "request_outputs": 24,
+      "planned_request_outputs": 24,
+      "reviewed_outputs": 24,
+      "answers": [
+        {
+          "id": "pilot:P-EN-notes|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 220,
+          "generated_tokens": 1238,
+          "native_thinking_tokens": 1197,
+          "ordinary_output_tokens": 40,
+          "maximum_output_tokens": 16384,
+          "answer": "D",
+          "evidence_ids": [
+            "EN2002b-u0015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer; citation or quotation issues are checked separately.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-notes|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 5447,
+          "generated_tokens": 5042,
+          "native_thinking_tokens": 5000,
+          "ordinary_output_tokens": 41,
+          "maximum_output_tokens": 16384,
+          "answer": "D",
+          "evidence_ids": [
+            "EN2002b-U00015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer; citation or quotation issues are checked separately.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-notes|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 8291,
+          "generated_tokens": 2795,
+          "native_thinking_tokens": 2704,
+          "ordinary_output_tokens": 90,
+          "maximum_output_tokens": 16384,
+          "answer": "D confirmed they would take the notes, saying 'I'll takes notes this time, I guess' (U00011, U00015).",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer; citation or quotation issues are checked separately.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-notes|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 8797,
+          "generated_tokens": 2220,
+          "native_thinking_tokens": 2156,
+          "ordinary_output_tokens": 63,
+          "maximum_output_tokens": 16384,
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Identifies D, the earlier volunteer; citation or quotation issues are checked separately.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 489,
+          "generated_tokens": 1428,
+          "native_thinking_tokens": 1324,
+          "ordinary_output_tokens": 103,
+          "maximum_output_tokens": 16384,
+          "answer": "We decided to skip removing things from audio files because we don't know how to approach it and time is too short; we felt there were more important things to do with our time.",
+          "evidence_ids": [
+            "EN2002b-u0174",
+            "EN2002b-u0198",
+            "EN2002b-u0199"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives a recorded reason for dropping the work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 9862,
+          "generated_tokens": 2367,
+          "native_thinking_tokens": 2262,
+          "ordinary_output_tokens": 104,
+          "maximum_output_tokens": 16384,
+          "answer": "We decided to drop the audio file removal work because it's too big and we don't know how to approach it, as stated by A and confirmed by C and D.",
+          "evidence_ids": [
+            "EN2002b-U00167",
+            "EN2002b-U00174",
+            "EN2002b-U00175"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives a recorded reason for dropping the work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 14177,
+          "generated_tokens": 1679,
+          "native_thinking_tokens": 1491,
+          "ordinary_output_tokens": 187,
+          "maximum_output_tokens": 16384,
+          "answer": "They decided to drop the audio file work because it's too big and they don't know how to approach it ('that's too big,' 'we don't even know how to approach that'), and they don't have enough time ('we don't think there's enough time'). It will be documented under 'changes since initial specification' as a future work item.",
+          "evidence_ids": [
+            "EN2002b-U00165",
+            "EN2002b-U00167",
+            "EN2002b-U00169",
+            "EN2002b-U00172",
+            "EN2002b-U00174",
+            "EN2002b-U00198"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives a recorded reason for dropping the work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-EN-audio|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 13212,
+          "generated_tokens": 2659,
+          "native_thinking_tokens": 2545,
+          "ordinary_output_tokens": 113,
+          "maximum_output_tokens": 16384,
+          "answer": "We decided to skip removing things from audio files because it's too big and we don't know how to approach it. A said it's 'too big' and C noted they don't know how to approach it.",
+          "evidence_ids": [
+            "EN2002b-U00167",
+            "EN2002b-U00174",
+            "EN2002b-U00175"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Gives a recorded reason for dropping the work.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 447,
+          "generated_tokens": 1252,
+          "native_thinking_tokens": 1154,
+          "ordinary_output_tokens": 97,
+          "maximum_output_tokens": 16384,
+          "answer": "B is unsure. They don't know if the company wants the actual written slogan (which is long) or just the idea embodied.",
+          "evidence_ids": [
+            "ES2002b-u0027",
+            "ES2002b-u0031"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Recovers that the literal-slogan versus design-idea choice remained unresolved.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 2724,
+          "generated_tokens": 1478,
+          "native_thinking_tokens": 1369,
+          "ordinary_output_tokens": 108,
+          "maximum_output_tokens": 16384,
+          "answer": "The company hasn't decided. B expressed uncertainty, saying they might only want the idea of the slogan, not the actual written slogan. D asked about this during the meeting.",
+          "evidence_ids": [
+            "ES2002b-U00026",
+            "ES2002b-U00027",
+            "ES2002b-U00030",
+            "ES2002b-U00032"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Recovers that the literal-slogan versus design-idea choice remained unresolved.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 6079,
+          "generated_tokens": 1905,
+          "native_thinking_tokens": 1792,
+          "ordinary_output_tokens": 112,
+          "maximum_output_tokens": 16384,
+          "answer": "B expressed uncertainty about whether the company wants the actual slogan written on the remote or just the idea, and they agreed to discuss it further.",
+          "evidence_ids": [
+            "ES2002b-U00026",
+            "ES2002b-U00027",
+            "ES2002b-U00030",
+            "ES2002b-U00032"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Recovers that the literal-slogan versus design-idea choice remained unresolved.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-ES-slogan|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 6709,
+          "generated_tokens": 1683,
+          "native_thinking_tokens": 1547,
+          "ordinary_output_tokens": 135,
+          "maximum_output_tokens": 16384,
+          "answer": "The team is uncertain. B said, 'I'm not sure' and questioned whether to write the slogan or embody the idea. They will discuss it further; no decision made yet.",
+          "evidence_ids": [
+            "ES2002b-U00026",
+            "ES2002b-U00027",
+            "ES2002b-U00030",
+            "ES2002b-U00032"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Recovers that the literal-slogan versus design-idea choice remained unresolved.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 335,
+          "generated_tokens": 595,
+          "native_thinking_tokens": 551,
+          "ordinary_output_tokens": 43,
+          "maximum_output_tokens": 16384,
+          "answer": "Seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-u0030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 2892,
+          "generated_tokens": 672,
+          "native_thinking_tokens": 627,
+          "ordinary_output_tokens": 44,
+          "maximum_output_tokens": 16384,
+          "answer": "Seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-U00030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 5299,
+          "generated_tokens": 1527,
+          "native_thinking_tokens": 1482,
+          "ordinary_output_tokens": 44,
+          "maximum_output_tokens": 16384,
+          "answer": "Seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-U00030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "pilot:P-TS-time|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 7330,
+          "generated_tokens": 894,
+          "native_thinking_tokens": 849,
+          "ordinary_output_tokens": 44,
+          "maximum_output_tokens": 16384,
+          "answer": "Seven minutes per presentation.",
+          "evidence_ids": [
+            "TS3003b-U00030"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct allowance of seven minutes per presentation.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 435,
+          "generated_tokens": 1788,
+          "native_thinking_tokens": 1658,
+          "ordinary_output_tokens": 129,
+          "maximum_output_tokens": 16384,
+          "answer": "A is sending the main email (for ling) today or tomorrow. Claire is sending a separate email for Psychology because she knows the correct email address, has a psychology-specific email, and it will look more relevant to them (as they know her).",
+          "evidence_ids": [
+            "chunk-0044",
+            "chunk-0045",
+            "chunk-0046",
+            "chunk-0050",
+            "chunk-0088",
+            "chunk-0090"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct sender, today/tomorrow timing and Psychology rationale.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 4898,
+          "generated_tokens": 2232,
+          "native_thinking_tokens": 2141,
+          "ordinary_output_tokens": 90,
+          "maximum_output_tokens": 16384,
+          "answer": "A is sending the main call for linguists today or tomorrow. Claire is sending a separate Psychology call because she can tailor it to psychologists (avoiding linguists worrying about losing their place).",
+          "evidence_ids": [
+            "U00050",
+            "U00051",
+            "U00042"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct main-call timing and tailoring rationale; the attendance concern is also present in the surrounding discussion.",
+            "unavailable_citation_ids": [
+              "U00050",
+              "U00051",
+              "U00042"
+            ]
+          }
+        },
+        {
+          "id": "first:authored-W1-2|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 7961,
+          "generated_tokens": 2785,
+          "native_thinking_tokens": 2622,
+          "ordinary_output_tokens": 162,
+          "maximum_output_tokens": 16384,
+          "answer": "Participant A is sending the main call for linguistics by end of week (Thursday) or today/tomorrow. We ask Claire to send a separate psychology call because she knows the psychology email list and can make it more relevant to psychology.",
+          "evidence_ids": [
+            "EN2003a-U00027",
+            "EN2003a-U00034",
+            "EN2003a-U00050",
+            "EN2003a-U00051",
+            "EN2003a-U00056",
+            "EN2003a-U00105"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "partial",
+            "complete": false,
+            "reason": "Presents end of week/Thursday as an alternative to today/tomorrow, leaving the requested timing ambiguous.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "first:authored-W1-2|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 10037,
+          "generated_tokens": 2734,
+          "native_thinking_tokens": 2626,
+          "ordinary_output_tokens": 107,
+          "maximum_output_tokens": 16384,
+          "answer": "A will send the main call today or tomorrow. We ask Claire to send a separate Psychology call because she knows the Psychology email list and can tailor the message to look relevant to Psychology people.",
+          "evidence_ids": [
+            "EN2003a-U00050",
+            "EN2003a-U00056",
+            "EN2003a-U00105"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Correct sender, today/tomorrow timing and Psychology rationale.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|source_excerpt_diagnostic",
+          "finish_reason": "stop",
+          "input_tokens": 399,
+          "generated_tokens": 1329,
+          "native_thinking_tokens": 1232,
+          "ordinary_output_tokens": 96,
+          "maximum_output_tokens": 16384,
+          "answer": "C stated the conceptual design presentation was placed in the shared folder. D confirmed they could only see their own presentation, indicating the files were not found.",
+          "evidence_ids": [
+            "TS3006c-s0017",
+            "TS3006c-s0018",
+            "TS3006c-s0022"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves C's placement report and D's visibility limit.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|reactive",
+          "finish_reason": "stop",
+          "input_tokens": 3658,
+          "generated_tokens": 2463,
+          "native_thinking_tokens": 2270,
+          "ordinary_output_tokens": 192,
+          "maximum_output_tokens": 16384,
+          "answer": "C stated the conceptual design was in the shared folder (TS3006c-U00021, TS3006c-U00022), but D couldn't find it (only saw their own presentation, TS3006c-U00026). D then said they would put it in the shared folder (TS3006c-U00029).",
+          "evidence_ids": [
+            "TS3006c-U00021",
+            "TS3006c-U00022",
+            "TS3006c-U00026",
+            "TS3006c-U00029"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Recovers the placement report, visibility problem and subsequent proposal without claiming a completed live check.",
+            "unavailable_citation_ids": []
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|amortized_summary",
+          "finish_reason": "stop",
+          "input_tokens": 4408,
+          "generated_tokens": 2246,
+          "native_thinking_tokens": 2158,
+          "ordinary_output_tokens": 87,
+          "maximum_output_tokens": 16384,
+          "answer": "C placed the conceptual design in the shared folder (TS3006c-U0021, TS3006c-U0022).",
+          "evidence_ids": [
+            "TS3006c-U0021",
+            "TS3006c-U0022"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "partial",
+            "complete": false,
+            "reason": "Reports placement without the uncertainty or visibility limit required for the current-status question.",
+            "unavailable_citation_ids": [
+              "TS3006c-U0021",
+              "TS3006c-U0022"
+            ]
+          }
+        },
+        {
+          "id": "scale:TS3006c-S05-Q3|amortized_structured_notes",
+          "finish_reason": "stop",
+          "input_tokens": 6023,
+          "generated_tokens": 1292,
+          "native_thinking_tokens": 1169,
+          "ordinary_output_tokens": 122,
+          "maximum_output_tokens": 16384,
+          "answer": "C stated the conceptual design was placed in the shared folder (TS3006c-U00021). D reported seeing only his own presentation, indicating it wasn't found (TS3006c-U00026). Status remains unresolved.",
+          "evidence_ids": [
+            "TS3006c-U00021",
+            "TS3006c-U00026"
+          ],
+          "complete_final_JSON": true,
+          "source_review": {
+            "grade": "complete",
+            "complete": true,
+            "reason": "Preserves the report and unresolved visibility status.",
+            "unavailable_citation_ids": []
+          }
+        }
+      ],
+      "request_thinking_tokens": 43926,
+      "request_output_tokens": 2353,
+      "amortized_generated_tokens": 530349,
+      "summary_status": "inference_complete_source_review_required"
+    }
+  ],
+  "input_previews": [
+    {
+      "id": "M01-support",
+      "question_id": "pilot:P-EN-notes",
+      "meeting": "EN2002b",
+      "question": "Assistant, who said they'd take the notes today?",
+      "support_seconds": 2.66,
+      "original_history_seconds": 303.62,
+      "audio": "research/answering-study/audio/input-M01-support.flac"
+    },
+    {
+      "id": "M02-support",
+      "question_id": "pilot:P-EN-audio",
+      "meeting": "EN2002b",
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "support_seconds": 35.49,
+      "original_history_seconds": 471.33,
+      "audio": "research/answering-study/audio/input-M02-support.flac"
+    },
+    {
+      "id": "M03-support",
+      "question_id": "pilot:P-ES-slogan",
+      "meeting": "ES2002b",
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "support_seconds": 31.81,
+      "original_history_seconds": 308.77,
+      "audio": "research/answering-study/audio/input-M03-support.flac"
+    },
+    {
+      "id": "M04-support",
+      "question_id": "pilot:P-TS-time",
+      "meeting": "TS3003b",
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "support_seconds": 23.01,
+      "original_history_seconds": 302.37,
+      "audio": "research/answering-study/audio/input-M04-support.flac"
+    },
+    {
+      "id": "M05-support",
+      "question_id": "first:authored-W1-2",
+      "meeting": "EN2003a",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "support_seconds": 33.72,
+      "original_history_seconds": 351.0,
+      "audio": "research/answering-study/audio/input-M05-support.flac"
+    },
+    {
+      "id": "M06-support",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "meeting": "TS3006c",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "support_seconds": 25.35,
+      "original_history_seconds": 309.03,
+      "audio": "research/answering-study/audio/input-M06-support.flac"
+    }
+  ],
+  "chunking": {
+    "status": "pass",
+    "questions": 6,
+    "meetings": 5,
+    "total_chunks": 55,
+    "queries_per_goal": 52,
+    "minimum_chunk_seconds": 25.0,
+    "maximum_chunk_seconds": 40.0,
+    "question_blind_file_separated": true,
+    "GT_past_only": true,
+    "GPUs": 0
+  },
+  "full_benchmark_completed_outputs": 0,
+  "text_source_review_summaries": [
+    {
+      "model": "instruct",
+      "condition": "source_excerpt_diagnostic",
+      "questions": 6,
+      "complete": 6,
+      "mean_request_thinking_tokens": null,
+      "mean_request_ordinary_output_tokens": 80.33333333333333
+    },
+    {
+      "model": "instruct",
+      "condition": "reactive",
+      "questions": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": null,
+      "mean_request_ordinary_output_tokens": 111.16666666666667
+    },
+    {
+      "model": "instruct",
+      "condition": "amortized_summary",
+      "questions": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": null,
+      "mean_request_ordinary_output_tokens": 133.5
+    },
+    {
+      "model": "instruct",
+      "condition": "amortized_structured_notes",
+      "questions": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": null,
+      "mean_request_ordinary_output_tokens": 126.33333333333333
+    },
+    {
+      "model": "thinking",
+      "condition": "source_excerpt_diagnostic",
+      "questions": 6,
+      "complete": 6,
+      "mean_request_thinking_tokens": 1186,
+      "mean_request_ordinary_output_tokens": 84.66666666666667
+    },
+    {
+      "model": "thinking",
+      "condition": "reactive",
+      "questions": 6,
+      "complete": 6,
+      "mean_request_thinking_tokens": 2278.1666666666665,
+      "mean_request_ordinary_output_tokens": 96.5
+    },
+    {
+      "model": "thinking",
+      "condition": "amortized_summary",
+      "questions": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": 2041.5,
+      "mean_request_ordinary_output_tokens": 113.66666666666667
+    },
+    {
+      "model": "thinking",
+      "condition": "amortized_structured_notes",
+      "questions": 6,
+      "complete": 6,
+      "mean_request_thinking_tokens": 1815.3333333333333,
+      "mean_request_ordinary_output_tokens": 97.33333333333333
+    }
+  ],
+  "judge_qualification": {
+    "status": "running_or_queued",
+    "outputs_recorded": 0,
+    "planned_outputs": 68,
+    "questions": 17,
+    "meetings": 5
+  }
+}

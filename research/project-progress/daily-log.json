@@ -6,6 +6,26 @@
       "date": "2026-11-01",
       "items": [
         {
+          "text": "Launched matched answering pilots for Moshi, MiniCPM and DuplexOmni using six paired questions and a native control.",
+          "url": "study-progress.html#answering-native"
+        },
+        {
+          "text": "Completed both Qwen3-30B pilots and source-reviewed all 48 final text answers across four conditions.",
+          "url": "study-progress.html#answering-text"
+        },
+        {
+          "text": "Source-reviewed all 105 reference answers and checked their 382 earlier evidence passages and shared evaluator records.",
+          "url": "study-progress.html#answering-references"
+        },
+        {
+          "text": "Corrected missing untimed words in twelve earnings-call reference inputs and reran only those cases.",
+          "url": "study-progress.html#answering-references"
+        },
+        {
+          "text": "Launched a fixed generic-scorer check on 68 earlier real answers from 17 questions in five other meetings.",
+          "url": "study-progress.html#answering-judge"
+        },
+        {
           "text": "Simplified the three question-WER figures and identified their shared headset baseline.",
           "url": "study-progress.html#ami-array-sweep"
         },

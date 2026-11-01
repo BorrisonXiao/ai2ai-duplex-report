@@ -230,16 +230,34 @@
           "evidence": "Local Qwen3 judge: 120/120 ratings passing output/citation checks, anchored relevance/support/adequacy, qualification and 12 prompt-order probes; no new S1 speech. Full-bank evaluator validation remains pending."
         },
         {
+          "text": "Verify source-based reference answers for all 105 frozen questions.",
+          "status": "complete",
+          "project_url": "study-progress.html#answering-references",
+          "evidence": "105/105 source reviews recorded; automated proposals/checks do not certify references."
+        },
+        {
+          "text": "Run matched supporting-audio and original-history questions through all three S1 systems.",
+          "status": "partial",
+          "project_url": "study-progress.html#answering-native",
+          "evidence": "34/39 native outputs saved, including three runtime controls; response ASR and source review remain separate."
+        },
+        {
+          "text": "Compare reactive reading, amortized summaries and structured notes with Instruct and Thinking readers.",
+          "status": "complete",
+          "project_url": "study-progress.html#answering-text",
+          "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
+        },
+        {
+          "text": "Qualify the generic scorer on 68 earlier real answers from 17 questions in five separate meetings.",
+          "status": "partial",
+          "project_url": "study-progress.html#answering-judge",
+          "evidence": "Judge status: running_or_queued; fixed criteria and earlier Codex labels, no independent human ratings."
+        },
+        {
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "project_url": "what-to-think.html#evaluation-first",
           "evidence": "The one-question microphone sweep is reviewed and the revised local judge passed twelve authored checks; validate all 105 references, qualify judging on distinct questions and check the other S1 callers before full-bank evaluation."
-        },
-        {
-          "text": "Generate or repair and validate all 105 reference answers.",
-          "status": "pending",
-          "project_url": "what-to-think.html#scope",
-          "evidence": "Plan requirement; not yet executed."
         },
         {
           "text": "Check every S1 caller and evaluate all 105 questions for each S1 model.",
@@ -249,9 +267,9 @@
         },
         {
           "text": "Select chunks and thinking goals on separate development meetings.",
-          "status": "planned",
+          "status": "partial",
           "project_url": "what-to-think.html#prompts",
-          "evidence": "Plan requirement; not yet executed."
+          "evidence": "Question-blind 25–40 s chunks satisfy the 10–40 s plan; summary and structured-note goals are being tested on development meetings."
         },
         {
           "text": "Run the remaining text and speech S2 conditions on all 105 questions.",

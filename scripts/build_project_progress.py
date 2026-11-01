@@ -103,7 +103,7 @@ def build_plan():
         if s['id'] == 'comparison':
             body += '<details><summary>Earlier timing and content design, retained for later work</summary><p>The <a href="what-to-think.html">current 105-question content plan</a> supersedes this earlier scope.</p>' + root_links(thinking_design.render(r['comparison_design'], table)) + '</details>'
         body += '</section>'
-    body += '<p>' + e(r['resource_note']) + '</p><p><a href="research/question-catalog/plan.json">Full plan data</a> · <a href="research/project-progress/todo-summary.json">Short checklist data</a></p></details></section><footer class="section"><ul><li>Keep this plan and the <a href="daily-log.html">daily log</a> in sync as work finishes.</li><li>This report edit uses zero GPUs and runs no inference.</li></ul></footer>'
+    body += '<p>' + e(r['resource_note']) + '</p><p><a href="research/question-catalog/plan.json">Full plan data</a> · <a href="research/project-progress/todo-summary.json">Short checklist data</a></p></details></section><footer class="section"><ul><li>Keep this plan and the <a href="daily-log.html">daily log</a> in sync as work finishes.</li><li>Report rendering runs on CPU; current GPU experiments and their roles are listed on the experiment progress page.</li></ul></footer>'
     full = document('todo.html', 'Project TODO', 'todo', body, thinking_design.JS + STATUS_JS)
     # Preserve links and fragments used by earlier reports and bookmarks.
     ids = sorted(set(re.findall(r'\bid="([^"]+)"', full)) - {'main'})

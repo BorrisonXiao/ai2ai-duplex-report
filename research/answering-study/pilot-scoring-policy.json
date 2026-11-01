@@ -1,0 +1,76 @@
+{
+  "version": "pilot-source-accuracy-v1",
+  "status": "criteria_written_from_source_before_inspecting_pilot_answers",
+  "primary_pass": "Answers the actual request using sufficient source-supported information, with no material unsupported claim about the meeting or requested task. Optional reference details are not mandatory keywords.",
+  "controls": "DailyTalk runtime controls and selected-source text controls remain separate from the three main text conditions and six distinct question count.",
+  "candidate": "Actual independent ASR for S1; final answer text for text S2; native S1 intended text is an additional diagnostic, never relabeled as spoken speech.",
+  "window": "The whole captured response is reviewed; unfinished final packets are flagged. Any shorter-window follow-up is a separately labeled diagnostic, not a replacement attempt.",
+  "rules": {
+    "pilot:P-EN-notes": {
+      "required": [
+        "Identify D as the earlier volunteer, using an appropriate speaker identifier or a genuinely identifying description."
+      ],
+      "optional": [
+        "Exact quote or a personal name that the source does not supply."
+      ],
+      "caveat": "Anonymous speaker letters are supplied in text-oracle inputs but are not spoken in S1 audio. Do not require an unavailable personal name; flag unresolved identity mapping separately."
+    },
+    "pilot:P-EN-audio": {
+      "required": [
+        "Give a recorded reason for dropping the work: insufficient time, not knowing how to approach it, or higher-priority work."
+      ],
+      "optional": [
+        "Mentioning every one of the three reasons."
+      ],
+      "avoid": [
+        "Inventing a completed implementation, technical impossibility or an unrecorded cost."
+      ]
+    },
+    "pilot:P-ES-slogan": {
+      "required": [
+        "The choice between printing the slogan and embodying its idea remained unresolved."
+      ],
+      "optional": [
+        "Naming B or D or quoting the long-slogan concern."
+      ],
+      "avoid": [
+        "Claiming a settled print-only or idea-only decision."
+      ]
+    },
+    "pilot:P-TS-time": {
+      "required": [
+        "About seven minutes per presentation."
+      ],
+      "optional": [
+        "Forty minutes overall for presentations and discussion."
+      ],
+      "avoid": [
+        "Replacing the per-presentation allowance with the total meeting allocation."
+      ]
+    },
+    "first:authored-W1-2": {
+      "required": [
+        "The speaker who volunteered to send the main call (A in the transcript) would do so today or tomorrow.",
+        "Claire could handle Psychology; her appropriate address, relevance or being known to recipients explains the separate message."
+      ],
+      "optional": [
+        "All three rationale details or the words Linguistics and English Language."
+      ],
+      "avoid": [
+        "Using the earlier end-of-week statement as the latest timing."
+      ],
+      "caveat": "Speaker identifiers are oracle labels in text input; unavailable personal names are not required."
+    },
+    "scale:TS3006c-S05-Q3": {
+      "required": [
+        "Report that C said the files were put in the shared folder, with uncertainty/current-visibility limits rather than a claimed live check."
+      ],
+      "optional": [
+        "D initially saw only their own presentation; the components-design PowerPoint identity."
+      ],
+      "avoid": [
+        "A general outage, failed upload, completed assistant check or verified universal access not established by speech."
+      ]
+    }
+  }
+}

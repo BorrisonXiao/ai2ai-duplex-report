@@ -25,9 +25,9 @@
     "earnings_calls": 2,
     "latest_insertion_minutes": 47.06183333333333,
     "existing_source_review_subset": 20,
-    "all105_answers_validated": false,
+    "all105_answers_validated": true,
     "reference_answer_audio": "deferred; text and fact checklists suffice",
-    "development": "Use separate additional meetings/speakers for prompt and chunk selection; the exposed 105-question bank remains the full evaluation pool.",
+    "development": "The six pilot questions are exposed development/diagnostic cases, retained in the 105-question bank but reported separately from any later held-out subset.",
     "extra_diagnostic4": "The four previous text probes stay separate unless the user later expands the 105-question bank."
   },
   "chunking": {
@@ -94,13 +94,13 @@
     "A helper or selector that uses the actual request performs request-time work: count its native reasoning and ordinary output, never relabel it amortized thinking. The main history selector uses fixed rules."
   ],
   "resources": {
-    "current_GPU_count": 0,
+    "current_GPU_count": 1,
     "current_maximum_active_GPUs": 4,
     "current_roles": {
       "primary job / GPU 0": "Thinker, Talker, MTP and Code2Wav, then independent Parakeet ASR after S1 shutdown; S2 disabled.",
       "later fresh-session diagnostic / GPU 0": "Thinker only; no speech generation, external ASR or S2."
     },
-    "current_dependencies": "The matched control precedes four independent one-H100 SXM 80 GB pressure workers; a later one-H100 SXM 80 GB diagnostic uses Thinker only. Exact allocations and costs are in the progress report.",
+    "current_dependencies": "Three independent one-GPU native S1 workers; one sequential reference/text-model lane; a separate one-GPU scorer qualification after the readers complete; maximum four GPUs. Independent ASR follows each S1 worker on its same GPU.",
     "planned_maximum_active_GPUs": 4,
     "policy": "The matched one-H100 SXM 80 GB run precedes four independent one-H100 pressure workers, with maximum four GPUs active; a later diagnostic uses one H100 with Thinker only. Future full-matrix stages remain sequential, with references and transcript tools before evaluation and judges after generation. No concurrent S1+S2 integration is part of this matrix.",
     "qualification": "Resource counts are planning envelopes, not measured fits; reuse pinned environments/checkpoints and qualify new versions before the full runs."
@@ -126,7 +126,7 @@
     "first_model": "DuplexOmni S1, using the existing verified S1 caller with S2 disabled",
     "scope": "First implement and validate the shared evaluation scripts on saved real S1 outputs, then run a small end-to-end S1 pilot on separately checked question examples; these checks do not replace the final 105-question evaluation.",
     "checks": [
-      "Freeze a small source-checked pilot set with an early question, a later question and a case about task owners or a changed decision; do not tune models or prompts on the final bank.",
+      "Use the six explicitly exposed development/diagnostic questions for this pilot, retain all 105 questions in final accounting, and report exposed questions separately from any later held-out subset.",
       "Save the exact input audio, request timing, checkpoint, context retained, raw output, spoken answer and run status for each case.",
       "Extract the answer from the model’s actual output audio, use independent ASR and listen when names or numbers are unclear; keep native model text separately.",
       "Check required facts, people, numbers, units and decision status, then use a blinded LLM judge for meaning and manually inspect disagreements.",
@@ -138,7 +138,7 @@
       "Verify that the progress report and checklists match the saved run records, including failure cases and update times."
     ],
     "pass_rule": "Proceed only after every pipeline check is verified and an inspected real S1 pilot example is linked; a wrong model answer can still demonstrate correct evaluation, but a successful process exit alone cannot pass this gate.",
-    "next": "The matched short-request caller is reproduced and P01 pressure results are reviewed; next validate all 105 references, qualify automatic judging against source evidence, and check other S1 callers before full-bank evaluation. Wrong model answers remain valid negative results when inputs and scoring are verified."
+    "next": "All 105 references are now source-reviewed; qualify generic automatic judging and finish native caller/output review before full-bank evaluation. Wrong model answers remain valid negative results when inputs and scoring are verified."
   },
   "progress_reporting": {
     "status": "native_packet_progress_checklists_and_published_snapshots_connected",

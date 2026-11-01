@@ -3,23 +3,28 @@
   "now": [
     {
       "status": "complete",
-      "text": "Figures 1–3 show question WER; the same headset curve is the baseline in Figures 2–3.",
-      "url": "study-progress.html#ami-array-sweep"
+      "text": "Freeze the 105-question audio bank and the six-question matched pilot inputs.",
+      "url": "study-progress.html#answering-inputs"
     },
     {
       "status": "complete",
-      "text": "The local context/question/reference judge provides ratings for 120/120 saved spoken responses.",
-      "url": "study-progress.html#array-response-content"
+      "text": "Source-check all 105 reference answers and bind them to the current spoken questions.",
+      "url": "study-progress.html#answering-references"
+    },
+    {
+      "status": "partial",
+      "text": "Run paired supporting-audio and original-history questions through Moshi, MiniCPM and DuplexOmni.",
+      "url": "study-progress.html#answering-native"
     },
     {
       "status": "complete",
-      "text": "Response buttons expose actual ASR, separate ratings and judge feedback.",
-      "url": "study-progress.html#array-response-browser"
+      "text": "Compare reactive reading, amortized summaries and structured notes with the two Qwen3-30B readers.",
+      "url": "study-progress.html#answering-text"
     },
     {
-      "status": "pending",
-      "text": "Validate all 105 references and the full evaluator before the main comparison.",
-      "url": "what-to-think.html#evaluation-first"
+      "status": "partial",
+      "text": "Qualify the scorer on held-out real answers before the full-bank comparison.",
+      "url": "study-progress.html#answering-judge"
     }
   ],
   "definition": {
@@ -37,9 +42,9 @@
           "url": "experiments/question-checks.html#dataset"
         },
         {
-          "status": "pending",
+          "status": "complete",
           "text": "Generate or revise and validate reference answers for all 105 questions.",
-          "url": "what-to-think.html#scope"
+          "url": "study-progress.html#answering-references"
         },
         {
           "status": "complete",
@@ -183,17 +188,39 @@
           "evidence": "Local Qwen3 judge: 120/120 ratings passing output/citation checks, anchored relevance/support/adequacy, qualification and 12 prompt-order probes; no new S1 speech. Full-bank evaluator validation remains pending."
         },
         {
+          "id": "references",
+          "text": "Verify source-based reference answers for all 105 frozen questions.",
+          "status": "complete",
+          "url": "study-progress.html#answering-references",
+          "evidence": "105/105 source reviews recorded; automated proposals/checks do not certify references."
+        },
+        {
+          "id": "answering-native-pilot",
+          "text": "Run matched supporting-audio and original-history questions through all three S1 systems.",
+          "status": "partial",
+          "url": "study-progress.html#answering-native",
+          "evidence": "34/39 native outputs saved, including three runtime controls; response ASR and source review remain separate."
+        },
+        {
+          "id": "answering-text-pilot",
+          "text": "Compare reactive reading, amortized summaries and structured notes with Instruct and Thinking readers.",
+          "status": "complete",
+          "url": "study-progress.html#answering-text",
+          "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
+        },
+        {
+          "id": "answering-judge-holdout",
+          "text": "Qualify the generic scorer on 68 earlier real answers from 17 questions in five separate meetings.",
+          "status": "partial",
+          "url": "study-progress.html#answering-judge",
+          "evidence": "Judge status: running_or_queued; fixed criteria and earlier Codex labels, no independent human ratings."
+        },
+        {
           "id": "gate",
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "url": "what-to-think.html#evaluation-first",
           "evidence": "The one-question microphone sweep is reviewed and the revised local judge passed twelve authored checks; validate all 105 references, qualify judging on distinct questions and check the other S1 callers before full-bank evaluation."
-        },
-        {
-          "id": "references",
-          "text": "Generate or repair and validate all 105 reference answers.",
-          "status": "pending",
-          "url": "what-to-think.html#scope"
         },
         {
           "id": "s1-all",
@@ -204,8 +231,9 @@
         {
           "id": "s2-development",
           "text": "Select chunks and thinking goals on separate development meetings.",
-          "status": "planned",
-          "url": "what-to-think.html#prompts"
+          "status": "partial",
+          "url": "what-to-think.html#prompts",
+          "evidence": "Question-blind 25–40 s chunks satisfy the 10–40 s plan; summary and structured-note goals are being tested on development meetings."
         },
         {
           "id": "s2-all",
