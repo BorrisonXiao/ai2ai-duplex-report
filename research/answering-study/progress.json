@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-01T20:20:07.609397+00:00",
+  "updated_utc": "2026-11-01T20:29:55.103515+00:00",
   "scope": "Development/diagnostic answering pilot; no full-bank benchmark score.",
   "question_bank": 105,
   "pilot_questions": 6,
@@ -11,7 +11,7 @@
   "active_GPUs": 1,
   "maximum_active_GPUs_observed": 4,
   "maximum_active_GPUs_allowed": 4,
-  "allocated_GPU_hours": 2.5716666666666668,
+  "allocated_GPU_hours": 2.798611111111111,
   "jobs": [
     {
       "job": "1412942",
@@ -39,7 +39,7 @@
       },
       "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
       "state": "RUNNING",
-      "allocated_seconds": 4195,
+      "allocated_seconds": 4782,
       "start": "2026-11-01T14:10:12",
       "end": "Unknown",
       "allocated_TRES": "billing=999,cpu=18,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1",
@@ -134,11 +134,11 @@
         "0": "Qwen3-30B Instruct weights and 8 GiB KV; vLLM graphs; no S1, speech or ASR sharing"
       },
       "dependencies": "All 105 references source-checked; frozen earlier real-output labels from five meetings separate from the current audio pilot; no scheduler dependency because the earlier text lane has completed.",
-      "state": "PENDING",
-      "allocated_seconds": 0,
-      "start": "Unknown",
-      "end": "Unknown",
-      "allocated_TRES": "",
+      "state": "COMPLETED",
+      "allocated_seconds": 230,
+      "start": "2026-11-01T15:24:04",
+      "end": "2026-11-01T15:27:54",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
       "scheduler_dependency": null
     }
   ],
@@ -168,6 +168,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M01-full.flac"
         },
         {
@@ -187,22 +188,24 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M01-support.flac"
         },
         {
           "id": "M02-full",
           "status": "running",
-          "speech_text": "",
+          "speech_text": "Let me check the meeting notes for that specific proposal. One moment, please.",
           "question_asr": "",
-          "frames_completed": 961,
+          "frames_completed": 1076,
           "listening_frames": 988,
           "answer_frames": 125,
           "history_trimmed": false,
-          "wall_seconds": 1763.6615959634073,
+          "wall_seconds": 2388.834875998087,
           "spoken_transcript": null,
           "model": "duplexomni",
           "job": "1413065",
-          "source_review": null
+          "source_review": null,
+          "separate_crop_ASR_diagnostic": null
         },
         {
           "id": "M02-support",
@@ -221,6 +224,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M02-support.flac"
         },
         {
@@ -240,6 +244,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M03-support.flac"
         },
         {
@@ -259,6 +264,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M04-support.flac"
         },
         {
@@ -278,6 +284,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M05-support.flac"
         },
         {
@@ -297,6 +304,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-M06-support.flac"
         },
         {
@@ -314,6 +322,7 @@
           "model": "duplexomni",
           "job": "1413065",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/duplexomni-1413065-native-control.flac"
         }
       ]
@@ -339,6 +348,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M01-full.flac"
         },
         {
@@ -354,6 +364,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M01-support.flac"
         },
         {
@@ -369,6 +380,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M02-full.flac"
         },
         {
@@ -384,6 +396,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M02-support.flac"
         },
         {
@@ -399,6 +412,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M03-full.flac"
         },
         {
@@ -414,6 +428,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M03-support.flac"
         },
         {
@@ -429,6 +444,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M04-full.flac"
         },
         {
@@ -444,6 +460,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M04-support.flac"
         },
         {
@@ -459,6 +476,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M05-full.flac"
         },
         {
@@ -474,6 +492,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M05-support.flac"
         },
         {
@@ -489,6 +508,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M06-full.flac"
         },
         {
@@ -504,6 +524,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-M06-support.flac"
         },
         {
@@ -519,6 +540,7 @@
           "model": "moshi",
           "job": "1413066",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/moshi-1413066-native-control.flac"
         }
       ]
@@ -544,6 +566,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M01-full.flac"
         },
         {
@@ -559,6 +582,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M01-support.flac"
         },
         {
@@ -574,6 +598,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M02-full.flac"
         },
         {
@@ -589,6 +614,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M02-support.flac"
         },
         {
@@ -604,6 +630,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M03-full.flac"
         },
         {
@@ -619,6 +646,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M03-support.flac"
         },
         {
@@ -634,6 +662,17 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": {
+            "text": "Seven minutes.",
+            "recognizer": "openai/whisper-base",
+            "GPUs": 0,
+            "window_seconds": [
+              4.5,
+              6.5
+            ],
+            "source": "Original model response.wav; crop only for a separate ASR diagnostic, not a replacement answer",
+            "wall_seconds": 1.1116649319883436
+          },
           "audio": "research/answering-study/audio/minicpm-1413085-M04-full.flac"
         },
         {
@@ -649,6 +688,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M04-support.flac"
         },
         {
@@ -664,6 +704,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M05-full.flac"
         },
         {
@@ -679,6 +720,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M05-support.flac"
         },
         {
@@ -694,6 +736,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M06-full.flac"
         },
         {
@@ -709,6 +752,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-M06-support.flac"
         },
         {
@@ -724,6 +768,7 @@
           "model": "minicpm",
           "job": "1413085",
           "source_review": null,
+          "separate_crop_ASR_diagnostic": null,
           "audio": "research/answering-study/audio/minicpm-1413085-native-control.flac"
         }
       ]
@@ -1991,10 +2036,131 @@
     }
   ],
   "judge_qualification": {
-    "status": "running_or_queued",
-    "outputs_recorded": 0,
-    "planned_outputs": 68,
-    "questions": 17,
-    "meetings": 5
+    "status": "qualification_failed",
+    "outputs": 68,
+    "valid": 68,
+    "binary_agreement": 0.8088235294117647,
+    "false_passes": 11,
+    "negative_labels": 43,
+    "positive_recall": 0.92,
+    "positive_labels": 25,
+    "criteria": {
+      "minimum_binary_agreement": 0.9,
+      "maximum_false_pass_rate": 0.05,
+      "minimum_complete_recall": 0.85,
+      "all68_outputs_complete": true,
+      "selected_before_new_judge_inference": true
+    },
+    "disagreements": [
+      {
+        "id": "scale:EN2004a-S075-Q2|no_speakers",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly states that the next segment should not be capitalized when a sentence clearly continues from the previous one, which matches the required fact. It also accurately reflects the discussion about using a hyphen in such cases and the general rule of capitalizing otherwise, all supported by the transcript. No material unsupported claims are made."
+        }
+      },
+      {
+        "id": "scale:EN2004a-Smiddle-Q2|no_speakers",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly identifies that restarts should be marked with a hyphen, including phrase-level restarts (e.g., backtracks or hesitations), and clarifies that these can occur mid-sentence, not just at full sentence boundaries. This aligns with the required fact that a phrase-level restart counts and does not require a full sentence restart. The answer is supported by the transcript, where B states: 'So it's not necessarily restarting the sentence, but just a restart of any type. A phrase.'"
+        }
+      },
+      {
+        "id": "scale:ES2003c-S075-Q3|state_plus_new",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly identifies the concern about whether a kinetic battery would provide enough power for the remote, citing D's statement 'I don't think it would' as evidence. It accurately reflects the discussion in the transcript where the team questioned if typical remote movements would generate sufficient energy, especially compared to a watch, which moves more frequently. The answer includes the required fact and is supported by the transcript without adding unsupported claims."
+        }
+      },
+      {
+        "id": "scale:ES2003c-Slater-Q2|full",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly identifies that the battery is likely placed in the grip section, which is described as the bulkiest part, aligning with the required fact. It also accurately reflects the context of internal space constraints due to the double curved design, articulation, and need for an inner frame. All claims are supported by the transcript, and no material unsupported details are added."
+        }
+      },
+      {
+        "id": "scale:ES2003c-Slater-Q2|no_speakers",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly identifies that the battery is placed in the grip section, which is described as the bulkiest part, aligning with the required fact. It also accurately describes the impact of the double curved design on internal space, including articulation points, the spongy rubber layer, and the need for an inner frame. The placement of the L_C_D. and joystick at articulated ends for handedness adjustment is supported by the transcript. All claims are consistent with the source and no material unsupported details are added."
+        }
+      },
+      {
+        "id": "scale:TS3004d-slide-reasons|full",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer includes two required facts: internal room (\"more internal space, making it easier to use and allowing room for additional functions and comments\") and usability (\"more usable for remote controls\"). It also mentions strength (\"It was also considered stronger\"). All claims are supported by the transcript, specifically referencing the correct segments (TS3004d-s0030, TS3004d-s0033, TS3004d-s0037) and align with the reference answer's emphasis on usability, strength, and internal space as reasons for the preference."
+        }
+      },
+      {
+        "id": "scale:TS3004d-slide-reasons|recent60",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer includes 'ample room for components' (internal room), 'flexibility in placement' (usability), and mentions accommodating 'at least four buttons' (supporting internal space needs). These points align with the required facts from the transcript, where participants discuss room inside, usability for remote controls, and strength. The answer does not add unsupported claims and correctly reflects the preference expressed in the meeting."
+        }
+      },
+      {
+        "id": "scale:TS3004d-Smiddle-Q3|full",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly states that the scrollwheel is still planned to be on the left side, supported by B's confirmation in the transcript (TS3004d-U00125: 'Um the scrollwheel is on the left side.') and the reference's assertion that the earlier placement was on the left with no relocation mentioned. The answer includes the required fact about the original left-side placement and the absence of relocation, with no unsupported claims."
+        }
+      },
+      {
+        "id": "scale:TS3004d-Slater-Q1|no_speakers",
+        "expected": "complete",
+        "judge": {
+          "grade": "partial",
+          "reason": "The candidate correctly states that backlighting was decided for the slide panel when opened, which aligns with the required fact. However, it omits the key detail that the lighting illuminates the interior, not just individual buttons, as confirmed in the transcript (e.g., 'just a green light or some blue light. To light it all up'). The candidate also adds unsupported claims about 'fancy and usable' as reasons, which are not the basis of the decision in the transcript. While the core decision is correct, the omission of the critical detail about the lighting scope makes the answer incomplete."
+        }
+      },
+      {
+        "id": "scale:ES2006a-S075-Q3|recent60",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate correctly states that the meeting material does not specify a calendar start date for the detailed design phase, and accurately confirms that detailed design follows functional and conceptual design, as supported by the transcript where C says, 'And then the detailed design will come after that. We'll pull it all together.' This aligns with the required fact and the reference answer."
+        }
+      },
+      {
+        "id": "scale:ES2006a-S075-Q3|no_speakers",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate correctly states that the detailed design phase begins after the functional and conceptual design phases, supported by the reference and the transcript (ES2006a-U00033: 'We'll pull it all together'). The candidate also accurately notes that no specific calendar start date or precise sequence relative to completion is provided, which aligns with the reference answer. All required facts are included without unsupported claims."
+        }
+      },
+      {
+        "id": "scale:ES2006a-Slater-Q2|full",
+        "expected": "complete",
+        "judge": {
+          "grade": "partial",
+          "reason": "The candidate correctly identifies that functional design focuses on functions/tasks and conceptual design on user interaction, aligning with the required facts. However, the candidate adds unsupported details about deliverables (e.g., 'function specifications', 'interface concepts', 'user interaction models') not explicitly stated in the source. The reference answer does not mention deliverables, and the transcript does not specify what deliverables are produced in each phase. Thus, the addition of deliverables constitutes a material unsupported claim, making the answer partial."
+        }
+      },
+      {
+        "id": "scale:EN2006b-S075-Q2|state_plus_new",
+        "expected": "partial",
+        "judge": {
+          "grade": "complete",
+          "reason": "The candidate answer correctly states that absorption line systems should not be included, citing B's statement and C's confirmation, which aligns with the required fact. It accurately reflects the transcript where B says 'Absorption line systems shouldn't be there' and C responds with agreement. The answer also correctly notes the later reiteration, consistent with the reference. No unsupported claims are made."
+        }
+      }
+    ],
+    "wall_seconds": 174.24156565917656,
+    "output_tokens": 6819,
+    "GPUs": 1,
+    "role": "Qwen3-30B Instruct weights and 8 GiB KV on GPU 0; vLLM; no S1, speech or ASR sharing",
+    "limits": "Compared with existing Codex source labels, not independent human ratings; earlier reader and judge share a model family. No live-pilot answer was used for prompt development."
   }
 }

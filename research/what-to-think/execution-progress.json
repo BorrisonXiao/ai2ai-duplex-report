@@ -144,7 +144,7 @@
       "text": "Qualify the generic scorer on 68 earlier real answers from 17 questions in five separate meetings.",
       "status": "partial",
       "url": "study-progress.html#answering-judge",
-      "evidence": "Judge status: running_or_queued; fixed criteria and earlier Codex labels, no independent human ratings."
+      "evidence": "Judge status: qualification_failed; fixed criteria and earlier Codex labels, no independent human ratings."
     },
     {
       "id": "gate",
@@ -173,7 +173,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-01T20:20:07.609397+00:00",
+  "updated_at": "2026-11-01T20:29:55.103515+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
