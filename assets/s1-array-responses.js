@@ -33,7 +33,7 @@
       expanded(false);
     }
     audio.load();
-    text('response-case-status', `${data.labels[row.condition]} · level ${row.index} · ${row.context_seconds.toFixed(2)} seconds of preceding audio. ${row.response_valid ? 'Saved model response and independent ASR.' : 'Generation stopped before the question; no response audio or response-ASR score is available.'}`);
+    text('response-case-status', `${data.labels[row.condition]} · level ${row.index} · ${row.context_seconds.toFixed(2)} seconds of preceding audio. ${row.response_valid ? 'Saved model response and independent ASR.' : 'The replay did not complete; no completed response audio or response-content score is available.'}`);
     text('selected-response-asr', row.spoken_transcript || '(empty transcript)');
     let score = 'Response content is unscored: this shorter history does not contain all required source evidence.';
     if (!row.response_valid) score = 'Response content is unscored because the replay did not complete.';
@@ -65,7 +65,7 @@
       root.focus({preventScroll: true});
     });
   });
-  const players = document.querySelectorAll('.array-demo-grid audio, #selected-response-audio');
+  const players = document.querySelectorAll('audio');
   players.forEach(player => player.addEventListener('play', () => {
     players.forEach(other => { if (other !== player) other.pause(); });
   }));

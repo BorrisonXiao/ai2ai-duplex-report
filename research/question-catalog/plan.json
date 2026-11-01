@@ -1,7 +1,7 @@
 {
   "title": "Project implementation plan",
   "scope": "Build a reliable meeting-assistant evaluation, establish what its history supports, compare reactive and background reasoning, then add tools and learn when to act.",
-  "current_state": "The current experiment plan covers all 105 distinct questions and focuses on what to think. Existing recordings and the twenty-question source/history study are preserved. Full-bank reference validation, chunk/prompt selection and all new S1/S2 runs remain pending; the plan and notation are ready for discussion.",
+  "current_state": "All 105 primary questions and six additional voice versions have revised acoustic inputs. Fresh results for 123 S1 microphone/context positions and eligible earlier controls are reviewed separately; the full 105-question comparison remains unvalidated.",
   "choices": [
     "Use a separate meeting assistant and an existing participant as the requester.",
     "Freeze the existing F5-TTS checkpoint and inference recipe; do not tune the model on the evaluation meetings or speakers.",
@@ -166,44 +166,62 @@
         {
           "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",
           "status": "complete",
-          "project_url": "study-progress.html#fresh-pilot",
+          "project_url": "study-progress-original-acoustics.html#fresh-pilot",
           "evidence": "Three real meeting requests tested on one A100 80 GB; raw outputs, recorded speech and source facts reviewed. Full protocol remains unvalidated."
         },
         {
           "text": "Publish an actual pilot output with its request, answer facts, score and explanation.",
           "status": "complete",
-          "project_url": "study-progress.html#fresh-pilot",
+          "project_url": "study-progress-original-acoustics.html#fresh-pilot",
           "evidence": "Actual input excerpts, S1 response audio, source facts, raw text and score explanations are published together."
         },
         {
           "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
           "status": "partial",
-          "project_url": "study-progress.html#s1-listening",
-          "evidence": "Matched caller reproduces all 40 short-example response records; all 41 pressure contexts produce speech, but question recognition is unstable and 0/11 eligible answers are complete within the recorded window."
+          "project_url": "study-progress.html#ami-array-sweep",
+          "evidence": "The revised sweep has 120/123 completed responses and 3 generation failures; source review finds 0/33 complete eligible answers. Native long-history recognition and full-bank validity remain unresolved."
         },
         {
           "text": "Run both listening methods and inspect their meeting answers against source facts.",
           "status": "complete",
-          "project_url": "study-progress.html#listening-examples",
+          "project_url": "study-progress-original-acoustics.html#listening-examples",
           "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
         },
         {
           "text": "Reproduce the working DailyTalk recipe and compare it with the current S1 runner.",
           "status": "complete",
-          "project_url": "study-progress.html#matched-controls",
+          "project_url": "study-progress-original-acoustics.html#matched-controls",
           "evidence": "The original helper and new native runner match all 40 response-field records; their spoken discount/full-price answers agree. P01 request-only recognition passes (WER 0.063), while its folder-status answer is unsupported without earlier evidence."
         },
         {
-          "text": "Test P01 with request-only audio and every sentence-based increase in earlier context.",
+          "text": "Review the original-input P01 sweep with every sentence-based increase in earlier context.",
           "status": "complete",
-          "project_url": "study-progress.html#s1-pressure",
+          "project_url": "study-progress-original-acoustics.html#s1-pressure",
           "evidence": "41/41 contexts reviewed for one question; 20 preserve question meaning in ASR, and 0/11 eligible contexts give complete reference answers within 19.2 s."
         },
         {
-          "text": "Compare microphone signals across all 41 histories and inspect actual spoken-response content.",
+          "text": "Review the original-input microphone comparison across 41 histories and its spoken-response content.",
+          "status": "complete",
+          "project_url": "study-progress-original-acoustics.html#ami-array-sweep",
+          "evidence": "Three signals at 41 lengths: 78 new native replays, 3 generation failures shown as gaps, 33 eligible spoken answers scored by a qualified local judge and audited against the source; 0 complete. One question; full protocol remains unvalidated."
+        },
+        {
+          "text": "Apply the acoustic revision to every recorded primary question and published voice alternative.",
+          "status": "complete",
+          "project_url": "experiments/question-audio.html#checks",
+          "evidence": "All 105 primary questions plus six voice alternatives revised; 111 source-PCM/timing checks and empty background-ASR controls. Seven paired-ASR caveats remain visible; no human naturalness claim."
+        },
+        {
+          "text": "Rerun all microphone/context positions with revised inputs and inspect actual spoken answers.",
           "status": "complete",
           "project_url": "study-progress.html#ami-array-sweep",
-          "evidence": "Three signals at 41 lengths: 78 new native replays, 3 generation failures shown as gaps, 33 eligible spoken answers scored by a qualified local judge and audited against the source; 0 complete. One question; full protocol remains unvalidated."
+          "evidence": "123 positions freshly attempted, 120 completed responses, 3 generation failures shown as gaps; qualified local judge and source review cover 33 eligible answers, 0 complete."
+        },
+        {
+          "text": "Rerun the earlier eligible pilot controls and retain the long-prefix capacity exclusion.",
+          "status": "complete",
+          "project_url": "study-progress.html#revised-pilot-controls",
+          "evidence": "Both native listening methods attempted P01/P02; 0/4 source-reviewed answers complete. P03 remains excluded by the unchanged full-prefix context limit."
         },
         {
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",

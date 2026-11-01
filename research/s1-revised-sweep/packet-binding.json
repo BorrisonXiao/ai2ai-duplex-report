@@ -1,0 +1,32 @@
+{
+  "status": "pass",
+  "cases": 123,
+  "logged_packets_checked": 35662,
+  "input_signals": [
+    {
+      "condition": "headset_mix",
+      "input_sha256": "360ffc6b6dc5b15f10c7f903742683a5858401ca7609cbc01119d631c4fcd9c4",
+      "native_prefix_pcm_sha256": "2be58d871276ef248af14d812a78fc1bb632246fd7e8848cac1fb9889198c600",
+      "native_prefix_exact_after_fixed_gain": true,
+      "request_gain_db": 0
+    },
+    {
+      "condition": "distant_01",
+      "input_sha256": "7570d313339815096e812a0f5dcf7f7457fa1e248fc4dd2a78d635e93a197a68",
+      "native_prefix_pcm_sha256": "7c06a1d4a30c52b77c4d13a996c4afda8a94ce3365b1869982c1c07f8b01a7dc",
+      "native_prefix_exact_after_fixed_gain": true,
+      "request_gain_db": 0
+    },
+    {
+      "condition": "beamformed_mdm8",
+      "input_sha256": "cd8ddc67fa687195b42bdfe7a0940a95bc86d7b7aebd649ef1072c206fd0c332",
+      "native_prefix_pcm_sha256": "d306d8aea4b07f2df803671e78926ad5c6143d5b0777c3e938fb2ed231dde8d1",
+      "native_prefix_exact_after_fixed_gain": true,
+      "request_gain_db": 0
+    }
+  ],
+  "zero_history_trimming": true,
+  "scope": "Every logged completed callback in the selected final attempts matches the declared revised input packet. Abandoned partial attempts and failed final callbacks remain separate raw records. Native 16 kHz source prefixes match the original headset recording or the named distant/beamformed source after the fixed channel gain.",
+  "legacy_metadata_note": "Use native_prefix_pcm_sha256 here for each signal. The frozen inherited question template also contains an older headset-only prefix hash that is not a per-array provenance field.",
+  "gpus": 0
+}

@@ -136,7 +136,7 @@ def simplify_prose(source):
 
 
 def page_category(relative):
-    if relative in {'todo.html', 'what-to-think.html', 'notation.html', 'study-progress.html', 'experiments/question-plan.html', 'experiments/question-checks.html'}:
+    if relative in {'todo.html', 'what-to-think.html', 'notation.html', 'study-progress.html', 'study-progress-original-acoustics.html', 'experiments/question-plan.html', 'experiments/question-checks.html'}:
         return 'todo'
     if relative == 'daily-log.html':
         return 'log'

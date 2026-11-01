@@ -15,13 +15,18 @@ def case_button(row):
 
 
 def render(review):
-    contrast = json.loads((ROOT/'research/s1-array-contrast/review.json').read_text())
+    contrast = {'cases':review['demo_sources']} if review.get('demo_sources') else json.loads((ROOT/'research/s1-array-contrast/review.json').read_text())
     by_id = {row['id']: row for row in review['cases']}
     body = '<style>'+CSS+'</style><section id="array-audio-demos"><h3>Original source excerpts and model responses</h3><p>Compare the same TS3006c excerpts using the fixed gains from the experiment. Each card has earlier meeting evidence, the immediate context plus the identical synthetic question, and the actual model response at level 30 (198.91 seconds of preceding audio). The input demos are short excerpts from that context.</p><div class="array-demo-grid">'
+    if review.get('acoustic_revision'):
+        body=body.replace('Original source excerpts and model responses','Revised inputs and fresh model responses').replace('the immediate context plus the identical synthetic question','the immediate context plus its microphone-matched synthetic question').replace('Each card has earlier meeting evidence','Every response here was rerun with the revised audio. Each card has earlier meeting evidence')
     for source in contrast['cases']:
         name = source['id']; row = by_id[name+'-L30']; label = LABELS[name]
         body += '<article class="array-demo-card" id="audio-demo-'+name+'"><h4>'+e(label)+'</h4>'
         for title, url, aria in [('Earlier meeting evidence · source 110.12–140.00 s', source['evidence_audio'], 'meeting evidence demo'), ('Immediate context + question · source 291.03 s onward', source['input_preview'], 'context and question demo'), ('Actual model response · level 30', row['audio'], 'level 30 response demo')]:
+            if not url:
+                body += '<p>No completed response is available for this attempted case.</p>'
+                continue
             body += '<p><strong>'+e(title)+'</strong></p><audio controls preload="none" src="'+e(url)+'" aria-label="'+e(label+' '+aria)+'"></audio>'
         body += '<details class="array-demo-asr"><summary>Show response ASR</summary><p><strong>Parakeet transcript of this response:</strong> '+e(row['spoken_transcript'] or '(empty transcript)')+'</p></details></article>'
     body += '</div><p><a href="#array-response-browser">Choose another context length and inspect its response ASR</a>.</p></section>'

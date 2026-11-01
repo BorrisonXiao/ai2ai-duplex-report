@@ -6,20 +6,40 @@
       "date": "2026-10-31",
       "items": [
         {
-          "text": "Added side-by-side headset, distant-microphone and beamformed audio demos, with a response-ASR button for every recording setting and context length.",
-          "url": "study-progress.html#array-audio-demos"
+          "text": "Revised all 105 primary question recordings and six published voice alternatives while preserving insertion timing and original source audio.",
+          "url": "experiments/question-audio.html#checks"
         },
         {
-          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "text": "Reran all 123 microphone/context positions for one question and found 0/33 complete source-reviewed answers among eligible responses.",
           "url": "study-progress.html#array-response-content"
         },
         {
+          "text": "Reran both earlier listening methods on P01/P02; 0/4 reviewed answers are complete, while P03 remains capacity-excluded.",
+          "url": "study-progress.html#revised-pilot-controls"
+        },
+        {
+          "text": "Removed 2.30 GiB of obsolete duplicate ASR extraction files while retaining final audio, results, environments and checkpoints.",
+          "url": "study-progress.html#rerun-resources"
+        },
+        {
+          "text": "The rerun allocated 9.094 GPU hours across independent one-GPU jobs, with a measured maximum of 4 active GPUs.",
+          "url": "study-progress.html#rerun-resources"
+        },
+        {
+          "text": "Added side-by-side headset, distant-microphone and beamformed audio demos, with a response-ASR button for every recording setting and context length.",
+          "url": "study-progress-original-acoustics.html#array-audio-demos"
+        },
+        {
+          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "url": "study-progress-original-acoustics.html#array-response-content"
+        },
+        {
           "text": "Added six input-only question revisions with continuous room tone, recorded speech levels and bounded channel EQ; independent ASR preserves every question.",
-          "url": "study-progress.html#revised-question-audio"
+          "url": "study-progress-original-acoustics.html#revised-question-audio"
         },
         {
           "text": "Found a headset recognition change near 61 seconds, but later recoveries and incomplete eligible answers prevent a response-quality elbow claim.",
-          "url": "study-progress.html#context-elbow-analysis"
+          "url": "study-progress-original-acoustics.html#context-elbow-analysis"
         }
       ]
     },

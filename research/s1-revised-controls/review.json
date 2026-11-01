@@ -1,0 +1,593 @@
+{
+  "status": "completed_source_reviewed",
+  "jobs": [
+    "1401174",
+    "1401175"
+  ],
+  "cases": [
+    {
+      "id": "P01-decode_clear",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "source_cutoff_seconds": 309.03,
+      "required_facts": [
+        "C said the files were in the shared folder.",
+        "D initially saw only their own presentation, and C then identified a components-design PowerPoint.",
+        "The exchange does not establish a general folder outage or an upload failure."
+      ],
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0017",
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so."
+        },
+        {
+          "id": "TS3006c-s0022",
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah."
+        },
+        {
+          "id": "TS3006c-s0015",
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations?"
+        },
+        {
+          "id": "TS3006c-s0018",
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design."
+        },
+        {
+          "id": "TS3006c-s0024",
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+        }
+      ],
+      "status": "completed_content_review_required",
+      "case": "P01",
+      "method": "decode_clear",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "360ffc6b6dc5b15f10c7f903742683a5858401ca7609cbc01119d631c4fcd9c4",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 314.5886875,
+      "answer_enabled_at_seconds": 314.88,
+      "listening_frames": 656,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 696,
+      "trimmed_frames": 0,
+      "speech_text": "I understand. Just to confirm, you want me to stop the work and not proceed further?",
+      "question_asr": "",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 37731,
+      "max_retained_frames": 696,
+      "wall_seconds": 688.0400392089505,
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 657,
+        "conservative_prompt_bound": 36910,
+        "trimmed_frames": 0,
+        "messages_sha256": "617cc62494a2aff4452977e07a382ec86be320901f8f939d360e30aa4bff3bda"
+      },
+      "audio_sha256": "f6ce4b338984433c034e92ed07e962651348672918bd98f774dbf3d9a688f480",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "Stai, just to confirm you want me to stop the work and not proceed further?",
+      "source_evidence_fully_retained": true,
+      "oldest_source_at_answer_end_seconds": 0.0,
+      "source_audit": {
+        "candidate_sha256": "02626b87b63773a76ecebcdccaeee526fbf9f114cbbd8d4463a1f32a8902b837",
+        "audio_sha256": "f6ce4b338984433c034e92ed07e962651348672918bd98f774dbf3d9a688f480",
+        "supported": [
+          false,
+          false
+        ],
+        "fact_score": 0.0,
+        "material_error": false,
+        "complete": false,
+        "reason": "Asks whether the user wants work stopped, unrelated to the shared-folder question. It states neither the files’ shared-folder location nor the components-design PowerPoint identity. No material folder-status assertion is made.",
+        "failure_type": "off_topic_confirmation",
+        "reviewed_utc": "2026-11-01T00:38:18.754654+00:00",
+        "scope": "P01 has two required facts; P02 has one required rule, with its ice-cream example illustrative only."
+      },
+      "audio": "research/s1-revised-controls/audio/P01-decode_clear.wav"
+    },
+    {
+      "id": "P01-constrained",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "meeting": "TS3006c",
+      "requester": "D",
+      "source_cutoff_seconds": 309.03,
+      "required_facts": [
+        "C said the files were in the shared folder.",
+        "D initially saw only their own presentation, and C then identified a components-design PowerPoint.",
+        "The exchange does not establish a general folder outage or an upload failure."
+      ],
+      "source_evidence": [
+        {
+          "id": "TS3006c-s0017",
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so."
+        },
+        {
+          "id": "TS3006c-s0022",
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah."
+        },
+        {
+          "id": "TS3006c-s0015",
+          "speaker": "D",
+          "start": 112.4,
+          "end": 114.7,
+          "text": "Where are are all the other presentations?"
+        },
+        {
+          "id": "TS3006c-s0018",
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design."
+        },
+        {
+          "id": "TS3006c-s0024",
+          "speaker": "C",
+          "start": 132.07,
+          "end": 136.44,
+          "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it."
+        }
+      ],
+      "status": "completed_content_review_required",
+      "case": "P01",
+      "method": "constrained",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "360ffc6b6dc5b15f10c7f903742683a5858401ca7609cbc01119d631c4fcd9c4",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 314.5886875,
+      "answer_enabled_at_seconds": 314.88,
+      "listening_frames": 656,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 696,
+      "trimmed_frames": 0,
+      "speech_text": "No problem. Just send me the problem.",
+      "question_asr": "",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 37710,
+      "max_retained_frames": 696,
+      "wall_seconds": 757.8124888301827,
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 657,
+        "conservative_prompt_bound": 36906,
+        "trimmed_frames": 0,
+        "messages_sha256": "ed78f89b080ff58d7286ed2d48e4a2cee6700fd96d317e6d792b3e5221d4f1f4"
+      },
+      "audio_sha256": "6fb415107533e41b5ae1a92ec21a67f2b52c157e99bcb9a4e1b7767127fedde3",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "No just send me the problem.",
+      "source_evidence_fully_retained": true,
+      "oldest_source_at_answer_end_seconds": 0.0,
+      "source_audit": {
+        "candidate_sha256": "12154f26f18594e4c968de7d76316cd8cac71b8e63df88084e95e2bc45f47917",
+        "audio_sha256": "6fb415107533e41b5ae1a92ec21a67f2b52c157e99bcb9a4e1b7767127fedde3",
+        "supported": [
+          false,
+          false
+        ],
+        "fact_score": 0.0,
+        "material_error": false,
+        "complete": false,
+        "reason": "Asks the user to send the problem. Neither the shared-folder file location nor the components-design PowerPoint identity is stated in actual response ASR or native intended text. No completed lookup or material folder-status claim is made.",
+        "failure_type": "request_for_problem_without_answer",
+        "reviewed_utc": "2026-11-01T00:46:23.139083+00:00",
+        "scope": "P01 has two required facts; P02 has one required rule, with its ice-cream example illustrative only."
+      },
+      "audio": "research/s1-revised-controls/audio/P01-constrained.wav"
+    },
+    {
+      "id": "P02-decode_clear",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "question_id": "scale:EN2004a-S05-Q3",
+      "meeting": "EN2004a",
+      "requester": "A",
+      "source_cutoff_seconds": 561.16,
+      "required_facts": [
+        "For two equally plausible interpretations, choose one and leave it.",
+        "The discussion uses the example of “ice cream” versus “I scream”."
+      ],
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0094",
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+        },
+        {
+          "id": "EN2004a-s0095",
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+        }
+      ],
+      "status": "completed_content_review_required",
+      "case": "P02",
+      "method": "decode_clear",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "7437500d9fb7aa59f1110d248de7afba1cfc5eb7c9ad6b0f22b0c431e22bb1cb",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 564.7746875,
+      "answer_enabled_at_seconds": 564.9599999999999,
+      "listening_frames": 1177,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 1217,
+      "trimmed_frames": 200,
+      "speech_text": "Alright, let me take a look at this text and see how I can help. I see a lot of repetition and some incomplete thoughts here. I think I can help structure this and turn it into a clearer description of the tasks described in the text, which involves checking for new channels, resolving ",
+      "question_asr": "channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new channel channel any new ",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 62149,
+      "max_retained_frames": 1060,
+      "wall_seconds": 2788.9385611610487,
+      "answer_context": {
+        "oldest_retained_seconds": 96.0,
+        "retained_audio_pairs": 978,
+        "conservative_prompt_bound": 59653,
+        "trimmed_frames": 200,
+        "messages_sha256": "b8ba545c14c34e7a536b76ca3d37db2414e44987114bb11b136de8dfac635955"
+      },
+      "audio_sha256": "01a109826e8a8d5d9e9f4a14260197ae1000543d48d32d7c447a429341233e74",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "Alright, let me take a look at this text and see how I can help. I see a lot of repetition and some incomplete thoughts here. I think I can help structure this and turn it into a clearer description of the tasks described in, which involves checking for new channels, resolving, new channels, new channels",
+      "source_evidence_fully_retained": true,
+      "oldest_source_at_answer_end_seconds": 96.0,
+      "source_audit": {
+        "candidate_sha256": "e358a9529738487d6f92f94bb71c372cbcba97488bf79a9faef9aaa6e3d1aedb",
+        "audio_sha256": "01a109826e8a8d5d9e9f4a14260197ae1000543d48d32d7c447a429341233e74",
+        "supported": [
+          false
+        ],
+        "fact_score": 0.0,
+        "material_error": false,
+        "complete": false,
+        "reason": "Discusses restructuring repetitive text and checking new channels, rather than answering whether to choose one equally plausible interpretation. Actual response ASR and native intended text both omit the required choose-one-and-leave-it rule. The question-ASR field repeats channel phrases; no contrary annotation rule is explicitly asserted.",
+        "failure_type": "off_topic_and_repeated_recognition",
+        "reviewed_utc": "2026-11-01T00:38:18.754667+00:00",
+        "scope": "P01 has two required facts; P02 has one required rule, with its ice-cream example illustrative only."
+      },
+      "audio": "research/s1-revised-controls/audio/P02-decode_clear.wav"
+    },
+    {
+      "id": "P02-constrained",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "question_id": "scale:EN2004a-S05-Q3",
+      "meeting": "EN2004a",
+      "requester": "A",
+      "source_cutoff_seconds": 561.16,
+      "required_facts": [
+        "For two equally plausible interpretations, choose one and leave it.",
+        "The discussion uses the example of “ice cream” versus “I scream”."
+      ],
+      "source_evidence": [
+        {
+          "id": "EN2004a-s0094",
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right."
+        },
+        {
+          "id": "EN2004a-s0095",
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again."
+        }
+      ],
+      "status": "completed_content_review_required",
+      "case": "P02",
+      "method": "constrained",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "7437500d9fb7aa59f1110d248de7afba1cfc5eb7c9ad6b0f22b0c431e22bb1cb",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 564.7746875,
+      "answer_enabled_at_seconds": 564.9599999999999,
+      "listening_frames": 1177,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 1217,
+      "trimmed_frames": 200,
+      "speech_text": "Alright, let me take a look at this text and see how it matches your instructions for checking and resolving uncertainties.",
+      "question_asr": "then, any, then, any, then, any, then, any, then, any, then, any, then, any, ",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 62068,
+      "max_retained_frames": 1078,
+      "wall_seconds": 2878.224717432866,
+      "answer_context": {
+        "oldest_retained_seconds": 96.0,
+        "retained_audio_pairs": 978,
+        "conservative_prompt_bound": 59072,
+        "trimmed_frames": 200,
+        "messages_sha256": "5332fa47fb0bb05af951b4529901089dd931e1d92322e6feb833a4656a6d48f8"
+      },
+      "audio_sha256": "f5adbe6c175947b5c5150ee48df1c4b703b33568632327af5f70fc0e5b45bead",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "Let me take a look at this text intent, and how it matches your instructions for checking and exorsolving uncertainties.",
+      "source_evidence_fully_retained": true,
+      "oldest_source_at_answer_end_seconds": 96.0,
+      "source_audit": {
+        "candidate_sha256": "9eef7d5afb29ebfa327430e14c74b9c371d9e1df50fb38e0ecdbd68af1d90d5b",
+        "audio_sha256": "f5adbe6c175947b5c5150ee48df1c4b703b33568632327af5f70fc0e5b45bead",
+        "supported": [
+          false
+        ],
+        "fact_score": 0.0,
+        "material_error": false,
+        "complete": false,
+        "reason": "Offers to inspect text and compare it with uncertainty-checking instructions. It does not give the recorded rule to choose one equally plausible interpretation and leave it. Merely mentioning uncertainties is not an explicit instruction to leave the word uncertain, so no direct contradiction is scored.",
+        "failure_type": "offer_without_answer",
+        "reviewed_utc": "2026-11-01T00:46:23.139103+00:00",
+        "scope": "P01 has two required facts; P02 has one required rule, with its ice-cream example illustrative only."
+      },
+      "audio": "research/s1-revised-controls/audio/P02-constrained.wav"
+    }
+  ],
+  "deferred": {
+    "status": "still_deferred_after_acoustic_revision",
+    "case": "P03",
+    "request_minutes": 21.66783333333333,
+    "native_frame_seconds": 0.48,
+    "full_prefix_frames": 2724,
+    "empty_ASR_prompt_estimate_tokens": 147150,
+    "model_context_tokens": 65536,
+    "listed_evidence_seconds": [
+      [
+        727.6,
+        735.72
+      ],
+      [
+        735.72,
+        739.15
+      ],
+      [
+        709.54,
+        718.66
+      ]
+    ],
+    "pilot_cases": [
+      "P01",
+      "P02"
+    ],
+    "reason": "The revised question preserves duration. Full P03 history still exceeds 65536 tokens even with empty ASR; no shortened history is presented as full-history retention.",
+    "gpus": 0
+  },
+  "reviewed_utc": "2026-11-01T00:46:23.231911+00:00",
+  "controls": [
+    {
+      "case": "sky",
+      "method": "decode_clear",
+      "question_id": "control:sky",
+      "question": "Short factual control",
+      "status": "completed_content_review_required",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "750b35b8e9b6f36167e54c760cd2375f48da93e89423717d8e88d355033986b2",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 2.885,
+      "answer_enabled_at_seconds": 3.36,
+      "listening_frames": 7,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 47,
+      "trimmed_frames": 0,
+      "speech_text": "The sky appears blue on a clear day.",
+      "question_asr": "What color is the sky on a clear day?",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 2565,
+      "max_retained_frames": 47,
+      "wall_seconds": 26.104714796878397,
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "audio_sha256": "1ff0e7fb39208201e68964f90c04de139c784996f91d5884d4e4de3ebb57a938",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "The s appear blue on a clear day.",
+      "audio": "research/s1-revised-controls/audio/sky-decode_clear.wav"
+    },
+    {
+      "case": "sky_allow_empty",
+      "method": "decode_clear",
+      "question_id": "control:sky",
+      "question": "Short factual control",
+      "status": "completed_content_review_required",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "750b35b8e9b6f36167e54c760cd2375f48da93e89423717d8e88d355033986b2",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 2.885,
+      "answer_enabled_at_seconds": 3.36,
+      "listening_frames": 7,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 47,
+      "trimmed_frames": 0,
+      "speech_text": "",
+      "question_asr": "What color is the sky on a clear day?",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 2551,
+      "max_retained_frames": 47,
+      "wall_seconds": 20.76983872614801,
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "audio_sha256": "e09b9c784672fcda2d2231503b75f162246e19e3f831ea7fcffe158f27a81ae7",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "",
+      "audio": "research/s1-revised-controls/audio/sky_allow_empty-decode_clear.wav"
+    },
+    {
+      "case": "sky",
+      "method": "constrained",
+      "question_id": "control:sky",
+      "question": "Short factual control",
+      "status": "completed_content_review_required",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "750b35b8e9b6f36167e54c760cd2375f48da93e89423717d8e88d355033986b2",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 2.885,
+      "answer_enabled_at_seconds": 3.36,
+      "listening_frames": 7,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 47,
+      "trimmed_frames": 0,
+      "speech_text": "On a clear day, the sky appears blue.",
+      "question_asr": "What color is the sky on a clear day?",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 2566,
+      "max_retained_frames": 47,
+      "wall_seconds": 26.008952620904893,
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "audio_sha256": "20e132737d041176da9dd5717dcbc383ee78f62a34c98ed3ed4cc351c3c08ec7",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "On a cl day, the sk appears blue.",
+      "audio": "research/s1-revised-controls/audio/sky-constrained.wav"
+    },
+    {
+      "case": "sky_allow_empty",
+      "method": "constrained",
+      "question_id": "control:sky",
+      "question": "Short factual control",
+      "status": "completed_content_review_required",
+      "gpus": 1,
+      "gpu_type_vram": "NVIDIA RTX PRO 6000 Blackwell Server Edition / 95.0 GiB",
+      "S2_enabled": false,
+      "input_sha256": "750b35b8e9b6f36167e54c760cd2375f48da93e89423717d8e88d355033986b2",
+      "input_level_gain_db": 0.0,
+      "request_end_seconds": 2.885,
+      "answer_enabled_at_seconds": 3.36,
+      "listening_frames": 7,
+      "answer_frames": 40,
+      "history_policy": "Retain all native pairs while they fit, up to 1250 pairs (600 s); discard 200 oldest pairs (96 s) per overflow event to preserve reusable vLLM prefixes between events. No summary or reference text.",
+      "system_prompt": "你是有用的助手\n你的助手风格是：耐心。\n你的开场方式要求：短句清晰。",
+      "answer_trigger": "Require a letter or digit in the first post-question tts fragment only; subsequent tts is free, no answer words supplied.",
+      "answer_trigger_text": "",
+      "frames_completed": 47,
+      "trimmed_frames": 0,
+      "speech_text": "",
+      "question_asr": "What color is the sky on a clear day?",
+      "phase": "answering",
+      "removed_action_frames": 0,
+      "max_prompt_tokens": 2551,
+      "max_retained_frames": 47,
+      "wall_seconds": 21.30014253896661,
+      "answer_context": {
+        "oldest_retained_seconds": 0.0,
+        "retained_audio_pairs": 8,
+        "conservative_prompt_bound": 461,
+        "trimmed_frames": 0,
+        "messages_sha256": "0b037918d23fa97c786031cb7d664e55b5f4f087a1bce73248646a8f78c49ddd"
+      },
+      "audio_sha256": "e09b9c784672fcda2d2231503b75f162246e19e3f831ea7fcffe158f27a81ae7",
+      "response_seconds": 19.176875,
+      "spoken_transcript": "",
+      "audio": "research/s1-revised-controls/audio/sky_allow_empty-constrained.wav"
+    }
+  ],
+  "resources": [
+    {
+      "job": "1401174",
+      "method": "decode_clear",
+      "gpu_count": 1,
+      "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+      "roles": {
+        "0": "Thinker, Talker, MTP, Code2Wav together; then Parakeet after S1 exits"
+      },
+      "shared_components": "Private service and fresh case sessions; one method per GPU job, no S2",
+      "dependencies": "afterany:1401016 replaces that sweep worker; short native sky qualification precedes P01/P02",
+      "maximum_active_gpus": 4
+    },
+    {
+      "job": "1401175",
+      "method": "constrained",
+      "gpu_count": 1,
+      "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+      "roles": {
+        "0": "Thinker, Talker, MTP, Code2Wav together; then Parakeet after S1 exits"
+      },
+      "shared_components": "Private service and fresh case sessions; one method per GPU job, no S2",
+      "dependencies": "afterany:1401017 replaces that sweep worker; short native sky qualification precedes P01/P02",
+      "maximum_active_gpus": 4
+    }
+  ]
+}
