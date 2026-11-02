@@ -17,8 +17,8 @@
       "url": "study-progress.html#generated-transcript-pipeline"
     },
     {
-      "status": "partial",
-      "text": "Finish the matched generated-transcript readers and inspect their actual answers.",
+      "status": "complete",
+      "text": "Complete both generated-transcript readers and source-check all 192 answers.",
       "url": "study-progress.html#generated-transcript-outputs"
     },
     {
@@ -210,10 +210,10 @@
         },
         {
           "id": "answering-native-review",
-          "text": "Review the S1 answers against source facts and resolve response-transcription disagreements.",
+          "text": "Review the earlier six-question S1 pilot using native response text.",
           "status": "pending",
           "url": "study-progress.html#answering-outputs",
-          "evidence": "0/38 completed native outputs have formal source-review records; three are runtime controls. A failed input cannot count as an answered question."
+          "evidence": "The earlier pilot has38 completed native outputs including3 controls; formal source reviews remain separate from the newly reviewed99 source-eligible sweep answers. Response ASR is optional under the current native-text policy."
         },
         {
           "id": "answering-judge-holdout",
@@ -227,7 +227,7 @@
           "text": "Repeat all 123 revised time-and-microphone positions on Moshi and MiniCPM using native text.",
           "status": "complete",
           "url": "study-progress.html#comparison-followup",
-          "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 123 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Completion is separate from answer accuracy."
+          "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 123 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Native source review: 0/33 complete for each model on one diagnostic question with sufficient source evidence; shorter histories excluded."
         },
         {
           "id": "s2-generated-inputs",
@@ -239,9 +239,9 @@
         {
           "id": "s2-generated-readers",
           "text": "Run and inspect the generated-transcript counterparts of the ground-truth text pilot.",
-          "status": "partial",
+          "status": "complete",
           "url": "study-progress.html#generated-transcript-outputs",
-          "evidence": "144/192 request outputs saved; 144 source reviews recorded; no full-bank claim."
+          "evidence": "192/192 request outputs saved; 192 source reviews recorded; no full-bank claim."
         },
         {
           "id": "scorer-disagreement-examples",
@@ -255,7 +255,7 @@
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
           "status": "pending",
           "url": "what-to-think.html#evaluation-first",
-          "evidence": "The one-question microphone sweep is reviewed and the revised local judge passed twelve authored checks; validate all 105 references, qualify judging on distinct questions and check the other S1 callers before full-bank evaluation."
+          "evidence": "All 105 references are source-reviewed and the new native/generated-transcript pilots are complete; generic judging remains unqualified at 55/68 agreement, and full-bank protocol checks remain pending."
         },
         {
           "id": "s1-all",

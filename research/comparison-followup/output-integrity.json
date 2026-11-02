@@ -1,0 +1,106 @@
+{
+  "status": "pass",
+  "scope": "Input/prompt/completion integrity only; source completeness is reviewed separately, not implied by this pass.",
+  "identical_identity_pair_words_times_and_boundaries": true,
+  "unchanged_GT_questions_schedule_prompts_and_decoding": true,
+  "no_future_question_in_earlier_calls": true,
+  "no_future_saved_results": true,
+  "native": [
+    {
+      "model": "moshi",
+      "complete_inputs": 123,
+      "controls": 1,
+      "response_ASR": false
+    },
+    {
+      "model": "minicpm",
+      "complete_inputs": 123,
+      "controls": 1,
+      "response_ASR": false
+    }
+  ],
+  "readers": [
+    {
+      "dataset": "parakeet-automatic",
+      "model": "instruct",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": false,
+      "invalid_note_formats_or_source_IDs": 0,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "model": "thinking",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": true,
+      "invalid_note_formats_or_source_IDs": 11,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "instruct",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": false,
+      "invalid_note_formats_or_source_IDs": 1,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "thinking",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": true,
+      "invalid_note_formats_or_source_IDs": 17,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "instruct",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": false,
+      "invalid_note_formats_or_source_IDs": 7,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "thinking",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": true,
+      "invalid_note_formats_or_source_IDs": 13,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "instruct",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": false,
+      "invalid_note_formats_or_source_IDs": 15,
+      "incomplete_answer_JSON": 0
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "thinking",
+      "calls": 128,
+      "notes": 104,
+      "answers": 24,
+      "native_thinking_tokens_observable": true,
+      "invalid_note_formats_or_source_IDs": 15,
+      "incomplete_answer_JSON": 0
+    }
+  ],
+  "source_reviews": 192,
+  "GPUs": 0
+}

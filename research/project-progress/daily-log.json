@@ -16,7 +16,7 @@
           "label": "Inputs and alignment checks"
         },
         {
-          "text": "Started the generated-transcript S2 comparisons with the same questions, goals and reader settings as the ground-truth pilot.",
+          "text": "Completed 832 earlier S2 calls and source-reviewed all 192 final answers across two ASR pipelines, two identity conditions and two readers.",
           "url": "study-progress.html#generated-transcript-outputs",
           "label": "Completion and actual answers"
         },
@@ -29,6 +29,11 @@
           "text": "Fixed Whisper silence hallucinations with predicted speech regions and native decoding fallback; all 61 final chunks passed the gross-repetition check.",
           "url": "study-progress.html#generated-transcript-pipeline",
           "label": "Pipeline checks"
+        },
+        {
+          "text": "Source-reviewed 33 eligible native answers per model for the folder question; none was complete, while shorter histories were excluded from accuracy.",
+          "url": "study-progress.html#comparison-followup",
+          "label": "Criteria, strings and decisions"
         }
       ]
     },

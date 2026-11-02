@@ -1,11 +1,14 @@
 {
-  "updated_utc": "2026-11-02T20:45:38.158749+00:00",
+  "updated_utc": "2026-11-02T21:18:15.574698+00:00",
   "scope": "Requested missing comparisons; no full-105-question result.",
   "native_models": [
     {
       "model": "DuplexOmni",
       "attempted": 123,
       "completed": 120,
+      "nonempty_native_texts": 120,
+      "source_eligible_native_answers": 33,
+      "source_complete_native_answers": 0,
       "failed": 3,
       "planned": 123
     },
@@ -13,6 +16,9 @@
       "model": "Moshi",
       "attempted": 123,
       "completed": 123,
+      "nonempty_native_texts": 119,
+      "source_eligible_native_answers": 33,
+      "source_complete_native_answers": 0,
       "failed": 0,
       "planned": 123
     },
@@ -20,6 +26,9 @@
       "model": "MiniCPM",
       "attempted": 123,
       "completed": 123,
+      "nonempty_native_texts": 123,
+      "source_eligible_native_answers": 33,
+      "source_complete_native_answers": 0,
       "failed": 0,
       "planned": 123
     }
@@ -89,7 +98,7 @@
       "dataset": "whisper-automatic",
       "model": "instruct",
       "job": "1445017",
-      "state": "RUNNING",
+      "state": "COMPLETED",
       "status": "inference_complete_source_review_required",
       "model_wall_seconds": 225.7923016329296,
       "aggregate_generated_tokens_per_second": 230.09641880732315,
@@ -104,22 +113,22 @@
       "dataset": "whisper-automatic",
       "model": "thinking",
       "job": "1445017",
-      "state": "RUNNING",
-      "status": "pending_or_running",
-      "model_wall_seconds": null,
-      "aggregate_generated_tokens_per_second": null,
-      "note_calls": 26,
-      "valid_note_formats_and_source_IDs": 26,
-      "amortized_generated_tokens": 103201,
-      "request_outputs": 0,
-      "parsed_outputs": 0,
-      "reviewed_outputs": 0
+      "state": "COMPLETED",
+      "status": "inference_complete_source_review_required",
+      "model_wall_seconds": 1862.822634239681,
+      "aggregate_generated_tokens_per_second": 290.7856014005809,
+      "note_calls": 104,
+      "valid_note_formats_and_source_IDs": 91,
+      "amortized_generated_tokens": 496912,
+      "request_outputs": 24,
+      "parsed_outputs": 24,
+      "reviewed_outputs": 24
     },
     {
       "dataset": "whisper-oracle_identity",
       "model": "instruct",
       "job": "1445018",
-      "state": "RUNNING",
+      "state": "COMPLETED",
       "status": "inference_complete_source_review_required",
       "model_wall_seconds": 219.52208987995982,
       "aggregate_generated_tokens_per_second": 230.8469276495632,
@@ -134,22 +143,22 @@
       "dataset": "whisper-oracle_identity",
       "model": "thinking",
       "job": "1445018",
-      "state": "RUNNING",
-      "status": "pending_or_running",
-      "model_wall_seconds": null,
-      "aggregate_generated_tokens_per_second": null,
-      "note_calls": 50,
-      "valid_note_formats_and_source_IDs": 49,
-      "amortized_generated_tokens": 210640,
-      "request_outputs": 0,
-      "parsed_outputs": 0,
-      "reviewed_outputs": 0
+      "state": "COMPLETED",
+      "status": "inference_complete_source_review_required",
+      "model_wall_seconds": 1923.0797098269686,
+      "aggregate_generated_tokens_per_second": 296.7224900164655,
+      "note_calls": 104,
+      "valid_note_formats_and_source_IDs": 89,
+      "amortized_generated_tokens": 526166,
+      "request_outputs": 24,
+      "parsed_outputs": 24,
+      "reviewed_outputs": 24
     }
   ],
-  "active_GPUs": 2,
+  "active_GPUs": 0,
   "maximum_active_GPUs_observed": 4,
   "maximum_active_GPUs_allowed": 4,
-  "allocated_GPU_hours": 3.9566666666666666,
+  "allocated_GPU_hours": 4.771111111111111,
   "jobs": [
     {
       "job": "1442696",
@@ -352,10 +361,10 @@
         "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
       },
       "dependencies": "Whisper speech-region repair and repetition gate completed; afterany:1443819, reuses the Parakeet automatic lane instead of waiting for Moshi; maximum four GPUs",
-      "state": "RUNNING",
-      "allocated_seconds": 488,
+      "state": "COMPLETED",
+      "allocated_seconds": 2112,
       "start": "2026-11-02T15:35:08",
-      "end": "Unknown",
+      "end": "2026-11-02T16:10:20",
       "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
       "superseded": false
     },
@@ -368,10 +377,10 @@
         "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
       },
       "dependencies": "Whisper fallback repair/dataset construction completed before submission; inherits completed/native GPU lane 1442748",
-      "state": "RUNNING",
-      "allocated_seconds": 856,
+      "state": "COMPLETED",
+      "allocated_seconds": 2164,
       "start": "2026-11-02T15:29:00",
-      "end": "Unknown",
+      "end": "2026-11-02T16:05:04",
       "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
       "superseded": false
     }
@@ -387,8 +396,8 @@
     "whisper_final_inputs_ready": true
   },
   "planned_request_outputs": 192,
-  "request_outputs": 144,
-  "reviewed_outputs": 144,
+  "request_outputs": 192,
+  "reviewed_outputs": 192,
   "summaries": [
     {
       "dataset": "parakeet-automatic",
@@ -571,6 +580,42 @@
       "mean_ordinary_output_tokens": 106.83333333333333
     },
     {
+      "dataset": "whisper-automatic",
+      "model": "thinking",
+      "condition": "reactive",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": 1933.1666666666667,
+      "mean_ordinary_output_tokens": 107.33333333333333
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "thinking",
+      "condition": "amortized_summary",
+      "reviewed": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": 1458.8333333333333,
+      "mean_ordinary_output_tokens": 119.66666666666667
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "thinking",
+      "condition": "amortized_structured_notes",
+      "reviewed": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": 1894.5,
+      "mean_ordinary_output_tokens": 117.66666666666667
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "thinking",
+      "condition": "source_excerpt_diagnostic",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": 1740.3333333333333,
+      "mean_ordinary_output_tokens": 86.16666666666667
+    },
+    {
       "dataset": "whisper-oracle_identity",
       "model": "instruct",
       "condition": "reactive",
@@ -605,20 +650,52 @@
       "complete": 6,
       "mean_request_thinking_tokens": null,
       "mean_ordinary_output_tokens": 90.33333333333333
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "thinking",
+      "condition": "reactive",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": 1739.8333333333333,
+      "mean_ordinary_output_tokens": 103.0
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "thinking",
+      "condition": "amortized_summary",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": 1998.6666666666667,
+      "mean_ordinary_output_tokens": 109.0
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "thinking",
+      "condition": "amortized_structured_notes",
+      "reviewed": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": 1846.5,
+      "mean_ordinary_output_tokens": 120.83333333333333
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "thinking",
+      "condition": "source_excerpt_diagnostic",
+      "reviewed": 6,
+      "complete": 6,
+      "mean_request_thinking_tokens": 1376.5,
+      "mean_ordinary_output_tokens": 110.83333333333333
     }
   ],
   "next_steps": [
     {
-      "action": "Finish both native time sweeps.",
-      "goal": "Compare the same 123 audio histories across all three S1 systems."
+      "action": "Reconcile the thirteen scorer disagreements and qualify the revised scorer on fresh source-reviewed answers.",
+      "goal": "Make automatic completeness judgments reliable before scaling."
     },
     {
-      "action": "Complete and source-review all generated-transcript reader outputs.",
-      "goal": "Measure the cost of ASR, diarization and speaker-name matching with the ground-truth settings."
-    },
-    {
-      "action": "Resolve scorer disagreements before full-bank scoring.",
-      "goal": "Avoid treating generous or overly strict automatic judgments as reliable accuracy."
+      "action": "Freeze the verified input/output protocol and evaluate all 105 questions after its remaining gates pass.",
+      "goal": "Test whether the pilot patterns hold across more meetings and question types."
     }
   ]
 }

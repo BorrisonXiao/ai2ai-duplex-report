@@ -3,7 +3,7 @@
   "updated": "2026-11-02",
   "status": "implementation_underway",
   "snapshot_label": "Native time sweeps and generated-transcript comparisons",
-  "active_job": "1445017",
+  "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
   "planned_final_answers": 3465,
@@ -141,10 +141,10 @@
     },
     {
       "id": "answering-native-review",
-      "text": "Review the S1 answers against source facts and resolve response-transcription disagreements.",
+      "text": "Review the earlier six-question S1 pilot using native response text.",
       "status": "pending",
       "url": "study-progress.html#answering-outputs",
-      "evidence": "0/38 completed native outputs have formal source-review records; three are runtime controls. A failed input cannot count as an answered question."
+      "evidence": "The earlier pilot has38 completed native outputs including3 controls; formal source reviews remain separate from the newly reviewed99 source-eligible sweep answers. Response ASR is optional under the current native-text policy."
     },
     {
       "id": "answering-judge-holdout",
@@ -158,7 +158,7 @@
       "text": "Repeat all 123 revised time-and-microphone positions on Moshi and MiniCPM using native text.",
       "status": "complete",
       "url": "study-progress.html#comparison-followup",
-      "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 123 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Completion is separate from answer accuracy."
+      "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 123 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Native source review: 0/33 complete for each model on one diagnostic question with sufficient source evidence; shorter histories excluded."
     },
     {
       "id": "s2-generated-inputs",
@@ -170,9 +170,9 @@
     {
       "id": "s2-generated-readers",
       "text": "Run and inspect the generated-transcript counterparts of the ground-truth text pilot.",
-      "status": "partial",
+      "status": "complete",
       "url": "study-progress.html#generated-transcript-outputs",
-      "evidence": "144/192 request outputs saved; 144 source reviews recorded; no full-bank claim."
+      "evidence": "192/192 request outputs saved; 192 source reviews recorded; no full-bank claim."
     },
     {
       "id": "scorer-disagreement-examples",
@@ -186,7 +186,7 @@
       "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
       "url": "what-to-think.html#evaluation-first",
-      "evidence": "The one-question microphone sweep is reviewed and the revised local judge passed twelve authored checks; validate all 105 references, qualify judging on distinct questions and check the other S1 callers before full-bank evaluation."
+      "evidence": "All 105 references are source-reviewed and the new native/generated-transcript pilots are complete; generic judging remains unqualified at 55/68 agreement, and full-bank protocol checks remain pending."
     },
     {
       "id": "s1-all",
@@ -208,7 +208,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-02T20:45:38.158749+00:00",
+  "updated_at": "2026-11-02T21:18:15.574698+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -245,10 +245,7 @@
     "state": "completed_source_reviewed",
     "active_gpus": 0
   },
-  "active_jobs": [
-    "1445017",
-    "1445018"
-  ],
+  "active_jobs": [],
   "context_pressure": {
     "state": "completed_source_reviewed",
     "planned_levels": 41,
@@ -304,9 +301,9 @@
     "maximum_active_GPUs_observed": 4
   },
   "comparison_followup": {
-    "active_GPUs": 2,
+    "active_GPUs": 0,
     "maximum_active_GPUs_observed": 4,
-    "request_outputs": 144,
-    "reviewed_outputs": 144
+    "request_outputs": 192,
+    "reviewed_outputs": 192
   }
 }
