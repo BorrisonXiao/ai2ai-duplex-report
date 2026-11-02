@@ -237,15 +237,21 @@
         },
         {
           "text": "Run matched supporting-audio and original-history questions through all three S1 systems.",
-          "status": "partial",
+          "status": "complete",
           "project_url": "study-progress.html#answering-native",
-          "evidence": "34/39 native outputs saved, including three runtime controls; response ASR and source review remain separate."
+          "evidence": "38/39 native outputs completed; 1 failed. All recorded attempts remain in accounting; this is execution status, not answer accuracy."
         },
         {
           "text": "Compare reactive reading, amortized summaries and structured notes with Instruct and Thinking readers.",
           "status": "complete",
           "project_url": "study-progress.html#answering-text",
           "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
+        },
+        {
+          "text": "Review the S1 answers against source facts and resolve response-transcription disagreements.",
+          "status": "pending",
+          "project_url": "study-progress.html#answering-outputs",
+          "evidence": "0/38 completed native outputs have formal source-review records; three are runtime controls. A failed input cannot count as an answered question."
         },
         {
           "text": "Qualify the generic scorer on 68 earlier real answers from 17 questions in five separate meetings.",

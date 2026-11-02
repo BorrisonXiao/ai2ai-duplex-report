@@ -3,7 +3,7 @@
   "updated": "2026-11-01",
   "status": "implementation_underway",
   "snapshot_label": "Matched answering pilots and reference validation",
-  "active_job": "1413065",
+  "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
   "planned_final_answers": 3465,
@@ -128,9 +128,9 @@
     {
       "id": "answering-native-pilot",
       "text": "Run matched supporting-audio and original-history questions through all three S1 systems.",
-      "status": "partial",
+      "status": "complete",
       "url": "study-progress.html#answering-native",
-      "evidence": "34/39 native outputs saved, including three runtime controls; response ASR and source review remain separate."
+      "evidence": "38/39 native outputs completed; 1 failed. All recorded attempts remain in accounting; this is execution status, not answer accuracy."
     },
     {
       "id": "answering-text-pilot",
@@ -138,6 +138,13 @@
       "status": "complete",
       "url": "study-progress.html#answering-text",
       "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
+    },
+    {
+      "id": "answering-native-review",
+      "text": "Review the S1 answers against source facts and resolve response-transcription disagreements.",
+      "status": "pending",
+      "url": "study-progress.html#answering-outputs",
+      "evidence": "0/38 completed native outputs have formal source-review records; three are runtime controls. A failed input cannot count as an answered question."
     },
     {
       "id": "answering-judge-holdout",
@@ -173,7 +180,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-01T20:29:55.103515+00:00",
+  "updated_at": "2026-11-02T02:46:11.644906+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -210,9 +217,7 @@
     "state": "completed_source_reviewed",
     "active_gpus": 0
   },
-  "active_jobs": [
-    "1413065"
-  ],
+  "active_jobs": [],
   "context_pressure": {
     "state": "completed_source_reviewed",
     "planned_levels": 41,
@@ -264,7 +269,7 @@
   "answering_study": {
     "pilot_questions": 6,
     "source_reviewed_references": 105,
-    "active_GPUs": 1,
+    "active_GPUs": 0,
     "maximum_active_GPUs_observed": 4
   }
 }

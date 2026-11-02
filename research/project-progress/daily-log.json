@@ -6,6 +6,14 @@
       "date": "2026-11-01",
       "items": [
         {
+          "text": "All pilot jobs finished with 38/39 completed native outputs; one DuplexOmni replay stopped before its question after repeated ASR output hit the token limit.",
+          "url": "study-progress.html#answering-native"
+        },
+        {
+          "text": "Released all GPU allocations after 3.959 GPU hours in total, with a maximum of four active GPUs.",
+          "url": "study-progress.html#answering-resources"
+        },
+        {
           "text": "Launched matched answering pilots for Moshi, MiniCPM and DuplexOmni using six paired questions and a native control.",
           "url": "study-progress.html#answering-native"
         },
