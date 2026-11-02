@@ -6,6 +6,23 @@
       "date": "2026-11-02",
       "items": [
         {
+          "text": "Drafted the S1 and text S2 results with linked findings, response audio, transcript WER and separate request-time and total token costs.",
+          "url": "experiments/answering-results.html",
+          "label": "Results and examples"
+        },
+        {
+          "text": "Source-reviewed the earlier native S1 pilot and retained one input-processing failure separately.",
+          "url": "experiments/answering-results.html#s1-results"
+        },
+        {
+          "text": "Rated 401 native responses and identified real-response grounding errors despite 13 passing synthetic checks.",
+          "url": "experiments/answering-results.html#quality-real-checks"
+        },
+        {
+          "text": "Recorded a standing rule to open project results reports with concise findings linked to their evidence.",
+          "url": "experiments/answering-results.html#findings"
+        },
+        {
           "text": "Completed 123 matched sweep positions plus one control for each of Moshi and MiniCPM, retaining their native response strings.",
           "url": "study-progress.html#comparison-followup",
           "label": "Saved native strings"
@@ -110,7 +127,7 @@
           "url": "study-progress-original-acoustics.html#array-audio-demos"
         },
         {
-          "text": "Clarified that Figures 1\u20133 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
           "url": "study-progress-original-acoustics.html#array-response-content"
         },
         {
@@ -253,7 +270,7 @@
           "url": "study-progress.html"
         },
         {
-          "text": "Changed the thinking-chunk range to 10\u201340 seconds, with a 25-second target.",
+          "text": "Changed the thinking-chunk range to 10–40 seconds, with a 25-second target.",
           "url": "what-to-think.html#chunking"
         },
         {

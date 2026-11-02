@@ -23,6 +23,7 @@ REVIEW_KEYS = {
 }
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
+    'answering-results.html': 'overview',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
@@ -78,6 +79,7 @@ def build_collections():
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
         section('Project progress', 'The project plan and daily work record.', [
+            ('S1 and text S2 results', 'Audio-history ablations, native response examples, transcript WER and accuracy versus thinking-token cost.', 'answering-results.html'),
             ('Project TODO', 'The four project stages and the next amortized-thinking experiments.', '../todo.html'),
             ('Daily log', 'One-sentence updates with links to results and examples.', '../daily-log.html')]) +
         section('DuplexOmni', 'Tests of speech generation, interruption handling and reasoning with the DuplexOmni model.', [

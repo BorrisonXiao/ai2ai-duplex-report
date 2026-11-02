@@ -1,0 +1,51 @@
+{
+  "version": "context-question-reference-v9",
+  "relevance": {
+    "label": "Question relevance",
+    "anchors": {
+      "1": "Unrelated, unintelligible, empty, or only a greeting/general request for help.",
+      "2": "Some topic words overlap, but the response addresses a different question.",
+      "3": "Addresses the requested topic through an acknowledgement, offer or generic advice, without a direct answer.",
+      "4": "Directly addresses the question, with a minor detour or unnecessary clarification.",
+      "5": "Direct, focused answer to the actual question; an explicit context-appropriate inability to determine the answer also qualifies."
+    }
+  },
+  "support": {
+    "label": "Factual support",
+    "anchors": {
+      "1": "Major contradiction, invented completed lookup/action, or central unsupported factual assertion.",
+      "2": "A material claim goes beyond the context, such as unestablished current availability or an invented event.",
+      "3": "Mostly supported facts with a smaller unsupported detail or overstatement.",
+      "4": "All material claims supported, with a minor imprecision that does not change the answer.",
+      "5": "All material claims faithfully supported by the supplied context, with appropriate qualification."
+    },
+    "not_applicable": "Use null when there are no material factual assertions, including pure offers, greetings or an honest statement of insufficient context. Do not give these responses a vacuous 5."
+  },
+  "adequacy": {
+    "label": "Answer adequacy",
+    "anchors": {
+      "1": "Does not answer; off-topic/greeting/empty, or substantively wrong/fabricated.",
+      "2": "Relevant offer or generic advice without a substantive answer; major missing available information.",
+      "3": "Useful partial answer, but an important available point or qualification is missing.",
+      "4": "Substantially answers the question using available evidence; minor omission or excess detail.",
+      "5": "Complete, useful answer appropriate to the available context and question. With insufficient context, explicitly identifies that limit and avoids inventing unavailable facts."
+    }
+  },
+  "literature": [
+    {
+      "title": "G-Eval",
+      "url": "https://aclanthology.org/2023.emnlp-main.153/",
+      "use": "Explicit task criteria and evaluation steps; aspect scores. This adaptation does not reproduce probability-weighted G-Eval scoring."
+    },
+    {
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "url": "https://arxiv.org/abs/2306.05685",
+      "use": "Reference-guided single-answer assessment, bias controls and prompt-order sensitivity checks; human agreement is not assumed for this local judge."
+    },
+    {
+      "title": "Prometheus 2",
+      "url": "https://arxiv.org/abs/2405.01535",
+      "use": "Criterion-specific 1–5 anchors, reference answers and feedback before ratings. The actual model here is Qwen3, not Prometheus."
+    }
+  ]
+}

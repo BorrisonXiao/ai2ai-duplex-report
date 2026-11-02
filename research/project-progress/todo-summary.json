@@ -3,28 +3,29 @@
   "now": [
     {
       "status": "complete",
-      "text": "Source-check all 105 reference answers and retain the completed ground-truth text pilot.",
-      "url": "study-progress.html#answering-references"
+      "text": "Review the S1 and text S2 results with audio examples, WER and complete token costs.",
+      "url": "experiments/answering-results.html",
+      "label": "Results report"
     },
     {
       "status": "complete",
-      "text": "Repeat the 123-position time sweep on Moshi and MiniCPM using their native response strings.",
-      "url": "study-progress.html#comparison-followup"
+      "text": "Inspect the 13 inputs per S1 model and matched 123-position time ablations.",
+      "url": "experiments/answering-results.html#s1-results"
     },
     {
       "status": "complete",
-      "text": "Build both generated-transcript inputs with automatic and annotation-mapped speaker identities.",
-      "url": "study-progress.html#generated-transcript-pipeline"
-    },
-    {
-      "status": "complete",
-      "text": "Complete both generated-transcript readers and source-check all 192 answers.",
-      "url": "study-progress.html#generated-transcript-outputs"
+      "text": "Compare all five transcript inputs using the same reactive and amortized-thinking settings.",
+      "url": "experiments/answering-results.html#s2-tradeoff"
     },
     {
       "status": "partial",
-      "text": "Resolve scorer disagreements against source speech before the full-bank comparison.",
-      "url": "study-progress.html#scorer-examples"
+      "text": "Calibrate automated quality ratings on real responses before broader evaluation.",
+      "url": "experiments/answering-results.html#quality-real-checks"
+    },
+    {
+      "status": "planned",
+      "text": "Repeat paired S2 comparisons on held-out meetings to test accuracy and thinking-token savings.",
+      "url": "experiments/answering-results.html#next"
     }
   ],
   "definition": {
@@ -211,9 +212,9 @@
         {
           "id": "answering-native-review",
           "text": "Review the earlier six-question S1 pilot using native response text.",
-          "status": "pending",
-          "url": "study-progress.html#answering-outputs",
-          "evidence": "The earlier pilot has38 completed native outputs including3 controls; formal source reviews remain separate from the newly reviewed99 source-eligible sweep answers. Response ASR is optional under the current native-text policy."
+          "status": "complete",
+          "url": "experiments/answering-results.html#s1-results",
+          "evidence": "Reviewed native text for 35 completed meeting inputs and three controls; one DuplexOmni input failed before the request."
         },
         {
           "id": "answering-judge-holdout",
@@ -249,6 +250,13 @@
           "status": "complete",
           "url": "study-progress.html#scorer-examples",
           "evidence": "13 of 68 binary labels disagree; examples include an unsupported extra rule and an overly strict detail requirement."
+        },
+        {
+          "id": "answering-results-report",
+          "text": "Draft the S1 and text S2 results with audio examples, transcript WER and thinking-token costs.",
+          "status": "complete",
+          "url": "experiments/answering-results.html",
+          "evidence": "Source-bound outputs, six figures, 99 listening files, all 240 S2 answers and real-response checks of quality ratings are included."
         },
         {
           "id": "gate",

@@ -142,9 +142,9 @@
     {
       "id": "answering-native-review",
       "text": "Review the earlier six-question S1 pilot using native response text.",
-      "status": "pending",
-      "url": "study-progress.html#answering-outputs",
-      "evidence": "The earlier pilot has38 completed native outputs including3 controls; formal source reviews remain separate from the newly reviewed99 source-eligible sweep answers. Response ASR is optional under the current native-text policy."
+      "status": "complete",
+      "url": "experiments/answering-results.html#s1-results",
+      "evidence": "Reviewed native text for 35 completed meeting inputs and three controls; one DuplexOmni input failed before the request."
     },
     {
       "id": "answering-judge-holdout",
@@ -180,6 +180,13 @@
       "status": "complete",
       "url": "study-progress.html#scorer-examples",
       "evidence": "13 of 68 binary labels disagree; examples include an unsupported extra rule and an overly strict detail requirement."
+    },
+    {
+      "id": "answering-results-report",
+      "text": "Draft the S1 and text S2 results with audio examples, transcript WER and thinking-token costs.",
+      "status": "complete",
+      "url": "experiments/answering-results.html",
+      "evidence": "Source-bound outputs, six figures, 99 listening files, all 240 S2 answers and real-response checks of quality ratings are included."
     },
     {
       "id": "gate",
@@ -305,5 +312,17 @@
     "maximum_active_GPUs_observed": 4,
     "request_outputs": 192,
     "reviewed_outputs": 192
+  },
+  "answering_report": {
+    "url": "experiments/answering-results.html",
+    "quality_job": "1447789",
+    "quality_state": "COMPLETED",
+    "quality_valid_ratings": 401,
+    "synthetic_checks_passed": 13,
+    "real_quality_errors_found": true,
+    "active_GPUs": 0,
+    "maximum_active_GPUs": 1,
+    "gpu_type_vram": "H100 SXM 80 GB",
+    "allocated_GPU_hours": 0.16416666666666666
   }
 }

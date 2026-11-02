@@ -1,0 +1,636 @@
+{
+  "report_quality": {
+    "job": "1447789",
+    "state": "COMPLETED",
+    "gpu_count": 1,
+    "gpu_type_vram": "H100 SXM 80 GB",
+    "roles": {
+      "0": "Qwen3-30B-A3B-Instruct weights and 8 GiB KV cache; batched aspect prompts"
+    },
+    "shared_components": "Judge only; no S1/TTS/ASR service",
+    "dependencies": "Frozen saved outputs and transcript contexts; 13 synthetic checks gate actual ratings",
+    "allocated_seconds": 591,
+    "allocated_GPU_hours": 0.16416666666666666,
+    "maximum_active_GPUs": 1
+  },
+  "rendering": {
+    "gpus": 0,
+    "roles": "CPU audio conversion, figures, HTML and browser checks; no GPU dependencies"
+  },
+  "paired_pilot": {
+    "jobs": [
+      {
+        "job": "1412942",
+        "stage": "references",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct weights and 8 GiB KV; vLLM graphs; no speech/ASR/S2 service sharing"
+        },
+        "dependencies": "Frozen causal transcript bank and CPU token preflight; source review follows model checks.",
+        "state": "COMPLETED",
+        "allocated_seconds": 441,
+        "start": "2026-11-01T13:56:24",
+        "end": "2026-11-01T14:03:45",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "scheduler_dependency": null
+      },
+      {
+        "job": "1413065",
+        "stage": "s1-duplexomni",
+        "gpu_count": 1,
+        "gpu_type_vram": "A100 SXM4 80 GB",
+        "roles": {
+          "0": "All duplexomni native LM/codec/speech components; independent Parakeet ASR after model shutdown"
+        },
+        "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
+        "state": "COMPLETED",
+        "allocated_seconds": 8960,
+        "start": "2026-11-01T14:10:12",
+        "end": "2026-11-01T16:39:32",
+        "allocated_TRES": "billing=999,cpu=18,gres/gpu:a100=1,gres/gpu=1,mem=96G,node=1",
+        "scheduler_dependency": null
+      },
+      {
+        "job": "1413066",
+        "stage": "s1-moshi",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "All moshi native LM/codec/speech components; independent Parakeet ASR after model shutdown"
+        },
+        "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
+        "state": "COMPLETED",
+        "allocated_seconds": 1083,
+        "start": "2026-11-01T14:08:40",
+        "end": "2026-11-01T14:26:43",
+        "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+        "scheduler_dependency": null
+      },
+      {
+        "job": "1413085",
+        "stage": "s1-minicpm",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "All minicpm native LM/codec/speech components; independent Parakeet ASR after model shutdown"
+        },
+        "dependencies": "Frozen paired-input checks; short native control first; ASR follows S1 within this allocation.",
+        "state": "COMPLETED",
+        "allocated_seconds": 1119,
+        "start": "2026-11-01T14:12:14",
+        "end": "2026-11-01T14:30:53",
+        "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+        "scheduler_dependency": null
+      },
+      {
+        "job": "1413130",
+        "stage": "s2-instruct",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B instruct weights and 8 GiB KV; vLLM graphs; earlier notes then readers; no S1 or ASR sharing"
+        },
+        "dependencies": "Completed reference allocation 1412942 verified through accounting; no active scheduler dependency. The six pilot references are separately source-checked; this does not validate the full bank.",
+        "state": "COMPLETED",
+        "allocated_seconds": 256,
+        "start": "2026-11-01T14:25:24",
+        "end": "2026-11-01T14:29:40",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "scheduler_dependency": null
+      },
+      {
+        "job": "1413131",
+        "stage": "s2-thinking",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B thinking weights and 8 GiB KV; vLLM graphs; earlier notes then readers; no S1 or ASR sharing"
+        },
+        "dependencies": "afterok:1413130; question-blind notes finish before the request file is opened; both text jobs occupy one sequential lane.",
+        "state": "COMPLETED",
+        "allocated_seconds": 2043,
+        "start": "2026-11-01T14:29:44",
+        "end": "2026-11-01T15:03:47",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "scheduler_dependency": "afterok:1413130"
+      },
+      {
+        "job": "1413876",
+        "stage": "references-earnings-v2",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct reference proposals/checks with complete corrected Earnings21 text; no speech services"
+        },
+        "dependencies": "afterany:1413131; rerun only the twelve text-corrupted reference cases, keeping the reference/text GPU lane sequential.",
+        "state": "COMPLETED",
+        "allocated_seconds": 121,
+        "start": "2026-11-01T15:04:15",
+        "end": "2026-11-01T15:06:16",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "scheduler_dependency": "afterany:1413131"
+      },
+      {
+        "job": "1414096",
+        "stage": "judge-holdout",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct weights and 8 GiB KV; vLLM graphs; no S1, speech or ASR sharing"
+        },
+        "dependencies": "All 105 references source-checked; frozen earlier real-output labels from five meetings separate from the current audio pilot; no scheduler dependency because the earlier text lane has completed.",
+        "state": "COMPLETED",
+        "allocated_seconds": 230,
+        "start": "2026-11-01T15:24:04",
+        "end": "2026-11-01T15:27:54",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "scheduler_dependency": null
+      }
+    ],
+    "allocated_GPU_hours": 3.9591666666666665,
+    "maximum_active_GPUs": 4
+  },
+  "generated_transcript_and_matched_sweep": {
+    "jobs": [
+      {
+        "job": "1442696",
+        "stage": "time-moshi",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Native Moshi LM and Mimi, shared GPU 0; no S2 or response-ASR service"
+        },
+        "dependencies": "Frozen 123 matched PCM inputs plus one short native control; independent of MiniCPM.",
+        "state": "CANCELLED by 10053",
+        "allocated_seconds": 0,
+        "start": "None",
+        "end": "2026-11-02T14:24:17",
+        "allocated_TRES": "",
+        "superseded": true
+      },
+      {
+        "job": "1442705",
+        "stage": "time-minicpm",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Native MiniCPM language/audio/TTS components, shared GPU 0; no response-ASR service"
+        },
+        "dependencies": "Frozen 123 matched PCM inputs plus one short native control; independent of Moshi.",
+        "state": "CANCELLED by 10053",
+        "allocated_seconds": 0,
+        "start": "None",
+        "end": "2026-11-02T14:24:17",
+        "allocated_TRES": "",
+        "superseded": true
+      },
+      {
+        "job": "1442737",
+        "stage": "time-moshi",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Native Moshi LM and Mimi, shared GPU 0; no S2 or response-ASR service"
+        },
+        "dependencies": "Frozen 123 PCM inputs plus one native control; replaces cancelled pending 1442696; independent of MiniCPM.",
+        "state": "COMPLETED",
+        "allocated_seconds": 4608,
+        "start": "2026-11-02T14:25:36",
+        "end": "2026-11-02T15:42:24",
+        "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1442748",
+        "stage": "time-minicpm",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Native MiniCPM language/audio/TTS components, shared GPU 0; no S2 or response-ASR service"
+        },
+        "dependencies": "Frozen 123 PCM inputs plus native control; replaces cancelled pending 1442705; independent of Moshi.",
+        "state": "COMPLETED",
+        "allocated_seconds": 2638,
+        "start": "2026-11-02T14:28:28",
+        "end": "2026-11-02T15:12:26",
+        "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1443098",
+        "stage": "generated-history-asr",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Sortformer diarization, Parakeet/Whisper ASR, then ECAPA requester matching, sequential stages on GPU 0; no S1/S2 sharing"
+        },
+        "dependencies": "Five past-only source prefixes; generated word timestamps; request voice opened only after history generation; no GT text in ASR.",
+        "state": "FAILED",
+        "allocated_seconds": 792,
+        "start": "2026-11-02T14:35:21",
+        "end": "2026-11-02T14:48:33",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1443674",
+        "stage": "generated-history-completion",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "ECAPA requester voice matching, recognized-text CTC alignment, and CPU dataset construction run sequentially; no S1/S2 sharing"
+        },
+        "dependencies": "Reuses immutable completed diarization and both ASR outputs from 1443098; no repeated ASR",
+        "state": "COMPLETED",
+        "allocated_seconds": 34,
+        "start": "2026-11-02T14:52:09",
+        "end": "2026-11-02T14:52:43",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=32G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1443819",
+        "stage": "generated-text-parakeet-automatic",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+        },
+        "dependencies": "ASR/dataset construction completed before submission; uses one of two text lanes released by ASR completion",
+        "state": "COMPLETED",
+        "allocated_seconds": 2138,
+        "start": "2026-11-02T14:55:29",
+        "end": "2026-11-02T15:31:07",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1443820",
+        "stage": "generated-text-parakeet-oracle_identity",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+        },
+        "dependencies": "ASR/dataset construction completed before submission; uses one of two text lanes released by ASR completion",
+        "state": "COMPLETED",
+        "allocated_seconds": 2142,
+        "start": "2026-11-02T14:56:11",
+        "end": "2026-11-02T15:31:53",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1443821",
+        "stage": "generated-text-whisper-automatic",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+        },
+        "dependencies": "ASR/dataset construction completed before submission; inherits completed/native GPU lane 1442737",
+        "state": "CANCELLED by 10053",
+        "allocated_seconds": 0,
+        "start": "None",
+        "end": "2026-11-02T15:04:10",
+        "allocated_TRES": "",
+        "superseded": true
+      },
+      {
+        "job": "1443822",
+        "stage": "generated-text-whisper-oracle_identity",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+        },
+        "dependencies": "ASR/dataset construction completed before submission; inherits completed/native GPU lane 1442748",
+        "state": "CANCELLED by 10053",
+        "allocated_seconds": 0,
+        "start": "None",
+        "end": "2026-11-02T15:04:10",
+        "allocated_TRES": "",
+        "superseded": true
+      },
+      {
+        "job": "1444161",
+        "stage": "generated-history-whisper-repair",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Whisper native decoding fallback, then recognized-text CTC alignment on GPU 0; separate stages, no S1/S2 sharing"
+        },
+        "dependencies": "afterany:1442748, inherits MiniCPM lane; reruns Whisper only with no GT words; Parakeet and diarization unchanged",
+        "state": "COMPLETED",
+        "allocated_seconds": 233,
+        "start": "2026-11-02T15:14:21",
+        "end": "2026-11-02T15:18:14",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=32G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1444663",
+        "stage": "generated-history-whisper-speech-regions",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Whisper with native fallback on predicted speech regions, then recognized-text CTC alignment, sequential on GPU 0; no S1/S2 sharing"
+        },
+        "dependencies": "Logical after completed 1444161; inherits the MiniCPM/Whisper repair lane; same predicted diarization, no GT words or boundaries",
+        "state": "COMPLETED",
+        "allocated_seconds": 315,
+        "start": "2026-11-02T15:23:23",
+        "end": "2026-11-02T15:28:38",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=32G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1445017",
+        "stage": "generated-text-whisper-automatic",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+        },
+        "dependencies": "Whisper speech-region repair and repetition gate completed; afterany:1443819, reuses the Parakeet automatic lane instead of waiting for Moshi; maximum four GPUs",
+        "state": "COMPLETED",
+        "allocated_seconds": 2112,
+        "start": "2026-11-02T15:35:08",
+        "end": "2026-11-02T16:10:20",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "superseded": false
+      },
+      {
+        "job": "1445018",
+        "stage": "generated-text-whisper-oracle_identity",
+        "gpu_count": 1,
+        "gpu_type_vram": "H100 SXM 80 GB",
+        "roles": {
+          "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+        },
+        "dependencies": "Whisper fallback repair/dataset construction completed before submission; inherits completed/native GPU lane 1442748",
+        "state": "COMPLETED",
+        "allocated_seconds": 2164,
+        "start": "2026-11-02T15:29:00",
+        "end": "2026-11-02T16:05:04",
+        "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+        "superseded": false
+      }
+    ],
+    "allocated_GPU_hours": 4.771111111111111,
+    "maximum_active_GPUs": 4
+  },
+  "original_DuplexOmni_sweep": {
+    "accounting": {
+      "jobs": [
+        {
+          "job": "1401016",
+          "state": "FAILED",
+          "elapsed_seconds": 5248,
+          "start": "2026-10-31T17:45:59",
+          "end": "2026-10-31T19:13:27",
+          "node": "gh113",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 1.4577777777777778,
+          "role": "Thinker, Talker, MTP and Code2Wav on GPU 0; Parakeet after S1 shutdown"
+        },
+        {
+          "job": "1401017",
+          "state": "COMPLETED",
+          "elapsed_seconds": 5293,
+          "start": "2026-10-31T17:51:48",
+          "end": "2026-10-31T19:20:01",
+          "node": "gh115",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 1.4702777777777778,
+          "role": "Thinker, Talker, MTP and Code2Wav on GPU 0; Parakeet after S1 shutdown"
+        },
+        {
+          "job": "1401018",
+          "state": "FAILED",
+          "elapsed_seconds": 5250,
+          "start": "2026-10-31T18:07:55",
+          "end": "2026-10-31T19:35:25",
+          "node": "gh112",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 1.4583333333333333,
+          "role": "Thinker, Talker, MTP and Code2Wav on GPU 0; Parakeet after S1 shutdown"
+        },
+        {
+          "job": "1401019",
+          "state": "TIMEOUT",
+          "elapsed_seconds": 7220,
+          "start": "2026-10-31T18:52:45",
+          "end": "2026-10-31T20:53:05",
+          "node": "gh106",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 2.0055555555555555,
+          "role": "All S1 components GPU 0 until the time limit; independent response ASR recovered in a separate one-L40S allocation"
+        },
+        {
+          "job": "1401058",
+          "state": "COMPLETED",
+          "elapsed_seconds": 49,
+          "start": "2026-10-31T17:51:36",
+          "end": "2026-10-31T17:52:25",
+          "node": "gl106",
+          "alloc_tres": "billing=291,cpu=6,gres/gpu:l40s=1,gres/gpu=1,mem=32G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "L40S 48 GB",
+          "gpu_hours": 0.01361111111111111,
+          "role": "Parakeet only on GPU 0; no S1/TTS/judge"
+        },
+        {
+          "job": "1401060",
+          "state": "CANCELLED by 10053",
+          "elapsed_seconds": 0,
+          "start": "None",
+          "end": "2026-10-31T17:54:09",
+          "node": "None assigned",
+          "alloc_tres": "",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 0,
+          "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+          "gpu_hours": 0,
+          "role": "Superseded pending control, canceled before allocation"
+        },
+        {
+          "job": "1401061",
+          "state": "CANCELLED by 10053",
+          "elapsed_seconds": 0,
+          "start": "None",
+          "end": "2026-10-31T20:53:32",
+          "node": "None assigned",
+          "alloc_tres": "",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 0,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 0,
+          "role": "Qwen3-30B-A3B-Instruct-2507 text judge weights and KV on GPU 0; no S1/ASR"
+        },
+        {
+          "job": "1401073",
+          "state": "COMPLETED",
+          "elapsed_seconds": 53,
+          "start": "2026-10-31T17:55:10",
+          "end": "2026-10-31T17:56:03",
+          "node": "gl106",
+          "alloc_tres": "billing=291,cpu=6,gres/gpu:l40s=1,gres/gpu=1,mem=32G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "L40S 48 GB",
+          "gpu_hours": 0.014722222222222222,
+          "role": "Parakeet only on GPU 0; no S1/TTS/judge"
+        },
+        {
+          "job": "1401084",
+          "state": "CANCELLED by 10053",
+          "elapsed_seconds": 0,
+          "start": "None",
+          "end": "2026-10-31T18:18:58",
+          "node": "None assigned",
+          "alloc_tres": "",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 0,
+          "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+          "gpu_hours": 0,
+          "role": "Superseded pending serial control, canceled before allocation"
+        },
+        {
+          "job": "1401086",
+          "state": "COMPLETED",
+          "elapsed_seconds": 23,
+          "start": "2026-10-31T17:57:43",
+          "end": "2026-10-31T17:58:06",
+          "node": "gl106",
+          "alloc_tres": "billing=291,cpu=6,gres/gpu:l40s=1,gres/gpu=1,mem=32G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "L40S 48 GB",
+          "gpu_hours": 0.006388888888888889,
+          "role": "Parakeet only on GPU 0; no S1/TTS/judge"
+        },
+        {
+          "job": "1401134",
+          "state": "COMPLETED",
+          "elapsed_seconds": 22,
+          "start": "2026-10-31T18:07:48",
+          "end": "2026-10-31T18:08:10",
+          "node": "gl106",
+          "alloc_tres": "billing=291,cpu=6,gres/gpu:l40s=1,gres/gpu=1,mem=32G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "L40S 48 GB",
+          "gpu_hours": 0.006111111111111111,
+          "role": "Parakeet only on GPU 0; no S1/TTS/judge"
+        },
+        {
+          "job": "1401174",
+          "state": "COMPLETED",
+          "elapsed_seconds": 3670,
+          "start": "2026-10-31T19:36:49",
+          "end": "2026-10-31T20:37:59",
+          "node": "gr103",
+          "alloc_tres": "billing=943,cpu=17,energy=1356119,gres/gpu:rtx_pro_6000=1,gres/gpu=1,mem=128G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+          "gpu_hours": 1.0194444444444444,
+          "role": "Decode-and-clear controls, all S1 on GPU 0 then Parakeet after S1 shutdown"
+        },
+        {
+          "job": "1401175",
+          "state": "COMPLETED",
+          "elapsed_seconds": 3803,
+          "start": "2026-10-31T19:41:32",
+          "end": "2026-10-31T20:44:55",
+          "node": "gr103",
+          "alloc_tres": "billing=943,cpu=17,energy=1390641,gres/gpu:rtx_pro_6000=1,gres/gpu=1,mem=128G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "RTX PRO 6000 Blackwell 96 GB",
+          "gpu_hours": 1.0563888888888888,
+          "role": "Constrained controls, all S1 on GPU 0 then Parakeet after S1 shutdown"
+        },
+        {
+          "job": "1402657",
+          "state": "COMPLETED",
+          "elapsed_seconds": 27,
+          "start": "2026-10-31T20:53:37",
+          "end": "2026-10-31T20:54:04",
+          "node": "gl105",
+          "alloc_tres": "billing=291,cpu=6,gres/gpu:l40s=1,gres/gpu=1,mem=32G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "L40S 48 GB",
+          "gpu_hours": 0.0075,
+          "role": "Parakeet on GPU 0 after timed-out S1 allocation ends; recovered completed response WAVs only"
+        },
+        {
+          "job": "1402658",
+          "state": "COMPLETED",
+          "elapsed_seconds": 1001,
+          "start": "2026-10-31T20:54:07",
+          "end": "2026-10-31T21:10:48",
+          "node": "gh102",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 0.27805555555555556,
+          "role": "All S1 components GPU 0; then Parakeet after S1 shutdown; same frozen input/model parameters"
+        },
+        {
+          "job": "1402659",
+          "state": "COMPLETED",
+          "elapsed_seconds": 937,
+          "start": "2026-10-31T20:54:07",
+          "end": "2026-10-31T21:09:44",
+          "node": "gh106",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 0.2602777777777778,
+          "role": "All S1 components GPU 0; then Parakeet after S1 shutdown; same frozen input/model parameters"
+        },
+        {
+          "job": "1402660",
+          "state": "COMPLETED",
+          "elapsed_seconds": 144,
+          "start": "2026-10-31T21:10:53",
+          "end": "2026-10-31T21:13:17",
+          "node": "gh102",
+          "alloc_tres": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+          "requested_gpu_count": 1,
+          "allocated_gpu_count": 1,
+          "gpu_type_vram": "H100 SXM 80 GB",
+          "gpu_hours": 0.04,
+          "role": "Qwen3-30B-A3B-Instruct-2507 judge weights/KV GPU 0; same authored qualification before actual response scoring"
+        }
+      ],
+      "extension_gpu_hours": 9.094444444444445,
+      "measured_maximum_active_gpus": 4,
+      "requested_maximum_active_gpus": 4,
+      "active_gpu_jobs": [],
+      "pending_gpu_jobs": [],
+      "scope": "ElapsedRaw parent allocations, one GPU per allocated job. Includes both bank checks, six final acoustic candidates, native sweeps, eligible earlier controls, qualified judge and the unallocated canceled control. The accepted P01 preview qualification predates this task and remains separately accounted."
+    },
+    "resource_note": "Revised-study allocation cost, including bank ASR and all attempted runs: 9.094444 GPU hours. Measured maximum 4 GPUs active (requested limit four); currently zero. The later judge runs after all sweep workers exit. All 123 plotted positions are newly replayed; original inference remains in its preserved report. The last original worker reached its scheduler time limit. Completed responses were retained and transcribed on a separate one-L40S allocation; only unfinished positions were replayed on independent one-H100 continuation workers. Allocation cost includes the timed-out and continuation jobs; the callback/case-wall rate below covers only the final selected attempts, excluding abandoned partial attempts. 1 abandoned partial case attempt is recorded separately; 124 case attempts were started in total for the 123 final positions."
+  },
+  "current_active_experiment_GPUs": 0
+}

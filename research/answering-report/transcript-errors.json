@@ -1,0 +1,122 @@
+[
+  {
+    "method": "parakeet",
+    "question_id": "pilot:P-EN-notes",
+    "reference_words": 775,
+    "hypothesis_words": 534,
+    "edits": 332,
+    "wer": 0.42838709677419357,
+    "cp_edits": 351,
+    "cpwer": 0.4529032258064516
+  },
+  {
+    "method": "parakeet",
+    "question_id": "pilot:P-EN-audio",
+    "reference_words": 1394,
+    "hypothesis_words": 983,
+    "edits": 604,
+    "wer": 0.4332855093256815,
+    "cp_edits": 642,
+    "cpwer": 0.460545193687231
+  },
+  {
+    "method": "parakeet",
+    "question_id": "pilot:P-ES-slogan",
+    "reference_words": 633,
+    "hypothesis_words": 591,
+    "edits": 143,
+    "wer": 0.2259083728278041,
+    "cp_edits": 134,
+    "cpwer": 0.21169036334913113
+  },
+  {
+    "method": "parakeet",
+    "question_id": "pilot:P-TS-time",
+    "reference_words": 527,
+    "hypothesis_words": 531,
+    "edits": 95,
+    "wer": 0.18026565464895636,
+    "cp_edits": 213,
+    "cpwer": 0.40417457305502846
+  },
+  {
+    "method": "parakeet",
+    "question_id": "first:authored-W1-2",
+    "reference_words": 900,
+    "hypothesis_words": 840,
+    "edits": 256,
+    "wer": 0.28444444444444444,
+    "cp_edits": 310,
+    "cpwer": 0.34444444444444444
+  },
+  {
+    "method": "parakeet",
+    "question_id": "scale:TS3006c-S05-Q3",
+    "reference_words": 536,
+    "hypothesis_words": 421,
+    "edits": 140,
+    "wer": 0.26119402985074625,
+    "cp_edits": 150,
+    "cpwer": 0.2798507462686567
+  },
+  {
+    "method": "whisper",
+    "question_id": "pilot:P-EN-notes",
+    "reference_words": 775,
+    "hypothesis_words": 606,
+    "edits": 284,
+    "wer": 0.3664516129032258,
+    "cp_edits": 334,
+    "cpwer": 0.4309677419354839
+  },
+  {
+    "method": "whisper",
+    "question_id": "pilot:P-EN-audio",
+    "reference_words": 1394,
+    "hypothesis_words": 1046,
+    "edits": 582,
+    "wer": 0.41750358680057387,
+    "cp_edits": 648,
+    "cpwer": 0.4648493543758967
+  },
+  {
+    "method": "whisper",
+    "question_id": "pilot:P-ES-slogan",
+    "reference_words": 633,
+    "hypothesis_words": 590,
+    "edits": 160,
+    "wer": 0.2527646129541864,
+    "cp_edits": 150,
+    "cpwer": 0.23696682464454977
+  },
+  {
+    "method": "whisper",
+    "question_id": "pilot:P-TS-time",
+    "reference_words": 527,
+    "hypothesis_words": 492,
+    "edits": 152,
+    "wer": 0.2884250474383302,
+    "cp_edits": 232,
+    "cpwer": 0.44022770398481975
+  },
+  {
+    "method": "whisper",
+    "question_id": "first:authored-W1-2",
+    "reference_words": 900,
+    "hypothesis_words": 776,
+    "edits": 214,
+    "wer": 0.23777777777777778,
+    "cp_edits": 243,
+    "cpwer": 0.27
+  },
+  {
+    "method": "whisper",
+    "question_id": "scale:TS3006c-S05-Q3",
+    "reference_words": 536,
+    "hypothesis_words": 462,
+    "edits": 156,
+    "wer": 0.291044776119403,
+    "cp_edits": 177,
+    "cpwer": 0.3302238805970149
+  }
+]
