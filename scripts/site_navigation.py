@@ -70,6 +70,7 @@ def experiment_subtabs(current):
     parent = 'ami-library' if current in {'ami-library','ami-audio'} else ('ami' if ami else current)
     result = tabs([
         ('overview', 'All experiments', 'index.html'),
+        ('answering', 'S1 and S2 results', 'answering-results.html'),
         ('duplex', 'DuplexOmni', 'duplexomni.html'),
         ('prethinking', 'Amortized thinking pilot', 'prethinking-pilot.html'),
         ('ami', 'AMI questions', 'question-overview.html'),

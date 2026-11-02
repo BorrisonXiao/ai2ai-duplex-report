@@ -23,7 +23,7 @@ REVIEW_KEYS = {
 }
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
-    'answering-results.html': 'overview',
+    'answering-results.html': 'answering',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
