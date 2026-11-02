@@ -84,7 +84,8 @@
       "gate": "Before reader launch, no eight-word sequence may occur four or more times inside one recognized chunk; source-free gross-repetition check, not semantic validation.",
       "speech_region_frontend": "Within each unchanged causal chunk, union Sortformer-predicted speech intervals with 0.3-second margins, clip at observed start/end, and decode those regions; no reference transcript is used. This is an ASR-pipeline comparison, not an isolated decoder-architecture ablation."
     },
-    "request_text_mode": "Ground-truth written user question fixed across GT/generated-history conditions; ASR of the request is outside this controlled history comparison."
+    "request_text_mode": "Ground-truth written user question fixed across GT/generated-history conditions; ASR of the request is outside this controlled history comparison.",
+    "shared_schedule_note": "All transcript conditions use the fixed boundary times from the original GT pilot, not a newly estimated online ASR schedule; automatic refers to speaker/requester identities, not to every timing input."
   },
   "resources": {
     "maximum_active_GPUs": 4,
@@ -92,10 +93,10 @@
     "ASR_job": "One H100 SXM 80 GB; diarization, each ASR and voice matching run sequentially on GPU 0, no live S1/S2 sharing.",
     "reader_jobs": "Four one-H100-80-GB jobs, each runs Instruct then Thinking in separate vLLM processes on GPU 0, 8 GiB KV, BF16 graphs/prefix cache.",
     "dependency_lanes": [
-      "Native Moshi then Whisper/automatic S2 pair",
-      "Native MiniCPM then Whisper repair then Whisper/oracle-identity S2 pair",
-      "ASR pipeline then Parakeet/automatic S2 pair",
-      "Parakeet/oracle-identity S2 pair starts only after ASR finishes"
+      "Native Moshi independent lane",
+      "Native MiniCPM then Whisper repairs then Whisper/oracle-identity reader pair",
+      "History construction then Parakeet/automatic then Whisper/automatic reader pair",
+      "Parakeet/oracle-identity reader pair after history construction"
     ],
     "CPU": "Zero-GPU afterok follow-up freezes actual generated datasets and submits the four reader jobs."
   },

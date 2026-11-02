@@ -3,7 +3,7 @@
   "updated": "2026-11-02",
   "status": "implementation_underway",
   "snapshot_label": "Native time sweeps and generated-transcript comparisons",
-  "active_job": "1442737",
+  "active_job": "1445017",
   "planned_questions_per_condition": 105,
   "planned_cells": 33,
   "planned_final_answers": 3465,
@@ -156,23 +156,23 @@
     {
       "id": "s1-native-time-sweeps",
       "text": "Repeat all 123 revised time-and-microphone positions on Moshi and MiniCPM using native text.",
-      "status": "partial",
+      "status": "complete",
       "url": "study-progress.html#comparison-followup",
-      "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 96 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Completion is separate from answer accuracy."
+      "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 123 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Completion is separate from answer accuracy."
     },
     {
       "id": "s2-generated-inputs",
       "text": "Compare two ASR methods with automatic and annotation-mapped speaker identities.",
-      "status": "partial",
+      "status": "complete",
       "url": "study-progress.html#generated-transcript-pipeline",
-      "evidence": "Parakeet inputs ready; Whisper reader launch stopped by silence hallucinations; speech-region repair and repetition checks precede launch."
+      "evidence": "61 past-only prefixes per ASR; identity pairs preserve predicted words and times; same six questions, goals and reader settings as GT."
     },
     {
       "id": "s2-generated-readers",
       "text": "Run and inspect the generated-transcript counterparts of the ground-truth text pilot.",
       "status": "partial",
       "url": "study-progress.html#generated-transcript-outputs",
-      "evidence": "48/192 request outputs saved; 48 source reviews recorded; no full-bank claim."
+      "evidence": "144/192 request outputs saved; 144 source reviews recorded; no full-bank claim."
     },
     {
       "id": "scorer-disagreement-examples",
@@ -208,7 +208,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-02T20:21:52.463007+00:00",
+  "updated_at": "2026-11-02T20:45:38.158749+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -246,9 +246,8 @@
     "active_gpus": 0
   },
   "active_jobs": [
-    "1442737",
-    "1443819",
-    "1443820"
+    "1445017",
+    "1445018"
   ],
   "context_pressure": {
     "state": "completed_source_reviewed",
@@ -305,9 +304,9 @@
     "maximum_active_GPUs_observed": 4
   },
   "comparison_followup": {
-    "active_GPUs": 3,
+    "active_GPUs": 2,
     "maximum_active_GPUs_observed": 4,
-    "request_outputs": 48,
-    "reviewed_outputs": 48
+    "request_outputs": 144,
+    "reviewed_outputs": 144
   }
 }

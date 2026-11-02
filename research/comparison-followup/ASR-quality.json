@@ -61,54 +61,54 @@
       "method": "whisper",
       "question_id": "pilot:P-EN-notes",
       "reference_words": 775,
-      "hypothesis_words": 559,
-      "word_edit_distance": 354,
-      "prefix_WER": 0.4567741935483871,
+      "hypothesis_words": 606,
+      "word_edit_distance": 284,
+      "prefix_WER": 0.3664516129032258,
       "requester": "Speaker2"
     },
     {
       "method": "whisper",
       "question_id": "pilot:P-EN-audio",
       "reference_words": 1394,
-      "hypothesis_words": 946,
-      "word_edit_distance": 678,
-      "prefix_WER": 0.48637015781922527,
+      "hypothesis_words": 1046,
+      "word_edit_distance": 582,
+      "prefix_WER": 0.41750358680057387,
       "requester": "Speaker1"
     },
     {
       "method": "whisper",
       "question_id": "pilot:P-ES-slogan",
       "reference_words": 633,
-      "hypothesis_words": 585,
-      "word_edit_distance": 189,
-      "prefix_WER": 0.2985781990521327,
+      "hypothesis_words": 590,
+      "word_edit_distance": 160,
+      "prefix_WER": 0.2527646129541864,
       "requester": "Speaker3"
     },
     {
       "method": "whisper",
       "question_id": "pilot:P-TS-time",
       "reference_words": 527,
-      "hypothesis_words": 479,
-      "word_edit_distance": 134,
-      "prefix_WER": 0.25426944971537,
+      "hypothesis_words": 492,
+      "word_edit_distance": 152,
+      "prefix_WER": 0.2884250474383302,
       "requester": "Speaker3"
     },
     {
       "method": "whisper",
       "question_id": "first:authored-W1-2",
       "reference_words": 900,
-      "hypothesis_words": 786,
-      "word_edit_distance": 236,
-      "prefix_WER": 0.26222222222222225,
+      "hypothesis_words": 776,
+      "word_edit_distance": 214,
+      "prefix_WER": 0.23777777777777778,
       "requester": "unknown"
     },
     {
       "method": "whisper",
       "question_id": "scale:TS3006c-S05-Q3",
       "reference_words": 536,
-      "hypothesis_words": 511,
-      "word_edit_distance": 174,
-      "prefix_WER": 0.3246268656716418,
+      "hypothesis_words": 462,
+      "word_edit_distance": 156,
+      "prefix_WER": 0.291044776119403,
       "requester": "Speaker0"
     }
   ]

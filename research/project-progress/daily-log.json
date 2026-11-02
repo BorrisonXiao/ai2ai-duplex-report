@@ -6,7 +6,7 @@
       "date": "2026-11-02",
       "items": [
         {
-          "text": "Launched matched Moshi and MiniCPM sweeps across 41 histories and three recording signals, using native response text.",
+          "text": "Completed 123 matched sweep positions plus one control for each of Moshi and MiniCPM, retaining their native response strings.",
           "url": "study-progress.html#comparison-followup",
           "label": "Saved native strings"
         },
@@ -26,7 +26,7 @@
           "label": "Actual answers and source evidence"
         },
         {
-          "text": "Whisper repetition checks stopped reader launch; the repair decodes predicted speech regions before the matched S2 tests.",
+          "text": "Fixed Whisper silence hallucinations with predicted speech regions and native decoding fallback; all 61 final chunks passed the gross-repetition check.",
           "url": "study-progress.html#generated-transcript-pipeline",
           "label": "Pipeline checks"
         }

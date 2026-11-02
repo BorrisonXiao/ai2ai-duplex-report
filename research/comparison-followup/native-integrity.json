@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "scope": "Matched native input and completion checks only; no answer-accuracy or audible-speech claim.",
+  "native": [
+    {
+      "model": "moshi",
+      "complete_inputs": 123,
+      "controls": 1,
+      "response_ASR": false
+    },
+    {
+      "model": "minicpm",
+      "complete_inputs": 123,
+      "controls": 1,
+      "response_ASR": false
+    }
+  ],
+  "GPUs": 0
+}
