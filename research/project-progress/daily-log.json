@@ -1,7 +1,37 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-02",
+      "items": [
+        {
+          "text": "Launched matched Moshi and MiniCPM sweeps across 41 histories and three recording signals, using native response text.",
+          "url": "study-progress.html#comparison-followup",
+          "label": "Saved native strings"
+        },
+        {
+          "text": "Built Parakeet and Whisper transcripts with a shared diarizer and both automatic and annotation-mapped speaker identities.",
+          "url": "study-progress.html#generated-transcript-pipeline",
+          "label": "Inputs and alignment checks"
+        },
+        {
+          "text": "Started the generated-transcript S2 comparisons with the same questions, goals and reader settings as the ground-truth pilot.",
+          "url": "study-progress.html#generated-transcript-outputs",
+          "label": "Completion and actual answers"
+        },
+        {
+          "text": "Inspected scorer disagreements, including accepted unsupported rules and inconsistent requirements for answer details.",
+          "url": "study-progress.html#scorer-examples",
+          "label": "Actual answers and source evidence"
+        },
+        {
+          "text": "Whisper repetition checks stopped reader launch; the repair decodes predicted speech regions before the matched S2 tests.",
+          "url": "study-progress.html#generated-transcript-pipeline",
+          "label": "Pipeline checks"
+        }
+      ]
+    },
     {
       "date": "2026-11-01",
       "items": [
@@ -75,7 +105,7 @@
           "url": "study-progress-original-acoustics.html#array-audio-demos"
         },
         {
-          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "text": "Clarified that Figures 1\u20133 measure question ASR, while Figure 4 evaluates the generated responses.",
           "url": "study-progress-original-acoustics.html#array-response-content"
         },
         {
@@ -218,7 +248,7 @@
           "url": "study-progress.html"
         },
         {
-          "text": "Changed the thinking-chunk range to 10–40 seconds, with a 25-second target.",
+          "text": "Changed the thinking-chunk range to 10\u201340 seconds, with a 25-second target.",
           "url": "what-to-think.html#chunking"
         },
         {

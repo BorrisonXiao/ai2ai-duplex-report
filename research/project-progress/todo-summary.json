@@ -1,30 +1,30 @@
 {
-  "updated": "2026-11-01",
+  "updated": "2026-11-02",
   "now": [
     {
       "status": "complete",
-      "text": "Freeze the 105-question audio bank and the six-question matched pilot inputs.",
-      "url": "study-progress.html#answering-inputs"
-    },
-    {
-      "status": "complete",
-      "text": "Source-check all 105 reference answers and bind them to the current spoken questions.",
+      "text": "Source-check all 105 reference answers and retain the completed ground-truth text pilot.",
       "url": "study-progress.html#answering-references"
     },
     {
-      "status": "complete",
-      "text": "Run paired supporting-audio and original-history questions through Moshi, MiniCPM and DuplexOmni.",
-      "url": "study-progress.html#answering-native"
-    },
-    {
-      "status": "complete",
-      "text": "Compare reactive reading, amortized summaries and structured notes with the two Qwen3-30B readers.",
-      "url": "study-progress.html#answering-text"
+      "status": "partial",
+      "text": "Repeat the 123-position time sweep on Moshi and MiniCPM using their native response strings.",
+      "url": "study-progress.html#comparison-followup"
     },
     {
       "status": "partial",
-      "text": "Qualify the scorer on held-out real answers before the full-bank comparison.",
-      "url": "study-progress.html#answering-judge"
+      "text": "Finish the generated-transcript inputs, including Whisper silence-hallucination checks.",
+      "url": "study-progress.html#generated-transcript-pipeline"
+    },
+    {
+      "status": "partial",
+      "text": "Finish the matched generated-transcript readers and inspect their actual answers.",
+      "url": "study-progress.html#generated-transcript-outputs"
+    },
+    {
+      "status": "partial",
+      "text": "Resolve scorer disagreements against source speech before the full-bank comparison.",
+      "url": "study-progress.html#scorer-examples"
     }
   ],
   "definition": {
@@ -221,6 +221,34 @@
           "status": "partial",
           "url": "study-progress.html#answering-judge",
           "evidence": "Judge status: qualification_failed; fixed criteria and earlier Codex labels, no independent human ratings."
+        },
+        {
+          "id": "s1-native-time-sweeps",
+          "text": "Repeat all 123 revised time-and-microphone positions on Moshi and MiniCPM using native text.",
+          "status": "partial",
+          "url": "study-progress.html#comparison-followup",
+          "evidence": "DuplexOmni: 120 completed, 3 failed of 123; Moshi: 96 completed, 0 failed of 123; MiniCPM: 123 completed, 0 failed of 123. Completion is separate from answer accuracy."
+        },
+        {
+          "id": "s2-generated-inputs",
+          "text": "Compare two ASR methods with automatic and annotation-mapped speaker identities.",
+          "status": "partial",
+          "url": "study-progress.html#generated-transcript-pipeline",
+          "evidence": "Parakeet inputs ready; Whisper reader launch stopped by silence hallucinations; speech-region repair and repetition checks precede launch."
+        },
+        {
+          "id": "s2-generated-readers",
+          "text": "Run and inspect the generated-transcript counterparts of the ground-truth text pilot.",
+          "status": "partial",
+          "url": "study-progress.html#generated-transcript-outputs",
+          "evidence": "48/192 request outputs saved; 48 source reviews recorded; no full-bank claim."
+        },
+        {
+          "id": "scorer-disagreement-examples",
+          "text": "Explain scoring disagreements with actual answers and source passages.",
+          "status": "complete",
+          "url": "study-progress.html#scorer-examples",
+          "evidence": "13 of 68 binary labels disagree; examples include an unsupported extra rule and an overly strict detail requirement."
         },
         {
           "id": "gate",

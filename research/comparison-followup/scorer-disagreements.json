@@ -1,0 +1,670 @@
+{
+  "definition": "The automatic judge and earlier Codex source review disagree on whether the same saved response is complete; partial, incorrect and unanswered responses all count as not complete.",
+  "cases": [
+    {
+      "id": "scale:EN2004a-S075-Q2|no_speakers",
+      "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+      "native_reader_answer": "When a sentence continues into the next segment, you do not capitalize the beginning of the next segment. This is only done when the sentence is clearly continuing from the previous one, and a hyphen may be used in such cases. Otherwise, capitalize as normal.",
+      "earlier_Codex_grade": "partial",
+      "earlier_reason": "Correct capitalization rule but adds a misleading suggestion to use a hyphen for continuation.",
+      "judge_grade": "complete",
+      "judge_reason": "The candidate answer correctly states that the next segment should not be capitalized when a sentence clearly continues from the previous one, which matches the required fact. It also accurately reflects the discussion about using a hyphen in such cases and the general rule of capitalizing otherwise, all supported by the transcript. No material unsupported claims are made.",
+      "explanation": "The answer gets capitalization right but adds a hyphen for continuation; the later source says a hyphen is used when the sentence is definitely not continuing. The judge overlooks this unsupported extra rule.",
+      "source_evidence": [
+        {
+          "speaker": "A",
+          "start": 496.46,
+          "end": 497.22,
+          "text": "Mm the hyph",
+          "boundary": "speaker_gap",
+          "id": "EN2004a-U00144",
+          "available": 497.72
+        },
+        {
+          "speaker": "D",
+          "start": 500.58,
+          "end": 500.88,
+          "text": "Right.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00145",
+          "available": 501.38
+        },
+        {
+          "speaker": "C",
+          "start": 495.05,
+          "end": 500.95,
+          "text": "I think that's actually the only case where you don't or where you're not supposed to capitalise, right?",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00146",
+          "available": 501.45
+        },
+        {
+          "speaker": "B",
+          "start": 501.08,
+          "end": 501.61,
+          "text": "Um",
+          "boundary": "speaker_gap",
+          "id": "EN2004a-U00147",
+          "available": 502.11
+        },
+        {
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00148",
+          "available": 510.71
+        },
+        {
+          "speaker": "D",
+          "start": 510.22,
+          "end": 510.71,
+          "text": "Okay.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00149",
+          "available": 511.21
+        },
+        {
+          "speaker": "C",
+          "start": 510.21,
+          "end": 510.92,
+          "text": "Otherwise you do.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00150",
+          "available": 511.42
+        },
+        {
+          "speaker": "A",
+          "start": 510.38,
+          "end": 514.87,
+          "text": "And you only use the hyphen I think when the sentence is definitely not continuing anywhere.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00152",
+          "available": 515.37
+        }
+      ]
+    },
+    {
+      "id": "scale:ES2006a-S075-Q3|recent60",
+      "question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
+      "native_reader_answer": "The meeting material does not specify when the detailed design phase begins relative to other phases. It only lists the detailed design phase as including product evaluation, following conceptual design and user requirements specification.",
+      "earlier_Codex_grade": "partial",
+      "earlier_reason": "Lists the phase order but also says the relative sequence is not given.",
+      "judge_grade": "complete",
+      "judge_reason": "The candidate correctly states that the meeting material does not specify a calendar start date for the detailed design phase, and accurately confirms that detailed design follows functional and conceptual design, as supported by the transcript where C says, 'And then the detailed design will come after that. We'll pull it all together.' This aligns with the required fact and the reference answer.",
+      "explanation": "The answer first says the relative timing is not specified, then says detailed design follows conceptual design and requirements. Codex flagged that contradiction; the judge credited the correct order without addressing the contradictory opening.",
+      "source_evidence": [
+        {
+          "speaker": "C",
+          "start": 167.58,
+          "end": 179.74,
+          "text": "Um similarly with the conceptual design, we'll start off by working individually with our own expertise on our own laptops and then we'll bring what we've done",
+          "boundary": "12s_cap",
+          "id": "ES2006a-U00031",
+          "available": 180.24
+        },
+        {
+          "speaker": "C",
+          "start": 181.63,
+          "end": 186.88,
+          "text": "Um and then the detailed design will come after that.",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00033",
+          "available": 187.38
+        },
+        {
+          "speaker": "A",
+          "start": 188.69,
+          "end": 194.05,
+          "text": "I'm a bit confused about uh what's the difference between the functional design and conceptual design?",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00035",
+          "available": 194.55
+        },
+        {
+          "speaker": "C",
+          "start": 205.82,
+          "end": 218.08,
+          "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is",
+          "boundary": "12s_cap",
+          "id": "ES2006a-U00039",
+          "available": 218.58
+        },
+        {
+          "speaker": "A",
+          "start": 233.14,
+          "end": 243.33,
+          "text": "Uh I think it's it's in the conceptual design phase that we identify the it's in the conceptual design phase that we identify the components of our product?",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00043",
+          "available": 243.83
+        },
+        {
+          "speaker": "B",
+          "start": 428.14,
+          "end": 440.3,
+          "text": "the user g requirements specification of the functional design, um trend watching in the conceptual design and product evad-valuation in the detailed design",
+          "boundary": "12s_cap",
+          "id": "ES2006a-U00091",
+          "available": 440.8
+        }
+      ]
+    },
+    {
+      "id": "scale:TS3004d-Slater-Q1|no_speakers",
+      "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+      "native_reader_answer": "The final decision was to include a backlight for the slide panel to light it up when opened, as it was considered fancy and usable. This was agreed upon despite initial uncertainty about reachability.",
+      "earlier_Codex_grade": "complete",
+      "earlier_reason": "Correct interior-lighting decision.",
+      "judge_grade": "partial",
+      "judge_reason": "The candidate correctly states that backlighting was decided for the slide panel when opened, which aligns with the required fact. However, it omits the key detail that the lighting illuminates the interior, not just individual buttons, as confirmed in the transcript (e.g., 'just a green light or some blue light. To light it all up'). The candidate also adds unsupported claims about 'fancy and usable' as reasons, which are not the basis of the decision in the transcript. While the core decision is correct, the omission of the critical detail about the lighting scope makes the answer incomplete.",
+      "explanation": "This is the opposite direction: Codex accepted opening-triggered slide-panel backlighting, while the judge demanded an explicit interior-versus-buttons distinction and rejected extra rationale. Some source labels and optional-detail rules need review too; disagreement alone does not establish which rater is correct.",
+      "source_evidence": [
+        {
+          "speaker": "A",
+          "start": 1081.79,
+          "end": 1082.19,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00499",
+          "available": 1082.69
+        },
+        {
+          "speaker": "D",
+          "start": 1082.77,
+          "end": 1083.14,
+          "text": "So",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00501",
+          "available": 1083.64
+        },
+        {
+          "speaker": "C",
+          "start": 1082.66,
+          "end": 1083.3,
+          "text": "One more thing.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00502",
+          "available": 1083.8
+        },
+        {
+          "speaker": "C",
+          "start": 1083.3,
+          "end": 1090.19,
+          "text": "Are w are we changing uh Or are they there uh backlights on the slide panel too?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00503",
+          "available": 1090.69
+        },
+        {
+          "speaker": "D",
+          "start": 1091.64,
+          "end": 1092.25,
+          "text": "Slide panel?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00504",
+          "available": 1092.75
+        },
+        {
+          "speaker": "C",
+          "start": 1090.19,
+          "end": 1092.58,
+          "text": "Or n no back light?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00505",
+          "available": 1093.08
+        },
+        {
+          "speaker": "C",
+          "start": 1092.58,
+          "end": 1092.84,
+          "text": "Yeah?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00506",
+          "available": 1093.34
+        },
+        {
+          "speaker": "B",
+          "start": 1092.71,
+          "end": 1094.08,
+          "text": "Mm.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00507",
+          "available": 1094.58
+        },
+        {
+          "speaker": "A",
+          "start": 1093.19,
+          "end": 1094.26,
+          "text": "No.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00508",
+          "available": 1094.76
+        },
+        {
+          "speaker": "B",
+          "start": 1094.08,
+          "end": 1094.75,
+          "text": "Not needed.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00509",
+          "available": 1095.25
+        },
+        {
+          "speaker": "A",
+          "start": 1094.26,
+          "end": 1096.87,
+          "text": "No, it's only on the number, behind the numbers and uh",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00510",
+          "available": 1097.37
+        },
+        {
+          "speaker": "B",
+          "start": 1096.25,
+          "end": 1097.47,
+          "text": "Yeah, not needed I think.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00511",
+          "available": 1097.97
+        },
+        {
+          "speaker": "C",
+          "start": 1097.08,
+          "end": 1099.8,
+          "text": "And and the switch channel is uh There is a back light too?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00512",
+          "available": 1100.3
+        },
+        {
+          "speaker": "A",
+          "start": 1099.12,
+          "end": 1100.18,
+          "text": "That as well, yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00513",
+          "available": 1100.68
+        },
+        {
+          "speaker": "B",
+          "start": 1100.05,
+          "end": 1100.38,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00514",
+          "available": 1100.88
+        },
+        {
+          "speaker": "D",
+          "start": 1098.86,
+          "end": 1100.83,
+          "text": "Oh, you mean th this here?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00515",
+          "available": 1101.33
+        },
+        {
+          "speaker": "C",
+          "start": 1101.02,
+          "end": 1101.27,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00516",
+          "available": 1101.77
+        },
+        {
+          "speaker": "A",
+          "start": 1101.05,
+          "end": 1102.29,
+          "text": "Yeah, but that's unnecessary.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00517",
+          "available": 1102.79
+        },
+        {
+          "speaker": "B",
+          "start": 1102.6,
+          "end": 1104.56,
+          "text": "What do I think is necessary necessary item?",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00518",
+          "available": 1105.06
+        },
+        {
+          "speaker": "D",
+          "start": 1104.29,
+          "end": 1104.96,
+          "text": "It's pretty cool.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00519",
+          "available": 1105.46
+        },
+        {
+          "speaker": "D",
+          "start": 1104.96,
+          "end": 1108.76,
+          "text": "If you slide it open, it lights up.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00520",
+          "available": 1109.26
+        },
+        {
+          "speaker": "A",
+          "start": 1110.08,
+          "end": 1110.36,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00521",
+          "available": 1110.86
+        },
+        {
+          "speaker": "D",
+          "start": 1108.76,
+          "end": 1113.08,
+          "text": "That's that's really fancy, but I don't know if it's reachable.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00522",
+          "available": 1113.58
+        },
+        {
+          "speaker": "B",
+          "start": 1113.47,
+          "end": 1114.45,
+          "text": "Of course it's reachable.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00523",
+          "available": 1114.95
+        },
+        {
+          "speaker": "A",
+          "start": 1115.89,
+          "end": 1116.42,
+          "text": "It doesn't make",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00524",
+          "available": 1116.92
+        },
+        {
+          "speaker": "C",
+          "start": 1117.13,
+          "end": 1118.05,
+          "text": "Hmm.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00525",
+          "available": 1118.55
+        },
+        {
+          "speaker": "D",
+          "start": 1116.05,
+          "end": 1118.86,
+          "text": "Then we do it.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00526",
+          "available": 1119.36
+        },
+        {
+          "speaker": "B",
+          "start": 1117.68,
+          "end": 1121.28,
+          "text": "Okay, maybe just some light uh to to light it all up.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00527",
+          "available": 1121.78
+        },
+        {
+          "speaker": "B",
+          "start": 1121.28,
+          "end": 1123.4,
+          "text": "So you can see what's really there.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00528",
+          "available": 1123.9
+        },
+        {
+          "speaker": "A",
+          "start": 1125.22,
+          "end": 1125.75,
+          "text": "No.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00529",
+          "available": 1126.25
+        },
+        {
+          "speaker": "B",
+          "start": 1123.4,
+          "end": 1125.94,
+          "text": "Not just not re on the buttons or something.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00530",
+          "available": 1126.44
+        },
+        {
+          "speaker": "A",
+          "start": 1125.75,
+          "end": 1126.13,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00531",
+          "available": 1126.63
+        },
+        {
+          "speaker": "B",
+          "start": 1125.94,
+          "end": 1128.38,
+          "text": "Just a green light or some blue light.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00532",
+          "available": 1128.88
+        },
+        {
+          "speaker": "B",
+          "start": 1129.64,
+          "end": 1130.34,
+          "text": "To light it all up.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00533",
+          "available": 1130.84
+        },
+        {
+          "speaker": "D",
+          "start": 1129.65,
+          "end": 1130.93,
+          "text": "Yeah, but",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00534",
+          "available": 1131.43
+        },
+        {
+          "speaker": "A",
+          "start": 1130.54,
+          "end": 1131.39,
+          "text": "But Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00535",
+          "available": 1131.89
+        },
+        {
+          "speaker": "A",
+          "start": 1131.39,
+          "end": 1132.07,
+          "text": "Mayb Okay.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00536",
+          "available": 1132.57
+        },
+        {
+          "speaker": "C",
+          "start": 1131.62,
+          "end": 1133.29,
+          "text": "Yeah, just backlight.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00537",
+          "available": 1133.79
+        },
+        {
+          "speaker": "C",
+          "start": 1133.29,
+          "end": 1134.55,
+          "text": "Not not the buttons.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00538",
+          "available": 1135.05
+        },
+        {
+          "speaker": "B",
+          "start": 1134.71,
+          "end": 1134.92,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00539",
+          "available": 1135.42
+        },
+        {
+          "speaker": "C",
+          "start": 1134.55,
+          "end": 1139.79,
+          "text": "And th and the the normal backlights also not the buttons, but behind the buttons.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00540",
+          "available": 1140.29
+        },
+        {
+          "speaker": "C",
+          "start": 1139.79,
+          "end": 1141.42,
+          "text": "So the buttons are just grey.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00541",
+          "available": 1141.92
+        },
+        {
+          "speaker": "D",
+          "start": 1141.91,
+          "end": 1142.52,
+          "text": "Okay.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00542",
+          "available": 1143.02
+        },
+        {
+          "speaker": "B",
+          "start": 1141.98,
+          "end": 1142.64,
+          "text": "Well yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00543",
+          "available": 1143.14
+        },
+        {
+          "speaker": "B",
+          "start": 1142.64,
+          "end": 1143.89,
+          "text": "Uh semi-transparent.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00544",
+          "available": 1144.39
+        },
+        {
+          "speaker": "C",
+          "start": 1144.45,
+          "end": 1144.88,
+          "text": "Okay.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00545",
+          "available": 1145.38
+        },
+        {
+          "speaker": "A",
+          "start": 1144.16,
+          "end": 1145.63,
+          "text": "Yeah, just only Yeah, that's right.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00546",
+          "available": 1146.13
+        },
+        {
+          "speaker": "D",
+          "start": 1146.74,
+          "end": 1148.15,
+          "text": "Okay, fine.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00547",
+          "available": 1148.65
+        },
+        {
+          "speaker": "A",
+          "start": 1148.14,
+          "end": 1148.72,
+          "text": "So",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00548",
+          "available": 1149.22
+        },
+        {
+          "speaker": "D",
+          "start": 1148.15,
+          "end": 1151.0,
+          "text": "So I I think it's very fancy.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00549",
+          "available": 1151.5
+        },
+        {
+          "speaker": "A",
+          "start": 1150.62,
+          "end": 1151.61,
+          "text": "Yeah, that's how I think.",
+          "boundary": "sentence_end",
+          "id": "TS3004d-U00550",
+          "available": 1152.11
+        },
+        {
+          "speaker": "D",
+          "start": 1151.0,
+          "end": 1152.0,
+          "text": "So I'll give it a",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00551",
+          "available": 1152.5
+        },
+        {
+          "speaker": "B",
+          "start": 1151.17,
+          "end": 1154.69,
+          "text": "Yeah, w we've done a a lot of detail in light, so",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00552",
+          "available": 1155.19
+        },
+        {
+          "speaker": "A",
+          "start": 1155.9,
+          "end": 1156.04,
+          "text": "Ye",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00553",
+          "available": 1156.54
+        },
+        {
+          "speaker": "D",
+          "start": 1155.48,
+          "end": 1157.63,
+          "text": "Yeah, and you can uh also choose your light, so",
+          "boundary": "speaker_gap",
+          "id": "TS3004d-U00554",
+          "available": 1158.13
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "total": 68,
+    "agreements": 55,
+    "disagreements": 13,
+    "judge_complete_Codex_not_complete": 11,
+    "judge_not_complete_Codex_complete": 2
+  },
+  "limits": "Earlier Codex labels are not independent human gold; do not change labels simply to improve agreement. No new judge inference was run."
+}

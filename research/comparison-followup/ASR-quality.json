@@ -1,0 +1,115 @@
+{
+  "status": "offline_source_comparison_not_a_decoder_input",
+  "normalization": "Lowercase ASCII words/numbers and internal apostrophes; no reference-based repair, disfluency removal or number rewriting.",
+  "limits": "Prefix-level WER is diagnostic: overlapping speech is serialized by segment start time and manual transcripts retain disfluencies; speaker errors and downstream answer quality require separate review.",
+  "rows": [
+    {
+      "method": "parakeet",
+      "question_id": "pilot:P-EN-notes",
+      "reference_words": 775,
+      "hypothesis_words": 534,
+      "word_edit_distance": 332,
+      "prefix_WER": 0.42838709677419357,
+      "requester": "Speaker2"
+    },
+    {
+      "method": "parakeet",
+      "question_id": "pilot:P-EN-audio",
+      "reference_words": 1394,
+      "hypothesis_words": 983,
+      "word_edit_distance": 604,
+      "prefix_WER": 0.4332855093256815,
+      "requester": "Speaker1"
+    },
+    {
+      "method": "parakeet",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_words": 633,
+      "hypothesis_words": 591,
+      "word_edit_distance": 143,
+      "prefix_WER": 0.2259083728278041,
+      "requester": "Speaker3"
+    },
+    {
+      "method": "parakeet",
+      "question_id": "pilot:P-TS-time",
+      "reference_words": 527,
+      "hypothesis_words": 531,
+      "word_edit_distance": 95,
+      "prefix_WER": 0.18026565464895636,
+      "requester": "Speaker3"
+    },
+    {
+      "method": "parakeet",
+      "question_id": "first:authored-W1-2",
+      "reference_words": 900,
+      "hypothesis_words": 840,
+      "word_edit_distance": 256,
+      "prefix_WER": 0.28444444444444444,
+      "requester": "unknown"
+    },
+    {
+      "method": "parakeet",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_words": 536,
+      "hypothesis_words": 421,
+      "word_edit_distance": 140,
+      "prefix_WER": 0.26119402985074625,
+      "requester": "Speaker0"
+    },
+    {
+      "method": "whisper",
+      "question_id": "pilot:P-EN-notes",
+      "reference_words": 775,
+      "hypothesis_words": 559,
+      "word_edit_distance": 354,
+      "prefix_WER": 0.4567741935483871,
+      "requester": "Speaker2"
+    },
+    {
+      "method": "whisper",
+      "question_id": "pilot:P-EN-audio",
+      "reference_words": 1394,
+      "hypothesis_words": 946,
+      "word_edit_distance": 678,
+      "prefix_WER": 0.48637015781922527,
+      "requester": "Speaker1"
+    },
+    {
+      "method": "whisper",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_words": 633,
+      "hypothesis_words": 585,
+      "word_edit_distance": 189,
+      "prefix_WER": 0.2985781990521327,
+      "requester": "Speaker3"
+    },
+    {
+      "method": "whisper",
+      "question_id": "pilot:P-TS-time",
+      "reference_words": 527,
+      "hypothesis_words": 479,
+      "word_edit_distance": 134,
+      "prefix_WER": 0.25426944971537,
+      "requester": "Speaker3"
+    },
+    {
+      "method": "whisper",
+      "question_id": "first:authored-W1-2",
+      "reference_words": 900,
+      "hypothesis_words": 786,
+      "word_edit_distance": 236,
+      "prefix_WER": 0.26222222222222225,
+      "requester": "unknown"
+    },
+    {
+      "method": "whisper",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_words": 536,
+      "hypothesis_words": 511,
+      "word_edit_distance": 174,
+      "prefix_WER": 0.3246268656716418,
+      "requester": "Speaker0"
+    }
+  ]
+}

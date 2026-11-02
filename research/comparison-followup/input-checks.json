@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "datasets": [
+    {
+      "dataset": "parakeet-automatic",
+      "questions": 6,
+      "earlier_calls": 104,
+      "word_and_time_content_sha256": "1588c2c5a90e0bc977a61c805a62ebc0c5e3dbb6a2861b30fc74d2cd18515f7c"
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "questions": 6,
+      "earlier_calls": 104,
+      "word_and_time_content_sha256": "1588c2c5a90e0bc977a61c805a62ebc0c5e3dbb6a2861b30fc74d2cd18515f7c"
+    },
+    {
+      "dataset": "whisper-automatic",
+      "questions": 6,
+      "earlier_calls": 104,
+      "word_and_time_content_sha256": "9392cd7ebc589dc92d79c265622e3f6c5488f6b105ecf15f2404bd058f68422b"
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "questions": 6,
+      "earlier_calls": 104,
+      "word_and_time_content_sha256": "9392cd7ebc589dc92d79c265622e3f6c5488f6b105ecf15f2404bd058f68422b"
+    }
+  ],
+  "causal": true,
+  "shared_chunk_schedule": true,
+  "same_questions_and_decoding_as_GT": true,
+  "oracle_changes_only_speaker_names_and_requester_identity": true,
+  "GPUs": 0
+}

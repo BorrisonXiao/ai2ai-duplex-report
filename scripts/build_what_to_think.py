@@ -44,7 +44,11 @@ def build_progress(progress,p):
   from s1_context_judge_view import render as context_judge
   if (ROOT/'research/answering-study/progress.json').exists():
    from answering_study_view import render as answering_study
-   body=answering_study(t)
+   if (ROOT/'research/comparison-followup/progress.json').exists():
+    from comparison_followup_view import render as comparison_followup
+    body=comparison_followup(t)
+    body+='<details id="earlier-answering-pilot"><summary>Earlier six-question answering pilot and ground-truth text results</summary>'+answering_study(t).replace('<h1>Experiment progress</h1>','<h2>Earlier answering pilot</h2>',1).replace('id="summary"','id="earlier-answering-summary"',1)+'</details>'
+   else:body=answering_study(t)
    earlier=context_judge(t).replace('<h1>Experiment progress</h1>','<h2>Completed microphone and context study</h2>',1).replace('id="summary"','id="microphone-summary"',1)
    new_ids=set(re.findall(r'id="([^"]+)"',body))
    earlier=re.sub(r'<p id="(plan-table-\d+)"><a href="study-progress-original-acoustics.html#[^"]+">Earlier [^<]+</a></p>',lambda match:'' if match[1] in new_ids else match[0],earlier)

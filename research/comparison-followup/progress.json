@@ -1,0 +1,432 @@
+{
+  "updated_utc": "2026-11-02T20:21:52.463007+00:00",
+  "scope": "Requested missing comparisons; no full-105-question result.",
+  "native_models": [
+    {
+      "model": "DuplexOmni",
+      "attempted": 123,
+      "completed": 120,
+      "failed": 3,
+      "planned": 123
+    },
+    {
+      "model": "Moshi",
+      "attempted": 97,
+      "completed": 96,
+      "failed": 0,
+      "planned": 123
+    },
+    {
+      "model": "MiniCPM",
+      "attempted": 123,
+      "completed": 123,
+      "failed": 0,
+      "planned": 123
+    }
+  ],
+  "readers": [
+    {
+      "dataset": "parakeet-automatic",
+      "model": "instruct",
+      "job": "1443819",
+      "state": "RUNNING",
+      "status": "inference_complete_source_review_required",
+      "note_calls": 104,
+      "valid_note_formats_and_source_IDs": 104,
+      "amortized_generated_tokens": 48040,
+      "request_outputs": 24,
+      "parsed_outputs": 24,
+      "reviewed_outputs": 24
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "model": "thinking",
+      "job": "1443819",
+      "state": "RUNNING",
+      "status": "pending_or_running",
+      "note_calls": 84,
+      "valid_note_formats_and_source_IDs": 82,
+      "amortized_generated_tokens": 382680,
+      "request_outputs": 0,
+      "parsed_outputs": 0,
+      "reviewed_outputs": 0
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "instruct",
+      "job": "1443820",
+      "state": "RUNNING",
+      "status": "inference_complete_source_review_required",
+      "note_calls": 104,
+      "valid_note_formats_and_source_IDs": 103,
+      "amortized_generated_tokens": 48423,
+      "request_outputs": 24,
+      "parsed_outputs": 24,
+      "reviewed_outputs": 24
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "thinking",
+      "job": "1443820",
+      "state": "RUNNING",
+      "status": "pending_or_running",
+      "note_calls": 84,
+      "valid_note_formats_and_source_IDs": 79,
+      "amortized_generated_tokens": 373187,
+      "request_outputs": 0,
+      "parsed_outputs": 0,
+      "reviewed_outputs": 0
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "instruct",
+      "job": null,
+      "state": "INPUT_QUALITY_CHECK_PENDING",
+      "status": "not_launched",
+      "note_calls": 0,
+      "valid_note_formats_and_source_IDs": 0,
+      "amortized_generated_tokens": 0,
+      "request_outputs": 0,
+      "parsed_outputs": 0,
+      "reviewed_outputs": 0
+    },
+    {
+      "dataset": "whisper-automatic",
+      "model": "thinking",
+      "job": null,
+      "state": "INPUT_QUALITY_CHECK_PENDING",
+      "status": "not_launched",
+      "note_calls": 0,
+      "valid_note_formats_and_source_IDs": 0,
+      "amortized_generated_tokens": 0,
+      "request_outputs": 0,
+      "parsed_outputs": 0,
+      "reviewed_outputs": 0
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "instruct",
+      "job": null,
+      "state": "INPUT_QUALITY_CHECK_PENDING",
+      "status": "not_launched",
+      "note_calls": 0,
+      "valid_note_formats_and_source_IDs": 0,
+      "amortized_generated_tokens": 0,
+      "request_outputs": 0,
+      "parsed_outputs": 0,
+      "reviewed_outputs": 0
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "model": "thinking",
+      "job": null,
+      "state": "INPUT_QUALITY_CHECK_PENDING",
+      "status": "not_launched",
+      "note_calls": 0,
+      "valid_note_formats_and_source_IDs": 0,
+      "amortized_generated_tokens": 0,
+      "request_outputs": 0,
+      "parsed_outputs": 0,
+      "reviewed_outputs": 0
+    }
+  ],
+  "active_GPUs": 3,
+  "maximum_active_GPUs_observed": 4,
+  "maximum_active_GPUs_allowed": 4,
+  "allocated_GPU_hours": 2.82,
+  "jobs": [
+    {
+      "job": "1442696",
+      "stage": "time-moshi",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Native Moshi LM and Mimi, shared GPU 0; no S2 or response-ASR service"
+      },
+      "dependencies": "Frozen 123 matched PCM inputs plus one short native control; independent of MiniCPM.",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 0,
+      "start": "None",
+      "end": "2026-11-02T14:24:17",
+      "allocated_TRES": "",
+      "superseded": true
+    },
+    {
+      "job": "1442705",
+      "stage": "time-minicpm",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Native MiniCPM language/audio/TTS components, shared GPU 0; no response-ASR service"
+      },
+      "dependencies": "Frozen 123 matched PCM inputs plus one short native control; independent of Moshi.",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 0,
+      "start": "None",
+      "end": "2026-11-02T14:24:17",
+      "allocated_TRES": "",
+      "superseded": true
+    },
+    {
+      "job": "1442737",
+      "stage": "time-moshi",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Native Moshi LM and Mimi, shared GPU 0; no S2 or response-ASR service"
+      },
+      "dependencies": "Frozen 123 PCM inputs plus one native control; replaces cancelled pending 1442696; independent of MiniCPM.",
+      "state": "RUNNING",
+      "allocated_seconds": 3361,
+      "start": "2026-11-02T14:25:36",
+      "end": "Unknown",
+      "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1442748",
+      "stage": "time-minicpm",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Native MiniCPM language/audio/TTS components, shared GPU 0; no S2 or response-ASR service"
+      },
+      "dependencies": "Frozen 123 PCM inputs plus native control; replaces cancelled pending 1442705; independent of Moshi.",
+      "state": "COMPLETED",
+      "allocated_seconds": 2638,
+      "start": "2026-11-02T14:28:28",
+      "end": "2026-11-02T15:12:26",
+      "allocated_TRES": "billing=1876,cpu=12,gres/gpu:h100=1,gres/gpu=1,mem=96G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1443098",
+      "stage": "generated-history-asr",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Sortformer diarization, Parakeet/Whisper ASR, then ECAPA requester matching, sequential stages on GPU 0; no S1/S2 sharing"
+      },
+      "dependencies": "Five past-only source prefixes; generated word timestamps; request voice opened only after history generation; no GT text in ASR.",
+      "state": "FAILED",
+      "allocated_seconds": 792,
+      "start": "2026-11-02T14:35:21",
+      "end": "2026-11-02T14:48:33",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1443674",
+      "stage": "generated-history-completion",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "ECAPA requester voice matching, recognized-text CTC alignment, and CPU dataset construction run sequentially; no S1/S2 sharing"
+      },
+      "dependencies": "Reuses immutable completed diarization and both ASR outputs from 1443098; no repeated ASR",
+      "state": "COMPLETED",
+      "allocated_seconds": 34,
+      "start": "2026-11-02T14:52:09",
+      "end": "2026-11-02T14:52:43",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=32G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1443819",
+      "stage": "generated-text-parakeet-automatic",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+      },
+      "dependencies": "ASR/dataset construction completed before submission; uses one of two text lanes released by ASR completion",
+      "state": "RUNNING",
+      "allocated_seconds": 1568,
+      "start": "2026-11-02T14:55:29",
+      "end": "Unknown",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1443820",
+      "stage": "generated-text-parakeet-oracle_identity",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+      },
+      "dependencies": "ASR/dataset construction completed before submission; uses one of two text lanes released by ASR completion",
+      "state": "RUNNING",
+      "allocated_seconds": 1526,
+      "start": "2026-11-02T14:56:11",
+      "end": "Unknown",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=64G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1443821",
+      "stage": "generated-text-whisper-automatic",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+      },
+      "dependencies": "ASR/dataset construction completed before submission; inherits completed/native GPU lane 1442737",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 0,
+      "start": "None",
+      "end": "2026-11-02T15:04:10",
+      "allocated_TRES": "",
+      "superseded": true
+    },
+    {
+      "job": "1443822",
+      "stage": "generated-text-whisper-oracle_identity",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Qwen3-30B Instruct then Thinking, separate vLLM processes on GPU 0; 8 GiB KV each; no live ASR, S1 or speech sharing"
+      },
+      "dependencies": "ASR/dataset construction completed before submission; inherits completed/native GPU lane 1442748",
+      "state": "CANCELLED by 10053",
+      "allocated_seconds": 0,
+      "start": "None",
+      "end": "2026-11-02T15:04:10",
+      "allocated_TRES": "",
+      "superseded": true
+    },
+    {
+      "job": "1444161",
+      "stage": "generated-history-whisper-repair",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Whisper native decoding fallback, then recognized-text CTC alignment on GPU 0; separate stages, no S1/S2 sharing"
+      },
+      "dependencies": "afterany:1442748, inherits MiniCPM lane; reruns Whisper only with no GT words; Parakeet and diarization unchanged",
+      "state": "COMPLETED",
+      "allocated_seconds": 233,
+      "start": "2026-11-02T15:14:21",
+      "end": "2026-11-02T15:18:14",
+      "allocated_TRES": "billing=1876,cpu=8,gres/gpu:h100=1,gres/gpu=1,mem=32G,node=1",
+      "superseded": false
+    },
+    {
+      "job": "1444663",
+      "stage": "generated-history-whisper-speech-regions",
+      "gpu_count": 1,
+      "gpu_type_vram": "H100 SXM 80 GB",
+      "roles": {
+        "0": "Whisper with native fallback on predicted speech regions, then recognized-text CTC alignment, sequential on GPU 0; no S1/S2 sharing"
+      },
+      "dependencies": "Logical after completed 1444161; inherits the MiniCPM/Whisper repair lane; same predicted diarization, no GT words or boundaries",
+      "state": "PENDING",
+      "allocated_seconds": 0,
+      "start": "Unknown",
+      "end": "Unknown",
+      "allocated_TRES": "",
+      "superseded": false
+    }
+  ],
+  "generated_ASR_tasks_per_method": 61,
+  "generated_diarization_prefixes": 61,
+  "pipeline_quality": {
+    "whisper_native_fallback_complete": true,
+    "aligned_whisper_tasks": 61,
+    "unaligned_whisper_tasks": 0,
+    "automatic_requesters_matched": 5,
+    "automatic_requesters_unknown": 1,
+    "whisper_final_inputs_ready": false
+  },
+  "planned_request_outputs": 192,
+  "request_outputs": 48,
+  "reviewed_outputs": 48,
+  "summaries": [
+    {
+      "dataset": "parakeet-automatic",
+      "model": "instruct",
+      "condition": "reactive",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 127.83333333333333
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "model": "instruct",
+      "condition": "amortized_summary",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 137.16666666666666
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "model": "instruct",
+      "condition": "amortized_structured_notes",
+      "reviewed": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 107.83333333333333
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "model": "instruct",
+      "condition": "source_excerpt_diagnostic",
+      "reviewed": 6,
+      "complete": 6,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 107.33333333333333
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "instruct",
+      "condition": "reactive",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 114.5
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "instruct",
+      "condition": "amortized_summary",
+      "reviewed": 6,
+      "complete": 4,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 141.33333333333334
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "instruct",
+      "condition": "amortized_structured_notes",
+      "reviewed": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 100.0
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "model": "instruct",
+      "condition": "source_excerpt_diagnostic",
+      "reviewed": 6,
+      "complete": 5,
+      "mean_request_thinking_tokens": null,
+      "mean_ordinary_output_tokens": 99.5
+    }
+  ],
+  "next_steps": [
+    {
+      "action": "Finish both native time sweeps.",
+      "goal": "Compare the same 123 audio histories across all three S1 systems."
+    },
+    {
+      "action": "Complete and source-review all generated-transcript reader outputs.",
+      "goal": "Measure the cost of ASR, diarization and speaker-name matching with the ground-truth settings."
+    },
+    {
+      "action": "Resolve scorer disagreements before full-bank scoring.",
+      "goal": "Avoid treating generous or overly strict automatic judgments as reliable accuracy."
+    }
+  ]
+}
