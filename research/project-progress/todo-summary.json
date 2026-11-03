@@ -3,9 +3,9 @@
   "now": [
     {
       "status": "complete",
-      "text": "Review the S1 and text S2 results with audio examples, WER and complete token costs.",
-      "url": "experiments/answering-results.html",
-      "label": "Results report"
+      "text": "Review the S1/S2 comparison, its question-type patterns and the additional value of earlier thinking.",
+      "url": "experiments/answering-results.html#findings",
+      "label": "Main findings"
     },
     {
       "status": "complete",
@@ -264,6 +264,13 @@
           "status": "complete",
           "url": "experiments/answering-results.html#s1-s2-comparison",
           "evidence": "Aligned 18 full-history S1 cases and 12 reactive ground-truth S2 answers; kept one input failure separate and documented input and budget differences."
+        },
+        {
+          "id": "s1-s2-report-focus",
+          "text": "Organize the report around the same-question S1/S2 result and the additional value of earlier thinking.",
+          "status": "complete",
+          "url": "experiments/answering-results.html#findings",
+          "evidence": "The comparison is the first results section and Figure 1; the main discussion covers ASR robustness, question-type differences and earlier notes relative to reactive S2."
         },
         {
           "id": "gate",

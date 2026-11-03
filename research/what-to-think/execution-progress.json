@@ -196,6 +196,13 @@
       "evidence": "Aligned 18 full-history S1 cases and 12 reactive ground-truth S2 answers; kept one input failure separate and documented input and budget differences."
     },
     {
+      "id": "s1-s2-report-focus",
+      "text": "Organize the report around the same-question S1/S2 result and the additional value of earlier thinking.",
+      "status": "complete",
+      "url": "experiments/answering-results.html#findings",
+      "evidence": "The comparison is the first results section and Figure 1; the main discussion covers ASR robustness, question-type differences and earlier notes relative to reactive S2."
+    },
+    {
       "id": "gate",
       "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
       "status": "pending",
@@ -344,6 +351,8 @@
     },
     "scheduled_per_model": 6,
     "new_inference": false,
-    "active_GPUs": 0
+    "active_GPUs": 0,
+    "primary_section": true,
+    "figure": 1
   }
 }
