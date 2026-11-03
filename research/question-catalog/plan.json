@@ -287,7 +287,13 @@
           "text": "Draft the S1 and text S2 results with audio examples, transcript WER and thinking-token costs.",
           "status": "complete",
           "project_url": "experiments/answering-results.html",
-          "evidence": "Source-bound outputs, six figures, 99 listening files, all 240 S2 answers and real-response checks of quality ratings are included."
+          "evidence": "Source-bound outputs, seven figures, 99 listening files, all 240 S2 answers, a shared-six-question comparison and real-response checks of quality ratings are included."
+        },
+        {
+          "text": "Compare S1 and text S2 on the same six questions using saved source-reviewed outputs.",
+          "status": "complete",
+          "project_url": "experiments/answering-results.html#s1-s2-comparison",
+          "evidence": "Aligned 18 full-history S1 cases and 12 reactive ground-truth S2 answers; kept one input failure separate and documented input and budget differences."
         },
         {
           "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",

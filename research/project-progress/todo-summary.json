@@ -9,8 +9,8 @@
     },
     {
       "status": "complete",
-      "text": "Inspect the 13 inputs per S1 model and matched 123-position time ablations.",
-      "url": "experiments/answering-results.html#s1-results"
+      "text": "Compare S1 and text S2 on the same six questions with question-level answers and totals.",
+      "url": "experiments/answering-results.html#s1-s2-comparison"
     },
     {
       "status": "complete",
@@ -256,7 +256,14 @@
           "text": "Draft the S1 and text S2 results with audio examples, transcript WER and thinking-token costs.",
           "status": "complete",
           "url": "experiments/answering-results.html",
-          "evidence": "Source-bound outputs, six figures, 99 listening files, all 240 S2 answers and real-response checks of quality ratings are included."
+          "evidence": "Source-bound outputs, seven figures, 99 listening files, all 240 S2 answers, a shared-six-question comparison and real-response checks of quality ratings are included."
+        },
+        {
+          "id": "s1-s2-same-questions",
+          "text": "Compare S1 and text S2 on the same six questions using saved source-reviewed outputs.",
+          "status": "complete",
+          "url": "experiments/answering-results.html#s1-s2-comparison",
+          "evidence": "Aligned 18 full-history S1 cases and 12 reactive ground-truth S2 answers; kept one input failure separate and documented input and budget differences."
         },
         {
           "id": "gate",

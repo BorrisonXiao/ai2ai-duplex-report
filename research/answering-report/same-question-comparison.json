@@ -1,0 +1,490 @@
+{
+  "scope": "Six distinct questions at their original insertion times; one full-history S1 run per question and reactive ground-truth text S2 as the primary comparison.",
+  "columns": [
+    {
+      "key": "s1-duplex",
+      "label": "S1 · DuplexOmni",
+      "short": "DuplexOmni",
+      "family": "S1",
+      "model": "DuplexOmni"
+    },
+    {
+      "key": "s1-moshi",
+      "label": "S1 · Moshi",
+      "short": "Moshi",
+      "family": "S1",
+      "model": "Moshi"
+    },
+    {
+      "key": "s1-minicpm",
+      "label": "S1 · MiniCPM",
+      "short": "MiniCPM",
+      "family": "S1",
+      "model": "MiniCPM"
+    },
+    {
+      "key": "s2-instruct",
+      "label": "S2 · Instruct",
+      "short": "Instruct",
+      "family": "S2",
+      "model": "instruct"
+    },
+    {
+      "key": "s2-thinking",
+      "label": "S2 · Thinking",
+      "short": "Thinking",
+      "family": "S2",
+      "model": "thinking"
+    }
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "question_id": "pilot:P-EN-notes",
+      "label": "Notes volunteer",
+      "question": "Assistant, who said they'd take the notes today?",
+      "meeting": "EN2002b",
+      "request_time_seconds": 303.62,
+      "reference_answer": "D volunteered to take the notes.",
+      "S1_case_id": "M01-full",
+      "outcomes": [
+        {
+          "key": "s1-duplex",
+          "status": "incomplete",
+          "answer": "Let me check the meeting notes for the specific task details.",
+          "review": "The answer must identify the earlier volunteer; unsupported self-assignment does not recover that person.",
+          "source_url": "#pilot-M01-full"
+        },
+        {
+          "key": "s1-moshi",
+          "status": "incomplete",
+          "answer": "Oh, that's interesting. What did they say? So,",
+          "review": "The answer must identify the earlier volunteer; unsupported self-assignment does not recover that person.",
+          "source_url": "#pilot-M01-full"
+        },
+        {
+          "key": "s1-minicpm",
+          "status": "incomplete",
+          "answer": "I did. Yeah, I took notes. I just didn't put them in the document yet. But yeah, we can do that later. We'll get to it.",
+          "review": "The answer must identify the earlier volunteer; unsupported self-assignment does not recover that person.",
+          "source_url": "#pilot-M01-full"
+        },
+        {
+          "key": "s2-instruct",
+          "status": "complete",
+          "answer": "D said they would take the notes today.",
+          "review": "Identifies D, the earlier volunteer.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": null
+        },
+        {
+          "key": "s2-thinking",
+          "status": "complete",
+          "answer": "D",
+          "review": "Identifies D, the earlier volunteer; citation or quotation issues are checked separately.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": 5000
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "question_id": "pilot:P-EN-audio",
+      "label": "Audio work",
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "meeting": "EN2002b",
+      "request_time_seconds": 471.33,
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "S1_case_id": "M02-full",
+      "outcomes": [
+        {
+          "key": "s1-duplex",
+          "status": "incomplete",
+          "answer": "Let me check the meeting notes for that specific proposal. One moment, please.",
+          "review": "Any one recorded reason is sufficient: lack of time, uncertainty about the approach, or higher-priority work.",
+          "source_url": "#pilot-M02-full"
+        },
+        {
+          "key": "s1-moshi",
+          "status": "incomplete",
+          "answer": "I' not sure. I thought it was a priority. Yeah. I'm good with it. I'm good with it. Yeah.",
+          "review": "Any one recorded reason is sufficient: lack of time, uncertainty about the approach, or higher-priority work.",
+          "source_url": "#pilot-M02-full"
+        },
+        {
+          "key": "s1-minicpm",
+          "status": "complete",
+          "answer": "Because we don't have time. We can do it later, but not now.",
+          "review": "Any one recorded reason is sufficient: lack of time, uncertainty about the approach, or higher-priority work.",
+          "source_url": "#pilot-M02-full"
+        },
+        {
+          "key": "s2-instruct",
+          "status": "complete",
+          "answer": "We decided to drop the work on removing things from audio files because it was too big a task, we didn't know how to approach it, and we didn't have enough time. It was suggested to mention it only as a future work idea if we had more time.",
+          "review": "Gives at least one recorded reason for dropping the audio work.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": null
+        },
+        {
+          "key": "s2-thinking",
+          "status": "complete",
+          "answer": "We decided to drop the audio file removal work because it's too big and we don't know how to approach it, as stated by A and confirmed by C and D.",
+          "review": "Gives a recorded reason for dropping the work.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": 2262
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "question_id": "pilot:P-ES-slogan",
+      "label": "Slogan choice",
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "meeting": "ES2002b",
+      "request_time_seconds": 308.77,
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "S1_case_id": "M03-full",
+      "outcomes": [
+        {
+          "key": "s1-duplex",
+          "status": "input_failed",
+          "answer": "",
+          "review": "Input processing stopped at 177.12 s, before the inserted question at 308.77 s; no answer was generated.",
+          "source_url": "#pilot-M03-full"
+        },
+        {
+          "key": "s1-moshi",
+          "status": "incomplete",
+          "answer": "when you're trying to find a specific item in the store, but it can be really difficult to find.",
+          "review": "The choice between displaying the slogan and embodying its idea remained unresolved.",
+          "source_url": "#pilot-M03-full"
+        },
+        {
+          "key": "s1-minicpm",
+          "status": "incomplete",
+          "answer": "I think they want the actual slogan. They said bring fashion and electronics together, so I think that's what they want on there.",
+          "review": "The choice between displaying the slogan and embodying its idea remained unresolved.",
+          "source_url": "#pilot-M03-full"
+        },
+        {
+          "key": "s2-instruct",
+          "status": "complete",
+          "answer": "B is unsure whether the company wants the actual slogan written on the remote or just the idea embodied in the design.",
+          "review": "Preserves the unresolved distinction between literal slogan and design idea.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": null
+        },
+        {
+          "key": "s2-thinking",
+          "status": "complete",
+          "answer": "The company hasn't decided. B expressed uncertainty, saying they might only want the idea of the slogan, not the actual written slogan. D asked about this during the meeting.",
+          "review": "Recovers that the literal-slogan versus design-idea choice remained unresolved.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": 1369
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "question_id": "pilot:P-TS-time",
+      "label": "Presentation time",
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "meeting": "TS3003b",
+      "request_time_seconds": 302.37,
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "S1_case_id": "M04-full",
+      "outcomes": [
+        {
+          "key": "s1-duplex",
+          "status": "incomplete",
+          "answer": "Hello, I'm the meeting assistant. How can I help you?",
+          "review": "The source allows about seven minutes per presentation.",
+          "source_url": "#pilot-M04-full"
+        },
+        {
+          "key": "s1-moshi",
+          "status": "incomplete",
+          "answer": "Maybe we can make some improvements. I think we need to stick to a time limit. Otherwise, we'll be here for hours. Thank you. I appreciate your help. So, what's next? I",
+          "review": "The source allows about seven minutes per presentation.",
+          "source_url": "#pilot-M04-full"
+        },
+        {
+          "key": "s1-minicpm",
+          "status": "complete",
+          "answer": "Seven minutes.",
+          "review": "The source allows about seven minutes per presentation.",
+          "source_url": "#pilot-M04-full"
+        },
+        {
+          "key": "s2-instruct",
+          "status": "complete",
+          "answer": "We were allowing about seven minutes per presentation.",
+          "review": "Correct allowance of about seven minutes per presentation.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": null
+        },
+        {
+          "key": "s2-thinking",
+          "status": "complete",
+          "answer": "Seven minutes per presentation.",
+          "review": "Correct allowance of seven minutes per presentation.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": 627
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "question_id": "first:authored-W1-2",
+      "label": "Outreach call",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "meeting": "EN2003a",
+      "request_time_seconds": 351.0,
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "S1_case_id": "M05-full",
+      "outcomes": [
+        {
+          "key": "s1-duplex",
+          "status": "incomplete",
+          "answer": "Let me check the discussion notes for the specific guidelines on the note and okay process.",
+          "review": "The answer needs the main-message owner, the revised today-or-tomorrow timing, and a source-supported reason for Claire’s separate message.",
+          "source_url": "#pilot-M05-full"
+        },
+        {
+          "key": "s1-moshi",
+          "status": "incomplete",
+          "answer": "",
+          "review": "The answer needs the main-message owner, the revised today-or-tomorrow timing, and a source-supported reason for Claire’s separate message.",
+          "source_url": "#pilot-M05-full"
+        },
+        {
+          "key": "s1-minicpm",
+          "status": "incomplete",
+          "answer": "I think it's just to make sure that the psycholingu ists know that they're invited. And we don't want them to miss out because they might not see our main call, which is going to be sent by me. So I think it' s just a matter of making sure that they get an invitation as well.",
+          "review": "The answer needs the main-message owner, the revised today-or-tomorrow timing, and a source-supported reason for Claire’s separate message.",
+          "source_url": "#pilot-M05-full"
+        },
+        {
+          "key": "s2-instruct",
+          "status": "incomplete",
+          "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for psychology people because she knows the right email addresses and can make the message seem more relevant to them, increasing the chance they'll respond.",
+          "review": "Returns end of week instead of the main-call commitment of today/tomorrow.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": null
+        },
+        {
+          "key": "s2-thinking",
+          "status": "complete",
+          "answer": "A is sending the main call for linguists today or tomorrow. Claire is sending a separate Psychology call because she can tailor it to psychologists (avoiding linguists worrying about losing their place).",
+          "review": "Correct main-call timing and tailoring rationale; the attendance concern is also present in the surrounding discussion.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": 2141
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "question_id": "scale:TS3006c-S05-Q3",
+      "label": "Shared folder",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "meeting": "TS3006c",
+      "request_time_seconds": 309.03,
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "S1_case_id": "M06-full",
+      "outcomes": [
+        {
+          "key": "s1-duplex",
+          "status": "incomplete",
+          "answer": "Sure, I can help. What exactly do you need?",
+          "review": "The source reports that files were placed in the folder; current access remains unverified.",
+          "source_url": "#pilot-M06-full"
+        },
+        {
+          "key": "s1-moshi",
+          "status": "incomplete",
+          "answer": ". I think that's a good one. Yes. Well, the shared folder is still in the process of being developed. However, we are still working on it.",
+          "review": "The source reports that files were placed in the folder; current access remains unverified.",
+          "source_url": "#pilot-M06-full"
+        },
+        {
+          "key": "s1-minicpm",
+          "status": "incomplete",
+          "answer": "I have them. They're in the shared folder, but they are not named correctly. So if you want to look at them, you can look at the final report because I have to record everything. And then we'll decide on which ones we want to use. But there's three of them. There' s one that is a little bit more like a remote control, and then there's two others that are kind of like a phone or something else. So it's up to you guys to decide what you want to do with it.",
+          "review": "The source reports that files were placed in the folder; current access remains unverified.",
+          "source_url": "#pilot-M06-full"
+        },
+        {
+          "key": "s2-instruct",
+          "status": "incomplete",
+          "answer": "C confirmed that the conceptual design was uploaded to the shared folder, but D initially couldn't see it and had trouble accessing it. C later clarified that the file should be in the folder under the name 'PowerPoint pre components design'.",
+          "review": "Recovers placement and visibility but invents a literal file name from a disfluent PowerPoint description.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": null
+        },
+        {
+          "key": "s2-thinking",
+          "status": "complete",
+          "answer": "C stated the conceptual design was in the shared folder (TS3006c-U00021, TS3006c-U00022), but D couldn't find it (only saw their own presentation, TS3006c-U00026). D then said they would put it in the shared folder (TS3006c-U00029).",
+          "review": "Recovers the placement report, visibility problem and subsequent proposal without claiming a completed live check.",
+          "source_url": "#all-s2-answers",
+          "request_thinking_tokens": 2270
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "s1-duplex": {
+      "complete": 0,
+      "input_failed": 1,
+      "scheduled": 6
+    },
+    "s1-moshi": {
+      "complete": 0,
+      "input_failed": 0,
+      "scheduled": 6
+    },
+    "s1-minicpm": {
+      "complete": 2,
+      "input_failed": 0,
+      "scheduled": 6
+    },
+    "s2-instruct": {
+      "complete": 4,
+      "input_failed": 0,
+      "scheduled": 6
+    },
+    "s2-thinking": {
+      "complete": 6,
+      "input_failed": 0,
+      "scheduled": 6
+    }
+  },
+  "S2_extensions": [
+    {
+      "dataset": "ground-truth",
+      "transcript": "Ground truth",
+      "model": "instruct",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 5
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "ground-truth",
+      "transcript": "Ground truth",
+      "model": "thinking",
+      "correct": {
+        "reactive": 6,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 6
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "transcript": "Parakeet · automatic speakers",
+      "model": "instruct",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 5
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "parakeet-automatic",
+      "transcript": "Parakeet · automatic speakers",
+      "model": "thinking",
+      "correct": {
+        "reactive": 6,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 6
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "transcript": "Parakeet · annotation-mapped speakers",
+      "model": "instruct",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 5
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "parakeet-oracle_identity",
+      "transcript": "Parakeet · annotation-mapped speakers",
+      "model": "thinking",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 4
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "whisper-automatic",
+      "transcript": "Whisper · automatic speakers",
+      "model": "instruct",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 5,
+        "amortized_structured_notes": 5
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "whisper-automatic",
+      "transcript": "Whisper · automatic speakers",
+      "model": "thinking",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 5,
+        "amortized_structured_notes": 5
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "transcript": "Whisper · annotation-mapped speakers",
+      "model": "instruct",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 5,
+        "amortized_structured_notes": 4
+      },
+      "scheduled": 6
+    },
+    {
+      "dataset": "whisper-oracle_identity",
+      "transcript": "Whisper · annotation-mapped speakers",
+      "model": "thinking",
+      "correct": {
+        "reactive": 4,
+        "amortized_summary": 4,
+        "amortized_structured_notes": 5
+      },
+      "scheduled": 6
+    }
+  ],
+  "supporting_audio_diagnostic_correct": {
+    "DuplexOmni": 1,
+    "Moshi": 1,
+    "MiniCPM": 1
+  },
+  "excluded_from_primary": [
+    "Short retail control",
+    "Repeated time-and-microphone ablation positions",
+    "Supporting-audio edits",
+    "Selected-source S2 controls"
+  ],
+  "score": "Source-based Codex completeness review of native S1 text or final S2 answer text; input failures are reported separately within six scheduled cases.",
+  "new_inference": false,
+  "GPU_count": 0,
+  "maximum_active_GPUs": 0
+}

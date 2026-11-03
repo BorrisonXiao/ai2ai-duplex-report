@@ -6,6 +6,11 @@
       "date": "2026-11-02",
       "items": [
         {
+          "text": "Compared S1 and text S2 on the same six questions, with aligned outcomes, response examples and explicit input and budget differences.",
+          "url": "experiments/answering-results.html#s1-s2-comparison",
+          "label": "Same-question comparison"
+        },
+        {
           "text": "Documented transcript construction, speaker labeling and reference identity matching, with saved-note repetition and speaker consistency audits.",
           "url": "experiments/answering-results.html#implementation-details",
           "label": "Implementation appendix"
