@@ -1,0 +1,158 @@
+{
+  "status": "read_only_audits_complete",
+  "note_repetition": [
+    {
+      "model": "Instruct",
+      "valid_note_entries": 501,
+      "entries_repeated_from_an_earlier_snapshot": 438,
+      "example_snapshots": 10,
+      "example_entries": 99,
+      "example_distinct_normalized_facts": 12,
+      "reactive_input_tokens": 5445,
+      "structured_input_tokens": 11336,
+      "omitted_notes_calls": 0
+    },
+    {
+      "model": "Thinking",
+      "valid_note_entries": 342,
+      "entries_repeated_from_an_earlier_snapshot": 269,
+      "example_snapshots": 7,
+      "example_entries": 70,
+      "example_distinct_normalized_facts": 14,
+      "reactive_input_tokens": 5447,
+      "structured_input_tokens": 8797,
+      "omitted_notes_calls": 0
+    }
+  ],
+  "note_normalization": "Lowercase; replace each run of non-ASCII-alphanumeric characters with a space; trim outer spaces. Match fact text only, within each meeting, against earlier valid structured-note snapshots.",
+  "note_repetition_limits": "Counts repeated text, including repeated entries with distinct status or evidence; does not measure semantic repetition or correctness.",
+  "ground_truth_thinking_budget": {
+    "questions": 6,
+    "questions_using_fewer_request_thinking_tokens": 2,
+    "questions_using_more_request_thinking_tokens": 4,
+    "excluding_note_taking_reactive_total": 8669,
+    "excluding_note_taking_structured_total": 8736
+  },
+  "speaker_consistency": {
+    "status": "read_only_audit_complete",
+    "diarization_prefixes": 61,
+    "meetings": 5,
+    "same_diarization_for_both_recognizers": true,
+    "comparisons_per_tail_exclusion": 56,
+    "permutation_results": [
+      {
+        "excluded_tail_seconds": 0.0,
+        "comparisons": 56,
+        "permutation_gain_above_50ms": 0,
+        "worst_identity_agreement": 1.0
+      },
+      {
+        "excluded_tail_seconds": 1.04,
+        "comparisons": 56,
+        "permutation_gain_above_50ms": 0,
+        "worst_identity_agreement": 1.0
+      }
+    ],
+    "alias_changes": {
+      "parakeet": {
+        "identity_reassigned": 21,
+        "name_removed": 4,
+        "first_name_assignment": 17
+      },
+      "whisper": {
+        "identity_reassigned": 19,
+        "name_removed": 7,
+        "first_name_assignment": 23
+      }
+    },
+    "alias_change_count_unit": "Segment-label change events across consecutive note-prefix inputs; a segment can be counted more than once. Initial name assignments are distinct from A-D identity reassignments.",
+    "request_time_alias_changes": 0,
+    "synthetic_detector_checks": 3,
+    "limits": [
+      "Matching consistency is not ground-truth speaker accuracy.",
+      "A fixed channel can still mix multiple people or split a person.",
+      "Existing notes were not rewritten or rerun; downstream answer impact remains unmeasured."
+    ],
+    "GPU_count": 0,
+    "GPU_roles": {},
+    "GPU_dependencies": [],
+    "maximum_active_GPUs": 0,
+    "input_sha256": "bf30e3d59428b54a3c9140b0f39e78847b5b29287cd6d539d8a95fde59903211"
+  },
+  "note_question_example": {
+    "question_id": "pilot:P-EN-notes",
+    "meeting": "EN2002b",
+    "request_time_seconds": 303.62,
+    "reference_answer": "D volunteered to take the notes.",
+    "predicted_to_AMI": {
+      "Speaker0": "A",
+      "Speaker1": "D",
+      "Speaker2": "B",
+      "Speaker3": "C"
+    },
+    "automatic_answer_example": "Speaker1 volunteered to take the notes.",
+    "scoring_method": "Source-based Codex review uses the saved request-time correspondence; references remain in AMI labels. No automatic rewriting of all reference answers was implemented."
+  },
+  "source_excerpts": [
+    {
+      "file": "scripts/run_answering_text_pilot.py",
+      "line_start": 43,
+      "line_end": 50,
+      "label": "Context-fit policy",
+      "code": " def fit(system,data,reserve):\n  data=dict(data);notes=list(data.get('previous_results',data.get('saved_results',[])));field='previous_results' if 'previous_results' in data else 'saved_results';removed=[]\n  while True:\n   if field in data:data[field]=notes\n   ms=[dict(role='system',content=system),dict(role='user',content=json.dumps(data,ensure_ascii=False))];n=len(tok.encode(template(ms),add_special_tokens=False))\n   if n+reserve<=context:return ms,removed\n   if not notes:raise OverflowError('Full pilot history exceeds context; do not silently trim it')\n   removed.append(notes.pop(0)['id'])"
+    },
+    {
+      "file": "scripts/run_answering_text_pilot.py",
+      "line_start": 71,
+      "line_end": 85,
+      "label": "Earlier-call input and snapshot accumulation",
+      "code": "     for m in group:\n      chunk=m['chunks'][index];prefix=[s for s in m['segments'] if s['available']<=chunk['end']];ms,omitted=fit(NOTE_SYSTEM+GOALS[goal]+' Return JSON: '+json.dumps(schema),dict(source_cutoff_seconds=chunk['end'],past_transcript=render(prefix),previous_results=states[m['meeting']]),8192 if thinking else 2048);tasks.append(dict(id=goal+'|'+chunk['id'],messages=ms,omitted=omitted))\n     for m,row in zip(group,generate(tasks,schema,'amortized',8192 if thinking else 2048)):\n      chunk=m['chunks'][index];valid_ids={s['id'] for s in m['segments'] if s['available']<=chunk['end']};p=row['parsed'];errors=[]\n      if p is None:errors.append('no_complete_final_JSON')\n      elif goal=='amortized_summary':\n       if not isinstance(p.get('summary'),str) or not isinstance(p.get('source_ids'),list):errors.append('invalid_summary_schema')\n       elif any(i not in valid_ids for i in p['source_ids']):errors.append('unavailable_source_ID')\n      else:\n       if not isinstance(p.get('notes'),list) or not isinstance(p.get('open_points'),list):errors.append('invalid_notes_schema')\n       else:\n        for n in p['notes']:\n         if not isinstance(n,dict) or not isinstance(n.get('source_ids'),list) or not n.get('source_ids') or any(i not in valid_ids for i in n.get('source_ids',[])):errors.append('missing_or_unavailable_note_source_ID')\n      artifact=dict(id=chunk['id'],source_cutoff=chunk['end'],result=p)\n      if not errors:states[m['meeting']].append(artifact)"
+    },
+    {
+      "file": "scripts/run_answering_text_pilot.py",
+      "line_start": 89,
+      "line_end": 93,
+      "label": "Request-time input",
+      "code": "  requests=json.loads((D/'text-pilot-requests.json').read_text())['cases'];tasks=[]\n  for q in requests:\n   for condition in ['source_excerpt_diagnostic','reactive','amortized_summary','amortized_structured_notes']:\n    material=q['source_excerpt_diagnostic'] if condition=='source_excerpt_diagnostic' else q['prefix'];notes=[s['artifact'] for s in snapshots if s['meeting']==q['meeting'] and s['goal']==condition and s['source_cutoff']<=q['at'] and not s['validation_errors']]\n    ms,omitted=fit(READER,dict(requester=q['requester'],request_time_seconds=q['at'],past_transcript=render(material),saved_results=notes,new_user_request=q['question']),16384 if thinking else 2048);tasks.append(dict(id=q['id']+'|'+condition,messages=ms,omitted=omitted));selections.append(dict(question_id=q['id'],condition=condition,saved_result_ids=[n['id'] for n in notes if n['id'] not in omitted],omitted_ids=omitted,source_excerpt_has_oracle_evidence_selection=condition=='source_excerpt_diagnostic'))"
+    },
+    {
+      "file": "scripts/run_generated_history_asr.py",
+      "line_start": 17,
+      "line_end": 29,
+      "label": "New-word selection and speaker assignment",
+      "code": "def annotate(words,diar,start,end,task_id):\n result=[]\n for i,w in enumerate(words):\n  a,b=w['start'],w['end']\n  if (a+b)/2<start-1e-4:continue\n  a=max(0.,a);b=min(end,b)\n  if b<a:continue\n  overlap={}\n  for d in diar:\n   amount=max(0.,min(b+.04,d['end'])-max(a-.04,d['start']));overlap[d['speaker']]=overlap.get(d['speaker'],0.)+amount\n  ranked=sorted(overlap.items(),key=lambda x:x[1],reverse=True);speaker=ranked[0][0] if ranked and ranked[0][1]>.0 else 'unknown'\n  ambiguous=len(ranked)>1 and ranked[1][1]>.0 and ranked[0][1]-ranked[1][1]<.05\n  result.append(dict(id=task_id+'-W'+format(i,'03d'),start=a,end=b,text=w['text'],speaker=speaker,available=end,overlap_ambiguous=ambiguous))"
+    },
+    {
+      "file": "scripts/run_generated_history_asr.py",
+      "line_start": 45,
+      "line_end": 49,
+      "label": "Full-prefix diarization",
+      "code": " for m in manifest['meetings']:\n  for task in m['tasks']:\n   x=recordings[m['meeting']][:round(task['end']*16000)]\n   with torch.inference_mode():lines=diar.diarize(audio=[x],sample_rate=16000,batch_size=1)\n   segments=parse_diar(lines[0],task['end']);diar_records.append(dict(meeting=m['meeting'],task=task,segments=segments,observed_audio_end=task['end']))"
+    },
+    {
+      "file": "scripts/run_generated_history_asr.py",
+      "line_start": 60,
+      "line_end": 62,
+      "label": "ASR audio span",
+      "code": "  for m in manifest['meetings']:\n   for task in m['tasks']:\n    left=max(0.,task['start']-manifest['left_context_seconds']);x=recordings[m['meeting']][round(left*16000):round(task['end']*16000)];words=[];raw='';flags=[]"
+    },
+    {
+      "file": "scripts/build_generated_history_inputs_v2.py",
+      "line_start": 9,
+      "line_end": 15,
+      "label": "Predicted-to-AMI speaker correspondence",
+      "code": "def identity_map(diar,reference,end):\n names=['A','B','C','D'];matrix=np.zeros((4,4),dtype='float64')\n for s in diar:\n  k=int(s['speaker'].replace('Speaker',''))\n  for r in reference:\n   if r['available']<=end and r['speaker'] in names:matrix[k,names.index(r['speaker'])]+=max(0.,min(s['end'],r['end'])-max(s['start'],r['start']))\n a,b=linear_sum_assignment(-matrix);return {f'Speaker{i}':names[j] for i,j in zip(a,b) if matrix[i,j]>0},matrix.tolist()"
+    },
+    {
+      "file": "scripts/build_generated_history_inputs_v2.py",
+      "line_start": 23,
+      "line_end": 27,
+      "label": "Accumulated transcript and current annotation labels",
+      "code": "    committed=[];prefixes={}\n    for chunk in m['chunks']:\n     r=by[(m['meeting'],chunk['id'])];committed.extend(copy.deepcopy(r['segments']));prefix=copy.deepcopy(committed)\n     if identity=='oracle_identity':\n      alias,matrix=identity_map(dia[(m['meeting'],chunk['id'])]['segments'],m['segments'],chunk['end']);mappings.append(dict(meeting=m['meeting'],at=chunk['end'],alias=alias,overlap_seconds=matrix));prefix=[dict(s,speaker=alias.get(s['speaker'],s['speaker'])) for s in prefix]"
+    }
+  ],
+  "changes_applied_to_experiment_inputs": false,
+  "new_inference": false,
+  "GPU_count": 0,
+  "maximum_active_GPUs": 0
+}

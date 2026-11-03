@@ -1,0 +1,5070 @@
+[
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C000",
+    "newer": "EN2002b-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 29.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 2.800000000000006,
+    "identity_match_seconds": 2.800000000000006,
+    "best_permutation_match_seconds": 2.800000000000006,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        2.4000000000000057,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.40000000000000036,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C000",
+    "newer": "EN2002b-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 28.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 2.700000000000008,
+    "identity_match_seconds": 2.700000000000008,
+    "best_permutation_match_seconds": 2.700000000000008,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        2.300000000000008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.40000000000000036,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C001",
+    "newer": "EN2002b-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 60.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 14.640000000000013,
+    "identity_match_seconds": 14.640000000000013,
+    "best_permutation_match_seconds": 14.640000000000013,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        4.0800000000000125,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.56,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C001",
+    "newer": "EN2002b-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 59.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 14.000000000000012,
+    "identity_match_seconds": 14.000000000000012,
+    "best_permutation_match_seconds": 14.000000000000012,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        4.0800000000000125,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.92,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C002",
+    "newer": "EN2002b-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 87.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 17.60000000000001,
+    "identity_match_seconds": 17.60000000000001,
+    "best_permutation_match_seconds": 17.60000000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        6.800000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.800000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C002",
+    "newer": "EN2002b-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 86.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 16.88000000000001,
+    "identity_match_seconds": 16.88000000000001,
+    "best_permutation_match_seconds": 16.88000000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        6.080000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.800000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C003",
+    "newer": "EN2002b-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 125.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 20.28,
+    "identity_match_seconds": 20.28,
+    "best_permutation_match_seconds": 20.28,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.160000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        11.000000000000005,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.1199999999999903
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C003",
+    "newer": "EN2002b-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 123.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 19.959999999999994,
+    "identity_match_seconds": 19.959999999999994,
+    "best_permutation_match_seconds": 19.959999999999994,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.160000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.800000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999858
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C004",
+    "newer": "EN2002b-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 151.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 32.919999999999945,
+    "identity_match_seconds": 32.919999999999945,
+    "best_permutation_match_seconds": 32.919999999999945,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        17.239999999999974,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.1199999999999761,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        6.07999999999997
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C004",
+    "newer": "EN2002b-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 149.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 32.03999999999995,
+    "identity_match_seconds": 32.03999999999995,
+    "best_permutation_match_seconds": 32.03999999999995,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        16.479999999999983,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.1199999999999761,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        5.959999999999965
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C005",
+    "newer": "EN2002b-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 176.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 49.98999999999994,
+    "identity_match_seconds": 49.98999999999994,
+    "best_permutation_match_seconds": 49.98999999999994,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        29.509999999999984,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.19999999999996,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        6.799999999999969
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C005",
+    "newer": "EN2002b-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 174.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 49.75999999999992,
+    "identity_match_seconds": 49.75999999999992,
+    "best_permutation_match_seconds": 49.75999999999992,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        29.359999999999978,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.119999999999948,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        6.799999999999969
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C006",
+    "newer": "EN2002b-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 201.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 67.99999999999996,
+    "identity_match_seconds": 67.99999999999996,
+    "best_permutation_match_seconds": 67.99999999999996,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        39.759999999999984,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        12.95999999999998,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        6.799999999999969
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C006",
+    "newer": "EN2002b-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 199.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 67.63999999999997,
+    "identity_match_seconds": 67.63999999999997,
+    "best_permutation_match_seconds": 67.63999999999997,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        39.59999999999999,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        12.759999999999991,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        6.799999999999969
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C007",
+    "newer": "EN2002b-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 230.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 88.57999999999996,
+    "identity_match_seconds": 88.57999999999997,
+    "best_permutation_match_seconds": 88.57999999999997,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        57.19999999999998,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        15.539999999999992,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        7.359999999999971
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C007",
+    "newer": "EN2002b-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 229.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 87.93999999999994,
+    "identity_match_seconds": 87.93999999999996,
+    "best_permutation_match_seconds": 87.93999999999996,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        8.480000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        57.13999999999998,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        14.95999999999998,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        7.359999999999971
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C008",
+    "newer": "EN2002b-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 257.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 101.17999999999998,
+    "identity_match_seconds": 101.17999999999999,
+    "best_permutation_match_seconds": 101.17999999999999,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        13.36000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        59.279999999999966,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.359999999999985,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        11.179999999999993
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C008",
+    "newer": "EN2002b-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 256.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 100.13999999999996,
+    "identity_match_seconds": 100.13999999999997,
+    "best_permutation_match_seconds": 100.13999999999997,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        13.36000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        59.279999999999966,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.359999999999985,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        10.139999999999972
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C009",
+    "newer": "EN2002b-C010",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 285.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 120.76000000000002,
+    "identity_match_seconds": 120.76000000000003,
+    "best_permutation_match_seconds": 120.76000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        20.640000000000136,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        59.519999999999975,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.599999999999994,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        22.99999999999993
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C009",
+    "newer": "EN2002b-C010",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 283.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 120.00000000000003,
+    "identity_match_seconds": 120.00000000000004,
+    "best_permutation_match_seconds": 120.00000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        20.640000000000136,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        59.519999999999975,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.599999999999994,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        22.239999999999938
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C010",
+    "newer": "EN2002b-C011",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 315.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 136.84000000000017,
+    "identity_match_seconds": 136.8400000000002,
+    "best_permutation_match_seconds": 136.8400000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        26.840000000000067,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        63.04000000000007,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        20.640000000000015,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        26.320000000000036
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C010",
+    "newer": "EN2002b-C011",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 313.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 136.12000000000015,
+    "identity_match_seconds": 136.12000000000018,
+    "best_permutation_match_seconds": 136.12000000000018,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        26.40000000000007,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        63.04000000000007,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        20.359999999999985,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        26.320000000000036
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C011",
+    "newer": "EN2002b-C012",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 346.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 160.74000000000018,
+    "identity_match_seconds": 160.74000000000018,
+    "best_permutation_match_seconds": 160.74000000000018,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        39.51999999999996,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        71.12000000000018,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        20.640000000000015,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        29.460000000000022
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C011",
+    "newer": "EN2002b-C012",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 345.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 159.94000000000017,
+    "identity_match_seconds": 159.94000000000017,
+    "best_permutation_match_seconds": 159.94000000000017,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        39.45999999999996,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        71.12000000000018,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        20.640000000000015,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        28.720000000000013
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C012",
+    "newer": "EN2002b-C013",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 373.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 178.72000000000003,
+    "identity_match_seconds": 178.72000000000003,
+    "best_permutation_match_seconds": 178.72000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        40.399999999999956,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        73.7600000000001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        29.35999999999993,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        35.20000000000003
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C012",
+    "newer": "EN2002b-C013",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 372.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 178.48000000000002,
+    "identity_match_seconds": 178.48000000000002,
+    "best_permutation_match_seconds": 178.48000000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        40.399999999999956,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        73.5200000000001,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        29.35999999999993,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        35.20000000000003
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C013",
+    "newer": "EN2002b-C014",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 413.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 202.64,
+    "identity_match_seconds": 202.64,
+    "best_permutation_match_seconds": 202.64,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        42.160000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        75.04000000000008,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        32.39999999999995,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        53.03999999999995
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C013",
+    "newer": "EN2002b-C014",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 412.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 202.15999999999997,
+    "identity_match_seconds": 202.15999999999997,
+    "best_permutation_match_seconds": 202.15999999999997,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        42.160000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        74.96000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        32.39999999999995,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        52.63999999999997
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C009",
+    "newer": "request-pilot:P-EN-notes",
+    "comparison": "request_branch",
+    "common_end_seconds": 285.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 120.76000000000002,
+    "identity_match_seconds": 120.76000000000003,
+    "best_permutation_match_seconds": 120.76000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        20.640000000000136,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        59.519999999999975,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.599999999999994,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        22.99999999999993
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C009",
+    "newer": "request-pilot:P-EN-notes",
+    "comparison": "request_branch",
+    "common_end_seconds": 283.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 120.00000000000003,
+    "identity_match_seconds": 120.00000000000004,
+    "best_permutation_match_seconds": 120.00000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        20.640000000000136,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        59.519999999999975,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.599999999999994,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        22.239999999999938
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C014",
+    "newer": "request-pilot:P-EN-audio",
+    "comparison": "request_branch",
+    "common_end_seconds": 444.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 221.28000000000003,
+    "identity_match_seconds": 221.28000000000003,
+    "best_permutation_match_seconds": 221.28000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        47.439999999999976,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        78.40000000000009,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        39.59999999999994,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        55.84000000000002
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2002b",
+    "older": "EN2002b-C014",
+    "newer": "request-pilot:P-EN-audio",
+    "comparison": "request_branch",
+    "common_end_seconds": 443.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 220.26,
+    "identity_match_seconds": 220.26,
+    "best_permutation_match_seconds": 220.26,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        47.439999999999976,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        78.40000000000009,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        38.5799999999999,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        55.84000000000002
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C000",
+    "newer": "EN2003a-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 33.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 11.43999999999999,
+    "identity_match_seconds": 11.43999999999999,
+    "best_permutation_match_seconds": 11.43999999999999,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        4.319999999999998,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.5999999999999943,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.52,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C000",
+    "newer": "EN2003a-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 32.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 11.33999999999999,
+    "identity_match_seconds": 11.33999999999999,
+    "best_permutation_match_seconds": 11.33999999999999,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        4.219999999999996,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.5999999999999943,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        5.52,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C001",
+    "newer": "EN2003a-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 66.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 25.19999999999999,
+    "identity_match_seconds": 25.19999999999999,
+    "best_permutation_match_seconds": 25.19999999999999,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        6.239999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.5999999999999943,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.359999999999996,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C001",
+    "newer": "EN2003a-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 64.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 24.399999999999977,
+    "identity_match_seconds": 24.399999999999977,
+    "best_permutation_match_seconds": 24.399999999999977,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        5.439999999999988,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.5999999999999943,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        17.359999999999996,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C002",
+    "newer": "EN2003a-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 92.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 36.960000000000036,
+    "identity_match_seconds": 36.960000000000036,
+    "best_permutation_match_seconds": 36.960000000000036,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        6.640000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.9599999999999937,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        27.36000000000004,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C002",
+    "newer": "EN2003a-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 90.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 36.400000000000034,
+    "identity_match_seconds": 36.400000000000034,
+    "best_permutation_match_seconds": 36.400000000000034,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        6.40000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.9599999999999937,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        27.04000000000003,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C003",
+    "newer": "EN2003a-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 131.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 56.300000000000026,
+    "identity_match_seconds": 56.300000000000026,
+    "best_permutation_match_seconds": 56.300000000000026,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.120000000000008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0400000000000063,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        38.140000000000015,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C003",
+    "newer": "EN2003a-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 130.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 55.60000000000004,
+    "identity_match_seconds": 55.60000000000004,
+    "best_permutation_match_seconds": 55.60000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.120000000000008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0400000000000063,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        37.440000000000026,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C004",
+    "newer": "EN2003a-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 161.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 79.44000000000001,
+    "identity_match_seconds": 79.44000000000001,
+    "best_permutation_match_seconds": 79.44000000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.440000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.519999999999996,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        60.48000000000002,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C004",
+    "newer": "EN2003a-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 160.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 79.04000000000003,
+    "identity_match_seconds": 79.04000000000003,
+    "best_permutation_match_seconds": 79.04000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.440000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.200000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        60.400000000000034,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C005",
+    "newer": "EN2003a-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 187.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 91.92000000000006,
+    "identity_match_seconds": 91.92000000000006,
+    "best_permutation_match_seconds": 91.92000000000006,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.440000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.6000000000000085,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        70.88000000000005,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C005",
+    "newer": "EN2003a-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 185.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 91.56000000000007,
+    "identity_match_seconds": 91.56000000000007,
+    "best_permutation_match_seconds": 91.56000000000007,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.440000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.6000000000000085,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        70.52000000000007,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C006",
+    "newer": "EN2003a-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 212.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 105.54000000000015,
+    "identity_match_seconds": 105.54000000000015,
+    "best_permutation_match_seconds": 105.54000000000015,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.519999999999985,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.780000000000015,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        84.24000000000015,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C006",
+    "newer": "EN2003a-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 211.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 105.36000000000014,
+    "identity_match_seconds": 105.36000000000014,
+    "best_permutation_match_seconds": 105.36000000000014,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.519999999999985,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.6000000000000085,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        84.24000000000015,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C007",
+    "newer": "EN2003a-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 239.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 119.60000000000015,
+    "identity_match_seconds": 119.60000000000015,
+    "best_permutation_match_seconds": 119.60000000000015,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        18.079999999999988,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.920000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        95.36000000000018,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C007",
+    "newer": "EN2003a-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 237.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 119.48000000000015,
+    "identity_match_seconds": 119.48000000000015,
+    "best_permutation_match_seconds": 119.48000000000015,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        18.079999999999988,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.920000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        95.24000000000018,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C008",
+    "newer": "EN2003a-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 279.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 142.44000000000034,
+    "identity_match_seconds": 142.44000000000037,
+    "best_permutation_match_seconds": 142.44000000000037,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        23.20000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.800000000000054,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        108.2000000000003,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C008",
+    "newer": "EN2003a-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 277.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 141.84000000000032,
+    "identity_match_seconds": 141.84000000000034,
+    "best_permutation_match_seconds": 141.84000000000034,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        23.20000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.800000000000054,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        107.60000000000028,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C009",
+    "newer": "EN2003a-C010",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 305.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 160.96000000000015,
+    "identity_match_seconds": 160.96000000000018,
+    "best_permutation_match_seconds": 160.96000000000018,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        26.479999999999993,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        15.360000000000056,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        118.88000000000014,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C009",
+    "newer": "EN2003a-C010",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 304.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 160.14000000000016,
+    "identity_match_seconds": 160.14000000000019,
+    "best_permutation_match_seconds": 160.14000000000019,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        26.479999999999993,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        15.360000000000056,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        118.06000000000014,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C010",
+    "newer": "request-first:authored-W1-2",
+    "comparison": "request_branch",
+    "common_end_seconds": 334.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 181.61999999999995,
+    "identity_match_seconds": 181.61999999999998,
+    "best_permutation_match_seconds": 181.61999999999998,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        26.799999999999986,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        17.040000000000006,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        137.54,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "EN2003a",
+    "older": "EN2003a-C010",
+    "newer": "request-first:authored-W1-2",
+    "comparison": "request_branch",
+    "common_end_seconds": 333.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 181.03999999999996,
+    "identity_match_seconds": 181.04,
+    "best_permutation_match_seconds": 181.04,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0000000000000002,
+    "best_permutation_agreement": 1.0000000000000002,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        26.799999999999986,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        17.040000000000006,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        136.96,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.23999999999998067
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C000",
+    "newer": "ES2002b-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 26.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 8.389999999999997,
+    "identity_match_seconds": 8.389999999999997,
+    "best_permutation_match_seconds": 8.389999999999997,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        5.9899999999999975,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.16,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C000",
+    "newer": "ES2002b-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 24.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 7.3599999999999985,
+    "identity_match_seconds": 7.3599999999999985,
+    "best_permutation_match_seconds": 7.3599999999999985,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        4.96,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.16,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C001",
+    "newer": "ES2002b-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 51.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 26.31999999999999,
+    "identity_match_seconds": 26.31999999999999,
+    "best_permutation_match_seconds": 26.31999999999999,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        23.439999999999987,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.640000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C001",
+    "newer": "ES2002b-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 50.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 25.519999999999992,
+    "identity_match_seconds": 25.519999999999992,
+    "best_permutation_match_seconds": 25.519999999999992,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        22.63999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.640000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C002",
+    "newer": "ES2002b-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 91.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 36.15999999999998,
+    "identity_match_seconds": 36.15999999999998,
+    "best_permutation_match_seconds": 36.15999999999998,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        33.27999999999998,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.640000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C002",
+    "newer": "ES2002b-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 90.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 36.15999999999998,
+    "identity_match_seconds": 36.15999999999998,
+    "best_permutation_match_seconds": 36.15999999999998,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        33.27999999999998,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.640000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C003",
+    "newer": "ES2002b-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 122.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 54.34000000000002,
+    "identity_match_seconds": 54.34000000000002,
+    "best_permutation_match_seconds": 54.34000000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        51.220000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.880000000000013,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C003",
+    "newer": "ES2002b-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 121.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 53.620000000000005,
+    "identity_match_seconds": 53.620000000000005,
+    "best_permutation_match_seconds": 53.620000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        50.49999999999999,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.880000000000013,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C004",
+    "newer": "ES2002b-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 151.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 79.36000000000001,
+    "identity_match_seconds": 79.36000000000001,
+    "best_permutation_match_seconds": 79.36000000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        75.84,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.280000000000019,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C004",
+    "newer": "ES2002b-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 149.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 78.76000000000002,
+    "identity_match_seconds": 78.76000000000002,
+    "best_permutation_match_seconds": 78.76000000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        75.24000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.280000000000019,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C005",
+    "newer": "ES2002b-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 183.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 104.20000000000005,
+    "identity_match_seconds": 104.20000000000005,
+    "best_permutation_match_seconds": 104.20000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.36000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.60000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C005",
+    "newer": "ES2002b-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 181.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 103.16000000000005,
+    "identity_match_seconds": 103.16000000000005,
+    "best_permutation_match_seconds": 103.16000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        93.32000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.60000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.23999999999999844,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C006",
+    "newer": "ES2002b-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 208.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 123.3600000000001,
+    "identity_match_seconds": 123.3600000000001,
+    "best_permutation_match_seconds": 123.3600000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        112.96000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.60000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8000000000000007,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C006",
+    "newer": "ES2002b-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 207.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 122.7400000000001,
+    "identity_match_seconds": 122.7400000000001,
+    "best_permutation_match_seconds": 122.7400000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2"
+    },
+    "overlap_matrix_seconds": [
+      [
+        112.34000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.60000000000004,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8000000000000007,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C007",
+    "newer": "ES2002b-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 248.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 127.68000000000009,
+    "identity_match_seconds": 127.68000000000009,
+    "best_permutation_match_seconds": 127.68000000000009,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        114.96000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.08000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8799999999999848,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.7600000000000193
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C007",
+    "newer": "ES2002b-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 247.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 127.68000000000009,
+    "identity_match_seconds": 127.68000000000009,
+    "best_permutation_match_seconds": 127.68000000000009,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        114.96000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.08000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8799999999999848,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.7600000000000193
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C008",
+    "newer": "ES2002b-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 276.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 137.98999999999998,
+    "identity_match_seconds": 137.98999999999998,
+    "best_permutation_match_seconds": 137.98999999999998,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        115.52000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.08000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8799999999999848,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        11.509999999999962
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C008",
+    "newer": "ES2002b-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 274.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 137.11999999999998,
+    "identity_match_seconds": 137.11999999999998,
+    "best_permutation_match_seconds": 137.11999999999998,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        115.52000000000001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.08000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8799999999999848,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        10.639999999999958
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C009",
+    "newer": "request-pilot:P-ES-slogan",
+    "comparison": "request_branch",
+    "common_end_seconds": 305.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 160.54000000000005,
+    "identity_match_seconds": 160.54000000000005,
+    "best_permutation_match_seconds": 160.54000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        115.6,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.08000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8799999999999848,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        33.98000000000005
+      ]
+    ]
+  },
+  {
+    "meeting": "ES2002b",
+    "older": "ES2002b-C009",
+    "newer": "request-pilot:P-ES-slogan",
+    "comparison": "request_branch",
+    "common_end_seconds": 304.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 159.58,
+    "identity_match_seconds": 159.58,
+    "best_permutation_match_seconds": 159.58,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        115.6,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.08000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.8799999999999848,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        33.02000000000001
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C000",
+    "newer": "TS3003b-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 40.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 4.550000000000006,
+    "identity_match_seconds": 4.550000000000006,
+    "best_permutation_match_seconds": 4.550000000000006,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        2.8000000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.7500000000000036,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C000",
+    "newer": "TS3003b-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 38.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 4.240000000000004,
+    "identity_match_seconds": 4.240000000000004,
+    "best_permutation_match_seconds": 4.240000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        2.8000000000000025,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.4400000000000013,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C001",
+    "newer": "TS3003b-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 68.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 12.180000000000001,
+    "identity_match_seconds": 12.180000000000001,
+    "best_permutation_match_seconds": 12.180000000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        9.940000000000003,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.2399999999999984,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C001",
+    "newer": "TS3003b-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 67.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 11.520000000000005,
+    "identity_match_seconds": 11.520000000000005,
+    "best_permutation_match_seconds": 11.520000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        9.280000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.2399999999999984,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C002",
+    "newer": "TS3003b-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 98.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 31.51000000000003,
+    "identity_match_seconds": 31.51000000000003,
+    "best_permutation_match_seconds": 31.51000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        28.95000000000004,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.5599999999999916,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C002",
+    "newer": "TS3003b-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 96.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 30.720000000000038,
+    "identity_match_seconds": 30.720000000000038,
+    "best_permutation_match_seconds": 30.720000000000038,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        28.160000000000046,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.5599999999999916,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C003",
+    "newer": "TS3003b-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 124.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 48.870000000000005,
+    "identity_match_seconds": 48.870000000000005,
+    "best_permutation_match_seconds": 48.870000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        45.91000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.959999999999983,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C003",
+    "newer": "TS3003b-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 122.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 48.32000000000001,
+    "identity_match_seconds": 48.32000000000001,
+    "best_permutation_match_seconds": 48.32000000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        45.36000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        2.959999999999983,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C004",
+    "newer": "TS3003b-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 154.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 68.82,
+    "identity_match_seconds": 68.82,
+    "best_permutation_match_seconds": 68.82,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        65.70000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.1199999999999797,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C004",
+    "newer": "TS3003b-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 153.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 68.0,
+    "identity_match_seconds": 68.0,
+    "best_permutation_match_seconds": 68.0,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        64.88000000000002,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.1199999999999797,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C005",
+    "newer": "TS3003b-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 180.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 89.34999999999994,
+    "identity_match_seconds": 89.34999999999994,
+    "best_permutation_match_seconds": 89.34999999999994,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        86.06999999999996,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.2799999999999763,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C005",
+    "newer": "TS3003b-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 178.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 88.87999999999994,
+    "identity_match_seconds": 88.87999999999994,
+    "best_permutation_match_seconds": 88.87999999999994,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        85.59999999999997,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.2799999999999763,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C006",
+    "newer": "TS3003b-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 209.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 101.32000000000002,
+    "identity_match_seconds": 101.32000000000002,
+    "best_permutation_match_seconds": 101.32000000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        6.439999999999973,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C006",
+    "newer": "TS3003b-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 207.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 100.28000000000003,
+    "identity_match_seconds": 100.28000000000003,
+    "best_permutation_match_seconds": 100.28000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.399999999999981,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C007",
+    "newer": "TS3003b-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 236.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 112.39000000000004,
+    "identity_match_seconds": 112.39000000000004,
+    "best_permutation_match_seconds": 112.39000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.239999999999956,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.80000000000004,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        4.469999999999999
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C007",
+    "newer": "TS3003b-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 234.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 111.68000000000004,
+    "identity_match_seconds": 111.68000000000004,
+    "best_permutation_match_seconds": 111.68000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.239999999999956,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.80000000000004,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        3.759999999999991
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C008",
+    "newer": "TS3003b-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 263.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 130.16000000000008,
+    "identity_match_seconds": 130.16000000000008,
+    "best_permutation_match_seconds": 130.16000000000008,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.239999999999956,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.80000000000004,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        22.240000000000038
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C008",
+    "newer": "TS3003b-C009",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 262.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 129.42000000000007,
+    "identity_match_seconds": 129.42000000000007,
+    "best_permutation_match_seconds": 129.42000000000007,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.239999999999956,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.80000000000004,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        21.50000000000003
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C009",
+    "newer": "request-pilot:P-TS-time",
+    "comparison": "request_branch",
+    "common_end_seconds": 289.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 146.14000000000004,
+    "identity_match_seconds": 146.14000000000004,
+    "best_permutation_match_seconds": 146.14000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.239999999999956,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.880000000000024,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        38.140000000000015
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3003b",
+    "older": "TS3003b-C009",
+    "newer": "request-pilot:P-TS-time",
+    "comparison": "request_branch",
+    "common_end_seconds": 288.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 145.60000000000002,
+    "identity_match_seconds": 145.60000000000002,
+    "best_permutation_match_seconds": 145.60000000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        94.88000000000005,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        10.239999999999956,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        2.880000000000024,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        37.599999999999994
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C000",
+    "newer": "TS3006c-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 40.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 0.0,
+    "identity_match_seconds": 0.0,
+    "best_permutation_match_seconds": 0.0,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": null,
+    "best_permutation_agreement": null,
+    "new_to_old_mapping": {},
+    "overlap_matrix_seconds": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C000",
+    "newer": "TS3006c-C001",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 38.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 0.0,
+    "identity_match_seconds": 0.0,
+    "best_permutation_match_seconds": 0.0,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": null,
+    "best_permutation_agreement": null,
+    "new_to_old_mapping": {},
+    "overlap_matrix_seconds": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C001",
+    "newer": "TS3006c-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 80.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 1.1999999999999886,
+    "identity_match_seconds": 1.1999999999999886,
+    "best_permutation_match_seconds": 1.1999999999999886,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        0.6400000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.5599999999999881,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C001",
+    "newer": "TS3006c-C002",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 78.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 1.1999999999999886,
+    "identity_match_seconds": 1.1999999999999886,
+    "best_permutation_match_seconds": 1.1999999999999886,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1"
+    },
+    "overlap_matrix_seconds": [
+      [
+        0.6400000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.5599999999999881,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C002",
+    "newer": "TS3006c-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 115.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 16.320000000000007,
+    "identity_match_seconds": 16.320000000000007,
+    "best_permutation_match_seconds": 16.320000000000007,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        7.840000000000003,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.200000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.200000000000003,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0799999999999983
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C002",
+    "newer": "TS3006c-C003",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 114.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 16.060000000000002,
+    "identity_match_seconds": 16.060000000000002,
+    "best_permutation_match_seconds": 16.060000000000002,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        7.579999999999998,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        5.200000000000003,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.200000000000003,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0799999999999983
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C003",
+    "newer": "TS3006c-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 155.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 42.56000000000003,
+    "identity_match_seconds": 42.56000000000003,
+    "best_permutation_match_seconds": 42.56000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        13.840000000000003,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        8.720000000000013,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.200000000000003,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        16.80000000000001
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C003",
+    "newer": "TS3006c-C004",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 154.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 41.74000000000004,
+    "identity_match_seconds": 41.74000000000004,
+    "best_permutation_match_seconds": 41.74000000000004,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        13.840000000000003,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        7.90000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        3.200000000000003,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        16.80000000000001
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C004",
+    "newer": "TS3006c-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 181.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 59.760000000000105,
+    "identity_match_seconds": 59.760000000000105,
+    "best_permutation_match_seconds": 59.760000000000105,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.760000000000048,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        14.960000000000022,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.079999999999998,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        24.960000000000036
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C004",
+    "newer": "TS3006c-C005",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 179.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 59.3600000000001,
+    "identity_match_seconds": 59.3600000000001,
+    "best_permutation_match_seconds": 59.3600000000001,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        15.760000000000048,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        14.560000000000016,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.079999999999998,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        24.960000000000036
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C005",
+    "newer": "TS3006c-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 221.0,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 75.76000000000013,
+    "identity_match_seconds": 75.76000000000013,
+    "best_permutation_match_seconds": 75.76000000000013,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        20.640000000000043,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        25.84000000000006
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C005",
+    "newer": "TS3006c-C006",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 219.96,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 75.76000000000013,
+    "identity_match_seconds": 75.76000000000013,
+    "best_permutation_match_seconds": 75.76000000000013,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        20.640000000000043,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        25.84000000000006
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C006",
+    "newer": "TS3006c-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 248.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 95.62000000000015,
+    "identity_match_seconds": 95.62000000000015,
+    "best_permutation_match_seconds": 95.62000000000015,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        40.50000000000006,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        25.84000000000006
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C006",
+    "newer": "TS3006c-C007",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 247.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 95.06000000000014,
+    "identity_match_seconds": 95.06000000000014,
+    "best_permutation_match_seconds": 95.06000000000014,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        39.940000000000055,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        25.84000000000006
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C007",
+    "newer": "TS3006c-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 279.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 120.94000000000005,
+    "identity_match_seconds": 120.94000000000005,
+    "best_permutation_match_seconds": 120.94000000000005,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        65.81999999999996,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        25.84000000000006
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C007",
+    "newer": "TS3006c-C008",
+    "comparison": "consecutive_chunks",
+    "common_end_seconds": 278.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 119.90000000000003,
+    "identity_match_seconds": 119.90000000000003,
+    "best_permutation_match_seconds": 119.90000000000003,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        64.77999999999994,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        25.84000000000006
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C008",
+    "newer": "request-scale:TS3006c-S05-Q3",
+    "comparison": "request_branch",
+    "common_end_seconds": 308.5,
+    "excluded_old_tail_seconds": 0.0,
+    "common_single_speaker_seconds": 144.80000000000018,
+    "identity_match_seconds": 144.80000000000018,
+    "best_permutation_match_seconds": 144.80000000000018,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        89.28000000000011,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        26.240000000000038
+      ]
+    ]
+  },
+  {
+    "meeting": "TS3006c",
+    "older": "TS3006c-C008",
+    "newer": "request-scale:TS3006c-S05-Q3",
+    "comparison": "request_branch",
+    "common_end_seconds": 307.46,
+    "excluded_old_tail_seconds": 1.04,
+    "common_single_speaker_seconds": 143.78000000000014,
+    "identity_match_seconds": 143.78000000000014,
+    "best_permutation_match_seconds": 143.78000000000014,
+    "permutation_gain_seconds": 0.0,
+    "identity_agreement": 1.0,
+    "best_permutation_agreement": 1.0,
+    "new_to_old_mapping": {
+      "Speaker0": "Speaker0",
+      "Speaker1": "Speaker1",
+      "Speaker2": "Speaker2",
+      "Speaker3": "Speaker3"
+    },
+    "overlap_matrix_seconds": [
+      [
+        88.26000000000008,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        25.12000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        4.160000000000011,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        26.240000000000038
+      ]
+    ]
+  }
+]
