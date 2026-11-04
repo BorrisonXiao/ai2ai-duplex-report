@@ -232,9 +232,9 @@
     {
       "id": "notes-additional",
       "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
-      "status": "partial",
+      "status": "complete",
       "url": "experiments/structured-notes.html#protocol",
-      "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 96/180 final outputs reviewed across two readers, five conditions and request seeds."
+      "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two readers, five conditions and request seeds."
     },
     {
       "id": "notes-generated",
@@ -255,9 +255,23 @@
       "text": "Run the remaining text and speech S2 conditions on all 105 questions.",
       "status": "planned",
       "url": "what-to-think.html#results"
+    },
+    {
+      "id": "notes-interpretation",
+      "text": "Compare selected speech and explicit event fields to test what work the notes should do.",
+      "url": "experiments/structured-notes.html#interpretation",
+      "status": "complete",
+      "evidence": "Matched development check of event fields and selected sources with the same Thinking reader; 72/72 outputs reviewed."
+    },
+    {
+      "id": "notes-reference-bank",
+      "text": "Recheck the remaining reference answers against their complete available transcript prefixes.",
+      "status": "pending",
+      "url": "experiments/structured-notes.html#protocol",
+      "evidence": "Three reference corrections found in the 12-question additional test; the new 105-reference v3 file includes those corrections, while the remaining 87 cases need a full-prefix recheck."
     }
   ],
-  "updated_at": "2026-11-04T21:28:07.543728+00:00",
+  "updated_at": "2026-11-04T21:53:29.203526+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -384,16 +398,18 @@
     "figure": 1
   },
   "notes_optimization": {
-    "status": "transfer_review_in_progress",
+    "status": "review_complete",
     "url": "experiments/structured-notes.html",
     "development_questions": 6,
     "additional_questions": 12,
     "additional_meetings": 6,
     "selected_policy": "Source notes with local context and revision checks",
-    "additional_outputs": 124,
-    "additional_reviewed": 96,
+    "additional_outputs": 180,
+    "additional_reviewed": 180,
     "automatic_outputs": 144,
     "automatic_reviewed": 144,
+    "exploratory_outputs": 72,
+    "exploratory_reviewed": 72,
     "question_blind": true,
     "maximum_active_GPUs": 2
   }

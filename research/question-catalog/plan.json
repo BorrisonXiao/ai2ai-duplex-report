@@ -327,9 +327,9 @@
         },
         {
           "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
-          "status": "partial",
+          "status": "complete",
           "project_url": "experiments/structured-notes.html#protocol",
-          "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 96/180 final outputs reviewed across two readers, five conditions and request seeds."
+          "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two readers, five conditions and request seeds."
         },
         {
           "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
@@ -348,6 +348,18 @@
           "status": "planned",
           "project_url": "what-to-think.html#results",
           "evidence": "Plan requirement; not yet executed."
+        },
+        {
+          "text": "Compare selected speech and explicit event fields to test what work the notes should do.",
+          "status": "complete",
+          "project_url": "experiments/structured-notes.html#interpretation",
+          "evidence": "Matched development check of event fields and selected sources with the same Thinking reader; 72/72 outputs reviewed."
+        },
+        {
+          "text": "Recheck the remaining reference answers against their complete available transcript prefixes.",
+          "status": "pending",
+          "project_url": "experiments/structured-notes.html#protocol",
+          "evidence": "Three reference corrections found in the 12-question additional test; the new 105-reference v3 file includes those corrections, while the remaining 87 cases need a full-prefix recheck."
         }
       ]
     },

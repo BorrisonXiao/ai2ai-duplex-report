@@ -1,18 +1,18 @@
 [
   {
-    "text": "Source notes match old-note Instruct accuracy at 10/12 while reducing earlier generated tokens by 59%.",
+    "text": "Source notes cut earlier generated tokens by 59% and total generated tokens by 42% relative to old notes.",
     "url": "#results"
   },
   {
-    "text": "The focused prompt alone improves reactive Instruct from 6/12 to 8/12, so prompt and memory effects are measured separately.",
-    "url": "#protocol"
+    "text": "Thinking with source notes plus the focused prompt answers 11/12 and 9/12; reactive with that prompt answers 10/12 and 9/12.",
+    "url": "#results"
   },
   {
-    "text": "Copied source segments avoid invented note prose, while some event links and reader interpretations still need improvement.",
-    "url": "#changes"
+    "text": "Request-time thinking is essentially unchanged against focused reactive prompting, while total generation costs about 2.6 times as much.",
+    "url": "#results"
   },
   {
-    "text": "Automatic transcripts show mixed note benefits; the frozen additional-meeting Thinking comparison is still running.",
-    "url": "#asr"
+    "text": "Event fields propagate unsupported reasons and file-state claims; original-source notes preserve evidence more safely.",
+    "url": "#interpretation"
   }
 ]

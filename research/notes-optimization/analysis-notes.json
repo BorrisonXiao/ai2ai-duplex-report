@@ -1,17 +1,26 @@
 {
   "additional": [
-    "Source notes and old notes recover the intended ambiguity rule, continuation capitalization and TV-plus-connected-device scope more reliably than reactive Instruct. The focused instruction alone fixes the first two cases.",
-    "Source notes recover the stated qualitative LCD-chip cost more accurately than the reactive answers that add a large increase. The office notes retain the later fifteen-person clarification and an explicit revision link, yet Instruct still answers eighteen. The profit calculation improves to 50% but omits the required before-other-costs qualification.",
-    "Across the twelve Instruct request inputs, old notes contain 2,114 exact repeated fact entries among 2,296 entries. Source notes contain two repeated text strings among 639 note entries, with unique source IDs in each state. Repeated original speech remains distinguishable from repeated generated snapshots."
+    "With the original reader prompt, Instruct gives 9/12 complete answers with source notes and old notes, versus 7/12 reactively. Adding the focused instruction gives 9/12 both with and without source notes.",
+    "Thinking gives 10/12 and 9/12 with source notes, compared with 9/12 in both reactive seeds and 8/12 in both old-note seeds. With the focused prompt, source notes give 11/12 and 9/12, versus 10/12 and 9/12 without notes. These are repeated runs of the same twelve questions.",
+    "The focused prompt has the clearest request-budget effect. Mean native thinking falls from 1,976 to 1,782 tokens reactively and from 2,048 to 1,783 with source notes, averaging the two seeds. Source notes therefore add no stable request-time saving over the matching focused reactive control.",
+    "Source-note construction uses 35,067 generated tokens versus 85,597 for the old writer. Including the Thinking reader, mean total generation falls from 104.8k to 60.7k with the original prompt. Source notes with focus use 57.4k versus 22.3k for focused reactive prompting; logical input totals are 786.5k versus 85.8k tokens.",
+    "The office count illustrates a useful memory effect: plain source notes recover fifteen people in both Thinking seeds, while reactive and old-note readers repeat eighteen. Instruct still answers eighteen despite retaining the later clarification and revision link. The focused source reader recovers fifteen in one seed and repeats eighteen in the other.",
+    "Across the twelve Instruct request inputs, old notes contain 2,114 exact repeated fact entries among 2,296 entries. Source notes contain two repeated text strings among 639 note entries, with unique source IDs in each state. This counts exact repetition after case/punctuation normalization; paraphrased repetition is not measured."
   ],
   "asr": [
     "Instruct remains at 4/6 with both transcripts and all four prompt/note conditions. Source notes do not resolve its stale outreach time or overstatement of file actions.",
-    "Thinking results vary by transcript and request seed. Parakeet source notes give 4\u20135/6 versus 4/6 reactively; Whisper source notes give 4/6 versus 4\u20135/6 reactively. Source notes with the focused prompt reach 6/6 in one Whisper seed and 4/6 in the other.",
-    "With the original reader prompt, source notes increase mean request thinking by about 9% for Parakeet and reduce it by about 2% for Whisper. Including earlier writing, generated-token totals are about 2.2\u20132.4 times the corresponding reactive totals across these automatic-transcript conditions."
+    "Thinking results vary by transcript and request seed. Parakeet source notes give 4–5/6 versus 4/6 reactively; Whisper source notes give 4/6 versus 4–5/6 reactively. Source notes with the focused prompt reach 6/6 in one Whisper seed and 4/6 in the other.",
+    "With the original reader prompt, source notes increase mean request thinking by about 9% for Parakeet and reduce it by about 2% for Whisper. Including earlier writing, generated-token totals are about 2.2–2.4 times the corresponding reactive totals across these automatic-transcript conditions.",
+    "Recognition errors can change the event itself: the ground-truth failed-action phrase “I can’t cut and paste it into the other folder” becomes “I can kind of paste it into the other folder” in the Whisper input. Several readers then invent a completed move or a filename-based resolution."
+  ],
+  "interpretation": [
+    "With the original prompt, event fields give 5/6 and 4/6 complete answers with mean request thinking of 2,164 and 2,761 tokens. Source notes give 5/6 in both seeds with 1,927 and 2,178 tokens. Reactive gives 4/6 and 6/6 with 2,014 and 1,672 tokens. Neither memory format consistently improves accuracy and request thinking together.",
+    "The event fields contain an unsupported redundancy/no-benefit reason for dropping audio work. Three Thinking answers repeat this reason. Another answer turns “Move to meeting room” into a completed file relocation. These errors show why interpreting a current state needs checks on the field values, beyond valid source IDs.",
+    "The results favor one compact source-backed state over repeated generated snapshots as the next memory baseline. They do not yet establish that the saved notes perform enough useful reasoning to reduce the remaining request-time thinking. A useful next test is a small set of verified owner, time, quantity and status updates, with original evidence retained for uncertainty and revisions."
   ],
   "next": [
-    "Finish the Thinking-reader comparisons to measure request-time thinking and full earlier cost.",
-    "Test stricter event relationships to remove weak links and connect missed state changes.",
-    "Expand the frozen comparison only after paired accuracy and token results support the next design."
+    "Recheck the remaining reference answers against the complete available prefix, using the three corrected cases to prevent stale evaluation targets.",
+    "Compare identical selected speech with and without relationship labels to isolate whether the labels help readers or add noise.",
+    "Test a few verified current-state fields, rejecting unsupported reasons and preserving proposal, report, confirmation and revision separately, to seek reliable request-time savings before full-set scaling."
   ]
 }

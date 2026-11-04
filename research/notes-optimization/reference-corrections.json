@@ -1,0 +1,156 @@
+{
+  "created": "2026-11-04",
+  "policy": "Source correction only; no model input or frozen prompt is changed, and every condition is rescored identically.",
+  "overrides": [
+    {
+      "id": "scale:IB4003-S075-Q3",
+      "answer": "Fifteen people. The later clarification distinguishes eighteen office positions from the headcount; reserving a two-person room for reading would leave sixteen slots for fifteen people.",
+      "required_facts": [
+        "Fifteen people; eighteen refers to office positions, not the current headcount."
+      ],
+      "source_evidence": [
+        {
+          "speaker": "A",
+          "start": 269.6,
+          "end": 281.62,
+          "text": "Uh yeah, I uh yeah, I counted so we have um fifteen pers physical persons and about uh sixteen, I think, uh persons",
+          "boundary": "12s_cap",
+          "id": "IB4003-U00051",
+          "available": 282.12
+        },
+        {
+          "speaker": "A",
+          "start": 281.62,
+          "end": 284.44,
+          "text": "oh, actually, eighteen persons in the offices.",
+          "boundary": "sentence_end",
+          "id": "IB4003-U00053",
+          "available": 284.94
+        },
+        {
+          "speaker": "D",
+          "start": 329.12,
+          "end": 341.21,
+          "text": "Uh because fifteen people to put in there eighteen positions, so uh to the best uh if you take uh two people room for the reading",
+          "boundary": "12s_cap",
+          "id": "IB4003-U00070",
+          "available": 341.71
+        },
+        {
+          "speaker": "A",
+          "start": 342.98,
+          "end": 346.36,
+          "text": "Well, sixteen slots for fifteen people.",
+          "boundary": "sentence_end",
+          "id": "IB4003-U00073",
+          "available": 346.86
+        }
+      ],
+      "previous_answer": "Eighteen people were counted for the office allocation.",
+      "reason": "The earlier eighteen-person slip was superseded by D distinguishing fifteen people/eighteen positions and A confirming sixteen slots for fifteen people at 342.98–346.36s, before the436.54s request.",
+      "reviewer": "Codex full-prefix source inspection",
+      "independent_human_review": false
+    },
+    {
+      "id": "scale:ES2003c-S10-Q1",
+      "answer": "The LCD/advanced chip was described as more expensive than the basic button chip and as requiring more processing capability. No amount, percentage or drastic increase was established.",
+      "required_facts": [
+        "The LCD/advanced chip was described as more expensive than the basic button chip."
+      ],
+      "unsupported_claims_to_avoid": [
+        "No exact amount, percentage or large/measured cost increase was established."
+      ],
+      "source_evidence": [
+        {
+          "speaker": "D",
+          "start": 396.24,
+          "end": 404.53,
+          "text": "um it requires a more expensive chip to use, and if you wanna use L_C_D_ it's even more expensive.",
+          "boundary": "sentence_end",
+          "id": "ES2003c-U00121",
+          "available": 405.03
+        },
+        {
+          "speaker": "B",
+          "start": 468.42,
+          "end": 478.46,
+          "text": "Um, do you have any idea so far, like when we're saying that we'd need an advanced chip for an L_C_D_, does that in shoot the cost up by a drastic amount?",
+          "boundary": "sentence_end",
+          "id": "ES2003c-U00137",
+          "available": 478.96
+        },
+        {
+          "speaker": "B",
+          "start": 487.25,
+          "end": 497.65,
+          "text": "if you press a button that sends a certain transmission through the infra-red, whereas I think if we're controlling the L_C_D_ we definitely require a much more powerful chip.",
+          "boundary": "sentence_end",
+          "id": "ES2003c-U00144",
+          "available": 498.15
+        },
+        {
+          "speaker": "B",
+          "start": 497.65,
+          "end": 502.83,
+          "text": "Just compared to the chip you would use for pushing buttons I think is the the point being made.",
+          "boundary": "sentence_end",
+          "id": "ES2003c-U00148",
+          "available": 503.33
+        }
+      ],
+      "previous_answer": "No price difference is given; a more powerful chip does not establish a quoted or measured cost increase.",
+      "reason": "The earlier reviewed reference omitted D explicitly describing the LCD option as more expensive at396.24s. Later questions about magnitude remain unanswered; qualitative higher cost is source-supported.",
+      "reviewer": "Codex full-prefix source inspection",
+      "independent_human_review": false
+    },
+    {
+      "id": "scale:ES2007a-Slater-Q3",
+      "answer": "TV plus connected devices such as DVD players was the initial desired scope. A then proposed a TV-only backup, and C tentatively suggested concentrating on a good TV remote. The available discussion does not settle one final scope.",
+      "required_facts": [
+        "Retain both the earlier TV-plus-connected-device scope and the later TV-only backup/reconsideration; no final scope is settled."
+      ],
+      "source_evidence": [
+        {
+          "speaker": "C",
+          "start": 910.9,
+          "end": 922.94,
+          "text": "Um so I mean we still have time in our next meeting to come up with the actual concept for the user interface, but the the functions that we're sure that we want are that it can control the T_V_, but also devices connected to the",
+          "boundary": "12s_cap",
+          "id": "ES2007a-U00269",
+          "available": 923.44
+        },
+        {
+          "speaker": "C",
+          "start": 926.29,
+          "end": 928.55,
+          "text": "D_V_D_ players, things like that.",
+          "boundary": "sentence_end",
+          "id": "ES2007a-U00272",
+          "available": 929.05
+        },
+        {
+          "speaker": "A",
+          "start": 942.6,
+          "end": 951.58,
+          "text": "We should have a back-up plan of just a really good television remote control, that just that is just for a T_V_, but it's just a really good, nice one.",
+          "boundary": "sentence_end",
+          "id": "ES2007a-U00277",
+          "available": 952.08
+        },
+        {
+          "speaker": "C",
+          "start": 961.3,
+          "end": 966.7,
+          "text": "Yeah, that's true, maybe we should just concentrate on having a a good T_V_ remote, and have it be um",
+          "boundary": "speaker_gap",
+          "id": "ES2007a-U00282",
+          "available": 967.2
+        }
+      ],
+      "previous_answer": "C said the functions they were sure they wanted included television and connected devices such as DVD players.",
+      "reason": "The original reference stopped at C’s earlier stated scope and omitted the later TV-only backup and C’s tentative reconsideration before the request. Every answer is reviewed against the complete chronology.",
+      "reviewer": "Codex full-prefix source inspection",
+      "independent_human_review": false
+    }
+  ]
+}

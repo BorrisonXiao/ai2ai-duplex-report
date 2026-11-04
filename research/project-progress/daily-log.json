@@ -16,14 +16,19 @@
           "label": "Additional-meeting results"
         },
         {
-          "text": "Corrected a stale office-headcount reference using the later fifteen-person clarification and rescored every condition consistently.",
+          "text": "Rechecked the complete source chronology, corrected three reference answers and applied the same targets to every condition.",
           "url": "experiments/structured-notes.html#protocol",
           "label": "Source-based evaluation"
         },
         {
-          "text": "Reviewed ongoing Thinking-reader and automatic-transcript comparisons with separate request-time and total token accounting.",
+          "text": "Completed Thinking-reader and automatic-transcript comparisons with separate request-time and total token accounting.",
           "url": "experiments/structured-notes.html#asr",
           "label": "Reader and transcript tests"
+        },
+        {
+          "text": "Source-note writing became cheaper, but request-time thinking showed no consistent saving over focused reactive prompting.",
+          "url": "experiments/structured-notes.html#results",
+          "label": "Token trade-off"
         }
       ]
     },
