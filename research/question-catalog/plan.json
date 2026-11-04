@@ -360,6 +360,42 @@
           "status": "pending",
           "project_url": "experiments/structured-notes.html#protocol",
           "evidence": "Three reference corrections found in the 12-question additional test; the new 105-reference v3 file includes those corrections, while the remaining 87 cases need a full-prefix recheck."
+        },
+        {
+          "text": "Audit all 105 references for later revisions and freeze the scoring facts.",
+          "status": "complete",
+          "project_url": "experiments/full-answering-results.html#evaluation",
+          "evidence": "Thinking audit processed 105 complete prefixes; Codex checked nine flagged cases against source speech; v4 references frozen for scorer qualification."
+        },
+        {
+          "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
+          "status": "partial",
+          "project_url": "experiments/full-answering-results.html#s1",
+          "evidence": "11 native input cases completed; final content scoring pending."
+        },
+        {
+          "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
+          "status": "partial",
+          "project_url": "experiments/full-answering-results.html#s2",
+          "evidence": "Question-blind common Instruct writer submitted; reader timing qualified on four real outputs."
+        },
+        {
+          "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",
+          "status": "pending",
+          "project_url": "experiments/full-answering-results.html#latency",
+          "evidence": "Serial cold-cache timing passed on four real outputs; full 105-question timing queued."
+        },
+        {
+          "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
+          "status": "partial",
+          "project_url": "experiments/full-answering-results.html#asr",
+          "evidence": "Full causal audio manifests prepared; variable-speaker pipeline runtime-qualified; full ASR quality pending."
+        },
+        {
+          "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
+          "status": "pending",
+          "project_url": "experiments/full-answering-results.html#evaluation",
+          "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
         }
       ]
     },

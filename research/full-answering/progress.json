@@ -1,0 +1,62 @@
+{
+  "updated": "2026-11-04T23:43:56+00:00",
+  "status": "full_evaluation_in_progress",
+  "questions": 105,
+  "meetings": 26,
+  "brief": [
+    {
+      "text": "The full comparison covers 105 questions across 26 meetings; final accuracy and latency results are pending.",
+      "url": "#coverage"
+    },
+    {
+      "text": "Duplex-only runs compare the same requests with no earlier discussion, four minutes of history and all earlier audio.",
+      "url": "#s1"
+    },
+    {
+      "text": "S2 compares reactive answers, summaries, accumulated structured notes and compact source notes with the full transcript held fixed.",
+      "url": "#s2"
+    },
+    {
+      "text": "The timing test measures actual post-request response time separately from thinking-token counts.",
+      "url": "#latency"
+    }
+  ],
+  "coverage": [
+    {
+      "work": "Reference audit",
+      "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
+      "validation": "References frozen for scorer qualification."
+    },
+    {
+      "work": "Native S1 outputs",
+      "status": "11 input cases completed so far; three models submitted.",
+      "validation": "Answer scoring pending."
+    },
+    {
+      "work": "Question-blind GT summaries and notes",
+      "status": "Full-meeting writer submitted.",
+      "validation": "Source/time/schema audit pending."
+    },
+    {
+      "work": "S2 readers and actual latency",
+      "status": "Streaming timing qualified on four actual outputs; full readers are queued after saved notes.",
+      "validation": "Four qualification answers source-checked; full-bank results pending."
+    },
+    {
+      "work": "Generated transcripts",
+      "status": "Six variable-speaker prefix tests complete; full causal Parakeet job queued.",
+      "validation": "WER and speaker consistency checks pending."
+    }
+  ],
+  "completed_native_outputs": 11,
+  "native_counts": {
+    "moshi": 11
+  },
+  "maximum_active_GPUs": 4,
+  "next_steps": [
+    "Qualify the scorer against the frozen references so full-bank accuracy rests on supported answers.",
+    "Finish native S1 and question-blind note runs, then run the matched readers on identical questions.",
+    "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
+    "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."
+  ]
+}

@@ -2,28 +2,28 @@
   "updated": "2026-11-04",
   "now": [
     {
-      "id": "notes-now",
-      "text": "Evaluate source notes that reduce copying and retain changed events.",
+      "id": "full-reference",
+      "text": "Audit all 105 references for later revisions and freeze the scoring facts.",
       "status": "complete",
-      "url": "experiments/structured-notes.html#results"
+      "url": "experiments/full-answering-results.html#evaluation"
     },
     {
-      "id": "notes-reference-next",
-      "text": "Recheck remaining references to catch missed revisions before full-set evaluation.",
+      "id": "full-native",
+      "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
+      "status": "partial",
+      "url": "experiments/full-answering-results.html#s1"
+    },
+    {
+      "id": "full-text",
+      "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
+      "status": "partial",
+      "url": "experiments/full-answering-results.html#s2"
+    },
+    {
+      "id": "full-latency",
+      "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",
       "status": "pending",
-      "url": "experiments/structured-notes.html#protocol"
-    },
-    {
-      "id": "notes-links-next",
-      "text": "Test stricter event links to remove weak relationships and connect missed revisions.",
-      "status": "pending",
-      "url": "experiments/structured-notes.html#changes"
-    },
-    {
-      "status": "complete",
-      "text": "Review the S1/S2 comparison, its question-type patterns and the additional value of earlier thinking.",
-      "url": "experiments/answering-results.html#findings",
-      "label": "Main findings"
+      "url": "experiments/full-answering-results.html#latency"
     }
   ],
   "definition": {
@@ -337,6 +337,48 @@
           "status": "pending",
           "url": "experiments/structured-notes.html#protocol",
           "evidence": "Three reference corrections found in the 12-question additional test; the new 105-reference v3 file includes those corrections, while the remaining 87 cases need a full-prefix recheck."
+        },
+        {
+          "id": "full-reference",
+          "text": "Audit all 105 references for later revisions and freeze the scoring facts.",
+          "status": "complete",
+          "url": "experiments/full-answering-results.html#evaluation",
+          "evidence": "Thinking audit processed 105 complete prefixes; Codex checked nine flagged cases against source speech; v4 references frozen for scorer qualification."
+        },
+        {
+          "id": "full-native",
+          "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
+          "status": "partial",
+          "url": "experiments/full-answering-results.html#s1",
+          "evidence": "11 native input cases completed; final content scoring pending."
+        },
+        {
+          "id": "full-text",
+          "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
+          "status": "partial",
+          "url": "experiments/full-answering-results.html#s2",
+          "evidence": "Question-blind common Instruct writer submitted; reader timing qualified on four real outputs."
+        },
+        {
+          "id": "full-latency",
+          "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",
+          "status": "pending",
+          "url": "experiments/full-answering-results.html#latency",
+          "evidence": "Serial cold-cache timing passed on four real outputs; full 105-question timing queued."
+        },
+        {
+          "id": "full-ASR",
+          "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
+          "status": "partial",
+          "url": "experiments/full-answering-results.html#asr",
+          "evidence": "Full causal audio manifests prepared; variable-speaker pipeline runtime-qualified; full ASR quality pending."
+        },
+        {
+          "id": "full-analysis",
+          "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
+          "status": "pending",
+          "url": "experiments/full-answering-results.html#evaluation",
+          "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
         }
       ]
     },

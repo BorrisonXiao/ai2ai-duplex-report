@@ -6,6 +6,26 @@
       "date": "2026-11-04",
       "items": [
         {
+          "text": "Started the full 105-question comparison of three duplex models and reactive, summary and structured-note S2 conditions.",
+          "url": "experiments/full-answering-results.html",
+          "label": "Full evaluation"
+        },
+        {
+          "text": "Processed all 105 complete transcript prefixes with the reference-audit model and checked nine flagged claims against source speech.",
+          "url": "experiments/full-answering-results.html#evaluation",
+          "label": "Reference audit"
+        },
+        {
+          "text": "Qualified complete-field JSON transport on 104 native DuplexOmni packet records and excluded early ASR stopping after it changed later answers.",
+          "url": "experiments/full-answering-results.html#s1",
+          "label": "Native transport check"
+        },
+        {
+          "text": "Added serial streaming measurements for first answer text and complete output, with cold prefix-cache controls.",
+          "url": "experiments/full-answering-results.html#latency",
+          "label": "Latency protocol"
+        },
+        {
           "text": "Reviewed nine memory papers and tested replacement notes, incremental edits, event fields and linked original-source segments.",
           "url": "experiments/structured-notes.html#literature",
           "label": "Literature and development"

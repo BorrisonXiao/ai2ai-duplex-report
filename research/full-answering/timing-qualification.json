@@ -1,0 +1,165 @@
+{
+  "status": "streaming_timestamps_and_four_final_answers_checked",
+  "cases": [
+    {
+      "question_id": "scale:EN2004a-S05-Q3",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "condition": "linked_guided",
+      "model": "Qwen3-30B-A3B-Thinking-2507",
+      "seed": 23,
+      "answer": "Choose one.",
+      "evidence": [
+        {
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00097",
+          "available": 392.76
+        }
+      ],
+      "native_thinking_tokens": 1733,
+      "latency_seconds": {
+        "first_generated_token": 0.4283720329403877,
+        "native_thinking_finished": 10.381697949022055,
+        "first_final_channel_token": 10.393280046992004,
+        "first_answer_text": 10.428159961942583,
+        "complete_output": 10.625027532689273
+      },
+      "source_review": {
+        "necessary_facts_correct": true,
+        "material_unsupported_claims": [],
+        "scope": "Codex checked the cited original speech; these four qualification outputs are separate from the full-bank analysis."
+      }
+    },
+    {
+      "question_id": "scale:EN2004a-S075-Q2",
+      "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+      "condition": "reactive_guided",
+      "model": "Qwen3-30B-A3B-Thinking-2507",
+      "seed": 23,
+      "answer": "We decided not to capitalize the beginning of a segment if the sentence continues from the previous segment, as stated by B and C.",
+      "evidence": [
+        {
+          "speaker": "B",
+          "start": 489.5,
+          "end": 495.52,
+          "text": "Um but no, it it can continue into the next segment and that's perfectly fine.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00142",
+          "available": 496.02
+        },
+        {
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00148",
+          "available": 510.71
+        }
+      ],
+      "native_thinking_tokens": 1957,
+      "latency_seconds": {
+        "first_generated_token": 0.3240076587535441,
+        "native_thinking_finished": 11.31958220899105,
+        "first_final_channel_token": 11.331126269884408,
+        "first_answer_text": 11.3651541210711,
+        "complete_output": 11.773145319893956
+      },
+      "source_review": {
+        "necessary_facts_correct": true,
+        "material_unsupported_claims": [],
+        "scope": "Codex checked the cited original speech; these four qualification outputs are separate from the full-bank analysis."
+      }
+    },
+    {
+      "question_id": "scale:EN2004a-S075-Q2",
+      "question": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
+      "condition": "linked_guided",
+      "model": "Qwen3-30B-A3B-Thinking-2507",
+      "seed": 23,
+      "answer": "Do not capitalize when the sentence continues into the next segment; otherwise, capitalize.",
+      "evidence": [
+        {
+          "speaker": "C",
+          "start": 500.95,
+          "end": 510.21,
+          "text": "So if it's quite clear that the sentence is being carried on, the p you know, the sentence from the previous segment is being carried on, then that's when you don't capitalise.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00148",
+          "available": 510.71
+        },
+        {
+          "speaker": "C",
+          "start": 510.21,
+          "end": 510.92,
+          "text": "Otherwise you do.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00150",
+          "available": 511.42
+        }
+      ],
+      "native_thinking_tokens": 2019,
+      "latency_seconds": {
+        "first_generated_token": 0.46711782086640596,
+        "native_thinking_finished": 12.167196434922516,
+        "first_final_channel_token": 12.179030450060964,
+        "first_answer_text": 12.214191295206547,
+        "complete_output": 12.57931972714141
+      },
+      "source_review": {
+        "necessary_facts_correct": true,
+        "material_unsupported_claims": [],
+        "scope": "Codex checked the cited original speech; these four qualification outputs are separate from the full-bank analysis."
+      }
+    },
+    {
+      "question_id": "scale:EN2004a-S05-Q3",
+      "question": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
+      "condition": "reactive_guided",
+      "model": "Qwen3-30B-A3B-Thinking-2507",
+      "seed": 23,
+      "answer": "Choose one.",
+      "evidence": [
+        {
+          "speaker": "A",
+          "start": 379.73,
+          "end": 388.69,
+          "text": "But if there's a chance that it's equally likely that they could have said something or they could have said something like ice cream and I scream, then just choose one and leave it, right.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00096",
+          "available": 389.19
+        },
+        {
+          "speaker": "B",
+          "start": 387.59,
+          "end": 392.26,
+          "text": "Choose one, it c I mean y think of it from a speech recognition point of view again.",
+          "boundary": "sentence_end",
+          "id": "EN2004a-U00097",
+          "available": 392.76
+        }
+      ],
+      "native_thinking_tokens": 2469,
+      "latency_seconds": {
+        "first_generated_token": 0.2526157568208873,
+        "native_thinking_finished": 14.026825338602066,
+        "first_final_channel_token": 14.038090704008937,
+        "first_answer_text": 14.07202698662877,
+        "complete_output": 14.34939134074375
+      },
+      "source_review": {
+        "necessary_facts_correct": true,
+        "material_unsupported_claims": [],
+        "scope": "Codex checked the cited original speech; these four qualification outputs are separate from the full-bank analysis."
+      }
+    }
+  ],
+  "GPUs": 1,
+  "GPU_type_VRAM": "H10080GB",
+  "GPU_0": "Reader and8GiB KV; isolated serial requests",
+  "cache": "Cleared before each request",
+  "interpretation": "Two questions qualify the measurement pipeline; they do not establish a population latency improvement."
+}

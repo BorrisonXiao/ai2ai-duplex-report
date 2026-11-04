@@ -1,0 +1,382 @@
+{
+  "status": "reviewed",
+  "cases": [
+    {
+      "question_id": "first:authored-W3-1",
+      "decision": "keep",
+      "reason": "The auditor assigns Claire to B, but U00455 A asks who is emailing Claire and U00456 C confirms; retain C.",
+      "evidence": [
+        {
+          "speaker": "A",
+          "start": 1349.78,
+          "end": 1353.99,
+          "text": "So you're going to email Claire.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00455",
+          "available": 1354.49
+        },
+        {
+          "speaker": "C",
+          "start": 1353.83,
+          "end": 1354.06,
+          "text": "Yeah.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00456",
+          "available": 1354.56
+        },
+        {
+          "speaker": "A",
+          "start": 1355.91,
+          "end": 1359.06,
+          "text": "so who wants to send something out to Informatics?",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00458",
+          "available": 1359.56
+        },
+        {
+          "speaker": "B",
+          "start": 1359.57,
+          "end": 1359.98,
+          "text": "I'll do that.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00459",
+          "available": 1360.48
+        },
+        {
+          "speaker": "B",
+          "start": 1361.93,
+          "end": 1363.36,
+          "text": "And should I get in touch with Philosophy as well?",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00463",
+          "available": 1363.86
+        },
+        {
+          "speaker": "A",
+          "start": 1363.67,
+          "end": 1365.25,
+          "text": "Yeah, sure.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00464",
+          "available": 1365.75
+        }
+      ]
+    },
+    {
+      "question_id": "first:authored-W3-2",
+      "decision": "keep",
+      "reason": "The proposed audit changes are paraphrases; Philosophy relevance and Claire using the main call as a basis are already supported.",
+      "evidence": [
+        {
+          "speaker": "A",
+          "start": 333.83,
+          "end": 346.07,
+          "text": "Um so yeah, so if if we've s if I've C_C_ed the original one, then you can tell her that that can be the basis for um the basis for her email",
+          "boundary": "12s_cap",
+          "id": "EN2003a-U00112",
+          "available": 346.57
+        },
+        {
+          "speaker": "A",
+          "start": 346.07,
+          "end": 350.06,
+          "text": ", but just make sure that they know it's relevant to them, et cetera.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00114",
+          "available": 350.56
+        },
+        {
+          "speaker": "B",
+          "start": 1417.62,
+          "end": 1425.42,
+          "text": "Basically what I was thinking was um just sending them your call for papers and ch changing it slightly to say dear Philosophy students.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00486",
+          "available": 1425.92
+        },
+        {
+          "speaker": "A",
+          "start": 1428.21,
+          "end": 1436.27,
+          "text": "Um as long as it's clear from the subject bar that it's relevant to them and that it says somewhere that",
+          "boundary": "speaker_gap",
+          "id": "EN2003a-U00492",
+          "available": 1436.77
+        },
+        {
+          "speaker": "A",
+          "start": 1437.51,
+          "end": 1440.6,
+          "text": "for Philosophy students with an interest in language and and that's it.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00493",
+          "available": 1441.1
+        }
+      ]
+    },
+    {
+      "question_id": "pilot:P-ES-slogan",
+      "decision": "keep",
+      "reason": "Existing reference already preserves unresolved literal slogan versus general idea.",
+      "evidence": [
+        {
+          "speaker": "D",
+          "start": 157.94,
+          "end": 163.02,
+          "text": "And the slogan, like the actual written slogan, or just to embody the idea of the slogan?",
+          "boundary": "sentence_end",
+          "id": "ES2002b-U00026",
+          "available": 163.52
+        },
+        {
+          "speaker": "B",
+          "start": 163.17,
+          "end": 165.72,
+          "text": "Well that's the thing, I'm I'm not sure um",
+          "boundary": "speaker_gap",
+          "id": "ES2002b-U00027",
+          "available": 166.22
+        }
+      ]
+    },
+    {
+      "question_id": "pilot:P-ES-power",
+      "decision": "minimum_fact_simplified",
+      "reason": "Microphone is the clearly named extra hardware; voice-recognition components and power constraints are useful additional detail, not mandatory duplicated terminology.",
+      "evidence": [
+        {
+          "speaker": "A",
+          "start": 1516.58,
+          "end": 1523.71,
+          "text": "That might be constrained because that you might need to power a microphone, you might need to power other things, so that's one perhaps constraint there.",
+          "boundary": "sentence_end",
+          "id": "ES2002b-U00509",
+          "available": 1524.21
+        },
+        {
+          "speaker": "A",
+          "start": 1632.63,
+          "end": 1644.8,
+          "text": "For example, if you needed um if you needed to add uh a voice recognition, right, then your user interface would be split, broken down into more components, right, which you have a microphone, the V_R_",
+          "boundary": "12s_cap",
+          "id": "ES2002b-U00564",
+          "available": 1645.3
+        }
+      ]
+    },
+    {
+      "question_id": "pilot:Q-TS-current-audience",
+      "decision": "keep",
+      "reason": "Question asks what the NEW REQUIREMENTS specified. A explicitly says40plus at U00271-275. D later discusses younger-market preferences without revising the company requirement.",
+      "evidence": [
+        {
+          "speaker": "A",
+          "start": 1111.83,
+          "end": 1116.72,
+          "text": "Another one is uh the customer is uh forty plus.",
+          "boundary": "sentence_end",
+          "id": "TS3003b-U00271",
+          "available": 1117.22
+        },
+        {
+          "speaker": "A",
+          "start": 1116.72,
+          "end": 1125.78,
+          "text": "Uh that's the the market we have to to to target, because we are going to develop a new product which is specially designed for the younger customers.",
+          "boundary": "sentence_end",
+          "id": "TS3003b-U00272",
+          "available": 1126.28
+        },
+        {
+          "speaker": "A",
+          "start": 1126.66,
+          "end": 1132.57,
+          "text": "Um this is uh a bit pity for the Marketing uh Expert.",
+          "boundary": "sentence_end",
+          "id": "TS3003b-U00273",
+          "available": 1133.07
+        },
+        {
+          "speaker": "A",
+          "start": 1136.82,
+          "end": 1146.48,
+          "text": "So we have to find a market which is above forty plus uh but which will suit our uh remote control, and the other way round.",
+          "boundary": "sentence_end",
+          "id": "TS3003b-U00275",
+          "available": 1146.98
+        },
+        {
+          "speaker": "D",
+          "start": 1331.0,
+          "end": 1334.14,
+          "text": "sixteen to forty five age category.",
+          "boundary": "sentence_end",
+          "id": "TS3003b-U00322",
+          "available": 1334.64
+        },
+        {
+          "speaker": "D",
+          "start": 1341.96,
+          "end": 1346.05,
+          "text": "People of forty plus, I mean they want it to work, but",
+          "boundary": "speaker_gap",
+          "id": "TS3003b-U00325",
+          "available": 1346.55
+        }
+      ]
+    },
+    {
+      "question_id": "scale:EN2001b-Slater-Q2",
+      "decision": "revise",
+      "reason": "A separate ID/value file was discussed first, but later speech proposes copying the segments file and adding density attributes; the reference must preserve this later plan and tentative status.",
+      "evidence": [
+        {
+          "speaker": "B",
+          "start": 962.21,
+          "end": 973.46,
+          "text": "if we have here a link to the segment, a like an I_D_ for that segment, that we just create another file which links to the segment and then has an additional value which is the number.",
+          "boundary": "sentence_end",
+          "id": "EN2001b-U00272",
+          "available": 973.96
+        },
+        {
+          "speaker": "C",
+          "start": 1043.08,
+          "end": 1048.6,
+          "text": "Wouldn't it be easiest to just incorporate a new attribute in in this file?",
+          "boundary": "sentence_end",
+          "id": "EN2001b-U00293",
+          "available": 1049.1
+        },
+        {
+          "speaker": "B",
+          "start": 1049.0,
+          "end": 1050.32,
+          "text": "In the existing segments file.",
+          "boundary": "sentence_end",
+          "id": "EN2001b-U00294",
+          "available": 1050.82
+        },
+        {
+          "speaker": "B",
+          "start": 1056.45,
+          "end": 1058.45,
+          "text": "Yeah, I reckon actually if we make a copy of it",
+          "boundary": "speaker_gap",
+          "id": "EN2001b-U00296",
+          "available": 1058.95
+        },
+        {
+          "speaker": "B",
+          "start": 1161.54,
+          "end": 1170.16,
+          "text": "No but I think it's too early to really like discuss that in detail, because we don't at all understand at the moment how the internal data structure like how the loading works.",
+          "boundary": "sentence_end",
+          "id": "EN2001b-U00323",
+          "available": 1170.66
+        },
+        {
+          "speaker": "B",
+          "start": 1170.16,
+          "end": 1182.22,
+          "text": "So maybe if we g if we go ahead, do you think it would be possible for you to do an like something like segments or maybe just a copy of segment which has an attribute for for each segment, um but it is like with",
+          "boundary": "12s_cap",
+          "id": "EN2001b-U00324",
+          "available": 1182.72
+        },
+        {
+          "speaker": "B",
+          "start": 1182.22,
+          "end": 1185.27,
+          "text": "a with a value with a density value.",
+          "boundary": "sentence_end",
+          "id": "EN2001b-U00325",
+          "available": 1185.77
+        }
+      ]
+    },
+    {
+      "question_id": "scale:EN2009b-S10-Q3",
+      "decision": "keep",
+      "reason": "Expected return tomorrow does not establish availability or consent; existing reference already says this.",
+      "evidence": [
+        {
+          "speaker": "B",
+          "start": 244.73,
+          "end": 247.16,
+          "text": "But uh she'll be uh back tomorrow.",
+          "boundary": "sentence_end",
+          "id": "EN2009b-U00132",
+          "available": 247.66
+        },
+        {
+          "speaker": "B",
+          "start": 256.94,
+          "end": 261.94,
+          "text": "So um I I'll I'll see if if she'd be willing to",
+          "boundary": "speaker_gap",
+          "id": "EN2009b-U00142",
+          "available": 262.44
+        }
+      ]
+    },
+    {
+      "question_id": "scale:ES2006a-Slater-Q2",
+      "decision": "clarify_optional_detail",
+      "reason": "Functional design covers required functions; conceptual design covers use. Initial component identification can begin in functional design; do not paraphrase this as use work already beginning.",
+      "evidence": [
+        {
+          "speaker": "C",
+          "start": 205.82,
+          "end": 218.08,
+          "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is",
+          "boundary": "12s_cap",
+          "id": "ES2006a-U00039",
+          "available": 218.58
+        },
+        {
+          "speaker": "C",
+          "start": 218.08,
+          "end": 225.83,
+          "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing.",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00041",
+          "available": 226.33
+        },
+        {
+          "speaker": "A",
+          "start": 227.37,
+          "end": 233.14,
+          "text": "So whe where do we identify the components of our uh product?",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00042",
+          "available": 233.64
+        },
+        {
+          "speaker": "A",
+          "start": 233.14,
+          "end": 243.33,
+          "text": "Uh I think it's it's in the conceptual design phase that we identify the it's in the conceptual design phase that we identify the components of our product?",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00043",
+          "available": 243.83
+        },
+        {
+          "speaker": "C",
+          "start": 244.45,
+          "end": 251.9,
+          "text": "Um I think we'll we'll start that initially with the functional design already but then yeah.",
+          "boundary": "sentence_end",
+          "id": "ES2006a-U00045",
+          "available": 252.4
+        }
+      ]
+    },
+    {
+      "question_id": "scale:ES2007a-Slater-Q3",
+      "decision": "keep",
+      "reason": "Previously corrected reference already includes the TV-only fallback and unsettled later scope. No new final agreement can be inferred.",
+      "evidence": []
+    }
+  ]
+}

@@ -2,17 +2,17 @@
   "schema_version": "1.0",
   "updated": "2026-11-04",
   "status": "implementation_underway",
-  "snapshot_label": "Native time sweeps and generated-transcript comparisons",
+  "snapshot_label": "Full105-question S1/S2 comparison",
   "active_job": null,
   "planned_questions_per_condition": 105,
-  "planned_cells": 33,
-  "planned_final_answers": 3465,
+  "planned_cells": 59,
+  "planned_final_answers": 8820,
   "attempted": 0,
-  "completed_outputs": 0,
+  "completed_outputs": 11,
   "reviewed_outputs": 0,
   "correct_outputs": null,
   "examples": [],
-  "gate_status": "not_validated",
+  "gate_status": "full_reference_and_scorer_review_pending",
   "tasks": [
     {
       "id": "plan",
@@ -269,9 +269,51 @@
       "status": "pending",
       "url": "experiments/structured-notes.html#protocol",
       "evidence": "Three reference corrections found in the 12-question additional test; the new 105-reference v3 file includes those corrections, while the remaining 87 cases need a full-prefix recheck."
+    },
+    {
+      "id": "full-reference",
+      "text": "Audit all 105 references for later revisions and freeze the scoring facts.",
+      "status": "complete",
+      "url": "experiments/full-answering-results.html#evaluation",
+      "evidence": "Thinking audit processed 105 complete prefixes; Codex checked nine flagged cases against source speech; v4 references frozen for scorer qualification."
+    },
+    {
+      "id": "full-native",
+      "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
+      "status": "partial",
+      "url": "experiments/full-answering-results.html#s1",
+      "evidence": "11 native input cases completed; final content scoring pending."
+    },
+    {
+      "id": "full-text",
+      "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
+      "status": "partial",
+      "url": "experiments/full-answering-results.html#s2",
+      "evidence": "Question-blind common Instruct writer submitted; reader timing qualified on four real outputs."
+    },
+    {
+      "id": "full-latency",
+      "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",
+      "status": "pending",
+      "url": "experiments/full-answering-results.html#latency",
+      "evidence": "Serial cold-cache timing passed on four real outputs; full 105-question timing queued."
+    },
+    {
+      "id": "full-ASR",
+      "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
+      "status": "partial",
+      "url": "experiments/full-answering-results.html#asr",
+      "evidence": "Full causal audio manifests prepared; variable-speaker pipeline runtime-qualified; full ASR quality pending."
+    },
+    {
+      "id": "full-analysis",
+      "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
+      "status": "pending",
+      "url": "experiments/full-answering-results.html#evaluation",
+      "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
     }
   ],
-  "updated_at": "2026-11-04T21:53:29.203526+00:00",
+  "updated_at": "2026-11-04T23:43:56+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -412,5 +454,68 @@
     "exploratory_reviewed": 72,
     "question_blind": true,
     "maximum_active_GPUs": 2
+  },
+  "full_evaluation": {
+    "url": "experiments/full-answering-results.html",
+    "updated": "2026-11-04T23:43:56+00:00",
+    "status": "full_evaluation_in_progress",
+    "questions": 105,
+    "meetings": 26,
+    "brief": [
+      {
+        "text": "The full comparison covers 105 questions across 26 meetings; final accuracy and latency results are pending.",
+        "url": "#coverage"
+      },
+      {
+        "text": "Duplex-only runs compare the same requests with no earlier discussion, four minutes of history and all earlier audio.",
+        "url": "#s1"
+      },
+      {
+        "text": "S2 compares reactive answers, summaries, accumulated structured notes and compact source notes with the full transcript held fixed.",
+        "url": "#s2"
+      },
+      {
+        "text": "The timing test measures actual post-request response time separately from thinking-token counts.",
+        "url": "#latency"
+      }
+    ],
+    "coverage": [
+      {
+        "work": "Reference audit",
+        "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
+        "validation": "References frozen for scorer qualification."
+      },
+      {
+        "work": "Native S1 outputs",
+        "status": "11 input cases completed so far; three models submitted.",
+        "validation": "Answer scoring pending."
+      },
+      {
+        "work": "Question-blind GT summaries and notes",
+        "status": "Full-meeting writer submitted.",
+        "validation": "Source/time/schema audit pending."
+      },
+      {
+        "work": "S2 readers and actual latency",
+        "status": "Streaming timing qualified on four actual outputs; full readers are queued after saved notes.",
+        "validation": "Four qualification answers source-checked; full-bank results pending."
+      },
+      {
+        "work": "Generated transcripts",
+        "status": "Six variable-speaker prefix tests complete; full causal Parakeet job queued.",
+        "validation": "WER and speaker consistency checks pending."
+      }
+    ],
+    "completed_native_outputs": 11,
+    "native_counts": {
+      "moshi": 11
+    },
+    "maximum_active_GPUs": 4,
+    "next_steps": [
+      "Qualify the scorer against the frozen references so full-bank accuracy rests on supported answers.",
+      "Finish native S1 and question-blind note runs, then run the matched readers on identical questions.",
+      "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
+      "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."
+    ]
   }
 }
