@@ -36,3 +36,7 @@ Memory update operations, compact fact representations and explicit links betwee
 - Most reported token savings compare retrieved memory with full-history inputs; they do not directly establish lower native request thinking when the full transcript is retained.
 - Stable speaker ownership, disfluent speech and unresolved AMI discussion require source checks beyond schema validity.
 - A prompt-only incremental edit system may reduce copying but still merge distinct events or mistake intent for completion.
+
+## Additional design inferred for this project
+
+Test an event index over selected original utterances as well as paraphrased facts. The model selects source IDs and field links; code copies the source words, speaker and time once. This adapts source-grounded records and event links to our question-blind meeting setting. It prevents invented note prose by construction, while source selection and event grouping can still fail.

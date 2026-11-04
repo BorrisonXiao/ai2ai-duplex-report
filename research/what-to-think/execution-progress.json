@@ -220,27 +220,28 @@
       "text": "Review compact-memory methods and define source-grounded note updates.",
       "status": "complete",
       "url": "experiments/structured-notes.html#literature",
-      "evidence": "Nine primary-source papers reviewed; current-state and incremental-edit prompts defined, with causal/source/duplicate regression checks."
+      "evidence": "Nine primary papers reviewed; source selection, explicit updates and temporal evidence inform the design."
     },
     {
       "id": "notes-development",
       "text": "Compare compact notes, incremental edits and the original notes on six development questions.",
-      "status": "partial",
+      "status": "complete",
       "url": "experiments/structured-notes.html#results",
-      "evidence": "Both text readers have frozen one-H100 development jobs; answer accuracy and event retention require source inspection."
+      "evidence": "Six development questions and authored controls reviewed; selected source-only notes retain key evidence and reduce earlier generated tokens by 62%."
     },
     {
       "id": "notes-additional",
       "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
-      "status": "pending",
+      "status": "partial",
       "url": "experiments/structured-notes.html#protocol",
-      "evidence": "Additional meetings selected using split and timing metadata before development outputs were inspected."
+      "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 96/180 final outputs reviewed across two readers, five conditions and request seeds."
     },
     {
       "id": "notes-generated",
       "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
-      "status": "pending",
-      "url": "experiments/structured-notes.html#next"
+      "status": "complete",
+      "url": "experiments/structured-notes.html#next",
+      "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both readers; 144/144 outputs reviewed."
     },
     {
       "id": "s2-development",
@@ -256,7 +257,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-04T19:11:38.211914+00:00",
+  "updated_at": "2026-11-04T21:28:07.543728+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -383,11 +384,16 @@
     "figure": 1
   },
   "notes_optimization": {
-    "status": "development_in_progress",
+    "status": "transfer_review_in_progress",
     "url": "experiments/structured-notes.html",
     "development_questions": 6,
     "additional_questions": 12,
     "additional_meetings": 6,
+    "selected_policy": "Source notes with local context and revision checks",
+    "additional_outputs": 124,
+    "additional_reviewed": 96,
+    "automatic_outputs": 144,
+    "automatic_reviewed": 144,
     "question_blind": true,
     "maximum_active_GPUs": 2
   }

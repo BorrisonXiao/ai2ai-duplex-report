@@ -6,14 +6,24 @@
       "date": "2026-11-04",
       "items": [
         {
-          "text": "Reviewed nine memory papers and designed compact snapshots and incremental edits that retain event changes.",
-          "url": "experiments/structured-notes.html#design",
-          "label": "Design and sources"
+          "text": "Reviewed nine memory papers and tested replacement notes, incremental edits, event fields and linked original-source segments.",
+          "url": "experiments/structured-notes.html#literature",
+          "label": "Literature and development"
         },
         {
-          "text": "Launched matched Instruct and Thinking development pilots and selected twelve additional questions before inspecting results.",
+          "text": "Frozen source notes matched old-note Instruct accuracy on twelve additional questions while cutting earlier generated tokens by 59%.",
+          "url": "experiments/structured-notes.html#results",
+          "label": "Additional-meeting results"
+        },
+        {
+          "text": "Corrected a stale office-headcount reference using the later fifteen-person clarification and rescored every condition consistently.",
           "url": "experiments/structured-notes.html#protocol",
-          "label": "Experiment protocol"
+          "label": "Source-based evaluation"
+        },
+        {
+          "text": "Reviewed ongoing Thinking-reader and automatic-transcript comparisons with separate request-time and total token accounting.",
+          "url": "experiments/structured-notes.html#asr",
+          "label": "Reader and transcript tests"
         }
       ]
     },

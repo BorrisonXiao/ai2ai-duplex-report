@@ -1,0 +1,17 @@
+{
+  "additional": [
+    "Source notes and old notes recover the intended ambiguity rule, continuation capitalization and TV-plus-connected-device scope more reliably than reactive Instruct. The focused instruction alone fixes the first two cases.",
+    "Source notes recover the stated qualitative LCD-chip cost more accurately than the reactive answers that add a large increase. The office notes retain the later fifteen-person clarification and an explicit revision link, yet Instruct still answers eighteen. The profit calculation improves to 50% but omits the required before-other-costs qualification.",
+    "Across the twelve Instruct request inputs, old notes contain 2,114 exact repeated fact entries among 2,296 entries. Source notes contain two repeated text strings among 639 note entries, with unique source IDs in each state. Repeated original speech remains distinguishable from repeated generated snapshots."
+  ],
+  "asr": [
+    "Instruct remains at 4/6 with both transcripts and all four prompt/note conditions. Source notes do not resolve its stale outreach time or overstatement of file actions.",
+    "Thinking results vary by transcript and request seed. Parakeet source notes give 4\u20135/6 versus 4/6 reactively; Whisper source notes give 4/6 versus 4\u20135/6 reactively. Source notes with the focused prompt reach 6/6 in one Whisper seed and 4/6 in the other.",
+    "With the original reader prompt, source notes increase mean request thinking by about 9% for Parakeet and reduce it by about 2% for Whisper. Including earlier writing, generated-token totals are about 2.2\u20132.4 times the corresponding reactive totals across these automatic-transcript conditions."
+  ],
+  "next": [
+    "Finish the Thinking-reader comparisons to measure request-time thinking and full earlier cost.",
+    "Test stricter event relationships to remove weak links and connect missed state changes.",
+    "Expand the frozen comparison only after paired accuracy and token results support the next design."
+  ]
+}

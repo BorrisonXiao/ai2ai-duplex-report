@@ -177,5 +177,6 @@
       "statement": "A prompt-only incremental edit system may reduce copying but still merge distinct events or mistake intent for completion.",
       "evidence": "memsif event linking, ariadne state transitions; present hypotheses require experiments."
     }
-  ]
+  ],
+  "design_inference": "In addition to paraphrased state, test an event index over selected original utterances. The model selects source IDs and links fields; code copies the words, speaker and source time once. This prevents invented note prose by construction, while selection/event-link errors remain measurable."
 }

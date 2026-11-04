@@ -3,15 +3,15 @@
   "now": [
     {
       "id": "notes-now",
-      "text": "Optimize structured notes to remove repetition while preserving event changes.",
-      "status": "partial",
-      "url": "experiments/structured-notes.html"
-    },
-    {
-      "id": "notes-eval-now",
-      "text": "Review answer quality, request-time thinking and total token cost before selecting a policy.",
+      "text": "Evaluate source notes that reduce copying and retain changed events.",
       "status": "partial",
       "url": "experiments/structured-notes.html#results"
+    },
+    {
+      "id": "notes-links-next",
+      "text": "Test stricter event links to remove weak relationships and connect missed revisions.",
+      "status": "pending",
+      "url": "experiments/structured-notes.html#changes"
     },
     {
       "status": "complete",
@@ -287,27 +287,28 @@
           "text": "Review compact-memory methods and define source-grounded note updates.",
           "status": "complete",
           "url": "experiments/structured-notes.html#literature",
-          "evidence": "Nine primary-source papers reviewed; current-state and incremental-edit prompts defined, with causal/source/duplicate regression checks."
+          "evidence": "Nine primary papers reviewed; source selection, explicit updates and temporal evidence inform the design."
         },
         {
           "id": "notes-development",
           "text": "Compare compact notes, incremental edits and the original notes on six development questions.",
-          "status": "partial",
+          "status": "complete",
           "url": "experiments/structured-notes.html#results",
-          "evidence": "Both text readers have frozen one-H100 development jobs; answer accuracy and event retention require source inspection."
+          "evidence": "Six development questions and authored controls reviewed; selected source-only notes retain key evidence and reduce earlier generated tokens by 62%."
         },
         {
           "id": "notes-additional",
           "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
-          "status": "pending",
+          "status": "partial",
           "url": "experiments/structured-notes.html#protocol",
-          "evidence": "Additional meetings selected using split and timing metadata before development outputs were inspected."
+          "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 96/180 final outputs reviewed across two readers, five conditions and request seeds."
         },
         {
           "id": "notes-generated",
           "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
-          "status": "pending",
-          "url": "experiments/structured-notes.html#next"
+          "status": "complete",
+          "url": "experiments/structured-notes.html#next",
+          "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both readers; 144/144 outputs reviewed."
         },
         {
           "id": "s2-development",
