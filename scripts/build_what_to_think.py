@@ -47,6 +47,7 @@ def build_progress(progress,p):
    if (ROOT/'research/comparison-followup/progress.json').exists():
     from comparison_followup_view import render as comparison_followup
     body=comparison_followup(t)
+    body=body.replace('</header>', '</header><p><strong><a href="experiments/structured-notes.html">Current work: structured-note optimization</a></strong> · Incremental updates, event changes and token costs.</p>',1)
     body=body.replace('</header>', '</header><p><strong><a href="experiments/answering-results.html">Read the S1 and text S2 results report</a></strong> · Setup, audio examples, transcript WER, answer quality and thinking-token costs.</p>',1)
     body+='<details id="earlier-answering-pilot"><summary>Earlier six-question answering pilot and ground-truth text results</summary>'+answering_study(t).replace('<h1>Experiment progress</h1>','<h2>Earlier answering pilot</h2>',1).replace('id="summary"','id="earlier-answering-summary"',1)+'</details>'
    else:body=answering_study(t)

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-11-02",
+  "updated": "2026-11-04",
   "status": "implementation_underway",
   "snapshot_label": "Native time sweeps and generated-transcript comparisons",
   "active_job": null,
@@ -216,6 +216,33 @@
       "url": "what-to-think.html#conditions"
     },
     {
+      "id": "notes-literature",
+      "text": "Review compact-memory methods and define source-grounded note updates.",
+      "status": "complete",
+      "url": "experiments/structured-notes.html#literature",
+      "evidence": "Nine primary-source papers reviewed; current-state and incremental-edit prompts defined, with causal/source/duplicate regression checks."
+    },
+    {
+      "id": "notes-development",
+      "text": "Compare compact notes, incremental edits and the original notes on six development questions.",
+      "status": "partial",
+      "url": "experiments/structured-notes.html#results",
+      "evidence": "Both text readers have frozen one-H100 development jobs; answer accuracy and event retention require source inspection."
+    },
+    {
+      "id": "notes-additional",
+      "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
+      "status": "pending",
+      "url": "experiments/structured-notes.html#protocol",
+      "evidence": "Additional meetings selected using split and timing metadata before development outputs were inspected."
+    },
+    {
+      "id": "notes-generated",
+      "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
+      "status": "pending",
+      "url": "experiments/structured-notes.html#next"
+    },
+    {
       "id": "s2-development",
       "text": "Select chunks and thinking goals on separate development meetings.",
       "status": "partial",
@@ -229,7 +256,7 @@
       "url": "what-to-think.html#results"
     }
   ],
-  "updated_at": "2026-11-02T21:18:15.574698+00:00",
+  "updated_at": "2026-11-04T19:11:38.211914+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -354,5 +381,14 @@
     "active_GPUs": 0,
     "primary_section": true,
     "figure": 1
+  },
+  "notes_optimization": {
+    "status": "development_in_progress",
+    "url": "experiments/structured-notes.html",
+    "development_questions": 6,
+    "additional_questions": 12,
+    "additional_meetings": 6,
+    "question_blind": true,
+    "maximum_active_GPUs": 2
   }
 }

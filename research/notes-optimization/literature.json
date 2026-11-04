@@ -1,0 +1,181 @@
+{
+  "instruction": "Optimize structured notes for token efficiency, low duplication/noise and conversation event changes.",
+  "date": "2026-11-04",
+  "scope": "Question-blind incremental meeting notes for the existing AMI text S2 readers.",
+  "sub_questions": [
+    "Which facts merit storage before the question is known?",
+    "How should a current fact be updated without erasing its prior state?",
+    "How much cost comes from repeated snapshots and repeated transcript reading?",
+    "Do smaller notes preserve source-complete answers and lower request-time reasoning?"
+  ],
+  "search_scope": "Nine papers; more than five distinct search formulations; primary sources verified; recent papers are separated from peer-reviewed work.",
+  "papers": [
+    {
+      "id": "mem0",
+      "title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+      "authors": "Prateek Chhikara, Dev Khant, Saket Aryan, Taranjeet Singh, Deshraj Yadav",
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "arxiv_id": "2504.19413",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2504.19413",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Separate fact extraction from ADD/UPDATE/DELETE/NOOP memory operations using related existing memories.",
+      "results": "Authors report better LoCoMo accuracy and substantially lower token/latency costs than their full-context comparison.",
+      "relevance": "Use edits and explicit no-change output; preserve old versions instead of deleting revision evidence."
+    },
+    {
+      "id": "amem",
+      "title": "A-MEM: Agentic Memory for LLM Agents",
+      "authors": "Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, Yongfeng Zhang",
+      "year": 2025,
+      "venue": "NeurIPS 2025",
+      "arxiv_id": "2502.12110",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2502.12110",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Create atomic structured notes and link related memories; new evidence can update older note context.",
+      "results": "Evaluations over six foundation models report gains from memory linking and evolution.",
+      "relevance": "Use stable event IDs and explicit relationships; avoid copying keywords/tags that add cost without a tested benefit."
+    },
+    {
+      "id": "longmemeval",
+      "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "authors": "Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, Dong Yu",
+      "year": 2025,
+      "venue": "ICLR 2025",
+      "arxiv_id": "2410.10813",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2410.10813",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Evaluate extraction, cross-session reasoning, time, knowledge updates and unanswered questions; separate indexing, retrieval and reading.",
+      "results": "The 500-question benchmark exposes long-history forgetting; decomposition and time-aware retrieval improve recall.",
+      "relevance": "Score updates, ownership and uncertainty separately; a correct current state must not erase a relevant old state."
+    },
+    {
+      "id": "recursive",
+      "title": "Recursively Summarizing Enables Long-Term Dialogue Memory in Large Language Models",
+      "authors": "Qingyue Wang, Yanhe Fu, Yanan Cao, Shuai Wang, Zhiliang Tian, Liang Ding",
+      "year": 2023,
+      "venue": "Neurocomputing (acceptance stated on arXiv; bibliographic publication year not inferred)",
+      "arxiv_id": "2308.15022",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2308.15022",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Generate a new compact memory from the previous memory and new dialogue, then use the latest memory.",
+      "results": "Reported dialogue consistency gains with open and closed models; this does not guarantee lossless fact retention.",
+      "relevance": "A latest-state replacement is an important simple control against accumulated snapshots."
+    },
+    {
+      "id": "mem1",
+      "title": "MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents",
+      "authors": "Zijian Zhou, Ao Qu, Zhaoxuan Wu, Sunghwan Kim, Alok Prakash, Daniela Rus, Jinhua Zhao, Bryan Kian Hsiang Low, Paul Pu Liang",
+      "year": 2025,
+      "venue": "ICLR 2026 (author repository confirms acceptance)",
+      "arxiv_id": "2506.15841",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2506.15841",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Train a recurrent compact memory state with reinforcement learning rather than retaining the entire interaction.",
+      "results": "Reports improved long-horizon task performance and smaller memory; requires training rather than prompting alone.",
+      "relevance": "Motivates bounded current memory; the present pilot tests prompts without claiming to reproduce trained MEM1."
+    },
+    {
+      "id": "simplemem",
+      "title": "SimpleMem: Efficient Lifelong Memory for LLM Agents",
+      "authors": "Jiaqi Liu, Yaofeng Su, Peng Xia, Siwei Han, Zeyu Zheng, Cihang Xie, Mingyu Ding, Huaxiu Yao",
+      "year": 2026,
+      "venue": "ICML 2026",
+      "arxiv_id": "2601.02553",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2601.02553",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Filter low-information turns, extract self-contained facts, consolidate related content and retrieve according to the question.",
+      "results": "Authors report improved LoCoMo F1 and lower inference tokens; exact gains depend on their retrieval-based setup.",
+      "relevance": "Filter fillers and redundant confirmations, but keep short rejections that change decisions; preserve relative times when AMI has no calendar date."
+    },
+    {
+      "id": "ariadne",
+      "title": "AriadneMem: Threading the Maze of Lifelong Memory for LLM Agents",
+      "authors": "Wenhui Zhu et al.",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "arxiv_id": "2603.03290",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2603.03290",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Use information filtering and conflict-aware consolidation, preserving state transitions as temporal links.",
+      "results": "Abstract reports stronger multi-hop F1 and lower runtime on LoCoMo; full experimental reproduction is outside this review.",
+      "relevance": "Keep a compact change log alongside current facts; similarity alone must not merge different event states."
+    },
+    {
+      "id": "memsif",
+      "title": "MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents",
+      "authors": "YuFei Luo, Xiucheng Xu, Zhen Yang",
+      "year": 2026,
+      "venue": "arXiv preprint; submitted to AAAI 2027",
+      "arxiv_id": "2608.01742",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2608.01742",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Group coherent topical segments and link nonadjacent segments belonging to an evolving event; distinguish stable facts from facts formed on demand.",
+      "results": "Reports gains on LoCoMo and LongMemEval-S across five LLMs; no direct AMI/streaming evidence.",
+      "relevance": "Use an event/topic ID for updates across separated chunks; question-blind salience is uncertain, so retain the original full transcript at answer time."
+    },
+    {
+      "id": "leanmem",
+      "title": "LeanMem: Simple and Efficient Long-Term Memory for LLM Agents",
+      "authors": "Yuxin Liao, Le Wu, Min Hou, Hao Liu, Han Wu, Zishu Wang",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "arxiv_id": "2608.03463",
+      "doi": null,
+      "source": "https://arxiv.org/abs/2608.03463",
+      "status": "verified",
+      "verification": "Opened primary arXiv abstract; method details checked in available primary HTML for Mem0, A-MEM, MemSIF, SimpleMem, LeanMem and MEM1.",
+      "problem": "Efficient, reliable long-conversation memory with evolving facts.",
+      "method": "Treat stable profiles, changing events and source-grounded records differently; selectively update dynamic event memories.",
+      "results": "Reports accuracy and construction-cost gains on LoCoMo/LongMemEval-S; independent meeting results remain untested.",
+      "relevance": "Update only affected notes, keep source IDs for exact quantities and decisions, and measure construction cost separately from request cost."
+    }
+  ],
+  "themes": [
+    "Maintain a current state with explicit updates instead of appending full repeated snapshots.",
+    "Separate stable facts, current event state and revision evidence.",
+    "Store sources and uncertain states; compression can erase useful qualifiers.",
+    "Evaluate construction, retrieval and answering separately."
+  ],
+  "gaps": [
+    {
+      "id": "g1",
+      "statement": "Most reported token savings compare retrieved memory with full-history inputs; they do not directly establish lower native request thinking when the full transcript is retained.",
+      "evidence": "mem0, simplemem, leanmem"
+    },
+    {
+      "id": "g2",
+      "statement": "Stable speaker ownership, disfluent speech and unresolved AMI discussion require source checks beyond schema validity.",
+      "evidence": "Current AMI source reviews and longmemeval update/abstention categories."
+    },
+    {
+      "id": "g3",
+      "statement": "A prompt-only incremental edit system may reduce copying but still merge distinct events or mistake intent for completion.",
+      "evidence": "memsif event linking, ariadne state transitions; present hypotheses require experiments."
+    }
+  ]
+}

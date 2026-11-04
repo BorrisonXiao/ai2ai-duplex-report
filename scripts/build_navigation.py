@@ -23,7 +23,7 @@ REVIEW_KEYS = {
 }
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
-    'answering-results.html': 'answering',
+    'answering-results.html': 'answering', 'structured-notes.html': 'notes',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
@@ -35,7 +35,7 @@ EXPERIMENT_KEYS = {
 }
 SUBNAV_LABELS = (
     'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
-    'DuplexOmni experiments', 'Proposal pages', 'AMI question pages', 'Project progress pages',
+    'DuplexOmni experiments', 'S1 and S2 study pages', 'Proposal pages', 'AMI question pages', 'Project progress pages',
 )
 
 
@@ -79,6 +79,7 @@ def build_collections():
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
         section('Project progress', 'The project plan and daily work record.', [
+            ('Structured-note optimization', 'Compact note states, incremental edits, event changes and token costs.', 'structured-notes.html'),
             ('S1 and text S2 results', 'Audio-history ablations, native response examples, transcript WER and accuracy versus thinking-token cost.', 'answering-results.html'),
             ('Project TODO', 'The four project stages and the next amortized-thinking experiments.', '../todo.html'),
             ('Daily log', 'One-sentence updates with links to results and examples.', '../daily-log.html')]) +

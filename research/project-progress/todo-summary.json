@@ -1,6 +1,18 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-04",
   "now": [
+    {
+      "id": "notes-now",
+      "text": "Optimize structured notes to remove repetition while preserving event changes.",
+      "status": "partial",
+      "url": "experiments/structured-notes.html"
+    },
+    {
+      "id": "notes-eval-now",
+      "text": "Review answer quality, request-time thinking and total token cost before selecting a policy.",
+      "status": "partial",
+      "url": "experiments/structured-notes.html#results"
+    },
     {
       "status": "complete",
       "text": "Review the S1/S2 comparison, its question-type patterns and the additional value of earlier thinking.",
@@ -11,21 +23,6 @@
       "status": "complete",
       "text": "Compare S1 and text S2 on the same six questions with question-level answers and totals.",
       "url": "experiments/answering-results.html#s1-s2-comparison"
-    },
-    {
-      "status": "complete",
-      "text": "Compare all five transcript inputs using the same reactive and amortized-thinking settings.",
-      "url": "experiments/answering-results.html#s2-tradeoff"
-    },
-    {
-      "status": "partial",
-      "text": "Calibrate automated quality ratings on real responses before broader evaluation.",
-      "url": "experiments/answering-results.html#quality-real-checks"
-    },
-    {
-      "status": "planned",
-      "text": "Repeat paired S2 comparisons on held-out meetings to test accuracy and thinking-token savings.",
-      "url": "experiments/answering-results.html#next"
     }
   ],
   "definition": {
@@ -284,6 +281,33 @@
           "text": "Check every S1 caller and evaluate all 105 questions for each S1 model.",
           "status": "planned",
           "url": "what-to-think.html#conditions"
+        },
+        {
+          "id": "notes-literature",
+          "text": "Review compact-memory methods and define source-grounded note updates.",
+          "status": "complete",
+          "url": "experiments/structured-notes.html#literature",
+          "evidence": "Nine primary-source papers reviewed; current-state and incremental-edit prompts defined, with causal/source/duplicate regression checks."
+        },
+        {
+          "id": "notes-development",
+          "text": "Compare compact notes, incremental edits and the original notes on six development questions.",
+          "status": "partial",
+          "url": "experiments/structured-notes.html#results",
+          "evidence": "Both text readers have frozen one-H100 development jobs; answer accuracy and event retention require source inspection."
+        },
+        {
+          "id": "notes-additional",
+          "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
+          "status": "pending",
+          "url": "experiments/structured-notes.html#protocol",
+          "evidence": "Additional meetings selected using split and timing metadata before development outputs were inspected."
+        },
+        {
+          "id": "notes-generated",
+          "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
+          "status": "pending",
+          "url": "experiments/structured-notes.html#next"
         },
         {
           "id": "s2-development",
