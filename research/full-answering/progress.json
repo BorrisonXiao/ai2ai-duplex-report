@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T18:00:46+00:00",
+  "updated": "2026-11-05T18:59:47+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -46,19 +46,25 @@
       "work": "Generated transcripts",
       "status": "Parakeet and Whisper pipelines queued; speaker swap, split, merge and recovery controls passed.",
       "validation": "WER and speaker consistency checks pending."
+    },
+    {
+      "work": "Inference optimization",
+      "status": "One A100 80 GB probe pending after the current four GPU jobs; completed evaluation outputs are preserved.",
+      "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
   "completed_native_outputs": 755,
   "native_counts": {
-    "minicpm": 315,
     "moshi": 315,
+    "minicpm": 315,
     "duplexomni": 125
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 3,
+  "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
+    "Measure cache reuse, remove unused speech-tensor work and test two independent cases per GPU; deploy only after matched native-output validation.",
     "Finish the matched readers and inspect actual answer gains, losses and a reproducible sample from other questions.",
     "Finish native S1 replay and generated ASR histories, then complete their matched reader comparisons.",
     "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",

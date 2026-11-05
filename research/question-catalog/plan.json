@@ -396,6 +396,12 @@
           "status": "pending",
           "project_url": "experiments/full-answering-results.html#evaluation",
           "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
+        },
+        {
+          "text": "Measure and qualify faster inference while preserving evaluation inputs and native outputs.",
+          "status": "partial",
+          "project_url": "experiments/full-answering-results.html#resources",
+          "evidence": "One A100 80 GB probe pending after the current four GPU jobs; completed evaluation outputs are preserved. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
         }
       ]
     },
