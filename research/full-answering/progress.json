@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T15:44:59+00:00",
+  "updated": "2026-11-05T16:26:48+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "754 of 945 input cases completed (duplexomni: 124/315, minicpm: 315/315, moshi: 315/315).",
+      "status": "755 of 945 input cases completed (duplexomni: 125/315, minicpm: 315/315, moshi: 315/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -48,11 +48,11 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 754,
+  "completed_native_outputs": 755,
   "native_counts": {
-    "moshi": 315,
     "minicpm": 315,
-    "duplexomni": 124
+    "duplexomni": 125,
+    "moshi": 315
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,

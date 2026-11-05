@@ -8,7 +8,7 @@
   "planned_cells": 59,
   "planned_final_answers": 8820,
   "attempted": 0,
-  "completed_outputs": 754,
+  "completed_outputs": 755,
   "reviewed_outputs": 0,
   "correct_outputs": null,
   "examples": [],
@@ -282,7 +282,7 @@
       "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s1",
-      "evidence": "754 native input cases completed; final content scoring pending."
+      "evidence": "755 native input cases completed; final content scoring pending."
     },
     {
       "id": "full-text",
@@ -313,7 +313,7 @@
       "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
     }
   ],
-  "updated_at": "2026-11-05T15:44:59+00:00",
+  "updated_at": "2026-11-05T16:26:48+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -457,7 +457,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-05T15:44:59+00:00",
+    "updated": "2026-11-05T16:26:48+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -487,7 +487,7 @@
       },
       {
         "work": "Native S1 outputs",
-        "status": "754 of 945 input cases completed (duplexomni: 124/315, minicpm: 315/315, moshi: 315/315).",
+        "status": "755 of 945 input cases completed (duplexomni: 125/315, minicpm: 315/315, moshi: 315/315).",
         "validation": "Answer scoring pending."
       },
       {
@@ -506,11 +506,11 @@
         "validation": "WER and speaker consistency checks pending."
       }
     ],
-    "completed_native_outputs": 754,
+    "completed_native_outputs": 755,
     "native_counts": {
-      "moshi": 315,
       "minicpm": 315,
-      "duplexomni": 124
+      "duplexomni": 125,
+      "moshi": 315
     },
     "completed_S2_outputs": 2835,
     "completed_writer_calls": 4070,
