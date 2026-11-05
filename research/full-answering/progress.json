@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T02:33:53+00:00",
+  "updated": "2026-11-05T03:28:33+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -13,7 +13,7 @@
       "url": "#s1"
     },
     {
-      "text": "S2 compares reactive answers, summaries, accumulated structured notes and compact source notes with the full transcript held fixed.",
+      "text": "Across26 meetings, source-note generation uses 60.3% fewer output tokens than the old structured notes; request-time results are pending.",
       "url": "#s2"
     },
     {
@@ -25,17 +25,17 @@
     {
       "work": "Reference audit",
       "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
-      "validation": "47 reviewed calibration answers queued after the note writer."
+      "validation": "50 reviewed calibration answers queued after the note writer."
     },
     {
       "work": "Native S1 outputs",
-      "status": "257 of 945 input cases completed (duplexomni: 109/315, minicpm: 53/315, moshi: 95/315).",
+      "status": "340 of 945 input cases completed (duplexomni: 117/315, minicpm: 104/315, moshi: 119/315).",
       "validation": "Answer scoring pending."
     },
     {
       "work": "Question-blind GT summaries and notes",
-      "status": "3369 earlier writer/checker calls completed; three note policies are being generated.",
-      "validation": "Source/time/schema audit pending."
+      "status": "4070 earlier writer/checker calls completed; note generation finished.",
+      "validation": "All1,277 source states pass exact-speech, time and budget checks; source-link meanings and final answers require separate evaluation."
     },
     {
       "work": "S2 readers and actual latency",
@@ -48,20 +48,40 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 257,
+  "completed_native_outputs": 340,
   "native_counts": {
-    "moshi": 95,
-    "minicpm": 53,
-    "duplexomni": 109
+    "moshi": 119,
+    "minicpm": 104,
+    "duplexomni": 117
   },
   "completed_S2_outputs": 0,
-  "completed_writer_calls": 3369,
-  "active_GPU_jobs": 4,
+  "completed_writer_calls": 4070,
+  "active_GPU_jobs": 2,
   "maximum_active_GPUs": 4,
   "next_steps": [
     "Qualify the scorer against the frozen references so full-bank accuracy rests on supported answers.",
     "Finish native S1 and question-blind note runs, then run the matched readers on identical questions.",
     "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
     "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."
-  ]
+  ],
+  "writer_cost": {
+    "summary": {
+      "calls": 1277,
+      "input_tokens": 28780395,
+      "generated_tokens": 477979,
+      "revision_checks": 0
+    },
+    "legacy": {
+      "calls": 1277,
+      "input_tokens": 37734728,
+      "generated_tokens": 872613,
+      "revision_checks": 0
+    },
+    "linked": {
+      "calls": 1516,
+      "input_tokens": 7310223,
+      "generated_tokens": 346754,
+      "revision_checks": 239
+    }
+  }
 }
