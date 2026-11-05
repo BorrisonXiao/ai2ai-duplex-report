@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T03:28:33+00:00",
+  "updated": "2026-11-05T04:03:09+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -25,11 +25,11 @@
     {
       "work": "Reference audit",
       "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
-      "validation": "50 reviewed calibration answers queued after the note writer."
+      "validation": "Calibration outputs require a source check; full-bank scoring remains pending."
     },
     {
       "work": "Native S1 outputs",
-      "status": "340 of 945 input cases completed (duplexomni: 117/315, minicpm: 104/315, moshi: 119/315).",
+      "status": "390 of 945 input cases completed (duplexomni: 122/315, minicpm: 143/315, moshi: 125/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -48,11 +48,11 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 340,
+  "completed_native_outputs": 390,
   "native_counts": {
-    "moshi": 119,
-    "minicpm": 104,
-    "duplexomni": 117
+    "moshi": 125,
+    "minicpm": 143,
+    "duplexomni": 122
   },
   "completed_S2_outputs": 0,
   "completed_writer_calls": 4070,
