@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T11:35:24+00:00",
+  "updated": "2026-11-05T12:10:07+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "733 of 945 input cases completed (duplexomni: 123/315, minicpm: 315/315, moshi: 295/315).",
+      "status": "743 of 945 input cases completed (duplexomni: 123/315, minicpm: 315/315, moshi: 305/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "work": "S2 readers and actual latency",
-      "status": "2835 accuracy answers saved (instruct: 945, thinking: 1890); 110/525 serial timing answers saved.",
+      "status": "2835 accuracy answers saved (instruct: 945, thinking: 1890); 300/525 serial timing answers saved.",
       "validation": "Four qualification answers source-checked; full-bank results pending."
     },
     {
@@ -48,11 +48,11 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 733,
+  "completed_native_outputs": 743,
   "native_counts": {
-    "moshi": 295,
-    "duplexomni": 123,
-    "minicpm": 315
+    "moshi": 305,
+    "minicpm": 315,
+    "duplexomni": 123
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
@@ -64,7 +64,7 @@
     "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
     "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."
   ],
-  "completed_timing_outputs": 110,
+  "completed_timing_outputs": 300,
   "completed_S2_by_model": {
     "instruct": 945,
     "thinking": 1890
