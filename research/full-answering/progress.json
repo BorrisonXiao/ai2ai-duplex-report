@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T05:13:45+00:00",
+  "updated": "2026-11-05T05:21:31+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "492 of 945 input cases completed (duplexomni: 122/315, minicpm: 218/315, moshi: 152/315).",
+      "status": "502 of 945 input cases completed (duplexomni: 122/315, minicpm: 223/315, moshi: 157/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "work": "S2 readers and actual latency",
-      "status": "945 full-bank reader outputs completed; matched readers are running or queued in sequence.",
+      "status": "964 accuracy answers saved (instruct: 945, thinking: 19); 0/525 serial timing answers saved.",
       "validation": "Four qualification answers source-checked; full-bank results pending."
     },
     {
@@ -48,22 +48,27 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 492,
+  "completed_native_outputs": 502,
   "native_counts": {
-    "duplexomni": 122,
-    "minicpm": 218,
-    "moshi": 152
+    "minicpm": 223,
+    "moshi": 157,
+    "duplexomni": 122
   },
-  "completed_S2_outputs": 945,
+  "completed_S2_outputs": 964,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 3,
+  "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
     "Finish the matched readers and inspect actual answer gains, losses and a reproducible sample from other questions.",
-    "Finish native S1 and question-blind note runs, then run the matched readers on identical questions.",
+    "Finish native S1 replay and generated ASR histories, then complete their matched reader comparisons.",
     "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
     "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."
   ],
+  "completed_timing_outputs": 0,
+  "completed_S2_by_model": {
+    "instruct": 945,
+    "thinking": 19
+  },
   "writer_cost": {
     "summary": {
       "calls": 1277,
