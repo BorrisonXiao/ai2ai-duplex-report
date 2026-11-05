@@ -371,13 +371,13 @@
           "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#s1",
-          "evidence": "193 native input cases completed; final content scoring pending."
+          "evidence": "220 native input cases completed; final content scoring pending."
         },
         {
           "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#s2",
-          "evidence": "2439 question-blind writer/checker calls completed; full reader answers and scoring remain pending."
+          "evidence": "2487 question-blind writer/checker calls completed; full reader answers and scoring remain pending."
         },
         {
           "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",

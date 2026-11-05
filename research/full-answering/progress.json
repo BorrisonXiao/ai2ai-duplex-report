@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T01:59:22+00:00",
+  "updated": "2026-11-05T02:07:26+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,12 +29,12 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "193 of 945 input cases completed (duplexomni: 84/315, minicpm: 26/315, moshi: 83/315).",
+      "status": "220 of 945 input cases completed (duplexomni: 105/315, minicpm: 29/315, moshi: 86/315).",
       "validation": "Answer scoring pending."
     },
     {
       "work": "Question-blind GT summaries and notes",
-      "status": "2439 earlier writer/checker calls completed; three note policies are being generated.",
+      "status": "2487 earlier writer/checker calls completed; three note policies are being generated.",
       "validation": "Source/time/schema audit pending."
     },
     {
@@ -48,14 +48,14 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 193,
+  "completed_native_outputs": 220,
   "native_counts": {
-    "moshi": 83,
-    "minicpm": 26,
-    "duplexomni": 84
+    "moshi": 86,
+    "minicpm": 29,
+    "duplexomni": 105
   },
   "completed_S2_outputs": 0,
-  "completed_writer_calls": 2439,
+  "completed_writer_calls": 2487,
   "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
