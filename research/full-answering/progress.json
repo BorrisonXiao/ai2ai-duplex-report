@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T23:43:56+00:00",
+  "updated": "2026-11-05T01:59:22+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -25,33 +25,38 @@
     {
       "work": "Reference audit",
       "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
-      "validation": "References frozen for scorer qualification."
+      "validation": "45 reviewed calibration answers queued after the note writer."
     },
     {
       "work": "Native S1 outputs",
-      "status": "11 input cases completed so far; three models submitted.",
+      "status": "193 of 945 input cases completed (duplexomni: 84/315, minicpm: 26/315, moshi: 83/315).",
       "validation": "Answer scoring pending."
     },
     {
       "work": "Question-blind GT summaries and notes",
-      "status": "Full-meeting writer submitted.",
+      "status": "2439 earlier writer/checker calls completed; three note policies are being generated.",
       "validation": "Source/time/schema audit pending."
     },
     {
       "work": "S2 readers and actual latency",
-      "status": "Streaming timing qualified on four actual outputs; full readers are queued after saved notes.",
+      "status": "0 full-bank reader outputs completed; readers wait for frozen notes and scorer qualification.",
       "validation": "Four qualification answers source-checked; full-bank results pending."
     },
     {
       "work": "Generated transcripts",
-      "status": "Six variable-speaker prefix tests complete; full causal Parakeet job queued.",
+      "status": "Parakeet and Whisper pipelines queued; speaker swap, split, merge and recovery controls passed.",
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 11,
+  "completed_native_outputs": 193,
   "native_counts": {
-    "moshi": 11
+    "moshi": 83,
+    "minicpm": 26,
+    "duplexomni": 84
   },
+  "completed_S2_outputs": 0,
+  "completed_writer_calls": 2439,
+  "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
     "Qualify the scorer against the frozen references so full-bank accuracy rests on supported answers.",

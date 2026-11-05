@@ -8,7 +8,7 @@
   "planned_cells": 59,
   "planned_final_answers": 8820,
   "attempted": 0,
-  "completed_outputs": 11,
+  "completed_outputs": 193,
   "reviewed_outputs": 0,
   "correct_outputs": null,
   "examples": [],
@@ -282,14 +282,14 @@
       "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s1",
-      "evidence": "11 native input cases completed; final content scoring pending."
+      "evidence": "193 native input cases completed; final content scoring pending."
     },
     {
       "id": "full-text",
       "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s2",
-      "evidence": "Question-blind common Instruct writer submitted; reader timing qualified on four real outputs."
+      "evidence": "2439 question-blind writer/checker calls completed; full reader answers and scoring remain pending."
     },
     {
       "id": "full-latency",
@@ -303,7 +303,7 @@
       "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#asr",
-      "evidence": "Full causal audio manifests prepared; variable-speaker pipeline runtime-qualified; full ASR quality pending."
+      "evidence": "Both ASR pipelines queued with automatic and annotation-legend identity conditions; speaker swap/split/merge and request-tail isolation checks pass; full WER pending."
     },
     {
       "id": "full-analysis",
@@ -313,7 +313,7 @@
       "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
     }
   ],
-  "updated_at": "2026-11-04T23:43:56+00:00",
+  "updated_at": "2026-11-05T01:59:22+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -457,7 +457,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-04T23:43:56+00:00",
+    "updated": "2026-11-05T01:59:22+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -483,33 +483,38 @@
       {
         "work": "Reference audit",
         "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
-        "validation": "References frozen for scorer qualification."
+        "validation": "45 reviewed calibration answers queued after the note writer."
       },
       {
         "work": "Native S1 outputs",
-        "status": "11 input cases completed so far; three models submitted.",
+        "status": "193 of 945 input cases completed (duplexomni: 84/315, minicpm: 26/315, moshi: 83/315).",
         "validation": "Answer scoring pending."
       },
       {
         "work": "Question-blind GT summaries and notes",
-        "status": "Full-meeting writer submitted.",
+        "status": "2439 earlier writer/checker calls completed; three note policies are being generated.",
         "validation": "Source/time/schema audit pending."
       },
       {
         "work": "S2 readers and actual latency",
-        "status": "Streaming timing qualified on four actual outputs; full readers are queued after saved notes.",
+        "status": "0 full-bank reader outputs completed; readers wait for frozen notes and scorer qualification.",
         "validation": "Four qualification answers source-checked; full-bank results pending."
       },
       {
         "work": "Generated transcripts",
-        "status": "Six variable-speaker prefix tests complete; full causal Parakeet job queued.",
+        "status": "Parakeet and Whisper pipelines queued; speaker swap, split, merge and recovery controls passed.",
         "validation": "WER and speaker consistency checks pending."
       }
     ],
-    "completed_native_outputs": 11,
+    "completed_native_outputs": 193,
     "native_counts": {
-      "moshi": 11
+      "moshi": 83,
+      "minicpm": 26,
+      "duplexomni": 84
     },
+    "completed_S2_outputs": 0,
+    "completed_writer_calls": 2439,
+    "active_GPU_jobs": 4,
     "maximum_active_GPUs": 4,
     "next_steps": [
       "Qualify the scorer against the frozen references so full-bank accuracy rests on supported answers.",
