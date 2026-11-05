@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T04:03:09+00:00",
+  "updated": "2026-11-05T04:34:59+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -13,7 +13,7 @@
       "url": "#s1"
     },
     {
-      "text": "Across26 meetings, source-note generation uses 60.3% fewer output tokens than the old structured notes; request-time results are pending.",
+      "text": "Across 26 meetings, source-note generation uses 60.3% fewer output tokens than the old structured notes; request-time results are pending.",
       "url": "#s2"
     },
     {
@@ -25,21 +25,21 @@
     {
       "work": "Reference audit",
       "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
-      "validation": "Calibration outputs require a source check; full-bank scoring remains pending."
+      "validation": "All 50 reviewed scorer controls and individual ownership checks pass; final accuracy requires real-answer source review."
     },
     {
       "work": "Native S1 outputs",
-      "status": "390 of 945 input cases completed (duplexomni: 122/315, minicpm: 143/315, moshi: 125/315).",
+      "status": "432 of 945 input cases completed (duplexomni: 122/315, minicpm: 173/315, moshi: 137/315).",
       "validation": "Answer scoring pending."
     },
     {
       "work": "Question-blind GT summaries and notes",
       "status": "4070 earlier writer/checker calls completed; note generation finished.",
-      "validation": "All1,277 source states pass exact-speech, time and budget checks; source-link meanings and final answers require separate evaluation."
+      "validation": "All 1,277 source states pass exact-speech, time and budget checks; source-link meanings and final answers require separate evaluation."
     },
     {
       "work": "S2 readers and actual latency",
-      "status": "0 full-bank reader outputs completed; readers wait for frozen notes and scorer qualification.",
+      "status": "8 full-bank reader outputs completed; matched readers are running or queued in sequence.",
       "validation": "Four qualification answers source-checked; full-bank results pending."
     },
     {
@@ -48,18 +48,18 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 390,
+  "completed_native_outputs": 432,
   "native_counts": {
-    "moshi": 125,
-    "minicpm": 143,
+    "minicpm": 173,
+    "moshi": 137,
     "duplexomni": 122
   },
-  "completed_S2_outputs": 0,
+  "completed_S2_outputs": 8,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 2,
+  "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
-    "Qualify the scorer against the frozen references so full-bank accuracy rests on supported answers.",
+    "Finish the matched readers and inspect actual answer gains, losses and a reproducible sample from other questions.",
     "Finish native S1 and question-blind note runs, then run the matched readers on identical questions.",
     "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
     "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."

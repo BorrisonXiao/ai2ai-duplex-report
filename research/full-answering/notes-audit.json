@@ -1,0 +1,885 @@
+{
+  "status": "exact_speech_time_and_budget_pass",
+  "snapshot_counts": {
+    "summary": 1277,
+    "legacy": 1277,
+    "linked": 1277
+  },
+  "invalid_snapshots": {
+    "summary": 6,
+    "legacy": 18
+  },
+  "cost": {
+    "summary": {
+      "calls": 1277,
+      "input_tokens": 28780395,
+      "generated_tokens": 477979,
+      "revision_checks": 0
+    },
+    "legacy": {
+      "calls": 1277,
+      "input_tokens": 37734728,
+      "generated_tokens": 872613,
+      "revision_checks": 0
+    },
+    "linked": {
+      "calls": 1516,
+      "input_tokens": 7310223,
+      "generated_tokens": 346754,
+      "revision_checks": 239
+    }
+  },
+  "visible_relationship_occurrences": {
+    "explains": 13176,
+    "refers_to": 6210,
+    "revises": 983,
+    "qualifies": 1944,
+    "confirms": 854
+  },
+  "request_inputs": [
+    {
+      "question_id": "first:authored-W1-2",
+      "legacy_entries": 113,
+      "legacy_repeated_fact_texts": 98,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "first:authored-W2-1",
+      "legacy_entries": 401,
+      "legacy_repeated_fact_texts": 386,
+      "source_entries": 50,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "first:authored-W3-1",
+      "legacy_entries": 605,
+      "legacy_repeated_fact_texts": 590,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "first:authored-W3-2",
+      "legacy_entries": 605,
+      "legacy_repeated_fact_texts": 590,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "first:authored-W4-1",
+      "legacy_entries": 821,
+      "legacy_repeated_fact_texts": 806,
+      "source_entries": 48,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "first:authored-W4-2",
+      "legacy_entries": 821,
+      "legacy_repeated_fact_texts": 806,
+      "source_entries": 48,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "first:abstract-title-deadlines",
+      "legacy_entries": 821,
+      "legacy_repeated_fact_texts": 806,
+      "source_entries": 48,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:EN-times",
+      "legacy_entries": 396,
+      "legacy_repeated_fact_texts": 385,
+      "source_entries": 52,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:EN-results",
+      "legacy_entries": 624,
+      "legacy_repeated_fact_texts": 613,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:EN-xml",
+      "legacy_entries": 624,
+      "legacy_repeated_fact_texts": 613,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:ES-colour",
+      "legacy_entries": 433,
+      "legacy_repeated_fact_texts": 421,
+      "source_entries": 48,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:ES-teletext",
+      "legacy_entries": 697,
+      "legacy_repeated_fact_texts": 685,
+      "source_entries": 45,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:ES-devices",
+      "legacy_entries": 697,
+      "legacy_repeated_fact_texts": 685,
+      "source_entries": 45,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:IS-receiver",
+      "legacy_entries": 368,
+      "legacy_repeated_fact_texts": 356,
+      "source_entries": 50,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:IS-lost",
+      "legacy_entries": 632,
+      "legacy_repeated_fact_texts": 620,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:IS-voice",
+      "legacy_entries": 632,
+      "legacy_repeated_fact_texts": 620,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:TS-target",
+      "legacy_entries": 456,
+      "legacy_repeated_fact_texts": 443,
+      "source_entries": 53,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:TS-looks",
+      "legacy_entries": 456,
+      "legacy_repeated_fact_texts": 443,
+      "source_entries": 53,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:DH-growth",
+      "legacy_entries": 490,
+      "legacy_repeated_fact_texts": 468,
+      "source_entries": 41,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:DH-basis",
+      "legacy_entries": 754,
+      "legacy_repeated_fact_texts": 732,
+      "source_entries": 40,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:MO-performance",
+      "legacy_entries": 685,
+      "legacy_repeated_fact_texts": 672,
+      "source_entries": 42,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "expansion:MO-selection",
+      "legacy_entries": 1009,
+      "legacy_repeated_fact_texts": 996,
+      "source_entries": 42,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-notes",
+      "legacy_entries": 108,
+      "legacy_repeated_fact_texts": 97,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-timeline",
+      "legacy_entries": 108,
+      "legacy_repeated_fact_texts": 97,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-audio",
+      "legacy_entries": 168,
+      "legacy_repeated_fact_texts": 157,
+      "source_entries": 57,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-report",
+      "legacy_entries": 168,
+      "legacy_repeated_fact_texts": 157,
+      "source_entries": 57,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-segmentation",
+      "legacy_entries": 228,
+      "legacy_repeated_fact_texts": 217,
+      "source_entries": 56,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-order",
+      "legacy_entries": 564,
+      "legacy_repeated_fact_texts": 553,
+      "source_entries": 48,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-handoff",
+      "legacy_entries": 564,
+      "legacy_repeated_fact_texts": 553,
+      "source_entries": 48,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-EN-same-person",
+      "legacy_entries": 168,
+      "legacy_repeated_fact_texts": 157,
+      "source_entries": 57,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-ES-minutes",
+      "legacy_entries": 73,
+      "legacy_repeated_fact_texts": 61,
+      "source_entries": 31,
+      "source_repeated_texts": 0,
+      "source_links": 16
+    },
+    {
+      "question_id": "pilot:P-ES-slogan",
+      "legacy_entries": 73,
+      "legacy_repeated_fact_texts": 61,
+      "source_entries": 31,
+      "source_repeated_texts": 0,
+      "source_links": 16
+    },
+    {
+      "question_id": "pilot:P-ES-complexity",
+      "legacy_entries": 73,
+      "legacy_repeated_fact_texts": 61,
+      "source_entries": 31,
+      "source_repeated_texts": 0,
+      "source_links": 16
+    },
+    {
+      "question_id": "pilot:P-ES-hidden",
+      "legacy_entries": 121,
+      "legacy_repeated_fact_texts": 109,
+      "source_entries": 53,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-ES-numbers",
+      "legacy_entries": 169,
+      "legacy_repeated_fact_texts": 157,
+      "source_entries": 51,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-ES-voice-open",
+      "legacy_entries": 685,
+      "legacy_repeated_fact_texts": 673,
+      "source_entries": 45,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-ES-power",
+      "legacy_entries": 685,
+      "legacy_repeated_fact_texts": 673,
+      "source_entries": 45,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-notes",
+      "legacy_entries": 20,
+      "legacy_repeated_fact_texts": 8,
+      "source_entries": 11,
+      "source_repeated_texts": 0,
+      "source_links": 6
+    },
+    {
+      "question_id": "pilot:P-IS-sample",
+      "legacy_entries": 140,
+      "legacy_repeated_fact_texts": 128,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-frequency",
+      "legacy_entries": 140,
+      "legacy_repeated_fact_texts": 128,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-learning",
+      "legacy_entries": 140,
+      "legacy_repeated_fact_texts": 128,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-teletext-usage",
+      "legacy_entries": 584,
+      "legacy_repeated_fact_texts": 572,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-components",
+      "legacy_entries": 584,
+      "legacy_repeated_fact_texts": 572,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-budget",
+      "legacy_entries": 584,
+      "legacy_repeated_fact_texts": 572,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-time",
+      "legacy_entries": 84,
+      "legacy_repeated_fact_texts": 71,
+      "source_entries": 35,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-sample",
+      "legacy_entries": 84,
+      "legacy_repeated_fact_texts": 71,
+      "source_entries": 35,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-buttons",
+      "legacy_entries": 144,
+      "legacy_repeated_fact_texts": 131,
+      "source_entries": 57,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-relevance",
+      "legacy_entries": 144,
+      "legacy_repeated_fact_texts": 131,
+      "source_entries": 57,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-dock",
+      "legacy_entries": 204,
+      "legacy_repeated_fact_texts": 191,
+      "source_entries": 56,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-learning",
+      "legacy_entries": 204,
+      "legacy_repeated_fact_texts": 191,
+      "source_entries": 56,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-target-change",
+      "legacy_entries": 648,
+      "legacy_repeated_fact_texts": 635,
+      "source_entries": 52,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-teletext",
+      "legacy_entries": 648,
+      "legacy_repeated_fact_texts": 635,
+      "source_entries": 52,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-MO-comparison",
+      "legacy_entries": 49,
+      "legacy_repeated_fact_texts": 36,
+      "source_entries": 28,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-MO-pricing",
+      "legacy_entries": 109,
+      "legacy_repeated_fact_texts": 96,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-MO-completion",
+      "legacy_entries": 157,
+      "legacy_repeated_fact_texts": 144,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-DH-documents",
+      "legacy_entries": 0,
+      "legacy_repeated_fact_texts": 0,
+      "source_entries": 25,
+      "source_repeated_texts": 0,
+      "source_links": 16
+    },
+    {
+      "question_id": "pilot:P-DH-replay",
+      "legacy_entries": 94,
+      "legacy_repeated_fact_texts": 72,
+      "source_entries": 43,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-DH-cepheid",
+      "legacy_entries": 682,
+      "legacy_repeated_fact_texts": 660,
+      "source_entries": 41,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-IS-target-unknown",
+      "legacy_entries": 80,
+      "legacy_repeated_fact_texts": 68,
+      "source_entries": 37,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-DH-idt",
+      "legacy_entries": 34,
+      "legacy_repeated_fact_texts": 12,
+      "source_entries": 37,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:Q-MO-weather",
+      "legacy_entries": 49,
+      "legacy_repeated_fact_texts": 36,
+      "source_entries": 28,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:P-TS-dock-mechanism",
+      "legacy_entries": 204,
+      "legacy_repeated_fact_texts": 191,
+      "source_entries": 56,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:Q-IS-teletext-comparison",
+      "legacy_entries": 584,
+      "legacy_repeated_fact_texts": 572,
+      "source_entries": 44,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:Q-EN-compiler",
+      "legacy_entries": 168,
+      "legacy_repeated_fact_texts": 157,
+      "source_entries": 57,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "pilot:Q-TS-current-audience",
+      "legacy_entries": 648,
+      "legacy_repeated_fact_texts": 635,
+      "source_entries": 52,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2001b-Slater-Q2",
+      "legacy_entries": 1077,
+      "legacy_repeated_fact_texts": 1054,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2004a-S05-Q3",
+      "legacy_entries": 184,
+      "legacy_repeated_fact_texts": 170,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2004a-S075-Q2",
+      "legacy_entries": 220,
+      "legacy_repeated_fact_texts": 206,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2004a-Smiddle-Q2",
+      "legacy_entries": 664,
+      "legacy_repeated_fact_texts": 650,
+      "source_entries": 53,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2009b-S10-Q3",
+      "legacy_entries": 296,
+      "legacy_repeated_fact_texts": 284,
+      "source_entries": 50,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2009b-Smiddle-Q2",
+      "legacy_entries": 512,
+      "legacy_repeated_fact_texts": 500,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IN1005-S075-Q1",
+      "legacy_entries": 168,
+      "legacy_repeated_fact_texts": 145,
+      "source_entries": 50,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IN1005-directory-evaluation",
+      "legacy_entries": 552,
+      "legacy_repeated_fact_texts": 529,
+      "source_entries": 47,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IN1007-matlab-availability",
+      "legacy_entries": 112,
+      "legacy_repeated_fact_texts": 100,
+      "source_entries": 55,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IB4001-S05-Q1",
+      "legacy_entries": 106,
+      "legacy_repeated_fact_texts": 94,
+      "source_entries": 47,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IB4001-Slater-Q2",
+      "legacy_entries": 574,
+      "legacy_repeated_fact_texts": 562,
+      "source_entries": 55,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IB4003-S075-Q3",
+      "legacy_entries": 135,
+      "legacy_repeated_fact_texts": 119,
+      "source_entries": 55,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IB4003-S10-Q3",
+      "legacy_entries": 219,
+      "legacy_repeated_fact_texts": 203,
+      "source_entries": 52,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:IB4003-Smiddle-Q3",
+      "legacy_entries": 399,
+      "legacy_repeated_fact_texts": 383,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2003c-S075-Q3",
+      "legacy_entries": 144,
+      "legacy_repeated_fact_texts": 123,
+      "source_entries": 56,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2003c-S10-Q1",
+      "legacy_entries": 204,
+      "legacy_repeated_fact_texts": 183,
+      "source_entries": 55,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2003c-Slater-Q2",
+      "legacy_entries": 660,
+      "legacy_repeated_fact_texts": 637,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3004d-slide-reasons",
+      "legacy_entries": 100,
+      "legacy_repeated_fact_texts": 88,
+      "source_entries": 61,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3004d-S075-Q1",
+      "legacy_entries": 160,
+      "legacy_repeated_fact_texts": 148,
+      "source_entries": 59,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3004d-Smiddle-Q3",
+      "legacy_entries": 556,
+      "legacy_repeated_fact_texts": 544,
+      "source_entries": 56,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3004d-Slater-Q1",
+      "legacy_entries": 856,
+      "legacy_repeated_fact_texts": 844,
+      "source_entries": 59,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3004d-Slater-Q2",
+      "legacy_entries": 856,
+      "legacy_repeated_fact_texts": 844,
+      "source_entries": 59,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2004d-infrared-location",
+      "legacy_entries": 150,
+      "legacy_repeated_fact_texts": 138,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3005b-Slater-Q3",
+      "legacy_entries": 720,
+      "legacy_repeated_fact_texts": 708,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2005b-Slater-Q3",
+      "legacy_entries": 654,
+      "legacy_repeated_fact_texts": 641,
+      "source_entries": 46,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3006c-S05-Q3",
+      "legacy_entries": 72,
+      "legacy_repeated_fact_texts": 60,
+      "source_entries": 35,
+      "source_repeated_texts": 0,
+      "source_links": 17
+    },
+    {
+      "question_id": "scale:TS3006c-S10-Q1",
+      "legacy_entries": 192,
+      "legacy_repeated_fact_texts": 180,
+      "source_entries": 55,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:TS3006c-Smiddle-Q2",
+      "legacy_entries": 480,
+      "legacy_repeated_fact_texts": 468,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2006a-S075-Q3",
+      "legacy_entries": 148,
+      "legacy_repeated_fact_texts": 136,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2006a-Slater-Q1",
+      "legacy_entries": 364,
+      "legacy_repeated_fact_texts": 352,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2006a-Slater-Q2",
+      "legacy_entries": 364,
+      "legacy_repeated_fact_texts": 352,
+      "source_entries": 54,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2006b-S05-Q1",
+      "legacy_entries": 96,
+      "legacy_repeated_fact_texts": 84,
+      "source_entries": 52,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2006b-S075-Q1",
+      "legacy_entries": 156,
+      "legacy_repeated_fact_texts": 144,
+      "source_entries": 59,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:EN2006b-S075-Q2",
+      "legacy_entries": 156,
+      "legacy_repeated_fact_texts": 144,
+      "source_entries": 59,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2007a-S075-Q3",
+      "legacy_entries": 108,
+      "legacy_repeated_fact_texts": 95,
+      "source_entries": 55,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2007a-Slater-Q3",
+      "legacy_entries": 312,
+      "legacy_repeated_fact_texts": 299,
+      "source_entries": 51,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2008b-Smiddle-Q3",
+      "legacy_entries": 108,
+      "legacy_repeated_fact_texts": 96,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2008b-Slater-Q1",
+      "legacy_entries": 384,
+      "legacy_repeated_fact_texts": 372,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2009a-S10-Q1",
+      "legacy_entries": 192,
+      "legacy_repeated_fact_texts": 180,
+      "source_entries": 49,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    },
+    {
+      "question_id": "scale:ES2010b-Smiddle-Q3",
+      "legacy_entries": 301,
+      "legacy_repeated_fact_texts": 286,
+      "source_entries": 51,
+      "source_repeated_texts": 0,
+      "source_links": 20
+    }
+  ],
+  "errors": [],
+  "limits": "Checks copied speech, provenance and budgets; semantic relationship labels and final answers require separate evaluation. Exact repeated text ignores paraphrases and can include legitimate repeated speech.",
+  "GPUs": 0,
+  "duplication_scope": "Each question uses all earlier valid legacy snapshots versus one current source state. Counts are before any49,152-token reader-input truncation. Repetition normalizes capitalization/punctuation and checks exact fact text, not semantic similarity or truth."
+}

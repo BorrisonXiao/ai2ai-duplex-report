@@ -6,6 +6,16 @@
       "date": "2026-11-04",
       "items": [
         {
+          "text": "Finished note generation for 26 meetings; source notes used 60.3% fewer earlier output tokens than accumulated structured notes.",
+          "url": "experiments/full-answering-results.html#writer-cost",
+          "label": "Earlier token cost"
+        },
+        {
+          "text": "Validated the scorer on all 50 reviewed controls and released the full matched S2 readers.",
+          "url": "experiments/full-answering-results.html#evaluation",
+          "label": "Scorer checks"
+        },
+        {
           "text": "Started the full 105-question comparison of three duplex models and reactive, summary and structured-note S2 conditions.",
           "url": "experiments/full-answering-results.html",
           "label": "Full evaluation"
