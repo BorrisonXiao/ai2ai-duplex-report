@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T04:34:59+00:00",
+  "updated": "2026-11-05T04:39:03+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "432 of 945 input cases completed (duplexomni: 122/315, minicpm: 173/315, moshi: 137/315).",
+      "status": "441 of 945 input cases completed (duplexomni: 122/315, minicpm: 179/315, moshi: 140/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "work": "S2 readers and actual latency",
-      "status": "8 full-bank reader outputs completed; matched readers are running or queued in sequence.",
+      "status": "111 full-bank reader outputs completed; matched readers are running or queued in sequence.",
       "validation": "Four qualification answers source-checked; full-bank results pending."
     },
     {
@@ -48,13 +48,13 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 432,
+  "completed_native_outputs": 441,
   "native_counts": {
-    "minicpm": 173,
-    "moshi": 137,
+    "minicpm": 179,
+    "moshi": 140,
     "duplexomni": 122
   },
-  "completed_S2_outputs": 8,
+  "completed_S2_outputs": 111,
   "completed_writer_calls": 4070,
   "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
