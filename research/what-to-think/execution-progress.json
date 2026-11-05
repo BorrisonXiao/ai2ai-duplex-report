@@ -8,7 +8,7 @@
   "planned_cells": 59,
   "planned_final_answers": 8820,
   "attempted": 0,
-  "completed_outputs": 666,
+  "completed_outputs": 682,
   "reviewed_outputs": 0,
   "correct_outputs": null,
   "examples": [],
@@ -282,7 +282,7 @@
       "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s1",
-      "evidence": "666 native input cases completed; final content scoring pending."
+      "evidence": "682 native input cases completed; final content scoring pending."
     },
     {
       "id": "full-text",
@@ -313,7 +313,7 @@
       "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
     }
   ],
-  "updated_at": "2026-11-05T08:42:59+00:00",
+  "updated_at": "2026-11-05T09:17:28+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -457,7 +457,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-05T08:42:59+00:00",
+    "updated": "2026-11-05T09:17:28+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -487,7 +487,7 @@
       },
       {
         "work": "Native S1 outputs",
-        "status": "666 of 945 input cases completed (duplexomni: 122/315, minicpm: 315/315, moshi: 229/315).",
+        "status": "682 of 945 input cases completed (duplexomni: 122/315, minicpm: 315/315, moshi: 245/315).",
         "validation": "Answer scoring pending."
       },
       {
@@ -497,7 +497,7 @@
       },
       {
         "work": "S2 readers and actual latency",
-        "status": "2068 accuracy answers saved (instruct: 945, thinking: 1123); 0/525 serial timing answers saved.",
+        "status": "2222 accuracy answers saved (instruct: 945, thinking: 1277); 0/525 serial timing answers saved.",
         "validation": "Four qualification answers source-checked; full-bank results pending."
       },
       {
@@ -506,13 +506,13 @@
         "validation": "WER and speaker consistency checks pending."
       }
     ],
-    "completed_native_outputs": 666,
+    "completed_native_outputs": 682,
     "native_counts": {
       "duplexomni": 122,
-      "moshi": 229,
-      "minicpm": 315
+      "minicpm": 315,
+      "moshi": 245
     },
-    "completed_S2_outputs": 2068,
+    "completed_S2_outputs": 2222,
     "completed_writer_calls": 4070,
     "active_GPU_jobs": 3,
     "maximum_active_GPUs": 4,
@@ -525,7 +525,7 @@
     "completed_timing_outputs": 0,
     "completed_S2_by_model": {
       "instruct": 945,
-      "thinking": 1123
+      "thinking": 1277
     },
     "writer_cost": {
       "summary": {
