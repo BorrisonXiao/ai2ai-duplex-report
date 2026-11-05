@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T10:26:42+00:00",
+  "updated": "2026-11-05T11:01:05+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "709 of 945 input cases completed (duplexomni: 123/315, minicpm: 315/315, moshi: 271/315).",
+      "status": "722 of 945 input cases completed (duplexomni: 123/315, minicpm: 315/315, moshi: 284/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "work": "S2 readers and actual latency",
-      "status": "2581 accuracy answers saved (instruct: 945, thinking: 1636); 0/525 serial timing answers saved.",
+      "status": "2768 accuracy answers saved (instruct: 945, thinking: 1823); 0/525 serial timing answers saved.",
       "validation": "Four qualification answers source-checked; full-bank results pending."
     },
     {
@@ -48,13 +48,13 @@
       "validation": "WER and speaker consistency checks pending."
     }
   ],
-  "completed_native_outputs": 709,
+  "completed_native_outputs": 722,
   "native_counts": {
-    "duplexomni": 123,
     "minicpm": 315,
-    "moshi": 271
+    "moshi": 284,
+    "duplexomni": 123
   },
-  "completed_S2_outputs": 2581,
+  "completed_S2_outputs": 2768,
   "completed_writer_calls": 4070,
   "active_GPU_jobs": 3,
   "maximum_active_GPUs": 4,
@@ -67,7 +67,7 @@
   "completed_timing_outputs": 0,
   "completed_S2_by_model": {
     "instruct": 945,
-    "thinking": 1636
+    "thinking": 1823
   },
   "writer_cost": {
     "summary": {
