@@ -313,7 +313,7 @@
       "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
     }
   ],
-  "updated_at": "2026-11-05T16:26:48+00:00",
+  "updated_at": "2026-11-05T18:00:46+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -457,7 +457,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-05T16:26:48+00:00",
+    "updated": "2026-11-05T18:00:46+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -509,8 +509,8 @@
     "completed_native_outputs": 755,
     "native_counts": {
       "minicpm": 315,
-      "duplexomni": 125,
-      "moshi": 315
+      "moshi": 315,
+      "duplexomni": 125
     },
     "completed_S2_outputs": 2835,
     "completed_writer_calls": 4070,
