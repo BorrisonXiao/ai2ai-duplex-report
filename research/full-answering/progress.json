@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T08:07:06+00:00",
+  "updated": "2026-11-06T17:37:21+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "763 of 945 input cases completed (duplexomni: 133/315, minicpm: 315/315, moshi: 315/315).",
+      "status": "768 of 945 input cases completed (duplexomni: 138/315, minicpm: 315/315, moshi: 315/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -44,24 +44,24 @@
     },
     {
       "work": "Generated transcripts",
-      "status": "Parakeet and Whisper pipelines queued; speaker swap, split, merge and recovery controls passed.",
-      "validation": "WER and speaker consistency checks pending."
+      "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 924/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
+      "validation": "All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
     },
     {
       "work": "Inference optimization",
-      "status": "One A100 80 GB probe pending after the current four GPU jobs; completed evaluation outputs are preserved.",
+      "status": "One A100 80 GB probe running in a freed GPU slot; completed evaluation outputs are preserved.",
       "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
-  "completed_native_outputs": 763,
+  "completed_native_outputs": 768,
   "native_counts": {
+    "duplexomni": 138,
     "minicpm": 315,
-    "moshi": 315,
-    "duplexomni": 133
+    "moshi": 315
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 2,
+  "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
     "Measure cache reuse, remove unused speech-tensor work and test two independent cases per GPU; deploy only after matched native-output validation.",

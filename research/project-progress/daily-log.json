@@ -6,7 +6,17 @@
       "date": "2026-11-06",
       "items": [
         {
-          "text": "Continued the full comparison with 763/945 completed native inputs and 2835 saved reader outputs; final paired accuracy and latency remain pending.",
+          "text": "Resumed diarization from 911 saved results after a 12-hour timeout and repaired the blocked Whisper dependency.",
+          "url": "experiments/full-answering-results.html#asr",
+          "label": "ASR recovery"
+        },
+        {
+          "text": "Released the optimization probe into a free GPU slot while the original Duplex workers continue.",
+          "url": "experiments/full-answering-results.html#resources",
+          "label": "Inference optimization"
+        },
+        {
+          "text": "Continued the full comparison with 768/945 completed native inputs and 2835 saved reader outputs; final paired accuracy and latency remain pending.",
           "url": "experiments/full-answering-results.html",
           "label": "Full evaluation"
         }

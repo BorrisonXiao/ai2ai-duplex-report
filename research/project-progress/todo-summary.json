@@ -350,7 +350,7 @@
           "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
           "status": "partial",
           "url": "experiments/full-answering-results.html#s1",
-          "evidence": "763 native input cases completed; final content scoring pending."
+          "evidence": "768 native input cases completed; final content scoring pending."
         },
         {
           "id": "full-text",
@@ -371,7 +371,7 @@
           "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
           "status": "partial",
           "url": "experiments/full-answering-results.html#asr",
-          "evidence": "Both ASR pipelines queued with automatic and annotation-legend identity conditions; speaker swap/split/merge and request-tail isolation checks pass; full WER pending."
+          "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 924/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
         },
         {
           "id": "full-analysis",
@@ -385,7 +385,7 @@
           "text": "Measure and qualify faster inference while preserving evaluation inputs and native outputs.",
           "status": "partial",
           "url": "experiments/full-answering-results.html#resources",
-          "evidence": "One A100 80 GB probe pending after the current four GPU jobs; completed evaluation outputs are preserved. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
+          "evidence": "One A100 80 GB probe running in a freed GPU slot; completed evaluation outputs are preserved. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
         }
       ]
     },
