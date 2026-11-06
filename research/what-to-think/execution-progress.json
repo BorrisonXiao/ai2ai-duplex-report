@@ -8,7 +8,7 @@
   "planned_cells": 59,
   "planned_final_answers": 8820,
   "attempted": 0,
-  "completed_outputs": 760,
+  "completed_outputs": 761,
   "reviewed_outputs": 0,
   "correct_outputs": null,
   "examples": [],
@@ -282,7 +282,7 @@
       "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s1",
-      "evidence": "760 native input cases completed; final content scoring pending."
+      "evidence": "761 native input cases completed; final content scoring pending."
     },
     {
       "id": "full-text",
@@ -320,7 +320,7 @@
       "evidence": "One A100 80 GB probe pending after the current four GPU jobs; completed evaluation outputs are preserved. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
-  "updated_at": "2026-11-06T02:40:39+00:00",
+  "updated_at": "2026-11-06T04:16:40+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -464,7 +464,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-06T02:40:39+00:00",
+    "updated": "2026-11-06T04:16:40+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -494,7 +494,7 @@
       },
       {
         "work": "Native S1 outputs",
-        "status": "760 of 945 input cases completed (duplexomni: 130/315, minicpm: 315/315, moshi: 315/315).",
+        "status": "761 of 945 input cases completed (duplexomni: 131/315, minicpm: 315/315, moshi: 315/315).",
         "validation": "Answer scoring pending."
       },
       {
@@ -518,11 +518,11 @@
         "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
       }
     ],
-    "completed_native_outputs": 760,
+    "completed_native_outputs": 761,
     "native_counts": {
-      "moshi": 315,
       "minicpm": 315,
-      "duplexomni": 130
+      "moshi": 315,
+      "duplexomni": 131
     },
     "completed_S2_outputs": 2835,
     "completed_writer_calls": 4070,
