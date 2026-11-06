@@ -8,7 +8,7 @@
   "planned_cells": 59,
   "planned_final_answers": 8820,
   "attempted": 0,
-  "completed_outputs": 771,
+  "completed_outputs": 772,
   "reviewed_outputs": 0,
   "correct_outputs": null,
   "examples": [],
@@ -282,7 +282,7 @@
       "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s1",
-      "evidence": "771 native input cases completed; final content scoring pending."
+      "evidence": "772 native input cases completed; final content scoring pending."
     },
     {
       "id": "full-text",
@@ -303,7 +303,7 @@
       "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#asr",
-      "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1170/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
+      "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1310/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
     },
     {
       "id": "full-analysis",
@@ -320,7 +320,7 @@
       "evidence": "GPU measurements completed; output-equivalence and complete-rollout review pending. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
-  "updated_at": "2026-11-06T21:33:04+00:00",
+  "updated_at": "2026-11-06T22:47:11+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -464,7 +464,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-06T21:33:04+00:00",
+    "updated": "2026-11-06T22:47:11+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -494,7 +494,7 @@
       },
       {
         "work": "Native S1 outputs",
-        "status": "771 of 945 input cases completed (duplexomni: 141/315, minicpm: 315/315, moshi: 315/315).",
+        "status": "772 of 945 input cases completed (duplexomni: 142/315, minicpm: 315/315, moshi: 315/315).",
         "validation": "Answer scoring pending."
       },
       {
@@ -509,7 +509,7 @@
       },
       {
         "work": "Generated transcripts",
-        "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1170/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
+        "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1310/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
         "validation": "All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
       },
       {
@@ -518,11 +518,11 @@
         "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
       }
     ],
-    "completed_native_outputs": 771,
+    "completed_native_outputs": 772,
     "native_counts": {
-      "duplexomni": 141,
+      "minicpm": 315,
       "moshi": 315,
-      "minicpm": 315
+      "duplexomni": 142
     },
     "completed_S2_outputs": 2835,
     "completed_writer_calls": 4070,
