@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T05:51:38+00:00",
+  "updated": "2026-11-06T08:07:06+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "762 of 945 input cases completed (duplexomni: 132/315, minicpm: 315/315, moshi: 315/315).",
+      "status": "763 of 945 input cases completed (duplexomni: 133/315, minicpm: 315/315, moshi: 315/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -53,11 +53,11 @@
       "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
-  "completed_native_outputs": 762,
+  "completed_native_outputs": 763,
   "native_counts": {
     "minicpm": 315,
     "moshi": 315,
-    "duplexomni": 132
+    "duplexomni": 133
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
