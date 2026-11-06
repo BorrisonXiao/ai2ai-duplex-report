@@ -389,7 +389,7 @@
           "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#asr",
-          "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 924/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
+          "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 933/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
         },
         {
           "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
