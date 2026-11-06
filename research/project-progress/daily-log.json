@@ -1,7 +1,17 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-06",
+      "items": [
+        {
+          "text": "Continued the full comparison with 762/945 completed native inputs and 2835 saved reader outputs; final paired accuracy and latency remain pending.",
+          "url": "experiments/full-answering-results.html",
+          "label": "Full evaluation"
+        }
+      ]
+    },
     {
       "date": "2026-11-05",
       "items": [
