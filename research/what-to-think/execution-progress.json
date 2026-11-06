@@ -303,7 +303,7 @@
       "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#asr",
-      "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 933/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
+      "evidence": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 962/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
     },
     {
       "id": "full-analysis",
@@ -317,10 +317,10 @@
       "text": "Measure and qualify faster inference while preserving evaluation inputs and native outputs.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#resources",
-      "evidence": "One A100 80 GB probe running in a freed GPU slot; completed evaluation outputs are preserved. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
+      "evidence": "GPU measurements completed; output-equivalence and complete-rollout review pending. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
-  "updated_at": "2026-11-06T17:47:02+00:00",
+  "updated_at": "2026-11-06T18:27:00+00:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -464,7 +464,7 @@
   },
   "full_evaluation": {
     "url": "experiments/full-answering-results.html",
-    "updated": "2026-11-06T17:47:02+00:00",
+    "updated": "2026-11-06T18:27:00+00:00",
     "status": "full_evaluation_in_progress",
     "questions": 105,
     "meetings": 26,
@@ -509,24 +509,24 @@
       },
       {
         "work": "Generated transcripts",
-        "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 933/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
+        "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 962/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
         "validation": "All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
       },
       {
         "work": "Inference optimization",
-        "status": "One A100 80 GB probe running in a freed GPU slot; completed evaluation outputs are preserved.",
+        "status": "GPU measurements completed; output-equivalence and complete-rollout review pending.",
         "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
       }
     ],
     "completed_native_outputs": 768,
     "native_counts": {
-      "moshi": 315,
       "minicpm": 315,
+      "moshi": 315,
       "duplexomni": 138
     },
     "completed_S2_outputs": 2835,
     "completed_writer_calls": 4070,
-    "active_GPU_jobs": 4,
+    "active_GPU_jobs": 3,
     "maximum_active_GPUs": 4,
     "next_steps": [
       "Measure cache reuse, remove unused speech-tensor work and test two independent cases per GPU; deploy only after matched native-output validation.",
