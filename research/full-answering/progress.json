@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T22:47:11+00:00",
+  "updated": "2026-11-06T23:21:42+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -44,7 +44,7 @@
     },
     {
       "work": "Generated transcripts",
-      "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1310/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
+      "status": "Recovery stage: Parakeet; 1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
       "validation": "All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
     },
     {
@@ -61,7 +61,7 @@
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 3,
+  "active_GPU_jobs": 4,
   "maximum_active_GPUs": 4,
   "next_steps": [
     "Measure cache reuse, remove unused speech-tensor work and test two independent cases per GPU; deploy only after matched native-output validation.",
