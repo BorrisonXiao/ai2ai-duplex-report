@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T23:21:42+00:00",
+  "updated": "2026-11-06T23:56:32+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -55,13 +55,13 @@
   ],
   "completed_native_outputs": 772,
   "native_counts": {
-    "minicpm": 315,
     "moshi": 315,
-    "duplexomni": 142
+    "duplexomni": 142,
+    "minicpm": 315
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 4,
+  "active_GPU_jobs": 3,
   "maximum_active_GPUs": 4,
   "next_steps": [
     "Measure cache reuse, remove unused speech-tensor work and test two independent cases per GPU; deploy only after matched native-output validation.",
