@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T19:40:59+00:00",
+  "updated": "2026-11-06T21:33:04+00:00",
   "status": "full_evaluation_in_progress",
   "questions": 105,
   "meetings": 26,
@@ -29,7 +29,7 @@
     },
     {
       "work": "Native S1 outputs",
-      "status": "770 of 945 input cases completed (duplexomni: 140/315, minicpm: 315/315, moshi: 315/315).",
+      "status": "771 of 945 input cases completed (duplexomni: 141/315, minicpm: 315/315, moshi: 315/315).",
       "validation": "Answer scoring pending."
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "work": "Generated transcripts",
-      "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1072/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
+      "status": "Diarization resumed from 911 preserved outputs after a 12-hour timeout; 1170/1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
       "validation": "All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
     },
     {
@@ -53,11 +53,11 @@
       "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
     }
   ],
-  "completed_native_outputs": 770,
+  "completed_native_outputs": 771,
   "native_counts": {
+    "duplexomni": 141,
     "moshi": 315,
-    "minicpm": 315,
-    "duplexomni": 140
+    "minicpm": 315
   },
   "completed_S2_outputs": 2835,
   "completed_writer_calls": 4070,
