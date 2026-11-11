@@ -1,3 +1,4 @@
+from project_language import thinker_prose
 """Render the reviewed S1/S2 comparison and its listening examples."""
 from html import escape as e
 import hashlib
@@ -190,7 +191,7 @@ def main():
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="S1 history ablations, native response audio, generated-transcript WER and text S2 accuracy versus thinking-token cost."><title>'+title+' · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"><style>'+CSS+'</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>'+project_tabs('experiments','../')+'</div></header><div class="container collection-nav">'+experiment_subtabs('answering')+'</div><main id="main" class="container results">'+body+'</main><script>'+JS+'</script></body></html>\n'
     css_version=hashlib.sha256((ROOT/'assets/site.css').read_bytes()).hexdigest()[:12]
     page=page.replace('href="../assets/site.css"','href="../assets/site.css?v='+css_version+'"')
-    (ROOT/'experiments/answering-results.html').write_text(page)
+    (ROOT/'experiments/answering-results.html').write_text(thinker_prose(page))
     manifest={str(p.relative_to(P)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(P.rglob('*')) if p.is_file() and p.name!='manifest.json'}
     (P/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print('Built answering-results.html with 13 paired/control inputs and all 240 S2 answers.')

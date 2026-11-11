@@ -10,7 +10,7 @@
     "Count the entire amortized thinking cost, including work that is cancelled or never becomes useful.",
     "For this pilot, reuse completed audio checks and use Codex’s documented source/motivation review. Independent human ratings are not claimed and remain optional.",
     "Keep the four new text probes separate from the frozen twenty and the existing 105-question audio bank.",
-    "Use the same S2 checkpoint when comparing policies; the 30B offline reader is quality-control evidence, not an unreported model upgrade in a speech condition."
+    "Use the same S2 checkpoint when comparing policies; the 30B offline thinker is quality-control evidence, not an unreported model upgrade in a speech condition."
   ],
   "next": [
     "Validate the evaluation pipeline with S1 first, then use the same tested protocol for the full-bank S1/S2 study."
@@ -242,7 +242,7 @@
           "evidence": "38/39 native outputs completed; 1 failed. All recorded attempts remain in accounting; this is execution status, not answer accuracy."
         },
         {
-          "text": "Compare reactive reading, amortized summaries and structured notes with Instruct and Thinking readers.",
+          "text": "Compare reactive thinking, amortized summaries and structured notes with Instruct and Thinking thinkers.",
           "status": "complete",
           "project_url": "study-progress.html#answering-text",
           "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
@@ -269,7 +269,7 @@
           "text": "Compare two ASR methods with automatic and annotation-mapped speaker identities.",
           "status": "complete",
           "project_url": "study-progress.html#generated-transcript-pipeline",
-          "evidence": "61 past-only prefixes per ASR; identity pairs preserve predicted words and times; same six questions, goals and reader settings as GT."
+          "evidence": "61 past-only prefixes per ASR; identity pairs preserve predicted words and times; same six questions, goals and thinker settings as GT."
         },
         {
           "text": "Run and inspect the generated-transcript counterparts of the ground-truth text pilot.",
@@ -329,13 +329,13 @@
           "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
           "status": "complete",
           "project_url": "experiments/structured-notes.html#protocol",
-          "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two readers, five conditions and request seeds."
+          "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two thinkers, five conditions and request seeds."
         },
         {
           "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
           "status": "complete",
           "project_url": "experiments/structured-notes.html#next",
-          "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both readers; 144/144 outputs reviewed."
+          "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both thinkers; 144/144 outputs reviewed."
         },
         {
           "text": "Select chunks and thinking goals on separate development meetings.",
@@ -353,7 +353,7 @@
           "text": "Compare selected speech and explicit event fields to test what work the notes should do.",
           "status": "complete",
           "project_url": "experiments/structured-notes.html#interpretation",
-          "evidence": "Matched development check of event fields and selected sources with the same Thinking reader; 72/72 outputs reviewed."
+          "evidence": "Matched development check of event fields and selected sources with the same Thinking thinker; 72/72 outputs reviewed."
         },
         {
           "text": "Recheck the remaining reference answers against their complete available transcript prefixes.",
@@ -389,7 +389,7 @@
           "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#asr",
-          "evidence": "Parakeet inputs and matched reader outputs complete; Whisper remains incomplete. Further runs require explicit resume."
+          "evidence": "Parakeet inputs and matched thinker outputs complete; Whisper remains incomplete. Further runs require explicit resume."
         },
         {
           "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
@@ -621,7 +621,7 @@
     ],
     "resources": {
       "now": "One A100 SXM4 80 GB text diagnostic only; all Qwen weights/KV share GPU 0, sequential stages.",
-      "planned": "For a future integrated replay, propose 2 H100 SXM 80 GB: S1 Thinker, Talker, MTP and Code2Wav share GPU 0; the existing Qwen3-4B Thinking S2 reasoner is isolated on GPU 1. ASR/speaker traces are produced in a separate sequential job and replayed from CPU for controlled comparisons, explicitly distinct from live ASR. The 30B reader remains an offline quality check. No such job is submitted.",
+      "planned": "For a future integrated replay, propose 2 H100 SXM 80 GB: S1 Thinker, Talker, MTP and Code2Wav share GPU 0; the existing Qwen3-4B Thinking S2 reasoner is isolated on GPU 1. ASR/speaker traces are produced in a separate sequential job and replayed from CPU for controlled comparisons, explicitly distinct from live ASR. The 30B thinker remains an offline quality check. No such job is submitted.",
       "gates": "CPU caller/history/cancellation checks and S2 context preflight before any new speech inference; measured S1 latency/queue qualification under S2 load before interpreting behavior.",
       "full_prefix_cost_estimate": "At 1× playback the three original prefixes total 79.82 minutes per condition. Reserving two GPUs for each of the four system conditions would require at least 10.64 GPU hours before startup, request/answer time and ASR processing. A one-GPU S1-only allocation reduces that bound; all actual allocation and amortized thinking still count.",
       "cheaper_diagnostic": "A cheaper first schedule/work study can use one isolated S2 worker and a causal text-event replay, skipping idle waits with a virtual clock. Label readiness/latency as simulated until selected two-GPU paced-audio cases validate it. A preloaded-history or bounded-window replay tests that declared setup; it does not prove continuous full-meeting listening."

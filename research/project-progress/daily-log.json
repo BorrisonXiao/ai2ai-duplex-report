@@ -6,6 +6,11 @@
       "date": "2026-11-11",
       "items": [
         {
+          "text": "Standardized the S2 thinker name in report prose and project records while preserving recorded prompts and model outputs.",
+          "url": "experiments/full-answering-results.html#scores",
+          "label": "Model terminology"
+        },
+        {
           "text": "Added the saved 105-question score tables, figures with confidence intervals and answer inspection without rerunning models.",
           "url": "experiments/full-answering-results.html#scores",
           "label": "Preliminary scores"
@@ -31,7 +36,7 @@
           "label": "Inference optimization"
         },
         {
-          "text": "Continued the full comparison with 772/945 completed native inputs and 2835 saved reader outputs; final paired accuracy and latency remain pending.",
+          "text": "Continued the full comparison with 772/945 completed native inputs and 2835 saved thinker outputs; final paired accuracy and latency remain pending.",
           "url": "experiments/full-answering-results.html",
           "label": "Full evaluation"
         }
@@ -46,7 +51,7 @@
           "label": "Optimization checklist"
         },
         {
-          "text": "Continued the full comparison with 761/945 completed native inputs and 2835 saved reader outputs; final paired accuracy and latency remain pending.",
+          "text": "Continued the full comparison with 761/945 completed native inputs and 2835 saved thinker outputs; final paired accuracy and latency remain pending.",
           "url": "experiments/full-answering-results.html",
           "label": "Full evaluation"
         }
@@ -61,7 +66,7 @@
           "label": "Earlier token cost"
         },
         {
-          "text": "Validated the scorer on all 50 reviewed controls and released the full matched S2 readers.",
+          "text": "Validated the scorer on all 50 reviewed controls and released the full matched S2 thinkers.",
           "url": "experiments/full-answering-results.html#evaluation",
           "label": "Scorer checks"
         },
@@ -101,9 +106,9 @@
           "label": "Source-based evaluation"
         },
         {
-          "text": "Completed Thinking-reader and automatic-transcript comparisons with separate request-time and total token accounting.",
+          "text": "Completed Thinking-thinker and automatic-transcript comparisons with separate request-time and total token accounting.",
           "url": "experiments/structured-notes.html#asr",
-          "label": "Reader and transcript tests"
+          "label": "Thinker and transcript tests"
         },
         {
           "text": "Source-note writing became cheaper, but request-time thinking showed no consistent saving over focused reactive prompting.",
@@ -116,7 +121,7 @@
       "date": "2026-11-02",
       "items": [
         {
-          "text": "Moved the shared-question S1/S2 comparison to the first results section and focused the findings on the reader advantage and earlier-thinking gains.",
+          "text": "Moved the shared-question S1/S2 comparison to the first results section and focused the findings on the thinker advantage and earlier-thinking gains.",
           "url": "experiments/answering-results.html#findings",
           "label": "Revised main findings"
         },
@@ -163,7 +168,7 @@
           "label": "Inputs and alignment checks"
         },
         {
-          "text": "Completed 832 earlier S2 calls and source-reviewed all 192 final answers across two ASR pipelines, two identity conditions and two readers.",
+          "text": "Completed 832 earlier S2 calls and source-reviewed all 192 final answers across two ASR pipelines, two identity conditions and two thinkers.",
           "url": "study-progress.html#generated-transcript-outputs",
           "label": "Completion and actual answers"
         },
@@ -368,7 +373,7 @@
           "url": "experiments/question-checks.html#dataset"
         },
         {
-          "text": "Found that the 30B reader gives 13 complete answers with full transcripts but four with the current notes.",
+          "text": "Found that the 30B thinker gives 13 complete answers with full transcripts but four with the current notes.",
           "url": "experiments/question-checks.html#reader"
         },
         {
@@ -429,7 +434,7 @@
           "url": "experiments/question-scale.html"
         },
         {
-          "text": "Used a local Qwen3-30B Instruct reader and tested incomplete evidence as well as full history.",
+          "text": "Used a local Qwen3-30B Instruct thinker and tested incomplete evidence as well as full history.",
           "url": "experiments/question-pilot.html#reader"
         },
         {

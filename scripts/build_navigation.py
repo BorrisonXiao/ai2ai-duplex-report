@@ -12,7 +12,7 @@ import re
 from site_navigation import (
     project_tabs, review_tabs, experiment_subtabs, proposal_tabs, progress_tabs,
 )
-from project_language import prethinking_prose
+from project_language import prethinking_prose, thinker_prose, THINKER_REPORT_PAGES
 
 ROOT = Path(__file__).resolve().parents[1]
 REVIEW_KEYS = {
@@ -188,6 +188,8 @@ def refresh_page(path, original, navigation_only=False):
         page = simplify_prose(page)
     if native:
         page = prethinking_prose(page)
+    if relative in THINKER_REPORT_PAGES:
+        page = thinker_prose(page)
     css = prefix + 'assets/site.css'
     digest = hashlib.sha256((ROOT/'assets/site.css').read_bytes()).hexdigest()[:12]
     pattern = r'href="' + re.escape(css) + r'(?:\?[^"]*)?"'

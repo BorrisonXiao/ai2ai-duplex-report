@@ -134,7 +134,7 @@
     },
     {
       "id": "answering-text-pilot",
-      "text": "Compare reactive reading, amortized summaries and structured notes with Instruct and Thinking readers.",
+      "text": "Compare reactive thinking, amortized summaries and structured notes with Instruct and Thinking thinkers.",
       "status": "complete",
       "url": "study-progress.html#answering-text",
       "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
@@ -165,7 +165,7 @@
       "text": "Compare two ASR methods with automatic and annotation-mapped speaker identities.",
       "status": "complete",
       "url": "study-progress.html#generated-transcript-pipeline",
-      "evidence": "61 past-only prefixes per ASR; identity pairs preserve predicted words and times; same six questions, goals and reader settings as GT."
+      "evidence": "61 past-only prefixes per ASR; identity pairs preserve predicted words and times; same six questions, goals and thinker settings as GT."
     },
     {
       "id": "s2-generated-readers",
@@ -234,14 +234,14 @@
       "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
       "status": "complete",
       "url": "experiments/structured-notes.html#protocol",
-      "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two readers, five conditions and request seeds."
+      "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two thinkers, five conditions and request seeds."
     },
     {
       "id": "notes-generated",
       "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
       "status": "complete",
       "url": "experiments/structured-notes.html#next",
-      "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both readers; 144/144 outputs reviewed."
+      "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both thinkers; 144/144 outputs reviewed."
     },
     {
       "id": "s2-development",
@@ -261,7 +261,7 @@
       "text": "Compare selected speech and explicit event fields to test what work the notes should do.",
       "url": "experiments/structured-notes.html#interpretation",
       "status": "complete",
-      "evidence": "Matched development check of event fields and selected sources with the same Thinking reader; 72/72 outputs reviewed."
+      "evidence": "Matched development check of event fields and selected sources with the same Thinking thinker; 72/72 outputs reviewed."
     },
     {
       "id": "notes-reference-bank",
@@ -303,7 +303,7 @@
       "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#asr",
-      "evidence": "Parakeet inputs and matched reader outputs complete; Whisper remains incomplete. Further runs require explicit resume."
+      "evidence": "Parakeet inputs and matched thinker outputs complete; Whisper remains incomplete. Further runs require explicit resume."
     },
     {
       "id": "full-analysis",
@@ -477,7 +477,7 @@
     "meetings": 26,
     "brief": [
       {
-        "text": "Reactive readers with reference transcripts score 87.6% fully supported answers, compared with 25.7% for MiniCPM with all audio and 0.0% for Moshi.",
+        "text": "Reactive thinkers with reference transcripts score 87.6% fully supported answers, compared with 25.7% for MiniCPM with all audio and 0.0% for Moshi.",
         "url": "#s1-scores"
       },
       {
@@ -505,8 +505,8 @@
         "validation": "Saved scores cover Moshi and MiniCPM; DuplexOmni is unscored."
       },
       {
-        "work": "Reference-transcript notes and readers",
-        "status": "Note generation completed for 26 meetings; 2,835 main reader answers saved across nine conditions.",
+        "work": "Reference-transcript notes and thinkers",
+        "status": "Note generation completed for 26 meetings; 2,835 main thinker answers saved across nine conditions.",
         "validation": "Existing automatic scores are shown below; final source review is pending."
       },
       {
@@ -516,7 +516,7 @@
       },
       {
         "work": "Parakeet-transcript S2",
-        "status": "2,520 answers saved across both readers, four methods and two speaker-identity settings.",
+        "status": "2,520 answers saved across both thinkers, four methods and two speaker-identity settings.",
         "validation": "Answer scoring is pending; these outputs have no accuracy score on this page."
       },
       {
