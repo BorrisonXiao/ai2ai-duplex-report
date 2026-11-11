@@ -1,7 +1,22 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-11",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-11",
+      "items": [
+        {
+          "text": "Added the saved 105-question score tables, figures with confidence intervals and answer inspection without rerunning models.",
+          "url": "experiments/full-answering-results.html#scores",
+          "label": "Preliminary scores"
+        },
+        {
+          "text": "Kept inference, new scoring and automatic controllers paused while publishing the requested webpage update.",
+          "url": "experiments/full-answering-results.html#coverage",
+          "label": "Pause remains in effect"
+        }
+      ]
+    },
     {
       "date": "2026-11-06",
       "items": [

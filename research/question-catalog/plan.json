@@ -371,37 +371,43 @@
           "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#s1",
-          "evidence": "772 native input cases completed; final content scoring pending."
+          "evidence": "Moshi and MiniCPM each have 315 completed inputs; DuplexOmni has 154/315. Inference remains paused."
         },
         {
           "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#s2",
-          "evidence": "4070 question-blind writer/checker calls completed; full reader answers and scoring remain pending."
+          "evidence": "2,835 reference-transcript and 2,520 Parakeet-transcript answers saved; only the reference-transcript branch is scored."
         },
         {
           "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",
-          "status": "pending",
+          "status": "partial",
           "project_url": "experiments/full-answering-results.html#latency",
-          "evidence": "Serial cold-cache timing passed on four real outputs; full 105-question timing queued."
+          "evidence": "525 isolated timing outputs complete; 520 first-answer timestamps recorded, with saved paired confidence intervals displayed."
         },
         {
           "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#asr",
-          "evidence": "Recovery stage: Parakeet; 1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe. All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
+          "evidence": "Parakeet inputs and matched reader outputs complete; Whisper remains incomplete. Further runs require explicit resume."
         },
         {
           "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
-          "status": "pending",
+          "status": "partial",
           "project_url": "experiments/full-answering-results.html#evaluation",
-          "evidence": "Requires frozen references, completed outputs and validated scoring/timing."
+          "evidence": "Saved automatic scores are displayed for 3,990 outputs; final source review and remaining branches are pending."
         },
         {
           "text": "Measure and qualify faster inference while preserving evaluation inputs and native outputs.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#resources",
           "evidence": "GPU measurements completed; output-equivalence and complete-rollout review pending. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
+        },
+        {
+          "text": "Display the saved preliminary scores with tables, figures and answer inspection.",
+          "status": "complete",
+          "project_url": "experiments/full-answering-results.html#scores",
+          "evidence": "Existing scores and confidence intervals are exported without rescoring; the experiments remain paused."
         }
       ]
     },

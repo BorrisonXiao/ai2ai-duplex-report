@@ -1,79 +1,82 @@
 {
-  "updated": "2026-11-06T23:56:32+00:00",
-  "status": "full_evaluation_in_progress",
+  "updated": "2026-11-11T09:29:23-05:00",
+  "status": "paused_by_user",
   "questions": 105,
   "meetings": 26,
   "brief": [
     {
-      "text": "The full comparison covers 105 questions across 26 meetings; final accuracy and latency results are pending.",
-      "url": "#coverage"
+      "text": "Reactive readers with reference transcripts score 87.6% fully supported answers, compared with 25.7% for MiniCPM with all audio and 0.0% for Moshi.",
+      "url": "#s1-scores"
     },
     {
-      "text": "Duplex-only runs compare the same requests with no earlier discussion, four minutes of history and all earlier audio.",
-      "url": "#s1"
+      "text": "The focused Instruct prompt scores 91.4%; adding source notes scores 90.5%, with final source review still pending.",
+      "url": "#text-scores"
     },
     {
-      "text": "Across 26 meetings, source-note generation uses 60.3% fewer output tokens than the old structured notes; request-time results are pending.",
-      "url": "#s2"
+      "text": "The controlled timing run does not establish lower post-request latency from saved notes.",
+      "url": "#controlled-timing"
     },
     {
-      "text": "The timing test measures actual post-request response time separately from thinking-token counts.",
-      "url": "#latency"
+      "text": "Earlier note generation adds substantial token cost even when request-time thinking is slightly lower.",
+      "url": "#cost-score"
     }
   ],
   "coverage": [
     {
-      "work": "Reference audit",
-      "status": "105 complete transcript prefixes processed; nine flagged cases checked against source speech.",
-      "validation": "All 50 reviewed scorer controls and individual ownership checks pass; final accuracy requires real-answer source review."
+      "work": "Reference and evaluator checks",
+      "status": "105 reference prefixes audited; all 50 evaluator development controls passed.",
+      "validation": "Real-answer source review and three invalid judge verdicts remain pending."
     },
     {
-      "work": "Native S1 outputs",
-      "status": "772 of 945 input cases completed (duplexomni: 142/315, minicpm: 315/315, moshi: 315/315).",
-      "validation": "Answer scoring pending."
+      "work": "Native audio models",
+      "status": "784/945 inputs complete: Moshi 315, MiniCPM 315 and DuplexOmni 154.",
+      "validation": "Saved scores cover Moshi and MiniCPM; DuplexOmni is unscored."
     },
     {
-      "work": "Question-blind GT summaries and notes",
-      "status": "4070 earlier writer/checker calls completed; note generation finished.",
-      "validation": "All 1,277 source states pass exact-speech, time and budget checks; source-link meanings and final answers require separate evaluation."
+      "work": "Reference-transcript notes and readers",
+      "status": "Note generation completed for 26 meetings; 2,835 main reader answers saved across nine conditions.",
+      "validation": "Existing automatic scores are shown below; final source review is pending."
     },
     {
-      "work": "S2 readers and actual latency",
-      "status": "2835 accuracy answers saved (instruct: 945, thinking: 1890); 525/525 serial timing answers saved.",
-      "validation": "Four qualification answers source-checked; full-bank results pending."
+      "work": "Controlled S2 timing",
+      "status": "525 outputs saved: 105 questions in each of five conditions; 520 first-answer timestamps recorded.",
+      "validation": "Saved paired confidence intervals are displayed; missing timestamps remain missing."
     },
     {
-      "work": "Generated transcripts",
-      "status": "Recovery stage: Parakeet; 1399 outputs saved. Whisper waits for the recovered ASR pipeline and the optimization probe.",
-      "validation": "All 911 saved speaker predictions replay exactly on CPU and are byte-identical in the running recovery; transcription WER and answer accuracy remain pending."
+      "work": "Parakeet-transcript S2",
+      "status": "2,520 answers saved across both readers, four methods and two speaker-identity settings.",
+      "validation": "Answer scoring is pending; these outputs have no accuracy score on this page."
     },
     {
-      "work": "Inference optimization",
-      "status": "GPU measurements completed; output-equivalence and complete-rollout review pending.",
-      "validation": "Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
+      "work": "Whisper-transcript S2",
+      "status": "Whisper branch is incomplete.",
+      "validation": "No full-bank answer scores are available."
+    },
+    {
+      "work": "Pause and publication scope",
+      "status": "Inference and automatic controllers remain paused since November 7.",
+      "validation": "This update uses only saved scores and outputs; no new inference or scoring."
     }
   ],
-  "completed_native_outputs": 772,
+  "completed_native_outputs": 784,
   "native_counts": {
-    "moshi": 315,
-    "duplexomni": 142,
-    "minicpm": 315
+    "minicpm": 315,
+    "duplexomni": 154,
+    "moshi": 315
   },
-  "completed_S2_outputs": 2835,
+  "completed_S2_outputs": 5355,
   "completed_writer_calls": 4070,
-  "active_GPU_jobs": 3,
+  "active_GPU_jobs": 0,
   "maximum_active_GPUs": 4,
   "next_steps": [
-    "Measure cache reuse, remove unused speech-tensor work and test two independent cases per GPU; deploy only after matched native-output validation.",
-    "Finish the matched readers and inspect actual answer gains, losses and a reproducible sample from other questions.",
-    "Finish native S1 replay and generated ASR histories, then complete their matched reader comparisons.",
-    "Validate serial timing and compare accuracy, request-time reasoning and measured response latency.",
-    "Extend the causal ASR comparison and publish paired results with source evidence and real model outputs."
+    "On explicit resume, review the unresolved judge outputs and real-answer comparisons to validate the preliminary scores.",
+    "On explicit resume, score the completed Parakeet answers to compare reference and generated transcripts.",
+    "On explicit resume, finish DuplexOmni and Whisper, then complete the full S1/S2 comparison."
   ],
   "completed_timing_outputs": 525,
   "completed_S2_by_model": {
-    "instruct": 945,
-    "thinking": 1890
+    "instruct": 1785,
+    "thinking": 3570
   },
   "writer_cost": {
     "summary": {
@@ -94,5 +97,7 @@
       "generated_tokens": 346754,
       "revision_checks": 239
     }
-  }
+  },
+  "publication_scope": "Saved automatic scores only; no inference, scoring or controller restart.",
+  "scored_outputs": 3990
 }
