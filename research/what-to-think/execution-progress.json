@@ -345,7 +345,7 @@
       "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
       "status": "partial",
       "url": "experiments/note-functions.html#evaluation",
-      "evidence": "765/1260 outputs saved; retain full transcripts and freeze the design after development review."
+      "evidence": "840/1260 outputs saved; retain full transcripts and freeze the design after development review."
     },
     {
       "id": "note-functions-analysis",
@@ -362,7 +362,7 @@
       "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
     }
   ],
-  "updated_at": "2026-11-12T03:36:14-05:00",
+  "updated_at": "2026-11-12T03:48:38-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -610,7 +610,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-12T03:36:14-05:00",
+    "updated": "2026-11-12T03:48:38-05:00",
     "status": "development_review_passed",
     "api_revision": "v2",
     "control_count": 10,
@@ -667,7 +667,7 @@
       },
       {
         "stage": "Full 105-question evaluation",
-        "status": "765/1260 outputs saved",
+        "status": "840/1260 outputs saved",
         "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
       },
       {
@@ -728,8 +728,8 @@
       },
       {
         "label": "full-thinking-cold",
-        "state": "RUNNING",
-        "completed": "345 answers",
+        "state": "COMPLETED",
+        "completed": "420 answers",
         "GPUs": 1,
         "GPU_type": "H100 SXM80GB"
       },
@@ -1103,6 +1103,95 @@
             "native_thinking_finished": null,
             "first_answer_text": 0.6279644450041815,
             "complete_output": 3.0531311930026277
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 23 · reactive · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D said they would take the notes today.",
+            "evidence_ids": [
+              "EN2002b-U00011",
+              "EN2002b-U00015"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 2177,
+          "latency_seconds": {
+            "first_generated_token": 0.16367654700297862,
+            "native_thinking_finished": 11.428809368997463,
+            "first_answer_text": 11.470693176997884,
+            "complete_output": 11.759233051998308
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 23 · source · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D said they would take the notes today.",
+            "evidence_ids": [
+              "EN2002b-U00015"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 2299,
+          "latency_seconds": {
+            "first_generated_token": 0.30567572599829873,
+            "native_thinking_finished": 12.58148899799562,
+            "first_answer_text": 12.624728345996118,
+            "complete_output": 12.840809345994785
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 23 · json · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D",
+            "evidence_ids": [
+              "EN2002b-U00011",
+              "EN2002b-U00015",
+              "EN2002b-U00020",
+              "EN2002b-U00021"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 1962,
+          "latency_seconds": {
+            "first_generated_token": 0.21657338299701223,
+            "native_thinking_finished": 10.515895684002317,
+            "first_answer_text": 10.558491256000707,
+            "complete_output": 10.972907210998528
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 23 · tools · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D",
+            "evidence_ids": [
+              "EN2002b-U00011",
+              "EN2002b-U00015"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 3340,
+          "latency_seconds": {
+            "first_generated_token": 0.240779008003301,
+            "native_thinking_finished": 17.951387451998016,
+            "first_answer_text": 17.994506326998817,
+            "complete_output": 18.25337370899797
           }
         }
       }
