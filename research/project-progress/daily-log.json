@@ -16,6 +16,10 @@
         {
           "text": "Added preliminary automatic scores, paired token and timing figures, and actual answers; source content review remains pending.",
           "url": "experiments/note-functions.html#results"
+        },
+        {
+          "text": "Completed all 1,260 answers and reviewed the 24 known scorer-error cases; native calls use 7.5% fewer request-time thinking tokens but reduce fully supported accuracy by 6.2 percentage points.",
+          "url": "experiments/note-functions.html#results"
         }
       ]
     },

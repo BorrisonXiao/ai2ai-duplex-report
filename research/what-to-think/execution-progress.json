@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated": "2026-11-12",
-  "status": "s2_note_function_development",
+  "status": "full_scored_with_targeted_source_review",
   "snapshot_label": "S2 note-editing study; DuplexOmni stopped",
   "active_job": null,
   "planned_questions_per_condition": 105,
@@ -362,7 +362,7 @@
       "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
     }
   ],
-  "updated_at": "2026-11-12T05:03:48-05:00",
+  "updated_at": "2026-11-12T11:40:07-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -610,8 +610,8 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-12T05:03:48-05:00",
-    "status": "development_review_passed",
+    "updated": "2026-11-12T11:40:07-05:00",
+    "status": "full_scored_with_targeted_source_review",
     "api_revision": "v2",
     "control_count": 10,
     "repair_attempts": 1,
@@ -622,11 +622,11 @@
         "url": "#design"
       },
       {
-        "text": "Saved full outputs have scored comparisons; source-reviewed corrections retain the original automatic labels.",
+        "text": "All 1,260 answers are saved and scored; 24 answers have targeted source review, with raw automatic labels retained.",
         "url": "#results"
       },
       {
-        "text": "Review paired accuracy, thinking-token and latency intervals before drawing full-bank conclusions.",
+        "text": "Native calls reduce mean request-time thinking tokens by 7.5%, while fully supported accuracy changes by -6.2 percentage points.",
         "url": "#results"
       },
       {
@@ -1300,9 +1300,9 @@
       }
     ],
     "next_steps": [
-      "Complete the frozen four-condition study on all105 questions to measure accuracy and request-time thinking.",
-      "Source-review every output for the two known judge-error questions before reporting final105-question accuracy.",
-      "Compare paired latency and complete token cost before deciding on transcript lookup."
+      "Inspect newly incorrect and newly correct answers to identify which note edits affect answer quality.",
+      "Check whether token reductions persist on correct answers, alongside measured latency and the complete note-generation cost.",
+      "Use those findings to decide whether a separate notes-plus-transcript-lookup experiment is justified."
     ],
     "analysis": {
       "scope": "full",
@@ -1313,24 +1313,24 @@
           "condition": "json",
           "outputs": 105,
           "invalid_judgments": 0,
-          "pending_source_review": 2,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.9320388349514563,
+              "mean": 0.9333333333333333,
               "CI95": [
-                0.8705882352941177,
-                0.9739130434782609
+                0.8762886597938144,
+                0.9743589743589743
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.8349514563106796,
+              "mean": 0.8380952380952381,
               "CI95": [
-                0.7555555555555555,
-                0.9047619047619048
+                0.7625,
+                0.905511811023622
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1376,24 +1376,24 @@
           "condition": "reactive",
           "outputs": 105,
           "invalid_judgments": 0,
-          "pending_source_review": 2,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.9223300970873787,
+              "mean": 0.9238095238095239,
               "CI95": [
-                0.8571428571428571,
-                0.97
+                0.8627450980392157,
+                0.9701492537313433
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.9029126213592233,
+              "mean": 0.9047619047619048,
               "CI95": [
-                0.8378378378378378,
+                0.8425925925925926,
                 0.9565217391304348
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1439,24 +1439,24 @@
           "condition": "source",
           "outputs": 105,
           "invalid_judgments": 0,
-          "pending_source_review": 2,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.9223300970873787,
+              "mean": 0.9238095238095239,
               "CI95": [
-                0.8571428571428571,
-                0.9702970297029703
+                0.8596491228070176,
+                0.9705882352941176
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.8932038834951457,
+              "mean": 0.8952380952380953,
               "CI95": [
-                0.8279569892473119,
-                0.95
+                0.8333333333333334,
+                0.9504132231404959
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1502,24 +1502,24 @@
           "condition": "tools",
           "outputs": 105,
           "invalid_judgments": 0,
-          "pending_source_review": 2,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.941747572815534,
+              "mean": 0.9428571428571428,
               "CI95": [
-                0.8842105263157894,
-                0.9849624060150376
+                0.8875,
+                0.9851851851851852
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.8932038834951457,
+              "mean": 0.8952380952380953,
               "CI95": [
-                0.8275862068965517,
-                0.9487179487179487
+                0.8315789473684211,
+                0.95
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1565,24 +1565,24 @@
           "condition": "json",
           "outputs": 210,
           "invalid_judgments": 0,
-          "pending_source_review": 4,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.8980582524271845,
+              "mean": 0.8952380952380953,
               "CI95": [
-                0.8481012658227848,
-                0.9432989690721649
+                0.8490566037735849,
+                0.94
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.8349514563106796,
+              "mean": 0.8333333333333334,
               "CI95": [
-                0.7692307692307693,
-                0.8921568627450981
+                0.7727272727272727,
+                0.8877551020408163
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1637,24 +1637,24 @@
           "condition": "reactive",
           "outputs": 210,
           "invalid_judgments": 0,
-          "pending_source_review": 4,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.9223300970873787,
+              "mean": 0.9238095238095239,
               "CI95": [
-                0.8858695652173914,
-                0.9583333333333334
+                0.8884615384615384,
+                0.9591836734693877
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.9029126213592233,
+              "mean": 0.9047619047619048,
               "CI95": [
-                0.861904761904762,
-                0.94
+                0.8641304347826086,
+                0.9409090909090909
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1709,24 +1709,24 @@
           "condition": "source",
           "outputs": 210,
           "invalid_judgments": 0,
-          "pending_source_review": 4,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.9223300970873787,
+              "mean": 0.919047619047619,
               "CI95": [
-                0.875,
-                0.9642857142857143
+                0.8722222222222222,
+                0.9611111111111111
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.883495145631068,
+              "mean": 0.8809523809523809,
               "CI95": [
-                0.8350515463917526,
-                0.9267241379310345
+                0.8333333333333334,
+                0.9230769230769231
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1781,24 +1781,24 @@
           "condition": "tools",
           "outputs": 210,
           "invalid_judgments": 0,
-          "pending_source_review": 4,
+          "pending_source_review": 0,
           "metrics": {
             "core_correct": {
-              "mean": 0.912621359223301,
+              "mean": 0.9047619047619048,
               "CI95": [
-                0.8556701030927835,
-                0.9587628865979382
+                0.8481012658227848,
+                0.9527027027027027
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": 0.8495145631067961,
+              "mean": 0.8428571428571429,
               "CI95": [
-                0.7869565217391304,
-                0.9074074074074074
+                0.782608695652174,
+                0.8982300884955752
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1856,21 +1856,21 @@
           "baseline": "reactive",
           "metrics": {
             "core_correct": {
-              "mean": 0.009708737864077669,
+              "mean": 0.009523809523809525,
               "CI95": [
-                -0.038461538461538464,
-                0.0625
+                -0.0375,
+                0.06060606060606061
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": -0.06796116504854369,
+              "mean": -0.06666666666666667,
               "CI95": [
-                -0.1485148514851485,
-                0.012345679012345678
+                -0.14606741573033707,
+                0.012048192771084338
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -1937,19 +1937,19 @@
             "core_correct": {
               "mean": 0.0,
               "CI95": [
-                -0.0392156862745098,
-                0.041666666666666664
+                -0.038834951456310676,
+                0.039603960396039604
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": -0.009708737864077669,
+              "mean": -0.009523809523809525,
               "CI95": [
-                -0.052083333333333336,
-                0.0375
+                -0.05102040816326531,
+                0.036585365853658534
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -2014,21 +2014,21 @@
           "baseline": "reactive",
           "metrics": {
             "core_correct": {
-              "mean": 0.019417475728155338,
+              "mean": 0.01904761904761905,
               "CI95": [
-                -0.04477611940298507,
-                0.07894736842105263
+                -0.043478260869565216,
+                0.07692307692307693
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": -0.009708737864077669,
+              "mean": -0.009523809523809525,
               "CI95": [
-                -0.07216494845360824,
-                0.06349206349206349
+                -0.0707070707070707,
+                0.06153846153846154
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -2093,21 +2093,21 @@
           "baseline": "reactive",
           "metrics": {
             "core_correct": {
-              "mean": -0.024271844660194174,
+              "mean": -0.02857142857142857,
               "CI95": [
-                -0.0707070707070707,
-                0.013513513513513514
+                -0.07207207207207207,
+                0.00641025641025641
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": -0.06796116504854369,
+              "mean": -0.07142857142857142,
               "CI95": [
-                -0.12135922330097088,
-                -0.019801980198019802
+                -0.11931818181818182,
+                -0.02666666666666667
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -2119,12 +2119,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 116.71428571428571,
+                "mean": 129.58450704225353,
                 "CI95": [
-                  -14.75925925925926,
-                  229.3132530120482
+                  3.8684210526315788,
+                  243.0595238095238
                 ],
-                "questions": 70,
+                "questions": 71,
                 "meetings": 21
               }
             },
@@ -2155,12 +2155,12 @@
               "questions": 102,
               "meetings": 25,
               "both_supported_correct": {
-                "mean": 0.3365754445327987,
+                "mean": 0.4352288823040597,
                 "CI95": [
-                  -0.9422623381448582,
-                  1.655041041800117
+                  -0.8086724363595587,
+                  1.7690642117544622
                 ],
-                "questions": 77,
+                "questions": 79,
                 "meetings": 23
               }
             },
@@ -2173,12 +2173,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 0.43126503348739786,
+                "mean": 0.5255052844632456,
                 "CI95": [
-                  -0.8268160964768564,
-                  1.7184771885126209
+                  -0.7246262701896863,
+                  1.8356653682457675
                 ],
-                "questions": 80,
+                "questions": 82,
                 "meetings": 24
               }
             }
@@ -2190,21 +2190,21 @@
           "baseline": "reactive",
           "metrics": {
             "core_correct": {
-              "mean": 0.0,
+              "mean": -0.004761904761904762,
               "CI95": [
-                -0.03296703296703297,
-                0.032407407407407406
+                -0.039603960396039604,
+                0.027472527472527472
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": -0.019417475728155338,
+              "mean": -0.023809523809523808,
               "CI95": [
-                -0.06842105263157895,
-                0.026595744680851064
+                -0.07291666666666667,
+                0.022222222222222223
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -2216,12 +2216,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": -14.453333333333333,
+                "mean": -16.355263157894736,
                 "CI95": [
-                  -195.77397260273972,
-                  194.72881355932202
+                  -195.16,
+                  191.45098039215685
                 ],
-                "questions": 75,
+                "questions": 76,
                 "meetings": 23
               }
             },
@@ -2252,12 +2252,12 @@
               "questions": 103,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 0.3545366664445653,
+                "mean": 0.33746584501231397,
                 "CI95": [
                   -1.3272172090095695,
-                  2.114072337833652
+                  2.072712825155707
                 ],
-                "questions": 81,
+                "questions": 82,
                 "meetings": 24
               }
             },
@@ -2270,12 +2270,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 0.3548064795061321,
+                "mean": 0.3386916238047955,
                 "CI95": [
                   -1.3159567513139336,
-                  2.105042879743474
+                  2.0687085994203143
                 ],
-                "questions": 81,
+                "questions": 82,
                 "meetings": 24
               }
             }
@@ -2287,21 +2287,21 @@
           "baseline": "reactive",
           "metrics": {
             "core_correct": {
-              "mean": -0.009708737864077669,
+              "mean": -0.01904761904761905,
               "CI95": [
-                -0.04891304347826087,
-                0.024691358024691357
+                -0.06626506024096386,
+                0.018518518518518517
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "supported_correct": {
-              "mean": -0.05339805825242718,
+              "mean": -0.06190476190476191,
               "CI95": [
-                -0.10434782608695652,
-                0.0
+                -0.11224489795918367,
+                -0.008928571428571428
               ],
-              "questions": 103,
+              "questions": 105,
               "meetings": 26
             },
             "native_thinking_tokens": {
@@ -2313,12 +2313,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 49.666666666666664,
+                "mean": 44.136986301369866,
                 "CI95": [
-                  -211.05084745762713,
-                  356.890243902439
+                  -212.32467532467533,
+                  337.25949367088606
                 ],
-                "questions": 72,
+                "questions": 73,
                 "meetings": 25
               }
             },
@@ -2349,12 +2349,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 0.7437999190350502,
+                "mean": 0.7058624552391848,
                 "CI95": [
                   -1.1599190738969114,
-                  3.1325404633340037
+                  3.0226441275076033
                 ],
-                "questions": 87,
+                "questions": 88,
                 "meetings": 26
               }
             },
@@ -2367,12 +2367,12 @@
               "questions": 105,
               "meetings": 26,
               "both_supported_correct": {
-                "mean": 0.7826529081725019,
+                "mean": 0.7454185436705633,
                 "CI95": [
                   -1.09926848068343,
-                  3.1628022892248735
+                  3.0480900786991296
                 ],
-                "questions": 87,
+                "questions": 88,
                 "meetings": 26
               }
             }
@@ -2520,12 +2520,1022 @@
           "earlier_input_tokens": 14186135
         }
       ],
-      "unresolved_judgments": 24,
-      "pending_source_review": 24,
+      "unresolved_judgments": 0,
+      "pending_source_review": 0,
       "missing_judgments": 0,
-      "source_review": {},
+      "source_review": {
+        "status": "targeted_source_review_complete",
+        "reviewed_by": "Codex",
+        "reviewed_at_utc": "2026-11-12T16:39:10.486237+00:00",
+        "reviewed_outputs": 24,
+        "reviewed_question_ids": [
+          "first:authored-W1-2",
+          "scale:TS3006c-S05-Q3"
+        ],
+        "reviewed_row_ids": [
+          "instruct|first:authored-W1-2|source|23",
+          "instruct|first:authored-W1-2|reactive|23",
+          "instruct|first:authored-W1-2|json|23",
+          "instruct|scale:TS3006c-S05-Q3|json|23",
+          "instruct|scale:TS3006c-S05-Q3|reactive|23",
+          "instruct|scale:TS3006c-S05-Q3|source|23",
+          "instruct|scale:TS3006c-S05-Q3|tools|23",
+          "instruct|first:authored-W1-2|tools|23",
+          "thinking|first:authored-W1-2|source|23",
+          "thinking|first:authored-W1-2|reactive|23",
+          "thinking|first:authored-W1-2|json|23",
+          "thinking|scale:TS3006c-S05-Q3|json|23",
+          "thinking|scale:TS3006c-S05-Q3|reactive|23",
+          "thinking|scale:TS3006c-S05-Q3|source|23",
+          "thinking|scale:TS3006c-S05-Q3|tools|23",
+          "thinking|first:authored-W1-2|tools|23",
+          "thinking|first:authored-W1-2|source|47",
+          "thinking|first:authored-W1-2|reactive|47",
+          "thinking|first:authored-W1-2|json|47",
+          "thinking|scale:TS3006c-S05-Q3|json|47",
+          "thinking|scale:TS3006c-S05-Q3|reactive|47",
+          "thinking|scale:TS3006c-S05-Q3|source|47",
+          "thinking|scale:TS3006c-S05-Q3|tools|47",
+          "thinking|first:authored-W1-2|tools|47"
+        ],
+        "assessments": [
+          {
+            "row_id": "instruct|first:authored-W1-2|source|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for psychology/psycholinguistics because she knows the right email addresses and can make it feel more relevant to that audience, which may increase response rates.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "instruct|first:authored-W1-2|reactive|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call by the end of the week, as it's overdue. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the likelihood of response.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "instruct|first:authored-W1-2|json|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call for linguists by the end of the week, as it's overdue and A volunteered to handle it. We're asking Claire to send a separate call for Psychology because she knows the correct email address and can tailor the message to make it more relevant to psychology researchers, increasing the likelihood of engagement.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "instruct|scale:TS3006c-S05-Q3|json|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design file was uploaded to the shared folder by C, but D cannot access it. The issue remains unresolved as of the latest discussion.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "instruct|scale:TS3006c-S05-Q3|reactive|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "C confirmed that the conceptual design was placed in the shared folder, but D initially could not see it and had trouble accessing it. C later clarified that the file should be in the folder under the name 'PowerPoint pre components design'.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "instruct|scale:TS3006c-S05-Q3|source|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "C stated they put the conceptual design in the shared folder, but D could not access it and couldn't cut and paste it into the other folder, indicating the files may not be properly accessible despite C's claim.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "instruct|scale:TS3006c-S05-Q3|tools|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design file was uploaded to the shared folder by C, but D still cannot see it and reports only seeing their own presentation. The issue remains unresolved.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "instruct|first:authored-W1-2|tools|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call for linguists today or tomorrow. We're asking Claire to send a separate call for Psychology because she knows the right email addresses and contacts, and her message will look more relevant to psychology researchers, helping it stand out as applicable to them.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|source|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A will send the main call for linguistics by today or tomorrow. Claire is sending a separate call for Psychology because she knows the email addresses and it will appear more relevant to Psychology people.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|reactive|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A will send the main call for linguistics by the end of the week. We ask Claire to send a separate Psychology call because she has a Psychology email address, making it more relevant to that audience.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|json|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A sends the main linguistics call today or tomorrow. We ask Claire to send a separate Psychology call because she knows the email address and details.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|json|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "C uploaded the conceptual design file to the shared folder. D cannot access it, as he still only sees his own presentation.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|reactive|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "C placed the conceptual design in the shared folder, but D could not find it and only saw his own presentation.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|source|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design files are not in the shared folder, as D states they only see their own presentation. D is attempting to move the files into the shared folder but cannot cut and paste them.",
+            "core_correct": false,
+            "material_unsupported": true,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer asserts the conceptual-design files are not in the folder, contradicting C's report. D's limited visibility and attempted copy do not establish absent files."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|tools|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The shared folder issue remains unresolved; D still cannot see the conceptual design file and reports only seeing their own presentation.",
+            "core_correct": false,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|tools|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A will send the main call for linguists today or tomorrow. We ask Claire to send a separate Psychology call because she knows the relevant email addresses and contacts, and her email will look more relevant to Psychology people.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|source|47",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call for linguistics today or tomorrow. We ask Claire to send a separate Psychology call because she knows the email addresses and can make it relevant, and to avoid making linguists worry about including others in the main call.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|reactive|47",
+            "question_id": "first:authored-W1-2",
+            "answer": "A will send the main call for linguists today or tomorrow. We ask Claire to send a separate Psychology call because she can tailor it to Psychology people, making it more relevant (she has the right email list and they know her).",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|json|47",
+            "question_id": "first:authored-W1-2",
+            "answer": "A sends the main linguistics call today or tomorrow. Claire sends a separate Psychology call to avoid mentioning a broad audience in the linguistics call, which would cause linguists to worry about losing their place.",
+            "core_correct": false,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107",
+              "EN2003a-U00039",
+              "EN2003a-U00042"
+            ],
+            "reason": "The timing and sender are correct, and concern about linguists losing a place is supported at U00039/U00042. The answer explains separate calls in general but omits the required reason for choosing Claire (appropriate address, relevance or known recipients)."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|json|47",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design file was uploaded to the shared folder (per C's U00021 and U00022), but D cannot access it (per D's U00066), and the issue remains unresolved.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion. The answer mis-cites U00066 for D's access difficulty; the factual claim is supported at U00026, so the incorrect citation is recorded separately from answer-content accuracy."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|reactive|47",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design was claimed to be in the shared folder by C, but D couldn't find it (only saw his own presentation).",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|source|47",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design files were claimed to be in the shared folder (C, TS3006c-U00021), but D couldn't find them (TS3006c-U00026). D attempted to place their file there but couldn't cut and paste (TS3006c-U00038). Status remains unresolved.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|tools|47",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The shared folder access issue is unresolved.",
+            "core_correct": false,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|tools|47",
+            "question_id": "first:authored-W1-2",
+            "answer": "A sends the main call for linguists today or tomorrow. We ask Claire to send a separate Psychology call because she knows Psychology email contacts and can make it look more relevant to them, avoiding linguists' concerns about the main call.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          }
+        ],
+        "corrections": [
+          {
+            "row_id": "instruct|first:authored-W1-2|source|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for psychology/psycholinguistics because she knows the right email addresses and can make it feel more relevant to that audience, which may increase response rates.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "instruct|first:authored-W1-2|reactive|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call by the end of the week, as it's overdue. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the likelihood of response.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "instruct|first:authored-W1-2|json|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A is sending the main call for linguists by the end of the week, as it's overdue and A volunteered to handle it. We're asking Claire to send a separate call for Psychology because she knows the correct email address and can tailor the message to make it more relevant to psychology researchers, increasing the likelihood of engagement.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "instruct|scale:TS3006c-S05-Q3|json|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design file was uploaded to the shared folder by C, but D cannot access it. The issue remains unresolved as of the latest discussion.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion."
+          },
+          {
+            "row_id": "thinking|first:authored-W1-2|reactive|23",
+            "question_id": "first:authored-W1-2",
+            "answer": "A will send the main call for linguistics by the end of the week. We ask Claire to send a separate Psychology call because she has a Psychology email address, making it more relevant to that audience.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "EN2003a-U00034",
+              "EN2003a-U00049",
+              "EN2003a-U00050",
+              "EN2003a-U00056",
+              "EN2003a-U00105",
+              "EN2003a-U00107"
+            ],
+            "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|tools|23",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The shared folder issue remains unresolved; D still cannot see the conceptual design file and reports only seeing their own presentation.",
+            "core_correct": false,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|json|47",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The conceptual design file was uploaded to the shared folder (per C's U00021 and U00022), but D cannot access it (per D's U00066), and the issue remains unresolved.",
+            "core_correct": true,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion. The answer mis-cites U00066 for D's access difficulty; the factual claim is supported at U00026, so the incorrect citation is recorded separately from answer-content accuracy."
+          },
+          {
+            "row_id": "thinking|scale:TS3006c-S05-Q3|tools|47",
+            "question_id": "scale:TS3006c-S05-Q3",
+            "answer": "The shared folder access issue is unresolved.",
+            "core_correct": false,
+            "material_unsupported": false,
+            "source_ids": [
+              "TS3006c-U00021",
+              "TS3006c-U00022",
+              "TS3006c-U00026",
+              "TS3006c-U00028",
+              "TS3006c-U00038"
+            ],
+            "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup."
+          }
+        ],
+        "raw_analysis_sha256_before_review": "c2d036d7748d8d0d04de55aaabb8210b68f2a5d9929f2bf18d7d03801526f12e",
+        "scope_note": "All24 answers for the two predeclared judge-error questions were checked against the full causal source prefixes; the remaining questions retain automatic judgments. Original automatic scores are preserved.",
+        "date_equivalence_note": "Thursday is explicitly stated at EN2003a-U00034, so by end of week is compatible with today/tomorrow at U00050; no unsupported timing revision is inferred.",
+        "citation_note": "Thinking/JSON/seed47 for the folder question cites U00066 instead of U00026 for a factual claim supported elsewhere in the prefix; record citation quality separately from answer-content accuracy."
+      },
       "scorer_controls": 55,
-      "scorer_disagreements": [],
+      "scorer_disagreements": [
+        {
+          "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+          "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for psychology/psycholinguistics because she knows the right email addresses and can make it feel more relevant to that audience, which may increase response rates.",
+          "reviewed_core_correct": true,
+          "reviewed_supported": true,
+          "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome.",
+          "source_speech": [
+            {
+              "speaker": "A",
+              "start": 110.21,
+              "end": 115.17,
+              "text": "by Trying to think, what is it Thursday today, I'll d I'll do that by the end of the week anyway.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00034",
+              "available": 115.67
+            },
+            {
+              "speaker": "A",
+              "start": 173.26,
+              "end": 179.44,
+              "text": "So so that's the one for ling basically and I'll send that out.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00049",
+              "available": 179.94
+            },
+            {
+              "speaker": "A",
+              "start": 185.08,
+              "end": 186.32,
+              "text": "I'll do that today or tomorrow.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00050",
+              "available": 186.82
+            },
+            {
+              "speaker": "A",
+              "start": 202.79,
+              "end": 207.05,
+              "text": "'Cause she'll know which email address to use and and everything else.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00056",
+              "available": 207.55
+            },
+            {
+              "speaker": "A",
+              "start": 320.68,
+              "end": 328.67,
+              "text": "Um and the good thing about Claire sending it is she's probably got a psych email address as well and it it might look a bit more relevant to them.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00105",
+              "available": 329.17
+            },
+            {
+              "speaker": "C",
+              "start": 330.26,
+              "end": 331.38,
+              "text": "They know her.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00107",
+              "available": 331.88
+            }
+          ]
+        },
+        {
+          "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+          "answer": "A is sending the main call by the end of the week, as it's overdue. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the likelihood of response.",
+          "reviewed_core_correct": true,
+          "reviewed_supported": true,
+          "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome.",
+          "source_speech": [
+            {
+              "speaker": "A",
+              "start": 110.21,
+              "end": 115.17,
+              "text": "by Trying to think, what is it Thursday today, I'll d I'll do that by the end of the week anyway.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00034",
+              "available": 115.67
+            },
+            {
+              "speaker": "A",
+              "start": 173.26,
+              "end": 179.44,
+              "text": "So so that's the one for ling basically and I'll send that out.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00049",
+              "available": 179.94
+            },
+            {
+              "speaker": "A",
+              "start": 185.08,
+              "end": 186.32,
+              "text": "I'll do that today or tomorrow.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00050",
+              "available": 186.82
+            },
+            {
+              "speaker": "A",
+              "start": 202.79,
+              "end": 207.05,
+              "text": "'Cause she'll know which email address to use and and everything else.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00056",
+              "available": 207.55
+            },
+            {
+              "speaker": "A",
+              "start": 320.68,
+              "end": 328.67,
+              "text": "Um and the good thing about Claire sending it is she's probably got a psych email address as well and it it might look a bit more relevant to them.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00105",
+              "available": 329.17
+            },
+            {
+              "speaker": "C",
+              "start": 330.26,
+              "end": 331.38,
+              "text": "They know her.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00107",
+              "available": 331.88
+            }
+          ]
+        },
+        {
+          "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+          "answer": "A is sending the main call for linguists by the end of the week, as it's overdue and A volunteered to handle it. We're asking Claire to send a separate call for Psychology because she knows the correct email address and can tailor the message to make it more relevant to psychology researchers, increasing the likelihood of engagement.",
+          "reviewed_core_correct": true,
+          "reviewed_supported": true,
+          "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome.",
+          "source_speech": [
+            {
+              "speaker": "A",
+              "start": 110.21,
+              "end": 115.17,
+              "text": "by Trying to think, what is it Thursday today, I'll d I'll do that by the end of the week anyway.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00034",
+              "available": 115.67
+            },
+            {
+              "speaker": "A",
+              "start": 173.26,
+              "end": 179.44,
+              "text": "So so that's the one for ling basically and I'll send that out.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00049",
+              "available": 179.94
+            },
+            {
+              "speaker": "A",
+              "start": 185.08,
+              "end": 186.32,
+              "text": "I'll do that today or tomorrow.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00050",
+              "available": 186.82
+            },
+            {
+              "speaker": "A",
+              "start": 202.79,
+              "end": 207.05,
+              "text": "'Cause she'll know which email address to use and and everything else.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00056",
+              "available": 207.55
+            },
+            {
+              "speaker": "A",
+              "start": 320.68,
+              "end": 328.67,
+              "text": "Um and the good thing about Claire sending it is she's probably got a psych email address as well and it it might look a bit more relevant to them.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00105",
+              "available": 329.17
+            },
+            {
+              "speaker": "C",
+              "start": 330.26,
+              "end": 331.38,
+              "text": "They know her.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00107",
+              "available": 331.88
+            }
+          ]
+        },
+        {
+          "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+          "answer": "The conceptual design file was uploaded to the shared folder by C, but D cannot access it. The issue remains unresolved as of the latest discussion.",
+          "reviewed_core_correct": true,
+          "reviewed_supported": true,
+          "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion.",
+          "source_speech": [
+            {
+              "speaker": "C",
+              "start": 115.86,
+              "end": 122.85,
+              "text": "I just put it in the in the shared folder so it should be yeah I think so.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00021",
+              "available": 123.35
+            },
+            {
+              "speaker": "C",
+              "start": 122.85,
+              "end": 124.72,
+              "text": "Yeah, conceptual design.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00022",
+              "available": 125.22
+            },
+            {
+              "speaker": "D",
+              "start": 126.02,
+              "end": 132.42,
+              "text": "Because I see only my own presentation yeah.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00026",
+              "available": 132.92
+            },
+            {
+              "speaker": "C",
+              "start": 132.07,
+              "end": 136.44,
+              "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00028",
+              "available": 136.94
+            },
+            {
+              "speaker": "D",
+              "start": 148.82,
+              "end": 152.96,
+              "text": "Ah, I can't cut and paste it into the other folder but",
+              "boundary": "speaker_gap",
+              "id": "TS3006c-U00038",
+              "available": 153.46
+            }
+          ]
+        },
+        {
+          "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+          "answer": "A will send the main call for linguistics by the end of the week. We ask Claire to send a separate Psychology call because she has a Psychology email address, making it more relevant to that audience.",
+          "reviewed_core_correct": true,
+          "reviewed_supported": true,
+          "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome.",
+          "source_speech": [
+            {
+              "speaker": "A",
+              "start": 110.21,
+              "end": 115.17,
+              "text": "by Trying to think, what is it Thursday today, I'll d I'll do that by the end of the week anyway.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00034",
+              "available": 115.67
+            },
+            {
+              "speaker": "A",
+              "start": 173.26,
+              "end": 179.44,
+              "text": "So so that's the one for ling basically and I'll send that out.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00049",
+              "available": 179.94
+            },
+            {
+              "speaker": "A",
+              "start": 185.08,
+              "end": 186.32,
+              "text": "I'll do that today or tomorrow.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00050",
+              "available": 186.82
+            },
+            {
+              "speaker": "A",
+              "start": 202.79,
+              "end": 207.05,
+              "text": "'Cause she'll know which email address to use and and everything else.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00056",
+              "available": 207.55
+            },
+            {
+              "speaker": "A",
+              "start": 320.68,
+              "end": 328.67,
+              "text": "Um and the good thing about Claire sending it is she's probably got a psych email address as well and it it might look a bit more relevant to them.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00105",
+              "available": 329.17
+            },
+            {
+              "speaker": "C",
+              "start": 330.26,
+              "end": 331.38,
+              "text": "They know her.",
+              "boundary": "sentence_end",
+              "id": "EN2003a-U00107",
+              "available": 331.88
+            }
+          ]
+        },
+        {
+          "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+          "answer": "The shared folder issue remains unresolved; D still cannot see the conceptual design file and reports only seeing their own presentation.",
+          "reviewed_core_correct": false,
+          "reviewed_supported": false,
+          "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup.",
+          "source_speech": [
+            {
+              "speaker": "C",
+              "start": 115.86,
+              "end": 122.85,
+              "text": "I just put it in the in the shared folder so it should be yeah I think so.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00021",
+              "available": 123.35
+            },
+            {
+              "speaker": "C",
+              "start": 122.85,
+              "end": 124.72,
+              "text": "Yeah, conceptual design.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00022",
+              "available": 125.22
+            },
+            {
+              "speaker": "D",
+              "start": 126.02,
+              "end": 132.42,
+              "text": "Because I see only my own presentation yeah.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00026",
+              "available": 132.92
+            },
+            {
+              "speaker": "C",
+              "start": 132.07,
+              "end": 136.44,
+              "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00028",
+              "available": 136.94
+            },
+            {
+              "speaker": "D",
+              "start": 148.82,
+              "end": 152.96,
+              "text": "Ah, I can't cut and paste it into the other folder but",
+              "boundary": "speaker_gap",
+              "id": "TS3006c-U00038",
+              "available": 153.46
+            }
+          ]
+        },
+        {
+          "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+          "answer": "The conceptual design file was uploaded to the shared folder (per C's U00021 and U00022), but D cannot access it (per D's U00066), and the issue remains unresolved.",
+          "reviewed_core_correct": true,
+          "reviewed_supported": true,
+          "reason": "The answer includes C's reported placement and D's visibility/access limitation. It summarizes their exchange without claiming a completed lookup, universal availability or a general outage. Describing the issue as unresolved means no resolution is established in the available discussion. The answer mis-cites U00066 for D's access difficulty; the factual claim is supported at U00026, so the incorrect citation is recorded separately from answer-content accuracy.",
+          "source_speech": [
+            {
+              "speaker": "C",
+              "start": 115.86,
+              "end": 122.85,
+              "text": "I just put it in the in the shared folder so it should be yeah I think so.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00021",
+              "available": 123.35
+            },
+            {
+              "speaker": "C",
+              "start": 122.85,
+              "end": 124.72,
+              "text": "Yeah, conceptual design.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00022",
+              "available": 125.22
+            },
+            {
+              "speaker": "D",
+              "start": 126.02,
+              "end": 132.42,
+              "text": "Because I see only my own presentation yeah.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00026",
+              "available": 132.92
+            },
+            {
+              "speaker": "C",
+              "start": 132.07,
+              "end": 136.44,
+              "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00028",
+              "available": 136.94
+            },
+            {
+              "speaker": "D",
+              "start": 148.82,
+              "end": 152.96,
+              "text": "Ah, I can't cut and paste it into the other folder but",
+              "boundary": "speaker_gap",
+              "id": "TS3006c-U00038",
+              "available": 153.46
+            }
+          ]
+        },
+        {
+          "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+          "answer": "The shared folder access issue is unresolved.",
+          "reviewed_core_correct": false,
+          "reviewed_supported": false,
+          "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup.",
+          "source_speech": [
+            {
+              "speaker": "C",
+              "start": 115.86,
+              "end": 122.85,
+              "text": "I just put it in the in the shared folder so it should be yeah I think so.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00021",
+              "available": 123.35
+            },
+            {
+              "speaker": "C",
+              "start": 122.85,
+              "end": 124.72,
+              "text": "Yeah, conceptual design.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00022",
+              "available": 125.22
+            },
+            {
+              "speaker": "D",
+              "start": 126.02,
+              "end": 132.42,
+              "text": "Because I see only my own presentation yeah.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00026",
+              "available": 132.92
+            },
+            {
+              "speaker": "C",
+              "start": 132.07,
+              "end": 136.44,
+              "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it.",
+              "boundary": "sentence_end",
+              "id": "TS3006c-U00028",
+              "available": 136.94
+            },
+            {
+              "speaker": "D",
+              "start": 148.82,
+              "end": 152.96,
+              "text": "Ah, I can't cut and paste it into the other folder but",
+              "boundary": "speaker_gap",
+              "id": "TS3006c-U00038",
+              "available": 153.46
+            }
+          ]
+        }
+      ],
       "answers": [
         {
           "question": "Assistant, who said they could put everyone's parts together?",
@@ -4875,8 +5885,8 @@
           "condition": "source",
           "seed": 23,
           "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for psychology/psycholinguistics because she knows the right email addresses and can make it feel more relevant to that audience, which may increase response rates.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": false,
           "automatic_supported_correct": false,
           "native_thinking_tokens": null,
@@ -5010,8 +6020,8 @@
           "condition": "reactive",
           "seed": 23,
           "answer": "A is sending the main call by the end of the week, as it's overdue. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the likelihood of response.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": false,
           "automatic_supported_correct": false,
           "native_thinking_tokens": null,
@@ -6165,8 +7175,8 @@
           "condition": "json",
           "seed": 23,
           "answer": "A is sending the main call for linguists by the end of the week, as it's overdue and A volunteered to handle it. We're asking Claire to send a separate call for Psychology because she knows the correct email address and can tailor the message to make it more relevant to psychology researchers, increasing the likelihood of engagement.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": false,
           "automatic_supported_correct": false,
           "native_thinking_tokens": null,
@@ -6855,8 +7865,8 @@
           "condition": "json",
           "seed": 23,
           "answer": "The conceptual design file was uploaded to the shared folder by C, but D cannot access it. The issue remains unresolved as of the latest discussion.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": false,
           "native_thinking_tokens": null,
@@ -7425,8 +8435,8 @@
           "condition": "reactive",
           "seed": 23,
           "answer": "C confirmed that the conceptual design was placed in the shared folder, but D initially could not see it and had trouble accessing it. C later clarified that the file should be in the folder under the name 'PowerPoint pre components design'.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": null,
@@ -7725,8 +8735,8 @@
           "condition": "source",
           "seed": 23,
           "answer": "C stated they put the conceptual design in the shared folder, but D could not access it and couldn't cut and paste it into the other folder, indicating the files may not be properly accessible despite C's claim.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": null,
@@ -7800,8 +8810,8 @@
           "condition": "tools",
           "seed": 23,
           "answer": "The conceptual design file was uploaded to the shared folder by C, but D still cannot see it and reports only seeing their own presentation. The issue remains unresolved.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": null,
@@ -8715,8 +9725,8 @@
           "condition": "tools",
           "seed": 23,
           "answer": "A is sending the main call for linguists today or tomorrow. We're asking Claire to send a separate call for Psychology because she knows the right email addresses and contacts, and her message will look more relevant to psychology researchers, helping it stand out as applicable to them.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": null,
@@ -11115,8 +12125,8 @@
           "condition": "source",
           "seed": 23,
           "answer": "A will send the main call for linguistics by today or tomorrow. Claire is sending a separate call for Psychology because she knows the email addresses and it will appear more relevant to Psychology people.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2761,
@@ -11265,8 +12275,8 @@
           "condition": "reactive",
           "seed": 23,
           "answer": "A will send the main call for linguistics by the end of the week. We ask Claire to send a separate Psychology call because she has a Psychology email address, making it more relevant to that audience.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": false,
           "automatic_supported_correct": false,
           "native_thinking_tokens": 3076,
@@ -12480,8 +13490,8 @@
           "condition": "json",
           "seed": 23,
           "answer": "A sends the main linguistics call today or tomorrow. We ask Claire to send a separate Psychology call because she knows the email address and details.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 3003,
@@ -13140,8 +14150,8 @@
           "condition": "json",
           "seed": 23,
           "answer": "C uploaded the conceptual design file to the shared folder. D cannot access it, as he still only sees his own presentation.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 3624,
@@ -13740,8 +14750,8 @@
           "condition": "reactive",
           "seed": 23,
           "answer": "C placed the conceptual design in the shared folder, but D could not find it and only saw his own presentation.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2033,
@@ -14025,8 +15035,8 @@
           "condition": "source",
           "seed": 23,
           "answer": "The conceptual design files are not in the shared folder, as D states they only see their own presentation. D is attempting to move the files into the shared folder but cannot cut and paste them.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": false,
+          "supported_correct": false,
           "automatic_core_correct": false,
           "automatic_supported_correct": false,
           "native_thinking_tokens": 2814,
@@ -14100,8 +15110,8 @@
           "condition": "tools",
           "seed": 23,
           "answer": "The shared folder issue remains unresolved; D still cannot see the conceptual design file and reports only seeing their own presentation.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": false,
+          "supported_correct": false,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 1781,
@@ -15015,8 +16025,8 @@
           "condition": "tools",
           "seed": 23,
           "answer": "A will send the main call for linguists today or tomorrow. We ask Claire to send a separate Psychology call because she knows the relevant email addresses and contacts, and her email will look more relevant to Psychology people.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2502,
@@ -17415,8 +18425,8 @@
           "condition": "source",
           "seed": 47,
           "answer": "A is sending the main call for linguistics today or tomorrow. We ask Claire to send a separate Psychology call because she knows the email addresses and can make it relevant, and to avoid making linguists worry about including others in the main call.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2915,
@@ -17625,8 +18635,8 @@
           "condition": "reactive",
           "seed": 47,
           "answer": "A will send the main call for linguists today or tomorrow. We ask Claire to send a separate Psychology call because she can tailor it to Psychology people, making it more relevant (she has the right email list and they know her).",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2918,
@@ -18810,8 +19820,8 @@
           "condition": "json",
           "seed": 47,
           "answer": "A sends the main linguistics call today or tomorrow. Claire sends a separate Psychology call to avoid mentioning a broad audience in the linguistics call, which would cause linguists to worry about losing their place.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": false,
+          "supported_correct": false,
           "automatic_core_correct": false,
           "automatic_supported_correct": false,
           "native_thinking_tokens": 3240,
@@ -19485,8 +20495,8 @@
           "condition": "json",
           "seed": 47,
           "answer": "The conceptual design file was uploaded to the shared folder (per C's U00021 and U00022), but D cannot access it (per D's U00066), and the issue remains unresolved.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": false,
           "native_thinking_tokens": 2969,
@@ -20055,8 +21065,8 @@
           "condition": "reactive",
           "seed": 47,
           "answer": "The conceptual design was claimed to be in the shared folder by C, but D couldn't find it (only saw his own presentation).",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2499,
@@ -20385,8 +21395,8 @@
           "condition": "source",
           "seed": 47,
           "answer": "The conceptual design files were claimed to be in the shared folder (C, TS3006c-U00021), but D couldn't find them (TS3006c-U00026). D attempted to place their file there but couldn't cut and paste (TS3006c-U00038). Status remains unresolved.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 3013,
@@ -20415,8 +21425,8 @@
           "condition": "tools",
           "seed": 47,
           "answer": "The shared folder access issue is unresolved.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": false,
+          "supported_correct": false,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2463,
@@ -21345,8 +22355,8 @@
           "condition": "tools",
           "seed": 47,
           "answer": "A sends the main call for linguists today or tomorrow. We ask Claire to send a separate Psychology call because she knows Psychology email contacts and can make it look more relevant to them, avoiding linguists' concerns about the main call.",
-          "core_correct": null,
-          "supported_correct": null,
+          "core_correct": true,
+          "supported_correct": true,
           "automatic_core_correct": true,
           "automatic_supported_correct": true,
           "native_thinking_tokens": 2784,
