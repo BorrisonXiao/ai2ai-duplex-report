@@ -345,7 +345,7 @@
       "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
       "status": "partial",
       "url": "experiments/note-functions.html#evaluation",
-      "evidence": "688/1260 outputs saved; retain full transcripts and freeze the design after development review."
+      "evidence": "765/1260 outputs saved; retain full transcripts and freeze the design after development review."
     },
     {
       "id": "note-functions-analysis",
@@ -362,7 +362,7 @@
       "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
     }
   ],
-  "updated_at": "2026-11-12T03:23:39-05:00",
+  "updated_at": "2026-11-12T03:36:14-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -610,7 +610,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-12T03:23:39-05:00",
+    "updated": "2026-11-12T03:36:14-05:00",
     "status": "development_review_passed",
     "api_revision": "v2",
     "control_count": 10,
@@ -667,7 +667,7 @@
       },
       {
         "stage": "Full 105-question evaluation",
-        "status": "688/1260 outputs saved",
+        "status": "765/1260 outputs saved",
         "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
       },
       {
@@ -729,7 +729,7 @@
       {
         "label": "full-thinking-cold",
         "state": "RUNNING",
-        "completed": "268 answers",
+        "completed": "345 answers",
         "GPUs": 1,
         "GPU_type": "H100 SXM80GB"
       },
