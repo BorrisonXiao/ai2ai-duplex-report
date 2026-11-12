@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T01:27:29-05:00",
+  "updated": "2026-11-12T01:39:32-05:00",
   "status": "development_review_passed",
   "api_revision": "v2",
   "control_count": 10,
@@ -51,7 +51,7 @@
     },
     {
       "stage": "Full-bank note generation",
-      "status": "1760/2554 updates saved",
+      "status": "2028/2554 updates saved",
       "evidence": "Two question-blind writers over26 meetings; correction calls are counted separately in the model-call total."
     },
     {
@@ -104,7 +104,7 @@
     {
       "label": "full-writer",
       "state": "RUNNING",
-      "completed": "1760 updates; 2708 model calls",
+      "completed": "2028 updates; 3131 model calls",
       "GPUs": 1,
       "GPU_type": "A100 SXM4 80GB"
     },
