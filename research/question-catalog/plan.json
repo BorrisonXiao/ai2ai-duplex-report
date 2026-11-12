@@ -413,11 +413,11 @@
           "text": "Implement and validate the shared memory-editing functions.",
           "status": "complete",
           "project_url": "experiments/note-functions.html#functions",
-          "evidence": "16 CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
+          "evidence": "17 CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
         },
         {
           "text": "Run and source-review the six-question memory-function pilot.",
-          "status": "partial",
+          "status": "complete",
           "project_url": "experiments/note-functions.html#progress",
           "evidence": "48/48 final answers saved; full evaluation requires reviewed development outputs."
         },
@@ -429,7 +429,7 @@
         },
         {
           "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
-          "status": "pending",
+          "status": "partial",
           "project_url": "experiments/note-functions.html#evaluation",
           "evidence": "Count earlier operations, receipts, errors and unused updates; inspect scorer disagreements."
         },

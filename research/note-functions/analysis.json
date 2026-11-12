@@ -1,12 +1,13 @@
 {
   "scope": "development",
-  "status": "automatic_scores_source_review_pending",
+  "status": "development_source_reviewed",
   "method_summary": [
     {
       "model": "instruct",
       "condition": "json",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 1.0,
@@ -75,6 +76,7 @@
       "condition": "reactive",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 0.8333333333333334,
@@ -143,6 +145,7 @@
       "condition": "source",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 0.8333333333333334,
@@ -211,6 +214,7 @@
       "condition": "tools",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 1.0,
@@ -279,6 +283,7 @@
       "condition": "json",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 1.0,
@@ -290,9 +295,9 @@
           "meetings": 5
         },
         "supported_correct": {
-          "mean": 1.0,
+          "mean": 0.8333333333333334,
           "CI95": [
-            1.0,
+            0.4,
             1.0
           ],
           "questions": 6,
@@ -350,6 +355,7 @@
       "condition": "reactive",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 0.8333333333333334,
@@ -421,6 +427,7 @@
       "condition": "source",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
           "mean": 0.6666666666666666,
@@ -492,20 +499,21 @@
       "condition": "tools",
       "outputs": 6,
       "invalid_judgments": 0,
+      "pending_source_review": 0,
       "metrics": {
         "core_correct": {
-          "mean": 1.0,
+          "mean": 0.8333333333333334,
           "CI95": [
-            1.0,
+            0.4,
             1.0
           ],
           "questions": 6,
           "meetings": 5
         },
         "supported_correct": {
-          "mean": 1.0,
+          "mean": 0.8333333333333334,
           "CI95": [
-            1.0,
+            0.4,
             1.0
           ],
           "questions": 6,
@@ -848,10 +856,10 @@
           "meetings": 5
         },
         "supported_correct": {
-          "mean": 0.16666666666666666,
+          "mean": 0.0,
           "CI95": [
-            0.0,
-            0.6
+            -0.5,
+            0.5
           ],
           "questions": 6,
           "meetings": 5
@@ -865,13 +873,13 @@
           "questions": 6,
           "meetings": 5,
           "both_supported_correct": {
-            "mean": 238.2,
+            "mean": 195.25,
             "CI95": [
-              -185.0,
-              709.0
+              -318.5,
+              802.0
             ],
-            "questions": 5,
-            "meetings": 4
+            "questions": 4,
+            "meetings": 3
           }
         },
         "ordinary_output_tokens": {
@@ -901,13 +909,13 @@
           "questions": 6,
           "meetings": 5,
           "both_supported_correct": {
-            "mean": 2.245651182997972,
+            "mean": 1.7910757672489126,
             "CI95": [
-              -1.2443989087156038,
-              5.982490099993811
+              -2.3132732280027994,
+              6.622002517993678
             ],
-            "questions": 5,
-            "meetings": 4
+            "questions": 4,
+            "meetings": 3
           }
         },
         "complete_output_seconds": {
@@ -919,13 +927,13 @@
           "questions": 6,
           "meetings": 5,
           "both_supported_correct": {
-            "mean": 2.3960721317969726,
+            "mean": 1.9727891282473138,
             "CI95": [
-              -1.0535577005731673,
-              6.0962291179967
+              -2.150650861502072,
+              6.663456970993138
             ],
-            "questions": 5,
-            "meetings": 4
+            "questions": 4,
+            "meetings": 3
           }
         }
       }
@@ -1033,19 +1041,19 @@
       "baseline": "reactive",
       "metrics": {
         "core_correct": {
-          "mean": 0.16666666666666666,
+          "mean": 0.0,
           "CI95": [
             0.0,
-            0.6
+            0.0
           ],
           "questions": 6,
           "meetings": 5
         },
         "supported_correct": {
-          "mean": 0.16666666666666666,
+          "mean": 0.0,
           "CI95": [
             0.0,
-            0.6
+            0.0
           ],
           "questions": 6,
           "meetings": 5
@@ -1261,6 +1269,133 @@
     }
   ],
   "unresolved_judgments": 0,
+  "source_review": {
+    "status": "complete_development_review",
+    "reviewed_by": "Codex",
+    "reviewed_outputs": 48,
+    "reviewed_question_ids": [
+      "first:authored-W1-2",
+      "pilot:P-EN-audio",
+      "pilot:P-EN-notes",
+      "pilot:P-ES-slogan",
+      "pilot:P-TS-time",
+      "scale:TS3006c-S05-Q3"
+    ],
+    "corrections": [
+      {
+        "row_id": "thinking|scale:TS3006c-S05-Q3|tools|23",
+        "question_id": "scale:TS3006c-S05-Q3",
+        "answer": "The shared folder access issue for the conceptual design file remains unresolved; D still only sees their own presentation.",
+        "core_correct": false,
+        "material_unsupported": false,
+        "source_ids": [
+          "TS3006c-U00021",
+          "TS3006c-U00022",
+          "TS3006c-U00026"
+        ],
+        "reason": "The required answer includes the reported placement in the folder. The candidate reports uncertainty and D’s visibility only; it never supplies that upload report. The judge inferred it from the phrase access issue."
+      },
+      {
+        "row_id": "thinking|first:authored-W1-2|json|23",
+        "question_id": "first:authored-W1-2",
+        "answer": "A will send the main linguistics call today or tomorrow. Claire sends a separate Psychology call because she knows the correct email addresses and to avoid Psychology attendees worrying about their place in the main call.",
+        "core_correct": true,
+        "material_unsupported": true,
+        "source_ids": [
+          "EN2003a-U00039",
+          "EN2003a-U00042",
+          "EN2003a-U00050",
+          "EN2003a-U00056"
+        ],
+        "reason": "The required timing and a valid reason are present, but the extra claim transfers the worry about losing a place from linguists to Psychology attendees. The source discusses linguists."
+      }
+    ],
+    "date_equivalence_note": "The transcript explicitly says it is Thursday atEN2003a-U00034; by the end of the week can be equivalent to today or tomorrow. It is not automatically marked wrong. New evaluator instructions request source checking where the short key lacks calendar context."
+  },
+  "scorer_controls": 10,
+  "scorer_disagreements": [
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "answer": "The shared folder access issue for the conceptual design file remains unresolved; D still only sees their own presentation.",
+      "reviewed_core_correct": false,
+      "reviewed_supported": false,
+      "reason": "The required answer includes the reported placement in the folder. The candidate reports uncertainty and D’s visibility only; it never supplies that upload report. The judge inferred it from the phrase access issue.",
+      "source_speech": [
+        {
+          "speaker": "C",
+          "start": 115.86,
+          "end": 122.85,
+          "text": "I just put it in the in the shared folder so it should be yeah I think so.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-U00021",
+          "available": 123.35
+        },
+        {
+          "speaker": "C",
+          "start": 122.85,
+          "end": 124.72,
+          "text": "Yeah, conceptual design.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-U00022",
+          "available": 125.22
+        },
+        {
+          "speaker": "D",
+          "start": 126.02,
+          "end": 132.42,
+          "text": "Because I see only my own presentation yeah.",
+          "boundary": "sentence_end",
+          "id": "TS3006c-U00026",
+          "available": 132.92
+        }
+      ]
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "answer": "A will send the main linguistics call today or tomorrow. Claire sends a separate Psychology call because she knows the correct email addresses and to avoid Psychology attendees worrying about their place in the main call.",
+      "reviewed_core_correct": true,
+      "reviewed_supported": false,
+      "reason": "The required timing and a valid reason are present, but the extra claim transfers the worry about losing a place from linguists to Psychology attendees. The source discusses linguists.",
+      "source_speech": [
+        {
+          "speaker": "A",
+          "start": 137.85,
+          "end": 148.89,
+          "text": "So we'll send one, but weren't men I mean we could mention the fact that we're inviting other people, but I think it will probably just uh I mean it probably won't matter too much to the other linguists that we're having other people there.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00039",
+          "available": 149.39
+        },
+        {
+          "speaker": "A",
+          "start": 148.89,
+          "end": 160.58,
+          "text": "We can mention it, but it's not gonna be too essential and uh we might actually just end up making them worry that, you know, they're gonna lose their place or whatever, because uh I don't know.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00042",
+          "available": 161.08
+        },
+        {
+          "speaker": "A",
+          "start": 185.08,
+          "end": 186.32,
+          "text": "I'll do that today or tomorrow.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00050",
+          "available": 186.82
+        },
+        {
+          "speaker": "A",
+          "start": 202.79,
+          "end": 207.05,
+          "text": "'Cause she'll know which email address to use and and everything else.",
+          "boundary": "sentence_end",
+          "id": "EN2003a-U00056",
+          "available": 207.55
+        }
+      ]
+    }
+  ],
   "answers": [
     {
       "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
@@ -1272,6 +1407,8 @@
       "answer": "C stated they put the conceptual design in the shared folder, but D confirmed they could only see their own presentation and couldn't cut and paste into the other folder, indicating the files may not be accessible or properly shared.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.8390787360040122
     },
@@ -1285,6 +1422,8 @@
       "answer": "D said they would take the notes today.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.5001576520007802
     },
@@ -1298,6 +1437,8 @@
       "answer": "The speaker (B) was uncertain whether the company wanted the actual written slogan on the remote or just the idea behind it.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.19603205300518312
     },
@@ -1311,6 +1452,8 @@
       "answer": "We were allowing about seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.4054054080042988
     },
@@ -1324,6 +1467,8 @@
       "answer": "A is sending the main call for linguists by the end of the week, as it's overdue. We're asking Claire to send a separate call for psychology/psycholinguistics because she knows the right email addresses and can make it feel more relevant to that audience, increasing response likelihood.",
       "core_correct": false,
       "supported_correct": false,
+      "automatic_core_correct": false,
+      "automatic_supported_correct": false,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.6623289639974246
     },
@@ -1337,6 +1482,8 @@
       "answer": "It is unclear whether the company wants the actual slogan 'Bout putting the fashion in electronics' written on the remote or just the idea embodied in the design. B stated they are not sure, and the implementation details remain unresolved.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.31818868800473865
     },
@@ -1350,6 +1497,8 @@
       "answer": "The conceptual design file was uploaded to the shared folder by C. D initially reported being unable to open it, but later successfully accessed the file.",
       "core_correct": true,
       "supported_correct": false,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": false,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.29210470100224484
     },
@@ -1363,6 +1512,8 @@
       "answer": "A is sending the main call by the end of the week, as it's overdue. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the likelihood of response.",
       "core_correct": false,
       "supported_correct": false,
+      "automatic_core_correct": false,
+      "automatic_supported_correct": false,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.3137712140014628
     },
@@ -1376,6 +1527,8 @@
       "answer": "It is unclear whether the company wants the actual slogan written on the remote or just the idea behind it. B expressed uncertainty, stating, 'I'm not sure' and 'I mean do they want it actually written on it, 'cause it's quite long.'",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.37133794900000794
     },
@@ -1389,6 +1542,8 @@
       "answer": "We were allowing about seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.32468131499626907
     },
@@ -1402,6 +1557,8 @@
       "answer": "A will send the main call for abstracts or titles by the end of the week. We're asking Claire to send a separate call for Psychology because she knows the right email addresses and contacts, and her message will appear more relevant to psychology recipients.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.5903986299963435
     },
@@ -1415,6 +1572,8 @@
       "answer": "C confirmed that the conceptual design was placed in the shared folder, but D initially could not see it and had trouble accessing it. C later clarified that the file should be in the folder under the name 'PowerPoint pre components design'.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.24174784000206273
     },
@@ -1428,6 +1587,8 @@
       "answer": "We were allowing about seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.2775170530003379
     },
@@ -1441,6 +1602,8 @@
       "answer": "D said they would take the notes today.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.4763069360051304
     },
@@ -1454,6 +1617,8 @@
       "answer": "D said they would take the notes today.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.6939177919994108
     },
@@ -1467,6 +1632,8 @@
       "answer": "We decided to drop the work on removing things from the audio files because it was considered too big a task and not feasible within the available time. C noted they didn't even know how to approach it at the moment, and A confirmed it was too big. B suggested it could be mentioned as a future work idea if time allowed.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 1.1646731380023994
     },
@@ -1480,6 +1647,8 @@
       "answer": "A is sending the main call for abstracts or titles today or tomorrow. We're asking Claire to send a separate call for Psychology because she knows the correct email address and can tailor the message to make it more relevant to psychology researchers, increasing the likelihood of engagement.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.5225851209979737
     },
@@ -1493,6 +1662,8 @@
       "answer": "We decided to drop the work on removing things from the audio files because it was too big a task, we didn't know how to approach it at the moment, and there wasn't enough time. It was suggested to mention it only as a future work idea if we had more time.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.7160444330002065
     },
@@ -1506,6 +1677,8 @@
       "answer": "The conceptual design file was uploaded to the shared folder by C, but D still cannot see it and reports only seeing their own presentation. The issue remains unresolved.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.37691763000475476
     },
@@ -1519,6 +1692,8 @@
       "answer": "B is uncertain whether the company wants the actual written slogan on the remote or just the idea behind it, and this remains unresolved.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.28275850499630906
     },
@@ -1532,6 +1707,8 @@
       "answer": "We were allowing about seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.20176482200622559
     },
@@ -1545,6 +1722,8 @@
       "answer": "We decided to drop the work on removing things from the audio files because it was too big a task, we didn't know how to approach it at the moment, and we felt there were more important things to do with our limited time.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.8918218980033998
     },
@@ -1558,6 +1737,8 @@
       "answer": "We decided to drop the work on removing things from the audio files because it was too big a task, we didn't know how to approach it, and we felt there were more important things to do with our limited time.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.8966527810043772
     },
@@ -1571,6 +1752,8 @@
       "answer": "D said they would take the notes today.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": null,
       "first_answer_seconds": 0.37167559799854644
     },
@@ -1584,6 +1767,8 @@
       "answer": "The conceptual design files were not found in the shared folder, and D committed to place them there.",
       "core_correct": false,
       "supported_correct": false,
+      "automatic_core_correct": false,
+      "automatic_supported_correct": false,
       "native_thinking_tokens": 2339,
       "first_answer_seconds": 20.009489513999142
     },
@@ -1597,6 +1782,8 @@
       "answer": "D",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 3613,
       "first_answer_seconds": 30.8165851080048
     },
@@ -1610,6 +1797,8 @@
       "answer": "The company did not specify whether to use the actual slogan or just the idea; B expressed uncertainty about it.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1017,
       "first_answer_seconds": 8.370167529996252
     },
@@ -1623,6 +1812,8 @@
       "answer": "about seven minutes",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1465,
       "first_answer_seconds": 12.586678564002796
     },
@@ -1636,6 +1827,8 @@
       "answer": "A will send the main call (for linguistics) today or tomorrow. We ask Claire to send a separate Psychology call to avoid making linguists worry about losing their place (as it's not essential to mention other audiences to them).",
       "core_correct": false,
       "supported_correct": false,
+      "automatic_core_correct": false,
+      "automatic_supported_correct": false,
       "native_thinking_tokens": 2861,
       "first_answer_seconds": 24.82466423799633
     },
@@ -1649,6 +1842,8 @@
       "answer": "The group is uncertain. B asked if the slogan should be 'actually written on it' and said 'just the idea, but I'm not sure.' It's unresolved.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1329,
       "first_answer_seconds": 11.171997325996927
     },
@@ -1662,6 +1857,8 @@
       "answer": "The conceptual design file was uploaded to the shared folder by C (U00021, U00022). D reported being unable to open it (U00066, U00067). The transcript does not show D successfully accessing the file.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 3102,
       "first_answer_seconds": 25.734783830994274
     },
@@ -1675,6 +1872,8 @@
       "answer": "A will send the main call for linguists by the end of the week (or today/tomorrow). We ask Claire to send a separate Psychology call because it's more relevant to her audience (she has the right email list) and avoids confusing linguists.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2358,
       "first_answer_seconds": 19.69339672800561
     },
@@ -1688,6 +1887,8 @@
       "answer": "The meeting did not resolve whether the company wants the actual slogan written on the remote or just the idea. D asked if it's the written slogan or the idea, and B expressed uncertainty, saying it might just be the idea but wasn't sure.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1499,
       "first_answer_seconds": 12.80988024999533
     },
@@ -1701,6 +1902,8 @@
       "answer": "A proposed about seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2059,
       "first_answer_seconds": 17.256435135001084
     },
@@ -1714,6 +1917,8 @@
       "answer": "A will send the main call for linguists by the end of the week. We ask Claire to send a separate Psychology call because she knows the email list and the message will seem more relevant to psychology recipients as they know her.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2306,
       "first_answer_seconds": 19.989800364004623
     },
@@ -1727,6 +1932,8 @@
       "answer": "The conceptual design file was not found in the shared folder, but D is going to put it there.",
       "core_correct": false,
       "supported_correct": false,
+      "automatic_core_correct": false,
+      "automatic_supported_correct": false,
       "native_thinking_tokens": 2605,
       "first_answer_seconds": 21.370218843003386
     },
@@ -1740,6 +1947,8 @@
       "answer": "We were allowing about seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1607,
       "first_answer_seconds": 13.303167615995335
     },
@@ -1753,6 +1962,8 @@
       "answer": "D",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2170,
       "first_answer_seconds": 18.626941180998983
     },
@@ -1766,6 +1977,8 @@
       "answer": "D said they would take the notes today.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2950,
       "first_answer_seconds": 25.78908143800072
     },
@@ -1779,6 +1992,8 @@
       "answer": "We are dropping the audio file work because it's too big and we don't know how to approach it.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2125,
       "first_answer_seconds": 19.900735969997186
     },
@@ -1791,7 +2006,9 @@
       "seed": 23,
       "answer": "A will send the main linguistics call today or tomorrow. Claire sends a separate Psychology call because she knows the correct email addresses and to avoid Psychology attendees worrying about their place in the main call.",
       "core_correct": true,
-      "supported_correct": true,
+      "supported_correct": false,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2768,
       "first_answer_seconds": 23.757349573999818
     },
@@ -1805,6 +2022,8 @@
       "answer": "We are dropping the work on removing things from audio files because it's too big and we don't know how to approach it. We'll mention it as a future work item in the conclusion instead.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 2099,
       "first_answer_seconds": 18.515949586006172
     },
@@ -1816,8 +2035,10 @@
       "condition": "tools",
       "seed": 23,
       "answer": "The shared folder access issue for the conceptual design file remains unresolved; D still only sees their own presentation.",
-      "core_correct": true,
-      "supported_correct": true,
+      "core_correct": false,
+      "supported_correct": false,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1628,
       "first_answer_seconds": 13.879535815998679
     },
@@ -1831,6 +2052,8 @@
       "answer": "B is uncertain about the slogan requirement, stating 'just the idea, but I'm not sure.' The team has not decided whether to use the actual slogan or just the idea.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1633,
       "first_answer_seconds": 13.539014537003823
     },
@@ -1844,6 +2067,8 @@
       "answer": "Seven minutes per presentation.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 805,
       "first_answer_seconds": 6.681165098001657
     },
@@ -1857,6 +2082,8 @@
       "answer": "The group decided to drop the work on removing things from audio files because it was considered too big and they didn't know how to approach it. As A said, 'that's too big, yeah,' and C noted they 'don't even know how to approach that at the moment.'",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1488,
       "first_answer_seconds": 13.911622671999794
     },
@@ -1870,6 +2097,8 @@
       "answer": "We're dropping the work on removing things from audio files because it's too big and we don't know how to approach it (A, C), as noted in the meeting. We'll mention it as a future work item instead.",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1155,
       "first_answer_seconds": 10.988813117000973
     },
@@ -1883,6 +2112,8 @@
       "answer": "D",
       "core_correct": true,
       "supported_correct": true,
+      "automatic_core_correct": true,
+      "automatic_supported_correct": true,
       "native_thinking_tokens": 1863,
       "first_answer_seconds": 15.726351167999383
     }
