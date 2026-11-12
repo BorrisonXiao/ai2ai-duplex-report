@@ -343,9 +343,9 @@
     {
       "id": "note-functions-full",
       "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
-      "status": "partial",
+      "status": "complete",
       "url": "experiments/note-functions.html#evaluation",
-      "evidence": "1156/1260 outputs saved; retain full transcripts and freeze the design after development review."
+      "evidence": "1260/1260 outputs saved; retain full transcripts and freeze the design after development review."
     },
     {
       "id": "note-functions-analysis",
@@ -362,7 +362,7 @@
       "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
     }
   ],
-  "updated_at": "2026-11-12T04:18:43-05:00",
+  "updated_at": "2026-11-12T04:31:18-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -610,7 +610,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-12T04:18:43-05:00",
+    "updated": "2026-11-12T04:31:18-05:00",
     "status": "development_review_passed",
     "api_revision": "v2",
     "control_count": 10,
@@ -667,7 +667,7 @@
       },
       {
         "stage": "Full 105-question evaluation",
-        "status": "1156/1260 outputs saved",
+        "status": "1260/1260 outputs saved",
         "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
       },
       {
@@ -735,10 +735,17 @@
       },
       {
         "label": "full-thinking-extra",
-        "state": "RUNNING",
-        "completed": "316 answers",
+        "state": "COMPLETED",
+        "completed": "420 answers",
         "GPUs": 1,
         "GPU_type": "H100 SXM80GB"
+      },
+      {
+        "label": "full-score",
+        "state": "RUNNING",
+        "completed": "0",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
       },
       {
         "label": "Revised pilot thinker continuation",
@@ -770,6 +777,13 @@
       },
       {
         "label": "Full score continuation",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      },
+      {
+        "label": "Full analysis and report",
         "state": "PENDING",
         "completed": "—",
         "GPUs": 0,
@@ -1192,6 +1206,95 @@
             "native_thinking_finished": 17.951387451998016,
             "first_answer_text": 17.994506326998817,
             "complete_output": 18.25337370899797
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 47 · reactive · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D",
+            "evidence_ids": [
+              "EN2002b-U00011",
+              "EN2002b-U00015"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 3274,
+          "latency_seconds": {
+            "first_generated_token": 0.17192286700446857,
+            "native_thinking_finished": 36.43756303500413,
+            "first_answer_text": 36.5123608280046,
+            "complete_output": 36.952199664003274
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 47 · source · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D said they would take the notes today.",
+            "evidence_ids": [
+              "EN2002b-U00015"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 1785,
+          "latency_seconds": {
+            "first_generated_token": 0.31307926600129576,
+            "native_thinking_finished": 23.428592251002556,
+            "first_answer_text": 23.50833183299983,
+            "complete_output": 23.90410804300336
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 47 · json · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D said they would take the notes.",
+            "evidence_ids": [
+              "EN2002b-U00011",
+              "EN2002b-U00015",
+              "EN2002b-U00020",
+              "EN2002b-U00021"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 2175,
+          "latency_seconds": {
+            "first_generated_token": 0.22317037299944786,
+            "native_thinking_finished": 22.889812715999142,
+            "first_answer_text": 22.96906800400029,
+            "complete_output": 23.808543762002955
+          }
+        }
+      },
+      {
+        "title": "thinking · seed 47 · tools · note-taker question",
+        "content": {
+          "question": "Assistant, who said they'd take the notes today?",
+          "reference_answer": "D volunteered to take the notes.",
+          "actual_answer": {
+            "answer": "D",
+            "evidence_ids": [
+              "EN2002b-U00011",
+              "EN2002b-U00015"
+            ],
+            "missing_information": []
+          },
+          "request_thinking_tokens": 1259,
+          "latency_seconds": {
+            "first_generated_token": 0.2426867719987058,
+            "native_thinking_finished": 14.133013015998586,
+            "first_answer_text": 14.218723255995428,
+            "complete_output": 14.728231739994953
           }
         }
       }
