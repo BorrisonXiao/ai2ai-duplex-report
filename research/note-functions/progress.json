@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T00:30:22-05:00",
+  "updated": "2026-11-12T00:51:04-05:00",
   "status": "development_review_passed",
   "api_revision": "v2",
   "control_count": 10,
@@ -51,7 +51,7 @@
     },
     {
       "stage": "Full-bank note generation",
-      "status": "308/2554 updates saved",
+      "status": "864/2554 updates saved",
       "evidence": "Two question-blind writers over26 meetings; correction calls are counted separately in the model-call total."
     },
     {
@@ -104,7 +104,7 @@
     {
       "label": "full-writer",
       "state": "RUNNING",
-      "completed": "308 updates; 419 model calls",
+      "completed": "864 updates; 1344 model calls",
       "GPUs": 1,
       "GPU_type": "A100 SXM4 80GB"
     },
@@ -133,6 +133,13 @@
       "label": "Full thinker continuation",
       "state": "PENDING",
       "completed": "—",
+      "GPUs": 0,
+      "GPU_type": "CPU"
+    },
+    {
+      "label": "Scoped report updater",
+      "state": "CPU monitor; bounded to23hours",
+      "completed": "Counts and report only",
       "GPUs": 0,
       "GPU_type": "CPU"
     }
@@ -1646,6 +1653,8 @@
       }
     ],
     "unresolved_judgments": 0,
+    "pending_source_review": 0,
+    "missing_judgments": 0,
     "source_review": {
       "status": "complete_development_review",
       "reviewed_by": "Codex",
