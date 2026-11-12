@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:17:10-05:00",
+  "updated": "2026-11-12T02:29:27-05:00",
   "status": "development_review_passed",
   "api_revision": "v2",
   "control_count": 10,
@@ -56,7 +56,7 @@
     },
     {
       "stage": "Full 105-question evaluation",
-      "status": "168/1260 outputs saved",
+      "status": "420/1260 outputs saved",
       "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
     },
     {
@@ -110,8 +110,8 @@
     },
     {
       "label": "full-instruct",
-      "state": "RUNNING",
-      "completed": "168 answers",
+      "state": "COMPLETED",
+      "completed": "420 answers",
       "GPUs": 1,
       "GPU_type": "A100 SXM4 80GB"
     },
@@ -401,6 +401,97 @@
           "native_thinking_finished": 30.748467040000833,
           "first_answer_text": 30.8165851080048,
           "complete_output": 31.2239065390022
+        }
+      }
+    },
+    {
+      "title": "instruct · seed 23 · reactive · note-taker question",
+      "content": {
+        "question": "Assistant, who said they'd take the notes today?",
+        "reference_answer": "D volunteered to take the notes.",
+        "actual_answer": {
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "missing_information": ""
+        },
+        "request_thinking_tokens": null,
+        "latency_seconds": {
+          "first_generated_token": 0.3832367080030963,
+          "native_thinking_finished": null,
+          "first_answer_text": 0.4552251540008001,
+          "complete_output": 3.742542603999027
+        }
+      }
+    },
+    {
+      "title": "instruct · seed 23 · source · note-taker question",
+      "content": {
+        "question": "Assistant, who said they'd take the notes today?",
+        "reference_answer": "D volunteered to take the notes.",
+        "actual_answer": {
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015",
+            "EN2002b-U00020"
+          ],
+          "missing_information": ""
+        },
+        "request_thinking_tokens": null,
+        "latency_seconds": {
+          "first_generated_token": 0.7047586480039172,
+          "native_thinking_finished": null,
+          "first_answer_text": 0.7679095650019008,
+          "complete_output": 4.790534685002058
+        }
+      }
+    },
+    {
+      "title": "instruct · seed 23 · json · note-taker question",
+      "content": {
+        "question": "Assistant, who said they'd take the notes today?",
+        "reference_answer": "D volunteered to take the notes.",
+        "actual_answer": {
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015",
+            "EN2002b-U00020",
+            "EN2002b-U00021"
+          ],
+          "missing_information": ""
+        },
+        "request_thinking_tokens": null,
+        "latency_seconds": {
+          "first_generated_token": 0.48291289700136986,
+          "native_thinking_finished": null,
+          "first_answer_text": 0.5497162009996828,
+          "complete_output": 1.947739757000818
+        }
+      }
+    },
+    {
+      "title": "instruct · seed 23 · tools · note-taker question",
+      "content": {
+        "question": "Assistant, who said they'd take the notes today?",
+        "reference_answer": "D volunteered to take the notes.",
+        "actual_answer": {
+          "answer": "D said they would take the notes today.",
+          "evidence_ids": [
+            "EN2002b-U00011",
+            "EN2002b-U00015"
+          ],
+          "missing_information": ""
+        },
+        "request_thinking_tokens": null,
+        "latency_seconds": {
+          "first_generated_token": 0.5607935250009177,
+          "native_thinking_finished": null,
+          "first_answer_text": 0.6279644450041815,
+          "complete_output": 3.0531311930026277
         }
       }
     }
