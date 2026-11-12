@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:41:45-05:00",
+  "updated": "2026-11-12T02:53:46-05:00",
   "status": "development_review_passed",
   "api_revision": "v2",
   "control_count": 10,
@@ -56,7 +56,7 @@
     },
     {
       "stage": "Full 105-question evaluation",
-      "status": "426/1260 outputs saved",
+      "status": "507/1260 outputs saved",
       "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
     },
     {
@@ -118,7 +118,7 @@
     {
       "label": "full-thinking-cold",
       "state": "RUNNING",
-      "completed": "6 answers",
+      "completed": "87 answers",
       "GPUs": 1,
       "GPU_type": "H100 SXM80GB"
     },
