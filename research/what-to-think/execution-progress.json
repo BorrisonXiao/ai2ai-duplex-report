@@ -362,7 +362,7 @@
       "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
     }
   ],
-  "updated_at": "2026-11-12T04:31:18-05:00",
+  "updated_at": "2026-11-12T04:43:50-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -610,7 +610,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-12T04:31:18-05:00",
+    "updated": "2026-11-12T04:43:50-05:00",
     "status": "development_review_passed",
     "api_revision": "v2",
     "control_count": 10,
@@ -743,7 +743,7 @@
       {
         "label": "full-score",
         "state": "RUNNING",
-        "completed": "0",
+        "completed": "528",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80GB"
       },
