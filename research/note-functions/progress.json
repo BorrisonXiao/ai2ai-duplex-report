@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:04:38-05:00",
+  "updated": "2026-11-12T02:17:10-05:00",
   "status": "development_review_passed",
   "api_revision": "v2",
   "control_count": 10,
@@ -51,12 +51,12 @@
     },
     {
       "stage": "Full-bank note generation",
-      "status": "2502/2554 updates saved",
+      "status": "2554/2554 updates saved",
       "evidence": "Two question-blind writers over26 meetings; correction calls are counted separately in the model-call total."
     },
     {
       "stage": "Full 105-question evaluation",
-      "status": "0/1260 outputs saved",
+      "status": "168/1260 outputs saved",
       "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
     },
     {
@@ -103,10 +103,31 @@
     },
     {
       "label": "full-writer",
-      "state": "RUNNING",
-      "completed": "2502 updates; 3888 model calls",
+      "state": "COMPLETED",
+      "completed": "2554 updates; 3968 model calls",
       "GPUs": 1,
       "GPU_type": "A100 SXM4 80GB"
+    },
+    {
+      "label": "full-instruct",
+      "state": "RUNNING",
+      "completed": "168 answers",
+      "GPUs": 1,
+      "GPU_type": "A100 SXM4 80GB"
+    },
+    {
+      "label": "full-thinking-cold",
+      "state": "PENDING",
+      "completed": "0 answers",
+      "GPUs": 1,
+      "GPU_type": "H100 SXM80GB"
+    },
+    {
+      "label": "full-thinking-extra",
+      "state": "PENDING",
+      "completed": "0 answers",
+      "GPUs": 1,
+      "GPU_type": "H100 SXM80GB"
     },
     {
       "label": "Revised pilot thinker continuation",
@@ -131,6 +152,13 @@
     },
     {
       "label": "Full thinker continuation",
+      "state": "COMPLETED",
+      "completed": "—",
+      "GPUs": 0,
+      "GPU_type": "CPU"
+    },
+    {
+      "label": "Full score continuation",
       "state": "PENDING",
       "completed": "—",
       "GPUs": 0,
