@@ -368,10 +368,10 @@
           "evidence": "Thinking audit processed 105 complete prefixes; Codex checked nine flagged cases against source speech; v4 references frozen for scorer qualification."
         },
         {
-          "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
+          "text": "Review saved Moshi and MiniCPM results; keep DuplexOmni stopped.",
           "status": "partial",
           "project_url": "experiments/full-answering-results.html#s1",
-          "evidence": "Moshi and MiniCPM each have 315 completed inputs; DuplexOmni has 154/315. Inference remains paused."
+          "evidence": "Moshi and MiniCPM each have315 completed inputs and preliminary scores; DuplexOmni is excluded from new runs."
         },
         {
           "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
@@ -408,6 +408,36 @@
           "status": "complete",
           "project_url": "experiments/full-answering-results.html#scores",
           "evidence": "Existing scores and confidence intervals are exported without rescoring; the experiments remain paused."
+        },
+        {
+          "text": "Implement and validate the shared memory-editing functions.",
+          "status": "complete",
+          "project_url": "experiments/note-functions.html#functions",
+          "evidence": "Ten CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
+        },
+        {
+          "text": "Run and source-review the six-question memory-function pilot.",
+          "status": "partial",
+          "project_url": "experiments/note-functions.html#progress",
+          "evidence": "0/48 final answers saved; full evaluation requires reviewed development outputs."
+        },
+        {
+          "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
+          "status": "pending",
+          "project_url": "experiments/note-functions.html#evaluation",
+          "evidence": "Keep full transcript inputs and common focused answer prompts; freeze the design after development review."
+        },
+        {
+          "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
+          "status": "pending",
+          "project_url": "experiments/note-functions.html#evaluation",
+          "evidence": "Count earlier operations, receipts, errors and unused updates; inspect scorer disagreements."
+        },
+        {
+          "text": "Test compact notes with transcript lookup if the full-history comparison supports further work.",
+          "status": "planned",
+          "project_url": "experiments/note-functions.html#next",
+          "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
         }
       ]
     },

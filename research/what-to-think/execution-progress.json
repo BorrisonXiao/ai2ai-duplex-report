@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "updated": "2026-11-11",
-  "status": "paused_by_user",
-  "snapshot_label": "Saved 105-question scores; experiments paused",
+  "status": "s2_note_function_development",
+  "snapshot_label": "S2 note-editing study; DuplexOmni stopped",
   "active_job": null,
   "planned_questions_per_condition": 105,
   "planned_cells": 59,
@@ -279,10 +279,10 @@
     },
     {
       "id": "full-native",
-      "text": "Run all 105 questions on DuplexOmni, Moshi and MiniCPM under three history conditions.",
+      "text": "Review saved Moshi and MiniCPM results; keep DuplexOmni stopped.",
       "status": "partial",
       "url": "experiments/full-answering-results.html#s1",
-      "evidence": "Moshi and MiniCPM each have 315 completed inputs; DuplexOmni has 154/315. Inference remains paused."
+      "evidence": "Moshi and MiniCPM each have315 completed inputs and preliminary scores; DuplexOmni is excluded from new runs."
     },
     {
       "id": "full-text",
@@ -325,9 +325,44 @@
       "status": "complete",
       "url": "experiments/full-answering-results.html#scores",
       "evidence": "Existing scores and confidence intervals are exported without rescoring; the experiments remain paused."
+    },
+    {
+      "id": "note-functions-api",
+      "text": "Implement and validate the shared memory-editing functions.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#functions",
+      "evidence": "Ten CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
+    },
+    {
+      "id": "note-functions-development",
+      "text": "Run and source-review the six-question memory-function pilot.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#progress",
+      "evidence": "0/48 final answers saved; full evaluation requires reviewed development outputs."
+    },
+    {
+      "id": "note-functions-full",
+      "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
+      "status": "pending",
+      "url": "experiments/note-functions.html#evaluation",
+      "evidence": "Keep full transcript inputs and common focused answer prompts; freeze the design after development review."
+    },
+    {
+      "id": "note-functions-analysis",
+      "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
+      "status": "pending",
+      "url": "experiments/note-functions.html#evaluation",
+      "evidence": "Count earlier operations, receipts, errors and unused updates; inspect scorer disagreements."
+    },
+    {
+      "id": "note-functions-lookup",
+      "text": "Test compact notes with transcript lookup if the full-history comparison supports further work.",
+      "status": "planned",
+      "url": "experiments/note-functions.html#next",
+      "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
     }
   ],
-  "updated_at": "2026-11-11T09:29:23-05:00",
+  "updated_at": "2026-11-11T22:38:33-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -572,5 +607,86 @@
     },
     "publication_scope": "Saved automatic scores only; no inference, scoring or controller restart.",
     "scored_outputs": 3990
+  },
+  "note_functions": {
+    "url": "experiments/note-functions.html",
+    "updated": "2026-11-11T22:38:33-05:00",
+    "status": "development_in_progress",
+    "brief": [
+      {
+        "text": "The new study compares reactive thinking, current source notes, JSON edits and native function calls.",
+        "url": "#design"
+      },
+      {
+        "text": "The memory-store tests pass; answer accuracy and latency for the new methods remain unvalidated.",
+        "url": "#progress"
+      },
+      {
+        "text": "Development inference is submitted; no new model result is claimed yet.",
+        "url": "#examples"
+      },
+      {
+        "text": "DuplexOmni remains stopped while this S2 study runs.",
+        "url": "#next"
+      }
+    ],
+    "stages": [
+      {
+        "stage": "Memory store and input validation",
+        "status": "Checks passed",
+        "evidence": "Ten CPU behavior tests and real-tokenizer preflight pass; model semantics still require review."
+      },
+      {
+        "stage": "Development note writer",
+        "status": "Submitted",
+        "evidence": "Two interfaces ×67 updates, including five authored control trajectories."
+      },
+      {
+        "stage": "Development final answers",
+        "status": "0/48 outputs saved",
+        "evidence": "Six questions ×four conditions ×two thinkers; sequential jobs."
+      },
+      {
+        "stage": "Source review and design freeze",
+        "status": "Pending",
+        "evidence": "Review actual facts, owners, revisions, errors and answers before full evaluation."
+      },
+      {
+        "stage": "Full 105-question evaluation",
+        "status": "Pending development gate",
+        "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
+      },
+      {
+        "stage": "Notes plus transcript lookup",
+        "status": "Later, conditional on results",
+        "evidence": "Determine whether smaller answer-time inputs improve latency without losing accuracy."
+      }
+    ],
+    "jobs": [
+      {
+        "label": "development-writer",
+        "state": "CANCELLED by 10053",
+        "completed": "0",
+        "GPUs": 1
+      },
+      {
+        "label": "development-writer-v2",
+        "state": "PENDING",
+        "completed": "0",
+        "GPUs": 1
+      },
+      {
+        "label": "Pilot thinker continuation",
+        "state": "PENDING",
+        "completed": "—",
+        "GPUs": 0
+      }
+    ],
+    "examples": [],
+    "next_steps": [
+      "Complete and review the development outputs to validate memory edits and answer preservation.",
+      "Freeze the prompts and run all105 questions to measure accuracy and request-time thinking.",
+      "Compare paired latency and complete token cost before deciding on transcript lookup."
+    ]
   }
 }

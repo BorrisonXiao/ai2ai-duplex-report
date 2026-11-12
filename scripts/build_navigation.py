@@ -24,6 +24,7 @@ REVIEW_KEYS = {
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
     'answering-results.html': 'answering', 'structured-notes.html': 'notes', 'full-answering-results.html': 'full-answering',
+    'note-functions.html': 'note-functions',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
@@ -79,7 +80,8 @@ def build_collections():
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
         section('Project progress', 'The project plan and daily work record.', [
-            ('Full 105-question evaluation', 'Current S1 and S2 runs, reference checks and measured post-request latency.', 'full-answering-results.html'),
+            ('Note-editing functions', 'Current S2 study: editable notes, native function calls, answer quality and request-time cost.', 'note-functions.html'),
+            ('Full 105-question evaluation', 'Saved S1 and S2 runs, reference checks and measured post-request latency.', 'full-answering-results.html'),
             ('Structured-note optimization', 'Compact note states, incremental edits, event changes and token costs.', 'structured-notes.html'),
             ('S1 and text S2 results', 'Audio-history ablations, native response examples, transcript WER and accuracy versus thinking-token cost.', 'answering-results.html'),
             ('Project TODO', 'The four project stages and the next amortized-thinking experiments.', '../todo.html'),

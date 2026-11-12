@@ -1,0 +1,80 @@
+{
+  "updated": "2026-11-11T22:38:33-05:00",
+  "status": "development_in_progress",
+  "brief": [
+    {
+      "text": "The new study compares reactive thinking, current source notes, JSON edits and native function calls.",
+      "url": "#design"
+    },
+    {
+      "text": "The memory-store tests pass; answer accuracy and latency for the new methods remain unvalidated.",
+      "url": "#progress"
+    },
+    {
+      "text": "Development inference is submitted; no new model result is claimed yet.",
+      "url": "#examples"
+    },
+    {
+      "text": "DuplexOmni remains stopped while this S2 study runs.",
+      "url": "#next"
+    }
+  ],
+  "stages": [
+    {
+      "stage": "Memory store and input validation",
+      "status": "Checks passed",
+      "evidence": "Ten CPU behavior tests and real-tokenizer preflight pass; model semantics still require review."
+    },
+    {
+      "stage": "Development note writer",
+      "status": "Submitted",
+      "evidence": "Two interfaces ×67 updates, including five authored control trajectories."
+    },
+    {
+      "stage": "Development final answers",
+      "status": "0/48 outputs saved",
+      "evidence": "Six questions ×four conditions ×two thinkers; sequential jobs."
+    },
+    {
+      "stage": "Source review and design freeze",
+      "status": "Pending",
+      "evidence": "Review actual facts, owners, revisions, errors and answers before full evaluation."
+    },
+    {
+      "stage": "Full 105-question evaluation",
+      "status": "Pending development gate",
+      "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
+    },
+    {
+      "stage": "Notes plus transcript lookup",
+      "status": "Later, conditional on results",
+      "evidence": "Determine whether smaller answer-time inputs improve latency without losing accuracy."
+    }
+  ],
+  "jobs": [
+    {
+      "label": "development-writer",
+      "state": "CANCELLED by 10053",
+      "completed": "0",
+      "GPUs": 1
+    },
+    {
+      "label": "development-writer-v2",
+      "state": "PENDING",
+      "completed": "0",
+      "GPUs": 1
+    },
+    {
+      "label": "Pilot thinker continuation",
+      "state": "PENDING",
+      "completed": "—",
+      "GPUs": 0
+    }
+  ],
+  "examples": [],
+  "next_steps": [
+    "Complete and review the development outputs to validate memory edits and answer preservation.",
+    "Freeze the prompts and run all105 questions to measure accuracy and request-time thinking.",
+    "Compare paired latency and complete token cost before deciding on transcript lookup."
+  ]
+}
