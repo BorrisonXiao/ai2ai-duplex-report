@@ -1,0 +1,1890 @@
+{
+  "scope": "development",
+  "status": "automatic_scores_source_review_pending",
+  "method_summary": [
+    {
+      "model": "instruct",
+      "condition": "json",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 1.0,
+          "CI95": [
+            1.0,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0
+        },
+        "ordinary_output_tokens": {
+          "mean": 104.5,
+          "CI95": [
+            72.0,
+            132.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 6702.0,
+          "CI95": [
+            4454.2,
+            8611.57142857143
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.4519447761666318,
+          "CI95": [
+            0.2826630523999484,
+            0.5941235784286099
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 1.2491752523334678,
+          "CI95": [
+            0.9006246930000998,
+            1.5121591391666698
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "instruct",
+      "condition": "reactive",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0
+        },
+        "ordinary_output_tokens": {
+          "mean": 124.16666666666667,
+          "CI95": [
+            77.4,
+            157.8
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 5025.5,
+          "CI95": [
+            3090.0,
+            6671.625
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.3404777383331445,
+          "CI95": [
+            0.2085559655997713,
+            0.46176069574971734
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 1.2820146908331178,
+          "CI95": [
+            0.8004956139997376,
+            1.5968485663332406
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "instruct",
+      "condition": "source",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0
+        },
+        "ordinary_output_tokens": {
+          "mean": 134.0,
+          "CI95": [
+            81.4,
+            195.8
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 8857.166666666666,
+          "CI95": [
+            6311.6,
+            10997.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.688023267833311,
+          "CI95": [
+            0.44548782980000395,
+            0.8565023629997389
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 1.7392180568331241,
+          "CI95": [
+            1.2132636168330464,
+            2.3005139056666244
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "instruct",
+      "condition": "tools",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.6666666666666666,
+          "CI95": [
+            0.2,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0
+        },
+        "ordinary_output_tokens": {
+          "mean": 120.16666666666667,
+          "CI95": [
+            79.0,
+            150.33333333333334
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 6382.666666666667,
+          "CI95": [
+            4648.6,
+            7817.625
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.4259303845001341,
+          "CI95": [
+            0.29521992800036967,
+            0.5367409249998413
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 1.3466851006666427,
+          "CI95": [
+            0.9107498683997619,
+            1.6576885867142275
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "json",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 1.0,
+          "CI95": [
+            1.0,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 1.0,
+          "CI95": [
+            1.0,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 1802.0,
+          "CI95": [
+            1376.3333333333333,
+            2613.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "ordinary_output_tokens": {
+          "mean": 100.16666666666667,
+          "CI95": [
+            74.66666666666667,
+            131.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 6704.0,
+          "CI95": [
+            4456.2,
+            8613.57142857143
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 15.430918017000144,
+          "CI95": [
+            11.775925005000317,
+            21.952405052200085
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 16.206347325333656,
+          "CI95": [
+            12.672150392600088,
+            22.95771187420032
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "reactive",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.8333333333333334,
+          "CI95": [
+            0.4,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 1791.1666666666667,
+          "CI95": [
+            1200.4,
+            2314.6666666666665
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "ordinary_output_tokens": {
+          "mean": 82.66666666666667,
+          "CI95": [
+            64.0,
+            108.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 5027.5,
+          "CI95": [
+            3092.0,
+            6673.625
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 15.111792326833287,
+          "CI95": [
+            9.993268237600024,
+            19.46377095349999
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 15.735012263166633,
+          "CI95": [
+            10.461650313599966,
+            20.21064077283351
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "source",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 0.6666666666666666,
+          "CI95": [
+            0.2,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.6666666666666666,
+          "CI95": [
+            0.2,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 2206.5,
+          "CI95": [
+            1653.4,
+            2601.5714285714284
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "ordinary_output_tokens": {
+          "mean": 82.5,
+          "CI95": [
+            61.6,
+            111.8
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 8859.166666666666,
+          "CI95": [
+            6313.6,
+            10999.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 19.37997802250023,
+          "CI95": [
+            14.210503859800156,
+            23.072459567285996
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 20.018814247500057,
+          "CI95": [
+            14.86994336179996,
+            23.696579165857266
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "tools",
+      "outputs": 6,
+      "invalid_judgments": 0,
+      "metrics": {
+        "core_correct": {
+          "mean": 1.0,
+          "CI95": [
+            1.0,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 1.0,
+          "CI95": [
+            1.0,
+            1.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 2037.0,
+          "CI95": [
+            1320.8333333333333,
+            3005.4
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "ordinary_output_tokens": {
+          "mean": 106.0,
+          "CI95": [
+            70.6,
+            156.2
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 6384.666666666667,
+          "CI95": [
+            4650.6,
+            7819.625
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 17.398856774833046,
+          "CI95": [
+            11.315866608999537,
+            25.533865789199808
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "complete_output_seconds": {
+          "mean": 18.22784916899991,
+          "CI95": [
+            11.811786809166733,
+            26.78755461539986
+          ],
+          "questions": 6,
+          "meetings": 5
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "model": "instruct",
+      "condition": "json",
+      "baseline": "reactive",
+      "metrics": {
+        "core_correct": {
+          "mean": 0.16666666666666666,
+          "CI95": [
+            0.0,
+            0.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.0,
+          "CI95": [
+            -0.5,
+            0.5
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0,
+          "both_supported_correct": {
+            "mean": null,
+            "CI95": null,
+            "questions": 0,
+            "meetings": 0
+          }
+        },
+        "ordinary_output_tokens": {
+          "mean": -19.666666666666668,
+          "CI95": [
+            -38.875,
+            9.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 1676.5,
+          "CI95": [
+            1294.6,
+            1949.3333333333333
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.11146703783348737,
+          "CI95": [
+            0.07092439940024634,
+            0.1393950672502342
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 0.11251728200022626,
+            "CI95": [
+              0.06878139600030408,
+              0.1443418145004216
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        },
+        "complete_output_seconds": {
+          "mean": -0.03283943849964999,
+          "CI95": [
+            -0.16024404471383086,
+            0.14702442640045774
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": -0.027892694999536616,
+            "CI95": [
+              -0.22968434599943066,
+              0.25241464900045685
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        }
+      }
+    },
+    {
+      "model": "instruct",
+      "condition": "source",
+      "baseline": "reactive",
+      "metrics": {
+        "core_correct": {
+          "mean": 0.0,
+          "CI95": [
+            0.0,
+            0.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.0,
+          "CI95": [
+            0.0,
+            0.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0,
+          "both_supported_correct": {
+            "mean": null,
+            "CI95": null,
+            "questions": 0,
+            "meetings": 0
+          }
+        },
+        "ordinary_output_tokens": {
+          "mean": 9.833333333333334,
+          "CI95": [
+            -23.142857142857142,
+            60.8
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 3831.6666666666665,
+          "CI95": [
+            3201.2,
+            4321.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.3475455295001666,
+          "CI95": [
+            0.2231262412000433,
+            0.4522308579998935
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 0.34834491580022586,
+            "CI95": [
+              0.19302065200008656,
+              0.4794014229998993
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        },
+        "complete_output_seconds": {
+          "mean": 0.4572033660000064,
+          "CI95": [
+            0.22943388042845722,
+            0.8409657480000533
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 0.3213000159999865,
+            "CI95": [
+              0.1933632029998383,
+              0.5132052355002088
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        }
+      }
+    },
+    {
+      "model": "instruct",
+      "condition": "tools",
+      "baseline": "reactive",
+      "metrics": {
+        "core_correct": {
+          "mean": 0.0,
+          "CI95": [
+            0.0,
+            0.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": -0.16666666666666666,
+          "CI95": [
+            -0.6,
+            0.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": null,
+          "CI95": null,
+          "questions": 0,
+          "meetings": 0,
+          "both_supported_correct": {
+            "mean": null,
+            "CI95": null,
+            "questions": 0,
+            "meetings": 0
+          }
+        },
+        "ordinary_output_tokens": {
+          "mean": -4.0,
+          "CI95": [
+            -18.833333333333332,
+            9.666666666666666
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 1357.1666666666667,
+          "CI95": [
+            962.625,
+            1846.8
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.08545264616698962,
+          "CI95": [
+            0.06401080500052103,
+            0.11854827579973062
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 0.07154535975041654,
+            "CI95": [
+              0.05644089800034635,
+              0.09607965000122931
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        },
+        "complete_output_seconds": {
+          "mean": 0.0646704098335249,
+          "CI95": [
+            -0.052086243399571686,
+            0.1950370746670463
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 0.10024061475019153,
+            "CI95": [
+              0.019633600000361184,
+              0.28273881200038886
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "json",
+      "baseline": "reactive",
+      "metrics": {
+        "core_correct": {
+          "mean": 0.16666666666666666,
+          "CI95": [
+            0.0,
+            0.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.16666666666666666,
+          "CI95": [
+            0.0,
+            0.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 10.833333333333334,
+          "CI95": [
+            -448.0,
+            653.2
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": -137.4,
+            "CI95": [
+              -553.0,
+              486.0
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        },
+        "ordinary_output_tokens": {
+          "mean": 17.5,
+          "CI95": [
+            5.333333333333333,
+            33.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 1676.5,
+          "CI95": [
+            1294.6,
+            1949.3333333333333
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 0.31912569016685666,
+          "CI95": [
+            -3.4691991474284287,
+            5.622780462800256
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": -0.9415409447998172,
+            "CI95": [
+              -4.313318185999985,
+              4.116124917000434
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        },
+        "complete_output_seconds": {
+          "mean": 0.471335062167024,
+          "CI95": [
+            -3.3381864822855016,
+            5.80466522440056
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": -0.805148747399653,
+            "CI95": [
+              -4.223759252666544,
+              4.322767010500684
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "source",
+      "baseline": "reactive",
+      "metrics": {
+        "core_correct": {
+          "mean": -0.16666666666666666,
+          "CI95": [
+            -0.6,
+            0.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": -0.16666666666666666,
+          "CI95": [
+            -0.6,
+            0.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 415.3333333333333,
+          "CI95": [
+            68.8,
+            593.0
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 563.75,
+            "CI95": [
+              482.0,
+              660.0
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        },
+        "ordinary_output_tokens": {
+          "mean": -0.16666666666666666,
+          "CI95": [
+            -19.0,
+            20.2
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 3831.6666666666665,
+          "CI95": [
+            3201.2,
+            4321.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 4.2681856956669435,
+          "CI95": [
+            1.2441620220002734,
+            5.705830797428852
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 5.467143363000332,
+            "CI95": [
+              4.46387637800035,
+              5.929575868000029
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        },
+        "complete_output_seconds": {
+          "mean": 4.283801984333422,
+          "CI95": [
+            1.1904636977998961,
+            5.704317596285754
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 5.57804560825025,
+            "CI95": [
+              4.846770751000804,
+              5.93185874899973
+            ],
+            "questions": 4,
+            "meetings": 3
+          }
+        }
+      }
+    },
+    {
+      "model": "thinking",
+      "condition": "tools",
+      "baseline": "reactive",
+      "metrics": {
+        "core_correct": {
+          "mean": 0.16666666666666666,
+          "CI95": [
+            0.0,
+            0.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "supported_correct": {
+          "mean": 0.16666666666666666,
+          "CI95": [
+            0.0,
+            0.6
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "native_thinking_tokens": {
+          "mean": 245.83333333333334,
+          "CI95": [
+            -265.2,
+            1021.6
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 424.8,
+            "CI95": [
+              -49.666666666666664,
+              1298.0
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        },
+        "ordinary_output_tokens": {
+          "mean": 23.333333333333332,
+          "CI95": [
+            7.0,
+            54.0
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "input_tokens": {
+          "mean": 1357.1666666666667,
+          "CI95": [
+            962.625,
+            1846.8
+          ],
+          "questions": 6,
+          "meetings": 5
+        },
+        "first_answer_seconds": {
+          "mean": 2.2870644479997586,
+          "CI95": [
+            -1.8964428140001472,
+            8.880383193399757
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 3.7361782627996947,
+            "CI95": [
+              -0.32253348766698764,
+              11.292166415749534
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        },
+        "complete_output_seconds": {
+          "mean": 2.492836905833277,
+          "CI95": [
+            -1.7780836848003674,
+            9.37655300899969
+          ],
+          "questions": 6,
+          "meetings": 5,
+          "both_supported_correct": {
+            "mean": 3.9540989852001074,
+            "CI95": [
+              -0.2513314753332452,
+              11.842252766249658
+            ],
+            "questions": 5,
+            "meetings": 4
+          }
+        }
+      }
+    }
+  ],
+  "writer_cost": {
+    "json": {
+      "calls": 52,
+      "input_tokens": 148217,
+      "generated_tokens": 6172,
+      "rejected_operations": 17,
+      "parse_errors": 2
+    },
+    "tools": {
+      "calls": 52,
+      "input_tokens": 142505,
+      "generated_tokens": 4333,
+      "rejected_operations": 9,
+      "parse_errors": 0
+    },
+    "reactive": {
+      "calls": 0,
+      "input_tokens": 0,
+      "generated_tokens": 0
+    }
+  },
+  "total_cost": [
+    {
+      "model": "instruct",
+      "condition": "json",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": 6172,
+      "request_thinking_tokens": null,
+      "request_ordinary_tokens": 627,
+      "request_delimiter_tokens": 0,
+      "request_generated_tokens": 627,
+      "total_generated_tokens": 6799,
+      "request_input_tokens": 40212,
+      "earlier_input_tokens": 148217
+    },
+    {
+      "model": "instruct",
+      "condition": "reactive",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": 0,
+      "request_thinking_tokens": null,
+      "request_ordinary_tokens": 745,
+      "request_delimiter_tokens": 0,
+      "request_generated_tokens": 745,
+      "total_generated_tokens": 745,
+      "request_input_tokens": 30153,
+      "earlier_input_tokens": 0
+    },
+    {
+      "model": "instruct",
+      "condition": "source",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": null,
+      "request_thinking_tokens": null,
+      "request_ordinary_tokens": 804,
+      "request_delimiter_tokens": 0,
+      "request_generated_tokens": 804,
+      "total_generated_tokens": null,
+      "request_input_tokens": 53143,
+      "earlier_input_tokens": null
+    },
+    {
+      "model": "instruct",
+      "condition": "tools",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": 4333,
+      "request_thinking_tokens": null,
+      "request_ordinary_tokens": 721,
+      "request_delimiter_tokens": 0,
+      "request_generated_tokens": 721,
+      "total_generated_tokens": 5054,
+      "request_input_tokens": 38296,
+      "earlier_input_tokens": 142505
+    },
+    {
+      "model": "thinking",
+      "condition": "json",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": 6172,
+      "request_thinking_tokens": 10812,
+      "request_ordinary_tokens": 601,
+      "request_delimiter_tokens": 6,
+      "request_generated_tokens": 11419,
+      "total_generated_tokens": 17591,
+      "request_input_tokens": 40224,
+      "earlier_input_tokens": 148217
+    },
+    {
+      "model": "thinking",
+      "condition": "reactive",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": 0,
+      "request_thinking_tokens": 10747,
+      "request_ordinary_tokens": 496,
+      "request_delimiter_tokens": 6,
+      "request_generated_tokens": 11249,
+      "total_generated_tokens": 11249,
+      "request_input_tokens": 30165,
+      "earlier_input_tokens": 0
+    },
+    {
+      "model": "thinking",
+      "condition": "source",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": null,
+      "request_thinking_tokens": 13239,
+      "request_ordinary_tokens": 495,
+      "request_delimiter_tokens": 6,
+      "request_generated_tokens": 13740,
+      "total_generated_tokens": null,
+      "request_input_tokens": 53155,
+      "earlier_input_tokens": null
+    },
+    {
+      "model": "thinking",
+      "condition": "tools",
+      "questions": 6,
+      "seed": 23,
+      "earlier_generated_tokens": 4333,
+      "request_thinking_tokens": 12222,
+      "request_ordinary_tokens": 636,
+      "request_delimiter_tokens": 6,
+      "request_generated_tokens": 12864,
+      "total_generated_tokens": 17197,
+      "request_input_tokens": 38308,
+      "earlier_input_tokens": 142505
+    }
+  ],
+  "unresolved_judgments": 0,
+  "answers": [
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "instruct",
+      "condition": "source",
+      "seed": 23,
+      "answer": "C stated they put the conceptual design in the shared folder, but D confirmed they could only see their own presentation and couldn't cut and paste into the other folder, indicating the files may not be accessible or properly shared.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.8181888319995778
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "instruct",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "D said they would take the notes today.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.4189698079999289
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "instruct",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "The speaker (B) was uncertain whether the company wanted the actual written slogan on the remote or just the idea behind it.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.1951775989991802
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "instruct",
+      "condition": "source",
+      "seed": 23,
+      "answer": "We were allowing about seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.40767148099985206
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "instruct",
+      "condition": "source",
+      "seed": 23,
+      "answer": "A is sending the main call for linguists by the end of the week, as it's overdue. We're asking Claire to send a separate call for psychology/psycholinguistics because she knows the right email addresses and can make it feel more relevant to that audience, increasing response likelihood.",
+      "core_correct": false,
+      "supported_correct": false,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.6599447010003132
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "instruct",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "B is unsure whether the company wants the actual written slogan on the remote or just the idea behind it. D also asks for clarification on this point.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.2912572490004095
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "instruct",
+      "condition": "json",
+      "seed": 23,
+      "answer": "C placed the conceptual design in the shared folder, but D cannot access it from another folder due to permissions. C will adjust the permissions to enable access.",
+      "core_correct": true,
+      "supported_correct": false,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.309595538999929
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "instruct",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "A is sending the main call by the end of the week, as it's overdue. We're asking Claire to send a separate call for Psychology/psycholinguistics because she knows the right email addresses and can make the message feel more relevant to that audience, increasing the likelihood of response.",
+      "core_correct": false,
+      "supported_correct": false,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.31639610300044296
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "instruct",
+      "condition": "source",
+      "seed": 23,
+      "answer": "It is unclear whether the company wants the actual slogan written on the remote or just the idea behind it. B expressed uncertainty, stating, 'I'm not sure' and 'I mean do they want it actually written on it, 'cause it's quite long.'",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.37607574300000124
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "instruct",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "We were allowing about seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.27974831400024414
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "instruct",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "A is sending the main call for linguists by the end of the week. We're asking Claire to send a separate call for Psychology/psycho-linguistics because she knows the correct email address and relevant details, and her message will appear more relevant to that audience.",
+      "core_correct": false,
+      "supported_correct": false,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.4562100149996695
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "instruct",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "C confirmed that the conceptual design was placed in the shared folder, but D initially could not see it and had trouble accessing it. C later clarified that the file should be in the folder under the name 'PowerPoint pre components design'.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.2473679879994961
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "instruct",
+      "condition": "json",
+      "seed": 23,
+      "answer": "We were allowing about seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.29513242400025774
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "instruct",
+      "condition": "json",
+      "seed": 23,
+      "answer": "D said they would take the notes today.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.43192786799954774
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "instruct",
+      "condition": "source",
+      "seed": 23,
+      "answer": "D said they would take the notes today.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.6983316630003173
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "instruct",
+      "condition": "source",
+      "seed": 23,
+      "answer": "We decided to drop the work on removing things from the audio files because it was considered too big a task and not feasible within the available time. C noted they didn't even know how to approach it at the moment, and A confirmed it was too big. B suggested it could be mentioned as a future work idea if time allowed.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 1.1679271869998047
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "instruct",
+      "condition": "json",
+      "seed": 23,
+      "answer": "A will send the main call for linguists by the end of the week. We're asking Claire to send a separate call for Psychology because she knows the right email addresses and can make the message feel more relevant to psychology researchers, increasing the chance they'll respond.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.47290165100002923
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "instruct",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "We decided to drop the work on removing things from the audio files because it was too big a task, we didn't know how to approach it at the moment, and there wasn't enough time. It was suggested to mention it only as a future work idea if we had more time.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.7253901189997123
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "instruct",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "The conceptual design was placed in the shared folder by C, but D cannot access it from another folder due to technical or permission limitations, as D reported seeing only their own presentation.",
+      "core_correct": true,
+      "supported_correct": false,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.3340885140005412
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "instruct",
+      "condition": "json",
+      "seed": 23,
+      "answer": "B is unsure whether the company wants the actual written slogan on the remote or just the idea behind it. D also asks for clarification on this point.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.2639589949994843
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "instruct",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "We were allowing about seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.2025283210005
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "instruct",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "We decided to drop the work on removing things from the audio files because it was too big a task, we didn't know how to approach it, and there wasn't enough time. It was suggested as a future work idea instead.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.7753084070000114
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "instruct",
+      "condition": "json",
+      "seed": 23,
+      "answer": "We decided to drop the work on removing things from the audio files because it was too big a task and we didn't know how to approach it at the moment. The team agreed it wasn't feasible within the available time.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.938152180000543
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "instruct",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "D said they would take the notes today.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": null,
+      "first_answer_seconds": 0.35600629999953526
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "thinking",
+      "condition": "source",
+      "seed": 23,
+      "answer": "The conceptual design files were not found in the shared folder, and D committed to place them there.",
+      "core_correct": false,
+      "supported_correct": false,
+      "native_thinking_tokens": 2339,
+      "first_answer_seconds": 20.05718258500019
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "thinking",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "D",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 2350,
+      "first_answer_seconds": 20.025134818999504
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "thinking",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "The company did not specify whether to use the actual slogan or just the idea; B expressed uncertainty about it.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1017,
+      "first_answer_seconds": 8.397185220999745
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "thinking",
+      "condition": "source",
+      "seed": 23,
+      "answer": "about seven minutes",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1465,
+      "first_answer_seconds": 12.636606758000198
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "thinking",
+      "condition": "source",
+      "seed": 23,
+      "answer": "A will send the main call (for linguistics) today or tomorrow. We ask Claire to send a separate Psychology call to avoid making linguists worry about losing their place (as it's not essential to mention other audiences to them).",
+      "core_correct": false,
+      "supported_correct": false,
+      "native_thinking_tokens": 2861,
+      "first_answer_seconds": 24.899446008000268
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "thinking",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "The team is uncertain; B states they are not sure whether the company wants the actual slogan written on the remote or just the idea.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1579,
+      "first_answer_seconds": 13.189712589999544
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "thinking",
+      "condition": "json",
+      "seed": 23,
+      "answer": "The conceptual design was placed in the shared folder by C, but D cannot access it. No resolution to the access issue is mentioned in the transcript.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 3357,
+      "first_answer_seconds": 28.07052216200009
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "thinking",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "A will send the main call for linguists by the end of the week (or today/tomorrow). We ask Claire to send a separate Psychology call because it's more relevant to her audience (she has the right email list) and avoids confusing linguists.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 2358,
+      "first_answer_seconds": 19.768024574000265
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "thinking",
+      "condition": "source",
+      "seed": 23,
+      "answer": "The meeting did not resolve whether the company wants the actual slogan written on the remote or just the idea. D asked if it's the written slogan or the idea, and B expressed uncertainty, saying it might just be the idea but wasn't sure.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1499,
+      "first_answer_seconds": 12.861061599000095
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "thinking",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "About seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 864,
+      "first_answer_seconds": 7.307803328999398
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "thinking",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "A will send the main linguists call today or tomorrow. Claire sends a separate Psychology call to avoid confusing linguists (by not emphasizing non-linguist inclusion in the main call); she knows the Psychology audience and email addresses.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 4069,
+      "first_answer_seconds": 34.6239889819999
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "thinking",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "The conceptual design file was not found in the shared folder, but D is going to put it there.",
+      "core_correct": false,
+      "supported_correct": false,
+      "native_thinking_tokens": 2605,
+      "first_answer_seconds": 21.448063296999862
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "thinking",
+      "condition": "json",
+      "seed": 23,
+      "answer": "We were allowing seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1595,
+      "first_answer_seconds": 13.343765640000129
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "thinking",
+      "condition": "json",
+      "seed": 23,
+      "answer": "D",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 2102,
+      "first_answer_seconds": 18.000062044000515
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "thinking",
+      "condition": "source",
+      "seed": 23,
+      "answer": "D said they would take the notes today.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 2950,
+      "first_answer_seconds": 25.866852893000214
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "thinking",
+      "condition": "source",
+      "seed": 23,
+      "answer": "We are dropping the audio file work because it's too big and we don't know how to approach it.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 2125,
+      "first_answer_seconds": 19.958718292000412
+    },
+    {
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "question_id": "first:authored-W1-2",
+      "reference_answer": "A is sending the linguistics call today or tomorrow. Claire can handle Psychology because she knows which address to use, her Psychology address will look relevant, and the recipients know her.",
+      "model": "thinking",
+      "condition": "json",
+      "seed": 23,
+      "answer": "A will send the main linguist-focused call today or tomorrow. Claire handles the Psychology call separately because she knows relevant email addresses and can make it more relevant to Psychology attendees.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1798,
+      "first_answer_seconds": 15.557758469999499
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "thinking",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "We are dropping the work on removing things from audio files because it's too big and we don't know how to approach it. We'll mention it as a future work item in the conclusion instead.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 2099,
+      "first_answer_seconds": 18.57352951899975
+    },
+    {
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "reference_answer": "C reported putting the files in the shared folder; D initially saw only their own presentation. The discussion identifies a components-design PowerPoint but does not verify live access for everyone or an outage.",
+      "model": "thinking",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "C placed the conceptual design in the shared folder, but D cannot access it, as D reports seeing only their own presentation and being unable to cut and paste the file.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1956,
+      "first_answer_seconds": 16.48955867099994
+    },
+    {
+      "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
+      "question_id": "pilot:P-ES-slogan",
+      "reference_answer": "This was unresolved. D asked that distinction, and B was unsure whether to print the long slogan or convey its idea.",
+      "model": "thinking",
+      "condition": "json",
+      "seed": 23,
+      "answer": "B expressed uncertainty: 'I'm not sure' about whether the actual slogan or just the idea is required. They mentioned it might be 'just the idea' but were unsure.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1199,
+      "first_answer_seconds": 9.992700305000653
+    },
+    {
+      "question": "Assistant, how long were we allowing for each presentation?",
+      "question_id": "pilot:P-TS-time",
+      "reference_answer": "A suggested about seven minutes per presentation, within forty minutes for presentations and discussion overall.",
+      "model": "thinking",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "Seven minutes per presentation.",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 805,
+      "first_answer_seconds": 6.707030890000169
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "thinking",
+      "condition": "tools",
+      "seed": 23,
+      "answer": "We are dropping the audio file work because it's too big and we don't know how to approach it. A said it's 'too big' and C stated they 'don't even know how to approach that at the moment.'",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1404,
+      "first_answer_seconds": 12.756942257999981
+    },
+    {
+      "question": "Assistant, why were we dropping the work on the audio files?",
+      "question_id": "pilot:P-EN-audio",
+      "reference_answer": "The group thought time was too short, did not know how to approach it, and had more important work to do.",
+      "model": "thinking",
+      "condition": "json",
+      "seed": 23,
+      "answer": "We were dropping the work on removing things from audio files because it was deemed too big and they didn't know how to approach it, as stated by A: 'I think it um one thing that we could probably skip uh totally is the removing things from the audio files.' C added they 'don't even know how to approach that at the moment.'",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 761,
+      "first_answer_seconds": 7.620699480999974
+    },
+    {
+      "question": "Assistant, who said they'd take the notes today?",
+      "question_id": "pilot:P-EN-notes",
+      "reference_answer": "D volunteered to take the notes.",
+      "model": "thinking",
+      "condition": "reactive",
+      "seed": 23,
+      "answer": "D",
+      "core_correct": true,
+      "supported_correct": true,
+      "native_thinking_tokens": 1863,
+      "first_answer_seconds": 15.776920459999928
+    }
+  ]
+}

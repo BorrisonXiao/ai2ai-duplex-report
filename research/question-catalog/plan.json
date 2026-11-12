@@ -413,7 +413,7 @@
           "text": "Implement and validate the shared memory-editing functions.",
           "status": "complete",
           "project_url": "experiments/note-functions.html#functions",
-          "evidence": "Ten CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
+          "evidence": "16 CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
         },
         {
           "text": "Run and source-review the six-question memory-function pilot.",
