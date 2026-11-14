@@ -1,33 +1,40 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "now": [
     {
-      "id": "note-functions-source-judge",
-      "text": "Validate the scorer against the source-reviewed answers.",
+      "id": "s2-full-text",
+      "text": "Run all 105 questions through the four text conditions.",
       "status": "partial",
-      "url": "experiments/note-functions.html#followup",
-      "evidence": "Automatic v13 remains unqualified; all 144 pilot outputs instead received Codex source review."
+      "url": "experiments/note-functions.html#full-set",
+      "evidence": "1,260 planned outputs, including verified pilot reuse."
     },
     {
-      "id": "note-functions-quote-pilot",
-      "text": "Run the twelve-question note-text versus source-speech comparison.",
+      "id": "s2-full-audio-capacity",
+      "text": "Check native audio capacity and keep every question in the evaluation.",
       "status": "complete",
-      "url": "experiments/note-functions.html#followup",
-      "evidence": "144/144 answers saved; all source-reviewed by Codex."
+      "url": "experiments/note-functions.html#full-set",
+      "evidence": "Both GPU checks pass; two MiniCPM history limits are explicitly recorded and matched across conditions."
     },
     {
-      "id": "audio-s2-feasibility",
-      "text": "Verify audio-history processing and actual note-function execution.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#audio-s2",
-      "evidence": "Both models processed six minutes and executed audio note calls; pilot answers are source-reviewed, and longer histories remain untested."
+      "id": "s2-full-audio",
+      "text": "Generate meeting-level audio notes and all 840 paired answers.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#full-set",
+      "evidence": "Two audio models, reactive/function notes, and both speaker conditions."
     },
     {
-      "id": "audio-s2-pilot",
-      "text": "Compare reactive and function-note audio S2 under both identity conditions.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#audio-pilot-results",
-      "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
+      "id": "s2-full-review",
+      "text": "Source-check scorer disagreements before final accuracy claims.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#full-set",
+      "evidence": "Source-reviewed exact responses are reused; remaining automatic labels are explicitly provisional."
+    },
+    {
+      "id": "s2-full-statistics",
+      "text": "Compare paired accuracy, thinking, latency and complete token cost.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#full-set",
+      "evidence": "Statistics update as outputs finish; final comparisons retain all105questions and meeting-based uncertainty."
     }
   ],
   "definition": {
@@ -474,6 +481,41 @@
           "status": "complete",
           "url": "experiments/note-functions.html#audio-pilot-results",
           "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
+        },
+        {
+          "id": "s2-full-text",
+          "text": "Run all 105 questions through the four text conditions.",
+          "status": "partial",
+          "url": "experiments/note-functions.html#full-set",
+          "evidence": "1,260 planned outputs, including verified pilot reuse."
+        },
+        {
+          "id": "s2-full-audio-capacity",
+          "text": "Check native audio capacity and keep every question in the evaluation.",
+          "status": "complete",
+          "url": "experiments/note-functions.html#full-set",
+          "evidence": "Both GPU checks pass; two MiniCPM history limits are explicitly recorded and matched across conditions."
+        },
+        {
+          "id": "s2-full-audio",
+          "text": "Generate meeting-level audio notes and all 840 paired answers.",
+          "status": "partial",
+          "url": "experiments/note-functions.html#full-set",
+          "evidence": "Two audio models, reactive/function notes, and both speaker conditions."
+        },
+        {
+          "id": "s2-full-review",
+          "text": "Source-check scorer disagreements before final accuracy claims.",
+          "status": "partial",
+          "url": "experiments/note-functions.html#full-set",
+          "evidence": "Source-reviewed exact responses are reused; remaining automatic labels are explicitly provisional."
+        },
+        {
+          "id": "s2-full-statistics",
+          "text": "Compare paired accuracy, thinking, latency and complete token cost.",
+          "status": "partial",
+          "url": "experiments/note-functions.html#full-set",
+          "evidence": "Statistics update as outputs finish; final comparisons retain all105questions and meeting-based uncertainty."
         }
       ]
     },

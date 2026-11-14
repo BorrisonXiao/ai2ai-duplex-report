@@ -474,6 +474,36 @@
           "status": "complete",
           "project_url": "experiments/note-functions.html#audio-pilot-results",
           "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
+        },
+        {
+          "text": "Run all 105 questions through the four text conditions.",
+          "status": "partial",
+          "project_url": "experiments/note-functions.html#full-set",
+          "evidence": "1,260 planned outputs, including verified pilot reuse."
+        },
+        {
+          "text": "Check native audio capacity and keep every question in the evaluation.",
+          "status": "complete",
+          "project_url": "experiments/note-functions.html#full-set",
+          "evidence": "Both GPU checks pass; two MiniCPM history limits are explicitly recorded and matched across conditions."
+        },
+        {
+          "text": "Generate meeting-level audio notes and all 840 paired answers.",
+          "status": "partial",
+          "project_url": "experiments/note-functions.html#full-set",
+          "evidence": "Two audio models, reactive/function notes, and both speaker conditions."
+        },
+        {
+          "text": "Source-check scorer disagreements before final accuracy claims.",
+          "status": "partial",
+          "project_url": "experiments/note-functions.html#full-set",
+          "evidence": "Source-reviewed exact responses are reused; remaining automatic labels are explicitly provisional."
+        },
+        {
+          "text": "Compare paired accuracy, thinking, latency and complete token cost.",
+          "status": "partial",
+          "project_url": "experiments/note-functions.html#full-set",
+          "evidence": "Statistics update as outputs finish; final comparisons retain all105questions and meeting-based uncertainty."
         }
       ]
     },

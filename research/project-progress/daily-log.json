@@ -1,7 +1,52 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-14",
+      "items": [
+        {
+          "text": "Traced answer changes to stale facts, false confirmations, missing locations and overwritten evidence links.",
+          "url": "experiments/note-functions.html#review"
+        },
+        {
+          "text": "Source-reviewed 60 additional answers and corrected 14 scorer labels, including valid percentage-to-count conversions.",
+          "url": "experiments/note-functions.html#review"
+        },
+        {
+          "text": "Prepared four source-only diagnostic inputs for all 105 questions and added a scorer-validation gate before inference.",
+          "url": "experiments/note-functions.html#followup"
+        },
+        {
+          "text": "Source-reviewed all 144 text-pilot answers; source quotes reduce mean request-time thinking, while latency uncertainty includes no improvement.",
+          "url": "experiments/note-functions.html#diagnostic-results"
+        },
+        {
+          "text": "Completed and source-reviewed 16 audio-S2 answers under both speaker conditions; Qwen function notes increase request-time thinking in all matched cases.",
+          "url": "experiments/note-functions.html#audio-pilot-results"
+        },
+        {
+          "text": "Launched the bounded text diagnostic with source review required for every answer after the automatic judge failed qualification.",
+          "url": "experiments/note-functions.html#followup"
+        },
+        {
+          "text": "Started a separate audio S2 branch with reactive and function-note conditions, including audio alone and past-only labelled voices.",
+          "url": "experiments/note-functions.html#audio-s2"
+        },
+        {
+          "text": "Expanded the frozen text and audio S2 comparisons to all 105 questions, with verified pilot reuse.",
+          "url": "experiments/note-functions.html#full-set"
+        },
+        {
+          "text": "Qualified long audio inputs for both models and recorded matched history limits for two MiniCPM cases.",
+          "url": "experiments/note-functions.html#full-set"
+        },
+        {
+          "text": "Started meeting-level audio note streams with four concurrent requests on one GPU while keeping answer-time measurements serial.",
+          "url": "experiments/note-functions.html#full-set"
+        }
+      ]
+    },
     {
       "date": "2026-11-13",
       "items": [

@@ -90,9 +90,9 @@
     },
     {
       "id": "freeze-full",
-      "status": "planned",
-      "action": "Freeze the implementation after the pilot, then retain all 105 questions for the matched comparison.",
-      "criterion": "No tuning on the full-run outputs; this reused bank is not an unseen test set."
+      "status": "partial",
+      "action": "Run the user-authorized full105-question comparison with frozen inputs and explicit scoring status.",
+      "criterion": "Full inference is running; automatic labels remain provisional until source checks finish."
     }
   ],
   "evaluation": {
