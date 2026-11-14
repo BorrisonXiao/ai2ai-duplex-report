@@ -439,7 +439,7 @@
       "evidence": "Statistics update as outputs finish; final comparisons retain all105questions and meeting-based uncertainty."
     }
   ],
-  "updated_at": "2026-11-14T05:38:51-05:00",
+  "updated_at": "2026-11-14T05:51:16-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -687,7 +687,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-14T05:38:51-05:00",
+    "updated": "2026-11-14T05:51:16-05:00",
     "status": "full_s2_running",
     "api_revision": "v2",
     "control_count": 10,
@@ -724,7 +724,7 @@
       },
       {
         "stage": "Audio note streams",
-        "status": "4550/5108 updates saved",
+        "status": "4593/5108 updates saved",
         "evidence": "One stream per meeting and speaker condition; four independent requests per GPU; no future question content."
       },
       {
@@ -776,8 +776,8 @@
       },
       {
         "label": "Qwen audio · note generation",
-        "state": "RUNNING",
-        "completed": "1996",
+        "state": "PENDING",
+        "completed": "2039",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80 GB"
       },
@@ -804,8 +804,8 @@
       },
       {
         "label": "Scoring · score text",
-        "state": "RUNNING",
-        "completed": "368",
+        "state": "PENDING",
+        "completed": "676",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80 GB"
       }
@@ -24689,7 +24689,7 @@
       }
     ],
     "parallel_s2": {
-      "updated": "2026-11-14T05:38:40-05:00",
+      "updated": "2026-11-14T05:51:05-05:00",
       "status": "source_reviewed_pilots",
       "text_outputs": 144,
       "text_planned": 144,
@@ -24954,7 +24954,7 @@
       ]
     },
     "full_s2": {
-      "updated": "2026-11-14T05:38:51-05:00",
+      "updated": "2026-11-14T05:51:16-05:00",
       "status": "full_set_in_progress",
       "questions": 105,
       "meetings": 26,
@@ -25434,12 +25434,12 @@
               "count": 105
             }
           },
-          "scored": 50,
+          "scored": 72,
           "source_reviewed_matches": 20,
-          "supported_correct": 46,
-          "core_correct": 47,
-          "missing_judgments": 55,
-          "provisional": 30,
+          "supported_correct": 68,
+          "core_correct": 69,
+          "missing_judgments": 33,
+          "provisional": 52,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.1523809523809524,
@@ -25485,12 +25485,12 @@
               "count": 105
             }
           },
-          "scored": 49,
+          "scored": 72,
           "source_reviewed_matches": 20,
-          "supported_correct": 44,
-          "core_correct": 46,
-          "missing_judgments": 56,
-          "provisional": 29,
+          "supported_correct": 67,
+          "core_correct": 69,
+          "missing_judgments": 33,
+          "provisional": 52,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.14285714285714285,
@@ -25536,12 +25536,12 @@
               "count": 105
             }
           },
-          "scored": 50,
+          "scored": 73,
           "source_reviewed_matches": 20,
-          "supported_correct": 45,
-          "core_correct": 47,
-          "missing_judgments": 55,
-          "provisional": 30,
+          "supported_correct": 68,
+          "core_correct": 70,
+          "missing_judgments": 32,
+          "provisional": 53,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.14285714285714285,
@@ -25587,12 +25587,12 @@
               "count": 105
             }
           },
-          "scored": 49,
+          "scored": 73,
           "source_reviewed_matches": 20,
-          "supported_correct": 41,
-          "core_correct": 44,
-          "missing_judgments": 56,
-          "provisional": 29,
+          "supported_correct": 65,
+          "core_correct": 68,
+          "missing_judgments": 32,
+          "provisional": 53,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.11428571428571428,
@@ -25638,12 +25638,12 @@
               "count": 210
             }
           },
-          "scored": 91,
+          "scored": 142,
           "source_reviewed_matches": 33,
-          "supported_correct": 84,
-          "core_correct": 84,
-          "missing_judgments": 119,
-          "provisional": 58,
+          "supported_correct": 133,
+          "core_correct": 133,
+          "missing_judgments": 68,
+          "provisional": 109,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.12380952380952381,
@@ -25689,12 +25689,12 @@
               "count": 210
             }
           },
-          "scored": 92,
+          "scored": 142,
           "source_reviewed_matches": 33,
-          "supported_correct": 87,
-          "core_correct": 88,
-          "missing_judgments": 118,
-          "provisional": 59,
+          "supported_correct": 137,
+          "core_correct": 138,
+          "missing_judgments": 68,
+          "provisional": 109,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.13333333333333333,
@@ -25740,12 +25740,12 @@
               "count": 210
             }
           },
-          "scored": 93,
+          "scored": 143,
           "source_reviewed_matches": 32,
-          "supported_correct": 88,
-          "core_correct": 89,
-          "missing_judgments": 117,
-          "provisional": 61,
+          "supported_correct": 138,
+          "core_correct": 139,
+          "missing_judgments": 67,
+          "provisional": 111,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.12857142857142856,
@@ -25791,12 +25791,12 @@
               "count": 210
             }
           },
-          "scored": 95,
+          "scored": 142,
           "source_reviewed_matches": 33,
-          "supported_correct": 85,
-          "core_correct": 85,
-          "missing_judgments": 115,
-          "provisional": 62,
+          "supported_correct": 132,
+          "core_correct": 132,
+          "missing_judgments": 68,
+          "provisional": 109,
           "fully_supported_accuracy": null,
           "verified_accuracy_bounds": [
             0.11428571428571428,
@@ -25818,10 +25818,10 @@
         },
         {
           "model": "qwen-thinking",
-          "updates": 1996,
+          "updates": 2039,
           "planned": 2554,
           "reused": 36,
-          "state": "RUNNING"
+          "state": "PENDING"
         }
       ],
       "jobs": [
@@ -25872,8 +25872,8 @@
         },
         {
           "label": "Qwen audio · note generation",
-          "state": "RUNNING",
-          "completed": 1996,
+          "state": "PENDING",
+          "completed": 2039,
           "GPU_count": 1,
           "GPU_type_VRAM": "A100 SXM4 80 GB",
           "GPU_0": "Audio encoder, language model and 8 GiB KV",
@@ -25908,17 +25908,17 @@
         },
         {
           "label": "Scoring · score text",
-          "state": "RUNNING",
-          "completed": 368,
+          "state": "PENDING",
+          "completed": 676,
           "GPU_count": 1,
           "GPU_type_VRAM": "A100 SXM4 80 GB",
           "GPU_0": "Text model and 8 GiB KV",
           "dependencies": "Sequential within the text branch; no shared model service."
         }
       ],
-      "active_GPUs": 2,
+      "active_GPUs": 0,
       "max_active_GPUs": 2,
-      "GPU_hours_all_attempts": 8.230277777777777,
+      "GPU_hours_all_attempts": 4.575277777777777,
       "automatic_judge_qualified": false,
       "qualification": {
         "status": "automatic_scores_require_qualification_and_source_review",

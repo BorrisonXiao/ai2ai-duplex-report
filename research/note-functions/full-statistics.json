@@ -456,12 +456,12 @@
           "count": 105
         }
       },
-      "scored": 50,
+      "scored": 72,
       "source_reviewed_matches": 20,
-      "supported_correct": 46,
-      "core_correct": 47,
-      "missing_judgments": 55,
-      "provisional": 30,
+      "supported_correct": 68,
+      "core_correct": 69,
+      "missing_judgments": 33,
+      "provisional": 52,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.1523809523809524,
@@ -507,12 +507,12 @@
           "count": 105
         }
       },
-      "scored": 49,
+      "scored": 72,
       "source_reviewed_matches": 20,
-      "supported_correct": 44,
-      "core_correct": 46,
-      "missing_judgments": 56,
-      "provisional": 29,
+      "supported_correct": 67,
+      "core_correct": 69,
+      "missing_judgments": 33,
+      "provisional": 52,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.14285714285714285,
@@ -558,12 +558,12 @@
           "count": 105
         }
       },
-      "scored": 50,
+      "scored": 73,
       "source_reviewed_matches": 20,
-      "supported_correct": 45,
-      "core_correct": 47,
-      "missing_judgments": 55,
-      "provisional": 30,
+      "supported_correct": 68,
+      "core_correct": 70,
+      "missing_judgments": 32,
+      "provisional": 53,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.14285714285714285,
@@ -609,12 +609,12 @@
           "count": 105
         }
       },
-      "scored": 49,
+      "scored": 73,
       "source_reviewed_matches": 20,
-      "supported_correct": 41,
-      "core_correct": 44,
-      "missing_judgments": 56,
-      "provisional": 29,
+      "supported_correct": 65,
+      "core_correct": 68,
+      "missing_judgments": 32,
+      "provisional": 53,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.11428571428571428,
@@ -660,12 +660,12 @@
           "count": 210
         }
       },
-      "scored": 91,
+      "scored": 142,
       "source_reviewed_matches": 33,
-      "supported_correct": 84,
-      "core_correct": 84,
-      "missing_judgments": 119,
-      "provisional": 58,
+      "supported_correct": 133,
+      "core_correct": 133,
+      "missing_judgments": 68,
+      "provisional": 109,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.12380952380952381,
@@ -711,12 +711,12 @@
           "count": 210
         }
       },
-      "scored": 92,
+      "scored": 142,
       "source_reviewed_matches": 33,
-      "supported_correct": 87,
-      "core_correct": 88,
-      "missing_judgments": 118,
-      "provisional": 59,
+      "supported_correct": 137,
+      "core_correct": 138,
+      "missing_judgments": 68,
+      "provisional": 109,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.13333333333333333,
@@ -762,12 +762,12 @@
           "count": 210
         }
       },
-      "scored": 93,
+      "scored": 143,
       "source_reviewed_matches": 32,
-      "supported_correct": 88,
-      "core_correct": 89,
-      "missing_judgments": 117,
-      "provisional": 61,
+      "supported_correct": 138,
+      "core_correct": 139,
+      "missing_judgments": 67,
+      "provisional": 111,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.12857142857142856,
@@ -813,12 +813,12 @@
           "count": 210
         }
       },
-      "scored": 95,
+      "scored": 142,
       "source_reviewed_matches": 33,
-      "supported_correct": 85,
-      "core_correct": 85,
-      "missing_judgments": 115,
-      "provisional": 62,
+      "supported_correct": 132,
+      "core_correct": 132,
+      "missing_judgments": 68,
+      "provisional": 109,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
         0.11428571428571428,
@@ -867,7 +867,7 @@
         }
       },
       "accuracy": {
-        "pairs": 49,
+        "pairs": 71,
         "all_pairs_scored": false,
         "mean_change": null,
         "provisional": true,
@@ -876,7 +876,7 @@
       },
       "quality_and_work": {
         "both_supported": {
-          "pairs": 38,
+          "pairs": 60,
           "metrics": {
             "thinking_tokens": {
               "pairs": 0,
@@ -885,13 +885,13 @@
               "meeting_95_percent_interval": null
             },
             "generated_tokens": {
-              "pairs": 38,
+              "pairs": 60,
               "missing_pairs": 0,
-              "mean_change": 0.42105263157894735,
-              "median_change": 0.5,
+              "mean_change": 0.9333333333333333,
+              "median_change": 0.0,
               "meeting_95_percent_interval": [
-                -16.434305555555554,
-                23.6210714285714
+                -11.29950159489633,
+                12.61478590544156
               ]
             }
           }
@@ -998,7 +998,7 @@
         }
       },
       "accuracy": {
-        "pairs": 48,
+        "pairs": 71,
         "all_pairs_scored": false,
         "mean_change": null,
         "provisional": true,
@@ -1007,7 +1007,7 @@
       },
       "quality_and_work": {
         "both_supported": {
-          "pairs": 40,
+          "pairs": 63,
           "metrics": {
             "thinking_tokens": {
               "pairs": 0,
@@ -1016,13 +1016,13 @@
               "meeting_95_percent_interval": null
             },
             "generated_tokens": {
-              "pairs": 40,
+              "pairs": 63,
               "missing_pairs": 0,
-              "mean_change": 1.825,
+              "mean_change": 4.222222222222222,
               "median_change": 0.0,
               "meeting_95_percent_interval": [
-                -7.363636363636363,
-                21.035909090909055
+                -3.92677036199095,
+                17.07749999999999
               ]
             }
           }
@@ -1125,7 +1125,7 @@
         }
       },
       "accuracy": {
-        "pairs": 49,
+        "pairs": 72,
         "all_pairs_scored": false,
         "mean_change": null,
         "provisional": true,
@@ -1134,7 +1134,7 @@
       },
       "quality_and_work": {
         "both_supported": {
-          "pairs": 40,
+          "pairs": 63,
           "metrics": {
             "thinking_tokens": {
               "pairs": 0,
@@ -1143,13 +1143,13 @@
               "meeting_95_percent_interval": null
             },
             "generated_tokens": {
-              "pairs": 40,
+              "pairs": 63,
               "missing_pairs": 0,
-              "mean_change": 2.75,
+              "mean_change": 1.8571428571428572,
               "median_change": 0.0,
               "meeting_95_percent_interval": [
-                -11.367778649921506,
-                31.252083333333303
+                -9.092573529411764,
+                16.732031655422933
               ]
             }
           }
@@ -1280,35 +1280,35 @@
         }
       },
       "accuracy": {
-        "pairs": 88,
+        "pairs": 136,
         "all_pairs_scored": false,
         "mean_change": null,
         "provisional": true,
         "helped": 5,
-        "harmed": 4
+        "harmed": 6
       },
       "quality_and_work": {
         "both_supported": {
-          "pairs": 76,
+          "pairs": 122,
           "metrics": {
             "thinking_tokens": {
-              "pairs": 76,
+              "pairs": 122,
               "missing_pairs": 0,
-              "mean_change": 206.0921052631579,
-              "median_change": 187.5,
+              "mean_change": 207.29508196721312,
+              "median_change": 164.0,
               "meeting_95_percent_interval": [
-                -104.33794117647057,
-                405.6832727272727
+                5.4207776029373225,
+                370.5606643356642
               ]
             },
             "generated_tokens": {
-              "pairs": 76,
+              "pairs": 122,
               "missing_pairs": 0,
-              "mean_change": 214.56578947368422,
-              "median_change": 202.5,
+              "mean_change": 216.9262295081967,
+              "median_change": 175.5,
               "meeting_95_percent_interval": [
-                -90.5001025991792,
-                409.4971966911763
+                14.822881652661065,
+                381.08985740212603
               ]
             }
           }
@@ -1339,26 +1339,26 @@
           }
         },
         "worsened_answer": {
-          "pairs": 4,
+          "pairs": 6,
           "metrics": {
             "thinking_tokens": {
-              "pairs": 4,
+              "pairs": 6,
               "missing_pairs": 0,
-              "mean_change": 762.75,
-              "median_change": 877.5,
+              "mean_change": 612.0,
+              "median_change": 579.0,
               "meeting_95_percent_interval": [
-                -180.0,
-                1192.5
+                76.5,
+                1077.0
               ]
             },
             "generated_tokens": {
-              "pairs": 4,
+              "pairs": 6,
               "missing_pairs": 0,
-              "mean_change": 772.75,
-              "median_change": 896.5,
+              "mean_change": 632.6666666666666,
+              "median_change": 603.0,
               "meeting_95_percent_interval": [
-                -170.0,
-                1218.5
+                78.5,
+                1087.0
               ]
             }
           }
@@ -1451,7 +1451,7 @@
         }
       },
       "accuracy": {
-        "pairs": 87,
+        "pairs": 135,
         "all_pairs_scored": false,
         "mean_change": null,
         "provisional": true,
@@ -1460,26 +1460,26 @@
       },
       "quality_and_work": {
         "both_supported": {
-          "pairs": 77,
+          "pairs": 125,
           "metrics": {
             "thinking_tokens": {
-              "pairs": 77,
+              "pairs": 125,
               "missing_pairs": 0,
-              "mean_change": 114.98701298701299,
-              "median_change": 146.0,
+              "mean_change": 153.888,
+              "median_change": 205.0,
               "meeting_95_percent_interval": [
-                -115.27941176470588,
-                300.28555194805176
+                38.01733369066762,
+                288.3641131062258
               ]
             },
             "generated_tokens": {
-              "pairs": 77,
+              "pairs": 125,
               "missing_pairs": 0,
-              "mean_change": 120.83116883116882,
-              "median_change": 130.0,
+              "mean_change": 158.504,
+              "median_change": 213.0,
               "meeting_95_percent_interval": [
-                -109.47116920842412,
-                309.56140350877195
+                42.05243480711103,
+                295.36743230174073
               ]
             }
           }
@@ -1622,7 +1622,7 @@
         }
       },
       "accuracy": {
-        "pairs": 88,
+        "pairs": 138,
         "all_pairs_scored": false,
         "mean_change": null,
         "provisional": true,
@@ -1631,26 +1631,26 @@
       },
       "quality_and_work": {
         "both_supported": {
-          "pairs": 78,
+          "pairs": 128,
           "metrics": {
             "thinking_tokens": {
-              "pairs": 78,
+              "pairs": 128,
               "missing_pairs": 0,
-              "mean_change": 3.8846153846153846,
-              "median_change": 93.5,
+              "mean_change": 53.546875,
+              "median_change": 119.0,
               "meeting_95_percent_interval": [
-                -289.5417372881356,
-                180.46780821917804
+                -92.60051609369734,
+                182.38729503362038
               ]
             },
             "generated_tokens": {
-              "pairs": 78,
+              "pairs": 128,
               "missing_pairs": 0,
-              "mean_change": 11.461538461538462,
-              "median_change": 110.5,
+              "mean_change": 60.65625,
+              "median_change": 116.5,
               "meeting_95_percent_interval": [
-                -280.79104798281213,
-                185.62203357129073
+                -82.40908801020407,
+                189.25283715427918
               ]
             }
           }
@@ -1790,10 +1790,10 @@
       "identity": "audio_only",
       "requests": 2,
       "complete": false,
-      "earlier_generated_tokens": 1695117,
+      "earlier_generated_tokens": 1733226,
       "request_generated_tokens": 3483,
       "request_thinking_tokens": 3360,
-      "combined_generated_tokens": 1698600
+      "combined_generated_tokens": 1736709
     },
     {
       "branch": "audio",
@@ -1802,10 +1802,10 @@
       "identity": "labelled_voices",
       "requests": 2,
       "complete": false,
-      "earlier_generated_tokens": 1811449,
+      "earlier_generated_tokens": 1860671,
       "request_generated_tokens": 2315,
       "request_thinking_tokens": 2147,
-      "combined_generated_tokens": 1813764
+      "combined_generated_tokens": 1862986
     },
     {
       "branch": "audio",
@@ -1948,21 +1948,21 @@
       "reused_updates": 18
     },
     "qwen-thinking|audio_only": {
-      "updates": 1001,
-      "generated_tokens": 1695117,
-      "input_tokens": 3606646,
-      "native_thinking_tokens": 1590125,
-      "rejected_operations": 164,
-      "parse_errors": 43,
+      "updates": 1022,
+      "generated_tokens": 1733226,
+      "input_tokens": 3715126,
+      "native_thinking_tokens": 1625767,
+      "rejected_operations": 170,
+      "parse_errors": 44,
       "reused_updates": 18
     },
     "qwen-thinking|labelled_voices": {
-      "updates": 995,
-      "generated_tokens": 1811449,
-      "input_tokens": 3889667,
-      "native_thinking_tokens": 1704603,
-      "rejected_operations": 132,
-      "parse_errors": 44,
+      "updates": 1017,
+      "generated_tokens": 1860671,
+      "input_tokens": 4011615,
+      "native_thinking_tokens": 1750918,
+      "rejected_operations": 136,
+      "parse_errors": 45,
       "reused_updates": 18
     }
   },
@@ -1987,7 +1987,7 @@
     "supported_correct_agreements": 265,
     "qualified": false
   },
-  "required_source_review_answers": 58,
+  "required_source_review_answers": 70,
   "required_source_review_question_ids": [
     "expansion:ES-colour",
     "expansion:IS-lost",
@@ -1999,6 +1999,7 @@
     "pilot:P-EN-segmentation",
     "pilot:P-ES-minutes",
     "pilot:P-ES-power",
+    "pilot:P-IS-budget",
     "pilot:P-TS-time",
     "pilot:Q-TS-current-audience",
     "scale:EN2001b-Slater-Q2",
