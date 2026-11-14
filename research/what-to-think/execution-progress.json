@@ -404,7 +404,7 @@
       "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
     }
   ],
-  "updated_at": "2026-11-13T22:52:07-05:00",
+  "updated_at": "2026-11-13T23:03:49-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -652,7 +652,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-13T22:52:07-05:00",
+    "updated": "2026-11-13T23:03:49-05:00",
     "status": "parallel_pilots_source_reviewed",
     "api_revision": "v2",
     "control_count": 10,
@@ -735,9 +735,9 @@
         "GPU_type": "A100 SXM4 80 GB"
       },
       {
-        "label": "Audio paired pilot · Qwen3-Omni Thinking",
+        "label": "Audio paired pilot · Qwen3-Omni Thinking · corrected labels",
         "state": "COMPLETED",
-        "completed": "8/8 answers; 44 calls",
+        "completed": "8/8 answers; 8 calls",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80 GB"
       }
@@ -24621,7 +24621,7 @@
       }
     ],
     "parallel_s2": {
-      "updated": "2026-11-13T22:52:07-05:00",
+      "updated": "2026-11-13T23:03:49-05:00",
       "status": "source_reviewed_pilots",
       "text_outputs": 144,
       "text_planned": 144,
@@ -24678,9 +24678,9 @@
           "dependencies": "Sequential within the audio lane"
         },
         {
-          "label": "Audio paired pilot · Qwen3-Omni Thinking",
+          "label": "Audio paired pilot · Qwen3-Omni Thinking · corrected labels",
           "state": "COMPLETED",
-          "completed": "8/8 answers; 44 calls",
+          "completed": "8/8 answers; 8 calls",
           "GPU_count": 1,
           "GPU_type_VRAM": "A100 SXM4 80 GB",
           "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
@@ -24691,7 +24691,7 @@
       "max_study_GPUs": 2,
       "text_source_reviewed": true,
       "audio_source_reviewed": true,
-      "GPU_hours_all_attempts": 1.0255555555555556,
+      "GPU_hours_all_attempts": 1.068888888888889,
       "audio_cases_prepared": 105,
       "audio_models": [
         "Qwen3-Omni-30B-A3B-Thinking",
