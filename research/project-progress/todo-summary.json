@@ -1,33 +1,33 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "now": [
-    {
-      "id": "note-functions-api",
-      "text": "Implement and validate the shared memory-editing functions.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#functions",
-      "evidence": "17 CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
-    },
-    {
-      "id": "note-functions-development",
-      "text": "Run and source-review the six-question memory-function pilot.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#progress",
-      "evidence": "48/48 final answers saved; full evaluation requires reviewed development outputs."
-    },
-    {
-      "id": "note-functions-full",
-      "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#evaluation",
-      "evidence": "1260/1260 outputs saved; retain full transcripts and freeze the design after development review."
-    },
     {
       "id": "note-functions-analysis",
       "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
-      "status": "partial",
+      "status": "complete",
       "url": "experiments/note-functions.html#evaluation",
-      "evidence": "Count earlier operations, receipts, errors and unused updates; inspect scorer disagreements."
+      "evidence": "All1260 outputs analyzed;84 answers source-reviewed; paired changes and actual note/source examples published."
+    },
+    {
+      "id": "note-functions-source-judge",
+      "text": "Qualify source checking for proposed scorer errors.",
+      "status": "pending",
+      "url": "experiments/note-functions.html#followup",
+      "evidence": "Check all84 source-reviewed answers and16new controls before new model comparisons."
+    },
+    {
+      "id": "note-functions-quote-inputs",
+      "text": "Prepare source-only inputs with causal evidence history.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#followup",
+      "evidence": "420inputs,210matching original prompt hashes and seven CPU behavior tests pass; no inference result claimed."
+    },
+    {
+      "id": "note-functions-quote-pilot",
+      "text": "Run the twelve-question note-text versus source-speech comparison.",
+      "status": "planned",
+      "url": "experiments/note-functions.html#followup",
+      "evidence": "Requires qualified source scoring; four conditions,96Thinking and48Instruct outputs planned."
     }
   ],
   "definition": {
@@ -422,9 +422,9 @@
         {
           "id": "note-functions-analysis",
           "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
-          "status": "partial",
+          "status": "complete",
           "url": "experiments/note-functions.html#evaluation",
-          "evidence": "Count earlier operations, receipts, errors and unused updates; inspect scorer disagreements."
+          "evidence": "All1260 outputs analyzed;84 answers source-reviewed; paired changes and actual note/source examples published."
         },
         {
           "id": "note-functions-lookup",
@@ -432,6 +432,27 @@
           "status": "planned",
           "url": "experiments/note-functions.html#next",
           "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
+        },
+        {
+          "id": "note-functions-source-judge",
+          "text": "Qualify source checking for proposed scorer errors.",
+          "status": "pending",
+          "url": "experiments/note-functions.html#followup",
+          "evidence": "Check all84 source-reviewed answers and16new controls before new model comparisons."
+        },
+        {
+          "id": "note-functions-quote-inputs",
+          "text": "Prepare source-only inputs with causal evidence history.",
+          "status": "complete",
+          "url": "experiments/note-functions.html#followup",
+          "evidence": "420inputs,210matching original prompt hashes and seven CPU behavior tests pass; no inference result claimed."
+        },
+        {
+          "id": "note-functions-quote-pilot",
+          "text": "Run the twelve-question note-text versus source-speech comparison.",
+          "status": "planned",
+          "url": "experiments/note-functions.html#followup",
+          "evidence": "Requires qualified source scoring; four conditions,96Thinking and48Instruct outputs planned."
         }
       ]
     },

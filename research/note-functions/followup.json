@@ -1,0 +1,145 @@
+{
+  "status": "prepared_not_run",
+  "date": "2026-11-13",
+  "question": "Can the selected source speech help without the factual errors introduced by generated note text?",
+  "conditions": [
+    {
+      "id": "reactive",
+      "input": "Full causal transcript and user question.",
+      "difference": "No saved notes; reproduce the existing baseline."
+    },
+    {
+      "id": "current_notes",
+      "input": "The same full transcript and question, plus the exact saved native-call notes.",
+      "difference": "Reproduce the original note condition."
+    },
+    {
+      "id": "quotes_current",
+      "input": "The same transcript and question, plus only the original source passages selected by those notes.",
+      "difference": "Remove generated facts, owner/status labels, links and change summaries; keep the same source IDs."
+    },
+    {
+      "id": "quotes_history",
+      "input": "The same transcript and question, plus current source passages and earlier evidence for the same active notes.",
+      "difference": "Recover source links overwritten by updates; use only pre-request edits and a 4,096-token quote budget."
+    }
+  ],
+  "common": {
+    "output": "The same brief JSON answer, evidence_ids and missing_information.",
+    "models": [
+      "Qwen3-30B-A3B Instruct",
+      "Qwen3-30B-A3B Thinking"
+    ],
+    "thinking_seeds": [
+      23,
+      47
+    ],
+    "instruct_seed": 23,
+    "transcript": "Retain the full causal ground-truth speaker-attributed transcript in every condition.",
+    "prompt": "Keep the existing answer instructions unchanged; change only saved_results.",
+    "control": "Reproduce reactive/current-note runs; two sources-only views introduce no request-aware note selection.",
+    "budget": "Same 4,096-token ceiling; shorter views are not padded, and actual input tokens are reported.",
+    "cost": "Charge the same 434,979 existing writer-output tokens once to each note-based production scenario; this diagnostic introduces no new writer, so it tests representation, not cheaper note generation."
+  },
+  "preflight": {
+    "status": "CPU_preflight_pass_inference_not_started",
+    "questions": 105,
+    "development_questions": 12,
+    "conditions": 4,
+    "prepared_inputs": 420,
+    "original_prompt_hashes_verified": 210,
+    "max_input_tokens": {
+      "thinking": 45324,
+      "instruct": 45322
+    },
+    "mean_input_tokens": {
+      "reactive": 14100.257142857143,
+      "current_notes": 18262.914285714287,
+      "quotes_current": 16315.838095238096,
+      "quotes_history": 17079.466666666667
+    },
+    "history_adds_sources_to_questions": 73,
+    "CPU_behavior_tests": 7,
+    "GPUs": 0,
+    "original_writer_cost_shared_across_note_conditions": 434979,
+    "selection_uses_future_question": false,
+    "expected_development_answers": {
+      "thinking": 96,
+      "instruct": 48
+    },
+    "evaluation_gate": "Qualify revised scorer before GPU inference."
+  },
+  "gates": [
+    {
+      "id": "source-judge",
+      "status": "pending",
+      "action": "Qualify a revised evaluator that source-checks every proposed wrong fact and unsupported extra claim.",
+      "criterion": "Match all 84 source-reviewed outputs and 16 new authored controls; review disagreements before treating any new score as valid."
+    },
+    {
+      "id": "quote-cpu",
+      "status": "complete",
+      "action": "Prepare the four inputs and verify causality, source copying, context limits and reproduced prompt hashes.",
+      "criterion": "Seven CPU behavior tests,420 inputs and 210 recorded baseline/current-note prompt hashes pass."
+    },
+    {
+      "id": "diagnostic-pilot",
+      "status": "planned",
+      "action": "Run 12 familiar diagnostic questions with four conditions, both thinkers and two Thinking seeds.",
+      "criterion": "96 Thinking and 48 Instruct outputs; review every disagreement and check actual latency, caps and token accounting."
+    },
+    {
+      "id": "freeze-full",
+      "status": "planned",
+      "action": "Freeze the implementation after the pilot, then retain all 105 questions for the matched comparison.",
+      "criterion": "No tuning on the full-run outputs; this reused bank is not an unseen test set."
+    }
+  ],
+  "evaluation": {
+    "primary": "Fully supported answer accuracy and request-time native thinking tokens, with per-meeting paired confidence intervals.",
+    "additional": [
+      "Median and mean thinking tokens; cap-hit and missing-answer rates.",
+      "Cold serial H100 first-answer and completion time; report missing answers separately.",
+      "Actual input tokens and total generated tokens including earlier notes, errors and retries.",
+      "Descriptive correct-in-both and cap-excluded analyses alongside all-case primary results."
+    ],
+    "targets": "A useful candidate preserves accuracy within a predeclared 2 percentage-point margin, reduces mean thinking tokens by at least 15 percent and first-answer time by at least 10 percent, with paired intervals supporting the improvement; these are targets, not observed results."
+  },
+  "resources": {
+    "current_GPU_count": 0,
+    "current_maximum_active": 0,
+    "planned_maximum_active": 1,
+    "stages": [
+      {
+        "stage": "Evaluator qualification",
+        "GPU_count": 1,
+        "GPU": "A100 80 GB",
+        "roles": "Judge weights and 8 GiB KV on GPU 0",
+        "dependency": "Source-review cases and routing checks ready."
+      },
+      {
+        "stage": "Instruct diagnostic",
+        "GPU_count": 1,
+        "GPU": "A100 80 GB",
+        "roles": "Thinker weights and 8 GiB KV on GPU 0",
+        "dependency": "Evaluator qualification passes."
+      },
+      {
+        "stage": "Thinking diagnostic",
+        "GPU_count": 1,
+        "GPU": "H100 80 GB",
+        "roles": "Thinker weights and 8 GiB KV on GPU 0; cold serial requests",
+        "dependency": "Instruct stage completes; no shared GPU services."
+      },
+      {
+        "stage": "Diagnostic scoring",
+        "GPU_count": 1,
+        "GPU": "A100 80 GB",
+        "roles": "Qualified judge weights and 8 GiB KV on GPU 0",
+        "dependency": "Both thinker stages complete."
+      }
+    ],
+    "sharing": "Stages sequential; no S1, ASR, TTS or DuplexOmni; no job submitted during this review."
+  },
+  "later": "Only if quote-only inputs preserve quality should a separate question-blind writer be tested that saves source IDs and event links without rewriting factual claims."
+}

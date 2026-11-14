@@ -1,17 +1,17 @@
 {
-  "updated": "2026-11-12T11:40:07-05:00",
-  "status": "full_scored_with_targeted_source_review",
+  "updated": "2026-11-13T20:22:04-05:00",
+  "status": "saved_runs_reviewed_followup_prepared",
   "api_revision": "v2",
   "control_count": 10,
   "repair_attempts": 1,
   "behavior_tests": 17,
   "brief": [
     {
-      "text": "The new study compares reactive thinking, current source notes, JSON edits and native function calls.",
-      "url": "#design"
+      "text": "Saved notes can replace supporting speech, repeat stale facts and turn uncertainty into a confirmed decision.",
+      "url": "#review"
     },
     {
-      "text": "All 1,260 answers are saved and scored; 24 answers have targeted source review, with raw automatic labels retained.",
+      "text": "All 1,260 answers are saved and scored; 84 answers have targeted source review, with raw automatic labels retained.",
       "url": "#results"
     },
     {
@@ -19,8 +19,8 @@
       "url": "#results"
     },
     {
-      "text": "DuplexOmni remains stopped while this S2 study runs.",
-      "url": "#next"
+      "text": "The next diagnostic keeps the selected speech and removes generated note text; inputs are prepared and inference has not started.",
+      "url": "#followup"
     }
   ],
   "stages": [
@@ -689,9 +689,9 @@
     }
   ],
   "next_steps": [
-    "Inspect newly incorrect and newly correct answers to identify which note edits affect answer quality.",
-    "Check whether token reductions persist on correct answers, alongside measured latency and the complete note-generation cost.",
-    "Use those findings to decide whether a separate notes-plus-transcript-lookup experiment is justified."
+    "Qualify source-based checking of every proposed wrong fact and unsupported addition before scoring new runs.",
+    "Run the prepared twelve-question comparison to isolate generated note text from the source passages it selects.",
+    "Freeze the tested design before repeating all105 questions; keep DuplexOmni stopped."
   ],
   "analysis": {
     "scope": "full",
@@ -714,10 +714,10 @@
             "meetings": 26
           },
           "supported_correct": {
-            "mean": 0.8380952380952381,
+            "mean": 0.8476190476190476,
             "CI95": [
-              0.7625,
-              0.905511811023622
+              0.7802197802197802,
+              0.911504424778761
             ],
             "questions": 105,
             "meetings": 26
@@ -903,10 +903,10 @@
             "meetings": 26
           },
           "supported_correct": {
-            "mean": 0.8952380952380953,
+            "mean": 0.9047619047619048,
             "CI95": [
-              0.8315789473684211,
-              0.95
+              0.8369565217391305,
+              0.9605263157894737
             ],
             "questions": 105,
             "meetings": 26
@@ -957,19 +957,19 @@
         "pending_source_review": 0,
         "metrics": {
           "core_correct": {
-            "mean": 0.8952380952380953,
+            "mean": 0.9095238095238095,
             "CI95": [
-              0.8490566037735849,
-              0.94
+              0.8680555555555556,
+              0.9516129032258065
             ],
             "questions": 105,
             "meetings": 26
           },
           "supported_correct": {
-            "mean": 0.8333333333333334,
+            "mean": 0.8476190476190476,
             "CI95": [
-              0.7727272727272727,
-              0.8877551020408163
+              0.7888888888888889,
+              0.9
             ],
             "questions": 105,
             "meetings": 26
@@ -1029,19 +1029,19 @@
         "pending_source_review": 0,
         "metrics": {
           "core_correct": {
-            "mean": 0.9238095238095239,
+            "mean": 0.9285714285714286,
             "CI95": [
-              0.8884615384615384,
-              0.9591836734693877
+              0.8950617283950617,
+              0.9625
             ],
             "questions": 105,
             "meetings": 26
           },
           "supported_correct": {
-            "mean": 0.9047619047619048,
+            "mean": 0.919047619047619,
             "CI95": [
-              0.8641304347826086,
-              0.9409090909090909
+              0.8820754716981132,
+              0.9514563106796117
             ],
             "questions": 105,
             "meetings": 26
@@ -1101,19 +1101,19 @@
         "pending_source_review": 0,
         "metrics": {
           "core_correct": {
-            "mean": 0.919047619047619,
+            "mean": 0.9285714285714286,
             "CI95": [
-              0.8722222222222222,
-              0.9611111111111111
+              0.8853211009174312,
+              0.9642857142857143
             ],
             "questions": 105,
             "meetings": 26
           },
           "supported_correct": {
-            "mean": 0.8809523809523809,
+            "mean": 0.8952380952380953,
             "CI95": [
-              0.8333333333333334,
-              0.9230769230769231
+              0.8465346534653465,
+              0.9329896907216495
             ],
             "questions": 105,
             "meetings": 26
@@ -1173,19 +1173,19 @@
         "pending_source_review": 0,
         "metrics": {
           "core_correct": {
-            "mean": 0.9047619047619048,
+            "mean": 0.9142857142857143,
             "CI95": [
-              0.8481012658227848,
-              0.9527027027027027
+              0.8586956521739131,
+              0.9573643410852714
             ],
             "questions": 105,
             "meetings": 26
           },
           "supported_correct": {
-            "mean": 0.8428571428571429,
+            "mean": 0.8571428571428571,
             "CI95": [
-              0.782608695652174,
-              0.8982300884955752
+              0.7967032967032966,
+              0.908
             ],
             "questions": 105,
             "meetings": 26
@@ -1254,10 +1254,10 @@
             "meetings": 26
           },
           "supported_correct": {
-            "mean": -0.06666666666666667,
+            "mean": -0.05714285714285714,
             "CI95": [
-              -0.14606741573033707,
-              0.012048192771084338
+              -0.13333333333333333,
+              0.02040816326530612
             ],
             "questions": 105,
             "meetings": 26
@@ -1412,10 +1412,10 @@
             "meetings": 26
           },
           "supported_correct": {
-            "mean": -0.009523809523809525,
+            "mean": 0.0,
             "CI95": [
-              -0.0707070707070707,
-              0.06153846153846154
+              -0.0625,
+              0.0684931506849315
             ],
             "questions": 105,
             "meetings": 26
@@ -1482,10 +1482,10 @@
         "baseline": "reactive",
         "metrics": {
           "core_correct": {
-            "mean": -0.02857142857142857,
+            "mean": -0.01904761904761905,
             "CI95": [
-              -0.07207207207207207,
-              0.00641025641025641
+              -0.05392156862745098,
+              0.010416666666666666
             ],
             "questions": 105,
             "meetings": 26
@@ -1493,8 +1493,8 @@
           "supported_correct": {
             "mean": -0.07142857142857142,
             "CI95": [
-              -0.11931818181818182,
-              -0.02666666666666667
+              -0.11855670103092783,
+              -0.031578947368421054
             ],
             "questions": 105,
             "meetings": 26
@@ -1508,12 +1508,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 129.58450704225353,
+              "mean": 132.96666666666667,
               "CI95": [
-                3.8684210526315788,
-                243.0595238095238
+                17.70175438596491,
+                221.97297297297297
               ],
-              "questions": 71,
+              "questions": 75,
               "meetings": 21
             }
           },
@@ -1544,12 +1544,12 @@
             "questions": 102,
             "meetings": 25,
             "both_supported_correct": {
-              "mean": 0.4352288823040597,
+              "mean": 0.322274835402623,
               "CI95": [
-                -0.8086724363595587,
-                1.7690642117544622
+                -0.8515225130768391,
+                1.560621790210577
               ],
-              "questions": 79,
+              "questions": 82,
               "meetings": 23
             }
           },
@@ -1562,12 +1562,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 0.5255052844632456,
+              "mean": 0.41651734697635917,
               "CI95": [
-                -0.7246262701896863,
-                1.8356653682457675
+                -0.7737058408376469,
+                1.642320309971753
               ],
-              "questions": 82,
+              "questions": 85,
               "meetings": 24
             }
           }
@@ -1579,10 +1579,10 @@
         "baseline": "reactive",
         "metrics": {
           "core_correct": {
-            "mean": -0.004761904761904762,
+            "mean": 0.0,
             "CI95": [
-              -0.039603960396039604,
-              0.027472527472527472
+              -0.0379746835443038,
+              0.03333333333333333
             ],
             "questions": 105,
             "meetings": 26
@@ -1590,8 +1590,8 @@
           "supported_correct": {
             "mean": -0.023809523809523808,
             "CI95": [
-              -0.07291666666666667,
-              0.022222222222222223
+              -0.07692307692307693,
+              0.0211864406779661
             ],
             "questions": 105,
             "meetings": 26
@@ -1605,12 +1605,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": -16.355263157894736,
+              "mean": 7.425,
               "CI95": [
-                -195.16,
-                191.45098039215685
+                -149.2087912087912,
+                209.49333333333334
               ],
-              "questions": 76,
+              "questions": 80,
               "meetings": 23
             }
           },
@@ -1641,12 +1641,12 @@
             "questions": 103,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 0.33746584501231397,
+              "mean": 0.2860163174706566,
               "CI95": [
-                -1.3272172090095695,
-                2.072712825155707
+                -1.298396010999661,
+                2.0161720679692507
               ],
-              "questions": 82,
+              "questions": 85,
               "meetings": 24
             }
           },
@@ -1659,12 +1659,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 0.3386916238047955,
+              "mean": 0.2826289411411648,
               "CI95": [
-                -1.3159567513139336,
-                2.0687085994203143
+                -1.2919282962506085,
+                1.9933475109666299
               ],
-              "questions": 82,
+              "questions": 85,
               "meetings": 24
             }
           }
@@ -1676,10 +1676,10 @@
         "baseline": "reactive",
         "metrics": {
           "core_correct": {
-            "mean": -0.01904761904761905,
+            "mean": -0.014285714285714285,
             "CI95": [
-              -0.06626506024096386,
-              0.018518518518518517
+              -0.0625,
+              0.021739130434782608
             ],
             "questions": 105,
             "meetings": 26
@@ -1687,8 +1687,8 @@
           "supported_correct": {
             "mean": -0.06190476190476191,
             "CI95": [
-              -0.11224489795918367,
-              -0.008928571428571428
+              -0.1134453781512605,
+              -0.014150943396226415
             ],
             "questions": 105,
             "meetings": 26
@@ -1702,12 +1702,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 44.136986301369866,
+              "mean": 13.831168831168831,
               "CI95": [
-                -212.32467532467533,
-                337.25949367088606
+                -223.91139240506328,
+                301.3521126760563
               ],
-              "questions": 73,
+              "questions": 77,
               "meetings": 25
             }
           },
@@ -1738,12 +1738,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 0.7058624552391848,
+              "mean": 0.547454659739663,
               "CI95": [
-                -1.1599190738969114,
-                3.0226441275076033
+                -1.2038145924537211,
+                2.7673422874036584
               ],
-              "questions": 88,
+              "questions": 92,
               "meetings": 26
             }
           },
@@ -1756,12 +1756,12 @@
             "questions": 105,
             "meetings": 26,
             "both_supported_correct": {
-              "mean": 0.7454185436705633,
+              "mean": 0.5880662891957636,
               "CI95": [
-                -1.09926848068343,
-                3.0480900786991296
+                -1.1551938325928088,
+                2.8134124898587407
               ],
-              "questions": 88,
+              "questions": 92,
               "meetings": 26
             }
           }
@@ -1913,13 +1913,18 @@
     "pending_source_review": 0,
     "missing_judgments": 0,
     "source_review": {
-      "status": "targeted_source_review_complete",
+      "status": "targeted_source_review_extended",
       "reviewed_by": "Codex",
       "reviewed_at_utc": "2026-11-12T16:39:10.486237+00:00",
-      "reviewed_outputs": 24,
+      "reviewed_outputs": 84,
       "reviewed_question_ids": [
         "first:authored-W1-2",
-        "scale:TS3006c-S05-Q3"
+        "scale:TS3006c-S05-Q3",
+        "pilot:P-EN-segmentation",
+        "expansion:TS-looks",
+        "expansion:IS-lost",
+        "scale:ES2006a-Slater-Q2",
+        "scale:TS3004d-Slater-Q1"
       ],
       "reviewed_row_ids": [
         "instruct|first:authored-W1-2|source|23",
@@ -1945,7 +1950,67 @@
         "thinking|scale:TS3006c-S05-Q3|reactive|47",
         "thinking|scale:TS3006c-S05-Q3|source|47",
         "thinking|scale:TS3006c-S05-Q3|tools|47",
-        "thinking|first:authored-W1-2|tools|47"
+        "thinking|first:authored-W1-2|tools|47",
+        "instruct|expansion:TS-looks|reactive|23",
+        "instruct|expansion:TS-looks|tools|23",
+        "instruct|expansion:IS-lost|json|23",
+        "instruct|pilot:P-EN-segmentation|source|23",
+        "instruct|expansion:IS-lost|source|23",
+        "instruct|pilot:P-EN-segmentation|tools|23",
+        "instruct|pilot:P-EN-segmentation|reactive|23",
+        "instruct|scale:ES2006a-Slater-Q2|json|23",
+        "instruct|pilot:P-EN-segmentation|json|23",
+        "instruct|scale:ES2006a-Slater-Q2|source|23",
+        "instruct|expansion:IS-lost|reactive|23",
+        "instruct|scale:ES2006a-Slater-Q2|reactive|23",
+        "instruct|expansion:IS-lost|tools|23",
+        "instruct|expansion:TS-looks|json|23",
+        "instruct|scale:TS3004d-Slater-Q1|reactive|23",
+        "instruct|expansion:TS-looks|source|23",
+        "instruct|scale:TS3004d-Slater-Q1|json|23",
+        "instruct|scale:TS3004d-Slater-Q1|tools|23",
+        "instruct|scale:ES2006a-Slater-Q2|tools|23",
+        "instruct|scale:TS3004d-Slater-Q1|source|23",
+        "thinking|expansion:TS-looks|reactive|23",
+        "thinking|expansion:TS-looks|tools|23",
+        "thinking|expansion:IS-lost|json|23",
+        "thinking|pilot:P-EN-segmentation|source|23",
+        "thinking|expansion:IS-lost|source|23",
+        "thinking|pilot:P-EN-segmentation|tools|23",
+        "thinking|pilot:P-EN-segmentation|reactive|23",
+        "thinking|scale:ES2006a-Slater-Q2|json|23",
+        "thinking|pilot:P-EN-segmentation|json|23",
+        "thinking|scale:ES2006a-Slater-Q2|source|23",
+        "thinking|expansion:IS-lost|reactive|23",
+        "thinking|scale:ES2006a-Slater-Q2|reactive|23",
+        "thinking|expansion:IS-lost|tools|23",
+        "thinking|expansion:TS-looks|json|23",
+        "thinking|scale:TS3004d-Slater-Q1|reactive|23",
+        "thinking|expansion:TS-looks|source|23",
+        "thinking|scale:TS3004d-Slater-Q1|json|23",
+        "thinking|scale:TS3004d-Slater-Q1|tools|23",
+        "thinking|scale:ES2006a-Slater-Q2|tools|23",
+        "thinking|scale:TS3004d-Slater-Q1|source|23",
+        "thinking|expansion:TS-looks|reactive|47",
+        "thinking|expansion:TS-looks|tools|47",
+        "thinking|expansion:IS-lost|json|47",
+        "thinking|pilot:P-EN-segmentation|source|47",
+        "thinking|expansion:IS-lost|source|47",
+        "thinking|pilot:P-EN-segmentation|tools|47",
+        "thinking|pilot:P-EN-segmentation|reactive|47",
+        "thinking|scale:ES2006a-Slater-Q2|json|47",
+        "thinking|pilot:P-EN-segmentation|json|47",
+        "thinking|scale:ES2006a-Slater-Q2|source|47",
+        "thinking|expansion:IS-lost|reactive|47",
+        "thinking|scale:ES2006a-Slater-Q2|reactive|47",
+        "thinking|expansion:IS-lost|tools|47",
+        "thinking|expansion:TS-looks|json|47",
+        "thinking|scale:TS3004d-Slater-Q1|reactive|47",
+        "thinking|expansion:TS-looks|source|47",
+        "thinking|scale:TS3004d-Slater-Q1|json|47",
+        "thinking|scale:TS3004d-Slater-Q1|tools|47",
+        "thinking|scale:ES2006a-Slater-Q2|tools|47",
+        "thinking|scale:TS3004d-Slater-Q1|source|47"
       ],
       "assessments": [
         {
@@ -2321,6 +2386,954 @@
             "EN2003a-U00107"
           ],
           "reason": "A is the sender; today/tomorrow and end of this week are compatible because the source explicitly says Thursday. The answer gives a source-supported reason for Claire: appropriate addresses, relevance or familiarity with recipients. Engagement is described as a purpose or possibility, not a measured outcome."
+        },
+        {
+          "row_id": "instruct|expansion:TS-looks|reactive|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "Eighty percent of the people questioned indicated they would spend more money on a fancy-looking remote control.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "instruct|expansion:TS-looks|tools|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "Eighty percent of the people questioned indicated they would spend more money on a fancy-looking remote control.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "instruct|expansion:IS-lost|json|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "Fifty percent of users reported that they lose their remote control frequently.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "instruct|pilot:P-EN-segmentation|source|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation with the L_C_ seg and text tiles was basically done, but it still needs tuning and a search through parameters.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "instruct|expansion:IS-lost|source|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "Thirty-four percent of users reported that the remote control gets lost a lot of the time in the room.",
+          "core_correct": false,
+          "material_unsupported": true,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "instruct|pilot:P-EN-segmentation|tools|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "B reported that the topic segmentation task is 'basically done' but still requires final completion, with progress confirmed as pending. B has six days to finish it.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "instruct|pilot:P-EN-segmentation|reactive|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation was nearly complete, with B stating it was 'basically done' and only needing tuning of parameters. D confirmed this, noting it was 'tuned I guess or yeah.'",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "instruct|scale:ES2006a-Slater-Q2|json|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design focuses on identifying the required functions and capabilities of the remote control, while conceptual design addresses how the product will be implemented, including user interaction and the identification of components. Detailed design follows conceptual design and involves integrating components.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "instruct|pilot:P-EN-segmentation|json|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation is essentially done, with B stating it's 'basically done' and only needing tuning of parameters. D confirmed it was tuned or adjusted. A and B also noted it was completed with the L_C_ seg and text tiles.",
+          "core_correct": true,
+          "material_unsupported": true,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "The main status is correct, but the added claim that D confirmed it was already tuned/adjusted and that A and B said it was completed overstates the exchange; B still says it needs tuning and a parameter search."
+        },
+        {
+          "row_id": "instruct|scale:ES2006a-Slater-Q2|source|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "The functional design phase focuses on identifying the specific functions the remote control must perform and its technical requirements. The conceptual design phase involves developing the overall interface concept, including how users will interact with the product, and designing the user interface. While functional design addresses 'what the product does,' conceptual design addresses 'how it will be used.'",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "instruct|expansion:IS-lost|reactive|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "Thirty-four percent of users reported that they lose their remote control frequently.",
+          "core_correct": false,
+          "material_unsupported": true,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "instruct|scale:ES2006a-Slater-Q2|reactive|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "The functional design phase focuses on identifying the required functions and specific tasks the remote control must perform. The conceptual design phase involves how users will interact with the product, including the overall user experience and interface concept, extending beyond just functionality to include usability and design approach.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "instruct|expansion:IS-lost|tools|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "Fifty percent of users reported that they lose their remote control frequently in the room.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "instruct|expansion:TS-looks|json|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "Eighty percent of the people questioned indicated they would spend more money on a fancy-looking remote control.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "instruct|scale:TS3004d-Slater-Q1|reactive|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The team decided not to add backlighting to the slide panel. A: 'No, it's only on the number, behind the numbers and uh' B: 'Yeah, not needed I think.'",
+          "core_correct": false,
+          "material_unsupported": true,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "This answer stops at the earlier objection to panel lighting and misses the later accepted design at U00520-U00544; its assertion that backlighting was rejected is incorrect."
+        },
+        {
+          "row_id": "instruct|expansion:TS-looks|source|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "Eighty percent of the people questioned indicated they would spend more money on a fancy-looking remote control.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "instruct|scale:TS3004d-Slater-Q1|json|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The final decision was to include a backlight for the slide panel that lights up when opened, with a green or blue light used to illuminate the entire panel, not just the buttons. This was confirmed as a desirable feature despite initial concerns about reachability.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "instruct|scale:TS3004d-Slater-Q1|tools|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The final decision was that the slide panel would have a green or blue light to illuminate it when opened, but not on the buttons themselves. The light would be behind the buttons, with the buttons appearing grey and semi-transparent.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "instruct|scale:ES2006a-Slater-Q2|tools|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "The functional design phase focuses on identifying the required functions and specific capabilities of the remote control, including initial component identification. The conceptual design phase focuses on how the remote control will be structured and presented, including the interface concept and visual design, building on the functional foundation.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "instruct|scale:TS3004d-Slater-Q1|source|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The team decided not to add backlighting to the slide panel. A: No, it's only on the number, behind the numbers and uh",
+          "core_correct": false,
+          "material_unsupported": true,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "This answer stops at the earlier objection to panel lighting and misses the later accepted design at U00520-U00544; its assertion that backlighting was rejected is incorrect."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|reactive|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|tools|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people indicated they would spend more money on a fancy-looking remote control.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|json|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "50 people reported losing their remote controls often in the focus group of 100 people.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|source|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation is 'basically done' with L_C_ seg and text tiles, but needs tuning as mentioned by B.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|source|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "50% of users said they keep losing their remote controls.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|tools|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation is 'basically done' but still requires final completion/tuning, as stated by B in the meeting. B has six days to complete it.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|reactive|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "B states that the topic segmentation (with L_C_ seg and text tiles) is basically done.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|json|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design identifies required functions and capabilities of the remote control. Conceptual design addresses how the design will be implemented, including identifying product components and user interaction. As clarified: 'Functional design is what it needs to do, conceptual design is how it will be done.'",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|json|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "B said the topic segmentation with the L_C_ seg and text tiles is 'basically done' (EN2002b-U00291).",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|source|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design focuses on what functions the remote control needs to perform (e.g., specific features it must have), while conceptual design focuses on how people will use the product (e.g., the user experience and interaction flow).",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|reactive|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "Fifty percent of users reported that their remote control gets lost a lot of the time in the room.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|reactive|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design specifies required functions (e.g., what the remote must do), while conceptual design focuses on user interaction and interface (e.g., how users will use it), as explained by C during the meeting.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|tools|23",
+          "question_id": "expansion:IS-lost",
+          "answer": "Fifty percent of users reported that they lose their remote controls frequently.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|json|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80%",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|reactive|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The slide panel will have backlighting behind the buttons, not on the buttons themselves, with buttons being grey. They decided against backlighting on the buttons and instead opted for a subtle light behind the buttons to illuminate the panel.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|source|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|json|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The team decided to include a green or blue backlight to light up the slide panel, with the backlight behind the buttons rather than on the buttons themselves. D said 'Then we do it' after B confirmed it's reachable, and C confirmed the buttons would be grey with backlight behind them.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|tools|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The final decision was to add a green or blue light to illuminate the slide panel when opened, with the buttons remaining grey and semi-transparent without backlighting on the buttons themselves.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|tools|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design focuses on required functions and specific capabilities (what the remote control needs to do), while conceptual design focuses on how the remote control will be structured and presented, including user interaction (how it will be done).",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|source|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "They decided to add a green or blue backlight to light up the slide panel, with the buttons remaining grey and having backlighting behind them rather than on the buttons themselves.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|reactive|47",
+          "question_id": "expansion:TS-looks",
+          "answer": "80",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|tools|47",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|json|47",
+          "question_id": "expansion:IS-lost",
+          "answer": "50 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|source|47",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "They had basically completed the topic segmentation with L_C_seg and text tiles, but it still needed tuning and parameter adjustments.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|source|47",
+          "question_id": "expansion:IS-lost",
+          "answer": "50 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|tools|47",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation is 'basically done' but still requires final completion, as stated by B in the latest update.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|reactive|47",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "B states that the topic segmentation is 'basically done'.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|json|47",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design defines the required functions and capabilities of the remote control (what it needs to do), while conceptual design defines how the design will be implemented (how it will be done), including identifying product components and user interaction. C stated functional design focuses on 'what functions we need' and conceptual design on 'how people are going to use it'.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|json|47",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation is basically done with L_C_ seg and text tiles, but needs tuning.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|source|47",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design specifies the required functions and tasks the remote must perform. Conceptual design focuses on the user experience, including how people will interact with the product. As explained: functional design covers 'what functions we need' while conceptual design covers 'how people are going to use it'.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|reactive|47",
+          "question_id": "expansion:IS-lost",
+          "answer": "50% of users reported losing their remote controls.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|reactive|47",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design defines required functions and specific capabilities (what the remote must do). Conceptual design defines user interaction (how people will use it).",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|tools|47",
+          "question_id": "expansion:IS-lost",
+          "answer": "50 people reported losing their remote controls frequently (50% of the 100 surveyed in the focus group).",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|json|47",
+          "question_id": "expansion:TS-looks",
+          "answer": "eighty percent",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|reactive|47",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The final decision was to have a backlight for the slide panel to light it all up (a green or blue light), but not on the buttons themselves. The buttons would remain grey without backlighting on them, with the backlight being behind the buttons instead.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|source|47",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people were willing to pay more for a fancy-looking remote control, as 80% of the 100 test subjects indicated this.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|json|47",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The slide panel will have backlighting that activates upon opening, behind the buttons (not on the buttons), with a green or blue light. This was confirmed as 'then we do it' and further specified as 'just backlight' with lighting behind the buttons.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|tools|47",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The slide panel will have a green or blue backlight to illuminate the panel when opened, with light behind the buttons (not on the buttons themselves), and the buttons will be grey and semi-transparent.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|tools|47",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design focuses on specific functions and capabilities the remote control must perform (e.g., what it needs to do). Conceptual design focuses on how people will use it, including structure, presentation, and user experience (e.g., how it will be done). Component identification begins in functional design but continues through conceptual design.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|source|47",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The team decided to add a backlight (green or blue light) to the slide panel to light it up, with buttons remaining grey and semi-transparent with the backlight behind them. This was confirmed by D's 'Okay, fine' at TS3004d-U00547.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
         }
       ],
       "corrections": [
@@ -2447,12 +3460,233 @@
             "TS3006c-U00038"
           ],
           "reason": "The answer omits C's reported placement in the folder, which is the required fact; an unresolved access issue alone is insufficient. The stated uncertainty does not invent a successful lookup."
+        },
+        {
+          "row_id": "instruct|pilot:P-EN-segmentation|tools|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "B reported that the topic segmentation task is 'basically done' but still requires final completion, with progress confirmed as pending. B has six days to finish it.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "instruct|scale:ES2006a-Slater-Q2|json|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design focuses on identifying the required functions and capabilities of the remote control, while conceptual design addresses how the product will be implemented, including user interaction and the identification of components. Detailed design follows conceptual design and involves integrating components.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|reactive|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|tools|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people indicated they would spend more money on a fancy-looking remote control.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|pilot:P-EN-segmentation|tools|23",
+          "question_id": "pilot:P-EN-segmentation",
+          "answer": "Topic segmentation is 'basically done' but still requires final completion/tuning, as stated by B in the meeting. B has six days to complete it.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "EN2002b-U00237",
+            "EN2002b-U00291",
+            "EN2002b-U00293",
+            "EN2002b-U00294",
+            "EN2002b-U00296"
+          ],
+          "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|json|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design identifies required functions and capabilities of the remote control. Conceptual design addresses how the design will be implemented, including identifying product components and user interaction. As clarified: 'Functional design is what it needs to do, conceptual design is how it will be done.'",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|reactive|23",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design specifies required functions (e.g., what the remote must do), while conceptual design focuses on user interaction and interface (e.g., how users will use it), as explained by C during the meeting.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|reactive|23",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The slide panel will have backlighting behind the buttons, not on the buttons themselves, with buttons being grey. They decided against backlighting on the buttons and instead opted for a subtle light behind the buttons to illuminate the panel.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|source|23",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:TS-looks|tools|47",
+          "question_id": "expansion:TS-looks",
+          "answer": "80 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3003b-U00048",
+            "TS3003b-U00056"
+          ],
+          "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|json|47",
+          "question_id": "expansion:IS-lost",
+          "answer": "50 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|expansion:IS-lost|source|47",
+          "question_id": "expansion:IS-lost",
+          "answer": "50 people",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "IS1000b-U00059",
+            "IS1000b-U00091",
+            "IS1000b-U00094"
+          ],
+          "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote."
+        },
+        {
+          "row_id": "thinking|scale:ES2006a-Slater-Q2|json|47",
+          "question_id": "scale:ES2006a-Slater-Q2",
+          "answer": "Functional design defines the required functions and capabilities of the remote control (what it needs to do), while conceptual design defines how the design will be implemented (how it will be done), including identifying product components and user interaction. C stated functional design focuses on 'what functions we need' and conceptual design on 'how people are going to use it'.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "ES2006a-U00037",
+            "ES2006a-U00039",
+            "ES2006a-U00041",
+            "ES2006a-U00043",
+            "ES2006a-U00045",
+            "ES2006a-U00144",
+            "ES2006a-U00145",
+            "ES2006a-U00170",
+            "ES2006a-U00172"
+          ],
+          "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase."
+        },
+        {
+          "row_id": "thinking|scale:TS3004d-Slater-Q1|source|47",
+          "question_id": "scale:TS3004d-Slater-Q1",
+          "answer": "The team decided to add a backlight (green or blue light) to the slide panel to light it up, with buttons remaining grey and semi-transparent with the backlight behind them. This was confirmed by D's 'Okay, fine' at TS3004d-U00547.",
+          "core_correct": true,
+          "material_unsupported": false,
+          "source_ids": [
+            "TS3004d-U00520",
+            "TS3004d-U00526",
+            "TS3004d-U00527",
+            "TS3004d-U00530",
+            "TS3004d-U00532",
+            "TS3004d-U00538",
+            "TS3004d-U00540",
+            "TS3004d-U00541",
+            "TS3004d-U00544",
+            "TS3004d-U00547"
+          ],
+          "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key."
         }
       ],
       "raw_analysis_sha256_before_review": "c2d036d7748d8d0d04de55aaabb8210b68f2a5d9929f2bf18d7d03801526f12e",
-      "scope_note": "All24 answers for the two predeclared judge-error questions were checked against the full causal source prefixes; the remaining questions retain automatic judgments. Original automatic scores are preserved.",
+      "scope_note": "All84 answers for seven selected questions source-reviewed; other98questions retain automatic judgments. Additional questions were selected after inspecting flips, so this is targeted error correction, not a random accuracy audit.",
       "date_equivalence_note": "Thursday is explicitly stated at EN2003a-U00034, so by end of week is compatible with today/tomorrow at U00050; no unsupported timing revision is inferred.",
-      "citation_note": "Thinking/JSON/seed47 for the folder question cites U00066 instead of U00026 for a factual claim supported elsewhere in the prefix; record citation quality separately from answer-content accuracy."
+      "citation_note": "Thinking/JSON/seed47 for the folder question cites U00066 instead of U00026 for a factual claim supported elsewhere in the prefix; record citation quality separately from answer-content accuracy.",
+      "extension_review": "2026-11-13"
     },
     "scorer_controls": 55,
     "scorer_disagreements": [
@@ -2921,6 +4155,852 @@
             "boundary": "speaker_gap",
             "id": "TS3006c-U00038",
             "available": 153.46
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how far had we got with topic segmentation?",
+        "answer": "B reported that the topic segmentation task is 'basically done' but still requires final completion, with progress confirmed as pending. B has six days to finish it.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done.",
+        "source_speech": [
+          {
+            "speaker": "B",
+            "start": 441.05,
+            "end": 443.8,
+            "text": "And so I've only got six days to do the topic segmentation as well.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00237",
+            "available": 444.3
+          },
+          {
+            "speaker": "B",
+            "start": 508.61,
+            "end": 513.48,
+            "text": "The topic segmentation with the L_C_ seg and text tiles basically done.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00291",
+            "available": 513.98
+          },
+          {
+            "speaker": "D",
+            "start": 515.51,
+            "end": 516.85,
+            "text": "Tuned I guess or yeah.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00293",
+            "available": 517.35
+          },
+          {
+            "speaker": "B",
+            "start": 513.48,
+            "end": 517.44,
+            "text": "It just needs to be done because you know what I mean, the co yeah, tuned, yeah.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00294",
+            "available": 517.94
+          },
+          {
+            "speaker": "B",
+            "start": 517.44,
+            "end": 520.69,
+            "text": "A search through the parameters or something.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00296",
+            "available": 521.19
+          }
+        ]
+      },
+      {
+        "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+        "answer": "Functional design focuses on identifying the required functions and capabilities of the remote control, while conceptual design addresses how the product will be implemented, including user interaction and the identification of components. Detailed design follows conceptual design and involves integrating components.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase.",
+        "source_speech": [
+          {
+            "speaker": "C",
+            "start": 199.01,
+            "end": 204.32,
+            "text": "I think it th w we're talking the the functional design is more your",
+            "boundary": "speaker_gap",
+            "id": "ES2006a-U00037",
+            "available": 204.82
+          },
+          {
+            "speaker": "C",
+            "start": 205.82,
+            "end": 218.08,
+            "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00039",
+            "available": 218.58
+          },
+          {
+            "speaker": "C",
+            "start": 218.08,
+            "end": 225.83,
+            "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00041",
+            "available": 226.33
+          },
+          {
+            "speaker": "A",
+            "start": 233.14,
+            "end": 243.33,
+            "text": "Uh I think it's it's in the conceptual design phase that we identify the it's in the conceptual design phase that we identify the components of our product?",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00043",
+            "available": 243.83
+          },
+          {
+            "speaker": "C",
+            "start": 244.45,
+            "end": 251.9,
+            "text": "Um I think we'll we'll start that initially with the functional design already but then yeah.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00045",
+            "available": 252.4
+          },
+          {
+            "speaker": "D",
+            "start": 615.18,
+            "end": 628.01,
+            "text": "yeah, designing the technical functions of the um um of the remote control uh then in the in the conceptual design stage I need to",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00144",
+            "available": 628.51
+          },
+          {
+            "speaker": "D",
+            "start": 628.01,
+            "end": 638.45,
+            "text": "um come up with uh interface concept and then in the last um stage I will be responsible for the int infa for the user interface design.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00145",
+            "available": 638.95
+          },
+          {
+            "speaker": "A",
+            "start": 737.87,
+            "end": 750.18,
+            "text": "ho how it works and whatever it'll mm take during the functional role, what are the various functions that have to be performed by it uh during the um conceptual design, what are the various components of it",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00170",
+            "available": 750.68
+          },
+          {
+            "speaker": "A",
+            "start": 755.26,
+            "end": 762.78,
+            "text": "Um the detailed design, I I guess it will again be the identification of the components and how they integrate with each other.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00172",
+            "available": 763.28
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how many people were willing to pay more just for the design?",
+        "answer": "80 people",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made.",
+        "source_speech": [
+          {
+            "speaker": "D",
+            "start": 225.56,
+            "end": 228.22,
+            "text": "We had one hundred of these uh test subjects.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00048",
+            "available": 228.72
+          },
+          {
+            "speaker": "D",
+            "start": 256.33,
+            "end": 262.85,
+            "text": "Um and an additional eighty percent indicated that they would spend more money on a fancy-looking remote control.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00056",
+            "available": 263.35
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how many people were willing to pay more just for the design?",
+        "answer": "80 people indicated they would spend more money on a fancy-looking remote control.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made.",
+        "source_speech": [
+          {
+            "speaker": "D",
+            "start": 225.56,
+            "end": 228.22,
+            "text": "We had one hundred of these uh test subjects.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00048",
+            "available": 228.72
+          },
+          {
+            "speaker": "D",
+            "start": 256.33,
+            "end": 262.85,
+            "text": "Um and an additional eighty percent indicated that they would spend more money on a fancy-looking remote control.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00056",
+            "available": 263.35
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how far had we got with topic segmentation?",
+        "answer": "Topic segmentation is 'basically done' but still requires final completion/tuning, as stated by B in the meeting. B has six days to complete it.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "B explicitly says 'six days to do the topic segmentation' at U00237; later says it is basically done and needs tuning. Reporting that time allowance is supported. An unfinished tuning task is compatible with basically done.",
+        "source_speech": [
+          {
+            "speaker": "B",
+            "start": 441.05,
+            "end": 443.8,
+            "text": "And so I've only got six days to do the topic segmentation as well.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00237",
+            "available": 444.3
+          },
+          {
+            "speaker": "B",
+            "start": 508.61,
+            "end": 513.48,
+            "text": "The topic segmentation with the L_C_ seg and text tiles basically done.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00291",
+            "available": 513.98
+          },
+          {
+            "speaker": "D",
+            "start": 515.51,
+            "end": 516.85,
+            "text": "Tuned I guess or yeah.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00293",
+            "available": 517.35
+          },
+          {
+            "speaker": "B",
+            "start": 513.48,
+            "end": 517.44,
+            "text": "It just needs to be done because you know what I mean, the co yeah, tuned, yeah.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00294",
+            "available": 517.94
+          },
+          {
+            "speaker": "B",
+            "start": 517.44,
+            "end": 520.69,
+            "text": "A search through the parameters or something.",
+            "boundary": "sentence_end",
+            "id": "EN2002b-U00296",
+            "available": 521.19
+          }
+        ]
+      },
+      {
+        "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+        "answer": "Functional design identifies required functions and capabilities of the remote control. Conceptual design addresses how the design will be implemented, including identifying product components and user interaction. As clarified: 'Functional design is what it needs to do, conceptual design is how it will be done.'",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase.",
+        "source_speech": [
+          {
+            "speaker": "C",
+            "start": 199.01,
+            "end": 204.32,
+            "text": "I think it th w we're talking the the functional design is more your",
+            "boundary": "speaker_gap",
+            "id": "ES2006a-U00037",
+            "available": 204.82
+          },
+          {
+            "speaker": "C",
+            "start": 205.82,
+            "end": 218.08,
+            "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00039",
+            "available": 218.58
+          },
+          {
+            "speaker": "C",
+            "start": 218.08,
+            "end": 225.83,
+            "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00041",
+            "available": 226.33
+          },
+          {
+            "speaker": "A",
+            "start": 233.14,
+            "end": 243.33,
+            "text": "Uh I think it's it's in the conceptual design phase that we identify the it's in the conceptual design phase that we identify the components of our product?",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00043",
+            "available": 243.83
+          },
+          {
+            "speaker": "C",
+            "start": 244.45,
+            "end": 251.9,
+            "text": "Um I think we'll we'll start that initially with the functional design already but then yeah.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00045",
+            "available": 252.4
+          },
+          {
+            "speaker": "D",
+            "start": 615.18,
+            "end": 628.01,
+            "text": "yeah, designing the technical functions of the um um of the remote control uh then in the in the conceptual design stage I need to",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00144",
+            "available": 628.51
+          },
+          {
+            "speaker": "D",
+            "start": 628.01,
+            "end": 638.45,
+            "text": "um come up with uh interface concept and then in the last um stage I will be responsible for the int infa for the user interface design.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00145",
+            "available": 638.95
+          },
+          {
+            "speaker": "A",
+            "start": 737.87,
+            "end": 750.18,
+            "text": "ho how it works and whatever it'll mm take during the functional role, what are the various functions that have to be performed by it uh during the um conceptual design, what are the various components of it",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00170",
+            "available": 750.68
+          },
+          {
+            "speaker": "A",
+            "start": 755.26,
+            "end": 762.78,
+            "text": "Um the detailed design, I I guess it will again be the identification of the components and how they integrate with each other.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00172",
+            "available": 763.28
+          }
+        ]
+      },
+      {
+        "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+        "answer": "Functional design specifies required functions (e.g., what the remote must do), while conceptual design focuses on user interaction and interface (e.g., how users will use it), as explained by C during the meeting.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase.",
+        "source_speech": [
+          {
+            "speaker": "C",
+            "start": 199.01,
+            "end": 204.32,
+            "text": "I think it th w we're talking the the functional design is more your",
+            "boundary": "speaker_gap",
+            "id": "ES2006a-U00037",
+            "available": 204.82
+          },
+          {
+            "speaker": "C",
+            "start": 205.82,
+            "end": 218.08,
+            "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00039",
+            "available": 218.58
+          },
+          {
+            "speaker": "C",
+            "start": 218.08,
+            "end": 225.83,
+            "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00041",
+            "available": 226.33
+          },
+          {
+            "speaker": "A",
+            "start": 233.14,
+            "end": 243.33,
+            "text": "Uh I think it's it's in the conceptual design phase that we identify the it's in the conceptual design phase that we identify the components of our product?",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00043",
+            "available": 243.83
+          },
+          {
+            "speaker": "C",
+            "start": 244.45,
+            "end": 251.9,
+            "text": "Um I think we'll we'll start that initially with the functional design already but then yeah.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00045",
+            "available": 252.4
+          },
+          {
+            "speaker": "D",
+            "start": 615.18,
+            "end": 628.01,
+            "text": "yeah, designing the technical functions of the um um of the remote control uh then in the in the conceptual design stage I need to",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00144",
+            "available": 628.51
+          },
+          {
+            "speaker": "D",
+            "start": 628.01,
+            "end": 638.45,
+            "text": "um come up with uh interface concept and then in the last um stage I will be responsible for the int infa for the user interface design.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00145",
+            "available": 638.95
+          },
+          {
+            "speaker": "A",
+            "start": 737.87,
+            "end": 750.18,
+            "text": "ho how it works and whatever it'll mm take during the functional role, what are the various functions that have to be performed by it uh during the um conceptual design, what are the various components of it",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00170",
+            "available": 750.68
+          },
+          {
+            "speaker": "A",
+            "start": 755.26,
+            "end": 762.78,
+            "text": "Um the detailed design, I I guess it will again be the identification of the components and how they integrate with each other.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00172",
+            "available": 763.28
+          }
+        ]
+      },
+      {
+        "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+        "answer": "The slide panel will have backlighting behind the buttons, not on the buttons themselves, with buttons being grey. They decided against backlighting on the buttons and instead opted for a subtle light behind the buttons to illuminate the panel.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key.",
+        "source_speech": [
+          {
+            "speaker": "D",
+            "start": 1104.96,
+            "end": 1108.76,
+            "text": "If you slide it open, it lights up.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00520",
+            "available": 1109.26
+          },
+          {
+            "speaker": "D",
+            "start": 1116.05,
+            "end": 1118.86,
+            "text": "Then we do it.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00526",
+            "available": 1119.36
+          },
+          {
+            "speaker": "B",
+            "start": 1117.68,
+            "end": 1121.28,
+            "text": "Okay, maybe just some light uh to to light it all up.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00527",
+            "available": 1121.78
+          },
+          {
+            "speaker": "B",
+            "start": 1123.4,
+            "end": 1125.94,
+            "text": "Not just not re on the buttons or something.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00530",
+            "available": 1126.44
+          },
+          {
+            "speaker": "B",
+            "start": 1125.94,
+            "end": 1128.38,
+            "text": "Just a green light or some blue light.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00532",
+            "available": 1128.88
+          },
+          {
+            "speaker": "C",
+            "start": 1133.29,
+            "end": 1134.55,
+            "text": "Not not the buttons.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00538",
+            "available": 1135.05
+          },
+          {
+            "speaker": "C",
+            "start": 1134.55,
+            "end": 1139.79,
+            "text": "And th and the the normal backlights also not the buttons, but behind the buttons.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00540",
+            "available": 1140.29
+          },
+          {
+            "speaker": "C",
+            "start": 1139.79,
+            "end": 1141.42,
+            "text": "So the buttons are just grey.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00541",
+            "available": 1141.92
+          },
+          {
+            "speaker": "B",
+            "start": 1142.64,
+            "end": 1143.89,
+            "text": "Uh semi-transparent.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00544",
+            "available": 1144.39
+          },
+          {
+            "speaker": "D",
+            "start": 1146.74,
+            "end": 1148.15,
+            "text": "Okay, fine.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00547",
+            "available": 1148.65
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how many people were willing to pay more just for the design?",
+        "answer": "80 people",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made.",
+        "source_speech": [
+          {
+            "speaker": "D",
+            "start": 225.56,
+            "end": 228.22,
+            "text": "We had one hundred of these uh test subjects.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00048",
+            "available": 228.72
+          },
+          {
+            "speaker": "D",
+            "start": 256.33,
+            "end": 262.85,
+            "text": "Um and an additional eighty percent indicated that they would spend more money on a fancy-looking remote control.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00056",
+            "available": 263.35
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how many people were willing to pay more just for the design?",
+        "answer": "80 people",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "U00048 explicitly gives100 test subjects, and U00056 gives80 percent willing to pay more. Thus80people,80percent and the short answer80 are equivalent here. No extrapolation to a larger population is made.",
+        "source_speech": [
+          {
+            "speaker": "D",
+            "start": 225.56,
+            "end": 228.22,
+            "text": "We had one hundred of these uh test subjects.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00048",
+            "available": 228.72
+          },
+          {
+            "speaker": "D",
+            "start": 256.33,
+            "end": 262.85,
+            "text": "Um and an additional eighty percent indicated that they would spend more money on a fancy-looking remote control.",
+            "boundary": "sentence_end",
+            "id": "TS3003b-U00056",
+            "available": 263.35
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how many people said they keep losing their remote?",
+        "answer": "50 people",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote.",
+        "source_speech": [
+          {
+            "speaker": "A",
+            "start": 369.05,
+            "end": 379.9,
+            "text": "Well I've just been um presented with some research we've done in a small focus group so, a hundred people, just asked them about their remote control usage habits and what they want in a remote control.",
+            "boundary": "sentence_end",
+            "id": "IS1000b-U00059",
+            "available": 380.4
+          },
+          {
+            "speaker": "A",
+            "start": 480.79,
+            "end": 492.79,
+            "text": "An interesting thing that this report has brought up is that um fifty fifty percent of users report that the remote control gets lost a lot of the time in the room, so some way of some way of locating the",
+            "boundary": "12s_cap",
+            "id": "IS1000b-U00091",
+            "available": 493.29
+          },
+          {
+            "speaker": "A",
+            "start": 497.51,
+            "end": 505.34,
+            "text": "Thirty four percent said it takes too long to learn to use a remote control, they want something that's easier to use straight away, more intuitive perhaps.",
+            "boundary": "sentence_end",
+            "id": "IS1000b-U00094",
+            "available": 505.84
+          }
+        ]
+      },
+      {
+        "question": "Assistant, how many people said they keep losing their remote?",
+        "answer": "50 people",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "U00059 explicitly gives a focus group of100, and U00091 gives50percent losing the remote. Fifty people is equivalent. Thirty-four percent is instead the learning-time statistic at U00094 and is incorrect for losing the remote.",
+        "source_speech": [
+          {
+            "speaker": "A",
+            "start": 369.05,
+            "end": 379.9,
+            "text": "Well I've just been um presented with some research we've done in a small focus group so, a hundred people, just asked them about their remote control usage habits and what they want in a remote control.",
+            "boundary": "sentence_end",
+            "id": "IS1000b-U00059",
+            "available": 380.4
+          },
+          {
+            "speaker": "A",
+            "start": 480.79,
+            "end": 492.79,
+            "text": "An interesting thing that this report has brought up is that um fifty fifty percent of users report that the remote control gets lost a lot of the time in the room, so some way of some way of locating the",
+            "boundary": "12s_cap",
+            "id": "IS1000b-U00091",
+            "available": 493.29
+          },
+          {
+            "speaker": "A",
+            "start": 497.51,
+            "end": 505.34,
+            "text": "Thirty four percent said it takes too long to learn to use a remote control, they want something that's easier to use straight away, more intuitive perhaps.",
+            "boundary": "sentence_end",
+            "id": "IS1000b-U00094",
+            "available": 505.84
+          }
+        ]
+      },
+      {
+        "question": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
+        "answer": "Functional design defines the required functions and capabilities of the remote control (what it needs to do), while conceptual design defines how the design will be implemented (how it will be done), including identifying product components and user interaction. C stated functional design focuses on 'what functions we need' and conceptual design on 'how people are going to use it'.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "The answer distinguishes required functions from user interaction. C supplies that distinction at U00037-U00041, so attributing it to C is supported. Component identification is discussed across both phases (U00043-U00045 and U00170); mentioning it during conceptual design is not an exclusive assignment to that phase.",
+        "source_speech": [
+          {
+            "speaker": "C",
+            "start": 199.01,
+            "end": 204.32,
+            "text": "I think it th w we're talking the the functional design is more your",
+            "boundary": "speaker_gap",
+            "id": "ES2006a-U00037",
+            "available": 204.82
+          },
+          {
+            "speaker": "C",
+            "start": 205.82,
+            "end": 218.08,
+            "text": "um area of things where you'll be we want to look at what functions we need in the remote control and what what specific things it it has to do but the conceptual design is",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00039",
+            "available": 218.58
+          },
+          {
+            "speaker": "C",
+            "start": 218.08,
+            "end": 225.83,
+            "text": "um perhaps bigger than that and includes the how people are going to use it and and that kind of thing.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00041",
+            "available": 226.33
+          },
+          {
+            "speaker": "A",
+            "start": 233.14,
+            "end": 243.33,
+            "text": "Uh I think it's it's in the conceptual design phase that we identify the it's in the conceptual design phase that we identify the components of our product?",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00043",
+            "available": 243.83
+          },
+          {
+            "speaker": "C",
+            "start": 244.45,
+            "end": 251.9,
+            "text": "Um I think we'll we'll start that initially with the functional design already but then yeah.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00045",
+            "available": 252.4
+          },
+          {
+            "speaker": "D",
+            "start": 615.18,
+            "end": 628.01,
+            "text": "yeah, designing the technical functions of the um um of the remote control uh then in the in the conceptual design stage I need to",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00144",
+            "available": 628.51
+          },
+          {
+            "speaker": "D",
+            "start": 628.01,
+            "end": 638.45,
+            "text": "um come up with uh interface concept and then in the last um stage I will be responsible for the int infa for the user interface design.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00145",
+            "available": 638.95
+          },
+          {
+            "speaker": "A",
+            "start": 737.87,
+            "end": 750.18,
+            "text": "ho how it works and whatever it'll mm take during the functional role, what are the various functions that have to be performed by it uh during the um conceptual design, what are the various components of it",
+            "boundary": "12s_cap",
+            "id": "ES2006a-U00170",
+            "available": 750.68
+          },
+          {
+            "speaker": "A",
+            "start": 755.26,
+            "end": 762.78,
+            "text": "Um the detailed design, I I guess it will again be the identification of the components and how they integrate with each other.",
+            "boundary": "sentence_end",
+            "id": "ES2006a-U00172",
+            "available": 763.28
+          }
+        ]
+      },
+      {
+        "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
+        "answer": "The team decided to add a backlight (green or blue light) to the slide panel to light it up, with buttons remaining grey and semi-transparent with the backlight behind them. This was confirmed by D's 'Okay, fine' at TS3004d-U00547.",
+        "reviewed_core_correct": true,
+        "reviewed_supported": true,
+        "reason": "The later exchange accepts panel lighting (U00520/U00526), illuminating the panel rather than button surfaces (U00527/U00530/U00538), and behind-button lighting with grey/semitransparent buttons (U00540/U00541/U00544). A source-supported extra design detail remains supported even when optional in the short answer key.",
+        "source_speech": [
+          {
+            "speaker": "D",
+            "start": 1104.96,
+            "end": 1108.76,
+            "text": "If you slide it open, it lights up.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00520",
+            "available": 1109.26
+          },
+          {
+            "speaker": "D",
+            "start": 1116.05,
+            "end": 1118.86,
+            "text": "Then we do it.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00526",
+            "available": 1119.36
+          },
+          {
+            "speaker": "B",
+            "start": 1117.68,
+            "end": 1121.28,
+            "text": "Okay, maybe just some light uh to to light it all up.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00527",
+            "available": 1121.78
+          },
+          {
+            "speaker": "B",
+            "start": 1123.4,
+            "end": 1125.94,
+            "text": "Not just not re on the buttons or something.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00530",
+            "available": 1126.44
+          },
+          {
+            "speaker": "B",
+            "start": 1125.94,
+            "end": 1128.38,
+            "text": "Just a green light or some blue light.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00532",
+            "available": 1128.88
+          },
+          {
+            "speaker": "C",
+            "start": 1133.29,
+            "end": 1134.55,
+            "text": "Not not the buttons.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00538",
+            "available": 1135.05
+          },
+          {
+            "speaker": "C",
+            "start": 1134.55,
+            "end": 1139.79,
+            "text": "And th and the the normal backlights also not the buttons, but behind the buttons.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00540",
+            "available": 1140.29
+          },
+          {
+            "speaker": "C",
+            "start": 1139.79,
+            "end": 1141.42,
+            "text": "So the buttons are just grey.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00541",
+            "available": 1141.92
+          },
+          {
+            "speaker": "B",
+            "start": 1142.64,
+            "end": 1143.89,
+            "text": "Uh semi-transparent.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00544",
+            "available": 1144.39
+          },
+          {
+            "speaker": "D",
+            "start": 1146.74,
+            "end": 1148.15,
+            "text": "Okay, fine.",
+            "boundary": "sentence_end",
+            "id": "TS3004d-U00547",
+            "available": 1148.65
           }
         ]
       }
@@ -4135,7 +6215,7 @@
         "seed": 23,
         "answer": "B reported that the topic segmentation task is 'basically done' but still requires final completion, with progress confirmed as pending. B has six days to finish it.",
         "core_correct": true,
-        "supported_correct": false,
+        "supported_correct": true,
         "automatic_core_correct": true,
         "automatic_supported_correct": false,
         "native_thinking_tokens": null,
@@ -5020,7 +7100,7 @@
         "seed": 23,
         "answer": "Functional design focuses on identifying the required functions and capabilities of the remote control, while conceptual design addresses how the product will be implemented, including user interaction and the identification of components. Detailed design follows conceptual design and involves integrating components.",
         "core_correct": true,
-        "supported_correct": false,
+        "supported_correct": true,
         "automatic_core_correct": true,
         "automatic_supported_correct": false,
         "native_thinking_tokens": null,
@@ -9354,8 +11434,8 @@
         "condition": "reactive",
         "seed": 23,
         "answer": "80 people",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 647,
@@ -9834,8 +11914,8 @@
         "condition": "tools",
         "seed": 23,
         "answer": "80 people indicated they would spend more money on a fancy-looking remote control.",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 724,
@@ -10450,7 +12530,7 @@
         "seed": 23,
         "answer": "Topic segmentation is 'basically done' but still requires final completion/tuning, as stated by B in the meeting. B has six days to complete it.",
         "core_correct": true,
-        "supported_correct": false,
+        "supported_correct": true,
         "automatic_core_correct": true,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 824,
@@ -11304,8 +13384,8 @@
         "condition": "json",
         "seed": 23,
         "answer": "Functional design identifies required functions and capabilities of the remote control. Conceptual design addresses how the design will be implemented, including identifying product components and user interaction. As clarified: 'Functional design is what it needs to do, conceptual design is how it will be done.'",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 1003,
@@ -11935,7 +14015,7 @@
         "seed": 23,
         "answer": "Functional design specifies required functions (e.g., what the remote must do), while conceptual design focuses on user interaction and interface (e.g., how users will use it), as explained by C during the meeting.",
         "core_correct": true,
-        "supported_correct": false,
+        "supported_correct": true,
         "automatic_core_correct": true,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 2194,
@@ -12595,7 +14675,7 @@
         "seed": 23,
         "answer": "The slide panel will have backlighting behind the buttons, not on the buttons themselves, with buttons being grey. They decided against backlighting on the buttons and instead opted for a subtle light behind the buttons to illuminate the panel.",
         "core_correct": true,
-        "supported_correct": false,
+        "supported_correct": true,
         "automatic_core_correct": true,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 2402,
@@ -12834,8 +14914,8 @@
         "condition": "source",
         "seed": 23,
         "answer": "80 people",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 828,
@@ -16119,8 +18199,8 @@
         "condition": "tools",
         "seed": 47,
         "answer": "80 people",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 726,
@@ -16224,8 +18304,8 @@
         "condition": "json",
         "seed": 47,
         "answer": "50 people",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 641,
@@ -16449,8 +18529,8 @@
         "condition": "source",
         "seed": 47,
         "answer": "50 people",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 1004,
@@ -17604,8 +19684,8 @@
         "condition": "json",
         "seed": 47,
         "answer": "Functional design defines the required functions and capabilities of the remote control (what it needs to do), while conceptual design defines how the design will be implemented (how it will be done), including identifying product components and user interaction. C stated functional design focuses on 'what functions we need' and conceptual design on 'how people are going to use it'.",
-        "core_correct": false,
-        "supported_correct": false,
+        "core_correct": true,
+        "supported_correct": true,
         "automatic_core_correct": false,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 1195,
@@ -20995,7 +23075,7 @@
         "seed": 47,
         "answer": "The team decided to add a backlight (green or blue light) to the slide panel to light it up, with buttons remaining grey and semi-transparent with the backlight behind them. This was confirmed by D's 'Okay, fine' at TS3004d-U00547.",
         "core_correct": true,
-        "supported_correct": false,
+        "supported_correct": true,
         "automatic_core_correct": true,
         "automatic_supported_correct": false,
         "native_thinking_tokens": 3960,

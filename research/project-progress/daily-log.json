@@ -1,7 +1,24 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-13",
+      "items": [
+        {
+          "text": "Traced answer changes to stale facts, false confirmations, missing locations and overwritten evidence links.",
+          "url": "experiments/note-functions.html#review"
+        },
+        {
+          "text": "Source-reviewed 60 additional answers and corrected 14 scorer labels, including valid percentage-to-count conversions.",
+          "url": "experiments/note-functions.html#review"
+        },
+        {
+          "text": "Prepared four source-only diagnostic inputs for all 105 questions and added a scorer-validation gate before inference.",
+          "url": "experiments/note-functions.html#followup"
+        }
+      ]
+    },
     {
       "date": "2026-11-12",
       "items": [
