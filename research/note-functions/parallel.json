@@ -1,14 +1,14 @@
 {
-  "updated": "2026-11-13T22:25:01-05:00",
-  "status": "bounded_text_pilot_and_audio_feasibility",
-  "text_outputs": 126,
+  "updated": "2026-11-13T22:45:45-05:00",
+  "status": "source_reviewed_pilots",
+  "text_outputs": 144,
   "text_planned": 144,
   "Instruct_planned": 48,
   "Thinking_planned": 96,
   "automatic_judge_qualified": false,
   "judge_core_agreements": 142,
   "judge_cases": 155,
-  "accuracy_status": "Source review of every pilot answer required; no new accuracy released.",
+  "accuracy_status": "All 144 text and 16 audio outputs source-reviewed by Codex; automatic judge remains unqualified. Selected pilots, not held-out accuracy.",
   "jobs": [
     {
       "label": "Text diagnostic · Instruct",
@@ -30,8 +30,8 @@
     },
     {
       "label": "Text diagnostic · Thinking",
-      "state": "RUNNING",
-      "completed": 78,
+      "state": "COMPLETED",
+      "completed": 96,
       "GPU_count": 1,
       "GPU_type_VRAM": "A100 SXM4 80 GB",
       "GPU_0": "Text thinker weights and 8 GiB KV",
@@ -48,8 +48,8 @@
     },
     {
       "label": "Audio paired pilot · MiniCPM-o 4.5",
-      "state": "RUNNING",
-      "completed": "0/8 answers; 8 calls",
+      "state": "COMPLETED",
+      "completed": "8/8 answers; 44 calls",
       "GPU_count": 1,
       "GPU_type_VRAM": "A100 SXM4 80 GB",
       "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
@@ -57,23 +57,25 @@
     },
     {
       "label": "Audio paired pilot · Qwen3-Omni Thinking",
-      "state": "PENDING",
-      "completed": "0/8 answers; 0 calls",
+      "state": "COMPLETED",
+      "completed": "8/8 answers; 44 calls",
       "GPU_count": 1,
       "GPU_type_VRAM": "A100 SXM4 80 GB",
       "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
       "dependencies": "Sequential within the audio lane"
     }
   ],
-  "active_GPUs": 2,
+  "active_GPUs": 0,
   "max_study_GPUs": 2,
-  "GPU_hours_all_attempts": 0.7833333333333333,
+  "text_source_reviewed": true,
+  "audio_source_reviewed": true,
+  "GPU_hours_all_attempts": 1.0255555555555556,
   "audio_cases_prepared": 105,
   "audio_models": [
     "Qwen3-Omni-30B-A3B-Thinking",
     "MiniCPM-o 4.5"
   ],
-  "audio_outputs": 0,
+  "audio_outputs": 16,
   "audio_planned": 16,
   "audio_questions": 2,
   "speaker_conditions": [
@@ -231,7 +233,7 @@
   ],
   "audio_output": "Native answer text, audio-segment evidence and uncertainty; generated speech is disabled.",
   "audio_notes": "Local add, update, delete, link and no-change functions preserve audio references and earlier versions; no oracle transcript is stored in the model-visible memory.",
-  "audio_phase": "Both models completed the six-minute runtime and native note-call checks. The paired pilot has saved 0/16 answers across two questions; every answer still requires source review.",
+  "audio_phase": "Both models completed the six-minute runtime and native note-call checks. The paired pilot has saved 16/16 answers across two questions; all have source review.",
   "audio_input_rules": [
     "Ground-truth transcripts and reference answers are evaluation-only.",
     "The user question is supplied as audio, not as its known text.",
@@ -246,9 +248,9 @@
     "Report first-answer/completion time, audio input tokens and all earlier encoding/note cost; match cache conditions between reactive and notes."
   ],
   "next_steps": [
-    "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
-    "Complete the two-question audio comparison and source-review all 16 answers, including speaker identity and event changes.",
-    "Compare paired accuracy, request-time thinking, first-answer time and total note-generation cost before selecting a larger run."
+    "Refine the question-blind writer to preserve source speech, speaker ownership, and the difference between reported actions and confirmed outcomes.",
+    "Test the revised writer on the same development cases to check factual retention and request-time thinking before scaling.",
+    "Freeze the design and evaluation rules before a larger comparison; current pilot latency intervals and the two-question audio set do not establish a general gain."
   ],
   "sources": [
     {

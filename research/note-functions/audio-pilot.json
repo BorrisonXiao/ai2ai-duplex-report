@@ -1,0 +1,2684 @@
+{
+  "status": "16_source_reviewed_audio_pilot_outputs",
+  "outputs": 16,
+  "questions": 2,
+  "summary": [
+    {
+      "model": "minicpm",
+      "identity": "audio_only",
+      "mode": "reactive",
+      "outputs": 2,
+      "fully_supported": 0,
+      "mean_thinking_tokens": null,
+      "mean_first_answer_seconds": 0.651815931982128,
+      "mean_input_tokens": 4645,
+      "earlier_calls": 0,
+      "earlier_generated_tokens": 0,
+      "earlier_input_tokens": 0,
+      "request_generated_tokens": 61,
+      "earlier_native_reasoning_tokens": null,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "minicpm",
+      "identity": "audio_only",
+      "mode": "function_notes",
+      "outputs": 2,
+      "fully_supported": 0,
+      "mean_thinking_tokens": null,
+      "mean_first_answer_seconds": 0.4693836654914776,
+      "mean_input_tokens": 4902.5,
+      "earlier_calls": 18,
+      "earlier_generated_tokens": 499,
+      "earlier_input_tokens": 29003,
+      "request_generated_tokens": 62,
+      "earlier_native_reasoning_tokens": null,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "minicpm",
+      "identity": "labelled_voices",
+      "mode": "reactive",
+      "outputs": 2,
+      "fully_supported": 0,
+      "mean_thinking_tokens": null,
+      "mean_first_answer_seconds": 0.49914227600675076,
+      "mean_input_tokens": 4843.5,
+      "earlier_calls": 0,
+      "earlier_generated_tokens": 0,
+      "earlier_input_tokens": 0,
+      "request_generated_tokens": 55,
+      "earlier_native_reasoning_tokens": null,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "minicpm",
+      "identity": "labelled_voices",
+      "mode": "function_notes",
+      "outputs": 2,
+      "fully_supported": 0,
+      "mean_thinking_tokens": null,
+      "mean_first_answer_seconds": 0.5135374205128755,
+      "mean_input_tokens": 5226.5,
+      "earlier_calls": 18,
+      "earlier_generated_tokens": 583,
+      "earlier_input_tokens": 32928,
+      "request_generated_tokens": 80,
+      "earlier_native_reasoning_tokens": null,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "audio_only",
+      "mode": "reactive",
+      "outputs": 2,
+      "fully_supported": 1,
+      "mean_thinking_tokens": 610,
+      "mean_first_answer_seconds": 5.676713826018386,
+      "mean_input_tokens": 4856,
+      "earlier_calls": 0,
+      "earlier_generated_tokens": 0,
+      "earlier_input_tokens": 0,
+      "request_generated_tokens": 1419,
+      "earlier_native_reasoning_tokens": 0,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "audio_only",
+      "mode": "function_notes",
+      "outputs": 2,
+      "fully_supported": 2,
+      "mean_thinking_tokens": 1143,
+      "mean_first_answer_seconds": 10.277538724505575,
+      "mean_input_tokens": 5898,
+      "earlier_calls": 18,
+      "earlier_generated_tokens": 25397,
+      "earlier_input_tokens": 34952,
+      "request_generated_tokens": 2498,
+      "earlier_native_reasoning_tokens": 23589,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "labelled_voices",
+      "mode": "reactive",
+      "outputs": 2,
+      "fully_supported": 1,
+      "mean_thinking_tokens": 568.5,
+      "mean_first_answer_seconds": 5.397005851002177,
+      "mean_input_tokens": 5065.5,
+      "earlier_calls": 0,
+      "earlier_generated_tokens": 0,
+      "earlier_input_tokens": 0,
+      "request_generated_tokens": 1345,
+      "earlier_native_reasoning_tokens": 0,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "labelled_voices",
+      "mode": "function_notes",
+      "outputs": 2,
+      "fully_supported": 1,
+      "mean_thinking_tokens": 806.5,
+      "mean_first_answer_seconds": 7.581213260506047,
+      "mean_input_tokens": 6256.5,
+      "earlier_calls": 18,
+      "earlier_generated_tokens": 29067,
+      "earlier_input_tokens": 37252,
+      "request_generated_tokens": 1814,
+      "earlier_native_reasoning_tokens": 27308,
+      "rejected_operations": 0,
+      "parse_errors": 0
+    }
+  ],
+  "paired": [
+    {
+      "model": "minicpm",
+      "identity": "audio_only",
+      "question_id": "first:authored-W1-2",
+      "thinking_token_change": null,
+      "first_answer_change_seconds": -0.1788888300070539,
+      "reactive_supported": false,
+      "notes_supported": false
+    },
+    {
+      "model": "minicpm",
+      "identity": "audio_only",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "thinking_token_change": null,
+      "first_answer_change_seconds": -0.18597570297424681,
+      "reactive_supported": false,
+      "notes_supported": false
+    },
+    {
+      "model": "minicpm",
+      "identity": "labelled_voices",
+      "question_id": "first:authored-W1-2",
+      "thinking_token_change": null,
+      "first_answer_change_seconds": 0.018136675003916025,
+      "reactive_supported": false,
+      "notes_supported": false
+    },
+    {
+      "model": "minicpm",
+      "identity": "labelled_voices",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "thinking_token_change": null,
+      "first_answer_change_seconds": 0.010653614008333534,
+      "reactive_supported": false,
+      "notes_supported": false
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "audio_only",
+      "question_id": "first:authored-W1-2",
+      "thinking_token_change": 280,
+      "first_answer_change_seconds": 2.547776071995031,
+      "reactive_supported": true,
+      "notes_supported": true
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "audio_only",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "thinking_token_change": 786,
+      "first_answer_change_seconds": 6.6538737249793485,
+      "reactive_supported": false,
+      "notes_supported": true
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "labelled_voices",
+      "question_id": "first:authored-W1-2",
+      "thinking_token_change": 137,
+      "first_answer_change_seconds": 1.420237359998282,
+      "reactive_supported": true,
+      "notes_supported": true
+    },
+    {
+      "model": "qwen-thinking",
+      "identity": "labelled_voices",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "thinking_token_change": 339,
+      "first_answer_change_seconds": 2.9481774590094574,
+      "reactive_supported": false,
+      "notes_supported": false
+    }
+  ],
+  "answers": [
+    {
+      "model": "minicpm",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "audio_only",
+      "mode": "reactive",
+      "answer": "The main call will be sent by the group, while Claire is being asked to send a separate one to the psychology department to ensure the message is relevant and reaches the right people.",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Attributes the main call to the group and omits the sending time.",
+      "thinking_tokens": null,
+      "generated_tokens": 38,
+      "input_tokens": 4921,
+      "first_answer_seconds": 0.6817095869919285,
+      "complete_output_seconds": 1.1043260099831969
+    },
+    {
+      "model": "minicpm",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "audio_only",
+      "mode": "function_notes",
+      "answer": "The main call will be sent by the person who volunteers to do it, and Claire is being asked to send a separate one to ensure the psychology people know it's relevant to them.",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "M",
+      "reason": "Identifies the volunteer descriptively and gives a reason for Claire, but omits the sending time.",
+      "thinking_tokens": null,
+      "generated_tokens": 39,
+      "input_tokens": 5366,
+      "first_answer_seconds": 0.5028207569848746,
+      "complete_output_seconds": 0.9395251669920981
+    },
+    {
+      "model": "minicpm",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "labelled_voices",
+      "mode": "reactive",
+      "answer": "The main call is being sent by the assistant, and a separate one is being asked of Claire to ensure the psychology people receive it correctly [0.00-9.64s].",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Attributes the main call to the assistant rather than a meeting participant; timing is absent.",
+      "thinking_tokens": null,
+      "generated_tokens": 41,
+      "input_tokens": 5134,
+      "first_answer_seconds": 0.5182187670143321,
+      "complete_output_seconds": 0.9761625860119238
+    },
+    {
+      "model": "minicpm",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "labelled_voices",
+      "mode": "function_notes",
+      "answer": "The main call is being sent by the group, and Claire is being asked to send a separate one to psychology people because she has the relevant email addresses and it will make the call look more relevant to them.",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Attributes the main call to the group and omits the sending time.",
+      "thinking_tokens": null,
+      "generated_tokens": 44,
+      "input_tokens": 5585,
+      "first_answer_seconds": 0.5363554420182481,
+      "complete_output_seconds": 1.030966491001891
+    },
+    {
+      "model": "minicpm",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "audio_only",
+      "mode": "reactive",
+      "answer": "The conceptual design files were eventually found in the shared folder, though some participants initially had difficulty locating them.",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Claims the files were eventually found, although the source does not establish successful access.",
+      "thinking_tokens": null,
+      "generated_tokens": 23,
+      "input_tokens": 4369,
+      "first_answer_seconds": 0.6219222769723274,
+      "complete_output_seconds": 0.8724678049911745
+    },
+    {
+      "model": "minicpm",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "audio_only",
+      "mode": "function_notes",
+      "answer": "The conceptual design files were eventually found in the shared folder, though some participants initially had difficulty locating them.",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Repeats the reactive claim of successful retrieval; no confirmed retrieval is established.",
+      "thinking_tokens": null,
+      "generated_tokens": 23,
+      "input_tokens": 4439,
+      "first_answer_seconds": 0.43594657399808057,
+      "complete_output_seconds": 0.6873880470229778
+    },
+    {
+      "model": "minicpm",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "labelled_voices",
+      "mode": "reactive",
+      "answer": "The conceptual design files were successfully moved to the shared folder.",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "M",
+      "reason": "Summarizes the reported placement but omits the uncertain visibility/access status.",
+      "thinking_tokens": null,
+      "generated_tokens": 14,
+      "input_tokens": 4553,
+      "first_answer_seconds": 0.4800657849991694,
+      "complete_output_seconds": 0.6286594019911718
+    },
+    {
+      "model": "minicpm",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "labelled_voices",
+      "mode": "function_notes",
+      "answer": "The conceptual design files were successfully moved to the shared folder, as confirmed by the participants during the discussion at [00:03-00:15].",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Claims a confirmed successful move without retaining the unresolved visibility; the cited early time span does not support it.",
+      "thinking_tokens": null,
+      "generated_tokens": 36,
+      "input_tokens": 4868,
+      "first_answer_seconds": 0.49071939900750294,
+      "complete_output_seconds": 0.891225436993409
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "audio_only",
+      "mode": "reactive",
+      "answer": "The main call is being sent by the person who volunteered to handle it, stating they would complete it by the end of the week ([00:33-00:66]). Claire is asked to send a separate call because the main call prioritizes linguists but invites a wider audience; sending distinct calls avoids making linguists worry they might lose their priority spots while ensuring psychology recipients feel the message is specifically relevant to them, as Claire has a psychology email address to use ([00:45-01:00], [01:15-01:30]).",
+      "core_correct": true,
+      "supported_correct": true,
+      "review_code": "P",
+      "reason": "Identifies the unique volunteer by their speech, gives the end-of-week allowance and explains Claire’s audience relevance. The source says Thursday, making this allowance consistent with today/tomorrow. Citation times are inaccurate and recorded separately.",
+      "thinking_tokens": 690,
+      "generated_tokens": 817,
+      "input_tokens": 5182,
+      "first_answer_seconds": 6.3904715870157816,
+      "complete_output_seconds": 7.414563238009578
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "audio_only",
+      "mode": "function_notes",
+      "answer": "The main call for abstracts/titles is being handled by a volunteer who committed to sending it by the end of the week (EN2003a-C003). Claire is sending a separate call specifically for psychology attendees because she knows the correct email addresses to use and her psych-specific email address makes the message appear more relevant to them (EN2003a-C006, EN2003a-C010). This separate approach was decided to avoid linguists worrying about losing their place, as other attendees' presence is not essential to them (EN2003a-C004). The main call will precede Claire's email, which she can then adapt for psychology people with date reminders (EN2003a-C009).",
+      "core_correct": true,
+      "supported_correct": true,
+      "review_code": "P",
+      "reason": "Identifies the volunteer, gives the supported end-of-week allowance and explains the separate psychology message.",
+      "thinking_tokens": 970,
+      "generated_tokens": 1137,
+      "input_tokens": 6372,
+      "first_answer_seconds": 8.938247659010813,
+      "complete_output_seconds": 10.323888089013053
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "labelled_voices",
+      "mode": "reactive",
+      "answer": "The main call is sent by the speaker who volunteers to handle it by the end of the week (e.g., [161.50-187.00s]). Claire is asked to send a separate call for psychology participants because the main call targets linguists; sending a distinct message avoids making linguists worry about losing priority spots while ensuring the psychology audience perceives it as relevant (e.g., [131.50-161.50s] and [305.50-334.50s]).",
+      "core_correct": true,
+      "supported_correct": true,
+      "review_code": "P",
+      "reason": "Identifies the volunteer descriptively, supplies the supported time allowance and audience-specific reason, but does not use the supplied speaker letters.",
+      "thinking_tokens": 684,
+      "generated_tokens": 806,
+      "input_tokens": 5408,
+      "first_answer_seconds": 6.395896948000882,
+      "complete_output_seconds": 7.394080724014202
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "first:authored-W1-2",
+      "question": "Assistant, who's sending our main call and when, and why are we asking Claire to send a separate one?",
+      "identity": "labelled_voices",
+      "mode": "function_notes",
+      "answer": "The main call for abstracts/titles is being sent by a volunteer who volunteered to handle it, with the commitment to send it today or tomorrow (EN2003a-C003, EN2003a-C005). Claire is asked to send a separate call specifically for psychology people because she knows the correct email addresses to use and can ensure the message appears relevant to that audience (EN2003a-C006, EN2003a-C010). Separate calls are needed to avoid making linguists worry about losing their place when inviting others (EN2003a-C004), and Claire's version should stand out as applicable to psychology recipients using her psych email address for better relevance (EN2003a-C010).",
+      "core_correct": true,
+      "supported_correct": true,
+      "review_code": "P",
+      "reason": "Identifies the volunteer descriptively, retains today/tomorrow and Claire’s appropriate email/relevance.",
+      "thinking_tokens": 821,
+      "generated_tokens": 992,
+      "input_tokens": 6866,
+      "first_answer_seconds": 7.816134307999164,
+      "complete_output_seconds": 9.239981868013274
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "audio_only",
+      "mode": "reactive",
+      "answer": "The conceptual design files were placed in the shared folder but under the name \"components design.\" This is confirmed at [115.50-155.50s] (C003) when the speaker states, \"I just put it in the shared folder... yeah, components design, that's it.\"",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "M",
+      "reason": "Reports the placement and components-design name, but omits uncertainty about whether others could access the files.",
+      "thinking_tokens": 530,
+      "generated_tokens": 602,
+      "input_tokens": 4530,
+      "first_answer_seconds": 4.96295606502099,
+      "complete_output_seconds": 5.526481572014745
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "audio_only",
+      "mode": "function_notes",
+      "answer": "The presentations were uploaded to the shared folder under \"components design\" (agreed), but other presentations remain inaccessible despite the upload (unresolved). [TS3006c-C003]",
+      "core_correct": true,
+      "supported_correct": true,
+      "review_code": "P",
+      "reason": "Retains the reported upload together with unresolved access to other presentations; this is read as the reported access problem, not a diagnosed outage. No live access check is claimed.",
+      "thinking_tokens": 1316,
+      "generated_tokens": 1361,
+      "input_tokens": 5424,
+      "first_answer_seconds": 11.616829790000338,
+      "complete_output_seconds": 11.965113348007435
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "labelled_voices",
+      "mode": "reactive",
+      "answer": "The file was placed in the shared folder but was mislabeled as \"components design\" instead of \"conceptual design,\" causing it to be missed. This is confirmed by the speaker stating they \"put it in the shared folder\" and later clarifying the correct name: \"components design, that's it\" (00:03:15-00:03:20).",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "Invents a mislabel as the cause of the difficulty finding the file; the source only clarifies its name.",
+      "thinking_tokens": 453,
+      "generated_tokens": 539,
+      "input_tokens": 4723,
+      "first_answer_seconds": 4.398114754003473,
+      "complete_output_seconds": 5.077827097004047
+    },
+    {
+      "model": "qwen-thinking",
+      "question_id": "scale:TS3006c-S05-Q3",
+      "question": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
+      "identity": "labelled_voices",
+      "mode": "function_notes",
+      "answer": "The shared folder contains the other presentations, as confirmed during the meeting. [TS3006c-C003]",
+      "core_correct": false,
+      "supported_correct": false,
+      "review_code": "E",
+      "reason": "States that the shared folder contains the other presentations as confirmed; the source does not establish this visibility for everyone.",
+      "thinking_tokens": 792,
+      "generated_tokens": 822,
+      "input_tokens": 5647,
+      "first_answer_seconds": 7.34629221301293,
+      "complete_output_seconds": 7.566891545022372
+    }
+  ],
+  "source_speech": {
+    "first:authored-W1-2": [
+      {
+        "speaker": "C",
+        "start": 87.88,
+        "end": 88.26,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00022",
+        "available": 88.76
+      },
+      {
+        "speaker": "B",
+        "start": 88.79,
+        "end": 89.15,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00023",
+        "available": 89.65
+      },
+      {
+        "speaker": "A",
+        "start": 80.87,
+        "end": 91.5,
+        "text": "Well, the first thing I think is we need to uh sort out the call for abstracts or the c the call for titles, because I think that's kind of overdue.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00024",
+        "available": 92.0
+      },
+      {
+        "speaker": "B",
+        "start": 91.21,
+        "end": 91.51,
+        "text": "Right.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00025",
+        "available": 92.01
+      },
+      {
+        "speaker": "A",
+        "start": 91.5,
+        "end": 93.49,
+        "text": "Yeah?",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00026",
+        "available": 93.99
+      },
+      {
+        "speaker": "A",
+        "start": 93.49,
+        "end": 100.19,
+        "text": "Um so I volunteer to do that if you like.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00027",
+        "available": 100.69
+      },
+      {
+        "speaker": "B",
+        "start": 100.28,
+        "end": 100.68,
+        "text": "Fine.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00028",
+        "available": 101.18
+      },
+      {
+        "speaker": "C",
+        "start": 100.31,
+        "end": 100.96,
+        "text": "Yeah, right.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00029",
+        "available": 101.46
+      },
+      {
+        "speaker": "B",
+        "start": 100.68,
+        "end": 102.12,
+        "text": "Yep.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00030",
+        "available": 102.62
+      },
+      {
+        "speaker": "A",
+        "start": 100.19,
+        "end": 104.12,
+        "text": "Um uh okay.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00031",
+        "available": 104.62
+      },
+      {
+        "speaker": "A",
+        "start": 104.12,
+        "end": 104.53,
+        "text": "So",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00032",
+        "available": 105.03
+      },
+      {
+        "speaker": "A",
+        "start": 107.48,
+        "end": 108.31,
+        "text": "And I'll do that",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00033",
+        "available": 108.81
+      },
+      {
+        "speaker": "A",
+        "start": 110.21,
+        "end": 115.17,
+        "text": "by Trying to think, what is it Thursday today, I'll d I'll do that by the end of the week anyway.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00034",
+        "available": 115.67
+      },
+      {
+        "speaker": "A",
+        "start": 118.11,
+        "end": 118.17,
+        "text": "So",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00035",
+        "available": 118.67
+      },
+      {
+        "speaker": "C",
+        "start": 129.49,
+        "end": 129.71,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00036",
+        "available": 130.21
+      },
+      {
+        "speaker": "B",
+        "start": 118.6,
+        "end": 130.53,
+        "text": "And um you're gonna was it your idea to stick the bit in it where you say um uh, you know, you're we're inviting like from quite a wide audience we give priority to linguists?",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00037",
+        "available": 131.03
+      },
+      {
+        "speaker": "A",
+        "start": 130.31,
+        "end": 137.85,
+        "text": "Yeah, we're gonna do that, but I think we should s probably send out um separate calls, okay.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00038",
+        "available": 138.35
+      },
+      {
+        "speaker": "A",
+        "start": 137.85,
+        "end": 148.89,
+        "text": "So we'll send one, but weren't men I mean we could mention the fact that we're inviting other people, but I think it will probably just uh I mean it probably won't matter too much to the other linguists that we're having other people there.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00039",
+        "available": 149.39
+      },
+      {
+        "speaker": "B",
+        "start": 150.0,
+        "end": 150.43,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00040",
+        "available": 150.93
+      },
+      {
+        "speaker": "B",
+        "start": 159.48,
+        "end": 159.88,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00041",
+        "available": 160.38
+      },
+      {
+        "speaker": "A",
+        "start": 148.89,
+        "end": 160.58,
+        "text": "We can mention it, but it's not gonna be too essential and uh we might actually just end up making them worry that, you know, they're gonna lose their place or whatever, because uh I don't know.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00042",
+        "available": 161.08
+      },
+      {
+        "speaker": "C",
+        "start": 159.81,
+        "end": 160.69,
+        "text": "Yeah, yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00043",
+        "available": 161.19
+      },
+      {
+        "speaker": "C",
+        "start": 160.69,
+        "end": 162.66,
+        "text": "I thi separate course is good idea.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00044",
+        "available": 163.16
+      },
+      {
+        "speaker": "C",
+        "start": 162.66,
+        "end": 163.06,
+        "text": "That's",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00045",
+        "available": 163.56
+      },
+      {
+        "speaker": "A",
+        "start": 162.69,
+        "end": 169.04,
+        "text": "But we do we do have to decide a priority thing, so that's something else we can look at um a little bit",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00046",
+        "available": 169.54
+      },
+      {
+        "speaker": "C",
+        "start": 172.87,
+        "end": 173.2,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00047",
+        "available": 173.7
+      },
+      {
+        "speaker": "A",
+        "start": 171.08,
+        "end": 173.26,
+        "text": "later down the line.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00048",
+        "available": 173.76
+      },
+      {
+        "speaker": "A",
+        "start": 173.26,
+        "end": 179.44,
+        "text": "So so that's the one for ling basically and I'll send that out.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00049",
+        "available": 179.94
+      },
+      {
+        "speaker": "A",
+        "start": 185.08,
+        "end": 186.32,
+        "text": "I'll do that today or tomorrow.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00050",
+        "available": 186.82
+      },
+      {
+        "speaker": "A",
+        "start": 189.09,
+        "end": 195.82,
+        "text": "Um now Claire, that's the other thing, she can deal with the Psychology.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00051",
+        "available": 196.32
+      },
+      {
+        "speaker": "A",
+        "start": 195.82,
+        "end": 196.22,
+        "text": "Um",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00052",
+        "available": 196.72
+      },
+      {
+        "speaker": "A",
+        "start": 199.11,
+        "end": 202.79,
+        "text": "Psychology people, probably that's I reckon it's the best thing to do.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00053",
+        "available": 203.29
+      },
+      {
+        "speaker": "C",
+        "start": 205.61,
+        "end": 205.89,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00054",
+        "available": 206.39
+      },
+      {
+        "speaker": "B",
+        "start": 206.06,
+        "end": 206.51,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00055",
+        "available": 207.01
+      },
+      {
+        "speaker": "A",
+        "start": 202.79,
+        "end": 207.05,
+        "text": "'Cause she'll know which email address to use and and everything else.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00056",
+        "available": 207.55
+      },
+      {
+        "speaker": "A",
+        "start": 207.05,
+        "end": 208.5,
+        "text": "So um",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00057",
+        "available": 209.0
+      },
+      {
+        "speaker": "A",
+        "start": 209.72,
+        "end": 211.52,
+        "text": "if one of us could email Claire.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00058",
+        "available": 212.02
+      },
+      {
+        "speaker": "C",
+        "start": 212.3,
+        "end": 212.56,
+        "text": "Mm yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00059",
+        "available": 213.06
+      },
+      {
+        "speaker": "C",
+        "start": 218.19,
+        "end": 219.07,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00060",
+        "available": 219.57
+      },
+      {
+        "speaker": "A",
+        "start": 218.11,
+        "end": 219.14,
+        "text": "Okay, yeah, so if Robert",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00061",
+        "available": 219.64
+      },
+      {
+        "speaker": "B",
+        "start": 214.49,
+        "end": 219.92,
+        "text": "Is it was that a volunteering yeah, or great.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00062",
+        "available": 220.42
+      },
+      {
+        "speaker": "C",
+        "start": 219.07,
+        "end": 219.92,
+        "text": "Yeah, when in doubt.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00063",
+        "available": 220.42
+      },
+      {
+        "speaker": "A",
+        "start": 220.55,
+        "end": 229.3,
+        "text": "So i if Robert emails Claire and we're n gonna need to decide exactly what she's gonna say on there.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00064",
+        "available": 229.8
+      },
+      {
+        "speaker": "A",
+        "start": 229.3,
+        "end": 230.12,
+        "text": "Um",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00065",
+        "available": 230.62
+      },
+      {
+        "speaker": "C",
+        "start": 231.34,
+        "end": 231.59,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00066",
+        "available": 232.09
+      },
+      {
+        "speaker": "B",
+        "start": 236.26,
+        "end": 236.6,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00067",
+        "available": 237.1
+      },
+      {
+        "speaker": "A",
+        "start": 231.56,
+        "end": 238.08,
+        "text": "we might need to just remind her of the dates in case she doesn't know, so she gets the dates right.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00068",
+        "available": 238.58
+      },
+      {
+        "speaker": "A",
+        "start": 239.37,
+        "end": 240.0,
+        "text": "Um",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00069",
+        "available": 240.5
+      },
+      {
+        "speaker": "C",
+        "start": 251.87,
+        "end": 252.16,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00070",
+        "available": 252.66
+      },
+      {
+        "speaker": "A",
+        "start": 246.55,
+        "end": 253.66,
+        "text": "And uh um she's I know she already knows that it's just anyone doing psycho-linguistics basically.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00071",
+        "available": 254.16
+      },
+      {
+        "speaker": "A",
+        "start": 253.66,
+        "end": 254.53,
+        "text": "So that's fine.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00072",
+        "available": 255.03
+      },
+      {
+        "speaker": "B",
+        "start": 255.26,
+        "end": 257.0,
+        "text": "And that should kinda take care of itself as well.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00073",
+        "available": 257.5
+      },
+      {
+        "speaker": "C",
+        "start": 259.7,
+        "end": 259.94,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00074",
+        "available": 260.44
+      },
+      {
+        "speaker": "B",
+        "start": 257.0,
+        "end": 260.82,
+        "text": "If she just sends one round around to everyone, then only the psycho-linguists will say what was for me.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00075",
+        "available": 261.32
+      },
+      {
+        "speaker": "A",
+        "start": 261.23,
+        "end": 262.37,
+        "text": "Yeah, exactly.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00076",
+        "available": 262.87
+      },
+      {
+        "speaker": "A",
+        "start": 262.37,
+        "end": 262.7,
+        "text": "Exactly.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00077",
+        "available": 263.2
+      },
+      {
+        "speaker": "A",
+        "start": 264.01,
+        "end": 264.97,
+        "text": "Um",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00078",
+        "available": 265.47
+      },
+      {
+        "speaker": "A",
+        "start": 266.77,
+        "end": 270.13,
+        "text": "But then there's the rest of P_P_L_S_ and I think we need to decide whether",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00079",
+        "available": 270.63
+      },
+      {
+        "speaker": "C",
+        "start": 269.67,
+        "end": 270.28,
+        "text": "Right.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00080",
+        "available": 270.78
+      },
+      {
+        "speaker": "C",
+        "start": 270.28,
+        "end": 278.31,
+        "text": "But the the text for the actual call, is she going to re-work something or uh she should",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00081",
+        "available": 278.81
+      },
+      {
+        "speaker": "A",
+        "start": 277.36,
+        "end": 280.06,
+        "text": "I think she should just I think she should just write her own.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00082",
+        "available": 280.56
+      },
+      {
+        "speaker": "C",
+        "start": 280.91,
+        "end": 281.25,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00083",
+        "available": 281.75
+      },
+      {
+        "speaker": "A",
+        "start": 281.78,
+        "end": 282.69,
+        "text": "Probably.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00084",
+        "available": 283.19
+      },
+      {
+        "speaker": "A",
+        "start": 282.69,
+        "end": 283.53,
+        "text": "And",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00085",
+        "available": 284.03
+      },
+      {
+        "speaker": "A",
+        "start": 289.27,
+        "end": 289.64,
+        "text": "Okay.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00086",
+        "available": 290.14
+      },
+      {
+        "speaker": "C",
+        "start": 283.88,
+        "end": 290.38,
+        "text": "I think she might be glad to see kinda there linguistics to adapt.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00087",
+        "available": 290.88
+      },
+      {
+        "speaker": "C",
+        "start": 290.38,
+        "end": 291.45,
+        "text": "That's always quite helpful.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00088",
+        "available": 291.95
+      },
+      {
+        "speaker": "C",
+        "start": 293.51,
+        "end": 293.82,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00089",
+        "available": 294.32
+      },
+      {
+        "speaker": "A",
+        "start": 289.64,
+        "end": 296.07,
+        "text": "So what we'll do I mean the thing is the the main call will go out before she's got round to it anyway.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00090",
+        "available": 296.57
+      },
+      {
+        "speaker": "C",
+        "start": 296.42,
+        "end": 296.62,
+        "text": "Yep.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00091",
+        "available": 297.12
+      },
+      {
+        "speaker": "A",
+        "start": 296.07,
+        "end": 297.68,
+        "text": "So what I'll do is I'll copy it.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00092",
+        "available": 298.18
+      },
+      {
+        "speaker": "B",
+        "start": 299.09,
+        "end": 299.47,
+        "text": "Mm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00093",
+        "available": 299.97
+      },
+      {
+        "speaker": "A",
+        "start": 297.68,
+        "end": 300.34,
+        "text": "I'll C_C_ her on the um",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00094",
+        "available": 300.84
+      },
+      {
+        "speaker": "B",
+        "start": 301.02,
+        "end": 303.95,
+        "text": "I mean 'cause I can't imagine there'd be an essential difference really between the",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00095",
+        "available": 304.45
+      },
+      {
+        "speaker": "A",
+        "start": 304.03,
+        "end": 304.7,
+        "text": "No, they won't be.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00096",
+        "available": 305.2
+      },
+      {
+        "speaker": "B",
+        "start": 315.33,
+        "end": 315.8,
+        "text": "Right, yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00097",
+        "available": 316.3
+      },
+      {
+        "speaker": "C",
+        "start": 315.67,
+        "end": 316.31,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00098",
+        "available": 316.81
+      },
+      {
+        "speaker": "C",
+        "start": 316.31,
+        "end": 316.78,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00099",
+        "available": 317.28
+      },
+      {
+        "speaker": "A",
+        "start": 304.7,
+        "end": 317.75,
+        "text": "I just th the only thing I'm thinking is I want to make sure that it stands out as something applicable to them, that they don't go oh, we're just getting rubbish from y you know what I mean",
+        "boundary": "12s_cap",
+        "id": "EN2003a-U00100",
+        "available": 318.25
+      },
+      {
+        "speaker": "A",
+        "start": 317.75,
+        "end": 317.75,
+        "text": ".",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00101",
+        "available": 318.25
+      },
+      {
+        "speaker": "A",
+        "start": 317.75,
+        "end": 320.68,
+        "text": "I want them to really know that it's addressed to them.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00102",
+        "available": 321.18
+      },
+      {
+        "speaker": "C",
+        "start": 321.66,
+        "end": 321.77,
+        "text": "Ab",
+        "boundary": "speaker_gap",
+        "id": "EN2003a-U00103",
+        "available": 322.27
+      },
+      {
+        "speaker": "B",
+        "start": 326.01,
+        "end": 326.42,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00104",
+        "available": 326.92
+      },
+      {
+        "speaker": "A",
+        "start": 320.68,
+        "end": 328.67,
+        "text": "Um and the good thing about Claire sending it is she's probably got a psych email address as well and it it might look a bit more relevant to them.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00105",
+        "available": 329.17
+      },
+      {
+        "speaker": "C",
+        "start": 328.97,
+        "end": 330.26,
+        "text": "Not certain anyway.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00106",
+        "available": 330.76
+      },
+      {
+        "speaker": "C",
+        "start": 330.26,
+        "end": 331.38,
+        "text": "They know her.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00107",
+        "available": 331.88
+      },
+      {
+        "speaker": "A",
+        "start": 331.13,
+        "end": 331.82,
+        "text": "Yeah, exactly.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00108",
+        "available": 332.32
+      },
+      {
+        "speaker": "C",
+        "start": 331.38,
+        "end": 331.9,
+        "text": "That's that thing.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00109",
+        "available": 332.4
+      },
+      {
+        "speaker": "A",
+        "start": 331.82,
+        "end": 333.83,
+        "text": "They know her, et cetera.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00110",
+        "available": 334.33
+      },
+      {
+        "speaker": "C",
+        "start": 341.27,
+        "end": 341.53,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00111",
+        "available": 342.03
+      },
+      {
+        "speaker": "A",
+        "start": 333.83,
+        "end": 346.07,
+        "text": "Um so yeah, so if if we've s if I've C_C_ed the original one, then you can tell her that that can be the basis for um the basis for her email",
+        "boundary": "12s_cap",
+        "id": "EN2003a-U00112",
+        "available": 346.57
+      },
+      {
+        "speaker": "C",
+        "start": 345.99,
+        "end": 346.3,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00113",
+        "available": 346.8
+      },
+      {
+        "speaker": "A",
+        "start": 346.07,
+        "end": 350.06,
+        "text": ", but just make sure that they know it's relevant to them, et cetera.",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00114",
+        "available": 350.56
+      },
+      {
+        "speaker": "A",
+        "start": 350.06,
+        "end": 350.06,
+        "text": ".",
+        "boundary": "sentence_end",
+        "id": "EN2003a-U00115",
+        "available": 350.56
+      }
+    ],
+    "scale:TS3006c-S05-Q3": [
+      {
+        "speaker": "A",
+        "start": 102.343,
+        "end": 102.343,
+        "text": ".",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00012",
+        "available": 102.843
+      },
+      {
+        "speaker": "C",
+        "start": 102.92,
+        "end": 103.69,
+        "text": "So annoying.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00013",
+        "available": 104.19
+      },
+      {
+        "speaker": "A",
+        "start": 104.1,
+        "end": 105.37,
+        "text": "Break is over.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00014",
+        "available": 105.87
+      },
+      {
+        "speaker": "D",
+        "start": 106.41,
+        "end": 107.48,
+        "text": "Ooh it works.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00015",
+        "available": 107.98
+      },
+      {
+        "speaker": "A",
+        "start": 107.06,
+        "end": 110.12,
+        "text": "Whoo.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00016",
+        "available": 110.62
+      },
+      {
+        "speaker": "D",
+        "start": 110.91,
+        "end": 111.69,
+        "text": "Spicy.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00017",
+        "available": 112.19
+      },
+      {
+        "speaker": "A",
+        "start": 110.12,
+        "end": 114.61,
+        "text": "Spicy.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00018",
+        "available": 115.11
+      },
+      {
+        "speaker": "D",
+        "start": 112.4,
+        "end": 114.7,
+        "text": "Where are are all the other presentations?",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00019",
+        "available": 115.2
+      },
+      {
+        "speaker": "D",
+        "start": 119.56,
+        "end": 120.77,
+        "text": "The conceptual or",
+        "boundary": "speaker_gap",
+        "id": "TS3006c-U00020",
+        "available": 121.27
+      },
+      {
+        "speaker": "C",
+        "start": 115.86,
+        "end": 122.85,
+        "text": "I just put it in the in the shared folder so it should be yeah I think so.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00021",
+        "available": 123.35
+      },
+      {
+        "speaker": "C",
+        "start": 122.85,
+        "end": 124.72,
+        "text": "Yeah, conceptual design.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00022",
+        "available": 125.22
+      },
+      {
+        "speaker": "D",
+        "start": 124.69,
+        "end": 126.02,
+        "text": "Ah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00023",
+        "available": 126.52
+      },
+      {
+        "speaker": "C",
+        "start": 124.72,
+        "end": 126.95,
+        "text": "What or whatever does it",
+        "boundary": "speaker_gap",
+        "id": "TS3006c-U00024",
+        "available": 127.45
+      },
+      {
+        "speaker": "C",
+        "start": 129.18,
+        "end": 130.84,
+        "text": "No no no, can you go back one?",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00025",
+        "available": 131.34
+      },
+      {
+        "speaker": "D",
+        "start": 126.02,
+        "end": 132.42,
+        "text": "Because I see only my own presentation yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00026",
+        "available": 132.92
+      },
+      {
+        "speaker": "D",
+        "start": 134.59,
+        "end": 135.1,
+        "text": "This?",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00027",
+        "available": 135.6
+      },
+      {
+        "speaker": "C",
+        "start": 132.07,
+        "end": 136.44,
+        "text": "Uh 'cause it has to be PowerPoint pre yeah components design, that's it.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00028",
+        "available": 136.94
+      },
+      {
+        "speaker": "D",
+        "start": 136.13,
+        "end": 139.46,
+        "text": "I'll just put it in there.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00029",
+        "available": 139.96
+      },
+      {
+        "speaker": "A",
+        "start": 138.74,
+        "end": 139.68,
+        "text": "So, he's coming.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00030",
+        "available": 140.18
+      },
+      {
+        "speaker": "C",
+        "start": 139.839,
+        "end": 139.839,
+        "text": ".",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00031",
+        "available": 140.339
+      },
+      {
+        "speaker": "D",
+        "start": 143.26,
+        "end": 143.98,
+        "text": "Or not.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00032",
+        "available": 144.48
+      },
+      {
+        "speaker": "B",
+        "start": 144.55,
+        "end": 145.39,
+        "text": "Okay.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00033",
+        "available": 145.89
+      },
+      {
+        "speaker": "A",
+        "start": 145.16,
+        "end": 145.97,
+        "text": "Oh okay.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00034",
+        "available": 146.47
+      },
+      {
+        "speaker": "C",
+        "start": 142.63,
+        "end": 149.9,
+        "text": "I did get a bit more done than the last time, 'cause I knew that I didn't have time so I just copy and paste everything into the",
+        "boundary": "speaker_gap",
+        "id": "TS3006c-U00035",
+        "available": 150.4
+      },
+      {
+        "speaker": "A",
+        "start": 149.98,
+        "end": 151.2,
+        "text": "Ah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00036",
+        "available": 151.7
+      },
+      {
+        "speaker": "A",
+        "start": 151.2,
+        "end": 151.31,
+        "text": "She.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00037",
+        "available": 151.81
+      },
+      {
+        "speaker": "D",
+        "start": 148.82,
+        "end": 152.96,
+        "text": "Ah, I can't cut and paste it into the other folder but",
+        "boundary": "speaker_gap",
+        "id": "TS3006c-U00038",
+        "available": 153.46
+      },
+      {
+        "speaker": "D",
+        "start": 159.21,
+        "end": 160.18,
+        "text": "Move to meeting room.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00039",
+        "available": 160.68
+      },
+      {
+        "speaker": "D",
+        "start": 162.33,
+        "end": 162.63,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00040",
+        "available": 163.13
+      },
+      {
+        "speaker": "A",
+        "start": 151.31,
+        "end": 162.65,
+        "text": "You can look at the final report, 'cause I have to record everything we are deciding and such, so I'm trying to write it down between everything else.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00041",
+        "available": 163.15
+      },
+      {
+        "speaker": "A",
+        "start": 167.13,
+        "end": 167.56,
+        "text": "Oh.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00042",
+        "available": 168.06
+      },
+      {
+        "speaker": "D",
+        "start": 168.04,
+        "end": 169.43,
+        "text": "Yeah me too,.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00043",
+        "available": 169.93
+      },
+      {
+        "speaker": "C",
+        "start": 162.52,
+        "end": 173.82,
+        "text": "Sometimes I have these pop-ups or these sounds and there's nothing there, and also with I don't know how to use PowerPoint, so it takes me forever to get something done with it.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00044",
+        "available": 174.32
+      },
+      {
+        "speaker": "C",
+        "start": 175.78,
+        "end": 176.05,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00045",
+        "available": 176.55
+      },
+      {
+        "speaker": "B",
+        "start": 173.71,
+        "end": 177.62,
+        "text": "I I've got the same problem as well.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00046",
+        "available": 178.12
+      },
+      {
+        "speaker": "D",
+        "start": 177.87,
+        "end": 178.8,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00047",
+        "available": 179.3
+      },
+      {
+        "speaker": "A",
+        "start": 178.35,
+        "end": 178.83,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00048",
+        "available": 179.33
+      },
+      {
+        "speaker": "A",
+        "start": 178.83,
+        "end": 180.45,
+        "text": "Here we go again.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00049",
+        "available": 180.95
+      },
+      {
+        "speaker": "A",
+        "start": 180.45,
+        "end": 182.84,
+        "text": "Welcome.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00050",
+        "available": 183.34
+      },
+      {
+        "speaker": "C",
+        "start": 182.93,
+        "end": 183.27,
+        "text": "Thi",
+        "boundary": "speaker_gap",
+        "id": "TS3006c-U00051",
+        "available": 183.77
+      },
+      {
+        "speaker": "A",
+        "start": 182.84,
+        "end": 193.83,
+        "text": "Uh we have again three presentations and then we have to decide on what concepts the mobile phone has to uh f the remote control has to support.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00052",
+        "available": 194.33
+      },
+      {
+        "speaker": "C",
+        "start": 194.13,
+        "end": 194.49,
+        "text": "Mm-hmm.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00053",
+        "available": 194.99
+      },
+      {
+        "speaker": "A",
+        "start": 193.83,
+        "end": 195.57,
+        "text": "So who wants go.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00054",
+        "available": 196.07
+      },
+      {
+        "speaker": "A",
+        "start": 196.73,
+        "end": 197.13,
+        "text": "Yes?",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00055",
+        "available": 197.63
+      },
+      {
+        "speaker": "D",
+        "start": 195.98,
+        "end": 197.33,
+        "text": "Yes.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00056",
+        "available": 197.83
+      },
+      {
+        "speaker": "C",
+        "start": 196.72,
+        "end": 197.45,
+        "text": "Who wants to start?",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00057",
+        "available": 197.95
+      },
+      {
+        "speaker": "B",
+        "start": 198.68,
+        "end": 199.24,
+        "text": "Oh.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00058",
+        "available": 199.74
+      },
+      {
+        "speaker": "A",
+        "start": 198.49,
+        "end": 199.39,
+        "text": "Yeah sure.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00059",
+        "available": 199.89
+      },
+      {
+        "speaker": "B",
+        "start": 199.24,
+        "end": 199.69,
+        "text": "No.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00060",
+        "available": 200.19
+      },
+      {
+        "speaker": "A",
+        "start": 199.39,
+        "end": 200.11,
+        "text": "Doesn't matter.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00061",
+        "available": 200.61
+      },
+      {
+        "speaker": "B",
+        "start": 199.69,
+        "end": 200.13,
+        "text": "Yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00062",
+        "available": 200.63
+      },
+      {
+        "speaker": "D",
+        "start": 197.33,
+        "end": 201.89,
+        "text": "Me first again or yeah.",
+        "boundary": "sentence_end",
+        "id": "TS3006c-U00064",
+        "available": 202.39
+      }
+    ]
+  },
+  "saved_note_states": {
+    "minicpm": {
+      "first:authored-W1-2|audio_only": {
+        "next_id": 2,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "Document workflow clarification",
+            "fact": "User confirms they can leave a page without ticking 'OK' until returning to it",
+            "owner": "Unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "EN2003a-C000",
+              "EN2003a-C001",
+              "EN2003a-C006"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N1",
+            "before": {
+              "id": "N1",
+              "topic": "Document workflow clarification",
+              "fact": "User confirms they can leave a page without ticking 'OK' until returning to it",
+              "owner": "Unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000"
+              ]
+            },
+            "after": {
+              "id": "N1",
+              "topic": "Document workflow clarification",
+              "fact": "User confirms they can leave a page without ticking 'OK' until returning to it",
+              "owner": "Unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001"
+              ]
+            }
+          },
+          {
+            "note_id": "N1",
+            "before": {
+              "id": "N1",
+              "topic": "Document workflow clarification",
+              "fact": "User confirms they can leave a page without ticking 'OK' until returning to it",
+              "owner": "Unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001"
+              ]
+            },
+            "after": {
+              "id": "N1",
+              "topic": "Document workflow clarification",
+              "fact": "User confirms they can leave a page without ticking 'OK' until returning to it",
+              "owner": "Unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001",
+                "EN2003a-C006"
+              ]
+            }
+          }
+        ],
+        "links": []
+      },
+      "scale:TS3006c-S05-Q3|audio_only": {
+        "next_id": 2,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "Language Switch",
+            "fact": "Speaker switches to English after initial Dutch conversation",
+            "owner": "Speaker 1",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C002"
+            ]
+          }
+        },
+        "changes": [],
+        "links": []
+      },
+      "first:authored-W1-2|labelled_voices": {
+        "next_id": 2,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "User Interface Confirmation",
+            "fact": "User must re-tick 'OK' when returning to a page after leaving it, not upon initial entry.",
+            "owner": "Voice B",
+            "status": "observed",
+            "audio_segment_ids": [
+              "EN2003a-C000",
+              "EN2003a-C001"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N1",
+            "before": {
+              "id": "N1",
+              "topic": "User Interface Confirmation",
+              "fact": "User must re-tick 'OK' when returning to a page after leaving it, not upon initial entry.",
+              "owner": "Voice B",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000"
+              ]
+            },
+            "after": {
+              "id": "N1",
+              "topic": "User Interface Confirmation",
+              "fact": "User must re-tick 'OK' when returning to a page after leaving it, not upon initial entry.",
+              "owner": "Voice B",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001"
+              ]
+            }
+          },
+          {
+            "note_id": "N1",
+            "before": {
+              "id": "N1",
+              "topic": "User Interface Confirmation",
+              "fact": "User must re-tick 'OK' when returning to a page after leaving it, not upon initial entry.",
+              "owner": "Voice B",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001"
+              ]
+            },
+            "after": {
+              "id": "N1",
+              "topic": "User Interface Confirmation",
+              "fact": "User must re-tick 'OK' when returning to a page after leaving it, not upon initial entry.",
+              "owner": "Voice B",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001"
+              ]
+            }
+          }
+        ],
+        "links": []
+      },
+      "scale:TS3006c-S05-Q3|labelled_voices": {
+        "next_id": 3,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "Marketing presentation",
+            "fact": "Speaker welcomes audience to a marketing presentation about trend watching",
+            "owner": "Speaker",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C006"
+            ]
+          },
+          "N2": {
+            "id": "N2",
+            "topic": "Marketing presentation",
+            "fact": "Speaker discusses fruit and vegetable trends for clothing, shoes, and furniture with spongy field material",
+            "owner": "Speaker",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C007",
+              "TS3006c-C008"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N2",
+            "before": {
+              "id": "N2",
+              "topic": "Marketing presentation",
+              "fact": "Speaker discusses fruit and vegetable trends for clothing, shoes, and furniture with spongy field material",
+              "owner": "Speaker",
+              "status": "observed",
+              "audio_segment_ids": [
+                "TS3006c-C007"
+              ]
+            },
+            "after": {
+              "id": "N2",
+              "topic": "Marketing presentation",
+              "fact": "Speaker discusses fruit and vegetable trends for clothing, shoes, and furniture with spongy field material",
+              "owner": "Speaker",
+              "status": "observed",
+              "audio_segment_ids": [
+                "TS3006c-C007",
+                "TS3006c-C008"
+              ]
+            }
+          }
+        ],
+        "links": []
+      }
+    },
+    "qwen-thinking": {
+      "first:authored-W1-2|audio_only": {
+        "next_id": 7,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "OK button process constraint",
+            "fact": "Ticking the note and okay is required only when returning to a page after leaving it, not upon initial completion.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "EN2003a-C000",
+              "EN2003a-C001"
+            ]
+          },
+          "N2": {
+            "id": "N2",
+            "topic": "Call for abstracts/titles overdue",
+            "fact": "A volunteer has committed to handling the overdue call for abstracts/titles by the end of the week.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C002",
+              "EN2003a-C003"
+            ]
+          },
+          "N3": {
+            "id": "N3",
+            "topic": "Separate calls for linguists vs. other attendees",
+            "fact": "Decided to send separate calls to avoid linguists worrying about losing their place, as other attendees' presence is not essential to them.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C004"
+            ]
+          },
+          "N4": {
+            "id": "N4",
+            "topic": "Priority decision for tasks",
+            "fact": "Need to decide priority of tasks later down the line.",
+            "owner": "unknown",
+            "status": "unresolved",
+            "audio_segment_ids": [
+              "EN2003a-C005"
+            ]
+          },
+          "N5": {
+            "id": "N5",
+            "topic": "Claire handling psychology people",
+            "fact": "Claire is assigned to handle psychology people as she knows the correct email addresses to use and her psych-specific email address makes the message more relevant to them.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C006",
+              "EN2003a-C010"
+            ]
+          },
+          "N6": {
+            "id": "N6",
+            "topic": "Email content for Claire's message",
+            "fact": "Exact message content is set via main call; date reminders included.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C007",
+              "EN2003a-C009"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N1",
+            "before": {
+              "id": "N1",
+              "topic": "OK button process constraint",
+              "fact": "Ticking the note and okay is required only when returning to a page after leaving it, not upon initial completion.",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000"
+              ]
+            },
+            "after": {
+              "id": "N1",
+              "topic": "OK button process constraint",
+              "fact": "Ticking the note and okay is required only when returning to a page after leaving it, not upon initial completion.",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C000",
+                "EN2003a-C001"
+              ]
+            }
+          },
+          {
+            "note_id": "N2",
+            "before": {
+              "id": "N2",
+              "topic": "Call for abstracts/titles overdue",
+              "fact": "The call for abstracts or titles is overdue and needs to be sorted out first.",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C002"
+              ]
+            },
+            "after": {
+              "id": "N2",
+              "topic": "Call for abstracts/titles overdue",
+              "fact": "A volunteer has committed to handling the overdue call for abstracts/titles by the end of the week.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C002",
+                "EN2003a-C003"
+              ]
+            }
+          },
+          {
+            "note_id": "N6",
+            "before": {
+              "id": "N6",
+              "topic": "Email content for Claire's message",
+              "fact": "Need to decide exact message content and include date reminders for Claire's email to psychology attendees.",
+              "owner": "unknown",
+              "status": "unresolved",
+              "audio_segment_ids": [
+                "EN2003a-C007"
+              ]
+            },
+            "after": {
+              "id": "N6",
+              "topic": "Email content for Claire's message",
+              "fact": "Exact message content is set via main call; date reminders included.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C007",
+                "EN2003a-C009"
+              ]
+            }
+          },
+          {
+            "note_id": "N5",
+            "before": {
+              "id": "N5",
+              "topic": "Claire handling psychology people",
+              "fact": "Claire is assigned to handle psychology people as she knows the correct email addresses to use.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C006"
+              ]
+            },
+            "after": {
+              "id": "N5",
+              "topic": "Claire handling psychology people",
+              "fact": "Claire is assigned to handle psychology people as she knows the correct email addresses to use and her psych-specific email address makes the message more relevant to them.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C006",
+                "EN2003a-C010"
+              ]
+            }
+          }
+        ],
+        "links": []
+      },
+      "scale:TS3006c-S05-Q3|audio_only": {
+        "next_id": 13,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "Language switch",
+            "fact": "Agreed to use English from now on.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "TS3006c-C002"
+            ]
+          },
+          "N2": {
+            "id": "N2",
+            "topic": "Presentation location",
+            "fact": "Presentations uploaded to shared folder under components design.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "TS3006c-C003"
+            ]
+          },
+          "N3": {
+            "id": "N3",
+            "topic": "Testing activity",
+            "fact": "Testing the drawing tool as part of presentation setup.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C002"
+            ]
+          },
+          "N4": {
+            "id": "N4",
+            "topic": "Presentation access",
+            "fact": "Other presentations not visible despite upload to shared folder.",
+            "owner": "unknown",
+            "status": "unresolved",
+            "audio_segment_ids": [
+              "TS3006c-C003"
+            ]
+          },
+          "N5": {
+            "id": "N5",
+            "topic": "PowerPoint usage difficulty",
+            "fact": "Difficulty using PowerPoint causes delays in creating presentations.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C004"
+            ]
+          },
+          "N6": {
+            "id": "N6",
+            "topic": "Pop-up/sound issues",
+            "fact": "Pop-ups or sounds appear with no content.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C004"
+            ]
+          },
+          "N7": {
+            "id": "N7",
+            "topic": "Presentation review scope",
+            "fact": "Three presentations to be reviewed for mobile phone and remote control concepts.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C005"
+            ]
+          },
+          "N8": {
+            "id": "N8",
+            "topic": "Marketing presentation topic",
+            "fact": "Marketing presentation focuses on trend watching for remote control market developments.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C006"
+            ]
+          },
+          "N9": {
+            "id": "N9",
+            "topic": "Target audience",
+            "fact": "Young public is the target audience due to fashion watchers detecting trends for them.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C006"
+            ]
+          },
+          "N10": {
+            "id": "N10",
+            "topic": "Marketing presentation theme",
+            "fact": "Fruit and vegetables are the most important theme for clothing, shoes, and furniture.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C007"
+            ]
+          },
+          "N11": {
+            "id": "N11",
+            "topic": "Remote control design priority",
+            "fact": "Fancy look and feel is the most important aspect for remote control instead of current features.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C007"
+            ]
+          },
+          "N12": {
+            "id": "N12",
+            "topic": "Remote control design priority (second aspect)",
+            "fact": "Second priority for remote control design is technological innovation using screen and speech recognition.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C008"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N2",
+            "before": {
+              "id": "N2",
+              "topic": "Presentation location",
+              "fact": "Unresolved question about location of other presentations.",
+              "owner": "unknown",
+              "status": "unresolved",
+              "audio_segment_ids": [
+                "TS3006c-C002"
+              ]
+            },
+            "after": {
+              "id": "N2",
+              "topic": "Presentation location",
+              "fact": "Presentations uploaded to shared folder under components design.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "TS3006c-C003"
+              ]
+            }
+          }
+        ],
+        "links": []
+      },
+      "first:authored-W1-2|labelled_voices": {
+        "next_id": 7,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "page status confirmation process",
+            "fact": "Ticking the note and OK is required only when leaving a page for the second time after returning; initial departure does not require ticking until writing is completed.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C000"
+            ]
+          },
+          "N2": {
+            "id": "N2",
+            "topic": "call for abstracts/titles overdue",
+            "fact": "A volunteer will send the call for abstracts/titles today or tomorrow.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C002",
+              "EN2003a-C003",
+              "EN2003a-C005"
+            ]
+          },
+          "N3": {
+            "id": "N3",
+            "topic": "call for abstracts strategy",
+            "fact": "Send separate calls; mention inviting others but avoid emphasizing to prevent linguists from worrying about losing their place.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C004"
+            ]
+          },
+          "N4": {
+            "id": "N4",
+            "topic": "priority decision",
+            "fact": "We need to decide a priority thing later down the line.",
+            "owner": "unknown",
+            "status": "unresolved",
+            "audio_segment_ids": [
+              "EN2003a-C005"
+            ]
+          },
+          "N5": {
+            "id": "N5",
+            "topic": "Claire's role in psychology outreach",
+            "fact": "Claire handles psycholinguistics outreach as she knows the correct email addresses to use.",
+            "owner": "Claire",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C006",
+              "EN2003a-C008"
+            ]
+          },
+          "N6": {
+            "id": "N6",
+            "topic": "content of Claire's outreach email message",
+            "fact": "Exact message content for Claire's outreach email is determined by the main call to ensure it stands out as applicable to recipients; she will be CC'd on it using her psych email address for relevance.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C007",
+              "EN2003a-C009",
+              "EN2003a-C010"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N2",
+            "before": {
+              "id": "N2",
+              "topic": "call for abstracts/titles overdue",
+              "fact": "The call for abstracts or titles is overdue and must be sorted out first.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C002"
+              ]
+            },
+            "after": {
+              "id": "N2",
+              "topic": "call for abstracts/titles overdue",
+              "fact": "The call for abstracts or titles is overdue; a volunteer has committed to handle it by the end of the week.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C002",
+                "EN2003a-C003"
+              ]
+            }
+          },
+          {
+            "note_id": "N2",
+            "before": {
+              "id": "N2",
+              "topic": "call for abstracts/titles overdue",
+              "fact": "The call for abstracts or titles is overdue; a volunteer has committed to handle it by the end of the week.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C002",
+                "EN2003a-C003"
+              ]
+            },
+            "after": {
+              "id": "N2",
+              "topic": "call for abstracts/titles overdue",
+              "fact": "A volunteer will send the call for abstracts/titles today or tomorrow.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C002",
+                "EN2003a-C003",
+                "EN2003a-C005"
+              ]
+            }
+          },
+          {
+            "note_id": "N5",
+            "before": {
+              "id": "N5",
+              "topic": "Claire's role in psychology outreach",
+              "fact": "Claire handles psychology people outreach as she knows the correct email addresses to use.",
+              "owner": "Claire",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C006"
+              ]
+            },
+            "after": {
+              "id": "N5",
+              "topic": "Claire's role in psychology outreach",
+              "fact": "Claire handles psycholinguistics outreach as she knows the correct email addresses to use.",
+              "owner": "Claire",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C006",
+                "EN2003a-C008"
+              ]
+            }
+          },
+          {
+            "note_id": "N6",
+            "before": {
+              "id": "N6",
+              "topic": "content of Claire's outreach email message",
+              "fact": "Need to decide exact message content for Claire's outreach email, including dates reminder to ensure accuracy.",
+              "owner": "unknown",
+              "status": "unresolved",
+              "audio_segment_ids": [
+                "EN2003a-C007"
+              ]
+            },
+            "after": {
+              "id": "N6",
+              "topic": "content of Claire's outreach email message",
+              "fact": "Exact message content for Claire's outreach email is determined by the main call; she will be CC'd on it.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C007",
+                "EN2003a-C009"
+              ]
+            }
+          },
+          {
+            "note_id": "N6",
+            "before": {
+              "id": "N6",
+              "topic": "content of Claire's outreach email message",
+              "fact": "Exact message content for Claire's outreach email is determined by the main call; she will be CC'd on it.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C007",
+                "EN2003a-C009"
+              ]
+            },
+            "after": {
+              "id": "N6",
+              "topic": "content of Claire's outreach email message",
+              "fact": "Exact message content for Claire's outreach email is determined by the main call to ensure it stands out as applicable to recipients; she will be CC'd on it using her psych email address for relevance.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C007",
+                "EN2003a-C009",
+                "EN2003a-C010"
+              ]
+            }
+          }
+        ],
+        "links": []
+      },
+      "scale:TS3006c-S05-Q3|labelled_voices": {
+        "next_id": 6,
+        "notes": {
+          "N1": {
+            "id": "N1",
+            "topic": "Language policy",
+            "fact": "Meeting to be conducted in English from now on.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "TS3006c-C002"
+            ]
+          },
+          "N2": {
+            "id": "N2",
+            "topic": "Presentation status",
+            "fact": "Other presentations are stored in the shared folder.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "TS3006c-C003"
+            ]
+          },
+          "N3": {
+            "id": "N3",
+            "topic": "PowerPoint usage difficulties",
+            "fact": "Some participants don't know how to use PowerPoint, causing delays in creating presentations.",
+            "owner": "unknown",
+            "status": "unresolved",
+            "audio_segment_ids": [
+              "TS3006c-C004"
+            ]
+          },
+          "N4": {
+            "id": "N4",
+            "topic": "Presentation review",
+            "fact": "Three presentations must be reviewed before deciding on mobile phone and remote control concepts.",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "TS3006c-C005"
+            ]
+          },
+          "N5": {
+            "id": "N5",
+            "topic": "Market investigation findings",
+            "fact": "Market investigation shows fruit and vegetables as main theme for clothing, shoes, furniture; spongy material feel expected; remote control key aspects are fancy look and feel and technological innovation with screen/speech recognition.",
+            "owner": "unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "TS3006c-C006",
+              "TS3006c-C007",
+              "TS3006c-C008"
+            ]
+          }
+        },
+        "changes": [
+          {
+            "note_id": "N2",
+            "before": {
+              "id": "N2",
+              "topic": "Presentation status",
+              "fact": "Unresolved question about location of other presentations.",
+              "owner": "unknown",
+              "status": "unresolved",
+              "audio_segment_ids": [
+                "TS3006c-C002"
+              ]
+            },
+            "after": {
+              "id": "N2",
+              "topic": "Presentation status",
+              "fact": "Other presentations are stored in the shared folder.",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "TS3006c-C003"
+              ]
+            }
+          },
+          {
+            "note_id": "N5",
+            "before": {
+              "id": "N5",
+              "topic": "Market investigation findings",
+              "fact": "Investigation in remote control market shows developments; fashion watchers detected trends for young public (our target audience).",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "TS3006c-C006"
+              ]
+            },
+            "after": {
+              "id": "N5",
+              "topic": "Market investigation findings",
+              "fact": "Market investigation shows fruit and vegetables as the main theme for clothing, shoes, and furniture; material feel expected to be spongy; remote control's key aspect is fancy look and feel over current designs.",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "TS3006c-C006",
+                "TS3006c-C007"
+              ]
+            }
+          },
+          {
+            "note_id": "N5",
+            "before": {
+              "id": "N5",
+              "topic": "Market investigation findings",
+              "fact": "Market investigation shows fruit and vegetables as the main theme for clothing, shoes, and furniture; material feel expected to be spongy; remote control's key aspect is fancy look and feel over current designs.",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "TS3006c-C006",
+                "TS3006c-C007"
+              ]
+            },
+            "after": {
+              "id": "N5",
+              "topic": "Market investigation findings",
+              "fact": "Market investigation shows fruit and vegetables as main theme for clothing, shoes, furniture; spongy material feel expected; remote control key aspects are fancy look and feel and technological innovation with screen/speech recognition.",
+              "owner": "unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "TS3006c-C006",
+                "TS3006c-C007",
+                "TS3006c-C008"
+              ]
+            }
+          }
+        ],
+        "links": []
+      }
+    }
+  },
+  "reviewer": "Codex; no independent human review",
+  "scope": "Two early questions, one meeting each, with two correlated speaker conditions. This is a feasibility pilot, not a model ranking or a 105-question evaluation.",
+  "identity_rule": "Audio-only answers may identify a speaker by a unique past utterance or a matching audio segment. Labelled examples make A–D available but descriptions are still accepted when uniquely resolvable. No model answer actually used an A–D speaker label.",
+  "temporal_rule": "The source says Thursday, end of the week, then today or tomorrow. Both time descriptions are accepted for the main-call question.",
+  "citation_rule": "Answer content and citation correctness are distinct: some Qwen timestamps are malformed, inaccurate or outside the cited evidence; these are not verified temporal grounding.",
+  "input_protocol": "No oracle transcript or known question text entered either model. All question-blind background states completed before any question was supplied; reactive and notes share the exact full audio history and spoken question within each identity condition.",
+  "amortized_generation": "Each update receives new audio, up to ten seconds of recent speech, one bounded current note state, and past-only voice examples when applicable. Full state versions are retained on disk. No stacked snapshots.",
+  "runtime": "One A100 SXM4 80 GB per model, encoder+language model+8 GiB KV on GPU 0, no speech output; models sequential in the audio lane, maximum two GPUs with the separate text lane.",
+  "latency": "Cold prefix/multimodal caches per request; first-answer time includes reading/preprocessing, audio encoding, prompt processing and exposed native thinking. MiniCPM has no exposed thinking channel.",
+  "observed_pattern": "Qwen function notes increase request-time thinking in all four matched comparisons; neither voice condition shows a latency reduction. MiniCPM omits timing or overstates file availability in every pilot answer."
+}

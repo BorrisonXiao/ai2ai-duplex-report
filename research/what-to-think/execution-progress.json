@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated": "2026-11-13",
-  "status": "parallel_text_and_audio_s2",
+  "status": "parallel_pilots_source_reviewed",
   "snapshot_label": "S2 note-editing study; DuplexOmni stopped",
   "active_job": null,
   "planned_questions_per_condition": 105,
@@ -366,7 +366,7 @@
       "text": "Validate the scorer against the source-reviewed answers.",
       "status": "partial",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "Automatic v13 did not qualify; all 144 pilot answers require source review before any accuracy release."
+      "evidence": "Automatic v13 remains unqualified; all 144 pilot outputs instead received Codex source review."
     },
     {
       "id": "note-functions-quote-inputs",
@@ -378,9 +378,9 @@
     {
       "id": "note-functions-quote-pilot",
       "text": "Run the twelve-question note-text versus source-speech comparison.",
-      "status": "partial",
+      "status": "complete",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "126/144 answers saved; source scoring remains pending."
+      "evidence": "144/144 answers saved; all source-reviewed by Codex."
     },
     {
       "id": "audio-s2-inputs",
@@ -399,12 +399,12 @@
     {
       "id": "audio-s2-pilot",
       "text": "Compare reactive and function-note audio S2 under both identity conditions.",
-      "status": "partial",
-      "url": "experiments/note-functions.html#audio-s2",
-      "evidence": "0/16 answers saved; source review is required before accuracy, maximum two isolated study GPUs."
+      "status": "complete",
+      "url": "experiments/note-functions.html#audio-pilot-results",
+      "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
     }
   ],
-  "updated_at": "2026-11-13T22:25:01-05:00",
+  "updated_at": "2026-11-13T22:45:45-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -652,16 +652,16 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-13T22:25:01-05:00",
-    "status": "parallel_text_and_audio_s2",
+    "updated": "2026-11-13T22:45:45-05:00",
+    "status": "parallel_pilots_source_reviewed",
     "api_revision": "v2",
     "control_count": 10,
     "repair_attempts": 1,
     "behavior_tests": 17,
     "brief": [
       {
-        "text": "The text diagnostic has saved 126 of 144 answers; all require source review.",
-        "url": "#followup"
+        "text": "Source quotes reduce mean request-time thinking by 16.6% on 12 selected questions; the latency change remains uncertain.",
+        "url": "#diagnostic-results"
       },
       {
         "text": "All 1,260 answers are saved and scored; 84 answers have targeted source review, with raw automatic labels retained.",
@@ -672,8 +672,8 @@
         "url": "#results"
       },
       {
-        "text": "Audio S2 runs in a separate GPU lane, comparing reactive answers and function-call notes with and without labelled voice examples.",
-        "url": "#audio-s2"
+        "text": "Both audio pilots are source-reviewed; Qwen uses more request-time thinking with function notes in all four matched comparisons.",
+        "url": "#audio-pilot-results"
       }
     ],
     "stages": [
@@ -684,8 +684,8 @@
       },
       {
         "stage": "Text representation diagnostic",
-        "status": "126/144 answers saved",
-        "evidence": "Four matched inputs; 48 Instruct and 96 Thinking answers; no new accuracy released."
+        "status": "144/144 answers saved",
+        "evidence": "Four matched inputs; 48 Instruct and 96 Thinking answers; source-reviewed results appear in the diagnostic section."
       },
       {
         "stage": "Audio S2 feasibility",
@@ -694,7 +694,7 @@
       },
       {
         "stage": "Audio reactive versus function notes",
-        "status": "0/16 answers saved",
+        "status": "16/16 answers saved",
         "evidence": "Two questions and both speaker conditions; all background states finish before any question is supplied."
       }
     ],
@@ -715,8 +715,8 @@
       },
       {
         "label": "Text diagnostic · Thinking",
-        "state": "RUNNING",
-        "completed": "78",
+        "state": "COMPLETED",
+        "completed": "96",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80 GB"
       },
@@ -729,15 +729,15 @@
       },
       {
         "label": "Audio paired pilot · MiniCPM-o 4.5",
-        "state": "RUNNING",
-        "completed": "0/8 answers; 8 calls",
+        "state": "COMPLETED",
+        "completed": "8/8 answers; 44 calls",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80 GB"
       },
       {
         "label": "Audio paired pilot · Qwen3-Omni Thinking",
-        "state": "PENDING",
-        "completed": "0/8 answers; 0 calls",
+        "state": "COMPLETED",
+        "completed": "8/8 answers; 44 calls",
         "GPUs": 1,
         "GPU_type": "A100 SXM4 80 GB"
       }
@@ -1245,9 +1245,9 @@
       }
     ],
     "next_steps": [
-      "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
-      "Complete the two-question audio comparison and source-review all 16 answers, including speaker identity and event changes.",
-      "Compare paired accuracy, request-time thinking, first-answer time and total note-generation cost before selecting a larger run."
+      "Refine the question-blind writer to preserve source speech, speaker ownership, and the difference between reported actions and confirmed outcomes.",
+      "Test the revised writer on the same development cases to check factual retention and request-time thinking before scaling.",
+      "Freeze the design and evaluation rules before a larger comparison; current pilot latency intervals and the two-question audio set do not establish a general gain."
     ],
     "analysis": {
       "scope": "full",
@@ -24621,16 +24621,16 @@
       }
     ],
     "parallel_s2": {
-      "updated": "2026-11-13T22:25:01-05:00",
-      "status": "bounded_text_pilot_and_audio_feasibility",
-      "text_outputs": 126,
+      "updated": "2026-11-13T22:45:45-05:00",
+      "status": "source_reviewed_pilots",
+      "text_outputs": 144,
       "text_planned": 144,
       "Instruct_planned": 48,
       "Thinking_planned": 96,
       "automatic_judge_qualified": false,
       "judge_core_agreements": 142,
       "judge_cases": 155,
-      "accuracy_status": "Source review of every pilot answer required; no new accuracy released.",
+      "accuracy_status": "All 144 text and 16 audio outputs source-reviewed by Codex; automatic judge remains unqualified. Selected pilots, not held-out accuracy.",
       "jobs": [
         {
           "label": "Text diagnostic · Instruct",
@@ -24652,8 +24652,8 @@
         },
         {
           "label": "Text diagnostic · Thinking",
-          "state": "RUNNING",
-          "completed": 78,
+          "state": "COMPLETED",
+          "completed": 96,
           "GPU_count": 1,
           "GPU_type_VRAM": "A100 SXM4 80 GB",
           "GPU_0": "Text thinker weights and 8 GiB KV",
@@ -24670,8 +24670,8 @@
         },
         {
           "label": "Audio paired pilot · MiniCPM-o 4.5",
-          "state": "RUNNING",
-          "completed": "0/8 answers; 8 calls",
+          "state": "COMPLETED",
+          "completed": "8/8 answers; 44 calls",
           "GPU_count": 1,
           "GPU_type_VRAM": "A100 SXM4 80 GB",
           "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
@@ -24679,23 +24679,25 @@
         },
         {
           "label": "Audio paired pilot · Qwen3-Omni Thinking",
-          "state": "PENDING",
-          "completed": "0/8 answers; 0 calls",
+          "state": "COMPLETED",
+          "completed": "8/8 answers; 44 calls",
           "GPU_count": 1,
           "GPU_type_VRAM": "A100 SXM4 80 GB",
           "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
           "dependencies": "Sequential within the audio lane"
         }
       ],
-      "active_GPUs": 2,
+      "active_GPUs": 0,
       "max_study_GPUs": 2,
-      "GPU_hours_all_attempts": 0.7833333333333333,
+      "text_source_reviewed": true,
+      "audio_source_reviewed": true,
+      "GPU_hours_all_attempts": 1.0255555555555556,
       "audio_cases_prepared": 105,
       "audio_models": [
         "Qwen3-Omni-30B-A3B-Thinking",
         "MiniCPM-o 4.5"
       ],
-      "audio_outputs": 0,
+      "audio_outputs": 16,
       "audio_planned": 16,
       "audio_questions": 2,
       "speaker_conditions": [
@@ -24853,7 +24855,7 @@
       ],
       "audio_output": "Native answer text, audio-segment evidence and uncertainty; generated speech is disabled.",
       "audio_notes": "Local add, update, delete, link and no-change functions preserve audio references and earlier versions; no oracle transcript is stored in the model-visible memory.",
-      "audio_phase": "Both models completed the six-minute runtime and native note-call checks. The paired pilot has saved 0/16 answers across two questions; every answer still requires source review.",
+      "audio_phase": "Both models completed the six-minute runtime and native note-call checks. The paired pilot has saved 16/16 answers across two questions; all have source review.",
       "audio_input_rules": [
         "Ground-truth transcripts and reference answers are evaluation-only.",
         "The user question is supplied as audio, not as its known text.",
@@ -24868,9 +24870,9 @@
         "Report first-answer/completion time, audio input tokens and all earlier encoding/note cost; match cache conditions between reactive and notes."
       ],
       "next_steps": [
-        "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
-        "Complete the two-question audio comparison and source-review all 16 answers, including speaker identity and event changes.",
-        "Compare paired accuracy, request-time thinking, first-answer time and total note-generation cost before selecting a larger run."
+        "Refine the question-blind writer to preserve source speech, speaker ownership, and the difference between reported actions and confirmed outcomes.",
+        "Test the revised writer on the same development cases to check factual retention and request-time thinking before scaling.",
+        "Freeze the design and evaluation rules before a larger comparison; current pilot latency intervals and the two-question audio set do not establish a general gain."
       ],
       "sources": [
         {

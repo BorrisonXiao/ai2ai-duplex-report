@@ -443,7 +443,7 @@
           "text": "Validate the scorer against the source-reviewed answers.",
           "status": "partial",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "Automatic v13 did not qualify; all 144 pilot answers require source review before any accuracy release."
+          "evidence": "Automatic v13 remains unqualified; all 144 pilot outputs instead received Codex source review."
         },
         {
           "text": "Prepare inputs containing source speech and earlier evidence links.",
@@ -453,9 +453,9 @@
         },
         {
           "text": "Run the twelve-question note-text versus source-speech comparison.",
-          "status": "partial",
+          "status": "complete",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "126/144 answers saved; source scoring remains pending."
+          "evidence": "144/144 answers saved; all source-reviewed by Codex."
         },
         {
           "text": "Prepare causal audio inputs and past-only voice examples.",
@@ -471,9 +471,9 @@
         },
         {
           "text": "Compare reactive and function-note audio S2 under both identity conditions.",
-          "status": "partial",
-          "project_url": "experiments/note-functions.html#audio-s2",
-          "evidence": "0/16 answers saved; source review is required before accuracy, maximum two isolated study GPUs."
+          "status": "complete",
+          "project_url": "experiments/note-functions.html#audio-pilot-results",
+          "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
         }
       ]
     },

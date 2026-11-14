@@ -64,6 +64,14 @@ def main():
     if parallel_path.exists():
         from audio_s2_progress import section
         body+=section(json.loads(parallel_path.read_text()),table)
+        audio_result_path=ROOT/'research/note-functions/audio-pilot.json'
+        if audio_result_path.exists():
+            from audio_s2_progress import results
+            body+=results(json.loads(audio_result_path.read_text()),table)
+    diagnostic_path=ROOT/'research/note-functions/diagnostic.json'
+    if diagnostic_path.exists():
+        from s2_pilot_results import section
+        body+=section(json.loads(diagnostic_path.read_text()),table)
     resource_note='The current text and audio branches use separate one-GPU jobs, with at most two 80 GB GPUs active. Model weights, audio encoders where needed and KV cache share GPU 0 within each job; no model service is shared across lanes. Controlled text timing resets the prefix cache before each request.' if d.get('parallel_s2') else 'The original text study used one A100 or H100 80 GB per job, with weights and KV cache on GPU 0 and stages sequential. vLLM uses BF16, CUDA graphs and prefix caching; controlled timing resets the prefix cache before each request.'
     body+='<section id="next"><h2>Next steps and goals</h2><ul>'+''.join('<li>'+e(x)+'</li>' for x in d['next_steps'])+'</ul><p>'+e(resource_note)+'</p></section>'
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="S2 memory-function experiments: meeting-note edits, answer accuracy, request-time thinking and total token cost."><title>Note-editing functions · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"><style>'+CSS+'pre.native{white-space:pre-wrap;overflow-wrap:anywhere;max-height:36rem;overflow:auto}details{margin:1rem 0}summary{cursor:pointer}</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>'+project_tabs('experiments','../')+'</div></header><div class="container collection-nav">'+experiment_subtabs('note-functions')+'</div><main id="main" class="container results">'+body+'</main><script>function showTarget(){var n=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(!n)return;for(var p=n.parentElement;p;p=p.parentElement){if(p.tagName==="DETAILS")p.open=true;}requestAnimationFrame(function(){var h=document.querySelector(".site-nav");var gap=(h?h.getBoundingClientRect().bottom:0)+16;window.scrollTo({top:scrollY+n.getBoundingClientRect().top-gap,behavior:"instant"});});}addEventListener("hashchange",showTarget);addEventListener("DOMContentLoaded",showTarget);addEventListener("load",showTarget);</script></body></html>\n'

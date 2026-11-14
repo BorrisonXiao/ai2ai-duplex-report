@@ -1,5 +1,5 @@
 {
-  "status": "pilot_started_source_review_required",
+  "status": "pilot_source_reviewed",
   "date": "2026-11-13",
   "question": "Can the selected source speech help without the factual errors introduced by generated note text?",
   "conditions": [
@@ -72,9 +72,9 @@
   "gates": [
     {
       "id": "source-judge",
-      "status": "pending",
+      "status": "complete",
       "action": "Source-review every pilot answer using the frozen fact checklists.",
-      "criterion": "The automatic judge did not qualify; no new accuracy is released before all 144 answers are reviewed."
+      "criterion": "All 144 source-reviewed by Codex; automatic v13 remains unqualified. This manual gate covers only the pilot."
     },
     {
       "id": "quote-cpu",
@@ -84,9 +84,9 @@
     },
     {
       "id": "diagnostic-pilot",
-      "status": "partial",
+      "status": "complete",
       "action": "Run 12 familiar diagnostic questions with four conditions, both thinkers and two Thinking seeds.",
-      "criterion": "126/144 answers saved; four conditions and both thinker models."
+      "criterion": "144/144 answers generated and source-reviewed; paired costs, latency uncertainty and actual examples are published."
     },
     {
       "id": "freeze-full",
@@ -106,7 +106,7 @@
     "targets": "A useful candidate preserves accuracy within a predeclared 2 percentage-point margin, reduces mean thinking tokens by at least 15 percent and first-answer time by at least 10 percent, with paired intervals supporting the improvement; these are targets, not observed results."
   },
   "resources": {
-    "current_GPU_count": 1,
+    "current_GPU_count": 0,
     "current_maximum_active": 1,
     "planned_maximum_active": 2,
     "stages": [
