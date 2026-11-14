@@ -455,7 +455,7 @@
           "text": "Run the twelve-question note-text versus source-speech comparison.",
           "status": "partial",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "48/144 answers saved; source scoring remains pending."
+          "evidence": "126/144 answers saved; source scoring remains pending."
         },
         {
           "text": "Prepare causal audio inputs and past-only voice examples.",
@@ -465,15 +465,15 @@
         },
         {
           "text": "Verify audio-history processing and actual note-function execution.",
-          "status": "partial",
+          "status": "complete",
           "project_url": "experiments/note-functions.html#audio-s2",
-          "evidence": "Two audio models submitted; native outputs and long-history capacity must be reviewed."
+          "evidence": "Both models processed six minutes and executed audio note calls; longer history and accuracy remain unvalidated."
         },
         {
           "text": "Compare reactive and function-note audio S2 under both identity conditions.",
-          "status": "planned",
+          "status": "partial",
           "project_url": "experiments/note-functions.html#audio-s2",
-          "evidence": "Requires feasible history input and source-reviewed scoring; maximum two isolated study GPUs."
+          "evidence": "0/16 answers saved; source review is required before accuracy, maximum two isolated study GPUs."
         }
       ]
     },

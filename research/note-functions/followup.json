@@ -86,7 +86,7 @@
       "id": "diagnostic-pilot",
       "status": "partial",
       "action": "Run 12 familiar diagnostic questions with four conditions, both thinkers and two Thinking seeds.",
-      "criterion": "48/144 answers saved; four conditions and both thinker models."
+      "criterion": "126/144 answers saved; four conditions and both thinker models."
     },
     {
       "id": "freeze-full",
@@ -106,9 +106,9 @@
     "targets": "A useful candidate preserves accuracy within a predeclared 2 percentage-point margin, reduces mean thinking tokens by at least 15 percent and first-answer time by at least 10 percent, with paired intervals supporting the improvement; these are targets, not observed results."
   },
   "resources": {
-    "current_GPU_count": 0,
-    "current_maximum_active": 0,
-    "planned_maximum_active": 1,
+    "current_GPU_count": 1,
+    "current_maximum_active": 1,
+    "planned_maximum_active": 2,
     "stages": [
       {
         "stage": "Evaluator qualification",
@@ -122,20 +122,20 @@
         "GPU_count": 1,
         "GPU": "A100 80 GB",
         "roles": "Thinker weights and 8 GiB KV on GPU 0",
-        "dependency": "Evaluator qualification passes."
+        "dependency": "Manual source review of every pilot answer replaces automatic scorer qualification."
       },
       {
         "stage": "Thinking diagnostic",
         "GPU_count": 1,
-        "GPU": "H100 80 GB",
+        "GPU": "A100 80 GB (bounded pilot); H100 timing study remains a later gate",
         "roles": "Thinker weights and 8 GiB KV on GPU 0; cold serial requests",
         "dependency": "Instruct stage completes; no shared GPU services."
       },
       {
         "stage": "Diagnostic scoring",
-        "GPU_count": 1,
-        "GPU": "A100 80 GB",
-        "roles": "Qualified judge weights and 8 GiB KV on GPU 0",
+        "GPU_count": 0,
+        "GPU": "CPU source review",
+        "roles": "Review every answer against past source speech; automatic judge unqualified",
         "dependency": "Both thinker stages complete."
       }
     ],

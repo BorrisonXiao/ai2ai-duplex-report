@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T21:49:40-05:00",
+  "updated": "2026-11-13T22:25:01-05:00",
   "status": "parallel_text_and_audio_s2",
   "api_revision": "v2",
   "control_count": 10,
@@ -7,7 +7,7 @@
   "behavior_tests": 17,
   "brief": [
     {
-      "text": "The text diagnostic has saved 48 of 144 answers; all require source review.",
+      "text": "The text diagnostic has saved 126 of 144 answers; all require source review.",
       "url": "#followup"
     },
     {
@@ -31,18 +31,18 @@
     },
     {
       "stage": "Text representation diagnostic",
-      "status": "48/144 answers saved",
+      "status": "126/144 answers saved",
       "evidence": "Four matched inputs; 48 Instruct and 96 Thinking answers; no new accuracy released."
     },
     {
       "stage": "Audio S2 feasibility",
-      "status": "Models submitted; inspect runtime and native outputs",
-      "evidence": "MiniCPM-o 4.5 and Qwen3-Omni Thinking; reactive input and one note-call check precede full evaluation."
+      "status": "Runtime and note calls checked",
+      "evidence": "Both models completed six-minute audio inputs and accepted actual note calls; this does not establish answer accuracy."
     },
     {
       "stage": "Audio reactive versus function notes",
-      "status": "Planned after feasibility",
-      "evidence": "Run both audio alone and past-only labelled voice examples; no oracle transcript or question text."
+      "status": "0/16 answers saved",
+      "evidence": "Two questions and both speaker conditions; all background states finish before any question is supplied."
     }
   ],
   "jobs": [
@@ -54,13 +54,6 @@
       "GPU_type": "A100 SXM4 80 GB"
     },
     {
-      "label": "Text diagnostic · Thinking",
-      "state": "PENDING",
-      "completed": "0",
-      "GPUs": 1,
-      "GPU_type": "H100 SXM 80 GB"
-    },
-    {
       "label": "Audio feasibility · MiniCPM-o 4.5",
       "state": "COMPLETED",
       "completed": "8",
@@ -68,11 +61,32 @@
       "GPU_type": "A100 SXM4 80 GB"
     },
     {
-      "label": "Audio feasibility · Qwen3-Omni Thinking",
-      "state": "PENDING",
-      "completed": "0",
+      "label": "Text diagnostic · Thinking",
+      "state": "RUNNING",
+      "completed": "78",
       "GPUs": 1,
-      "GPU_type": "H100 SXM 80 GB"
+      "GPU_type": "A100 SXM4 80 GB"
+    },
+    {
+      "label": "Audio feasibility · Qwen3-Omni Thinking",
+      "state": "COMPLETED",
+      "completed": "8",
+      "GPUs": 1,
+      "GPU_type": "A100 SXM4 80 GB"
+    },
+    {
+      "label": "Audio paired pilot · MiniCPM-o 4.5",
+      "state": "RUNNING",
+      "completed": "0/8 answers; 8 calls",
+      "GPUs": 1,
+      "GPU_type": "A100 SXM4 80 GB"
+    },
+    {
+      "label": "Audio paired pilot · Qwen3-Omni Thinking",
+      "state": "PENDING",
+      "completed": "0/8 answers; 0 calls",
+      "GPUs": 1,
+      "GPU_type": "A100 SXM4 80 GB"
     }
   ],
   "examples": [
@@ -579,8 +593,8 @@
   ],
   "next_steps": [
     "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
-    "Qualify full audio-history processing and actual note-call execution for both models.",
-    "Then run the reactive/function-note comparison under both speaker-identity conditions on a small matched set."
+    "Complete the two-question audio comparison and source-review all 16 answers, including speaker identity and event changes.",
+    "Compare paired accuracy, request-time thinking, first-answer time and total note-generation cost before selecting a larger run."
   ],
   "analysis": {
     "scope": "full",
@@ -23954,9 +23968,9 @@
     }
   ],
   "parallel_s2": {
-    "updated": "2026-11-13T21:49:39-05:00",
+    "updated": "2026-11-13T22:25:01-05:00",
     "status": "bounded_text_pilot_and_audio_feasibility",
-    "text_outputs": 48,
+    "text_outputs": 126,
     "text_planned": 144,
     "Instruct_planned": 48,
     "Thinking_planned": 96,
@@ -23975,15 +23989,6 @@
         "dependencies": "Instruct before Thinking; source review required"
       },
       {
-        "label": "Text diagnostic · Thinking",
-        "state": "PENDING",
-        "completed": 0,
-        "GPU_count": 1,
-        "GPU_type_VRAM": "H100 SXM 80 GB",
-        "GPU_0": "Text thinker weights and 8 GiB KV",
-        "dependencies": "Instruct before Thinking; source review required"
-      },
-      {
         "label": "Audio feasibility · MiniCPM-o 4.5",
         "state": "COMPLETED",
         "completed": 8,
@@ -23993,39 +23998,182 @@
         "dependencies": "Sequential within the audio lane"
       },
       {
-        "label": "Audio feasibility · Qwen3-Omni Thinking",
-        "state": "PENDING",
-        "completed": 0,
+        "label": "Text diagnostic · Thinking",
+        "state": "RUNNING",
+        "completed": 78,
         "GPU_count": 1,
-        "GPU_type_VRAM": "H100 SXM 80 GB",
+        "GPU_type_VRAM": "A100 SXM4 80 GB",
+        "GPU_0": "Text thinker weights and 8 GiB KV",
+        "dependencies": "Instruct before Thinking; source review required"
+      },
+      {
+        "label": "Audio feasibility · Qwen3-Omni Thinking",
+        "state": "COMPLETED",
+        "completed": 8,
+        "GPU_count": 1,
+        "GPU_type_VRAM": "A100 SXM4 80 GB",
+        "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
+        "dependencies": "Sequential within the audio lane"
+      },
+      {
+        "label": "Audio paired pilot · MiniCPM-o 4.5",
+        "state": "RUNNING",
+        "completed": "0/8 answers; 8 calls",
+        "GPU_count": 1,
+        "GPU_type_VRAM": "A100 SXM4 80 GB",
+        "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
+        "dependencies": "Sequential within the audio lane"
+      },
+      {
+        "label": "Audio paired pilot · Qwen3-Omni Thinking",
+        "state": "PENDING",
+        "completed": "0/8 answers; 0 calls",
+        "GPU_count": 1,
+        "GPU_type_VRAM": "A100 SXM4 80 GB",
         "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
         "dependencies": "Sequential within the audio lane"
       }
     ],
-    "active_GPUs": 0,
+    "active_GPUs": 2,
     "max_study_GPUs": 2,
-    "GPU_hours_all_attempts": 0.27083333333333337,
+    "GPU_hours_all_attempts": 0.7833333333333333,
     "audio_cases_prepared": 105,
     "audio_models": [
       "Qwen3-Omni-30B-A3B-Thinking",
       "MiniCPM-o 4.5"
     ],
+    "audio_outputs": 0,
+    "audio_planned": 16,
+    "audio_questions": 2,
     "speaker_conditions": [
       "Audio alone",
       "Audio plus labelled examples from past speech"
     ],
     "native_audio_controls": [
       {
-        "model": "audio-minicpm-encoder-fix",
+        "model": "audio-minicpm-explicit-task",
         "condition": "transcribe_real_question",
-        "native_text": "<|tts_eos|>",
+        "native_text": "Assistant, who's sending our main call? And when and why are we asking Claire to send a separate one?<|tts_eos|>",
         "finish_reason": "stop"
       },
       {
-        "model": "audio-minicpm-encoder-fix",
+        "model": "audio-minicpm-explicit-task",
         "condition": "transcribe_silent_control",
-        "native_text": " <|SOA|>118_HQ-Conversations_G0256_S0120<|EOA|><|tts_eos|>",
+        "native_text": "participant-question [0.00-9.64s]<|tts_eos|>",
         "finish_reason": "stop"
+      },
+      {
+        "model": "audio-qwen-tool-template",
+        "condition": "transcribe_real_question",
+        "native_text": "\n\nassistant who's sending our main call and when and why are we asking Claire to send a separate one?<|im_end|>",
+        "finish_reason": "stop"
+      },
+      {
+        "model": "audio-qwen-tool-template",
+        "condition": "transcribe_silent_control",
+        "native_text": "\n\nparticipant-question [0.00-0.00s]<|im_end|>",
+        "finish_reason": "stop"
+      }
+    ],
+    "native_audio_note_examples": [
+      {
+        "model": "Audio feasibility · MiniCPM-o 4.5",
+        "operations": [
+          {
+            "name": "add_note",
+            "arguments": {
+              "topic": "Meeting Notes",
+              "fact": "Speaker decides to send priority task for Ling later today or tomorrow",
+              "owner": "Unknown",
+              "status": "observed",
+              "audio_segment_ids": [
+                "EN2003a-C005"
+              ]
+            }
+          }
+        ],
+        "receipts": [
+          {
+            "name": "add_note",
+            "ok": true,
+            "note_id": "N1"
+          }
+        ],
+        "notes": [
+          {
+            "id": "N1",
+            "topic": "Meeting Notes",
+            "fact": "Speaker decides to send priority task for Ling later today or tomorrow",
+            "owner": "Unknown",
+            "status": "observed",
+            "audio_segment_ids": [
+              "EN2003a-C005"
+            ]
+          }
+        ]
+      },
+      {
+        "model": "Audio feasibility · Qwen3-Omni Thinking",
+        "operations": [
+          {
+            "name": "add_note",
+            "arguments": {
+              "topic": "priority decision",
+              "fact": "Priority decision deferred to later discussion",
+              "owner": "unknown",
+              "status": "unresolved",
+              "audio_segment_ids": [
+                "EN2003a-C005"
+              ]
+            }
+          },
+          {
+            "name": "add_note",
+            "arguments": {
+              "topic": "send item to Ling",
+              "fact": "Commitment to send item to Ling today or tomorrow",
+              "owner": "unknown",
+              "status": "agreed",
+              "audio_segment_ids": [
+                "EN2003a-C005"
+              ]
+            }
+          }
+        ],
+        "receipts": [
+          {
+            "name": "add_note",
+            "ok": true,
+            "note_id": "N1"
+          },
+          {
+            "name": "add_note",
+            "ok": true,
+            "note_id": "N2"
+          }
+        ],
+        "notes": [
+          {
+            "id": "N1",
+            "topic": "priority decision",
+            "fact": "Priority decision deferred to later discussion",
+            "owner": "unknown",
+            "status": "unresolved",
+            "audio_segment_ids": [
+              "EN2003a-C005"
+            ]
+          },
+          {
+            "id": "N2",
+            "topic": "send item to Ling",
+            "fact": "Commitment to send item to Ling today or tomorrow",
+            "owner": "unknown",
+            "status": "agreed",
+            "audio_segment_ids": [
+              "EN2003a-C005"
+            ]
+          }
+        ]
       }
     ],
     "audio_conditions": [
@@ -24052,7 +24200,7 @@
     ],
     "audio_output": "Native answer text, audio-segment evidence and uncertainty; generated speech is disabled.",
     "audio_notes": "Local add, update, delete, link and no-change functions preserve audio references and earlier versions; no oracle transcript is stored in the model-visible memory.",
-    "audio_phase": "Feasibility only: question transcription, silent-audio control, increasing history, labelled voices and a single earlier note-call test. Full per-chunk note evaluation is not yet run.",
+    "audio_phase": "Both models completed the six-minute runtime and native note-call checks. The paired pilot has saved 0/16 answers across two questions; every answer still requires source review.",
     "audio_input_rules": [
       "Ground-truth transcripts and reference answers are evaluation-only.",
       "The user question is supplied as audio, not as its known text.",
@@ -24068,8 +24216,8 @@
     ],
     "next_steps": [
       "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
-      "Qualify full audio-history processing and actual note-call execution for both models.",
-      "Then run the reactive/function-note comparison under both speaker-identity conditions on a small matched set."
+      "Complete the two-question audio comparison and source-review all 16 answers, including speaker identity and event changes.",
+      "Compare paired accuracy, request-time thinking, first-answer time and total note-generation cost before selecting a larger run."
     ],
     "sources": [
       {
