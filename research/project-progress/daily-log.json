@@ -44,6 +44,14 @@
         {
           "text": "Started meeting-level audio note streams with four concurrent requests on one GPU while keeping answer-time measurements serial.",
           "url": "experiments/note-functions.html#full-set"
+        },
+        {
+          "text": "Completed all 420 Instruct answers and added full-set token-cost plots that update as each model finishes.",
+          "url": "experiments/note-functions.html#full-set"
+        },
+        {
+          "text": "Validated a MiniCPM encoder-window repair on all 105 inputs and resumed answer generation while preserving completed notes and answers.",
+          "url": "experiments/note-functions.html#full-set"
         }
       ]
     },
