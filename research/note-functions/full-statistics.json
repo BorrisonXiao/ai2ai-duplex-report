@@ -1,6 +1,6 @@
 {
   "status": "full_set_statistics_pending_final_source_review",
-  "outputs": 1174,
+  "outputs": 1215,
   "planned_outputs": 2100,
   "complete_models": [
     [
@@ -626,41 +626,41 @@
       "model": "thinking",
       "condition": "current_notes",
       "identity": "ground_truth_transcript",
-      "outputs": 184,
+      "outputs": 192,
       "planned": 210,
       "complete": false,
       "metrics": {
         "thinking_tokens": {
-          "mean": 1505,
-          "median": 1305.0,
-          "count": 184
+          "mean": 1506.9166666666667,
+          "median": 1291.5,
+          "count": 192
         },
         "generated_tokens": {
-          "mean": 1598.6902173913043,
-          "median": 1416.5,
-          "count": 184
+          "mean": 1601.5364583333333,
+          "median": 1404.0,
+          "count": 192
         },
         "input_tokens": {
-          "mean": 17757.304347826088,
+          "mean": 18008.182291666668,
           "median": 14360.5,
-          "count": 184
+          "count": 192
         },
         "first_answer_seconds": {
-          "mean": 15.21953761306519,
+          "mean": 15.309854375496911,
           "median": 13.345112487993902,
-          "count": 183
+          "count": 191
         },
         "complete_output_seconds": {
-          "mean": 16.0784863683695,
+          "mean": 16.175281860708157,
           "median": 14.219021892015007,
-          "count": 184
+          "count": 192
         }
       },
       "scored": 33,
       "source_reviewed_matches": 33,
       "supported_correct": 26,
       "core_correct": 26,
-      "missing_judgments": 151,
+      "missing_judgments": 159,
       "provisional": 0,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
@@ -669,7 +669,7 @@
       ],
       "empty_answers": 0,
       "length_stops": 0,
-      "full_audio_history_cases": 184,
+      "full_audio_history_cases": 192,
       "latency_protocol": "cold_serial_native_answer"
     },
     {
@@ -677,41 +677,41 @@
       "model": "thinking",
       "condition": "quotes_current",
       "identity": "ground_truth_transcript",
-      "outputs": 171,
+      "outputs": 180,
       "planned": 210,
       "complete": false,
       "metrics": {
         "thinking_tokens": {
-          "mean": 1580.4327485380118,
-          "median": 1344,
-          "count": 171
+          "mean": 1585.0055555555555,
+          "median": 1339.5,
+          "count": 180
         },
         "generated_tokens": {
-          "mean": 1672.0701754385964,
-          "median": 1417,
-          "count": 171
+          "mean": 1675.9777777777779,
+          "median": 1414.5,
+          "count": 180
         },
         "input_tokens": {
-          "mean": 17200.684210526317,
-          "median": 15102,
-          "count": 171
+          "mean": 17037.76111111111,
+          "median": 14520.0,
+          "count": 180
         },
         "first_answer_seconds": {
-          "mean": 15.085187155276433,
-          "median": 13.36948055101675,
-          "count": 169
+          "mean": 15.147055684380627,
+          "median": 13.363547744011157,
+          "count": 178
         },
         "complete_output_seconds": {
-          "mean": 16.70352595661825,
-          "median": 13.868028092983877,
-          "count": 171
+          "mean": 16.71457402152082,
+          "median": 13.932225076001487,
+          "count": 180
         }
       },
       "scored": 32,
       "source_reviewed_matches": 32,
       "supported_correct": 27,
       "core_correct": 28,
-      "missing_judgments": 139,
+      "missing_judgments": 148,
       "provisional": 0,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
@@ -720,7 +720,7 @@
       ],
       "empty_answers": 1,
       "length_stops": 1,
-      "full_audio_history_cases": 171,
+      "full_audio_history_cases": 180,
       "latency_protocol": "cold_serial_native_answer"
     },
     {
@@ -728,41 +728,41 @@
       "model": "thinking",
       "condition": "quotes_history",
       "identity": "ground_truth_transcript",
-      "outputs": 164,
+      "outputs": 179,
       "planned": 210,
       "complete": false,
       "metrics": {
         "thinking_tokens": {
-          "mean": 1442.2439024390244,
-          "median": 1302.5,
-          "count": 164
+          "mean": 1446.1117318435754,
+          "median": 1294,
+          "count": 179
         },
         "generated_tokens": {
-          "mean": 1532.378048780488,
-          "median": 1404.0,
-          "count": 164
+          "mean": 1536.3016759776535,
+          "median": 1390,
+          "count": 179
         },
         "input_tokens": {
-          "mean": 16251.841463414634,
-          "median": 11681.0,
-          "count": 164
+          "mean": 16769.597765363127,
+          "median": 12847,
+          "count": 179
         },
         "first_answer_seconds": {
-          "mean": 14.401078553136257,
-          "median": 13.508295176987303,
-          "count": 162
+          "mean": 14.551822879216244,
+          "median": 13.694065296484041,
+          "count": 176
         },
         "complete_output_seconds": {
-          "mean": 15.086271971731593,
-          "median": 14.19841630749579,
-          "count": 164
+          "mean": 15.235732113804463,
+          "median": 14.298233298002742,
+          "count": 179
         }
       },
       "scored": 32,
       "source_reviewed_matches": 32,
       "supported_correct": 27,
       "core_correct": 28,
-      "missing_judgments": 132,
+      "missing_judgments": 147,
       "provisional": 0,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
@@ -771,7 +771,7 @@
       ],
       "empty_answers": 0,
       "length_stops": 0,
-      "full_audio_history_cases": 164,
+      "full_audio_history_cases": 179,
       "latency_protocol": "cold_serial_native_answer"
     },
     {
@@ -779,41 +779,41 @@
       "model": "thinking",
       "condition": "reactive",
       "identity": "ground_truth_transcript",
-      "outputs": 171,
+      "outputs": 180,
       "planned": 210,
       "complete": false,
       "metrics": {
         "thinking_tokens": {
-          "mean": 1677.923976608187,
-          "median": 1370,
-          "count": 171
+          "mean": 1696.0166666666667,
+          "median": 1373.5,
+          "count": 180
         },
         "generated_tokens": {
-          "mean": 1763.46783625731,
-          "median": 1465,
-          "count": 171
+          "mean": 1782.4,
+          "median": 1467.5,
+          "count": 180
         },
         "input_tokens": {
-          "mean": 14088.912280701754,
-          "median": 10238,
-          "count": 171
+          "mean": 14240.866666666667,
+          "median": 11254.0,
+          "count": 180
         },
         "first_answer_seconds": {
-          "mean": 15.224703498817261,
-          "median": 13.020057677000295,
-          "count": 170
+          "mean": 15.470838616021835,
+          "median": 13.199273510996136,
+          "count": 179
         },
         "complete_output_seconds": {
-          "mean": 16.811999622818266,
-          "median": 13.75621770901489,
-          "count": 171
+          "mean": 17.020796767815852,
+          "median": 13.892402756493539,
+          "count": 180
         }
       },
       "scored": 32,
       "source_reviewed_matches": 32,
       "supported_correct": 23,
       "core_correct": 23,
-      "missing_judgments": 139,
+      "missing_judgments": 148,
       "provisional": 0,
       "fully_supported_accuracy": null,
       "verified_accuracy_bounds": [
@@ -822,7 +822,7 @@
       ],
       "empty_answers": 1,
       "length_stops": 1,
-      "full_audio_history_cases": 171,
+      "full_audio_history_cases": 180,
       "latency_protocol": "cold_serial_native_answer"
     }
   ],
@@ -1273,10 +1273,10 @@
       "identity": "audio_only",
       "requests": 2,
       "complete": false,
-      "earlier_generated_tokens": 1309816,
+      "earlier_generated_tokens": 1399934,
       "request_generated_tokens": 3483,
       "request_thinking_tokens": 3360,
-      "combined_generated_tokens": 1313299
+      "combined_generated_tokens": 1403417
     },
     {
       "branch": "audio",
@@ -1285,10 +1285,10 @@
       "identity": "labelled_voices",
       "requests": 2,
       "complete": false,
-      "earlier_generated_tokens": 1405888,
+      "earlier_generated_tokens": 1514948,
       "request_generated_tokens": 2315,
       "request_thinking_tokens": 2147,
-      "combined_generated_tokens": 1408203
+      "combined_generated_tokens": 1517263
     },
     {
       "branch": "audio",
@@ -1367,48 +1367,48 @@
       "model": "thinking",
       "condition": "current_notes",
       "identity": "ground_truth_transcript",
-      "requests": 90,
+      "requests": 95,
       "complete": false,
       "earlier_generated_tokens": 434979,
-      "request_generated_tokens": 146893,
-      "request_thinking_tokens": 138319,
-      "combined_generated_tokens": 581872
+      "request_generated_tokens": 152413,
+      "request_thinking_tokens": 143326,
+      "combined_generated_tokens": 587392
     },
     {
       "branch": "text",
       "model": "thinking",
       "condition": "quotes_current",
       "identity": "ground_truth_transcript",
-      "requests": 82,
+      "requests": 86,
       "complete": false,
       "earlier_generated_tokens": 434979,
-      "request_generated_tokens": 136902,
-      "request_thinking_tokens": 129769,
-      "combined_generated_tokens": 571881
+      "request_generated_tokens": 144382,
+      "request_thinking_tokens": 136935,
+      "combined_generated_tokens": 579361
     },
     {
       "branch": "text",
       "model": "thinking",
       "condition": "quotes_history",
       "identity": "ground_truth_transcript",
-      "requests": 81,
+      "requests": 91,
       "complete": false,
       "earlier_generated_tokens": 434979,
-      "request_generated_tokens": 123167,
-      "request_thinking_tokens": 116200,
-      "combined_generated_tokens": 558146
+      "request_generated_tokens": 141540,
+      "request_thinking_tokens": 133626,
+      "combined_generated_tokens": 576519
     },
     {
       "branch": "text",
       "model": "thinking",
       "condition": "reactive",
       "identity": "ground_truth_transcript",
-      "requests": 85,
+      "requests": 89,
       "complete": false,
       "earlier_generated_tokens": 0,
-      "request_generated_tokens": 152090,
-      "request_thinking_tokens": 144922,
-      "combined_generated_tokens": 152090
+      "request_generated_tokens": 162375,
+      "request_thinking_tokens": 154780,
+      "combined_generated_tokens": 162375
     }
   ],
   "writer_cost": {
@@ -1431,21 +1431,21 @@
       "reused_updates": 18
     },
     "qwen-thinking|audio_only": {
-      "updates": 785,
-      "generated_tokens": 1309816,
-      "input_tokens": 2535039,
-      "native_thinking_tokens": 1225634,
-      "rejected_operations": 113,
-      "parse_errors": 29,
+      "updates": 841,
+      "generated_tokens": 1399934,
+      "input_tokens": 2802821,
+      "native_thinking_tokens": 1310251,
+      "rejected_operations": 124,
+      "parse_errors": 31,
       "reused_updates": 18
     },
     "qwen-thinking|labelled_voices": {
-      "updates": 780,
-      "generated_tokens": 1405888,
-      "input_tokens": 2742997,
-      "native_thinking_tokens": 1320927,
-      "rejected_operations": 94,
-      "parse_errors": 29,
+      "updates": 839,
+      "generated_tokens": 1514948,
+      "input_tokens": 3046357,
+      "native_thinking_tokens": 1423700,
+      "rejected_operations": 106,
+      "parse_errors": 31,
       "reused_updates": 18
     }
   },
@@ -1470,7 +1470,7 @@
     "supported_correct_agreements": 265,
     "qualified": false
   },
-  "required_source_review_answers": 41,
+  "required_source_review_answers": 48,
   "required_source_review_question_ids": [
     "expansion:ES-colour",
     "expansion:IS-lost",
