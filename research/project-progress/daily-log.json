@@ -6,52 +6,20 @@
       "date": "2026-11-14",
       "items": [
         {
-          "text": "Traced answer changes to stale facts, false confirmations, missing locations and overwritten evidence links.",
+          "text": "Completed all 2,100 planned text and audio outputs on the same 105 questions.",
+          "url": "experiments/note-functions.html#full-set"
+        },
+        {
+          "text": "Recovered Qwen audio notes after a cluster node failure while preserving completed updates.",
+          "url": "experiments/note-functions.html#methods"
+        },
+        {
+          "text": "Reviewed evaluator errors against transcript evidence and retained explicit score-review status.",
           "url": "experiments/note-functions.html#review"
         },
         {
-          "text": "Source-reviewed 60 additional answers and corrected 14 scorer labels, including valid percentage-to-count conversions.",
-          "url": "experiments/note-functions.html#review"
-        },
-        {
-          "text": "Prepared four source-only diagnostic inputs for all 105 questions and added a scorer-validation gate before inference.",
-          "url": "experiments/note-functions.html#followup"
-        },
-        {
-          "text": "Source-reviewed all 144 text-pilot answers; source quotes reduce mean request-time thinking, while latency uncertainty includes no improvement.",
-          "url": "experiments/note-functions.html#diagnostic-results"
-        },
-        {
-          "text": "Completed and source-reviewed 16 audio-S2 answers under both speaker conditions; Qwen function notes increase request-time thinking in all matched cases.",
-          "url": "experiments/note-functions.html#audio-pilot-results"
-        },
-        {
-          "text": "Launched the bounded text diagnostic with source review required for every answer after the automatic judge failed qualification.",
-          "url": "experiments/note-functions.html#followup"
-        },
-        {
-          "text": "Started a separate audio S2 branch with reactive and function-note conditions, including audio alone and past-only labelled voices.",
-          "url": "experiments/note-functions.html#audio-s2"
-        },
-        {
-          "text": "Expanded the frozen text and audio S2 comparisons to all 105 questions, with verified pilot reuse.",
-          "url": "experiments/note-functions.html#full-set"
-        },
-        {
-          "text": "Qualified long audio inputs for both models and recorded matched history limits for two MiniCPM cases.",
-          "url": "experiments/note-functions.html#full-set"
-        },
-        {
-          "text": "Started meeting-level audio note streams with four concurrent requests on one GPU while keeping answer-time measurements serial.",
-          "url": "experiments/note-functions.html#full-set"
-        },
-        {
-          "text": "Completed all 420 Instruct answers and added full-set token-cost plots that update as each model finishes.",
-          "url": "experiments/note-functions.html#full-set"
-        },
-        {
-          "text": "Validated a MiniCPM encoder-window repair on all 105 inputs and resumed answer generation while preserving completed notes and answers.",
-          "url": "experiments/note-functions.html#full-set"
+          "text": "Consolidated the S2 report around current results, methods and a searchable answer browser.",
+          "url": "experiments/note-functions.html#examples"
         }
       ]
     },
@@ -67,18 +35,6 @@
           "url": "experiments/note-functions.html#review"
         },
         {
-          "text": "Prepared four source-only diagnostic inputs for all 105 questions and added a scorer-validation gate before inference.",
-          "url": "experiments/note-functions.html#followup"
-        },
-        {
-          "text": "Launched the bounded text diagnostic with source review required for every answer after the automatic judge failed qualification.",
-          "url": "experiments/note-functions.html#followup"
-        },
-        {
-          "text": "Started a separate audio S2 branch with reactive and function-note conditions, including audio alone and past-only labelled voices.",
-          "url": "experiments/note-functions.html#audio-s2"
-        },
-        {
           "text": "Source-reviewed all 144 text-pilot answers; source quotes reduce mean request-time thinking, while latency uncertainty includes no improvement.",
           "url": "experiments/note-functions.html#diagnostic-results"
         },
@@ -91,18 +47,6 @@
     {
       "date": "2026-11-12",
       "items": [
-        {
-          "text": "Started the S2 note-editing study with matched JSON and native function-call conditions; DuplexOmni remains stopped.",
-          "url": "experiments/note-functions.html#design"
-        },
-        {
-          "text": "Validated causal evidence checks and preserved note versions in ten CPU tests; development model outputs still require review.",
-          "url": "experiments/note-functions.html#progress"
-        },
-        {
-          "text": "Added preliminary automatic scores, paired token and timing figures, and actual answers; source content review remains pending.",
-          "url": "experiments/note-functions.html#results"
-        },
         {
           "text": "Completed all 1,260 answers and reviewed the 24 known scorer-error cases; native calls use 7.5% fewer request-time thinking tokens but reduce fully supported accuracy by 6.2 percentage points.",
           "url": "experiments/note-functions.html#results"
@@ -128,16 +72,8 @@
           "label": "Pause remains in effect"
         },
         {
-          "text": "Started the S2 note-editing study with matched JSON and native function-call conditions; DuplexOmni remains stopped.",
-          "url": "experiments/note-functions.html#design"
-        },
-        {
-          "text": "Validated causal evidence checks and preserved note versions in ten CPU tests; development model outputs still require review.",
-          "url": "experiments/note-functions.html#progress"
-        },
-        {
-          "text": "Added preliminary automatic scores, paired token and timing figures, and actual answers; source content review remains pending.",
-          "url": "experiments/note-functions.html#results"
+          "text": "Started matched JSON and native function-call note editing with causal evidence checks and versioned notes.",
+          "url": "experiments/note-functions.html#appendix"
         }
       ]
     },

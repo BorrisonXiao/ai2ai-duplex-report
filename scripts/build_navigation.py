@@ -71,7 +71,7 @@ def build_collections():
         ('Question overview and aggregate statistics', 'All retained questions, insertion-time distributions, source coverage and audio coverage.', 'question-overview.html'),
         ('All question audio', 'All 105 question events, with short source excerpts and original-voice comparisons.', 'question-audio.html'),
         ('Larger AMI batch', 'Forty additional questions from twenty more meetings, with source checks and recorded Codex edits.', 'question-scale.html'),
-        ('Question/audio pilot', 'Earlier checkpoints, reader controls and ten inserted questions in eight requester voices.', 'question-pilot.html'),
+        ('Question/audio pilot', 'Earlier checkpoints, thinker checks and ten inserted questions in eight requester voices.', 'question-pilot.html'),
         ('More meeting questions', 'Four new AMI meetings and two earnings calls, checked with a 30B Instruct reader and document retrieval fixtures.', 'question-expansion.html'),
         ('AMI questions', 'Questions that require earlier meeting details, with supporting transcripts and a review of generated answers.', 'ami-questions.html'),
         ('AMI question audio', 'Compare three TTS models inserting the same questions into the meeting in the requester’s voice.', 'ami-question-audio.html'),
@@ -80,7 +80,7 @@ def build_collections():
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
         section('Project progress', 'The project plan and daily work record.', [
-            ('Note-editing functions', 'Current S2 study: editable notes, native function calls, answer quality and request-time cost.', 'note-functions.html'),
+            ('Latest S2 results', 'Start here: full-set text and audio results, thinking cost, methods and an answer browser.', 'note-functions.html'),
             ('Full 105-question evaluation', 'Saved S1 and S2 runs, reference checks and measured post-request latency.', 'full-answering-results.html'),
             ('Structured-note optimization', 'Compact note states, incremental edits, event changes and token costs.', 'structured-notes.html'),
             ('S1 and text S2 results', 'Audio-history ablations, native response examples, transcript WER and accuracy versus thinking-token cost.', 'answering-results.html'),

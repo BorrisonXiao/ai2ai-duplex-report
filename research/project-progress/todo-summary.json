@@ -3,38 +3,38 @@
   "now": [
     {
       "id": "s2-full-text",
-      "text": "Run all 105 questions through the four text conditions.",
+      "text": "Complete all 105 questions in every text condition.",
       "status": "complete",
       "url": "experiments/note-functions.html#full-set",
-      "evidence": "1,260 planned outputs, including verified pilot reuse."
-    },
-    {
-      "id": "s2-full-audio-capacity",
-      "text": "Check native audio capacity and keep every question in the evaluation.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#full-set",
-      "evidence": "Both GPU checks pass; two MiniCPM history limits are explicitly recorded and matched across conditions."
+      "evidence": "All 1,260 text outputs are saved."
     },
     {
       "id": "s2-full-audio",
-      "text": "Generate meeting-level audio notes and all 840 paired answers.",
-      "status": "partial",
+      "text": "Complete both audio models and both speaker conditions.",
+      "status": "complete",
       "url": "experiments/note-functions.html#full-set",
-      "evidence": "Two audio models, reactive/function notes, and both speaker conditions."
+      "evidence": "All 2,100 outputs have scores, and the specified source checks are complete."
     },
     {
       "id": "s2-full-review",
-      "text": "Source-check scorer disagreements before final accuracy claims.",
-      "status": "partial",
-      "url": "experiments/note-functions.html#full-set",
-      "evidence": "Source-reviewed exact responses are reused; remaining automatic labels are explicitly provisional."
+      "text": "Review missing judgments, scorer-error families and changed accuracy pairs.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#evaluation",
+      "evidence": "0 missing judgments and 0 required source reviews; other automatic labels remain provisional."
     },
     {
       "id": "s2-full-statistics",
-      "text": "Compare paired accuracy, thinking, latency and complete token cost.",
-      "status": "partial",
-      "url": "experiments/note-functions.html#full-set",
-      "evidence": "Statistics update as outputs finish; final comparisons retain all105questions and meeting-based uncertainty."
+      "text": "Compare accuracy, request-time work and complete note-generation cost.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#cost",
+      "evidence": "Paired statistics use meeting-based uncertainty intervals."
+    },
+    {
+      "id": "s2-report-cleanup",
+      "text": "Consolidate the report and make current results easy to find.",
+      "status": "complete",
+      "url": "experiments/note-functions.html",
+      "evidence": "Current results, methods, score review and the answer browser replace repeated pilot tables."
     }
   ],
   "definition": {
@@ -94,143 +94,11 @@
       "title": "3. Evaluate what to think",
       "items": [
         {
-          "id": "plan",
-          "text": "Define the experiment families, notation and amortized-thinking terminology.",
-          "status": "complete",
-          "url": "what-to-think.html#notation"
-        },
-        {
-          "id": "evaluator",
-          "text": "Implement shared S1 answer extraction, scoring and token accounting.",
-          "status": "complete",
-          "url": "study-progress.html#software-checks",
-          "evidence": "Evaluator v0.1.2 passes 46 CPU checks; original 43-check snapshot and three historical examples are retained separately."
-        },
-        {
-          "id": "report",
-          "text": "Implement run-time progress updates from the same saved records as the checklists.",
-          "status": "complete",
-          "url": "study-progress.html#reporting",
-          "evidence": "Native GPU-job phase/case updates and 30-second heartbeat are connected; public checkpoints use actual Slurm status and saved output records."
-        },
-        {
-          "id": "saved-output-tests",
-          "text": "Check evaluator behavior on saved real outputs and labeled failure fixtures.",
-          "status": "complete",
-          "url": "study-progress.html#software-checks",
-          "evidence": "Three earlier real outputs and 43 CPU checks pass."
-        },
-        {
-          "id": "s1-pilot",
-          "text": "Run and inspect a small end-to-end DuplexOmni S1 pilot, including an early and a later request.",
-          "status": "complete",
-          "url": "study-progress-original-acoustics.html#fresh-pilot",
-          "evidence": "Three real meeting requests tested on one A100 80 GB; raw outputs, recorded speech and source facts reviewed. Full protocol remains unvalidated."
-        },
-        {
-          "id": "pilot-example",
-          "text": "Publish an actual pilot output with its request, answer facts, score and explanation.",
-          "status": "complete",
-          "url": "study-progress-original-acoustics.html#fresh-pilot",
-          "evidence": "Actual input excerpts, S1 response audio, source facts, raw text and score explanations are published together."
-        },
-        {
-          "id": "s1-repair",
-          "text": "Diagnose and repair empty or unusable S1 responses before full evaluation.",
-          "status": "partial",
-          "url": "study-progress.html#ami-array-sweep",
-          "evidence": "The revised sweep has 120/123 completed responses and 3 generation failures; source review finds 0/33 complete eligible answers. Native long-history recognition and full-bank validity remain unresolved."
-        },
-        {
-          "id": "s1-listening-comparison",
-          "text": "Run both listening methods and inspect their meeting answers against source facts.",
-          "url": "study-progress-original-acoustics.html#listening-examples",
-          "status": "complete",
-          "evidence": "Two native listening methods: 4/4 meeting outputs saved and 4/4 source reviews recorded; full protocol remains unvalidated. Neither method gives a complete meeting answer; recognition remains unresolved."
-        },
-        {
-          "id": "s1-matched",
-          "text": "Reproduce the working DailyTalk recipe and compare it with the current S1 runner.",
-          "status": "complete",
-          "url": "study-progress-original-acoustics.html#matched-controls",
-          "evidence": "The original helper and new native runner match all 40 response-field records; their spoken discount/full-price answers agree. P01 request-only recognition passes (WER 0.063), while its folder-status answer is unsupported without earlier evidence."
-        },
-        {
-          "id": "s1-pressure",
-          "text": "Review the original-input P01 sweep with every sentence-based increase in earlier context.",
-          "status": "complete",
-          "url": "study-progress-original-acoustics.html#s1-pressure",
-          "evidence": "41/41 contexts reviewed for one question; 20 preserve question meaning in ASR, and 0/11 eligible contexts give complete reference answers within 19.2 s."
-        },
-        {
-          "id": "s1-array-sweep",
-          "text": "Review the original-input microphone comparison across 41 histories and its spoken-response content.",
-          "status": "complete",
-          "url": "study-progress-original-acoustics.html#ami-array-sweep",
-          "evidence": "Three signals at 41 lengths: 78 new native replays, 3 generation failures shown as gaps, 33 eligible spoken answers scored by a qualified local judge and audited against the source; 0 complete. One question; full protocol remains unvalidated."
-        },
-        {
-          "id": "question-acoustic-bank",
-          "text": "Apply the acoustic revision to every recorded primary question and published voice alternative.",
-          "status": "complete",
-          "url": "experiments/question-audio.html#checks",
-          "evidence": "All 105 primary questions plus six voice alternatives revised; 111 source-PCM/timing checks and empty background-ASR controls. Seven paired-ASR caveats remain visible; no human naturalness claim."
-        },
-        {
-          "id": "s1-revised-sweep",
-          "text": "Rerun all microphone/context positions with revised inputs and inspect actual spoken answers.",
-          "status": "complete",
-          "url": "study-progress.html#ami-array-sweep",
-          "evidence": "123 positions freshly attempted, 120 completed responses, 3 generation failures shown as gaps; qualified local judge and source review cover 33 eligible answers, 0 complete."
-        },
-        {
-          "id": "s1-revised-controls",
-          "text": "Rerun the earlier eligible pilot controls and retain the long-prefix capacity exclusion.",
-          "status": "complete",
-          "url": "study-progress.html#revised-pilot-controls",
-          "evidence": "Both native listening methods attempted P01/P02; 0/4 source-reviewed answers complete. P03 remains excluded by the unchanged full-prefix context limit."
-        },
-        {
-          "id": "context-response-judge",
-          "text": "Evaluate saved spoken responses using context, question and reference with separate quality dimensions.",
-          "status": "complete",
-          "url": "study-progress.html#array-response-content",
-          "evidence": "Local Qwen3 judge: 120/120 ratings passing output/citation checks, anchored relevance/support/adequacy, qualification and 12 prompt-order probes; no new S1 speech. Full-bank evaluator validation remains pending."
-        },
-        {
           "id": "references",
           "text": "Verify source-based reference answers for all 105 frozen questions.",
           "status": "complete",
           "url": "study-progress.html#answering-references",
           "evidence": "105/105 source reviews recorded; automated proposals/checks do not certify references."
-        },
-        {
-          "id": "answering-native-pilot",
-          "text": "Run matched supporting-audio and original-history questions through all three S1 systems.",
-          "status": "complete",
-          "url": "study-progress.html#answering-native",
-          "evidence": "38/39 native outputs completed; 1 failed. All recorded attempts remain in accounting; this is execution status, not answer accuracy."
-        },
-        {
-          "id": "answering-text-pilot",
-          "text": "Compare reactive thinking, amortized summaries and structured notes with Instruct and Thinking thinkers.",
-          "status": "complete",
-          "url": "study-progress.html#answering-text",
-          "evidence": "48/48 final answers source-reviewed by Codex; six development/diagnostic questions, not full-bank accuracy."
-        },
-        {
-          "id": "answering-native-review",
-          "text": "Review the earlier six-question S1 pilot using native response text.",
-          "status": "complete",
-          "url": "experiments/answering-results.html#s1-results",
-          "evidence": "Reviewed native text for 35 completed meeting inputs and three controls; one DuplexOmni input failed before the request."
-        },
-        {
-          "id": "answering-judge-holdout",
-          "text": "Qualify the generic scorer on 68 earlier real answers from 17 questions in five separate meetings.",
-          "status": "partial",
-          "url": "study-progress.html#answering-judge",
-          "evidence": "Judge status: qualification_failed; fixed criteria and earlier Codex labels, no independent human ratings."
         },
         {
           "id": "s1-native-time-sweeps",
@@ -247,275 +115,39 @@
           "evidence": "61 past-only prefixes per ASR; identity pairs preserve predicted words and times; same six questions, goals and thinker settings as GT."
         },
         {
-          "id": "s2-generated-readers",
-          "text": "Run and inspect the generated-transcript counterparts of the ground-truth text pilot.",
-          "status": "complete",
-          "url": "study-progress.html#generated-transcript-outputs",
-          "evidence": "192/192 request outputs saved; 192 source reviews recorded; no full-bank claim."
-        },
-        {
-          "id": "scorer-disagreement-examples",
-          "text": "Explain scoring disagreements with actual answers and source passages.",
-          "status": "complete",
-          "url": "study-progress.html#scorer-examples",
-          "evidence": "13 of 68 binary labels disagree; examples include an unsupported extra rule and an overly strict detail requirement."
-        },
-        {
-          "id": "answering-results-report",
-          "text": "Draft the S1 and text S2 results with audio examples, transcript WER and thinking-token costs.",
-          "status": "complete",
-          "url": "experiments/answering-results.html",
-          "evidence": "Source-bound outputs, seven figures, 99 listening files, all 240 S2 answers, a shared-six-question comparison and real-response checks of quality ratings are included."
-        },
-        {
-          "id": "s1-s2-same-questions",
-          "text": "Compare S1 and text S2 on the same six questions using saved source-reviewed outputs.",
-          "status": "complete",
-          "url": "experiments/answering-results.html#s1-s2-comparison",
-          "evidence": "Aligned 18 full-history S1 cases and 12 reactive ground-truth S2 answers; kept one input failure separate and documented input and budget differences."
-        },
-        {
-          "id": "s1-s2-report-focus",
-          "text": "Organize the report around the same-question S1/S2 result and the additional value of earlier thinking.",
-          "status": "complete",
-          "url": "experiments/answering-results.html#findings",
-          "evidence": "The comparison is the first results section and Figure 1; the main discussion covers ASR robustness, question-type differences and earlier notes relative to reactive S2."
-        },
-        {
-          "id": "gate",
-          "text": "Qualify native S1 history and automatic judging, then freeze the evaluation protocol before broader experiments.",
-          "status": "pending",
-          "url": "what-to-think.html#evaluation-first",
-          "evidence": "All 105 references are source-reviewed and the new native/generated-transcript pilots are complete; generic judging remains unqualified at 55/68 agreement, and full-bank protocol checks remain pending."
-        },
-        {
-          "id": "s1-all",
-          "text": "Check every S1 caller and evaluate all 105 questions for each S1 model.",
-          "status": "planned",
-          "url": "what-to-think.html#conditions"
-        },
-        {
-          "id": "notes-literature",
-          "text": "Review compact-memory methods and define source-grounded note updates.",
-          "status": "complete",
-          "url": "experiments/structured-notes.html#literature",
-          "evidence": "Nine primary papers reviewed; source selection, explicit updates and temporal evidence inform the design."
-        },
-        {
-          "id": "notes-development",
-          "text": "Compare compact notes, incremental edits and the original notes on six development questions.",
-          "status": "complete",
-          "url": "experiments/structured-notes.html#results",
-          "evidence": "Six development questions and authored controls reviewed; selected source-only notes retain key evidence and reduce earlier generated tokens by 62%."
-        },
-        {
-          "id": "notes-additional",
-          "text": "Freeze the selected policy and test twelve questions from six additional meetings.",
-          "status": "complete",
-          "url": "experiments/structured-notes.html#protocol",
-          "evidence": "Frozen source-note design tested on 12 questions from 6 other meetings; 180/180 final outputs reviewed across two thinkers, five conditions and request seeds."
-        },
-        {
-          "id": "notes-generated",
-          "text": "Check the selected notes with automatic transcripts and a cheaper note writer.",
-          "status": "complete",
-          "url": "experiments/structured-notes.html#next",
-          "evidence": "Existing automatic Parakeet/Whisper transcripts reused with identical frozen notes for both thinkers; 144/144 outputs reviewed."
-        },
-        {
-          "id": "s2-development",
-          "text": "Select chunks and thinking goals on separate development meetings.",
-          "status": "partial",
-          "url": "what-to-think.html#prompts",
-          "evidence": "Question-blind 25–40 s chunks satisfy the 10–40 s plan; summary and structured-note goals are being tested on development meetings."
-        },
-        {
-          "id": "s2-all",
-          "text": "Run the remaining text and speech S2 conditions on all 105 questions.",
-          "status": "planned",
-          "url": "what-to-think.html#results"
-        },
-        {
-          "id": "notes-interpretation",
-          "text": "Compare selected speech and explicit event fields to test what work the notes should do.",
-          "url": "experiments/structured-notes.html#interpretation",
-          "status": "complete",
-          "evidence": "Matched development check of event fields and selected sources with the same Thinking thinker; 72/72 outputs reviewed."
-        },
-        {
-          "id": "notes-reference-bank",
-          "text": "Recheck the remaining reference answers against their complete available transcript prefixes.",
-          "status": "pending",
-          "url": "experiments/structured-notes.html#protocol",
-          "evidence": "Three reference corrections found in the 12-question additional test; the new 105-reference v3 file includes those corrections, while the remaining 87 cases need a full-prefix recheck."
-        },
-        {
-          "id": "full-reference",
-          "text": "Audit all 105 references for later revisions and freeze the scoring facts.",
-          "status": "complete",
-          "url": "experiments/full-answering-results.html#evaluation",
-          "evidence": "Thinking audit processed 105 complete prefixes; Codex checked nine flagged cases against source speech; v4 references frozen for scorer qualification."
-        },
-        {
-          "id": "full-native",
-          "text": "Review saved Moshi and MiniCPM results; keep DuplexOmni stopped.",
-          "status": "partial",
-          "url": "experiments/full-answering-results.html#s1",
-          "evidence": "Moshi and MiniCPM each have315 completed inputs and preliminary scores; DuplexOmni is excluded from new runs."
-        },
-        {
-          "id": "full-text",
-          "text": "Compare reactive answers, summaries and both structured-note methods on all 105 questions.",
-          "status": "partial",
-          "url": "experiments/full-answering-results.html#s2",
-          "evidence": "2,835 reference-transcript and 2,520 Parakeet-transcript answers saved; only the reference-transcript branch is scored."
-        },
-        {
-          "id": "full-latency",
-          "text": "Measure actual post-request latency while retaining separate thinking and total-token costs.",
-          "status": "partial",
-          "url": "experiments/full-answering-results.html#latency",
-          "evidence": "525 isolated timing outputs complete; 520 first-answer timestamps recorded, with saved paired confidence intervals displayed."
-        },
-        {
-          "id": "full-ASR",
-          "text": "Extend both ASR methods with stable speaker identities and variable-speaker earnings-call diarization.",
-          "status": "partial",
-          "url": "experiments/full-answering-results.html#asr",
-          "evidence": "Parakeet inputs and matched thinker outputs complete; Whisper remains incomplete. Further runs require explicit resume."
-        },
-        {
-          "id": "full-analysis",
-          "text": "Validate the scorer, inspect model outputs and publish the full paired accuracy and cost comparison.",
-          "status": "partial",
-          "url": "experiments/full-answering-results.html#evaluation",
-          "evidence": "Saved automatic scores are displayed for 3,990 outputs; final source review and remaining branches are pending."
-        },
-        {
-          "id": "full-inference-optimization",
-          "text": "Measure and qualify faster inference while preserving evaluation inputs and native outputs.",
-          "status": "partial",
-          "url": "experiments/full-answering-results.html#resources",
-          "evidence": "GPU measurements completed; output-equivalence and complete-rollout review pending. Seven CPU control groups and reconstruction of 48 exact audio inputs pass; deployment requires measured speed and native-output checks."
-        },
-        {
-          "id": "full-saved-score-display",
-          "text": "Display the saved preliminary scores with tables, figures and answer inspection.",
-          "status": "complete",
-          "url": "experiments/full-answering-results.html#scores",
-          "evidence": "Existing scores and confidence intervals are exported without rescoring; the experiments remain paused."
-        },
-        {
-          "id": "note-functions-api",
-          "text": "Implement and validate the shared memory-editing functions.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#functions",
-          "evidence": "17 CPU behavior tests and real-tokenizer input checks pass; generated facts still require source review."
-        },
-        {
-          "id": "note-functions-development",
-          "text": "Run and source-review the six-question memory-function pilot.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#progress",
-          "evidence": "48/48 final answers saved; full evaluation requires reviewed development outputs."
-        },
-        {
-          "id": "note-functions-full",
-          "text": "Compare all105 questions with reactive, source-note, JSON-edit and native-call conditions.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#evaluation",
-          "evidence": "1260/1260 outputs saved; retain full transcripts and freeze the design after development review."
-        },
-        {
-          "id": "note-functions-analysis",
-          "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#evaluation",
-          "evidence": "All 1,260 outputs analyzed; 84 answers checked against source speech; paired changes and note examples published."
-        },
-        {
-          "id": "note-functions-lookup",
-          "text": "Test compact notes with transcript lookup if the full-history comparison supports further work.",
-          "status": "planned",
-          "url": "experiments/note-functions.html#next",
-          "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
-        },
-        {
-          "id": "note-functions-source-judge",
-          "text": "Validate the scorer against the source-reviewed answers.",
-          "status": "partial",
-          "url": "experiments/note-functions.html#followup",
-          "evidence": "Automatic v13 remains unqualified; all 144 pilot outputs instead received Codex source review."
-        },
-        {
-          "id": "note-functions-quote-inputs",
-          "text": "Prepare inputs containing source speech and earlier evidence links.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#followup",
-          "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass."
-        },
-        {
-          "id": "note-functions-quote-pilot",
-          "text": "Run the twelve-question note-text versus source-speech comparison.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#followup",
-          "evidence": "144/144 answers saved; all source-reviewed by Codex."
-        },
-        {
-          "id": "audio-s2-inputs",
-          "text": "Prepare causal audio inputs and past-only voice examples.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#audio-s2",
-          "evidence": "105 existing questions; no oracle transcript or textual question enters the audio model."
-        },
-        {
-          "id": "audio-s2-feasibility",
-          "text": "Verify audio-history processing and actual note-function execution.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#audio-s2",
-          "evidence": "Both models processed six minutes and executed audio note calls; pilot answers are source-reviewed, and longer histories remain untested."
-        },
-        {
-          "id": "audio-s2-pilot",
-          "text": "Compare reactive and function-note audio S2 under both identity conditions.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#audio-pilot-results",
-          "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
-        },
-        {
           "id": "s2-full-text",
-          "text": "Run all 105 questions through the four text conditions.",
+          "text": "Complete all 105 questions in every text condition.",
           "status": "complete",
           "url": "experiments/note-functions.html#full-set",
-          "evidence": "1,260 planned outputs, including verified pilot reuse."
-        },
-        {
-          "id": "s2-full-audio-capacity",
-          "text": "Check native audio capacity and keep every question in the evaluation.",
-          "status": "complete",
-          "url": "experiments/note-functions.html#full-set",
-          "evidence": "Both GPU checks pass; two MiniCPM history limits are explicitly recorded and matched across conditions."
+          "evidence": "All 1,260 text outputs are saved."
         },
         {
           "id": "s2-full-audio",
-          "text": "Generate meeting-level audio notes and all 840 paired answers.",
-          "status": "partial",
+          "text": "Complete both audio models and both speaker conditions.",
+          "status": "complete",
           "url": "experiments/note-functions.html#full-set",
-          "evidence": "Two audio models, reactive/function notes, and both speaker conditions."
+          "evidence": "All 2,100 outputs have scores, and the specified source checks are complete."
         },
         {
           "id": "s2-full-review",
-          "text": "Source-check scorer disagreements before final accuracy claims.",
-          "status": "partial",
-          "url": "experiments/note-functions.html#full-set",
-          "evidence": "Source-reviewed exact responses are reused; remaining automatic labels are explicitly provisional."
+          "text": "Review missing judgments, scorer-error families and changed accuracy pairs.",
+          "status": "complete",
+          "url": "experiments/note-functions.html#evaluation",
+          "evidence": "0 missing judgments and 0 required source reviews; other automatic labels remain provisional."
         },
         {
           "id": "s2-full-statistics",
-          "text": "Compare paired accuracy, thinking, latency and complete token cost.",
-          "status": "partial",
-          "url": "experiments/note-functions.html#full-set",
-          "evidence": "Statistics update as outputs finish; final comparisons retain all105questions and meeting-based uncertainty."
+          "text": "Compare accuracy, request-time work and complete note-generation cost.",
+          "status": "complete",
+          "url": "experiments/note-functions.html#cost",
+          "evidence": "Paired statistics use meeting-based uncertainty intervals."
+        },
+        {
+          "id": "s2-report-cleanup",
+          "text": "Consolidate the report and make current results easy to find.",
+          "status": "complete",
+          "url": "experiments/note-functions.html",
+          "evidence": "Current results, methods, score review and the answer browser replace repeated pilot tables."
         }
       ]
     },
