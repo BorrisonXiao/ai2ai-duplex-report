@@ -352,7 +352,7 @@
       "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
       "status": "complete",
       "url": "experiments/note-functions.html#evaluation",
-      "evidence": "All1260 outputs analyzed;84 answers source-reviewed; paired changes and actual note/source examples published."
+      "evidence": "All 1,260 outputs analyzed; 84 answers checked against source speech; paired changes and note examples published."
     },
     {
       "id": "note-functions-lookup",
@@ -363,27 +363,27 @@
     },
     {
       "id": "note-functions-source-judge",
-      "text": "Qualify source checking for proposed scorer errors.",
+      "text": "Validate the scorer against the source-reviewed answers.",
       "status": "pending",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "Check all84 source-reviewed answers and16new controls before new model comparisons."
+      "evidence": "Check all 84 source-reviewed answers and 16 new controls before new model comparisons."
     },
     {
       "id": "note-functions-quote-inputs",
-      "text": "Prepare source-only inputs with causal evidence history.",
+      "text": "Prepare inputs containing source speech and earlier evidence links.",
       "status": "complete",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "420inputs,210matching original prompt hashes and seven CPU behavior tests pass; no inference result claimed."
+      "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass; inference has not started."
     },
     {
       "id": "note-functions-quote-pilot",
       "text": "Run the twelve-question note-text versus source-speech comparison.",
       "status": "planned",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "Requires qualified source scoring; four conditions,96Thinking and48Instruct outputs planned."
+      "evidence": "Scorer qualification is required; four conditions with 96 Thinking and 48 Instruct outputs are planned."
     }
   ],
-  "updated_at": "2026-11-13T20:22:04-05:00",
+  "updated_at": "2026-11-13T20:28:06-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -631,7 +631,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-13T20:22:04-05:00",
+    "updated": "2026-11-13T20:28:06-05:00",
     "status": "saved_runs_reviewed_followup_prepared",
     "api_revision": "v2",
     "control_count": 10,
@@ -1323,7 +1323,7 @@
     "next_steps": [
       "Qualify source-based checking of every proposed wrong fact and unsupported addition before scoring new runs.",
       "Run the prepared twelve-question comparison to isolate generated note text from the source passages it selects.",
-      "Freeze the tested design before repeating all105 questions; keep DuplexOmni stopped."
+      "Freeze the tested design before repeating all 105 questions; keep DuplexOmni stopped."
     ],
     "analysis": {
       "scope": "full",

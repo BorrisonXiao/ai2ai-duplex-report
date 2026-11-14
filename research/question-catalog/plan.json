@@ -431,7 +431,7 @@
           "text": "Compare answer accuracy, request-time thinking, measured latency and the entire token cost.",
           "status": "complete",
           "project_url": "experiments/note-functions.html#evaluation",
-          "evidence": "All1260 outputs analyzed;84 answers source-reviewed; paired changes and actual note/source examples published."
+          "evidence": "All 1,260 outputs analyzed; 84 answers checked against source speech; paired changes and note examples published."
         },
         {
           "text": "Test compact notes with transcript lookup if the full-history comparison supports further work.",
@@ -440,22 +440,22 @@
           "evidence": "A separate input-memory condition; include retrieval rounds in latency and token cost."
         },
         {
-          "text": "Qualify source checking for proposed scorer errors.",
+          "text": "Validate the scorer against the source-reviewed answers.",
           "status": "pending",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "Check all84 source-reviewed answers and16new controls before new model comparisons."
+          "evidence": "Check all 84 source-reviewed answers and 16 new controls before new model comparisons."
         },
         {
-          "text": "Prepare source-only inputs with causal evidence history.",
+          "text": "Prepare inputs containing source speech and earlier evidence links.",
           "status": "complete",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "420inputs,210matching original prompt hashes and seven CPU behavior tests pass; no inference result claimed."
+          "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass; inference has not started."
         },
         {
           "text": "Run the twelve-question note-text versus source-speech comparison.",
           "status": "planned",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "Requires qualified source scoring; four conditions,96Thinking and48Instruct outputs planned."
+          "evidence": "Scorer qualification is required; four conditions with 96 Thinking and 48 Instruct outputs are planned."
         }
       ]
     },
