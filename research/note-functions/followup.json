@@ -1,5 +1,5 @@
 {
-  "status": "prepared_not_run",
+  "status": "pilot_started_source_review_required",
   "date": "2026-11-13",
   "question": "Can the selected source speech help without the factual errors introduced by generated note text?",
   "conditions": [
@@ -67,14 +67,14 @@
       "thinking": 96,
       "instruct": 48
     },
-    "evaluation_gate": "Qualify revised scorer before GPU inference."
+    "evaluation_gate": "Every pilot answer requires source review; automatic full-bank scaling is not released."
   },
   "gates": [
     {
       "id": "source-judge",
       "status": "pending",
-      "action": "Qualify a revised evaluator that source-checks every proposed wrong fact and unsupported extra claim.",
-      "criterion": "Match all 84 source-reviewed outputs and 16 new authored controls; review disagreements before treating any new score as valid."
+      "action": "Source-review every pilot answer using the frozen fact checklists.",
+      "criterion": "The automatic judge did not qualify; no new accuracy is released before all 144 answers are reviewed."
     },
     {
       "id": "quote-cpu",
@@ -84,9 +84,9 @@
     },
     {
       "id": "diagnostic-pilot",
-      "status": "planned",
+      "status": "partial",
       "action": "Run 12 familiar diagnostic questions with four conditions, both thinkers and two Thinking seeds.",
-      "criterion": "96 Thinking and 48 Instruct outputs; review every disagreement and check actual latency, caps and token accounting."
+      "criterion": "48/144 answers saved; four conditions and both thinker models."
     },
     {
       "id": "freeze-full",
@@ -139,7 +139,7 @@
         "dependency": "Both thinker stages complete."
       }
     ],
-    "sharing": "Stages sequential; no S1, ASR, TTS or DuplexOmni; no job submitted during this review."
+    "sharing": "Text jobs are sequential; one separate audio lane is also authorized, maximum two study GPUs overall."
   },
   "later": "Only if quote-only inputs preserve quality should a separate question-blind writer be tested that saves source IDs and event links without rewriting factual claims."
 }

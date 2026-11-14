@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "updated": "2026-11-13",
-  "status": "saved_runs_reviewed_followup_prepared",
+  "status": "parallel_text_and_audio_s2",
   "snapshot_label": "S2 note-editing study; DuplexOmni stopped",
   "active_job": null,
   "planned_questions_per_condition": 105,
@@ -364,26 +364,47 @@
     {
       "id": "note-functions-source-judge",
       "text": "Validate the scorer against the source-reviewed answers.",
-      "status": "pending",
+      "status": "partial",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "Check all 84 source-reviewed answers and 16 new controls before new model comparisons."
+      "evidence": "Automatic v13 did not qualify; all 144 pilot answers require source review before any accuracy release."
     },
     {
       "id": "note-functions-quote-inputs",
       "text": "Prepare inputs containing source speech and earlier evidence links.",
       "status": "complete",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass; inference has not started."
+      "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass."
     },
     {
       "id": "note-functions-quote-pilot",
       "text": "Run the twelve-question note-text versus source-speech comparison.",
-      "status": "planned",
+      "status": "partial",
       "url": "experiments/note-functions.html#followup",
-      "evidence": "Scorer qualification is required; four conditions with 96 Thinking and 48 Instruct outputs are planned."
+      "evidence": "48/144 answers saved; source scoring remains pending."
+    },
+    {
+      "id": "audio-s2-inputs",
+      "text": "Prepare causal audio inputs and past-only voice examples.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#audio-s2",
+      "evidence": "105 existing questions; no oracle transcript or textual question enters the audio model."
+    },
+    {
+      "id": "audio-s2-feasibility",
+      "text": "Verify audio-history processing and actual note-function execution.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#audio-s2",
+      "evidence": "Two audio models submitted; native outputs and long-history capacity must be reviewed."
+    },
+    {
+      "id": "audio-s2-pilot",
+      "text": "Compare reactive and function-note audio S2 under both identity conditions.",
+      "status": "planned",
+      "url": "experiments/note-functions.html#audio-s2",
+      "evidence": "Requires feasible history input and source-reviewed scoring; maximum two isolated study GPUs."
     }
   ],
-  "updated_at": "2026-11-13T20:28:06-05:00",
+  "updated_at": "2026-11-13T21:49:40-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -631,16 +652,16 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-13T20:28:06-05:00",
-    "status": "saved_runs_reviewed_followup_prepared",
+    "updated": "2026-11-13T21:49:40-05:00",
+    "status": "parallel_text_and_audio_s2",
     "api_revision": "v2",
     "control_count": 10,
     "repair_attempts": 1,
     "behavior_tests": 17,
     "brief": [
       {
-        "text": "Saved notes can replace supporting speech, repeat stale facts and turn uncertainty into a confirmed decision.",
-        "url": "#review"
+        "text": "The text diagnostic has saved 48 of 144 answers; all require source review.",
+        "url": "#followup"
       },
       {
         "text": "All 1,260 answers are saved and scored; 84 answers have targeted source review, with raw automatic labels retained.",
@@ -651,171 +672,60 @@
         "url": "#results"
       },
       {
-        "text": "The next diagnostic keeps the selected speech and removes generated note text; inputs are prepared and inference has not started.",
-        "url": "#followup"
+        "text": "Audio S2 runs in a separate GPU lane, comparing reactive answers and function-call notes with and without labelled voice examples.",
+        "url": "#audio-s2"
       }
     ],
     "stages": [
       {
-        "stage": "Memory store and input validation",
-        "status": "Checks passed",
-        "evidence": "17 CPU behavior tests and real-tokenizer preflight pass; model semantics still require review."
+        "stage": "Automatic scoring qualification",
+        "status": "Not qualified; source review required",
+        "evidence": "142/155 required-fact labels agree; every pilot answer requires source review."
       },
       {
-        "stage": "Development note writer",
-        "status": "Completed; review pending",
-        "evidence": "Two interfaces ×82 updates, including 10 authored control trajectories."
+        "stage": "Text representation diagnostic",
+        "status": "48/144 answers saved",
+        "evidence": "Four matched inputs; 48 Instruct and 96 Thinking answers; no new accuracy released."
       },
       {
-        "stage": "Development final answers",
-        "status": "48/48 outputs saved",
-        "evidence": "Six questions ×four conditions ×two thinkers; sequential jobs."
+        "stage": "Audio S2 feasibility",
+        "status": "Models submitted; inspect runtime and native outputs",
+        "evidence": "MiniCPM-o 4.5 and Qwen3-Omni Thinking; reactive input and one note-call check precede full evaluation."
       },
       {
-        "stage": "Source review and design freeze",
-        "status": "Reviewed and passed",
-        "evidence": "All48 development answers and20 control trajectories reviewed; causal source storage, versioning, flat argument execution and token/timing measurement qualify. Semantic memory errors and scorer disagreements are recorded, not excluded."
-      },
-      {
-        "stage": "Expanded evaluator checks",
-        "status": "50 automatic +5 source-reviewed controls checked",
-        "evidence": "All outputs for two known questions require source review before final accuracy; automatic labels remain saved."
-      },
-      {
-        "stage": "Full-bank note generation",
-        "status": "2554/2554 updates saved",
-        "evidence": "Two question-blind writers over26 meetings; correction calls are counted separately in the model-call total."
-      },
-      {
-        "stage": "Full 105-question evaluation",
-        "status": "1260/1260 outputs saved",
-        "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
-      },
-      {
-        "stage": "Notes plus transcript lookup",
-        "status": "Later, conditional on results",
-        "evidence": "Determine whether smaller answer-time inputs improve latency without losing accuracy."
+        "stage": "Audio reactive versus function notes",
+        "status": "Planned after feasibility",
+        "evidence": "Run both audio alone and past-only labelled voice examples; no oracle transcript or question text."
       }
     ],
     "jobs": [
       {
-        "label": "development-writer",
+        "label": "Text diagnostic · Instruct",
         "state": "COMPLETED",
-        "completed": "164 updates; 191 model calls",
+        "completed": "48",
         "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
+        "GPU_type": "A100 SXM4 80 GB"
       },
       {
-        "label": "development-instruct",
-        "state": "COMPLETED",
-        "completed": "24 answers",
+        "label": "Text diagnostic · Thinking",
+        "state": "PENDING",
+        "completed": "0",
         "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
+        "GPU_type": "H100 SXM 80 GB"
       },
       {
-        "label": "development-thinking",
+        "label": "Audio feasibility · MiniCPM-o 4.5",
         "state": "COMPLETED",
-        "completed": "24 answers",
+        "completed": "8",
         "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
+        "GPU_type": "A100 SXM4 80 GB"
       },
       {
-        "label": "development-score",
-        "state": "COMPLETED",
-        "completed": "38",
+        "label": "Audio feasibility · Qwen3-Omni Thinking",
+        "state": "PENDING",
+        "completed": "0",
         "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
-      },
-      {
-        "label": "calibration-score",
-        "state": "COMPLETED",
-        "completed": "55",
-        "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
-      },
-      {
-        "label": "full-writer",
-        "state": "COMPLETED",
-        "completed": "2554 updates; 3968 model calls",
-        "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
-      },
-      {
-        "label": "full-instruct",
-        "state": "COMPLETED",
-        "completed": "420 answers",
-        "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
-      },
-      {
-        "label": "full-thinking-cold",
-        "state": "COMPLETED",
-        "completed": "420 answers",
-        "GPUs": 1,
-        "GPU_type": "H100 SXM80GB"
-      },
-      {
-        "label": "full-thinking-extra",
-        "state": "COMPLETED",
-        "completed": "420 answers",
-        "GPUs": 1,
-        "GPU_type": "H100 SXM80GB"
-      },
-      {
-        "label": "full-score",
-        "state": "COMPLETED",
-        "completed": "1123",
-        "GPUs": 1,
-        "GPU_type": "A100 SXM4 80GB"
-      },
-      {
-        "label": "Revised pilot thinker continuation",
-        "state": "COMPLETED",
-        "completed": "—",
-        "GPUs": 0,
-        "GPU_type": "CPU"
-      },
-      {
-        "label": "Development score continuation",
-        "state": "COMPLETED",
-        "completed": "—",
-        "GPUs": 0,
-        "GPU_type": "CPU"
-      },
-      {
-        "label": "Development analysis and report",
-        "state": "COMPLETED",
-        "completed": "—",
-        "GPUs": 0,
-        "GPU_type": "CPU"
-      },
-      {
-        "label": "Full thinker continuation",
-        "state": "COMPLETED",
-        "completed": "—",
-        "GPUs": 0,
-        "GPU_type": "CPU"
-      },
-      {
-        "label": "Full score continuation",
-        "state": "COMPLETED",
-        "completed": "—",
-        "GPUs": 0,
-        "GPU_type": "CPU"
-      },
-      {
-        "label": "Full analysis and report",
-        "state": "COMPLETED",
-        "completed": "—",
-        "GPUs": 0,
-        "GPU_type": "CPU"
-      },
-      {
-        "label": "Scoped report updater",
-        "state": "CPU monitor; bounded to23hours",
-        "completed": "Counts and report only",
-        "GPUs": 0,
-        "GPU_type": "CPU"
+        "GPU_type": "H100 SXM 80 GB"
       }
     ],
     "examples": [
@@ -1321,9 +1231,9 @@
       }
     ],
     "next_steps": [
-      "Qualify source-based checking of every proposed wrong fact and unsupported addition before scoring new runs.",
-      "Run the prepared twelve-question comparison to isolate generated note text from the source passages it selects.",
-      "Freeze the tested design before repeating all 105 questions; keep DuplexOmni stopped."
+      "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
+      "Qualify full audio-history processing and actual note-call execution for both models.",
+      "Then run the reactive/function-note comparison under both speaker-identity conditions on a small matched set."
     ],
     "analysis": {
       "scope": "full",
@@ -24537,6 +24447,291 @@
           "automatic_supported_correct": true,
           "native_thinking_tokens": 3087,
           "first_answer_seconds": 29.523361910003587
+        }
+      ]
+    },
+    "historical_jobs": [
+      {
+        "label": "development-writer",
+        "state": "COMPLETED",
+        "completed": "164 updates; 191 model calls",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "development-instruct",
+        "state": "COMPLETED",
+        "completed": "24 answers",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "development-thinking",
+        "state": "COMPLETED",
+        "completed": "24 answers",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "development-score",
+        "state": "COMPLETED",
+        "completed": "38",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "calibration-score",
+        "state": "COMPLETED",
+        "completed": "55",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "full-writer",
+        "state": "COMPLETED",
+        "completed": "2554 updates; 3968 model calls",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "full-instruct",
+        "state": "COMPLETED",
+        "completed": "420 answers",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "full-thinking-cold",
+        "state": "COMPLETED",
+        "completed": "420 answers",
+        "GPUs": 1,
+        "GPU_type": "H100 SXM80GB"
+      },
+      {
+        "label": "full-thinking-extra",
+        "state": "COMPLETED",
+        "completed": "420 answers",
+        "GPUs": 1,
+        "GPU_type": "H100 SXM80GB"
+      },
+      {
+        "label": "full-score",
+        "state": "COMPLETED",
+        "completed": "1123",
+        "GPUs": 1,
+        "GPU_type": "A100 SXM4 80GB"
+      },
+      {
+        "label": "Revised pilot thinker continuation",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      },
+      {
+        "label": "Development score continuation",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      },
+      {
+        "label": "Development analysis and report",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      },
+      {
+        "label": "Full thinker continuation",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      },
+      {
+        "label": "Full score continuation",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      },
+      {
+        "label": "Full analysis and report",
+        "state": "COMPLETED",
+        "completed": "—",
+        "GPUs": 0,
+        "GPU_type": "CPU"
+      }
+    ],
+    "historical_stages": [
+      {
+        "stage": "Memory store and input validation",
+        "status": "Checks passed",
+        "evidence": "17 CPU behavior tests and real-tokenizer preflight pass; model semantics still require review."
+      },
+      {
+        "stage": "Development note writer",
+        "status": "Completed; review pending",
+        "evidence": "Two interfaces ×82 updates, including 10 authored control trajectories."
+      },
+      {
+        "stage": "Development final answers",
+        "status": "48/48 outputs saved",
+        "evidence": "Six questions ×four conditions ×two thinkers; sequential jobs."
+      },
+      {
+        "stage": "Source review and design freeze",
+        "status": "Reviewed and passed",
+        "evidence": "All48 development answers and20 control trajectories reviewed; causal source storage, versioning, flat argument execution and token/timing measurement qualify. Semantic memory errors and scorer disagreements are recorded, not excluded."
+      },
+      {
+        "stage": "Expanded evaluator checks",
+        "status": "50 automatic +5 source-reviewed controls checked",
+        "evidence": "All outputs for two known questions require source review before final accuracy; automatic labels remain saved."
+      },
+      {
+        "stage": "Full-bank note generation",
+        "status": "2554/2554 updates saved",
+        "evidence": "Two question-blind writers over26 meetings; correction calls are counted separately in the model-call total."
+      },
+      {
+        "stage": "Full 105-question evaluation",
+        "status": "1260/1260 outputs saved",
+        "evidence": "All questions retained; full transcript plus one current memory; matched answer prompt."
+      },
+      {
+        "stage": "Notes plus transcript lookup",
+        "status": "Later, conditional on results",
+        "evidence": "Determine whether smaller answer-time inputs improve latency without losing accuracy."
+      }
+    ],
+    "parallel_s2": {
+      "updated": "2026-11-13T21:49:39-05:00",
+      "status": "bounded_text_pilot_and_audio_feasibility",
+      "text_outputs": 48,
+      "text_planned": 144,
+      "Instruct_planned": 48,
+      "Thinking_planned": 96,
+      "automatic_judge_qualified": false,
+      "judge_core_agreements": 142,
+      "judge_cases": 155,
+      "accuracy_status": "Source review of every pilot answer required; no new accuracy released.",
+      "jobs": [
+        {
+          "label": "Text diagnostic · Instruct",
+          "state": "COMPLETED",
+          "completed": 48,
+          "GPU_count": 1,
+          "GPU_type_VRAM": "A100 SXM4 80 GB",
+          "GPU_0": "Text thinker weights and 8 GiB KV",
+          "dependencies": "Instruct before Thinking; source review required"
+        },
+        {
+          "label": "Text diagnostic · Thinking",
+          "state": "PENDING",
+          "completed": 0,
+          "GPU_count": 1,
+          "GPU_type_VRAM": "H100 SXM 80 GB",
+          "GPU_0": "Text thinker weights and 8 GiB KV",
+          "dependencies": "Instruct before Thinking; source review required"
+        },
+        {
+          "label": "Audio feasibility · MiniCPM-o 4.5",
+          "state": "COMPLETED",
+          "completed": 8,
+          "GPU_count": 1,
+          "GPU_type_VRAM": "A100 SXM4 80 GB",
+          "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
+          "dependencies": "Sequential within the audio lane"
+        },
+        {
+          "label": "Audio feasibility · Qwen3-Omni Thinking",
+          "state": "PENDING",
+          "completed": 0,
+          "GPU_count": 1,
+          "GPU_type_VRAM": "H100 SXM 80 GB",
+          "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
+          "dependencies": "Sequential within the audio lane"
+        }
+      ],
+      "active_GPUs": 0,
+      "max_study_GPUs": 2,
+      "GPU_hours_all_attempts": 0.27083333333333337,
+      "audio_cases_prepared": 105,
+      "audio_models": [
+        "Qwen3-Omni-30B-A3B-Thinking",
+        "MiniCPM-o 4.5"
+      ],
+      "speaker_conditions": [
+        "Audio alone",
+        "Audio plus labelled examples from past speech"
+      ],
+      "native_audio_controls": [
+        {
+          "model": "audio-minicpm-encoder-fix",
+          "condition": "transcribe_real_question",
+          "native_text": "<|tts_eos|>",
+          "finish_reason": "stop"
+        },
+        {
+          "model": "audio-minicpm-encoder-fix",
+          "condition": "transcribe_silent_control",
+          "native_text": " <|SOA|>118_HQ-Conversations_G0256_S0120<|EOA|><|tts_eos|>",
+          "finish_reason": "stop"
+        }
+      ],
+      "audio_conditions": [
+        {
+          "name": "Reactive · audio alone",
+          "before_request": "No note-generation call.",
+          "request_input": "All past audio chunks and the spoken question."
+        },
+        {
+          "name": "Function notes · audio alone",
+          "before_request": "Each 10–40-second thinking interval updates one current note state using audio.",
+          "request_input": "The same past audio and spoken question, plus the current notes."
+        },
+        {
+          "name": "Reactive · labelled voices",
+          "before_request": "No note-generation call; past-only labelled voice examples identify speakers.",
+          "request_input": "The same audio and spoken question, plus labelled examples."
+        },
+        {
+          "name": "Function notes · labelled voices",
+          "before_request": "Audio-based note updates receive the same past-only voice identity information.",
+          "request_input": "The same audio, question and voice examples, plus the current notes."
+        }
+      ],
+      "audio_output": "Native answer text, audio-segment evidence and uncertainty; generated speech is disabled.",
+      "audio_notes": "Local add, update, delete, link and no-change functions preserve audio references and earlier versions; no oracle transcript is stored in the model-visible memory.",
+      "audio_phase": "Feasibility only: question transcription, silent-audio control, increasing history, labelled voices and a single earlier note-call test. Full per-chunk note evaluation is not yet run.",
+      "audio_input_rules": [
+        "Ground-truth transcripts and reference answers are evaluation-only.",
+        "The user question is supplied as audio, not as its known text.",
+        "Voice examples precede the relevant cutoff; missing identities remain unknown.",
+        "No future audio is read and no history is silently trimmed.",
+        "Model encoder windows may be shorter than the 10–40-second thinking intervals; the note-update boundaries stay fixed."
+      ],
+      "evaluation": [
+        "Accuracy uses source-reviewed fact checklists and native answer text; no response ASR is needed.",
+        "Audio-only identities are resolved from cited speech in evaluation, not by comparing arbitrary predicted labels with AMI letters.",
+        "Report exposed request-time thinking tokens separately from earlier note-generation tokens; use not exposed when no native reasoning channel is available.",
+        "Report first-answer/completion time, audio input tokens and all earlier encoding/note cost; match cache conditions between reactive and notes."
+      ],
+      "next_steps": [
+        "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
+        "Qualify full audio-history processing and actual note-call execution for both models.",
+        "Then run the reactive/function-note comparison under both speaker-identity conditions on a small matched set."
+      ],
+      "sources": [
+        {
+          "title": "Qwen3-Omni official models, reasoning and audio function-call examples",
+          "url": "https://github.com/QwenLM/Qwen3-Omni"
+        },
+        {
+          "title": "MiniCPM-o 4.5 official model and audio interfaces",
+          "url": "https://huggingface.co/openbmb/MiniCPM-o-4_5"
         }
       ]
     }

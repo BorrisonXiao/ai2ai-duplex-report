@@ -441,21 +441,39 @@
         },
         {
           "text": "Validate the scorer against the source-reviewed answers.",
-          "status": "pending",
+          "status": "partial",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "Check all 84 source-reviewed answers and 16 new controls before new model comparisons."
+          "evidence": "Automatic v13 did not qualify; all 144 pilot answers require source review before any accuracy release."
         },
         {
           "text": "Prepare inputs containing source speech and earlier evidence links.",
           "status": "complete",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass; inference has not started."
+          "evidence": "420 inputs, 210 matching original prompt hashes and seven CPU behavior tests pass."
         },
         {
           "text": "Run the twelve-question note-text versus source-speech comparison.",
-          "status": "planned",
+          "status": "partial",
           "project_url": "experiments/note-functions.html#followup",
-          "evidence": "Scorer qualification is required; four conditions with 96 Thinking and 48 Instruct outputs are planned."
+          "evidence": "48/144 answers saved; source scoring remains pending."
+        },
+        {
+          "text": "Prepare causal audio inputs and past-only voice examples.",
+          "status": "complete",
+          "project_url": "experiments/note-functions.html#audio-s2",
+          "evidence": "105 existing questions; no oracle transcript or textual question enters the audio model."
+        },
+        {
+          "text": "Verify audio-history processing and actual note-function execution.",
+          "status": "partial",
+          "project_url": "experiments/note-functions.html#audio-s2",
+          "evidence": "Two audio models submitted; native outputs and long-history capacity must be reviewed."
+        },
+        {
+          "text": "Compare reactive and function-note audio S2 under both identity conditions.",
+          "status": "planned",
+          "project_url": "experiments/note-functions.html#audio-s2",
+          "evidence": "Requires feasible history input and source-reviewed scoring; maximum two isolated study GPUs."
         }
       ]
     },

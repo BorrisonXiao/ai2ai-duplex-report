@@ -16,6 +16,14 @@
         {
           "text": "Prepared four source-only diagnostic inputs for all 105 questions and added a scorer-validation gate before inference.",
           "url": "experiments/note-functions.html#followup"
+        },
+        {
+          "text": "Launched the bounded text diagnostic with source review required for every answer after the automatic judge failed qualification.",
+          "url": "experiments/note-functions.html#followup"
+        },
+        {
+          "text": "Started a separate audio S2 branch with reactive and function-note conditions, including audio alone and past-only labelled voices.",
+          "url": "experiments/note-functions.html#audio-s2"
         }
       ]
     },

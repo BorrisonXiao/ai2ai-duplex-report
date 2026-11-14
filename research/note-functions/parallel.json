@@ -1,0 +1,129 @@
+{
+  "updated": "2026-11-13T21:49:39-05:00",
+  "status": "bounded_text_pilot_and_audio_feasibility",
+  "text_outputs": 48,
+  "text_planned": 144,
+  "Instruct_planned": 48,
+  "Thinking_planned": 96,
+  "automatic_judge_qualified": false,
+  "judge_core_agreements": 142,
+  "judge_cases": 155,
+  "accuracy_status": "Source review of every pilot answer required; no new accuracy released.",
+  "jobs": [
+    {
+      "label": "Text diagnostic · Instruct",
+      "state": "COMPLETED",
+      "completed": 48,
+      "GPU_count": 1,
+      "GPU_type_VRAM": "A100 SXM4 80 GB",
+      "GPU_0": "Text thinker weights and 8 GiB KV",
+      "dependencies": "Instruct before Thinking; source review required"
+    },
+    {
+      "label": "Text diagnostic · Thinking",
+      "state": "PENDING",
+      "completed": 0,
+      "GPU_count": 1,
+      "GPU_type_VRAM": "H100 SXM 80 GB",
+      "GPU_0": "Text thinker weights and 8 GiB KV",
+      "dependencies": "Instruct before Thinking; source review required"
+    },
+    {
+      "label": "Audio feasibility · MiniCPM-o 4.5",
+      "state": "COMPLETED",
+      "completed": 8,
+      "GPU_count": 1,
+      "GPU_type_VRAM": "A100 SXM4 80 GB",
+      "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
+      "dependencies": "Sequential within the audio lane"
+    },
+    {
+      "label": "Audio feasibility · Qwen3-Omni Thinking",
+      "state": "PENDING",
+      "completed": 0,
+      "GPU_count": 1,
+      "GPU_type_VRAM": "H100 SXM 80 GB",
+      "GPU_0": "Audio encoder and language model, 8 GiB KV; no speech synthesis",
+      "dependencies": "Sequential within the audio lane"
+    }
+  ],
+  "active_GPUs": 0,
+  "max_study_GPUs": 2,
+  "GPU_hours_all_attempts": 0.27083333333333337,
+  "audio_cases_prepared": 105,
+  "audio_models": [
+    "Qwen3-Omni-30B-A3B-Thinking",
+    "MiniCPM-o 4.5"
+  ],
+  "speaker_conditions": [
+    "Audio alone",
+    "Audio plus labelled examples from past speech"
+  ],
+  "native_audio_controls": [
+    {
+      "model": "audio-minicpm-encoder-fix",
+      "condition": "transcribe_real_question",
+      "native_text": "<|tts_eos|>",
+      "finish_reason": "stop"
+    },
+    {
+      "model": "audio-minicpm-encoder-fix",
+      "condition": "transcribe_silent_control",
+      "native_text": " <|SOA|>118_HQ-Conversations_G0256_S0120<|EOA|><|tts_eos|>",
+      "finish_reason": "stop"
+    }
+  ],
+  "audio_conditions": [
+    {
+      "name": "Reactive · audio alone",
+      "before_request": "No note-generation call.",
+      "request_input": "All past audio chunks and the spoken question."
+    },
+    {
+      "name": "Function notes · audio alone",
+      "before_request": "Each 10–40-second thinking interval updates one current note state using audio.",
+      "request_input": "The same past audio and spoken question, plus the current notes."
+    },
+    {
+      "name": "Reactive · labelled voices",
+      "before_request": "No note-generation call; past-only labelled voice examples identify speakers.",
+      "request_input": "The same audio and spoken question, plus labelled examples."
+    },
+    {
+      "name": "Function notes · labelled voices",
+      "before_request": "Audio-based note updates receive the same past-only voice identity information.",
+      "request_input": "The same audio, question and voice examples, plus the current notes."
+    }
+  ],
+  "audio_output": "Native answer text, audio-segment evidence and uncertainty; generated speech is disabled.",
+  "audio_notes": "Local add, update, delete, link and no-change functions preserve audio references and earlier versions; no oracle transcript is stored in the model-visible memory.",
+  "audio_phase": "Feasibility only: question transcription, silent-audio control, increasing history, labelled voices and a single earlier note-call test. Full per-chunk note evaluation is not yet run.",
+  "audio_input_rules": [
+    "Ground-truth transcripts and reference answers are evaluation-only.",
+    "The user question is supplied as audio, not as its known text.",
+    "Voice examples precede the relevant cutoff; missing identities remain unknown.",
+    "No future audio is read and no history is silently trimmed.",
+    "Model encoder windows may be shorter than the 10–40-second thinking intervals; the note-update boundaries stay fixed."
+  ],
+  "evaluation": [
+    "Accuracy uses source-reviewed fact checklists and native answer text; no response ASR is needed.",
+    "Audio-only identities are resolved from cited speech in evaluation, not by comparing arbitrary predicted labels with AMI letters.",
+    "Report exposed request-time thinking tokens separately from earlier note-generation tokens; use not exposed when no native reasoning channel is available.",
+    "Report first-answer/completion time, audio input tokens and all earlier encoding/note cost; match cache conditions between reactive and notes."
+  ],
+  "next_steps": [
+    "Complete the text diagnostic and source-review all 144 answers before releasing accuracy.",
+    "Qualify full audio-history processing and actual note-call execution for both models.",
+    "Then run the reactive/function-note comparison under both speaker-identity conditions on a small matched set."
+  ],
+  "sources": [
+    {
+      "title": "Qwen3-Omni official models, reasoning and audio function-call examples",
+      "url": "https://github.com/QwenLM/Qwen3-Omni"
+    },
+    {
+      "title": "MiniCPM-o 4.5 official model and audio interfaces",
+      "url": "https://huggingface.co/openbmb/MiniCPM-o-4_5"
+    }
+  ]
+}
