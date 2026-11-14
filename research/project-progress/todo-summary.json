@@ -35,6 +35,20 @@
       "status": "complete",
       "url": "experiments/note-functions.html",
       "evidence": "Current results, methods, score review and the answer browser replace repeated pilot tables."
+    },
+    {
+      "id": "s2-full-review-remaining",
+      "text": "Review remaining provisional automatic labels before claiming small accuracy gains.",
+      "status": "pending",
+      "url": "experiments/note-functions.html#evaluation",
+      "evidence": "The required source checks are complete; other automatic labels remain provisional."
+    },
+    {
+      "id": "s2-full-compact-proposal",
+      "text": "Discuss compact notes with targeted source lookup to reduce request-time input.",
+      "status": "planned",
+      "url": "experiments/note-functions.html#next",
+      "evidence": "A proposed next comparison; no new inference has been launched."
     }
   ],
   "definition": {
@@ -148,6 +162,20 @@
           "status": "complete",
           "url": "experiments/note-functions.html",
           "evidence": "Current results, methods, score review and the answer browser replace repeated pilot tables."
+        },
+        {
+          "id": "s2-full-review-remaining",
+          "text": "Review remaining provisional automatic labels before claiming small accuracy gains.",
+          "status": "pending",
+          "url": "experiments/note-functions.html#evaluation",
+          "evidence": "The required source checks are complete; other automatic labels remain provisional."
+        },
+        {
+          "id": "s2-full-compact-proposal",
+          "text": "Discuss compact notes with targeted source lookup to reduce request-time input.",
+          "status": "planned",
+          "url": "experiments/note-functions.html#next",
+          "evidence": "A proposed next comparison; no new inference has been launched."
         }
       ]
     },

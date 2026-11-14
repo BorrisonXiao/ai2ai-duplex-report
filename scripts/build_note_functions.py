@@ -1,5 +1,6 @@
 """Concise full-set S2 report with current results and a filtered answer browser."""
 import json
+import hashlib
 from html import escape as e
 from pathlib import Path
 from urllib.parse import urlencode
@@ -9,6 +10,10 @@ ROOT=Path(__file__).resolve().parents[1]
 NAMES={'reactive':'Reactive','current_notes':'Current notes','quotes_current':'Source quotes','quotes_history':'Quotes + earlier evidence','function_notes':'Function notes'}
 MODELS={'instruct':'Qwen3-30B Instruct','thinking':'Qwen3-30B Thinking','minicpm':'MiniCPM-o 4.5','qwen-thinking':'Qwen3-Omni Thinking'}
 IDENTITY={'ground_truth_transcript':'Reference speaker labels','audio_only':'Audio alone','labelled_voices':'Labelled past voices'}
+
+def asset(name):
+ path=ROOT/'research/note-functions'/name
+ return '../research/note-functions/'+name+'?v='+hashlib.sha256(path.read_bytes()).hexdigest()[:12]
 
 def read(name):return json.loads((ROOT/'research/note-functions'/name).read_text())
 def number(value,digits=0):return '—'if value is None else f'{value:,.{digits}f}'
@@ -69,12 +74,12 @@ def main():
   body+='<p>Saved notes can recover a missed fact and can also introduce a wrong interpretation. For example, Qwen audio changes an office headcount from 18 to the correct 15 with notes ('+link(help_url,'compare the headcount answers')+'), while its notes conditions incorrectly treat a copied timeline as referring only to a prototype outline ('+link(harm_url,'compare the timeline answers')+'). These cases illustrate why accuracy and request-time work are assessed together.</p>'
  body+='<p><a href="../research/note-functions/full-expansion.json">Coverage and scores (JSON)</a> · <a href="../research/note-functions/full-statistics.json">Paired statistics and costs (JSON)</a> · <a href="../research/note-functions/full-expansion-answers.json">Native answers and score status (JSON)</a></p></section>'
  body+='<section id="cost"><h2>2. Request-time thinking and complete cost</h2><p>Request-time thinking tokens are generated after the participant asks the question. Earlier note generation is amortized thinking and is counted separately. Native reasoning-token counts are reported for Qwen Thinking and Qwen Omni. MiniCPM thinking mode is disabled in these runs; Instruct has no separate thinking channel. Figure 1 includes all earlier note work once per meeting and speaker condition, including unused updates and rejected operations. Figure 2 tests paired changes relative to reactive answering. First-text timing includes incorrect outputs; accuracy is reported alongside it.</p>'
- for idx,name,caption in [(1,'full-generated-cost','Generated tokens for 105 requests at seed 23, with request-time generation shown separately from the complete cost. The horizontal scales differ between panels. The complete cost adds all earlier note generation; input processing, audio encoding and scoring are separate costs.'),(2,'full-paired-work','Paired changes from reactive answering; negative values mean less request-time work. Intervals are 95% confidence intervals from resampling meetings. Text retains both seeds. Each point states its valid-pair count; missing first-text times remain reported in the data. Empty or capped outputs remain in token costs.')]:
-  if d.get('figures',{}).get(name):body+='<figure id="fig-'+name+'"><div class="plot"><img src="../research/note-functions/'+name+'.svg" alt="'+e(caption)+'"></div><figcaption><strong>Figure '+str(idx)+'.</strong> '+e(caption)+' '+link('../research/note-functions/'+name+'.pdf','PDF')+'</figcaption></figure>'
+ for idx,name,caption in [(1,'full-generated-cost','Generated tokens for 105 requests at seed 23, with request-time generation shown separately from the complete cost. The horizontal scales differ between panels. The complete cost adds all earlier note generation; input processing, audio encoding and scoring are separate costs.'),(2,'full-paired-work','Mean paired changes from reactive answering; negative values mean less request-time work. Intervals are 95% confidence intervals from resampling meetings. Text retains both seeds. Each point states its valid-pair count; missing first-text times remain reported in the data. Empty or capped outputs remain in token costs.')]:
+  if d.get('figures',{}).get(name):body+='<figure id="fig-'+name+'"><div class="plot"><img src="'+asset(name+'.svg')+'" alt="'+e(caption)+'"></div><figcaption><strong>Figure '+str(idx)+'.</strong> '+e(caption)+' '+link(asset(name+'.pdf'),'PDF')+'</figcaption></figure>'
  if all(g['complete']for g in d['groups']):
   history=next(r for r in stats['comparisons']if r['model']=='thinking'and r['condition']=='quotes_history')
   thinking=history['metrics']['thinking_tokens'];both=history['quality_and_work']['both_supported']
-  body+='<p>For text Thinking, quotes plus earlier evidence reduce mean request-time thinking by '+number(-thinking['mean_change'])+' tokens, while the median paired change is '+number(thinking['median_change'])+' more tokens. The uncertainty interval includes zero. Among the '+str(both['pairs'])+' pairs whose two answers both receive fully supported labels, mean thinking instead increases by '+number(both['metrics']['thinking_tokens']['mean_change'])+' tokens. The lower overall mean therefore does not describe a typical reduction across questions.</p>'
+  body+='<p>For text Thinking, quotes plus earlier evidence reduce mean request-time thinking by '+number(-thinking['mean_change'])+' tokens, while the median paired change is '+number(thinking['median_change'],1)+' more tokens. The uncertainty interval includes zero. Among the '+str(both['pairs'])+' pairs whose two answers both receive fully supported labels, mean thinking instead increases by '+number(both['metrics']['thinking_tokens']['mean_change'])+' tokens. The lower overall mean therefore does not describe a typical reduction across questions.</p>'
   audio=[r for r in stats['comparisons']if r['model']=='qwen-thinking']
   body+='<p>For Qwen audio, function notes increase first-text time by '+', and by '.join(number(r['metrics']['first_answer_seconds']['mean_change'],2)+' seconds '+('with labelled voice examples'if r['identity']=='labelled_voices'else'with audio alone')for r in audio)+'. Both time intervals lie above zero, and this slower onset also occurs in pairs whose two answers are fully supported. The accuracy changes run in opposite directions across the two speaker conditions; both accuracy intervals include zero.</p>'
   mini=next(r for r in stats['comparisons']if r['model']=='minicpm'and r['identity']=='audio_only')
