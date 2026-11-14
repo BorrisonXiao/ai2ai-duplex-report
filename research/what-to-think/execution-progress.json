@@ -394,7 +394,7 @@
       "text": "Verify audio-history processing and actual note-function execution.",
       "status": "complete",
       "url": "experiments/note-functions.html#audio-s2",
-      "evidence": "Both models processed six minutes and executed audio note calls; longer history and accuracy remain unvalidated."
+      "evidence": "Both models processed six minutes and executed audio note calls; pilot answers are source-reviewed, and longer histories remain untested."
     },
     {
       "id": "audio-s2-pilot",
@@ -404,7 +404,7 @@
       "evidence": "16/16 answers saved; all source-reviewed by Codex; two-question feasibility scope."
     }
   ],
-  "updated_at": "2026-11-13T22:45:45-05:00",
+  "updated_at": "2026-11-13T22:52:07-05:00",
   "runtime_reporting": "listening_phase_packet_and_answer_outputs_connected",
   "software_checks": {
     "status": "completed",
@@ -652,7 +652,7 @@
   },
   "note_functions": {
     "url": "experiments/note-functions.html",
-    "updated": "2026-11-13T22:45:45-05:00",
+    "updated": "2026-11-13T22:52:07-05:00",
     "status": "parallel_pilots_source_reviewed",
     "api_revision": "v2",
     "control_count": 10,
@@ -24621,7 +24621,7 @@
       }
     ],
     "parallel_s2": {
-      "updated": "2026-11-13T22:45:45-05:00",
+      "updated": "2026-11-13T22:52:07-05:00",
       "status": "source_reviewed_pilots",
       "text_outputs": 144,
       "text_planned": 144,
