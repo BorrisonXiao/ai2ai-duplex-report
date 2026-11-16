@@ -1,54 +1,41 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-16",
   "now": [
     {
-      "id": "s2-full-text",
-      "text": "Complete all 105 questions in every text condition.",
+      "id": "overview-foundation",
+      "text": "Keep the completed 105-question comparisons and current report explanations.",
       "status": "complete",
-      "url": "experiments/note-functions.html#full-set",
-      "evidence": "All 1,260 text outputs are saved."
+      "url": "experiments/note-functions.html"
     },
     {
-      "id": "s2-full-audio",
-      "text": "Complete both audio models and both speaker conditions.",
+      "id": "overview-cpu-checks",
+      "text": "Validate overview updates and all 105 input budgets.",
       "status": "complete",
-      "url": "experiments/note-functions.html#full-set",
-      "evidence": "All 2,100 outputs have scores, and the specified source checks are complete."
+      "url": "todo.html#periodic-overview-study"
     },
     {
-      "id": "s2-full-review",
-      "text": "Review missing judgments, scorer-error families and changed accuracy pairs.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#evaluation",
-      "evidence": "0 missing judgments and 0 required source reviews; other automatic labels remain provisional."
+      "id": "overview-pilot",
+      "text": "Test overview content and 2-, 4- and 8-chunk intervals on eight questions.",
+      "status": "partial",
+      "url": "todo.html#periodic-overview-study"
     },
     {
-      "id": "s2-full-statistics",
-      "text": "Compare accuracy, request-time work and complete note-generation cost.",
-      "status": "complete",
-      "url": "experiments/note-functions.html#cost",
-      "evidence": "Paired statistics use meeting-based uncertainty intervals."
-    },
-    {
-      "id": "s2-report-cleanup",
-      "text": "Consolidate the report and make current results easy to find.",
-      "status": "complete",
-      "url": "experiments/note-functions.html",
-      "evidence": "Current results, methods, score review and the answer browser replace repeated pilot tables."
-    },
-    {
-      "id": "s2-full-review-remaining",
-      "text": "Review remaining provisional automatic labels before claiming small accuracy gains.",
+      "id": "overview-selection",
+      "text": "Inspect pilot notes and answers, then freeze the update interval.",
       "status": "pending",
-      "url": "experiments/note-functions.html#evaluation",
-      "evidence": "The required source checks are complete; other automatic labels remain provisional."
+      "url": "todo.html#periodic-overview-study"
     },
     {
-      "id": "s2-full-compact-proposal",
-      "text": "Discuss compact notes with targeted source lookup to reduce request-time input.",
-      "status": "planned",
-      "url": "experiments/note-functions.html#next",
-      "evidence": "A proposed next comparison; no new inference has been launched."
+      "id": "overview-full",
+      "text": "Evaluate selected overview settings on all 105 questions.",
+      "status": "pending",
+      "url": "todo.html#periodic-overview-study"
+    },
+    {
+      "id": "overview-review-report",
+      "text": "Review scores and compare accuracy, response time and full token cost.",
+      "status": "pending",
+      "url": "todo.html#periodic-overview-study"
     }
   ],
   "definition": {
@@ -176,6 +163,48 @@
           "status": "planned",
           "url": "experiments/note-functions.html#next",
           "evidence": "A proposed next comparison; no new inference has been launched."
+        },
+        {
+          "id": "overview-functions",
+          "text": "Implement source-attributed topic and speaker overview functions.",
+          "status": "complete",
+          "url": "todo.html#periodic-overview-study",
+          "evidence": "Versioned topic, speaker, relationship and optional audio-delivery entries retain earlier changes without accumulating snapshots."
+        },
+        {
+          "id": "overview-cpu-checks",
+          "text": "Validate overview updates and all 105 input budgets.",
+          "status": "complete",
+          "url": "todo.html#periodic-overview-study",
+          "evidence": "Causality, unchanged-entry suppression, stable known names and exact baseline-prompt checks pass; two MiniCPM cases require matched shorter histories."
+        },
+        {
+          "id": "overview-pilot",
+          "text": "Test overview content and 2-, 4- and 8-chunk intervals on eight questions.",
+          "status": "partial",
+          "url": "todo.html#periodic-overview-study",
+          "evidence": "Four model jobs are submitted over five meetings; no pilot accuracy result is available yet."
+        },
+        {
+          "id": "overview-selection",
+          "text": "Inspect pilot notes and answers, then freeze the update interval.",
+          "status": "pending",
+          "url": "todo.html#periodic-overview-study",
+          "evidence": "Check unsupported identities, missed topic changes, duplicated content and request-time thinking before full evaluation."
+        },
+        {
+          "id": "overview-full",
+          "text": "Evaluate selected overview settings on all 105 questions.",
+          "status": "pending",
+          "url": "todo.html#periodic-overview-study",
+          "evidence": "Full runs require a saved source-reviewed pilot gate; Thinking seeds and voice conditions remain separate."
+        },
+        {
+          "id": "overview-review-report",
+          "text": "Review scores and compare accuracy, response time and full token cost.",
+          "status": "pending",
+          "url": "todo.html#periodic-overview-study",
+          "evidence": "Count detailed-note generation and periodic overview calls separately from request-time thinking; source-review changed accuracy pairs."
         }
       ]
     },

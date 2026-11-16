@@ -63,6 +63,16 @@ def root_links(html):
     return re.sub(r'href="([^"]+)"', change, html)
 
 
+def periodic_overview_plan(record):
+    if not record:return ''
+    body='<section class="stage" id="periodic-overview-study"><h3>Periodic conversation overviews</h3>'
+    body+=bullets(record['summary'])
+    for heading,key in [('Inputs and outputs','modules'),('Pilot and full evaluation','evaluation'),('Resources','resources')]:
+        body+='<h4>'+e(heading)+'</h4>'+bullets(record[key])
+    body+='<p>Design references: '+', '.join('<a href="'+e(x['url'],quote=True)+'">'+e(x['name'])+'</a>'for x in record['references'])+'.</p></section>'
+    return body
+
+
 def build_plan():
     r = read(ROOT / 'research/question-catalog/plan.json')
     brief = read(DATA / 'todo-summary.json')
@@ -101,6 +111,7 @@ def build_plan():
             body += '<li data-status="' + e(status, quote=True) + '">' + checkbox + '<div class="task-copy"><strong><span class="task-state">' + labels[status] + '</span> · ' + e(t['text']) + '</strong>' + ('<p>' + e(t['evidence']) + '</p>' if t.get('evidence') else '') + ('<p><a href="' + e(evidence_url, quote=True) + '">Evidence</a></p>' if evidence_url else '') + '</div></li>'
         body += '</ul>'
         if s['id'] == 'comparison':
+            body += periodic_overview_plan(r.get('periodic_overview_study'))
             body += '<details><summary>Earlier timing and content design, retained for later work</summary><p>The <a href="what-to-think.html">current 105-question content plan</a> supersedes this earlier scope.</p>' + root_links(thinking_design.render(r['comparison_design'], table)) + '</details>'
         body += '</section>'
     body += '<p>' + e(r['resource_note']) + '</p><p><a href="research/question-catalog/plan.json">Full plan data</a> · <a href="research/project-progress/todo-summary.json">Short checklist data</a></p></details></section><footer class="section"><ul><li>Keep this plan and the <a href="daily-log.html">daily log</a> in sync as work finishes.</li><li>Report rendering runs on CPU; current GPU experiments and their roles are listed on the experiment progress page.</li></ul></footer>'
