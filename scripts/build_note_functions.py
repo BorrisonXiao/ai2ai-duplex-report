@@ -1,6 +1,8 @@
 """Concise full-set S2 report with current results and a filtered answer browser."""
 import json
 import hashlib
+import base64
+import statistics
 from html import escape as e
 from pathlib import Path
 from urllib.parse import urlencode
@@ -23,6 +25,32 @@ def interval(m,digits=1):
 def score(row):
  if row['scored']==row['planned']:return f"{row['supported_correct']}/{row['planned']} ({100*row['supported_correct']/row['planned']:.1f}%)"
  return f"{row['supported_correct']}/{row['scored']} scored; {row['missing_judgments']} pending"
+
+def text_seed_results(answers):
+ rows=[]
+ for model in ['instruct','thinking']:
+  seeds=sorted({r['seed']for r in answers if r['branch']=='text'and r['model']==model})
+  for seed in seeds:
+   for condition in ['reactive','current_notes','quotes_current','quotes_history']:
+    selected=[r for r in answers if r['branch']=='text'and(r['model'],r['seed'],r['condition'])==(model,seed,condition)]
+    assert len(selected)==len({r['question_id']for r in selected})==105,(model,seed,condition)
+    scored=[r for r in selected if r['score']is not None]
+    metrics={}
+    for key in ['thinking_tokens','first_answer_seconds']:
+     values=[r[key]for r in selected if r[key]is not None]
+     metrics[key]=dict(mean=statistics.mean(values)if values else None,count=len(values))
+    rows.append(dict(model=model,seed=seed,condition=condition,outputs=len(selected),planned=105,complete=True,scored=len(scored),
+     supported_correct=sum(r['score']['supported_correct']for r in scored),missing_judgments=len(selected)-len(scored),
+     source_reviewed_matches=sum(r['source']in ['source_reviewed_exact_response','deterministic_empty_answer','manual_full_source_review']for r in selected),metrics=metrics))
+ return rows
+
+def plot_image(name,caption):
+ if name=='full-paired-work':
+  data=(ROOT/'research/note-functions'/f'{name}.png').read_bytes()
+  assert data.startswith(b'\x89PNG\r\n\x1a\n')
+  width=int.from_bytes(data[16:20],'big');height=int.from_bytes(data[20:24],'big')
+  return '<img src="data:image/png;base64,'+base64.b64encode(data).decode()+'" width="'+str(width)+'" height="'+str(height)+'" alt="'+e(caption,quote=True)+'">'
+ return '<img src="'+asset(name+'.svg')+'" alt="'+e(caption,quote=True)+'">'
 
 def text_input_example():
  question='?'+urlencode(dict(question='first:authored-W2-1',model='thinking'))+'#examples'
@@ -68,32 +96,37 @@ JS=r'''
 
 def main():
  d=read('full-expansion.json');stats=read('full-statistics.json');cases=read('full-cases.json')['questions'];progress=read('progress.json')
+ seed_results=text_seed_results(read('full-expansion-answers.json')['answers'])
  body='<header class="hero"><p class="small">S2 experiments · '+e(d['updated'][:10])+'</p><h1>Answer quality and thinking cost</h1></header><section id="findings"><h2>Main findings</h2><ul>'
  for x in progress['brief']:body+='<li>'+e(x['text'])+' '+link(x['url'],'Details')+'</li>'
  body+='</ul></section><nav class="page-menu" aria-label="On this page">'+''.join(link('#'+key,label)for key,label in [('full-set','Results'),('cost','Thinking and cost'),('examples','Browse answers'),('methods','Methods'),('evaluation','Scoring'),('review','Score review'),('appendix','Earlier studies'),('next','Next steps')])+'</nav>'
  body+='<section id="full-set"><span id="results"></span><h2>1. Results on 105 questions</h2><p>The same 105 questions from 26 meetings are evaluated in every condition. '+f"{d['outputs']:,}/{d['planned_outputs']:,} planned answers are saved."+' Counts include empty final outputs; these remain evaluation cases. '+e(progress['completion_note'])+'</p><p><strong>Accuracy status:</strong> '+e(d['scoring'])+'</p>'
  empty_by_model={model:sum(r['empty_answers']for r in d['summary']if r['model']==model)for model in MODELS}
  body+='<p>Empty final answers: '+e('; '.join(MODELS[model]+': '+str(count)for model,count in empty_by_model.items()))+'. These answers are scored incorrect, and their generated tokens remain in the cost totals.</p>'
- instruct_example=next(r for r in d['summary']if r['branch']=='text'and r['model']=='instruct'and r['condition']=='current_notes')
- thinking_example=next(r for r in d['summary']if r['branch']=='text'and r['model']=='thinking'and r['condition']=='current_notes')
- body+='<p id="seed-counts"><strong>Why does Table 1 use 105 or 210?</strong> A seed sets a starting value for random sampling when sampling is used. Text Instruct uses greedy decoding and answers each of the 105 questions once, with seed 23. Text Thinking answers each question twice using sampling seeds 23 and 47, for 210 answers per condition. For example, Current notes has '+score(instruct_example)+' fully supported Instruct answers and '+score(thinking_example)+' fully supported Thinking answers. The latter counts answers, not distinct questions; the aggregate does not say how many questions were supported under both seeds. Each audio model uses one seed per question and condition.</p>'
+ body+='<p id="seed-counts"><strong>Table 1 reports each seed separately, with 105 questions in every row.</strong> A seed initializes random sampling. Instruct uses one greedy run with seed 23; Thinking has separate sampling runs for seeds 23 and 47. The later paired analyses match the same question and seed, then combine both Thinking runs.</p>'
  body+='<p><strong>Reading the text conditions:</strong> Reactive and all three saved-material conditions receive the same complete available speaker-labelled reference transcript. Source quotes repeat selected passages from that transcript in the extra saved material; the writer chose their source IDs before the question, without a question-based search. '+link('#text-input-example','See the selection process and a worked example')+'.</p>'
  for branch,idx,title in [('text',1,'Text S2'),('audio',2,'Audio S2')]:
   rows=[]
-  for r in d['summary']:
-   if r['branch']!=branch:continue
+  for r in seed_results if branch=='text'else[r for r in d['summary']if r['branch']==branch]:
    m=r['metrics'];timing='Batched; excluded'if r['model']=='instruct'else number(m['first_answer_seconds']['mean'],2)if r['complete']else'Pending'
    if r['complete']and r['model']!='instruct'and m['first_answer_seconds']['count']<r['outputs']:timing+=' ('+str(m['first_answer_seconds']['count'])+' timed)'
-   rows.append([MODELS[r['model']],NAMES[r['condition']],IDENTITY[r['identity']],str(r['outputs'])+'/'+str(r['planned']),score(r),str(r['source_reviewed_matches'])+'/'+str(r['outputs']),number(m['thinking_tokens']['mean'])if r['model']in ['thinking','qwen-thinking']and r['complete']else'Disabled'if r['model']=='minicpm'else'Not exposed'if r['model']=='instruct'else'Pending',timing])
-  body+=table(idx,title+'; fully supported counts use scored outputs, with missing judgments stated explicitly. Reviewed or empty counts source-checked responses and empty-answer failures; thinking tokens and seconds are means.',['Model','Condition','Speaker input','Saved / planned','Fully supported','Reviewed or empty','Thinking tokens','First text (s)'],rows)
+   prefix=[MODELS[r['model']],str(r['seed']),NAMES[r['condition']],'105']if branch=='text'else[MODELS[r['model']],NAMES[r['condition']],IDENTITY[r['identity']],str(r['outputs'])+'/'+str(r['planned'])]
+   rows.append(prefix+[score(r),str(r['source_reviewed_matches'])+'/'+str(r['outputs']),number(m['thinking_tokens']['mean'])if r['model']in ['thinking','qwen-thinking']and r['complete']else'Disabled'if r['model']=='minicpm'else'Not exposed'if r['model']=='instruct'else'Pending',timing])
+  caption=title+(' by seed; every row covers the same 105 questions with reference speaker labels.'if branch=='text'else'; each row covers 105 questions.')+' Reviewed or empty counts source-checked responses and empty-answer failures; thinking tokens and seconds are means for that row.'
+  headers=['Model','Seed','Condition','Questions']if branch=='text'else['Model','Condition','Speaker input','Saved / planned']
+  body+=table(idx,caption,headers+['Fully supported','Reviewed or empty','Thinking tokens','First text (s)'],rows)
  if all(g['complete']for g in d['groups']):
   help_url='?'+urlencode(dict(question='scale:IB4003-S075-Q3',model='qwen-thinking'))+'#examples'
   harm_url='?'+urlencode(dict(question='pilot:P-EN-timeline',model='qwen-thinking'))+'#examples'
   body+='<p>Saved notes can recover a missed fact and can also introduce a wrong interpretation. For example, Qwen audio changes an office headcount from 18 to the correct 15 with notes ('+link(help_url,'compare the headcount answers')+'), while its notes conditions incorrectly treat a copied timeline as referring only to a prototype outline ('+link(harm_url,'compare the timeline answers')+'). These cases illustrate why accuracy and request-time work are assessed together.</p>'
  body+='<p><a href="../research/note-functions/full-expansion.json">Coverage and scores (JSON)</a> · <a href="../research/note-functions/full-statistics.json">Paired statistics and costs (JSON)</a> · <a href="../research/note-functions/full-expansion-answers.json">Native answers and score status (JSON)</a></p></section>'
- body+='<section id="cost"><h2>2. Request-time thinking and complete cost</h2><p>Request-time thinking tokens are generated after the participant asks the question. Earlier note generation is work performed before the question and is counted separately; the shared text writer generates note edits without a separate exposed thinking channel. Native reasoning-token counts are reported for Qwen Thinking and Qwen Omni. MiniCPM thinking mode is disabled in these runs; Instruct has no separate thinking channel. Figure 1 includes all earlier note work once per meeting and speaker condition, including unused updates and rejected operations. Figure 2 tests paired changes relative to reactive answering. First-text timing includes incorrect outputs; accuracy is reported alongside it.</p>'
+ body+='<section id="cost"><h2>2. Request-time thinking and complete cost</h2><p>Request-time thinking tokens are generated after the participant asks the question. Earlier note generation is work performed before the question and is counted separately; the shared text writer generates note edits without a separate exposed thinking channel. Native reasoning-token counts are reported for Qwen Thinking and Qwen Omni. MiniCPM thinking mode is disabled in these runs; Instruct has no separate thinking channel. Figure 1 includes all earlier note work once per meeting and speaker condition, including unused updates and rejected operations. Figure 2 tests paired changes relative to reactive answering; its label n gives the number of valid paired outputs. First-text timing includes incorrect outputs; accuracy is reported alongside it.</p>'
  for idx,name,caption in [(1,'full-generated-cost','Generated tokens for 105 requests at seed 23, with request-time generation shown separately from the complete cost. The horizontal scales differ between panels. The complete cost adds all earlier note generation; input processing, audio encoding and scoring are separate costs.'),(2,'full-paired-work','Mean paired changes from reactive answering; negative values mean less request-time work. Intervals are 95% confidence intervals from resampling meetings. Text retains both seeds. Each point states its valid-pair count; missing first-text times remain reported in the data. Empty or capped outputs remain in token costs.')]:
-  if d.get('figures',{}).get(name):body+='<figure id="fig-'+name+'"><div class="plot"><img src="'+asset(name+'.svg')+'" alt="'+e(caption)+'"></div><figcaption><strong>Figure '+str(idx)+'.</strong> '+e(caption)+' '+link(asset(name+'.pdf'),'PDF')+'</figcaption></figure>'
+  if d.get('figures',{}).get(name):
+   if name=='full-paired-work':caption=caption.replace('Text retains both seeds. Each point states its valid-pair count;','Text combines two 105-question runs (seeds 23 and 47); audio uses one (seed 23). Each point states its valid-pair count;')
+   downloads=link(asset(name+'.pdf'),'PDF')
+   if name=='full-paired-work':downloads+=' · '+link(asset(name+'.svg'),'SVG')+' · '+link(asset(name+'.png'),'Open full-size PNG')
+   body+='<figure id="fig-'+name+'"><div class="plot">'+plot_image(name,caption)+'</div><figcaption><strong>Figure '+str(idx)+'.</strong> '+e(caption)+' '+downloads+'</figcaption></figure>'
  if all(g['complete']for g in d['groups']):
   history=next(r for r in stats['comparisons']if r['model']=='thinking'and r['condition']=='quotes_history')
   thinking=history['metrics']['thinking_tokens'];both=history['quality_and_work']['both_supported']
@@ -124,7 +157,7 @@ def main():
  for key in ['progress','update-feedback','initial-pilot','followup','audio-pilot-results','diagnostic-results','fig-answer-accuracy','fig-paired-request-work','fig-total-generated-cost','fig-diagnostic-paired','fig-diagnostic-cost']+['review-case-'+str(i)for i in range(1,13)]+['diagnostic-case-'+str(i)for i in range(1,13)]:body+='<span id="'+key+'"></span>'
  body+='<p>These earlier section links now point to this archive index. Full-set outputs and their source reviews appear in the answer browser above. A cluster node failure interrupted Qwen note generation; checkpoint recovery preserves completed updates and generates only the missing portion. Runtime completion is recorded separately from answer accuracy.</p></details><section id="next"><h2>Next steps and goals</h2><ul>'+''.join('<li>'+e(x)+'</li>'for x in d['next_steps'])+'</ul><p>'+link('../todo.html','Project checklist')+' · '+link('../daily-log.html','Daily log')+'</p></section>'
  js=JS.replace('MODEL_NAMES',json.dumps(MODELS)).replace('CONDITION_NAMES',json.dumps(NAMES)).replace('DATA_VERSION',d['updated'])
- extra='.page-menu{display:flex;flex-wrap:wrap;gap:.5rem 1rem;padding:.8rem 0;border-block:1px solid var(--border)}.case-controls{display:grid;gap:.8rem;grid-template-columns:1fr}.case-controls label{display:block}.case-controls select{width:100%;min-width:0}.case-card{border-top:1px solid var(--border);padding:.6rem 0}.plot{overflow-x:auto;background:white}.plot img{width:100%;min-width:760px;height:auto}pre.native{white-space:pre-wrap;overflow-wrap:anywhere;max-height:24rem;overflow:auto}details{margin:1rem 0}summary{cursor:pointer}button{margin-top:.8rem;padding:.5rem 1rem}@media(min-width:900px){.case-controls{grid-template-columns:3fr 2fr 1fr 2fr}}'
+ extra='.page-menu{display:flex;flex-wrap:wrap;gap:.5rem 1rem;padding:.8rem 0;border-block:1px solid var(--border)}.case-controls{display:grid;gap:.8rem;grid-template-columns:1fr}.case-controls label{display:block}.case-controls select{width:100%;min-width:0}.case-card{border-top:1px solid var(--border);padding:.6rem 0}.plot{overflow-x:auto;background:white}.plot img{width:100%;min-width:760px;height:auto}#fig-full-paired-work .plot img{min-width:0}pre.native{white-space:pre-wrap;overflow-wrap:anywhere;max-height:24rem;overflow:auto}details{margin:1rem 0}summary{cursor:pointer}button{margin-top:.8rem;padding:.5rem 1rem}@media(min-width:900px){.case-controls{grid-template-columns:3fr 2fr 1fr 2fr}}'
  page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="Full-set S2 results: answer quality, request-time thinking, latency and complete note-generation cost."><title>Latest S2 results · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"><style>'+CSS+extra+'</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>'+project_tabs('experiments','../')+'</div></header><div class="container collection-nav">'+experiment_subtabs('note-functions')+'</div><main id="main" class="container results">'+body+'</main><script>'+js+'</script></body></html>\n'
  (ROOT/'experiments/note-functions.html').write_text(page)
 if __name__=='__main__':main()

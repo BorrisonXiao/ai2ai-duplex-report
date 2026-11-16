@@ -1,7 +1,16 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-16",
   "date_basis": "Recorded project milestone dates in America/New_York; older entries are selected milestones, not a reconstruction of every work day.",
   "days": [
+    {
+      "date": "2026-11-16",
+      "items": [
+        {
+          "text": "Separated Table 1 by seed with 105 questions per row and embedded Figure 2 for reliable viewing.",
+          "url": "experiments/note-functions.html#full-set"
+        }
+      ]
+    },
     {
       "date": "2026-11-14",
       "items": [
@@ -317,7 +326,7 @@
           "url": "study-progress-original-acoustics.html#array-audio-demos"
         },
         {
-          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "text": "Clarified that Figures 1\u20133 measure question ASR, while Figure 4 evaluates the generated responses.",
           "url": "study-progress-original-acoustics.html#array-response-content"
         },
         {
@@ -460,7 +469,7 @@
           "url": "study-progress.html"
         },
         {
-          "text": "Changed the thinking-chunk range to 10–40 seconds, with a 25-second target.",
+          "text": "Changed the thinking-chunk range to 10\u201340 seconds, with a 25-second target.",
           "url": "what-to-think.html#chunking"
         },
         {
