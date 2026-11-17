@@ -6,6 +6,16 @@
       "date": "2026-11-16",
       "items": [
         {
+          "text": "Reviewed all 608 periodic-overview pilot records across eight questions and published the matched accuracy, thinking-token and complete-cost comparisons.",
+          "url": "experiments/note-functions.html#periodic-overviews",
+          "label": "Reviewed pilot results"
+        },
+        {
+          "text": "Found a limited Qwen audio saving over detailed notes, while text gains changed with input order and overview grounding remained unreliable.",
+          "url": "experiments/note-functions.html#overview-input-order",
+          "label": "Input-order control and examples"
+        },
+        {
           "text": "Implemented and queued an eight-question periodic topic/speaker overview pilot, with full evaluation gated on source review.",
           "url": "todo.html#periodic-overview-study",
           "label": "Pilot design and checklist"
@@ -331,7 +341,7 @@
           "url": "study-progress-original-acoustics.html#array-audio-demos"
         },
         {
-          "text": "Clarified that Figures 1\u20133 measure question ASR, while Figure 4 evaluates the generated responses.",
+          "text": "Clarified that Figures 1–3 measure question ASR, while Figure 4 evaluates the generated responses.",
           "url": "study-progress-original-acoustics.html#array-response-content"
         },
         {
@@ -474,7 +484,7 @@
           "url": "study-progress.html"
         },
         {
-          "text": "Changed the thinking-chunk range to 10\u201340 seconds, with a 25-second target.",
+          "text": "Changed the thinking-chunk range to 10–40 seconds, with a 25-second target.",
           "url": "what-to-think.html#chunking"
         },
         {

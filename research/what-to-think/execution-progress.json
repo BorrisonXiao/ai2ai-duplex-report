@@ -100,17 +100,17 @@
     },
     {
       "id": "overview-pilot",
-      "text": "Test overview content and 2-, 4- and 8-chunk intervals on eight questions.",
-      "status": "partial",
-      "url": "todo.html#periodic-overview-study",
-      "evidence": "Four model jobs are submitted over five meetings; no pilot accuracy result is available yet."
+      "text": "Complete and source-check the eight-question overview pilot and input-order controls.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#periodic-overviews",
+      "evidence": "All 480 initial records and 128 text input-order records are saved and source-checked; 20 source-only probes are separate."
     },
     {
       "id": "overview-selection",
-      "text": "Inspect pilot notes and answers, then freeze the update interval.",
-      "status": "pending",
-      "url": "todo.html#periodic-overview-study",
-      "evidence": "Check unsupported identities, missed topic changes, duplicated content and request-time thinking before full evaluation."
+      "text": "Resolve overview grounding and native-output issues, then freeze the full-run recipe.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#overview-grounding",
+      "evidence": "Reviewed topic/identity errors and input-order sensitivity; the full-evaluation prompt and interval gate remains closed."
     },
     {
       "id": "overview-full",
@@ -121,10 +121,17 @@
     },
     {
       "id": "overview-review-report",
-      "text": "Review scores and compare accuracy, response time and full token cost.",
+      "text": "Publish pilot accuracy, request-time thinking, first-text time and complete token cost.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#periodic-overviews",
+      "evidence": "Every pilot row covers eight source-checked questions; earlier updates are counted once per meeting and speaker condition."
+    },
+    {
+      "id": "overview-full-review",
+      "text": "Source-check full-set answer changes and compare quality with request-time and total cost.",
       "status": "pending",
-      "url": "todo.html#periodic-overview-study",
-      "evidence": "Count detailed-note generation and periodic overview calls separately from request-time thinking; source-review changed accuracy pairs."
+      "url": "experiments/note-functions.html#next",
+      "evidence": "Depends on the selected 105-question runs; no new full-set overview results exist."
     }
   ],
   "updated_at": "2026-11-14T14:01:29-05:00",
@@ -416,21 +423,30 @@
     ]
   },
   "periodic_overviews": {
-    "status": "pilots_queued_source_review_before_full",
-    "updated": "2026-11-16",
+    "status": "pilot_source_review_complete_full_gate_pending",
+    "updated": "2026-11-17T04:40:00+00:00",
     "brief": [
       {
-        "text": "The new pilot adds periodic topic and speaker overviews to the existing function-call notes."
+        "text": "All 608 pilot answer records on eight questions are saved and source-checked.",
+        "url": "experiments/note-functions.html#periodic-overviews"
       },
       {
-        "text": "Eight questions from five meetings compare 2-, 4- and 8-chunk intervals, with an extra audio-delivery condition."
+        "text": "One Qwen audio overview setting reduces thinking by 17.2% versus detailed notes at the same 7/8 score, with higher total cost.",
+        "url": "experiments/note-functions.html#fig-periodic-overview-cost"
       },
       {
-        "text": "Input and state checks pass; pilot model outputs and full-set results are pending."
+        "text": "Text Thinking shows no consistent gain over Reactive; topic and speaker grounding still need improvement.",
+        "url": "experiments/note-functions.html#overview-input-order"
       },
       {
-        "text": "Each job requests one A100 80 GB; the two model lanes allow at most two GPUs at once."
+        "text": "All pilot jobs are complete; the new 105-question runs remain gated and no study GPU is active.",
+        "url": "todo.html#periodic-overview-study"
       }
-    ]
+    ],
+    "primary_records": 480,
+    "input_order_records": 128,
+    "source_checked_records": 608,
+    "questions": 8,
+    "full105_submitted": false
   }
 }

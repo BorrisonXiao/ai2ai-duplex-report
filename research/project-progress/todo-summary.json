@@ -8,22 +8,22 @@
       "url": "experiments/note-functions.html"
     },
     {
-      "id": "overview-cpu-checks",
-      "text": "Validate overview updates and all 105 input budgets.",
+      "id": "overview-pilot",
+      "text": "Complete and source-check the eight-question overview pilot and input-order controls.",
       "status": "complete",
-      "url": "todo.html#periodic-overview-study"
+      "url": "experiments/note-functions.html#periodic-overviews"
     },
     {
-      "id": "overview-pilot",
-      "text": "Test overview content and 2-, 4- and 8-chunk intervals on eight questions.",
-      "status": "partial",
-      "url": "todo.html#periodic-overview-study"
+      "id": "overview-review-report",
+      "text": "Publish pilot accuracy, request-time thinking, first-text time and complete token cost.",
+      "status": "complete",
+      "url": "experiments/note-functions.html#periodic-overviews"
     },
     {
       "id": "overview-selection",
-      "text": "Inspect pilot notes and answers, then freeze the update interval.",
-      "status": "pending",
-      "url": "todo.html#periodic-overview-study"
+      "text": "Resolve overview grounding and native-output issues, then freeze the full-run recipe.",
+      "status": "partial",
+      "url": "experiments/note-functions.html#overview-grounding"
     },
     {
       "id": "overview-full",
@@ -32,10 +32,10 @@
       "url": "todo.html#periodic-overview-study"
     },
     {
-      "id": "overview-review-report",
-      "text": "Review scores and compare accuracy, response time and full token cost.",
+      "id": "overview-full-review",
+      "text": "Source-check full-set answer changes and compare quality with request-time and total cost.",
       "status": "pending",
-      "url": "todo.html#periodic-overview-study"
+      "url": "experiments/note-functions.html#next"
     }
   ],
   "definition": {
@@ -180,17 +180,17 @@
         },
         {
           "id": "overview-pilot",
-          "text": "Test overview content and 2-, 4- and 8-chunk intervals on eight questions.",
-          "status": "partial",
-          "url": "todo.html#periodic-overview-study",
-          "evidence": "Four model jobs are submitted over five meetings; no pilot accuracy result is available yet."
+          "text": "Complete and source-check the eight-question overview pilot and input-order controls.",
+          "status": "complete",
+          "url": "experiments/note-functions.html#periodic-overviews",
+          "evidence": "All 480 initial records and 128 text input-order records are saved and source-checked; 20 source-only probes are separate."
         },
         {
           "id": "overview-selection",
-          "text": "Inspect pilot notes and answers, then freeze the update interval.",
-          "status": "pending",
-          "url": "todo.html#periodic-overview-study",
-          "evidence": "Check unsupported identities, missed topic changes, duplicated content and request-time thinking before full evaluation."
+          "text": "Resolve overview grounding and native-output issues, then freeze the full-run recipe.",
+          "status": "partial",
+          "url": "experiments/note-functions.html#overview-grounding",
+          "evidence": "Reviewed topic/identity errors and input-order sensitivity; the full-evaluation prompt and interval gate remains closed."
         },
         {
           "id": "overview-full",
@@ -201,10 +201,17 @@
         },
         {
           "id": "overview-review-report",
-          "text": "Review scores and compare accuracy, response time and full token cost.",
+          "text": "Publish pilot accuracy, request-time thinking, first-text time and complete token cost.",
+          "status": "complete",
+          "url": "experiments/note-functions.html#periodic-overviews",
+          "evidence": "Every pilot row covers eight source-checked questions; earlier updates are counted once per meeting and speaker condition."
+        },
+        {
+          "id": "overview-full-review",
+          "text": "Source-check full-set answer changes and compare quality with request-time and total cost.",
           "status": "pending",
-          "url": "todo.html#periodic-overview-study",
-          "evidence": "Count detailed-note generation and periodic overview calls separately from request-time thinking; source-review changed accuracy pairs."
+          "url": "experiments/note-functions.html#next",
+          "evidence": "Depends on the selected 105-question runs; no new full-set overview results exist."
         }
       ]
     },
