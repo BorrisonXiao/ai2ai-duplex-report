@@ -68,6 +68,7 @@ def build_collections():
         ('Earlier studies', 'Earlier failures and timing tests, kept with their original evidence and limitations.', 'archive.html'),
     ]
     ami = [
+        ('Two short listening checks', 'Identify laughter and the topic of the exchange.', 'listening-check.html'),
         ('Question overview and aggregate statistics', 'All retained questions, insertion-time distributions, source coverage and audio coverage.', 'question-overview.html'),
         ('All question audio', 'All 105 question events, with short source excerpts and original-voice comparisons.', 'question-audio.html'),
         ('Larger AMI batch', 'Forty additional questions from twenty more meetings, with source checks and recorded Codex edits.', 'question-scale.html'),

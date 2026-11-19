@@ -12,6 +12,7 @@
 | Earlier full S1/S2 evaluation | [Full evaluation](experiments/full-answering-results.html) |
 | Earlier paired examples and implementation details | [S1/S2 report](experiments/answering-results.html) |
 | Speech interaction and reproduction | [DuplexOmni collection](experiments/duplexomni.html) |
+| Two short recordings for listener review | [Listening check](experiments/listening-check.html) |
 | Generated questions and distributions | [AMI questions](experiments/question-overview.html) |
 | Questions under different recording conditions | [Question audio library](experiments/question-audio.html) |
 | Experiment design and symbols | [Plan](what-to-think.html) · [Notation](notation.html) |
