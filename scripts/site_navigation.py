@@ -68,6 +68,14 @@ def experiment_subtabs(current):
     duplex = current in {key for key, _, _ in DUPLEX_PAGES}
     ami = current in {key for key, _, _ in AMI_PAGES}
     parent = 'ami-library' if current in {'ami-library','ami-audio'} else ('ami' if ami else ('answering' if current in {'notes','full-answering','note-functions'} else 'overview'if current=='prethinking'else current))
+    overview_pages = [
+        ('overview', 'Study index', 'index.html'),
+        ('dataset', 'Question dataset', 'question-dataset.html'),
+        ('cue-notes', 'Sound-cue results', 'cue-notes.html'),
+    ]
+    overview = current in {key for key, _, _ in overview_pages}
+    if overview:
+        parent = 'overview'
     result = tabs([
         ('overview', 'All experiments', 'index.html'),
         ('answering', 'Latest S2 results', 'note-functions.html'),
@@ -76,6 +84,8 @@ def experiment_subtabs(current):
         ('ami-library', 'AMI question audio', 'question-audio.html'),
         ('progress', 'Experiment progress', '../study-progress.html'),
     ], 'duplex' if duplex else parent, 'Experiment sub-tabs')
+    if overview:
+        result += tabs(overview_pages, current, 'Experiment overview pages', css='review-tabs secondary-tabs')
     if current in {'answering','notes','full-answering','note-functions'}:
         result += tabs([('note-functions','Latest S2 results','note-functions.html'),('full-answering','Earlier full evaluation','full-answering-results.html'),('answering','Earlier S1/S2 examples','answering-results.html'),('notes','Earlier note designs','structured-notes.html')],current,'S1 and S2 study pages',css='review-tabs secondary-tabs')
     if duplex:

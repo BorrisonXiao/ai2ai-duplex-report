@@ -58,7 +58,7 @@ def render():
     sections.append('<section id="next"><h2>Next test</h2><p>'+escape(data['next'])+'</p><p><a href="../research/cue-notes/results.json">Download reviewed results</a> · <a href="../todo.html">Project checklist</a></p></section>')
     css='main.cue{max-width:58rem;margin:auto;padding:1.2rem 1rem 4rem}.cue h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1}.cue li{margin:.55rem 0}.cue section{margin-top:2.4rem}.cue .scroll{overflow-x:auto;margin:1.1rem 0}.cue table{border-collapse:collapse;width:100%;font-size:.95rem}.cue td,.cue th{padding:.48rem;text-align:left;border-bottom:1px solid var(--border)}.cue caption{text-align:left;font-weight:650;margin:.5rem 0}.cue blockquote{margin:.35rem 0 1rem;padding:.6rem 1rem;border-left:3px solid var(--border)}.cue article{margin:1rem 0}.cue audio{max-width:100%}'
     nav='<header class="site-nav"><div class="nav-inner"><a class="brand" href="../index.html">AI2AI Duplex</a>'+project_tabs('experiments','../')+'</div></header>'
-    nav+='<div class="container collection-nav">'+experiment_subtabs('overview')+'</div>'
+    nav+='<div class="container collection-nav">'+experiment_subtabs('cue-notes')+'</div>'
     meta='<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Timing, topic notes and answer quality for natural laughter and edited speech in meetings and earnings calls.">'
     html='<!doctype html><html lang="en"><head>'+meta+'<title>'+title+' · AI2AI Duplex</title><link rel="stylesheet" href="../assets/site.css"><style>'+css+'</style></head><body>'+nav+'<main id="main" class="cue">'+''.join(sections)+'</main></body></html>\n'
     css_version=hashlib.sha256((SITE/'assets/site.css').read_bytes()).hexdigest()[:12]

@@ -24,7 +24,7 @@ REVIEW_KEYS = {
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
     'answering-results.html': 'answering', 'structured-notes.html': 'notes', 'full-answering-results.html': 'full-answering',
-    'note-functions.html': 'note-functions', 'cue-notes.html': 'overview',
+    'note-functions.html': 'note-functions', 'cue-notes.html': 'cue-notes', 'question-dataset.html': 'dataset',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
@@ -35,7 +35,7 @@ EXPERIMENT_KEYS = {
     'question-audio.html': 'ami-library', 'question-overview.html': 'ami-overview',
 }
 SUBNAV_LABELS = (
-    'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs',
+    'Literature review sub-tabs', 'Benchmark pages', 'Experiment sub-tabs', 'Experiment overview pages',
     'DuplexOmni experiments', 'S1 and S2 study pages', 'Proposal pages', 'AMI question pages', 'Project progress pages',
 )
 
@@ -68,8 +68,9 @@ def build_collections():
         ('Earlier studies', 'Earlier failures and timing tests, kept with their original evidence and limitations.', 'archive.html'),
     ]
     ami = [
+        ('Question dataset', 'Browse AMI and ConEC questions by corpus and question type, and hear six examples.', 'question-dataset.html'),
         ('Two short listening checks', 'Identify laughter and the topic of the exchange.', 'listening-check.html'),
-        ('Question overview and aggregate statistics', 'All retained questions, insertion-time distributions, source coverage and audio coverage.', 'question-overview.html'),
+        ('Earlier 105-question inventory', 'Question timing, source coverage and audio from the first 105 cases.', 'question-overview.html'),
         ('All question audio', 'All 105 question events, with short source excerpts and original-voice comparisons.', 'question-audio.html'),
         ('Larger AMI batch', 'Forty additional questions from twenty more meetings, with source checks and recorded Codex edits.', 'question-scale.html'),
         ('Question/audio pilot', 'Earlier checkpoints, thinker checks and ten inserted questions in eight requester voices.', 'question-pilot.html'),
@@ -90,7 +91,7 @@ def build_collections():
             ('Daily log', 'One-sentence updates with links to results and examples.', '../daily-log.html')]) +
         section('DuplexOmni', 'Tests of speech generation, interruption handling and reasoning with the DuplexOmni model.', [
             ('DuplexOmni experiments', 'Start with the overview, then choose S1 speech, interruption or S2 reasoning tests.', 'duplexomni.html')]) +
-        section('Meeting questions', 'Text questions and synthetic speech based on the AMI Meeting Corpus.', ami) +
+        section('Meeting questions', 'Questions about AMI meetings and ConEC financial conversations, with spoken examples.', ami) +
         section('Amortized thinking', 'Preparing useful reasoning before a request arrives.', pilot),
         experiment_subtabs('overview'), '../')
     collection('experiments/duplexomni.html', 'experiments', 'DuplexOmni experiments',
