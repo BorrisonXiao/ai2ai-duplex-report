@@ -440,9 +440,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what range did they give for overall core growth next quarter?",
-      "insertion_seconds": 1630.99,
-      "fraction": 0.599371,
-      "equal_type": false
+      "insertion_seconds": 1661.43,
+      "fraction": 0.610557,
+      "equal_type": false,
+      "original_evaluation_seconds": 1630.99
     },
     {
       "id": "expansion:DH-basis",
@@ -452,9 +453,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how are they treating Cytiva in the core growth number?",
-      "insertion_seconds": 2342.13,
-      "fraction": 0.860707,
-      "equal_type": false
+      "insertion_seconds": 2364.47,
+      "fraction": 0.868917,
+      "equal_type": false,
+      "original_evaluation_seconds": 2342.13
     },
     {
       "id": "expansion:MO-performance",
@@ -464,9 +466,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did the stores they only re-imaged see a sales lift too?",
-      "insertion_seconds": 1976.85,
-      "fraction": 0.601626,
-      "equal_type": false
+      "insertion_seconds": 2018.67,
+      "fraction": 0.614353,
+      "equal_type": false,
+      "original_evaluation_seconds": 1976.85
     },
     {
       "id": "expansion:MO-selection",
@@ -476,9 +479,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how were they deciding which stores to rebrand?",
-      "insertion_seconds": 2823.71,
-      "fraction": 0.859355,
-      "equal_type": false
+      "insertion_seconds": 2853.95,
+      "fraction": 0.868558,
+      "equal_type": false,
+      "original_evaluation_seconds": 2823.71
     },
     {
       "id": "pilot:P-MO-comparison",
@@ -488,9 +492,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how did the January sales trend compare with the quarter overall?",
-      "insertion_seconds": 303.18,
-      "fraction": 0.092268,
-      "equal_type": false
+      "insertion_seconds": 320.71,
+      "fraction": 0.097603,
+      "equal_type": false,
+      "original_evaluation_seconds": 303.18
     },
     {
       "id": "pilot:P-MO-pricing",
@@ -500,9 +505,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, when was the new tire pricing system supposed to start rolling out?",
-      "insertion_seconds": 448.61,
-      "fraction": 0.136528,
-      "equal_type": false
+      "insertion_seconds": 454.23,
+      "fraction": 0.138238,
+      "equal_type": false,
+      "original_evaluation_seconds": 448.61
     },
     {
       "id": "pilot:P-MO-completion",
@@ -512,9 +518,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, had all the California store conversions finished, or were some still being worked on?",
-      "insertion_seconds": 599.89,
-      "fraction": 0.182568,
-      "equal_type": false
+      "insertion_seconds": 603.24,
+      "fraction": 0.183587,
+      "equal_type": false,
+      "original_evaluation_seconds": 599.89
     },
     {
       "id": "pilot:P-DH-documents",
@@ -524,9 +531,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, where did they say the slides and financial reconciliations were posted?",
-      "insertion_seconds": 296.84999999999997,
-      "fraction": 0.109089,
-      "equal_type": false
+      "insertion_seconds": 308.17,
+      "fraction": 0.113249,
+      "equal_type": false,
+      "original_evaluation_seconds": 296.84999999999997
     },
     {
       "id": "pilot:P-DH-replay",
@@ -536,9 +544,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, until what date did they say the call replay would be available?",
-      "insertion_seconds": 596.0699999999999,
-      "fraction": 0.219049,
-      "equal_type": false
+      "insertion_seconds": 603.69,
+      "fraction": 0.22185,
+      "equal_type": false,
+      "original_evaluation_seconds": 596.0699999999999
     },
     {
       "id": "pilot:P-DH-cepheid",
@@ -548,9 +557,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
-      "insertion_seconds": 2126.22,
-      "fraction": 0.781363,
-      "equal_type": false
+      "insertion_seconds": 2147.24,
+      "fraction": 0.789087,
+      "equal_type": false,
+      "original_evaluation_seconds": 2126.22
     },
     {
       "id": "pilot:P-DH-idt",
@@ -560,9 +570,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how many diagnostic tests has IDT enabled so far?",
-      "insertion_seconds": 446.81,
-      "fraction": 0.164198,
-      "equal_type": false
+      "insertion_seconds": 455.28,
+      "fraction": 0.16731,
+      "equal_type": false,
+      "original_evaluation_seconds": 446.81
     },
     {
       "id": "pilot:Q-MO-weather",
@@ -572,9 +583,10 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how did mild weather affect our Northern markets in January?",
-      "insertion_seconds": 303.18,
-      "fraction": 0.092268,
-      "equal_type": false
+      "insertion_seconds": 320.71,
+      "fraction": 0.097603,
+      "equal_type": false,
+      "original_evaluation_seconds": 303.18
     },
     {
       "id": "conec-C01",
@@ -586,7 +598,8 @@
       "question": "Assistant, what are we adding in Vietnam beyond the cut-and-sew work we already do there?",
       "insertion_seconds": 1741.625,
       "fraction": 0.708293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1741.62
     },
     {
       "id": "conec-C02",
@@ -598,7 +611,8 @@
       "question": "Assistant, why does making the fabric in Vietnam matter for the mattress covers Culp wants to ship to the US?",
       "insertion_seconds": 1954.255,
       "fraction": 0.794767,
-      "equal_type": true
+      "equal_type": true,
+      "placement_for_future_full_audio_seconds": 1954.26
     },
     {
       "id": "conec-C03",
@@ -610,7 +624,8 @@
       "question": "Assistant, can you break down that Missouri weather hit between the residential mechanism and businesses?",
       "insertion_seconds": 2061.22,
       "fraction": 0.629293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2061.49
     },
     {
       "id": "conec-C04",
@@ -622,7 +637,8 @@
       "question": "Assistant, if the court route is closed, what’s the remaining fix, and what would it change for pipe replacements?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-C05",
@@ -634,7 +650,8 @@
       "question": "Assistant, did Doug describe the same kind of recovery for travel spending as he did for other spending?",
       "insertion_seconds": 337.705,
       "fraction": 0.166477,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 338.04
     },
     {
       "id": "conec-C06",
@@ -646,7 +663,8 @@
       "question": "Assistant, what did Amex offer customers who still needed help after the short payment holidays?",
       "insertion_seconds": 1014.46,
       "fraction": 0.500095,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1035.16
     },
     {
       "id": "conec-I03.2",
@@ -658,7 +676,8 @@
       "question": "Assistant, what did Iv say Culp has done about the fake reviews on Amazon?",
       "insertion_seconds": 1954.255,
       "fraction": 0.794767,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1954.26
     },
     {
       "id": "conec-I05.1",
@@ -670,7 +689,8 @@
       "question": "Assistant, how did margins in Missouri and the Southern utilities compare after the warm winter?",
       "insertion_seconds": 2061.22,
       "fraction": 0.629293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2061.49
     },
     {
       "id": "conec-I07.2",
@@ -682,7 +702,8 @@
       "question": "Assistant, why did Spire think it could keep moving on infrastructure work through the pandemic?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-I08.1",
@@ -694,7 +715,8 @@
       "question": "Assistant, what is Spire trying to show about the pipe it already replaced?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-I08.2",
@@ -706,7 +728,8 @@
       "question": "Assistant, what does the Missouri commission still have to decide in July, and what could that mean for customers?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": true
+      "equal_type": true,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-T02.1",
@@ -718,7 +741,8 @@
       "question": "Assistant, when did Ken say the high-tax exception could start helping Culp?",
       "insertion_seconds": 1741.625,
       "fraction": 0.708293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1741.62
     },
     {
       "id": "conec-T03.1",
@@ -730,7 +754,8 @@
       "question": "Assistant, how much of the home accessories business did Iv expect Amazon to account for?",
       "insertion_seconds": 1954.255,
       "fraction": 0.794767,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1954.26
     },
     {
       "id": "conec-T03.2",
@@ -742,7 +767,8 @@
       "question": "Assistant, what tax rate did Ken expect for the rest of the fiscal year?",
       "insertion_seconds": 1954.255,
       "fraction": 0.794767,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1954.26
     },
     {
       "id": "conec-T06.1",
@@ -754,7 +780,8 @@
       "question": "Assistant, is the $11 million in the Missouri settlement the same thing as the provision they mentioned earlier?",
       "insertion_seconds": 2061.22,
       "fraction": 0.629293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2061.49
     },
     {
       "id": "conec-T07.1",
@@ -766,7 +793,8 @@
       "question": "Assistant, how much of the increase in Spire’s spending plan was for the utilities?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-T08.1",
@@ -778,7 +806,8 @@
       "question": "Assistant, did Spire say the House and Senate bills would change its pipe replacement rules in different ways?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-T11.1",
@@ -790,7 +819,8 @@
       "question": "Assistant, in Doug’s Italy example, what share were using Amex for an online purchase for the first time?",
       "insertion_seconds": 1014.46,
       "fraction": 0.500095,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1035.16
     },
     {
       "id": "conec-R01.1",
@@ -802,7 +832,8 @@
       "question": "Assistant, what was Culp’s effective tax rate for the year to date?",
       "insertion_seconds": 1741.625,
       "fraction": 0.708293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1741.62
     },
     {
       "id": "conec-R02.1",
@@ -814,7 +845,8 @@
       "question": "Assistant, what did Ken say was keeping Culp’s tax rate so high for the rest of the year?",
       "insertion_seconds": 1741.625,
       "fraction": 0.708293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1741.62
     },
     {
       "id": "conec-R05.1",
@@ -826,7 +858,8 @@
       "question": "Assistant, what was Spire’s spending forecast before the increase to $640 million?",
       "insertion_seconds": 2061.22,
       "fraction": 0.629293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2061.49
     },
     {
       "id": "conec-R06.1",
@@ -838,7 +871,8 @@
       "question": "Assistant, how much of the Missouri hit got past the weather mechanism, and when did Spire say it would work on fixing that?",
       "insertion_seconds": 2061.22,
       "fraction": 0.629293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2061.49
     },
     {
       "id": "conec-R08.1",
@@ -850,7 +884,8 @@
       "question": "Assistant, which part goes to the commission and which part still needs the House and Senate to agree?",
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2268.51
     },
     {
       "id": "conec-R11.1",
@@ -862,7 +897,8 @@
       "question": "Assistant, what did Doug say was helping Amex’s credit quality even with all those jobless claims?",
       "insertion_seconds": 1014.46,
       "fraction": 0.500095,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 1035.16
     },
     {
       "id": "ES2012a-S1",
@@ -922,7 +958,8 @@
       "question": "Assistant, which business was Andy asking about when he brought up the April order decline?",
       "insertion_seconds": 2606.81,
       "fraction": 0.656293,
-      "equal_type": true
+      "equal_type": true,
+      "placement_for_future_full_audio_seconds": 2610.19
     },
     {
       "id": "4346818-S2",
@@ -934,7 +971,8 @@
       "question": "Assistant, how big were the other cost cuts Julian mentioned on top of the synergies?",
       "insertion_seconds": 2606.81,
       "fraction": 0.656293,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 2610.19
     },
     {
       "id": "4359971-S1",
@@ -946,7 +984,8 @@
       "question": "Assistant, what earnings number was David checking that one-time benefit against?",
       "insertion_seconds": 3037.0,
       "fraction": 0.807725,
-      "equal_type": false
+      "equal_type": false,
+      "placement_for_future_full_audio_seconds": 3059.36
     },
     {
       "id": "4359971-S2",
@@ -958,7 +997,8 @@
       "question": "Assistant, what did Curtis want to know about the hundred million euros in savings?",
       "insertion_seconds": 3037.0,
       "fraction": 0.807725,
-      "equal_type": true
+      "equal_type": true,
+      "placement_for_future_full_audio_seconds": 3059.36
     },
     {
       "id": "EN2003a-cue",
@@ -1787,16 +1827,17 @@
       "title": "Comparing sales at Monro",
       "tracks": [
         {
-          "label": "Conversation and inserted question",
-          "file": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--injected.wav",
-          "duration": 28.2486875,
-          "request_at": 18.18
+          "label": "Conversation and question",
+          "file": "../research/question-dataset/audio/pilot--P-MO-comparison--turn-end.wav",
+          "duration": 26.4386875,
+          "request_at": 19.37
         }
       ],
       "answers": [
         "January comparable-store sales were down 4 percent, compared with a 0.9 percent decline for the third quarter overall."
       ],
-      "question_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--question.wav"
+      "question_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--question.wav",
+      "turn_end": "of us executing well against the areas within our control."
     },
     {
       "id": "EN2003a-cue",
@@ -1805,20 +1846,23 @@
         {
           "label": "Version 1",
           "file": "../research/question-dataset/audio/EN2003a-cue-1.flac",
-          "duration": 38.24,
-          "request_at": 32.7
+          "duration": 21.243,
+          "request_at": 14.89
         },
         {
           "label": "Version 2",
           "file": "../research/question-dataset/audio/EN2003a-cue-2.flac",
-          "duration": 38.24,
-          "request_at": 32.7
+          "duration": 21.243,
+          "request_at": 14.89
         }
       ],
       "answers": [
         "Sending separate calls for contributions.",
         "How many talks and posters would fit into the three-day workshop."
-      ]
+      ],
+      "requester": "C",
+      "reference_voice": "../research/question-dataset/audio/EN2003a-original-requester.wav",
+      "question_audio": "../research/question-dataset/audio/EN2003a-requester-listen.wav"
     },
     {
       "id": "4359971-cue",
@@ -1827,20 +1871,23 @@
         {
           "label": "Version 1",
           "file": "../research/question-dataset/audio/4359971-cue-1.flac",
-          "duration": 67.81,
-          "request_at": 63.85
+          "duration": 58.367375,
+          "request_at": 50.49
         },
         {
           "label": "Version 2",
           "file": "../research/question-dataset/audio/4359971-cue-2.flac",
-          "duration": 67.81,
-          "request_at": 63.85
+          "duration": 58.367375,
+          "request_at": 50.49
         }
       ],
       "answers": [
         "David Gagliano asked whether a one-time benefit was included in second-quarter adjusted EBITDA.",
         "Curtis Woodworth asked how much of the cost reduction was structural or permanent."
-      ]
+      ],
+      "requester": "S2",
+      "reference_voice": "../research/question-dataset/audio/4359971-original-requester.wav",
+      "question_audio": "../research/question-dataset/audio/4359971-requester.wav"
     },
     {
       "id": "natural-AMI-ES2006a-laughter",

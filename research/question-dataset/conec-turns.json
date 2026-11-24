@@ -1,0 +1,527 @@
+{
+  "response_policy": "Pause the source at the reviewed time and play the requester question. Keep the floor open for the assistant. Advance the source after the response. Listening copies end with two seconds of room tone.",
+  "cases": {
+    "pilot:P-MO-comparison": {
+      "meeting": "EC4320211",
+      "original_cutoff": 303.18,
+      "source_time_seconds": 320.71,
+      "prefix_start": 301.34,
+      "quiet_interval": [
+        320.21,
+        320.91
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "on",
+      "ending_words": "of us executing well against the areas within our control.",
+      "next_words": "We identified issues last quarter that arose",
+      "file": "audio/pilot--P-MO-comparison--turn-end.wav",
+      "request_at": 19.37,
+      "duration": 26.4386875,
+      "request_duration": 5.0686875,
+      "room_tone_after_seconds": 2,
+      "sha256": "1a14b2a23306b70a4ffb1430981d04b9f540bf6bf645da9116c49efedaee9cda"
+    },
+    "pilot:Q-MO-weather": {
+      "meeting": "EC4320211",
+      "original_cutoff": 303.18,
+      "source_time_seconds": 320.71,
+      "prefix_start": 301.34,
+      "quiet_interval": [
+        320.21,
+        320.91
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "on",
+      "ending_words": "of us executing well against the areas within our control.",
+      "next_words": "We identified issues last quarter that arose",
+      "file": "audio/pilot--Q-MO-weather--turn-end.wav",
+      "request_at": 19.37,
+      "duration": 26.38,
+      "request_duration": 5.01,
+      "room_tone_after_seconds": 2,
+      "sha256": "cc96995862f2dbbdb1182a504546c1873cfdec0c4801b9fc3c08282a54bcce49"
+    },
+    "pilot:P-MO-pricing": {
+      "meeting": "EC4320211",
+      "original_cutoff": 448.61,
+      "source_time_seconds": 454.23,
+      "prefix_start": 430.29,
+      "quiet_interval": [
+        453.73,
+        454.52
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": null,
+      "ending_words": "operated 555 service brand stores, and 734 tire brand stores.",
+      "next_words": "And as we work to create a",
+      "file": "audio/pilot--P-MO-pricing--turn-end.wav",
+      "request_at": 23.94,
+      "duration": 31.227375,
+      "request_duration": 5.287375,
+      "room_tone_after_seconds": 2,
+      "sha256": "50d8be7548bf966b927e2d12c09edb728c5ac6c9e8fb6928afb4f7ef9102f4d4"
+    },
+    "pilot:P-MO-completion": {
+      "meeting": "EC4320211",
+      "original_cutoff": 599.89,
+      "source_time_seconds": 603.24,
+      "prefix_start": 588.07,
+      "quiet_interval": [
+        602.74,
+        603.87
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "sales",
+      "ending_words": "and increases our tire sales without sacrificing our service revenues.",
+      "next_words": "The stores that have been re-imaged were",
+      "file": "audio/pilot--P-MO-completion--turn-end.wav",
+      "request_at": 15.17,
+      "duration": 23.7,
+      "request_duration": 6.53,
+      "room_tone_after_seconds": 2,
+      "sha256": "0a1f96daf8fd7810db100b20edb472fa798393d9299ea5286c69ded263db36ba"
+    },
+    "expansion:MO-performance": {
+      "meeting": "EC4320211",
+      "original_cutoff": 1976.85,
+      "source_time_seconds": 2018.67,
+      "prefix_start": 2007.12,
+      "quiet_interval": [
+        2018.27,
+        2018.82
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": null,
+      "ending_words": "positioning, uh, our brand related to tires starts to mature.",
+      "next_words": "Uh, keep in mind the tire purchase",
+      "file": "audio/expansion--MO-performance--turn-end.wav",
+      "request_at": 11.55,
+      "duration": 20.7306875,
+      "request_duration": 7.1806875,
+      "room_tone_after_seconds": 2,
+      "sha256": "b89a325286f3a11ab762e64a4dfb7714c490f887269f8272fed37aeb9cb5c577"
+    },
+    "expansion:MO-selection": {
+      "meeting": "EC4320211",
+      "original_cutoff": 2823.71,
+      "source_time_seconds": 2853.95,
+      "prefix_start": 2830.46,
+      "quiet_interval": [
+        2853.52,
+        2854.12
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": null,
+      "ending_words": "top end of the product category with more premium brands.",
+      "next_words": "Uh, and the first part of the,",
+      "file": "audio/expansion--MO-selection--turn-end.wav",
+      "request_at": 23.49,
+      "duration": 28.612,
+      "request_duration": 3.122,
+      "room_tone_after_seconds": 2,
+      "sha256": "54c1fa388dd1bc5ad7169a4535d385032e281f0beb869abf3b28c4119c077695"
+    },
+    "pilot:P-DH-documents": {
+      "meeting": "EC4344338",
+      "original_cutoff": 296.85,
+      "source_time_seconds": 308.17,
+      "prefix_start": 294.96,
+      "quiet_interval": [
+        307.67,
+        309.24
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "support",
+      "ending_words": "the pursuit of new treatments and vaccines for the future.",
+      "next_words": "As we collectively strive to contain this",
+      "file": "audio/pilot--P-DH-documents--turn-end.wav",
+      "request_at": 13.21,
+      "duration": 20.1346875,
+      "request_duration": 4.9246875,
+      "room_tone_after_seconds": 2,
+      "sha256": "c363d5ae5f3a0ac4d1c930a53e119ddf6faa779c2e3e24b950d5f0482711434b"
+    },
+    "pilot:P-DH-idt": {
+      "meeting": "EC4344338",
+      "original_cutoff": 446.81,
+      "source_time_seconds": 455.28,
+      "prefix_start": 437.32,
+      "quiet_interval": [
+        454.78,
+        455.88
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "to",
+      "ending_words": "30 million tests per month by the end of June.",
+      "next_words": "This assay will be able to run",
+      "file": "audio/pilot--P-DH-idt--turn-end.wav",
+      "request_at": 17.96,
+      "duration": 23.4126875,
+      "request_duration": 3.4526875,
+      "room_tone_after_seconds": 2,
+      "sha256": "1ea054c7fff7ea86d310900212c210b501c857256a5c29f9c9af8c2cd3c73026"
+    },
+    "pilot:P-DH-replay": {
+      "meeting": "EC4344338",
+      "original_cutoff": 596.07,
+      "source_time_seconds": 603.69,
+      "prefix_start": 586.52,
+      "quiet_interval": [
+        603.19,
+        604.38
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "revenue",
+      "ending_words": "offset by high single digit declines in high growth markets.",
+      "next_words": "Revenue in China was down more than",
+      "file": "audio/pilot--P-DH-replay--turn-end.wav",
+      "request_at": 17.17,
+      "duration": 24.057375,
+      "request_duration": 4.887375,
+      "room_tone_after_seconds": 2,
+      "sha256": "d681f00590b7f8e556936787d50191cb5e1ea042387ed49515f59efcb22aa16b"
+    },
+    "expansion:DH-growth": {
+      "meeting": "EC4344338",
+      "original_cutoff": 1630.99,
+      "source_time_seconds": 1661.43,
+      "prefix_start": 1629.94,
+      "quiet_interval": [
+        1660.93,
+        1661.87
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": "up",
+      "ending_words": "corner here coming into the second half of the year.",
+      "next_words": "Great. Thank you. Thanks, Derek. Your next",
+      "file": "audio/expansion--DH-growth--turn-end.wav",
+      "request_at": 31.49,
+      "duration": 37.4386875,
+      "request_duration": 3.9486875,
+      "room_tone_after_seconds": 2,
+      "sha256": "b3674d90017f0047ef4ce6bc764530d262922d87bbb2dddabf2708bdb5130ccf"
+    },
+    "pilot:P-DH-cepheid": {
+      "meeting": "EC4344338",
+      "original_cutoff": 2126.22,
+      "source_time_seconds": 2147.24,
+      "prefix_start": 2115.18,
+      "quiet_interval": [
+        2146.86,
+        2147.39
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": null,
+      "ending_words": "came in initially as the, as the president of Videojet.",
+      "next_words": "And I'm not sure Rainer and his",
+      "file": "audio/pilot--P-DH-cepheid--turn-end.wav",
+      "request_at": 32.06,
+      "duration": 43.1446875,
+      "request_duration": 9.0846875,
+      "room_tone_after_seconds": 2,
+      "sha256": "1e3f340f0358f08068eb1e7e48b06ac937fec2b850a2fcd5e87b79d21d7bf894"
+    },
+    "expansion:DH-basis": {
+      "meeting": "EC4344338",
+      "original_cutoff": 2342.13,
+      "source_time_seconds": 2364.47,
+      "prefix_start": 2346.68,
+      "quiet_interval": [
+        2363.97,
+        2365.58
+      ],
+      "quiet_threshold_dbfs": -42.0,
+      "original_aligned_word": null,
+      "ending_words": "maybe a touch higher here in Q2 in, in diagnostics.",
+      "next_words": "Thanks guys. Thanks Vijay. We have reached",
+      "file": "audio/expansion--DH-basis--turn-end.wav",
+      "request_at": 17.79,
+      "duration": 23.141375,
+      "request_duration": 3.351375,
+      "room_tone_after_seconds": 2,
+      "sha256": "16127a275f1f233e9bb8b4436fb28228e008bd44c67c4233de6cb92fb33c3e6a"
+    }
+  },
+  "placements_for_future_audio": {
+    "conec-C01": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1741.625,
+      "candidate_seconds": 1741.62,
+      "quiet_interval": [
+        1740.12,
+        1743.41
+      ],
+      "ending_words": "of luck in the next quarter. Yes, sir. Thank you."
+    },
+    "conec-T02.1": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1741.625,
+      "candidate_seconds": 1741.62,
+      "quiet_interval": [
+        1740.12,
+        1743.41
+      ],
+      "ending_words": "of luck in the next quarter. Yes, sir. Thank you."
+    },
+    "conec-R01.1": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1741.625,
+      "candidate_seconds": 1741.62,
+      "quiet_interval": [
+        1740.12,
+        1743.41
+      ],
+      "ending_words": "of luck in the next quarter. Yes, sir. Thank you."
+    },
+    "conec-R02.1": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1741.625,
+      "candidate_seconds": 1741.62,
+      "quiet_interval": [
+        1740.12,
+        1743.41
+      ],
+      "ending_words": "of luck in the next quarter. Yes, sir. Thank you."
+    },
+    "conec-C02": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1954.255,
+      "candidate_seconds": 1954.26,
+      "quiet_interval": [
+        1953.25,
+        1954.59
+      ],
+      "ending_words": "disruption as well. Okay. Thank you very much. Thank you."
+    },
+    "conec-I03.2": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1954.255,
+      "candidate_seconds": 1954.26,
+      "quiet_interval": [
+        1953.25,
+        1954.59
+      ],
+      "ending_words": "disruption as well. Okay. Thank you very much. Thank you."
+    },
+    "conec-T03.1": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1954.255,
+      "candidate_seconds": 1954.26,
+      "quiet_interval": [
+        1953.25,
+        1954.59
+      ],
+      "ending_words": "disruption as well. Okay. Thank you very much. Thank you."
+    },
+    "conec-T03.2": {
+      "meeting": "EC4330115",
+      "original_cutoff": 1954.255,
+      "candidate_seconds": 1954.26,
+      "quiet_interval": [
+        1953.25,
+        1954.59
+      ],
+      "ending_words": "disruption as well. Okay. Thank you very much. Thank you."
+    },
+    "conec-C03": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2061.22,
+      "candidate_seconds": 2061.49,
+      "quiet_interval": [
+        2060.99,
+        2063.18
+      ],
+      "ending_words": "I appreciate it. All right. That's all I had. Thanks."
+    },
+    "conec-I05.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2061.22,
+      "candidate_seconds": 2061.49,
+      "quiet_interval": [
+        2060.99,
+        2063.18
+      ],
+      "ending_words": "I appreciate it. All right. That's all I had. Thanks."
+    },
+    "conec-T06.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2061.22,
+      "candidate_seconds": 2061.49,
+      "quiet_interval": [
+        2060.99,
+        2063.18
+      ],
+      "ending_words": "I appreciate it. All right. That's all I had. Thanks."
+    },
+    "conec-R05.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2061.22,
+      "candidate_seconds": 2061.49,
+      "quiet_interval": [
+        2060.99,
+        2063.18
+      ],
+      "ending_words": "I appreciate it. All right. That's all I had. Thanks."
+    },
+    "conec-R06.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2061.22,
+      "candidate_seconds": 2061.49,
+      "quiet_interval": [
+        2060.99,
+        2063.18
+      ],
+      "ending_words": "I appreciate it. All right. That's all I had. Thanks."
+    },
+    "conec-C04": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "conec-I07.2": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "conec-I08.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "conec-I08.2": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "conec-T07.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "conec-T08.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "conec-R08.1": {
+      "meeting": "EC4344866",
+      "original_cutoff": 2268.505,
+      "candidate_seconds": 2268.51,
+      "quiet_interval": [
+        2268.17,
+        2269.21
+      ],
+      "ending_words": "if you have any questions, please press star then one."
+    },
+    "4346818-S1": {
+      "meeting": "EC4346818",
+      "original_cutoff": 2606.81,
+      "candidate_seconds": 2610.19,
+      "quiet_interval": [
+        2609.69,
+        2610.42
+      ],
+      "ending_words": "technology is composed of multiple technologies. Compressors, vacuums and blowers."
+    },
+    "4346818-S2": {
+      "meeting": "EC4346818",
+      "original_cutoff": 2606.81,
+      "candidate_seconds": 2610.19,
+      "quiet_interval": [
+        2609.69,
+        2610.42
+      ],
+      "ending_words": "technology is composed of multiple technologies. Compressors, vacuums and blowers."
+    },
+    "4359971-S1": {
+      "meeting": "EC4359971",
+      "original_cutoff": 3037.0,
+      "candidate_seconds": 3059.36,
+      "quiet_interval": [
+        3058.86,
+        3059.69
+      ],
+      "ending_words": "happened, and that's continuing. Okay, great. Thank you very much."
+    },
+    "4359971-S2": {
+      "meeting": "EC4359971",
+      "original_cutoff": 3037.0,
+      "candidate_seconds": 3059.36,
+      "quiet_interval": [
+        3058.86,
+        3059.69
+      ],
+      "ending_words": "happened, and that's continuing. Okay, great. Thank you very much."
+    },
+    "conec-C05": {
+      "meeting": "EC4374910",
+      "original_cutoff": 337.705,
+      "candidate_seconds": 338.04,
+      "quiet_interval": [
+        337.61,
+        338.21
+      ],
+      "ending_words": "back to historic, uh, volumes is going to require that."
+    },
+    "conec-C06": {
+      "meeting": "EC4374910",
+      "original_cutoff": 1014.46,
+      "candidate_seconds": 1035.16,
+      "quiet_interval": [
+        1034.9,
+        1035.26
+      ],
+      "ending_words": "business take effect, so people aren't visiting lounges as much."
+    },
+    "conec-T11.1": {
+      "meeting": "EC4374910",
+      "original_cutoff": 1014.46,
+      "candidate_seconds": 1035.16,
+      "quiet_interval": [
+        1034.9,
+        1035.26
+      ],
+      "ending_words": "business take effect, so people aren't visiting lounges as much."
+    },
+    "conec-R11.1": {
+      "meeting": "EC4374910",
+      "original_cutoff": 1014.46,
+      "candidate_seconds": 1035.16,
+      "quiet_interval": [
+        1034.9,
+        1035.26
+      ],
+      "ending_words": "business take effect, so people aren't visiting lounges as much."
+    }
+  }
+}

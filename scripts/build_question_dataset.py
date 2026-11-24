@@ -15,9 +15,9 @@ BY_KIND = {
     'Semantic': ('semantic', 'Questions about what people said',
                  'Each clip plays the conversation around the insertion point, including the synthesized question in the requester’s voice. Earlier turns can also contribute to the reference answer.'),
     'Controlled sound': ('controlled', 'Questions about an edited sound',
-                         'Play either version. Both contain the same two excerpts and the same spoken question. Moving the muffling or chime changes which speaker’s remarks answer the question.'),
+                         'Play either version. Both use the same two excerpts and the same requester’s question. Moving the muffling or chime changes which remarks answer the question. For these two demos, F5-TTS uses earlier speech from the requester and we match the question level to their recording. The earlier sound-cue experiments used a stock Flite voice.'),
     'Natural laughter': ('natural', 'Questions about laughter in the original recording',
-                         'Each clip plays two original excerpts followed by the same spoken question. One listener checked both the location of the laughter and the topic under discussion.'),
+                         'Each clip plays two original excerpts followed by the same question in a stock narrator voice. One listener checked both the location of the laughter and the topic under discussion.'),
 }
 
 
@@ -53,23 +53,40 @@ def timing_panel(questions):
         bars.append(''.join(group)+'</div>')
     return (f'<section id="timing"><h2>When are questions asked?</h2><p>{" and ".join(descriptions)}. '
             f'The {len(timed)} timed questions average <strong>{mean(q["insertion_seconds"] for q in timed)/60:.1f} minutes</strong> from the start. '
-            'The two laughter questions use paired excerpts without a full-recording insertion time.</p>'
+            'The twelve continuous earnings-call previews use revised times at sentence endings. The controlled sound cases use their evaluation cutoffs. The two laughter cases use paired excerpts without a full-recording insertion time.</p>'
             f'<figure><figcaption><strong>Figure 1.</strong> Question counts and percentages by time since the recording began. Each percentage uses the timed questions from that corpus.</figcaption><div class="pair">{"".join(bars)}</div></figure></section>')
 
 
 def demo_card(q, demo):
     cutoff = '' if q['insertion_seconds'] is None else ' · Question at '+clock(q['insertion_seconds'])
+    if q['kind']=='Controlled sound':
+        cutoff = ' · Paired excerpts · Evaluation time '+clock(q['insertion_seconds'])
     label = f'{q["corpus"]} · {q["recording"].removeprefix("EC")}{cutoff}'
-    parts = [f'<article class="sample"><p class="meta">{escape(label)}</p><h4>{escape(demo["title"])}</h4>',
+    anchor='demo-'+q['id'].replace(':','-')
+    parts = [f'<article class="sample" id="{escape(anchor)}"><p class="meta">{escape(label)}</p><h4>{escape(demo["title"])}</h4>',
              f'<blockquote>{escape(q["question"])}</blockquote>']
+    if demo.get('requester') and q['corpus']=='AMI':
+        parts.append('<p>The AMI recording is quiet. Both listening versions raise the meeting and the question together by 14 dB.</p>')
+    if demo.get('turn_end'):
+        parts.append('<p>The caller finishes “'+escape(demo['turn_end'])+'” before the requester speaks. The clip leaves two seconds for a reply.</p>')
     for i, track in enumerate(demo['tracks']):
         caption = f'{track["label"]} · {clock(track["duration"])}'
         file = escape(track['file'], quote=True)
+        if demo.get('reference_voice'):
+            # Cache the previous comparison separately when its input audio changes.
+            version = sha256((SITE/'experiments'/track['file']).read_bytes()).hexdigest()[:12]
+            file += '?v='+version
         audio_id = f'audio-{q["id"]}-{i}'
         accessible = f'{demo["title"]}, {track["label"]}'
         parts.append(f'<div class="track"><p>{escape(caption)}</p><audio id="{audio_id}" controls preload="none" aria-label="{escape(accessible, quote=True)}" src="{file}"><a href="{file}">Download audio</a></audio>'
                      f'<button type="button" class="jump" hidden data-track="{audio_id}" data-start="{track["request_at"]:.4f}">Play from question <span>({clock(track["request_at"])})</span></button></div>')
-    parts.append('<details><summary>Reference answer'+('s by version' if len(demo['answers'])>1 else '')+'</summary>')
+    if 'reference_voice' in demo:
+        voice=escape(demo['requester'])
+        parts.append(f'<details class="voice-check"><summary>Compare requester {voice} with the synthesized question</summary>')
+        for field,caption in [('reference_voice','Original requester'),('question_audio','Synthesized question')]:
+            parts.append(f'<p>{caption}</p><audio controls preload="none" aria-label="{caption}, {escape(demo["title"])}" src="{escape(demo[field],quote=True)}"></audio>')
+        parts.append('</details>')
+    parts.append('<details class="answer"><summary>Reference answer'+('s by version' if len(demo['answers'])>1 else '')+'</summary>')
     for i, answer in enumerate(demo['answers'], 1):
         prefix = f'<b>Version {i}.</b> ' if len(demo['answers'])>1 else ''
         parts.append(f'<p>{prefix}{escape(answer)}</p>')
@@ -128,7 +145,7 @@ def render():
                 body.append(demo_card(q,demo))
         body.append('</div></section>')
     body.extend(['</section><section id="sources"><h2>Inventory and recordings</h2>',
-                 '<p><a href="../research/question-dataset/overview.json" download>Download the full question list (JSON)</a> for question text, recording IDs, set membership and insertion times. The <a href="question-audio.html">earlier audio library</a> contains the original 105 question events.</p>',
+                 '<p><a href="../research/question-dataset/overview.json" download>Download the full question list (JSON)</a> for question text, recording IDs, set membership and insertion times. The <a href="question-audio.html">earlier audio library</a> contains the first 105 question events. <a href="../research/question-dataset/conec-turns.json">Revised earnings-call times</a> · <a href="../research/question-dataset/requester-voices.json">Requester voices and speech checks</a>.</p>',
                  '<p>Meeting excerpts are from the AMI Consortium. Financial conversations use Rev’s Earnings-21 recordings with ConEC transcripts. The listening copies join short excerpts with the synthesized request. The controlled copies also include the sound edits. <a href="https://groups.inf.ed.ac.uk/ami/corpus/license.shtml">AMI recording licence</a> · <a href="https://github.com/revdotcom/speech-datasets/tree/c05ab6fd8b4b627d123c922a22a39e993dd37635/earnings21">Earnings-21 recordings and credits</a> · <a href="https://aclanthology.org/2024.lrec-main.328/">ConEC corpus</a></p></section>'])
     version = sha256((SITE/'assets/site.css').read_bytes()).hexdigest()[:12]
     page = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>{title} · AI2AI Duplex</title>'

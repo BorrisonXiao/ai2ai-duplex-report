@@ -1,0 +1,74 @@
+{
+  "EN2003a": {
+    "model": "F5-TTS v1 Base",
+    "vocoder": "Vocos",
+    "enrollment_seconds": [
+      271.73999999999995,
+      278.39
+    ],
+    "comparison_seconds": [
+      283.84,
+      291.53
+    ],
+    "onset_trim_seconds": 1.795,
+    "listening_gain_db": 14,
+    "question_listening_file": "audio/EN2003a-requester-listen.wav",
+    "requester": "C",
+    "question": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
+    "question_file": "audio/EN2003a-requester.wav",
+    "comparison_file": "audio/EN2003a-original-requester.wav",
+    "comparison_text": "I think she might be glad to see kind of their wonderful linguistics to adapt. That's always quite helpful.",
+    "source_spans": [
+      [
+        129.9,
+        137.44
+      ],
+      [
+        466.45,
+        472.8
+      ]
+    ],
+    "preset": "primary-calm",
+    "matched_similarity": 0.473,
+    "stock_similarity": -0.032,
+    "whisper_transcript": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
+    "parakeet_transcript": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
+    "longest_internal_quiet_seconds": 0.12
+  },
+  "4359971": {
+    "model": "F5-TTS v1 Base",
+    "vocoder": "Vocos",
+    "enrollment_seconds": [
+      263.29,
+      271.7
+    ],
+    "comparison_seconds": [
+      1083.4,
+      1089.48
+    ],
+    "onset_trim_seconds": 0,
+    "listening_gain_db": 0,
+    "question_listening_file": "audio/4359971-requester.wav",
+    "requester": "S2",
+    "question": "Assistant, what was the analyst asking about when that chime sounded?",
+    "question_file": "audio/4359971-requester.wav",
+    "comparison_file": "audio/4359971-original-requester.wav",
+    "comparison_text": "This means that more of our colleagues are returning home injury-free every day.",
+    "source_spans": [
+      [
+        2157.65,
+        2176.94
+      ],
+      [
+        2452.1,
+        2482.3
+      ]
+    ],
+    "preset": "alternate-calm",
+    "matched_similarity": 0.687,
+    "stock_similarity": 0.029,
+    "whisper_transcript": "assistant, what was the analyst asking about when that chime sounded?",
+    "parakeet_transcript": "Assistant, what was the analyst asking about when that chime sounded?",
+    "longest_internal_quiet_seconds": 0.86
+  }
+}
