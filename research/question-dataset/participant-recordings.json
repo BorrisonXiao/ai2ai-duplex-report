@@ -12,10 +12,19 @@
       "sha256": "43b6a0a54308c6b78948cfb2478f8796a8ed8fc75b4e39b3ff415ba15af2cd8e",
       "noise": "sampled AMI room tone",
       "background_sha256": "f4c07531779a374e79bb32b038fb072a3fe489c90bb689d7cb84d09d6cd70091",
-      "context": "research/question-acoustic-bank/audio/first--authored-W1-2--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--authored-W1-2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant who's sending our main call and when and why are we asking Claire to send a separate one?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.64,
+      "duration": 29.103375,
+      "context_sha256": "57fd551de5279eae36d59b5d0be39355b8c2ec9763a6176c790deb2ce0312c19",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--authored-W1-2.flac"
+      ],
+      "insertion_seconds": 351.0,
+      "context_start_seconds": 333.78
     },
     "first:authored-W2-1": {
       "text": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
@@ -25,10 +34,19 @@
       "sha256": "dfcfb9f5485d173c3517520e21abee288829a7fa40337f6222c35e7e37a63646",
       "noise": "sampled AMI room tone",
       "background_sha256": "434dd8e9ecfcb076c730a29bb547db719e36f61ac725cf721db0b191884045bd",
-      "context": "research/question-acoustic-bank/audio/first--authored-W2-1--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--authored-W2-1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how did adding a poster session change the number of talks we thought we could fit?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 20.19,
+      "duration": 27.3226875,
+      "context_sha256": "8903f0c8dc0cc9e48207ac914b0a7930b3c2afdbf5bc0ed442bd9d86b526459e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--authored-W2-1.flac"
+      ],
+      "insertion_seconds": 1075.0,
+      "context_start_seconds": 1055.23
     },
     "first:authored-W3-1": {
       "text": "Assistant, before I adapt the call, can you run through who's contacting each group?",
@@ -38,10 +56,19 @@
       "sha256": "f0334d525ff48710e3618fbfce15a0ace120f2265bb8af1ff7178e22bca05a5a",
       "noise": "sampled AMI room tone",
       "background_sha256": "89abd77249b2a78fc9e1d2873e0e50c0a1eabdcb3d0d92c2366a39e9f4077e03",
-      "context": "research/question-acoustic-bank/audio/first--authored-W3-1--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--authored-W3-1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, before I adapt the call, can you run through who's contacting each group?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.97,
+      "duration": 22.993375,
+      "context_sha256": "08e45175fe4cb41ad176a028b1efcba6a7e103ba2014a6df3e7d36ec06e2c5b7",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--authored-W3-1.flac"
+      ],
+      "insertion_seconds": 1578.92,
+      "context_start_seconds": 1562.37
     },
     "first:authored-W3-2": {
       "text": "Assistant, what do I need to change in the Philosophy version, and how does that compare with what we told Claire?",
@@ -51,10 +78,19 @@
       "sha256": "700c98dee7893999a8059f86c3f7002e7925e4d2753003354d9386fa075df79c",
       "noise": "sampled AMI room tone",
       "background_sha256": "251823ef6b9ffa2921ea00fc53c8c0afa1d2dcbe40a14655b6d35ff9b2a194b9",
-      "context": "research/question-acoustic-bank/audio/first--authored-W3-2--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--authored-W3-2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what do I need to change in the philosophy version and how does that compare with what we told Claire?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.97,
+      "duration": 26.9186875,
+      "context_sha256": "682084f1449d736cf682350982536d60391d5e841899586a5d16a869683ad8f9",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--authored-W3-2.flac"
+      ],
+      "insertion_seconds": 1578.92,
+      "context_start_seconds": 1562.37
     },
     "first:authored-W4-1": {
       "text": "Assistant, for the webpage, what deadlines did we settle on, and what extra information should people send with their abstracts?",
@@ -64,10 +100,19 @@
       "sha256": "7e07271af418b1f837cfe5f8f23bc19cc47eec494651f014b53e8da1cbb3654c",
       "noise": "sampled AMI room tone",
       "background_sha256": "8179c5d3532c8dddcb1e78f04fb55e18b79e6ca3b4a80416b252de0ada7a14f9",
-      "context": "research/question-acoustic-bank/audio/first--authored-W4-1--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--authored-W4-1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant for the web page, what deadlines did we settle on, and what extra information should people send with their abstracts?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.83,
+      "duration": 35.807375,
+      "context_sha256": "8ac0fb2074c09878c396dd2f4e29456820ee0c844cf3c745c0fd87df1d88749f",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--authored-W4-1.flac"
+      ],
+      "insertion_seconds": 2135.5,
+      "context_start_seconds": 2119.09
     },
     "first:authored-W4-2": {
       "text": "Assistant, before I copy the call onto the webpage, remind me why we wanted people's technical requirements early and how that affects the programme?",
@@ -77,10 +122,19 @@
       "sha256": "f30b12ef97a3e363a1cae59566fb052e495e71a9711212000aaaeaab8946b3c4",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "d5d88c9aa547c4ecddcc8d8927356faacb676803d4c9394150cb0f8cc5b78c77",
-      "context": "research/question-acoustic-bank/audio/first--authored-W4-2--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--authored-W4-2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant before I copy the call onto the web page remind me why we wanted people's technical requirements early and how that affects the program.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.83,
+      "duration": 38.826,
+      "context_sha256": "6e333265fcd31be19747e869850e0e7b63c11bb55ef1f319375d6d7792a30c6b",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--authored-W4-2.flac"
+      ],
+      "insertion_seconds": 2135.5,
+      "context_start_seconds": 2119.09
     },
     "first:abstract-title-deadlines": {
       "text": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning?",
@@ -90,10 +144,19 @@
       "sha256": "14ab8385811d8fdd0a96d972f01730e97eaad7cc2d7e79b90237a9140cfbadaa",
       "noise": "sampled AMI room tone",
       "background_sha256": "362cba2c75084d0094ad03c95ede8fe8ed61e1a27f6e3ece872af663688da441",
-      "context": "research/question-acoustic-bank/audio/first--abstract-title-deadlines--injected.wav",
+      "context": "research/question-dataset/audio/turns/first--abstract-title-deadlines.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, remind me of the two deadlines for abstracts and titles mentioned in the planning.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.83,
+      "duration": 28.112,
+      "context_sha256": "2eaf1578111bee0930d398701a49eb749285f08d4bbead418399b120172380f2",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/first--abstract-title-deadlines.flac"
+      ],
+      "insertion_seconds": 2135.5,
+      "context_start_seconds": 2119.09
     },
     "expansion:EN-times": {
       "text": "Assistant, how do I get the segment start and end times again?",
@@ -103,10 +166,19 @@
       "sha256": "c2f2bec99365eb191885a86aecc308bf06c7fb9b30eac283341f244710cbde96",
       "noise": "sampled AMI room tone",
       "background_sha256": "6afbea17557e3d0f8156b432659f203a0f93f77bd367eb7def3f967982030aaa",
-      "context": "research/question-acoustic-bank/audio/expansion--EN-times--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--EN-times.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how do I get the segment start and end times again?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 21.22,
+      "duration": 27.7766875,
+      "context_sha256": "35f4b6e04d7819e60e3d2e6ad57c9101f53ef452b280baf32ba147464bbec705",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--EN-times.flac"
+      ],
+      "insertion_seconds": 986.98,
+      "context_start_seconds": 966.18
     },
     "expansion:EN-results": {
       "text": "Assistant, what were the three kinds of search results again?",
@@ -116,10 +188,19 @@
       "sha256": "17bbfd01b9889ae2e6ef8242d91be397a142fcb52ec9005717792a0beda76264",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "eab766fd9d2dea92a9ca71bc1c4b218da233c621e709e4d523028edcc7435218",
-      "context": "research/question-acoustic-bank/audio/expansion--EN-results--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--EN-results.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what were the three kinds of search results again?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.77,
+      "duration": 22.4066875,
+      "context_sha256": "ec1220b73b030f90775af65fcc537d61065ec857313ea06b2235a09121c66009",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--EN-results.flac"
+      ],
+      "insertion_seconds": 1555.86,
+      "context_start_seconds": 1538.51
     },
     "expansion:EN-xml": {
       "text": "Assistant, what was that tool for transforming the XML?",
@@ -129,10 +210,19 @@
       "sha256": "cf2cac1217c243dda73c48979aec9cd94cfc635c46e9c365d81c2ae1b74b8df5",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "c767ac0eb289c00373f203d19c2cb28d5da99fbab4bf2f8a5dacc3218847923c",
-      "context": "research/question-acoustic-bank/audio/expansion--EN-xml--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--EN-xml.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was that tool for transforming the XML?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.77,
+      "duration": 23.7186875,
+      "context_sha256": "9a529e2c832ab2a5923a80252fafe43556e397833b91e137fc2b1db5ed6e0b55",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--EN-xml.flac"
+      ],
+      "insertion_seconds": 1555.86,
+      "context_start_seconds": 1538.51
     },
     "expansion:ES-colour": {
       "text": "Assistant, did we ever settle on the company colour?",
@@ -142,10 +232,19 @@
       "sha256": "c92c591295a06ea7b786d349b2c4c8c19ed6239f847eae5de2524b8d997f52b4",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "7338fc703b94975349a57306660e7c3863fed2021902256d1ed9ed15b36fd76e",
-      "context": "research/question-acoustic-bank/audio/expansion--ES-colour--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--ES-colour.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Uh assistant, did we ever settle on the company colour?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.65,
+      "duration": 22.009375,
+      "context_sha256": "1614b60c8c02a813c8bc56a9a22540915a8a639f9e9ee710ad9c9bce709e7d5c",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--ES-colour.flac"
+      ],
+      "insertion_seconds": 1211.67,
+      "context_start_seconds": 1194.44
     },
     "expansion:ES-teletext": {
       "text": "Assistant, what did the company say about teletext?",
@@ -155,10 +254,19 @@
       "sha256": "06b9201499bd825aa69a511ef0796cead112d6ed6ba0c83ca5131f476bb32df0",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "eeb70c0141a4da9388f90b4f1c06e894a49ddd33ba145eb4e698832845f3ac92",
-      "context": "research/question-acoustic-bank/audio/expansion--ES-teletext--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--ES-teletext.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Uh assistant, what did the company say about teletext?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 14.56,
+      "duration": 18.946,
+      "context_sha256": "37deeb1e7c0ed41dc9045f0f7d181f55038eac847790a48090ea839459edbdf2",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--ES-teletext.flac"
+      ],
+      "insertion_seconds": 1874.41,
+      "context_start_seconds": 1860.27
     },
     "expansion:ES-devices": {
       "text": "Assistant, was this meant to work with DVD players too?",
@@ -168,10 +276,19 @@
       "sha256": "9918c39bccc41e0355133f56ce8fa0af1aa8cb3acee946af6d9dd066480d4604",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "425190311efa4195980834a121e44b62e272310890ead43168f76c1c9b10e5ce",
-      "context": "research/question-acoustic-bank/audio/expansion--ES-devices--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--ES-devices.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant? Was this meant to work with D V D players too?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 14.56,
+      "duration": 19.6926875,
+      "context_sha256": "221a19cdd2518662435253872fa48fa16fed591c7d09aefa39530c5c414a8025",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--ES-devices.flac"
+      ],
+      "insertion_seconds": 1874.41,
+      "context_start_seconds": 1860.27
     },
     "expansion:IS-receiver": {
       "text": "Assistant, what can we change on the TV side?",
@@ -181,10 +298,19 @@
       "sha256": "73df95bb8ac4332770c9b2eb24ab30362675e34a3e718d4caf478f9bdbf8f2bf",
       "noise": "sampled AMI room tone",
       "background_sha256": "b8e1d9cd7e0a1f6b0cb000c46e9e7bd27eb9529650dd470e01016596ea5745a1",
-      "context": "research/question-acoustic-bank/audio/expansion--IS-receiver--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--IS-receiver.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what can we change on the T V side?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 19.94,
+      "duration": 24.763375,
+      "context_sha256": "44d7619b33d0e837582bd9cc4612d19aa88269a4279d1e7981d90db404183d02",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--IS-receiver.flac"
+      ],
+      "insertion_seconds": 1244.44,
+      "context_start_seconds": 1224.92
     },
     "expansion:IS-lost": {
       "text": "Assistant, how many people said they keep losing their remote?",
@@ -194,10 +320,19 @@
       "sha256": "81ae55fa5acc026690245462fd38b3cba2fcfa3e89ddea3c79c74af37e1406ca",
       "noise": "sampled AMI room tone",
       "background_sha256": "5589e1b0e43a4265bdf3f3cf6df7a292c4d043c881f6ae4761f2bc8ca9b331b9",
-      "context": "research/question-acoustic-bank/audio/expansion--IS-lost--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--IS-lost.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how many people said they keep losing their remote?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.15,
+      "duration": 27.976,
+      "context_sha256": "55552b6078f16e147e9a2e5b8e8c30d9226993c3d5bff219d53ea9f34f71c4e0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--IS-lost.flac"
+      ],
+      "insertion_seconds": 1988.47,
+      "context_start_seconds": 1965.74
     },
     "expansion:IS-voice": {
       "text": "Assistant, what did the youngest group say about paying extra for voice control?",
@@ -207,10 +342,19 @@
       "sha256": "1d8b8d7f0ed4abac1b7262b09c9ef899e32fc156057e4c94a217b63a3b518b1c",
       "noise": "sampled AMI room tone",
       "background_sha256": "deb5127e18c07c4c2832220eede208f35162c43540538e7a864657b52304301b",
-      "context": "research/question-acoustic-bank/audio/expansion--IS-voice--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--IS-voice.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant, what did the youngest group say about paying extra for voice control?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.15,
+      "duration": 32.7466875,
+      "context_sha256": "901fa4c225856c8e177d9a745a356b0bf16793b85b1b82526cdc816d4853ff97",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--IS-voice.flac"
+      ],
+      "insertion_seconds": 1988.47,
+      "context_start_seconds": 1965.74
     },
     "expansion:TS-target": {
       "text": "Assistant, which age group did marketing originally want us to target?",
@@ -220,10 +364,19 @@
       "sha256": "ea932341eeb7742ea9541778af533e5db3ea77dd39497aed9485e5c4d61fcb5b",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "8578c4b8cb212bb54a6e16cf392bf41829d4eb4f688b03cdf3c961738cd219ea",
-      "context": "research/question-acoustic-bank/audio/expansion--TS-target--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--TS-target.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant which age group did marketing, uh originally want us to target.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 15.88,
+      "duration": 24.5646875,
+      "context_sha256": "c0fd5a950ee686bfd23a4eddf0ef7f699a455aeb8464183f383ebeeff9dedd75",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--TS-target.flac"
+      ],
+      "insertion_seconds": 1241.23,
+      "context_start_seconds": 1225.77
     },
     "expansion:TS-looks": {
       "text": "Assistant, how many people were willing to pay more just for the design?",
@@ -233,10 +386,19 @@
       "sha256": "8d028807e33f1fbf36c08cf6d05d4edcbf69a23185faa9a6749c7e95cfe8541f",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "22da2b1644ea66033b815a3cb1eaa41e58f7acf1f452162a6d90e32a834faaf0",
-      "context": "research/question-acoustic-bank/audio/expansion--TS-looks--injected.wav",
+      "context": "research/question-dataset/audio/turns/expansion--TS-looks.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant how many people were willing to pay more just for the design.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 15.88,
+      "duration": 21.882,
+      "context_sha256": "e7622d3695697f72141c3d4ab37398d7b6a2ae45074ef794acd8d54ef89562d7",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--TS-looks.flac"
+      ],
+      "insertion_seconds": 1241.23,
+      "context_start_seconds": 1225.77
     },
     "expansion:DH-growth": {
       "text": "Assistant, what range did they give for overall core growth next quarter?",
@@ -246,10 +408,19 @@
       "sha256": "ee01d887c7ca279b94a6f7268fb43570541a9b7c451e11914ee946411eb933d3",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "3fea7fec72597c66ee8c8928612e03881aeae75f2bf62590cf03036896e2c461",
-      "context": "research/question-dataset/audio/expansion--DH-growth--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/expansion--DH-growth.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant, what range did they give for overall core growth next quarter?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.23,
+      "duration": 23.1786875,
+      "context_sha256": "6a3648bb36fcabb9f634ce82d35eaede538519a91d6efe675a149d74670d67f4",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--DH-growth.flac"
+      ],
+      "insertion_seconds": 1661.43,
+      "context_start_seconds": 1644.62
     },
     "expansion:DH-basis": {
       "text": "Assistant, how are they treating Cytiva in the core growth number?",
@@ -259,10 +430,19 @@
       "sha256": "9f8cad7b8f9ca206e9558528e9ff3f3f9f4a6552dbe9dfa62ffd87a45adbbae1",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "14bf87f66f1eb1f3ed731b2f86767a4f9e583802ded546bcdae5810cc71c9f47",
-      "context": "research/question-dataset/audio/expansion--DH-basis--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/expansion--DH-basis.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how are they treating Sitiva in the core growth number?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.21,
+      "duration": 23.561375,
+      "context_sha256": "2737fd24a670f259a5d91c3a8f52e492657ed7e3908e53f2589e8b41e3d8de54",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--DH-basis.flac"
+      ],
+      "insertion_seconds": 2364.47,
+      "context_start_seconds": 2346.68
     },
     "expansion:MO-performance": {
       "text": "Assistant, did the stores they only re-imaged see a sales lift too?",
@@ -272,10 +452,19 @@
       "sha256": "f13fbdf47a70240103bd3cec92bc5702e35bf063930c31544dfef947643945c6",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "3b8fcbc4aa831f16c48143d968cd5b0fd2547f3a130aa440032c43cdf7e0ded5",
-      "context": "research/question-dataset/audio/expansion--MO-performance--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/expansion--MO-performance.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant did the stores they only reimaged see a sales lift to.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 20.09,
+      "duration": 29.2706875,
+      "context_sha256": "f896ed82bb69a5d812165dcb18e8a8289d1ff8bc4a54e4d13602151dcc4888c1",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--MO-performance.flac"
+      ],
+      "insertion_seconds": 2018.67,
+      "context_start_seconds": 1999.0
     },
     "expansion:MO-selection": {
       "text": "Assistant, how were they deciding which stores to rebrand?",
@@ -285,10 +474,19 @@
       "sha256": "a587e693c452e4caae7f1feae9ef53bbe1c11d4786b27f83ab7380dc940bb0ba",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "aa894d12b07900100d624ce63b756d71a2450950f25b0e4798e3a8129bafaeb8",
-      "context": "research/question-dataset/audio/expansion--MO-selection--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/expansion--MO-selection.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant, how are they deciding which stores to rebrand?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.91,
+      "duration": 29.032,
+      "context_sha256": "debd0eb49be86c4bbc67ea99edcaeea17d11feb570d9cfa0cf1513dfe296fa2f",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/expansion--MO-selection.flac"
+      ],
+      "insertion_seconds": 2853.95,
+      "context_start_seconds": 2830.46
     },
     "pilot:P-EN-notes": {
       "text": "Assistant, who said they'd take the notes today?",
@@ -298,10 +496,19 @@
       "sha256": "24502ddeae72e94fa26191b7b41bba227b9756870a60b14041e7745ada2ebf4d",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "f9fb18acfe821773263384caee408d797ddd40636db5aaded45888a9cc2bb0e2",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-notes--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-notes.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant who said they'd take the notes today.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 21.09,
+      "duration": 25.188,
+      "context_sha256": "cce426bec431e9b92e7173c6da49471081eab85b93d3ef32b68964bdf140533e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-notes.flac"
+      ],
+      "insertion_seconds": 304.85,
+      "context_start_seconds": 284.18
     },
     "pilot:P-EN-timeline": {
       "text": "Assistant, was that timeline updated, or copied from the earlier documents?",
@@ -311,10 +518,19 @@
       "sha256": "cc25a8d8963ba1a673622bec5cd08cdb0e77de548e6fa19d34029fd8dc3b920f",
       "noise": "sampled AMI room tone",
       "background_sha256": "b603cc6bd8c8c0fd17009c26b8bb7e9a45a156a081d8b0d046ccda8de513a1d6",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-timeline--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-timeline.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, was that timeline updated or copied from the earlier documents?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 21.09,
+      "duration": 26.84,
+      "context_sha256": "af33baae3a5fd1158ba5040317ca7e1e0ca72d701b128f8708bc5fb07ba03765",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-timeline.flac"
+      ],
+      "insertion_seconds": 304.85,
+      "context_start_seconds": 284.18
     },
     "pilot:P-EN-audio": {
       "text": "Assistant, why were we dropping the work on the audio files?",
@@ -324,10 +540,19 @@
       "sha256": "9d99ddf79dd9ad44bb112cbf4d15bd2762c35d6c58f836be742df274f07d60b2",
       "noise": "sampled AMI room tone",
       "background_sha256": "4d68fc599c030650d203c73ba150c777a43058436b2666cd201e49f9d08b621d",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-audio--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-audio.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, why were we dropping the work on the audio files?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 20.07,
+      "duration": 24.549375,
+      "context_sha256": "844ec30fd053ca2aac9974fe2fa7de9c53edcecf3df528454975107d6612835a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-audio.flac"
+      ],
+      "insertion_seconds": 471.49,
+      "context_start_seconds": 451.84
     },
     "pilot:P-EN-report": {
       "text": "Assistant, where were we going to explain the work we dropped?",
@@ -337,10 +562,19 @@
       "sha256": "7c533c14a1320591f28eb74b104ec5cf3c94ab364375579fd0afb8fa801c3ff0",
       "noise": "sampled AMI room tone",
       "background_sha256": "a30308aba84314a710c2e847c50daaf478d1fd8251d855394a7ff9b8330e8e8c",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-report--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-report.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, where were we going to explain the work we dropped?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 20.07,
+      "duration": 27.224,
+      "context_sha256": "7ddc51a95d7d310e45f65522247332d24ca33f89580e1115198b359399df32a8",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-report.flac"
+      ],
+      "insertion_seconds": 471.49,
+      "context_start_seconds": 451.84
     },
     "pilot:P-EN-segmentation": {
       "text": "Assistant, how far had we got with topic segmentation?",
@@ -350,10 +584,19 @@
       "sha256": "f58d90b56815ba3792870d5b2729afca525698cdbcb456cc0912447f3d7d740f",
       "noise": "sampled AMI room tone",
       "background_sha256": "709540720847af3024198e83f7d488085f50f46f4916da20605b4c42a45edeb9",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-segmentation--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-segmentation.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how far did we go with topic segmentation?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.85,
+      "duration": 21.1666875,
+      "context_sha256": "46cffb4e09c7b4e0f294bb4e9bdb65deed7c5a808682a10b19140b22b8eb45f9",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-segmentation.flac"
+      ],
+      "insertion_seconds": 611.86,
+      "context_start_seconds": 595.43
     },
     "pilot:P-EN-order": {
       "text": "Assistant, how did we think the search results should be ordered?",
@@ -363,10 +606,19 @@
       "sha256": "5f5401493b0ebc4125a13aa38a336d7e3ef7e7c545208c100195161068948ae2",
       "noise": "sampled AMI room tone",
       "background_sha256": "aaf0c6892216128fea4b94f20369d9b84671f442817087ede8befb5962c38e81",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-order--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-order.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how did we think the search results should be ordered?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 25.65,
+      "duration": 30.7506875,
+      "context_sha256": "2f903df5a6cee24c726ae4ed914f33453976c9b167ba2cb6209ceb3e90ba07d9",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-order.flac"
+      ],
+      "insertion_seconds": 1385.42,
+      "context_start_seconds": 1360.19
     },
     "pilot:P-EN-handoff": {
       "text": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
@@ -376,10 +628,19 @@
       "sha256": "cd9212fd0d78a2d90c4e538a4958b6ee1786f06f18f732ffc62db1b70165f912",
       "noise": "sampled AMI room tone",
       "background_sha256": "b9df8bdbc8cf8c8bb91f0e615e6b065bc565d140509585f81a16370dc02274c8",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-handoff--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-handoff.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 25.65,
+      "duration": 31.413375,
+      "context_sha256": "fe45465ab9232360402671f231465533c7760b71ab0a33eba954345e4f947015",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-handoff.flac"
+      ],
+      "insertion_seconds": 1385.42,
+      "context_start_seconds": 1360.19
     },
     "pilot:P-EN-same-person": {
       "text": "Assistant, was the person taking notes also going to put our sections together?",
@@ -389,10 +650,19 @@
       "sha256": "cfd0ba7002bff39d8c370c27a5c408260c1b441bea8a561c10aacbfffd9508c4",
       "noise": "sampled AMI room tone",
       "background_sha256": "da7e854d7a3ee60ed59eb7dcb6a20b5a2a1f45b04d81ae8b4fc9de759bc8e5e3",
-      "context": "research/question-acoustic-bank/audio/pilot--P-EN-same-person--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-EN-same-person.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant was the person taking notes also gonna put our sections together.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 20.07,
+      "duration": 26.26,
+      "context_sha256": "a37d6b48b5ffd397ddb810bb42e1a19d84b79439b521876cf5be87425cb05a26",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-EN-same-person.flac"
+      ],
+      "insertion_seconds": 471.49,
+      "context_start_seconds": 451.84
     },
     "pilot:P-ES-minutes": {
       "text": "Assistant, where were the notes from the last meeting again?",
@@ -402,10 +672,19 @@
       "sha256": "a0c4397584b97de85b305e016353a6c58aa909aafa1aecf3452b0ba06e826102",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "cfbb80a4468b87ec78038161b92b005f8a67c0ba05be59105c118c5ca4502036",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-minutes--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-minutes.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant. Where were the notes from the last meeting again?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.45,
+      "duration": 22.881375,
+      "context_sha256": "7228b841bde8ac18a97fe9c42c9a3af0ab9b80707972337890d1651bfd2ccd49",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-minutes.flac"
+      ],
+      "insertion_seconds": 318.69,
+      "context_start_seconds": 301.66
     },
     "pilot:P-ES-slogan": {
       "text": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
@@ -415,10 +694,19 @@
       "sha256": "894fbe4381006881e652f8e6dc333729e7a44097bb63c8a167cfac789ea6ff74",
       "noise": "sampled AMI room tone",
       "background_sha256": "02ccb3edb0caadab75cedcf7396eeb9dd6f837dd1548f114f5471704e38b7273",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-slogan--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-slogan.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, did they want the actual slogan on the remote or just the idea behind it?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.45,
+      "duration": 23.38,
+      "context_sha256": "cfaa8174756cb0a3a081c467882bf5fcb26b9952b42a0f1ad947eb4ba82d1953",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-slogan.flac"
+      ],
+      "insertion_seconds": 318.69,
+      "context_start_seconds": 301.66
     },
     "pilot:P-ES-complexity": {
       "text": "Assistant, what was the reason for keeping it so simple?",
@@ -428,10 +716,19 @@
       "sha256": "e4baee04a2e7cf2612ca7d7715f3d2aab95a59191deb73d00db5a32fe24bf9b3",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "5e2950e27a4f2196db118163498cf72026e77b1c0c8aae0f927bbf98b60ca6d9",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-complexity--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-complexity.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the reason for keeping it so simple?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.45,
+      "duration": 23.052,
+      "context_sha256": "458bc16fb59d7cf297c7c0346a4873db70ab681e4185f6859d349d179977de65",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-complexity.flac"
+      ],
+      "insertion_seconds": 318.69,
+      "context_start_seconds": 301.66
     },
     "pilot:P-ES-hidden": {
       "text": "Assistant, how were those extra controls going to be kept out of the way?",
@@ -441,10 +738,19 @@
       "sha256": "ad7d012ebc0c2c4ad595991068aa419779a059a13ab184cd8502d8953a68f12c",
       "noise": "sampled AMI room tone",
       "background_sha256": "a13afabf531264e6a57ec4ff9d34f7ba94bf9fe1da80aabb9207eac992449de0",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-hidden--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-hidden.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how were those extra controls going to be kept out of the way?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.5,
+      "duration": 22.038,
+      "context_sha256": "115e7625c602976a4ce4ea690b6c705c30bc6330594e7274179dea006984e8ac",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-hidden.flac"
+      ],
+      "insertion_seconds": 460.06,
+      "context_start_seconds": 443.98
     },
     "pilot:P-ES-numbers": {
       "text": "Assistant, were the channel number buttons optional, or did we say they were essential?",
@@ -454,10 +760,19 @@
       "sha256": "0752b387e33aea449a51254406ebd2a51eed30767f7dc07e445095e3a80c1c16",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "b1c1ffd48800a5f75fd0752bc0e51f1e529b168217c6bb06fa78647936dc908d",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-numbers--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-numbers.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, were the channel number buttons optional? Or did we say they were essential?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.89,
+      "duration": 31.305375,
+      "context_sha256": "0ca2f4d39c5694755ad6c2f786f405f9b6dd6f2f9b9fc312462c69001db8e89e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-numbers.flac"
+      ],
+      "insertion_seconds": 577.98,
+      "context_start_seconds": 554.51
     },
     "pilot:P-ES-voice-open": {
       "text": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
@@ -467,10 +782,19 @@
       "sha256": "667dd1e608fb4ebb3b21c02180067bda7b83c2a517ae8b82b18a0f725996e23d",
       "noise": "sampled AMI room tone",
       "background_sha256": "17ee4cc42f5029d824def320a5cf40df1fe59deccf19a9a0dcbd92cb0fc0406e",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-voice-open--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-voice-open.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 19.57,
+      "duration": 27.1426875,
+      "context_sha256": "ec5f572e62a820435229b00857b7122a5c8cb1afe8222dd6406951800d41486a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-voice-open.flac"
+      ],
+      "insertion_seconds": 1824.03,
+      "context_start_seconds": 1804.88
     },
     "pilot:P-ES-power": {
       "text": "Assistant, what extra hardware would voice recognition need?",
@@ -480,10 +804,19 @@
       "sha256": "250d6515ca032aceb8ce1c13f4ea8d6a0363ffb65a507f2afb527e5855f1c6a0",
       "noise": "sampled AMI room tone",
       "background_sha256": "ed67249a89f39435b1e80422ab64aad1f7093d71af6efc130f13eb53ff5d2371",
-      "context": "research/question-acoustic-bank/audio/pilot--P-ES-power--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-ES-power.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what extra hardware would voice recognition need?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 19.57,
+      "duration": 24.884,
+      "context_sha256": "4f36d372acfb029405b23dd3c0074fe4a58f088797240474942367f99edb1bb4",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-ES-power.flac"
+      ],
+      "insertion_seconds": 1824.03,
+      "context_start_seconds": 1804.88
     },
     "pilot:P-IS-notes": {
       "text": "Assistant, were the notes from our last meeting sent out yet?",
@@ -493,10 +826,19 @@
       "sha256": "1a79c617bef9b19e2a3ed752477b897ecc895547c8eaac6055cc9685a9758df2",
       "noise": "sampled AMI room tone",
       "background_sha256": "226221034723a47bcc1cc4ba244a37bfd16295128b1011a5a6ef2a7f6f74cad6",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-notes--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-notes.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, were the notes from our last meeting sent out yet?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.97,
+      "duration": 22.169375,
+      "context_sha256": "298be61584d594775ce51a22d235bcbef858bee0218a4f00cc8538c376ced551",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-notes.flac"
+      ],
+      "insertion_seconds": 344.87,
+      "context_start_seconds": 328.32
     },
     "pilot:P-IS-sample": {
       "text": "Assistant, how many people were in that research group?",
@@ -506,10 +848,19 @@
       "sha256": "8a19062947c1c161c3da72232144dfa1a2a22976cffddcce4bdbd904d6ed6beb",
       "noise": "sampled AMI room tone",
       "background_sha256": "5ee623c0a073a25d0f3f03242090e5418f02f26873637c127012d4bdb2c1c50f",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-sample--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-sample.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how many people were in that research group?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 31.81,
+      "duration": 37.156,
+      "context_sha256": "96d316a1c1e45e4e5177569500dd850ed5dc026b165d2201c1bc5f05813f51bd",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-sample.flac"
+      ],
+      "insertion_seconds": 600.83,
+      "context_start_seconds": 569.44
     },
     "pilot:P-IS-frequency": {
       "text": "Assistant, how often were people changing channels in that research?",
@@ -519,10 +870,19 @@
       "sha256": "939cac6bd441e95935dcb82f2d4e7471cf0be71b34710d71eca0a5bff0123df0",
       "noise": "sampled AMI room tone",
       "background_sha256": "e635db072e23f8cdad47722dbecec45c353d594d2fe9ce13fdb8eddcb97d8760",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-frequency--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-frequency.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how often were people changing channels in that research?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 31.81,
+      "duration": 38.2066875,
+      "context_sha256": "5986e99005f86e2915914074820f935183f9f45560398885379c5a125e3f4f30",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-frequency.flac"
+      ],
+      "insertion_seconds": 600.83,
+      "context_start_seconds": 569.44
     },
     "pilot:P-IS-learning": {
       "text": "Assistant, what proportion said a new remote took too long to learn?",
@@ -532,10 +892,19 @@
       "sha256": "b5f1a29c8daebace9f0d4555a487d034c4952a0cf6e933eaa66cdafb93e32590",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "2705594cf952fc1632c02ae30e7dc6cc10ab4348b2860508db0501895941849b",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-learning--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-learning.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant what proportion said a new remote took too long to learn.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 31.81,
+      "duration": 37.949375,
+      "context_sha256": "6215e69b53b5026a28e2737cdcee048add0c87f18cfdcbe32c9f4ac5ebc98392",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-learning.flac"
+      ],
+      "insertion_seconds": 600.83,
+      "context_start_seconds": 569.44
     },
     "pilot:P-IS-teletext-usage": {
       "text": "Assistant, how much were people using the function the account manager was questioning whether to include?",
@@ -545,10 +914,19 @@
       "sha256": "f137e0409538f7aa501bc469c6af555e7671ee9d1a782447be1a65cf1acc650f",
       "noise": "sampled AMI room tone",
       "background_sha256": "b1861f072e186eae088c70efbf4468cb671157c830fed80cc44ab602d889ae46",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-teletext-usage--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-teletext-usage.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how much were people using the function? The account manager was questioning whether to include.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.34,
+      "duration": 33.202,
+      "context_sha256": "f41bcb74ab5f43ecc9d7dbc4188f005dd7cc26d21b985bb55d2a7204a724c9da",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-teletext-usage.flac"
+      ],
+      "insertion_seconds": 1855.33,
+      "context_start_seconds": 1832.41
     },
     "pilot:P-IS-components": {
       "text": "Assistant, were those components a final choice or just a preference?",
@@ -558,10 +936,19 @@
       "sha256": "09ef7df151fe2dfb92262d51d52032b42728d76577f00212e3860f7b6eb6b532",
       "noise": "sampled AMI room tone",
       "background_sha256": "dd2ac8865691a979b3f4f356af6bcdc640d8442bbbbd31dab6eae8de91f4e5b2",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-components--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-components.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant, were those components a final choice or just a preference?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.34,
+      "duration": 30.2486875,
+      "context_sha256": "43698c24667daa76b0d1fe21b76184df5b7593a11072a3e9bb0f79ccd3c14657",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-components.flac"
+      ],
+      "insertion_seconds": 1855.33,
+      "context_start_seconds": 1832.41
     },
     "pilot:P-IS-budget": {
       "text": "Assistant, what cost limit were we worried the voice features might exceed?",
@@ -571,10 +958,19 @@
       "sha256": "80758a352eaa0878389e959c1b3d419679b88d99b331853033f2761c1e2526c6",
       "noise": "sampled AMI room tone",
       "background_sha256": "0882ada14f9266c8c8c2713ed96ad4a73ae3949d445131e84c7a950b06926397",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-budget--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-budget.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what cost limit were we worried the voice features might exceed?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.34,
+      "duration": 29.715375,
+      "context_sha256": "d5ba1f34048d378a1d14d734244ebdc79c19ebf1336a9a263716d8f54c2ce600",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-budget.flac"
+      ],
+      "insertion_seconds": 1855.33,
+      "context_start_seconds": 1832.41
     },
     "pilot:P-TS-time": {
       "text": "Assistant, how long were we allowing for each presentation?",
@@ -584,10 +980,19 @@
       "sha256": "17d809be25a4fef75f601de5b9113ea485df4f6eb440ba4f11064c312a032989",
       "noise": "sampled AMI room tone",
       "background_sha256": "199ce1aebbe8f36e8253343f41549030585e138a85ebb6e7eca751610d92969f",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-time--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-time.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant, how long were we allowing for each presentation?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.46,
+      "duration": 24.162,
+      "context_sha256": "ab5d24af20b02ec504ec3d891cb9ec90e9b259f38191d27248e23142c8da7df0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-time.flac"
+      ],
+      "insertion_seconds": 306.94,
+      "context_start_seconds": 288.9
     },
     "pilot:P-TS-sample": {
       "text": "Assistant, how many people took part in that usability research?",
@@ -597,10 +1002,19 @@
       "sha256": "9a26d9e6cbffbe050db403f16549e7cedaad12bb778bab8085766c1551f21446",
       "noise": "sampled AMI room tone",
       "background_sha256": "5d54c381fb3dbf551a339bf70afc887d72e3981384dbfd04d8506b10c2feefaa",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-sample--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-sample.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how many people took part in that usability research?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.46,
+      "duration": 24.419375,
+      "context_sha256": "ab378c916b6c4304a84e85b6314591fdc7633d7400471feacb147d3b2dd41e9c",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-sample.flac"
+      ],
+      "insertion_seconds": 306.94,
+      "context_start_seconds": 288.9
     },
     "pilot:P-TS-buttons": {
       "text": "Assistant, how many people said they only used a small fraction of the buttons?",
@@ -610,10 +1024,19 @@
       "sha256": "1f94395ee87eb33e30686f13b538788043bc564fefa36efa76fd29b433df6b21",
       "noise": "sampled AMI room tone",
       "background_sha256": "4b30f05a226909d0c417f5e3777155811ee2e96b594662b15a757025ad4eecf5",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-buttons--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-buttons.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how many people said they only used a small fraction of the buttons?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.77,
+      "duration": 28.5106875,
+      "context_sha256": "5da3fd3102b4b13540aded571e43bd1fa665c44aac38a70ba1e173d471c27ab0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-buttons.flac"
+      ],
+      "insertion_seconds": 452.1,
+      "context_start_seconds": 433.75
     },
     "pilot:P-TS-relevance": {
       "text": "Assistant, which controls got the highest relevance score?",
@@ -623,10 +1046,19 @@
       "sha256": "14cad94f28f5d6058235e951f31f0553e89aa1eefee4cfcbccf2ec89ec60798f",
       "noise": "sampled AMI room tone",
       "background_sha256": "7032e5eebd8396bf2bb8ff4d48fa304a5e248077e09f9810735740b49d9a5c7e",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-relevance--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-relevance.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant which controls got the highest relevance score.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.77,
+      "duration": 24.0146875,
+      "context_sha256": "a875fabbb30f9c6a417db3001c245c12ce3e4f462c93f5c219a4a87df4fe9d6d",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-relevance.flac"
+      ],
+      "insertion_seconds": 452.1,
+      "context_start_seconds": 433.75
     },
     "pilot:P-TS-dock": {
       "text": "Assistant, what share of the people surveyed had the problem that the proposed docking station would help with?",
@@ -636,10 +1068,19 @@
       "sha256": "73eace8ba09467545b6c4a390cd98a9014ace09e37981f0b6d04dcfbc39e51d2",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "d83e20dde5f8731aeb408895c2d33a5af3f1f824315ee068f8aa648e6b819228",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-dock--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-dock.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what share of the people surveyed had the problem that the proposed docking station would help with?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 22.38,
+      "duration": 32.5206875,
+      "context_sha256": "f45a01e7f7a04316853bfd1316c1485b479af0fbed24618311f7a4c97ab5ef2b",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-dock.flac"
+      ],
+      "insertion_seconds": 633.16,
+      "context_start_seconds": 611.2
     },
     "pilot:P-TS-learning": {
       "text": "Assistant, what percentage found a new remote hard to learn?",
@@ -649,10 +1090,19 @@
       "sha256": "c7c7701d5dd515087e9f8d664560e2a8e236b55e696b1053523f36a7df48355e",
       "noise": "sampled AMI room tone",
       "background_sha256": "dac5140fcebe9ca6ff641741283b152adf04928a549ea0ecd0db6b72bfff1dd6",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-learning--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-learning.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what percentage found a new remote hard to learn?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 22.38,
+      "duration": 28.174,
+      "context_sha256": "9c0a4170721e5674d7dbbb3f1538e09de1014f37438c2b7c8041aab6c027592f",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-learning.flac"
+      ],
+      "insertion_seconds": 633.16,
+      "context_start_seconds": 611.2
     },
     "pilot:P-TS-target-change": {
       "text": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
@@ -662,10 +1112,19 @@
       "sha256": "68c0f536b94e775960e131074f8f4804bd3a4972fb8ef0f79a11301b2cc31965",
       "noise": "sampled AMI room tone",
       "background_sha256": "652ed6212929bed3bc7e2c92902b104ce29af35cbe9589bd1e9572e921ae0946",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-target-change--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-target-change.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 13.31,
+      "duration": 22.18,
+      "context_sha256": "145f68b96dfceccf49447e70eff1c55ae67b5255e59243ffdf799a15d6c4f43a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-target-change.flac"
+      ],
+      "insertion_seconds": 1722.23,
+      "context_start_seconds": 1709.34
     },
     "pilot:P-TS-teletext": {
       "text": "Assistant, were we definitely leaving teletext out, or had that changed?",
@@ -675,10 +1134,19 @@
       "sha256": "efa265ccc8a03fcdf4a350cd268d3bb2fd1613e66ae1a7485c4e33eb298db18e",
       "noise": "sampled AMI room tone",
       "background_sha256": "3453b0bf1b7785351aa186ad5cdf687aef18b9e01b1f5f302dd29d182a0db137",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-teletext--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-teletext.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, were were we definitely leaving teletext out, or had that changed?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 13.31,
+      "duration": 19.749375,
+      "context_sha256": "6698f1e33ab5a8fa343d02f5d1a883a17e0714a78e23662b90b943faf0ba6356",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-teletext.flac"
+      ],
+      "insertion_seconds": 1722.23,
+      "context_start_seconds": 1709.34
     },
     "pilot:P-MO-comparison": {
       "text": "Assistant, how did the January sales trend compare with the quarter overall?",
@@ -688,10 +1156,19 @@
       "sha256": "36599f75d2a94f164e2293a5cc55bb0a27c3cd6bba61e850f066ef62ea106a91",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "b3125531dc03825df38f0568dc7f3fceb98ddfe3f2bf4414f0e651cbe7a3e457",
-      "context": "research/question-dataset/audio/pilot--P-MO-comparison--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-MO-comparison.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how did the January sales trend compare with the quarter overall?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 19.79,
+      "duration": 26.8586875,
+      "context_sha256": "3429485b9cbd44785dd1c06428d41de5b57fe730a9c5f41ffe60b9784f8eb5b0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-MO-comparison.flac"
+      ],
+      "insertion_seconds": 320.71,
+      "context_start_seconds": 301.34
     },
     "pilot:P-MO-pricing": {
       "text": "Assistant, when was the new tire pricing system supposed to start rolling out?",
@@ -701,10 +1178,19 @@
       "sha256": "df7127a78bbe81434fd3726d5c33d59c3b4d8ef66caf793db5843719deaf87ea",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "7a901e5cc7a7b3cb7c0886121b19525aadeccf9aed54a192eef0fae41a1738ca",
-      "context": "research/question-dataset/audio/pilot--P-MO-pricing--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-MO-pricing.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, when was the new tire pricing system supposed to start rolling out?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 24.36,
+      "duration": 31.647375,
+      "context_sha256": "5bc48d76cdfd5f7d4bb221919bfec4e4ab21ad1f5e23feffaa3a620ad7815a07",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-MO-pricing.flac"
+      ],
+      "insertion_seconds": 454.23,
+      "context_start_seconds": 430.29
     },
     "pilot:P-MO-completion": {
       "text": "Assistant, had all the California store conversions finished, or were some still being worked on?",
@@ -714,10 +1200,19 @@
       "sha256": "2adf69699a8447d5f565b1c186900208252e6ede9e5e6a4ac15ff5322d207745",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "f1d7e9b9d4f17f76dd75cbae4a5e3cd89a7348b37256309583d51ad25221cc69",
-      "context": "research/question-dataset/audio/pilot--P-MO-completion--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-MO-completion.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, had all the California store conversions finished or were some still being worked on?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 15.59,
+      "duration": 24.12,
+      "context_sha256": "64efc9697d42e808ac199b12f9b967368b14208a0df366fb806e7c520e848a06",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-MO-completion.flac"
+      ],
+      "insertion_seconds": 603.24,
+      "context_start_seconds": 588.07
     },
     "pilot:P-DH-documents": {
       "text": "Assistant, where did they say the slides and financial reconciliations were posted?",
@@ -727,10 +1222,19 @@
       "sha256": "0e351977271a28d9e69ab81caed3514e0296c10099364722eb101fa3a064ba60",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "5b1433ea389b8dadfa314c666c9d83099d67a5cbd5891cd6bc893b204026ea1a",
-      "context": "research/question-dataset/audio/pilot--P-DH-documents--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-DH-documents.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, where did they say the slides and financial reconciliations were posted?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 14.42,
+      "duration": 21.3446875,
+      "context_sha256": "3518e7629f00113952cea6ca5f9df57a30347447ad8201a1ca774940e5a0e5ab",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-DH-documents.flac"
+      ],
+      "insertion_seconds": 308.17,
+      "context_start_seconds": 294.17
     },
     "pilot:P-DH-replay": {
       "text": "Assistant, until what date did they say the call replay would be available?",
@@ -740,10 +1244,19 @@
       "sha256": "9d446b73c7f187e90df94df709a03db054cf51540d26f61dc17d97d630e497e3",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "43698727ba9d3ade880246a40f53ad431c62efb0cd7f22a7dcba796d0bd1a009",
-      "context": "research/question-dataset/audio/pilot--P-DH-replay--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-DH-replay.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, until what date did they say the call replay would be available?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.59,
+      "duration": 24.477375,
+      "context_sha256": "da1e2d8ec1bdf7cf74c5192254476335ecd6a9260797d18453ca8b39db8ec274",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-DH-replay.flac"
+      ],
+      "insertion_seconds": 603.69,
+      "context_start_seconds": 586.52
     },
     "pilot:P-DH-cepheid": {
       "text": "Assistant, what was the quarterly shipment target for Cepheid, compared with what it had shipped so far?",
@@ -753,10 +1266,19 @@
       "sha256": "305b3db6e4f1ca24af0e5c509e5c30860131ccd20fe17226ef809fc5263f0d17",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "7fc4316269981eceaf4a5ba0b080f04b924cd6d5dbf0d166cacc78115f1110f9",
-      "context": "research/question-dataset/audio/pilot--P-DH-cepheid--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-DH-cepheid.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the the quarterly shipment target for Cepheid compared with what it had shipped so far?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 32.48,
+      "duration": 43.5646875,
+      "context_sha256": "93c2df2ffada0faf168ab1c95b9c57994562375115299720b4e6eb7ea1cc9c44",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-DH-cepheid.flac"
+      ],
+      "insertion_seconds": 2147.24,
+      "context_start_seconds": 2115.18
     },
     "pilot:P-IS-target-unknown": {
       "text": "Assistant, did we agree on the target group for the remote control?",
@@ -766,10 +1288,19 @@
       "sha256": "a59131cbbe0603934c4b1d520cc7e7e5512084b47869846b1aaaee2c21e06c33",
       "noise": "sampled AMI room tone",
       "background_sha256": "8dc2e8c75296771cbb050ec9137a389f05d4f168ef366f1d14c2b41459b8c64d",
-      "context": "research/question-acoustic-bank/audio/pilot--P-IS-target-unknown--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-IS-target-unknown.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, did we agree on the target group for the remote control?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.98,
+      "duration": 23.126,
+      "context_sha256": "e0e6aefa23ef8efda45b7abfefcbdd2ef61d3c1821e1464d70c1439837c46454",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-IS-target-unknown.flac"
+      ],
+      "insertion_seconds": 450.31,
+      "context_start_seconds": 432.75
     },
     "pilot:P-DH-idt": {
       "text": "Assistant, how many diagnostic tests has IDT enabled so far?",
@@ -779,10 +1310,19 @@
       "sha256": "51a5c3db0de4ee942bd0d946d3bb9d619687b43be66558f2a5632b824783d003",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "316be07537c62e79dcd432200277b2160f48b09d5139229fa61b74c795b742e5",
-      "context": "research/question-dataset/audio/pilot--P-DH-idt--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-DH-idt.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how many diagnostic tests has IDT enabled so far?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.38,
+      "duration": 23.8326875,
+      "context_sha256": "3b914e8d8c3e4951e3cf8bc322fcaa17fb6bd666260f0679cac6265dc3cd7ced",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-DH-idt.flac"
+      ],
+      "insertion_seconds": 455.28,
+      "context_start_seconds": 437.32
     },
     "pilot:Q-MO-weather": {
       "text": "Assistant, how did mild weather affect our Northern markets in January?",
@@ -792,10 +1332,19 @@
       "sha256": "ad9430e7e214070f3458f49120ba351abc712ec082dda96ed9d2f8535f28a25b",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "2963dbec8fe97ef8fd3c04718c1434cb13f0ab4c72751b0dd565358f557a9a6f",
-      "context": "research/question-dataset/audio/pilot--Q-MO-weather--turn-end.wav",
+      "context": "research/question-dataset/audio/turns/pilot--Q-MO-weather.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how did mild weather affect our northern markets in January?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 19.79,
+      "duration": 26.8,
+      "context_sha256": "f2a4a5eb50ed63e445477a21f16628cec49710f4b897bde3df90d67fd8b880a6",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--Q-MO-weather.flac"
+      ],
+      "insertion_seconds": 320.71,
+      "context_start_seconds": 301.34
     },
     "pilot:P-TS-dock-mechanism": {
       "text": "Assistant, how would the docking station help if the remote gets lost?",
@@ -805,10 +1354,19 @@
       "sha256": "b6f8c3d17174d067f1c3da0cd62da80b9a5e7c1f9aa907f46d057b4d36b8d140",
       "noise": "sampled AMI room tone",
       "background_sha256": "978fd556bc707f0b308e2d69c5ad46e6012510bff41fc3521fb65d88a7edfcb6",
-      "context": "research/question-acoustic-bank/audio/pilot--P-TS-dock-mechanism--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--P-TS-dock-mechanism.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how would the docking station help if the remote gets lost?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 22.38,
+      "duration": 30.243375,
+      "context_sha256": "1bc5e128ede48b61b552787bd975f43163a324d79aef8dcb1c35a3033839b223",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--P-TS-dock-mechanism.flac"
+      ],
+      "insertion_seconds": 633.16,
+      "context_start_seconds": 611.2
     },
     "pilot:Q-IS-teletext-comparison": {
       "text": "Assistant, what did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
@@ -818,10 +1376,19 @@
       "sha256": "8f4038e9d2c056c787f7f1546a3e5517abf7a4416aac19731b44b3f949d3b509",
       "noise": "sampled AMI room tone",
       "background_sha256": "a28b46cd35039434a4c5670d091442ae8ca29de1f5a019a831fbc04c981dfbf2",
-      "context": "research/question-acoustic-bank/audio/pilot--Q-IS-teletext-comparison--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--Q-IS-teletext-comparison.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.34,
+      "duration": 32.71,
+      "context_sha256": "453f94c8cf6661ab2fe16e7ce4e1347a8407fde5c0684e322fb3339dce18cebb",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--Q-IS-teletext-comparison.flac"
+      ],
+      "insertion_seconds": 1855.33,
+      "context_start_seconds": 1832.41
     },
     "pilot:Q-EN-compiler": {
       "text": "Assistant, who said they could put everyone's parts together?",
@@ -831,10 +1398,19 @@
       "sha256": "43fe26c3c5b0f24da2496ddf7cb8facba5489c322aace71749e149c424e042e6",
       "noise": "sampled AMI room tone",
       "background_sha256": "e0c2a50534933d2c7ee199bf791b0ede77cdf16681198790f69b9404ebc18ec0",
-      "context": "research/question-acoustic-bank/audio/pilot--Q-EN-compiler--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--Q-EN-compiler.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant who said they could put everyone's parts together.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 20.07,
+      "duration": 24.525375,
+      "context_sha256": "d9261e51a115e31d30479715be8a62378076997b43ff96a9533e9b8922ec6818",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--Q-EN-compiler.flac"
+      ],
+      "insertion_seconds": 471.49,
+      "context_start_seconds": 451.84
     },
     "pilot:Q-TS-current-audience": {
       "text": "Assistant, which age group did the new requirements specify?",
@@ -844,10 +1420,19 @@
       "sha256": "48b69790911998549fef4d40ee3167bcce0f72b51a8ae22d8e48dc9aa7395655",
       "noise": "sampled AMI room tone",
       "background_sha256": "cb1bab3f5adaa058b8275ab0a9d6faac1211c0c5cc1591ff8b26e2a210ef3400",
-      "context": "research/question-acoustic-bank/audio/pilot--Q-TS-current-audience--injected.wav",
+      "context": "research/question-dataset/audio/turns/pilot--Q-TS-current-audience.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, which age group did the uh new requirements specify?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 13.31,
+      "duration": 20.76,
+      "context_sha256": "8b31e3a48345fe6abcfdef303d2d00d136da74afe098a778e25ea9885761c3f3",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/pilot--Q-TS-current-audience.flac"
+      ],
+      "insertion_seconds": 1722.23,
+      "context_start_seconds": 1709.34
     },
     "scale:EN2001b-Slater-Q2": {
       "text": "Assistant, what was the plan for storing the information-density values alongside the segments?",
@@ -857,10 +1442,19 @@
       "sha256": "3d777221b647c2f93d99c99a154df0cf078d2ddeb4d5bd73cb377b47bde35c6c",
       "noise": "sampled AMI room tone",
       "background_sha256": "4b3da43a9ab3c6f3c6c78cd178db44c52c3ad0902c8567dafabe7a4efcb119fd",
-      "context": "research/question-acoustic-bank/audio/scale--EN2001b-Slater-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2001b-Slater-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the plan for storing the information density values alongside the segments?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 28.95,
+      "duration": 35.7146875,
+      "context_sha256": "b59cf5fee712a583a29669ad8288e6c5bf0575a1a965a6258233302f8f6bc156",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2001b-Slater-Q2.flac"
+      ],
+      "insertion_seconds": 2793.63,
+      "context_start_seconds": 2765.1
     },
     "scale:EN2004a-S05-Q3": {
       "text": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
@@ -870,10 +1464,19 @@
       "sha256": "a1f71ce428a7c4552c3b08d6a98c4e6faf8d400f14e64450c319ce1769717b2e",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "3434078618a4386ccf4e7beefd4976d923393705c85e3b0a0a3514eb43c26099",
-      "context": "research/question-acoustic-bank/audio/scale--EN2004a-S05-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2004a-S05-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, if a word is ambiguous but fits multiple contexts, should we pick one or leave it uncertain?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.52,
+      "duration": 23.2046875,
+      "context_sha256": "201a5330ea2b7dd071bbd66c177e344ad40cdd6d4ebb7110c46f45bccc959ec0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2004a-S05-Q3.flac"
+      ],
+      "insertion_seconds": 561.16,
+      "context_start_seconds": 544.06
     },
     "scale:EN2004a-S075-Q2": {
       "text": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
@@ -883,10 +1486,19 @@
       "sha256": "e725927ccc7491de3d5c11d0c7bb8c291095e98a2c7cb322fb18b058848361c3",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "84025cd11090478c17606e3746019e760dd6674941900d4c240ecdf385fccf33",
-      "context": "research/question-acoustic-bank/audio/scale--EN2004a-S075-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2004a-S075-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what did we decide about capital letters when a sentence continues into the next segment?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.89,
+      "duration": 23.969375,
+      "context_sha256": "9db9e298c24494e984041e21ae1c058fca655d4bda21f0effaf55762c4882dfa",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2004a-S075-Q2.flac"
+      ],
+      "insertion_seconds": 640.16,
+      "context_start_seconds": 623.69
     },
     "scale:EN2004a-Smiddle-Q2": {
       "text": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
@@ -896,10 +1508,19 @@
       "sha256": "4f4aed2dd188edf1d9fddf05b5fd5914c0f075777858db185dcc65cb33a39041",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "56be661486b32efd9e7a2155c8432c986ab44982f8d0d60c76e666c3578ef8f3",
-      "context": "research/question-acoustic-bank/audio/scale--EN2004a-Smiddle-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2004a-Smiddle-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 38.76,
+      "duration": 45.45,
+      "context_sha256": "f60f1563d904e123aa478e48afe86921854a39e84018231d9b8c542c3b6f3288",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2004a-Smiddle-Q2.flac"
+      ],
+      "insertion_seconds": 1727.55,
+      "context_start_seconds": 1689.21
     },
     "scale:EN2009b-S10-Q3": {
       "text": "Assistant, is Nynke available to help with the pilot test when she returns tomorrow?",
@@ -909,10 +1530,19 @@
       "sha256": "187bfa6ea08838b6dcbe62c1c7d69b04c3b96f2d2403df8a196b42989c72e2b6",
       "noise": "sampled AMI room tone",
       "background_sha256": "871e0f1280e2227087b72dae0cbbfc9b7a3b6cd95dde4c1cf253b428fcd5f6e3",
-      "context": "research/question-acoustic-bank/audio/scale--EN2009b-S10-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2009b-S10-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, is Nink available to help with the pilot test when she returns tomorrow?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.96,
+      "duration": 23.383375,
+      "context_sha256": "16125683dbf19e0f8443c72b1814220f5fe9982d03b2fc6fe63a54082b3f8d6e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2009b-S10-Q3.flac"
+      ],
+      "insertion_seconds": 732.24,
+      "context_start_seconds": 715.7
     },
     "scale:EN2009b-Smiddle-Q2": {
       "text": "Assistant, what exactly does the ten kilo-hertz sound need to do in the setup to be detected properly?",
@@ -922,10 +1552,19 @@
       "sha256": "1a94d55297ed6c14d32153ca5b94b7ef3b1138bb1451a8b300da46f191748cbd",
       "noise": "sampled AMI room tone",
       "background_sha256": "adb62407a4f4d76fd96859138d8b109c104a8c06cef80432c7b3fbe79723eb5c",
-      "context": "research/question-acoustic-bank/audio/scale--EN2009b-Smiddle-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2009b-Smiddle-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what exactly does the ten kilo hertz sound need to do in the setup to be detected properly?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.63,
+      "duration": 25.2106875,
+      "context_sha256": "a693d2765095b9e1a92c0039a22bb526e235ae96bdc520cdecf2cce92c68b05b",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2009b-Smiddle-Q2.flac"
+      ],
+      "insertion_seconds": 1233.53,
+      "context_start_seconds": 1216.32
     },
     "scale:IN1005-S075-Q1": {
       "text": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link-based iteration starts?",
@@ -935,10 +1574,19 @@
       "sha256": "6eb55147d8bbc620149dddb134ad03ba3a7f812018fb3d13fdaf520ce55aaab7",
       "noise": "sampled AMI room tone",
       "background_sha256": "0fd8cd3cccbe8b2ff68ef27ba68c01aca0fc32e9441b3b3bf775b589272ac6ed",
-      "context": "research/question-acoustic-bank/audio/scale--IN1005-S075-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IN1005-S075-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link based iteration starts?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 9.57,
+      "duration": 23.513375,
+      "context_sha256": "2117db35277808cee7f586a00c997c2bead7269faa8dbcc9ba053e2fa9bf125c",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IN1005-S075-Q1.flac"
+      ],
+      "insertion_seconds": 509.55,
+      "context_start_seconds": 500.4
     },
     "scale:IN1005-directory-evaluation": {
       "text": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
@@ -948,10 +1596,19 @@
       "sha256": "dc42e6ba98f65458406182ea56c72ced6c2dc4687cb2b3466b7a2f08c65ed1d1",
       "noise": "sampled AMI room tone",
       "background_sha256": "4c63c7b484aadde19a13d50299e575204ea1f677ab597954bd2ca20f7735b437",
-      "context": "research/question-acoustic-bank/audio/scale--IN1005-directory-evaluation--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IN1005-directory-evaluation.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, can you clarify how the Yahoo directory labels are used in the evaluation without affecting the model training?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 14.56,
+      "duration": 28.114,
+      "context_sha256": "ef339d4eeb5165db2a9d12a2bc1d0d6d0b1cfac3f070476a80ab6da073ae1bb4",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IN1005-directory-evaluation.flac"
+      ],
+      "insertion_seconds": 1504.36,
+      "context_start_seconds": 1490.22
     },
     "scale:IN1007-matlab-availability": {
       "text": "Assistant, do we still have the original MATLAB code from Marios and Petr’s joint work?",
@@ -961,10 +1618,19 @@
       "sha256": "c468fea761bdd88fc0e77ca964147c3b8896ef319e81a9ab2e65404931843999",
       "noise": "sampled AMI room tone",
       "background_sha256": "f55f5d68317e0a1346230cd091d30cea87518acf2376914fd7a8873dc8c9d815",
-      "context": "research/question-acoustic-bank/audio/scale--IN1007-matlab-availability--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IN1007-matlab-availability.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, do we still have the original MATLAB code from Mario's and Petra's joint work?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.86,
+      "duration": 28.438,
+      "context_sha256": "b05164396626c880198bbfff7674776b9240673c1ad27f7475f58131b1bc38df",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IN1007-matlab-availability.flac"
+      ],
+      "insertion_seconds": 328.62,
+      "context_start_seconds": 311.18
     },
     "scale:IB4001-S05-Q1": {
       "text": "Assistant, what's the exact deadline for the final plan submission again? I want to make sure I'm not missing anything from earlier.",
@@ -974,10 +1640,19 @@
       "sha256": "74412329692b8aab0346fef5bafffab601254ee3550ca48de67acc1be64a35b6",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "c0a3542fe9ac686e2e9aded7f6a02a11184b384b057da1bcac7b502033461d49",
-      "context": "research/question-acoustic-bank/audio/scale--IB4001-S05-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IB4001-S05-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what's the exact deadline for the final plan submission again? I want to make sure I'm not missing anything from earlier.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.36,
+      "duration": 28.183375,
+      "context_sha256": "70611d630323a7532554a8ffa662fcf155ea366082591cee9ff36a1d166a13c5",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IB4001-S05-Q1.flac"
+      ],
+      "insertion_seconds": 298.01,
+      "context_start_seconds": 281.07
     },
     "scale:IB4001-Slater-Q2": {
       "text": "Assistant, does the plan still allow for the reading room to be used for short meetings if needed?",
@@ -987,10 +1662,19 @@
       "sha256": "af65f8fd5c53cedc47e6c0c38f222e0680af74e56642cdabeeb703f0ca4b2751",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "7c1c5c603f32d95451c214881724b7eef5a27a86cae4310d8c5870485677a8fd",
-      "context": "research/question-acoustic-bank/audio/scale--IB4001-Slater-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IB4001-Slater-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant Does the plan still allow for the reading room to be used for short meetings if needed?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.29,
+      "duration": 26.196,
+      "context_sha256": "e73f757bfe1eb71903454b809fc232f84cc6a4132bfa3a37c1a3f9c332a88354",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IB4001-Slater-Q2.flac"
+      ],
+      "insertion_seconds": 1436.84,
+      "context_start_seconds": 1418.97
     },
     "scale:IB4003-S075-Q3": {
       "text": "Assistant, how many people were we finding offices for again?",
@@ -1000,10 +1684,19 @@
       "sha256": "07f151e6e1a3847ae44429a257d0de95f91c9224ffc97a13a93378658407950d",
       "noise": "sampled AMI room tone",
       "background_sha256": "93c28de460477332d5f32212eaaaf5ac0be83f7e0ada3f3ecf550e57504241e6",
-      "context": "research/question-acoustic-bank/audio/scale--IB4003-S075-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IB4003-S075-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant How many people were we finding offices for again?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 12.56,
+      "duration": 18.4606875,
+      "context_sha256": "f3479cc318fc6ec0c756ff141aad4ce273a02385aaaa5f78fb8deda79928cc41",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IB4003-S075-Q3.flac"
+      ],
+      "insertion_seconds": 440.08,
+      "context_start_seconds": 427.94
     },
     "scale:IB4003-S10-Q3": {
       "text": "Assistant, had we picked a room for the reading lounge?",
@@ -1013,10 +1706,19 @@
       "sha256": "8cd80ac432b9650f6a31f7efcf44bd1c19e09e98b6efd5d5f7f9325368b82e6c",
       "noise": "sampled AMI room tone",
       "background_sha256": "2fe900f8d136c79f9d8f209c28be4d2c5251acec37d4d2759b8eba5404517162",
-      "context": "research/question-acoustic-bank/audio/scale--IB4003-S10-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IB4003-S10-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant had we picked a room for the reading lounge.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.95,
+      "duration": 23.2746875,
+      "context_sha256": "53242099caae74a5b43801b82049f5a095e06754ea49a9d25bf988095cc80cbc",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IB4003-S10-Q3.flac"
+      ],
+      "insertion_seconds": 656.31,
+      "context_start_seconds": 638.78
     },
     "scale:IB4003-Smiddle-Q3": {
       "text": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
@@ -1026,10 +1728,19 @@
       "sha256": "84e81f92a99d1efbe372f66274a467d0df8373f4e19eca90ab0b3a333be146ae",
       "noise": "sampled AMI room tone",
       "background_sha256": "1366b9993164d9b157d3458a6fa5b03cb5d7f6ae341e7288f980959572923692",
-      "context": "research/question-acoustic-bank/audio/scale--IB4003-Smiddle-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--IB4003-Smiddle-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 22.94,
+      "duration": 31.71,
+      "context_sha256": "8e0db9789225a8dfc1fc1c2c9765efeaec86ffaf4332e1c23144b829cb49301f",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--IB4003-Smiddle-Q3.flac"
+      ],
+      "insertion_seconds": 1124.1,
+      "context_start_seconds": 1101.58
     },
     "scale:ES2003c-S075-Q3": {
       "text": "Assistant, what was the concern about using a kinetic battery for this remote?",
@@ -1039,10 +1750,19 @@
       "sha256": "6dd6bae6f041533a862d22b7b061d7ee1416b3f9f399ed7fe8a9398026964e2a",
       "noise": "sampled AMI room tone",
       "background_sha256": "e2080c53b5853e0de6bdca0bd8fd3d669865921f0fd49af6b520418c12d3ef9a",
-      "context": "research/question-acoustic-bank/audio/scale--ES2003c-S075-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2003c-S075-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the concern about using a kinetic battery for this remote?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 15.33,
+      "duration": 22.6066875,
+      "context_sha256": "dc0974c8634d9e56a4840a2d3e782ced9992193d8112d725b2ff9278b4709855",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2003c-S075-Q3.flac"
+      ],
+      "insertion_seconds": 453.53,
+      "context_start_seconds": 438.62
     },
     "scale:ES2003c-S10-Q1": {
       "text": "Assistant, how does the cost of the advanced chip for LCD compare to the basic button chip, based on what was said earlier?",
@@ -1052,10 +1772,19 @@
       "sha256": "acee9e080793062483902c33b2c0ef3ff88840d3074e9d8055ea3fb6efe0d45d",
       "noise": "sampled AMI room tone",
       "background_sha256": "60a97a66a80857695b23fa83dfada76f2483d1715af499809f49eb6cfb7e8ddc",
-      "context": "research/question-acoustic-bank/audio/scale--ES2003c-S10-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2003c-S10-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how does the cost of the advanced chip for L C D compare to the basic button chip based on what was said earlier?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.73,
+      "duration": 29.42,
+      "context_sha256": "790d3ee896f2294d3e640979da96b05c998cd9f797a7e5fc6ad1d6025e3c8397",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2003c-S10-Q1.flac"
+      ],
+      "insertion_seconds": 605.14,
+      "context_start_seconds": 587.83
     },
     "scale:ES2003c-Slater-Q2": {
       "text": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
@@ -1065,10 +1794,19 @@
       "sha256": "b26e4c94a10ce0546f83fc585775cf23f044144ef37e5a2c28929ca063483318",
       "noise": "sampled AMI room tone",
       "background_sha256": "8cacaa59001b1a71d3b367652d919b68d79f1cfd3981395b118f609f40f64fe2",
-      "context": "research/question-acoustic-bank/audio/scale--ES2003c-Slater-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2003c-Slater-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant if we use a double curved design, how does that impact the battery placement and internal space?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.95,
+      "duration": 26.4,
+      "context_sha256": "6321423932bea6314f2fcbeb28753ba84661149fa4a5d6353862c7e5e5b7d640",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2003c-Slater-Q2.flac"
+      ],
+      "insertion_seconds": 1799.22,
+      "context_start_seconds": 1782.69
     },
     "scale:TS3004d-slide-reasons": {
       "text": "Assistant, why were we leaning toward a slide-open design?",
@@ -1078,10 +1816,19 @@
       "sha256": "1b050b7f062c968c1c3e94328210eb0a1b5e07e84cf32d2a901fcec7728be331",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "f88cc0963a830a5fdedfec9d41157cde41ed1dbc0a92a8f8e89434fc68604417",
-      "context": "research/question-acoustic-bank/audio/scale--TS3004d-slide-reasons--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3004d-slide-reasons.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, why were we leaning toward a slight open design?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.69,
+      "duration": 23.012,
+      "context_sha256": "962de2ffb7e2332510adbb59217c75297e4047173ced0bc482f213bf17150c41",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3004d-slide-reasons.flac"
+      ],
+      "insertion_seconds": 304.46,
+      "context_start_seconds": 288.19
     },
     "scale:TS3004d-S075-Q1": {
       "text": "Assistant, what's the latest on the slide-open mechanism design?",
@@ -1091,10 +1838,19 @@
       "sha256": "225b2c57e99d25f20c9da24440f5a42791c89d958376512d30d92b8d5a467d72",
       "noise": "sampled AMI room tone",
       "background_sha256": "8493ca6d41585d667635b062ad4d743efc005496571abf27ee05d426b435b75a",
-      "context": "research/question-acoustic-bank/audio/scale--TS3004d-S075-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3004d-S075-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what's the latest on the slide? Open mechanism design.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.28,
+      "duration": 25.034,
+      "context_sha256": "a57a975c5515e9772799210f41affc303280a1d89d6ef7d4a9b5a206b4c7214c",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3004d-S075-Q1.flac"
+      ],
+      "insertion_seconds": 445.92,
+      "context_start_seconds": 428.06
     },
     "scale:TS3004d-Smiddle-Q3": {
       "text": "Assistant, is the scrollwheel still planned to be on the left side as originally said?",
@@ -1104,10 +1860,19 @@
       "sha256": "a189de7c17602c4a267fb269bfe223a534d39529c4ad637ed7470d29bbaec2bb",
       "noise": "stationary noise from quietest 5% of past frames",
       "background_sha256": "dc370f3926e57952e7a25bc7648566a609d0b5df4c08dfcfd2899193aed8b8d4",
-      "context": "research/question-acoustic-bank/audio/scale--TS3004d-Smiddle-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3004d-Smiddle-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant is the scroll wheel still planned to be on the left side as originally said.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.18,
+      "duration": 26.1686875,
+      "context_sha256": "661fcaa5639c1239c2eaeb2b92f42e7ce7ebe4da06db47672c3b9db22bcc3d94",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3004d-Smiddle-Q3.flac"
+      ],
+      "insertion_seconds": 1370.57,
+      "context_start_seconds": 1353.81
     },
     "scale:TS3004d-Slater-Q1": {
       "text": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
@@ -1117,10 +1882,19 @@
       "sha256": "cbfe08093aa1d2cd02e12b8028687e80365d692f75fd10302e52f7551a775d6b",
       "noise": "sampled AMI room tone",
       "background_sha256": "414b620fc0c3917513cc44a01966688ae46dfbe0cbca5df068a654b47418b3ea",
-      "context": "research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3004d-Slater-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the final decision on the slide panels backlighting after the discussion?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.32,
+      "duration": 31.775375,
+      "context_sha256": "91a0d4b3693b7e45d2154303eb496c6dd0e6fb6a5ab9d01348b58cc63ba395c7",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3004d-Slater-Q1.flac"
+      ],
+      "insertion_seconds": 2189.81,
+      "context_start_seconds": 2166.91
     },
     "scale:TS3004d-Slater-Q2": {
       "text": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
@@ -1130,10 +1904,19 @@
       "sha256": "58ab408a66f0da20315e86661896ec6bbda00eaee24e8011f41d5231d255b8fb",
       "noise": "sampled AMI room tone",
       "background_sha256": "83675ab58591b7810bddfb6dd87025afed8db485af5a1ed7d916fd1d16c65d92",
-      "context": "research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3004d-Slater-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, how did we settle on the number for the uh fancy look and feel criterion?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 23.32,
+      "duration": 34.943375,
+      "context_sha256": "119f32adc5e0464520a307f75a468607c4be0fed4fd53712fe06a19640b9f80e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3004d-Slater-Q2.flac"
+      ],
+      "insertion_seconds": 2189.81,
+      "context_start_seconds": 2166.91
     },
     "scale:ES2004d-infrared-location": {
       "text": "Assistant, where were we planning to put the infrared sender?",
@@ -1143,10 +1926,19 @@
       "sha256": "c8adca3de63ffe44bd1c2894cbd19c05f7cb3947207f94f5bcc1a7377bc3937a",
       "noise": "sampled AMI room tone",
       "background_sha256": "aeed406bbed833c777376d4ef0bfdd5b8393a541e658da5156e933a7ff15d583",
-      "context": "research/question-acoustic-bank/audio/scale--ES2004d-infrared-location--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2004d-infrared-location.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, where were we planning to put the infrared sender?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.81,
+      "duration": 22.641375,
+      "context_sha256": "6041dd43f3ceed9f3560b77b4acc613a791daf07c3365d00268342240cb878bb",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2004d-infrared-location.flac"
+      ],
+      "insertion_seconds": 451.6,
+      "context_start_seconds": 435.21
     },
     "scale:TS3005b-Slater-Q3": {
       "text": "Assistant, did we confirm whether the LCD screen can be made with large buttons for elderly users? That was part of the user needs.",
@@ -1156,10 +1948,19 @@
       "sha256": "0f32c543365e115ed9a29c5bbf72a98262cfb00e1164f345e6295c48630a5c50",
       "noise": "sampled AMI room tone",
       "background_sha256": "f7bb415749a674a286e9242ef0ac15d9987876499068640d33f6c331217fa0be",
-      "context": "research/question-acoustic-bank/audio/scale--TS3005b-Slater-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3005b-Slater-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, did we confirm whether the L C D screen can be made with large buttons for elderly users? That was part of the user needs.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 18.18,
+      "duration": 32.891375,
+      "context_sha256": "3966ff161689da419626abd77480d008294f737801648b9a711a92cd3304497b",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3005b-Slater-Q3.flac"
+      ],
+      "insertion_seconds": 1966.67,
+      "context_start_seconds": 1948.91
     },
     "scale:ES2005b-Slater-Q3": {
       "text": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
@@ -1169,10 +1970,19 @@
       "sha256": "af510b9bdd1ec39c76b2a19dc10eefeb8e6add988ef7990968de958ef4bb71de",
       "noise": "sampled AMI room tone",
       "background_sha256": "f9b0e94d53d07e5ab2b02334a27b34c5a7a8290e101f4ad3092771e3d59886ea",
-      "context": "research/question-acoustic-bank/audio/scale--ES2005b-Slater-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2005b-Slater-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.69,
+      "duration": 28.6866875,
+      "context_sha256": "39afa3cb291f8816f80bc5c8b19fa07af4f71b0362151ff8268a718ef471423b",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2005b-Slater-Q3.flac"
+      ],
+      "insertion_seconds": 1860.7,
+      "context_start_seconds": 1844.43
     },
     "scale:TS3006c-S05-Q3": {
       "text": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
@@ -1182,10 +1992,19 @@
       "sha256": "0d930bf04a818aeb9d0b85c6de6982854ebef2fef427298221c34e197a9a1f88",
       "noise": "sampled AMI room tone",
       "background_sha256": "89223ee94c39b9867038863a2eb7186add2d441c5bd6e79e7217744a8e856a08",
-      "context": "research/question-acoustic-bank/audio/scale--TS3006c-S05-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3006c-S05-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what's the status of the shared folder after we couldn't find the conceptual design files?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 13.72,
+      "duration": 21.3486875,
+      "context_sha256": "8f4823f9042b8e38c991a4e9f71fadbdbcae747eeb59cb6380798e605a77e7f4",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3006c-S05-Q3.flac"
+      ],
+      "insertion_seconds": 309.03,
+      "context_start_seconds": 295.73
     },
     "scale:TS3006c-S10-Q1": {
       "text": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
@@ -1195,10 +2014,19 @@
       "sha256": "d90e56bff1230404ba4ac42b6e451304a58979cc5359a4384877223d819d1cbe",
       "noise": "sampled AMI room tone",
       "background_sha256": "4ab52f275a10363e10c97a1655cf1a529bff2c4d0c0e67b680cb0a19961a196f",
-      "context": "research/question-acoustic-bank/audio/scale--TS3006c-S10-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3006c-S10-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what priority ratio did marketing give for fancy look and feel, innovation and ease of use?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 22.58,
+      "duration": 33.35,
+      "context_sha256": "b5bda8c56fc11118ef4c1ed23734d3a6cb63598359121ccabe3c6a80e6546c89",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3006c-S10-Q1.flac"
+      ],
+      "insertion_seconds": 611.07,
+      "context_start_seconds": 588.91
     },
     "scale:TS3006c-Smiddle-Q2": {
       "text": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
@@ -1208,10 +2036,19 @@
       "sha256": "55d3b252c27b782647acd2bbbf16fa5701ea4a47b594ee4fa6695213b9676dd6",
       "noise": "sampled AMI room tone",
       "background_sha256": "c63defd023f4c8530e797abd47686b05aedfd76786db78ee078e4d1cddd77f3f",
-      "context": "research/question-acoustic-bank/audio/scale--TS3006c-Smiddle-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--TS3006c-Smiddle-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what's the current status on the speech recognition implementation? I need to know if it's ready for the interface.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 19.37,
+      "duration": 28.52,
+      "context_sha256": "6af0806cf2335c83d9f115468d83150102f01d5851b16ac79d6b6299511da705",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--TS3006c-Smiddle-Q2.flac"
+      ],
+      "insertion_seconds": 1300.07,
+      "context_start_seconds": 1281.12
     },
     "scale:ES2006a-S075-Q3": {
       "text": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
@@ -1221,10 +2058,19 @@
       "sha256": "d5eb08e251343f9f2f3ee8d0ce359af42dad47fc53b02eeba79348f6fa64253d",
       "noise": "sampled AMI room tone",
       "background_sha256": "402875492fbe7f55dd227be76b06ae78115000ebdf44468dc32b5e1726d72be7",
-      "context": "research/question-acoustic-bank/audio/scale--ES2006a-S075-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2006a-S075-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 11.55,
+      "duration": 19.16,
+      "context_sha256": "c4e14499d97f8a450c6b9cf558460565c37994a855516b13ca0612c93f34bc2a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2006a-S075-Q3.flac"
+      ],
+      "insertion_seconds": 452.91,
+      "context_start_seconds": 441.78
     },
     "scale:ES2006a-Slater-Q1": {
       "text": "Assistant, what's the exact profit margin we're aiming for based on the selling price and production cost?",
@@ -1234,10 +2080,19 @@
       "sha256": "b8fbe04194ae78c9267cad62af39f61576e9e9b6f9dfe575261b8c483a0f4067",
       "noise": "sampled AMI room tone",
       "background_sha256": "48564ad8263380463d3d265f25fac29e1f3aa3e9900c0e1b2c7db50b782c6227",
-      "context": "research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2006a-Slater-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant what's the exact profit margin we're aiming for based on the selling price and production cost?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 21.48,
+      "duration": 31.1726875,
+      "context_sha256": "5d7a33d4da6e49c92c854210ca7d0b5e90b4d0265f7e5a14498e5711e6795de7",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2006a-Slater-Q1.flac"
+      ],
+      "insertion_seconds": 1033.85,
+      "context_start_seconds": 1012.79
     },
     "scale:ES2006a-Slater-Q2": {
       "text": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
@@ -1247,10 +2102,19 @@
       "sha256": "1fdbb94dd1dadac433d7541e37f8ad89b58616ec3b53e54324e8428d60cbfb68",
       "noise": "sampled AMI room tone",
       "background_sha256": "7fb8f39f8f8ff047913b1034eab06bf584077d46574683e8ae145749549cb535",
-      "context": "research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2006a-Slater-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, can you clarify how the functional and conceptual design phases differ in terms of deliverables?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 21.48,
+      "duration": 30.434,
+      "context_sha256": "9ce75d257176eb54dac02b9c93984b96055a44a79b9331fadefd38abbea2455f",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2006a-Slater-Q2.flac"
+      ],
+      "insertion_seconds": 1033.85,
+      "context_start_seconds": 1012.79
     },
     "scale:EN2006b-S05-Q1": {
       "text": "Assistant, did we decide to annotate Hubble?",
@@ -1260,10 +2124,19 @@
       "sha256": "35ce1e1cd904179db9a77cf66e568227bcae8bb31328cefdfc36545542b163c6",
       "noise": "sampled AMI room tone",
       "background_sha256": "638d388cea6a70b4e652650536a977c25ec744b4ff566bb9289c5a036d730e7a",
-      "context": "research/question-acoustic-bank/audio/scale--EN2006b-S05-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2006b-S05-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, did we decide to annotate Hubble?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 13.88,
+      "duration": 18.65,
+      "context_sha256": "423800cc258b90ea60610d48aed01066465d1e934c71dc2184797b83d26f2325",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2006b-S05-Q1.flac"
+      ],
+      "insertion_seconds": 307.18,
+      "context_start_seconds": 293.72
     },
     "scale:EN2006b-S075-Q1": {
       "text": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
@@ -1273,10 +2146,19 @@
       "sha256": "6f203abec38c14c7f4d58b233af490613a1ed8a28c3091a47a7a8b6c2f2b6939",
       "noise": "sampled AMI room tone",
       "background_sha256": "52d6a1764d2332e4359938890065c692e0c3703fa07a5963e0161e5ec6794566",
-      "context": "research/question-acoustic-bank/audio/scale--EN2006b-S075-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2006b-S075-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.44,
+      "duration": 26.5566875,
+      "context_sha256": "fc1482ef76fb70282a1683d98394d1cf13ea8942cae7f40f6c956833b20c7710",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2006b-S075-Q1.flac"
+      ],
+      "insertion_seconds": 440.34,
+      "context_start_seconds": 423.32
     },
     "scale:EN2006b-S075-Q2": {
       "text": "Assistant, what did we say about annotating absorption line systems?",
@@ -1286,10 +2168,19 @@
       "sha256": "4223adac6ca82edefc7ac3db8a398f6d5cfb7eb2beedfb938e6b56fbe50316d3",
       "noise": "sampled AMI room tone",
       "background_sha256": "7e213e4a258fc6dd2639a0992cf03f9523a2a8963879744e1bb64ba9422877cd",
-      "context": "research/question-acoustic-bank/audio/scale--EN2006b-S075-Q2--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--EN2006b-S075-Q2.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant What did we say about annotating absorption line systems?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.44,
+      "duration": 24.407375,
+      "context_sha256": "999ede95431854ef7ab743ace19895be7ae441a13c6da0e4845f1cf39239e205",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--EN2006b-S075-Q2.flac"
+      ],
+      "insertion_seconds": 440.34,
+      "context_start_seconds": 423.32
     },
     "scale:ES2007a-S075-Q3": {
       "text": "Assistant, what was the next step after the tool training exercise according to the agenda?",
@@ -1299,10 +2190,19 @@
       "sha256": "085d5fbb6c4a1ed388c2fba4ace971f43429e7c7a77cba8a1dd1848c79718af9",
       "noise": "sampled AMI room tone",
       "background_sha256": "89c641ebc7cb18e5949816dd493bc6571f1ba3010507266fa293f52a5eb3c326",
-      "context": "research/question-acoustic-bank/audio/scale--ES2007a-S075-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2007a-S075-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what was the next step after the tool training exercise according to the agenda?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 14.92,
+      "duration": 22.73,
+      "context_sha256": "e9b993d88aad129fb38c2ef1605d9da899ba410f578779244b02455401f2f9e2",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2007a-S075-Q3.flac"
+      ],
+      "insertion_seconds": 444.0,
+      "context_start_seconds": 429.5
     },
     "scale:ES2007a-Slater-Q3": {
       "text": "Assistant, was it agreed that the remote should control only TV or also connected devices like DVD players?",
@@ -1312,10 +2212,19 @@
       "sha256": "75778c4a5c887e878965aa721252f429b6c216df5a96c1f86feff1c197238d99",
       "noise": "sampled AMI room tone",
       "background_sha256": "babda60cb69a375e0cbf46de18371be286f95375bfe027e073f4faed77f6beed",
-      "context": "research/question-acoustic-bank/audio/scale--ES2007a-Slater-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2007a-Slater-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, was it agreed that the remote should control only T V or also connected devices like D V D players?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 29.73,
+      "duration": 37.6786875,
+      "context_sha256": "b0202eb288cd077e1a469d6903d3041d0b627c76ae481d82b13ceebb8375ff23",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2007a-Slater-Q3.flac"
+      ],
+      "insertion_seconds": 998.58,
+      "context_start_seconds": 969.27
     },
     "scale:ES2008b-Smiddle-Q3": {
       "text": "Assistant, what exactly did the usability lab find about the frequency of channel changing during an hour of use?",
@@ -1325,10 +2234,19 @@
       "sha256": "2d7daf9b022c6fd9788870af4a7fccf768f3b041385900913955773ade36c821",
       "noise": "sampled AMI room tone",
       "background_sha256": "64011f285fc4676d93d7aae3b9fc9cbe75f1da6200f8e59bcac04316d451c84c",
-      "context": "research/question-acoustic-bank/audio/scale--ES2008b-Smiddle-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2008b-Smiddle-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, what exactly did the Usability Lab find about the frequency of channel changing during an hour of use?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 17.44,
+      "duration": 26.7006875,
+      "context_sha256": "2a51892d30ad0d8d8b0250da24930a1c119b3d7e1df7db77ad76c0e4d70843e9",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2008b-Smiddle-Q3.flac"
+      ],
+      "insertion_seconds": 1010.55,
+      "context_start_seconds": 993.53
     },
     "scale:ES2008b-Slater-Q1": {
       "text": "Assistant, can you clarify what the exact price cap is for producing the remote control? I want to make sure I’m not missing it.",
@@ -1338,10 +2256,19 @@
       "sha256": "d50c8d82afc13fa1d2a9da50814b74c60bd4fef6b70253dc65fa6285d6766a42",
       "noise": "sampled AMI room tone",
       "background_sha256": "690788bb93a1ed65d6b64645bf2c5afc39764028a5e57a3e992edbf16059579e",
-      "context": "research/question-acoustic-bank/audio/scale--ES2008b-Slater-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2008b-Slater-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "Assistant, can you clarify what the exact price cap is for producing the remote control? I want to make sure I'm not missing it.",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 37.89,
+      "duration": 46.468,
+      "context_sha256": "7f042a0fa114cd0160804447e62bfb30faac792b1a942fa71e56fda3dab3d341",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2008b-Slater-Q1.flac"
+      ],
+      "insertion_seconds": 1689.56,
+      "context_start_seconds": 1652.09
     },
     "scale:ES2009a-S10-Q1": {
       "text": "Assistant, what's the current plan for moving from basic features to the sleeker design phase? Need to know the next steps.",
@@ -1351,10 +2278,19 @@
       "sha256": "8a6030b65d0bfbf44d5feacef81c6b7d323780d2d4dc027202d96317795b782e",
       "noise": "sampled AMI room tone",
       "background_sha256": "b0091f5bbed9d3419c5862ef443b4019922cd7194e21a98c92414c2e3e8c29ce",
-      "context": "research/question-acoustic-bank/audio/scale--ES2009a-S10-Q1--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2009a-S10-Q1.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant. What's the current plan for moving from basic features to the sleeker design phase? Need to know the next steps",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 16.82,
+      "duration": 33.97,
+      "context_sha256": "c5f172bde1ef707bd57ba6cc6dd7a981048726e2883087da23865676d1eaf486",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2009a-S10-Q1.flac"
+      ],
+      "insertion_seconds": 594.37,
+      "context_start_seconds": 577.97
     },
     "scale:ES2010b-Smiddle-Q3": {
       "text": "Assistant, what battery options had we discussed, and did anyone say they needed to be rechargeable?",
@@ -1364,10 +2300,19 @@
       "sha256": "8b5d8db19a91966d94ba3aa5ca80b5956b148380405bb47b0912beb17d5cd3ce",
       "noise": "sampled AMI room tone",
       "background_sha256": "7ba38a622c6862a109dfb4e2bc9f82b2bd28867d860992a295c36567f311d37e",
-      "context": "research/question-acoustic-bank/audio/scale--ES2010b-Smiddle-Q3--injected.wav",
+      "context": "research/question-dataset/audio/turns/scale--ES2010b-Smiddle-Q3.flac",
       "source": "reviewed 105-question bank",
       "parakeet": "assistant, what battery options had we discussed, and did anyone say they needed to be rechargeable?",
-      "background_asr": ""
+      "background_asr": "",
+      "request_at": 25.19,
+      "duration": 33.421375,
+      "context_sha256": "67063ad0952f9935347ee1f72e1db2ee3499f28b8b3d58cdbbb6c7f7add9b03e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/scale--ES2010b-Smiddle-Q3.flac"
+      ],
+      "insertion_seconds": 887.55,
+      "context_start_seconds": 862.78
     },
     "EN2003a-cue": {
       "text": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
@@ -1381,7 +2326,16 @@
       "whisper": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
       "background_asr": "",
       "source": "reviewed cue demo",
-      "voice_similarity": 0.474
+      "voice_similarity": 0.474,
+      "context": "research/question-dataset/audio/EN2003a-cue-1.flac",
+      "request_at": 18.35,
+      "duration": 24.603,
+      "context_sha256": "5bcc6f5d770284d34e8dd9d1324a00ac3e0a7ff9dfe04694d7cc57e36b85f237",
+      "listening_gain_db": 14,
+      "context_versions": [
+        "research/question-dataset/audio/EN2003a-cue-1.flac",
+        "research/question-dataset/audio/EN2003a-cue-2.flac"
+      ]
     },
     "4359971-cue": {
       "text": "Assistant, what was the analyst asking about when that chime sounded?",
@@ -1395,7 +2349,16 @@
       "whisper": "Assistant, what was the analyst asking about when that chime sounded?",
       "background_asr": "",
       "source": "reviewed cue demo",
-      "voice_similarity": 0.661
+      "voice_similarity": 0.661,
+      "context": "research/question-dataset/audio/4359971-cue-1.flac",
+      "request_at": 53.93,
+      "duration": 61.807375,
+      "context_sha256": "bfe542ab77754d564fcfd607604958e01cc2fb8b8b5ab2ff387051d32776dbe1",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/4359971-cue-1.flac",
+        "research/question-dataset/audio/4359971-cue-2.flac"
+      ]
     },
     "4330115-cue": {
       "text": "Assistant, what was the caller with the muffled greeting asking about?",
@@ -1423,7 +2386,16 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.7505,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/4330115-cue--1.flac",
+      "request_at": 65.43,
+      "duration": 70.6166875,
+      "context_sha256": "3941500b1a31b23c0e7d66a3f153db1f52bd33c83bb43a5303101413e5ec2e86",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/4330115-cue--1.flac",
+        "research/question-dataset/audio/turns/4330115-cue--2.flac"
+      ]
     },
     "4344866-cue": {
       "text": "Assistant, can you remind me what the analyst with the muffled greeting wanted to know about the legislation?",
@@ -1451,7 +2423,16 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.4798,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/4344866-cue--1.flac",
+      "request_at": 88.25,
+      "duration": 96.002,
+      "context_sha256": "184b9b0cafa965fbb3aca458c4ea410d9e2e1ef93e18d223661e6c62607b8d17",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/4344866-cue--1.flac",
+        "research/question-dataset/audio/turns/4344866-cue--2.flac"
+      ]
     },
     "4346818-S1": {
       "text": "Assistant, which business was Andy asking about when he brought up the April order decline?",
@@ -1480,11 +2461,14 @@
       "source_review": null,
       "voice_similarity": 0.6289,
       "source": "completed participant recordings",
-      "insertion_seconds": 2610.19,
-      "context_start_seconds": 2590.37,
       "context": "research/question-dataset/audio/participants/4346818-S1--conversation.flac",
-      "request_at": 20.0,
-      "duration": 27.357375
+      "request_at": 99.29,
+      "duration": 106.647375,
+      "context_sha256": "45fdb099d8b8a265e7101083b96e9273881a2ac133c72331b5dfe0f39a55176d",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/4346818-S1--conversation.flac"
+      ]
     },
     "4346818-S2": {
       "text": "Assistant, how big were the other cost cuts Julian mentioned on top of the synergies?",
@@ -1513,11 +2497,14 @@
       "source_review": null,
       "voice_similarity": 0.6724,
       "source": "completed participant recordings",
-      "insertion_seconds": 2610.19,
-      "context_start_seconds": 2590.37,
       "context": "research/question-dataset/audio/participants/4346818-S2--conversation.flac",
-      "request_at": 20.0,
-      "duration": 26.552
+      "request_at": 99.29,
+      "duration": 105.842,
+      "context_sha256": "e1333a14b31189041bbc9364738b4c3a9b617847640b926fb290a36a91446272",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/4346818-S2--conversation.flac"
+      ]
     },
     "4346818-cue": {
       "text": "Assistant, what did the analyst whose greeting sounded muffled want to know?",
@@ -1545,7 +2532,16 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.5329,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/4346818-cue--1.flac",
+      "request_at": 99.29,
+      "duration": 105.65,
+      "context_sha256": "ecdcbd761bb39622a0dc6d37ae28b0d66d458683dd4f084c804a26323ee6ff38",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/4346818-cue--1.flac",
+        "research/question-dataset/audio/turns/4346818-cue--2.flac"
+      ]
     },
     "4359971-S1": {
       "text": "Assistant, what earnings number was David checking that one-time benefit against?",
@@ -1574,11 +2570,14 @@
       "source_review": null,
       "voice_similarity": 0.5165,
       "source": "completed participant recordings",
-      "insertion_seconds": 3059.36,
-      "context_start_seconds": 3040.72,
       "context": "research/question-dataset/audio/participants/4359971-S1--conversation.flac",
-      "request_at": 18.82,
-      "duration": 25.4786875
+      "request_at": 111.18,
+      "duration": 117.8386875,
+      "context_sha256": "9ab2b42501ce6236b8b4de16646fd37b44cacd23b0adce79316d586ac6437375",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/4359971-S1--conversation.flac"
+      ]
     },
     "4359971-S2": {
       "text": "Assistant, what did Curtis want to know about the hundred million euros in savings?",
@@ -1607,11 +2606,14 @@
       "source_review": null,
       "voice_similarity": 0.5392,
       "source": "completed participant recordings",
-      "insertion_seconds": 3059.36,
-      "context_start_seconds": 3040.72,
       "context": "research/question-dataset/audio/participants/4359971-S2--conversation.flac",
-      "request_at": 18.82,
-      "duration": 25.105375
+      "request_at": 111.18,
+      "duration": 117.465375,
+      "context_sha256": "9c0ea8847d4765759d49954c456db63fb967543f630cc33bd76ce7ecffc9ae89",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/4359971-S2--conversation.flac"
+      ]
     },
     "ES2012a-S1": {
       "text": "Assistant, what did Andrew want to find out about people’s preferences for the new remote?",
@@ -1639,7 +2641,15 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.7176,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/ES2012a-S1.flac",
+      "request_at": 39.73,
+      "duration": 49.738,
+      "context_sha256": "431551c07de1df3673a8b90d126f3338789b5e01da3361431adbc51c7ee2d6a6",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/ES2012a-S1.flac"
+      ]
     },
     "ES2012a-S2": {
       "text": "Assistant, who was going to explain the workings inside the remote?",
@@ -1667,7 +2677,15 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.7219,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/ES2012a-S2.flac",
+      "request_at": 39.73,
+      "duration": 46.399375,
+      "context_sha256": "c60d0771a99f9f31b6926d63358a023355454d757b1c65ee2477956d4dbd9acc",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/ES2012a-S2.flac"
+      ]
     },
     "ES2012a-cue": {
       "text": "Assistant, what was the person whose introduction sounded muffled going to contribute?",
@@ -1695,7 +2713,16 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.7548,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/ES2012a-cue--1.flac",
+      "request_at": 39.73,
+      "duration": 48.57,
+      "context_sha256": "f9ed9e2d9d2bb1de14ec79b448211e38974fbf41ea2cccd108b97ab1b0895e1c",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/ES2012a-cue--1.flac",
+        "research/question-dataset/audio/turns/ES2012a-cue--2.flac"
+      ]
     },
     "IS1009c-S1": {
       "text": "Assistant, how quickly did we want people to be able to learn the remote?",
@@ -1723,7 +2750,15 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.6932,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/IS1009c-S1.flac",
+      "request_at": 35.26,
+      "duration": 41.956,
+      "context_sha256": "8db68993c6d83cae1fe0ebc45ec577c3d8773a41ad8739e516cb358502fedc2a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/IS1009c-S1.flac"
+      ]
     },
     "IS1009c-S2": {
       "text": "Assistant, why did the interface designer put so much emphasis on how it looks?",
@@ -1751,7 +2786,15 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.6774,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/IS1009c-S2.flac",
+      "request_at": 35.26,
+      "duration": 43.081375,
+      "context_sha256": "3f405c27febb72386fae05758de30bdc6fbe668daedbe2f3fa8e521dd1e5df17",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/IS1009c-S2.flac"
+      ]
     },
     "IS1009c-cue": {
       "text": "Assistant, what point was the person making about the remote when that chime went off?",
@@ -1779,7 +2822,16 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.706,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/IS1009c-cue--1.flac",
+      "request_at": 35.26,
+      "duration": 42.953375,
+      "context_sha256": "7f54906d3ceb76a5e05a2cb08ee4028635a070f5b244c9c6449c09524bae16ee",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/IS1009c-cue--1.flac",
+        "research/question-dataset/audio/turns/IS1009c-cue--2.flac"
+      ]
     },
     "conec-C02": {
       "text": "Assistant, why does making the fabric in Vietnam matter for the mattress covers Culp wants to ship to the US?",
@@ -1808,11 +2860,16 @@
       "source_review": null,
       "voice_similarity": 0.604,
       "source": "completed participant recordings",
-      "insertion_seconds": 1954.26,
-      "context_start_seconds": 1935.14,
       "context": "research/question-dataset/audio/participants/conec-C02--conversation.flac",
-      "request_at": 19.3,
-      "duration": 31.596
+      "request_at": 20.98,
+      "duration": 33.276,
+      "context_sha256": "745d588973f03694dadb8e7bfaf801a868b8951c41e76dc19e6a1c85192144d9",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-C02--conversation.flac"
+      ],
+      "insertion_seconds": 1954.26,
+      "context_start_seconds": 1933.7
     },
     "conec-C03": {
       "text": "Assistant, can you break down that Missouri weather hit between the residential mechanism and businesses?",
@@ -1841,11 +2898,16 @@
       "source_review": null,
       "voice_similarity": 0.7381,
       "source": "completed participant recordings",
-      "insertion_seconds": 2061.49,
-      "context_start_seconds": 2042.13,
       "context": "research/question-dataset/audio/participants/conec-C03--conversation.flac",
-      "request_at": 19.54,
-      "duration": 31.02
+      "request_at": 25.47,
+      "duration": 36.95,
+      "context_sha256": "d112dc67ff70107edcbb775c9ccd2a08f507018e26d8df75170997b37df4c8a2",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-C03--conversation.flac"
+      ],
+      "insertion_seconds": 2061.49,
+      "context_start_seconds": 2036.44
     },
     "conec-C05": {
       "text": "Assistant, did Doug describe the same kind of recovery for travel spending as he did for other spending?",
@@ -1874,11 +2936,16 @@
       "source_review": null,
       "voice_similarity": 0.8295,
       "source": "completed participant recordings",
-      "insertion_seconds": 338.04,
-      "context_start_seconds": 320.02,
       "context": "research/question-dataset/audio/participants/conec-C05--conversation.flac",
-      "request_at": 18.2,
-      "duration": 27.1946875
+      "request_at": 7.28,
+      "duration": 16.2746875,
+      "context_sha256": "e0855a10d4ab610844d0300607463bf16a0c3ed301820fb21cbd27cb0df32374",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-C05--conversation.flac"
+      ],
+      "insertion_seconds": 338.04,
+      "context_start_seconds": 331.18
     },
     "conec-C06": {
       "text": "Assistant, what did Amex offer customers who still needed help after the short payment holidays?",
@@ -1907,11 +2974,16 @@
       "source_review": null,
       "voice_similarity": 0.8078,
       "source": "completed participant recordings",
-      "insertion_seconds": 1035.16,
-      "context_start_seconds": 1015.66,
       "context": "research/question-dataset/audio/participants/conec-C06--conversation.flac",
-      "request_at": 19.68,
-      "duration": 28.157375
+      "request_at": 14.44,
+      "duration": 22.917375,
+      "context_sha256": "3597e8fa1570d821cf10c20f600ba7f825f4ac1269384955b0815207f6e4bd2a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-C06--conversation.flac"
+      ],
+      "insertion_seconds": 1090.0,
+      "context_start_seconds": 1075.98
     },
     "conec-I07.2": {
       "text": "Assistant, why did Spire think it could keep moving on infrastructure work through the pandemic?",
@@ -1940,11 +3012,16 @@
       "source_review": null,
       "voice_similarity": 0.5711,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-I07.2--conversation.flac",
-      "request_at": 19.68,
-      "duration": 26.605375
+      "request_at": 15.63,
+      "duration": 22.555375,
+      "context_sha256": "0e50e33df255940c49646c007f44c00dde1d36198bdb684b3d43c91055eafc3e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-I07.2--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "conec-I08.2": {
       "text": "Assistant, what does the Missouri commission still have to decide in July, and what could that mean for customers?",
@@ -1973,11 +3050,16 @@
       "source_review": null,
       "voice_similarity": 0.588,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-I08.2--conversation.flac",
-      "request_at": 19.68,
-      "duration": 28.22
+      "request_at": 15.63,
+      "duration": 24.17,
+      "context_sha256": "0a44389c21028966c6384348a8b148d7217da7516c8ee620f33b75e1544ec292",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-I08.2--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "conec-R01.1": {
       "text": "Assistant, what was Culp’s effective tax rate for the year to date?",
@@ -2006,11 +3088,16 @@
       "source_review": null,
       "voice_similarity": 0.6548,
       "source": "completed participant recordings",
-      "insertion_seconds": 1741.62,
-      "context_start_seconds": 1721.82,
       "context": "research/question-dataset/audio/participants/conec-R01.1--conversation.flac",
-      "request_at": 19.98,
-      "duration": 26.468
+      "request_at": 17.865,
+      "duration": 24.353,
+      "context_sha256": "b704e51fc53b7776c3418b6dd761405751c73b31327ae4c496f9bc17c0630498",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-R01.1--conversation.flac"
+      ],
+      "insertion_seconds": 1741.625,
+      "context_start_seconds": 1724.18
     },
     "conec-R02.1": {
       "text": "Assistant, what did Ken say was keeping Culp’s tax rate so high for the rest of the year?",
@@ -2039,11 +3126,16 @@
       "source_review": null,
       "voice_similarity": 0.6788,
       "source": "completed participant recordings",
-      "insertion_seconds": 1741.62,
-      "context_start_seconds": 1721.82,
       "context": "research/question-dataset/audio/participants/conec-R02.1--conversation.flac",
-      "request_at": 19.98,
-      "duration": 27.321375
+      "request_at": 17.865,
+      "duration": 25.206375,
+      "context_sha256": "a69262d13b42ed2ee929ca9eed26539f3d47666d329512ef262b4bfd0dba1f2e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-R02.1--conversation.flac"
+      ],
+      "insertion_seconds": 1741.625,
+      "context_start_seconds": 1724.18
     },
     "conec-R06.1": {
       "text": "Assistant, how much of the Missouri hit got past the weather mechanism, and when did Spire say it would work on fixing that?",
@@ -2072,11 +3164,16 @@
       "source_review": null,
       "voice_similarity": 0.664,
       "source": "completed participant recordings",
-      "insertion_seconds": 2061.49,
-      "context_start_seconds": 2042.13,
       "context": "research/question-dataset/audio/participants/conec-R06.1--conversation.flac",
-      "request_at": 19.54,
-      "duration": 30.641375
+      "request_at": 25.47,
+      "duration": 36.571375,
+      "context_sha256": "872f18b968c603926af359a8687179797bf2c176e6fbf64ea79eb2eb880d9b82",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-R06.1--conversation.flac"
+      ],
+      "insertion_seconds": 2061.49,
+      "context_start_seconds": 2036.44
     },
     "conec-R08.1": {
       "text": "Assistant, which part goes to the commission and which part still needs the House and Senate to agree?",
@@ -2105,11 +3202,16 @@
       "source_review": null,
       "voice_similarity": 0.7188,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-R08.1--conversation.flac",
-      "request_at": 19.68,
-      "duration": 30.2586875
+      "request_at": 15.63,
+      "duration": 26.2086875,
+      "context_sha256": "fcbb35ad3b72ef585bd347514091cd03c45e554c1d42e5235f1aa3a146042043",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-R08.1--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "conec-R11.1": {
       "text": "Assistant, what did Doug say was helping Amex’s credit quality even with all those jobless claims?",
@@ -2138,11 +3240,16 @@
       "source_review": null,
       "voice_similarity": 0.8302,
       "source": "completed participant recordings",
-      "insertion_seconds": 1035.16,
-      "context_start_seconds": 1015.66,
       "context": "research/question-dataset/audio/participants/conec-R11.1--conversation.flac",
-      "request_at": 19.68,
-      "duration": 30.52
+      "request_at": 14.44,
+      "duration": 25.28,
+      "context_sha256": "9eb3804610d3782f6ebcef2831435cfe2a69b60ba21013319c73f1b32c7a75b0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-R11.1--conversation.flac"
+      ],
+      "insertion_seconds": 1090.0,
+      "context_start_seconds": 1075.98
     },
     "conec-T03.2": {
       "text": "Assistant, what tax rate did Ken expect for the rest of the fiscal year?",
@@ -2171,11 +3278,16 @@
       "source_review": null,
       "voice_similarity": 0.6933,
       "source": "completed participant recordings",
-      "insertion_seconds": 1954.26,
-      "context_start_seconds": 1935.14,
       "context": "research/question-dataset/audio/participants/conec-T03.2--conversation.flac",
-      "request_at": 19.3,
-      "duration": 26.06
+      "request_at": 20.98,
+      "duration": 27.74,
+      "context_sha256": "ce9daa5751d16b5064495a9289ed93547b29d2c599bb3b4c2dbda6d401405f7a",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T03.2--conversation.flac"
+      ],
+      "insertion_seconds": 1954.26,
+      "context_start_seconds": 1933.7
     },
     "conec-T07.1": {
       "text": "Assistant, how much of the increase in Spire’s spending plan was for the utilities?",
@@ -2204,11 +3316,16 @@
       "source_review": null,
       "voice_similarity": 0.6072,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-T07.1--conversation.flac",
-      "request_at": 19.68,
-      "duration": 27.165375
+      "request_at": 15.63,
+      "duration": 23.115375,
+      "context_sha256": "62b4a7f2b8998593ad7ea4a21b2929013d941ce46e394c3f74619946d909b74e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T07.1--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "conec-T08.1": {
       "text": "Assistant, did Spire say the House and Senate bills would change its pipe replacement rules in different ways?",
@@ -2237,11 +3354,16 @@
       "source_review": null,
       "voice_similarity": 0.5783,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-T08.1--conversation.flac",
-      "request_at": 19.68,
-      "duration": 26.909375
+      "request_at": 15.63,
+      "duration": 22.859375,
+      "context_sha256": "c6cbe289f294d5eb0680aeb1c4205aefecb8021f19f0746a4b5eacc444d904af",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T08.1--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "natural-AMI-ES2006a-laughter": {
       "text": "Assistant, which part contained laughter, and what were they talking about then? Say if it was unclear.",
@@ -2271,8 +3393,13 @@
       "voice_similarity": 0.7262,
       "source": "completed participant recordings",
       "context": "research/question-dataset/audio/natural-AMI-ES2006a-laughter.flac",
-      "request_at": 21.98,
-      "duration": 28.677375
+      "request_at": 21.84,
+      "duration": 28.537375,
+      "context_sha256": "583afe989a507e89b5925d950a7d6eecd965ea71051169e17217baa50352d056",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/natural-AMI-ES2006a-laughter.flac"
+      ]
     },
     "natural-ConEC-4374910-laughter": {
       "text": "Assistant, which part contained laughter, and what were they talking about then? Say if it was unclear.",
@@ -2302,8 +3429,13 @@
       "voice_similarity": 0.8124,
       "source": "completed participant recordings",
       "context": "research/question-dataset/audio/natural-ConEC-4374910-laughter.flac",
-      "request_at": 21.48,
-      "duration": 29.632
+      "request_at": 49.28,
+      "duration": 57.432,
+      "context_sha256": "de615e79940339aca792335c3b4e56793b62bd86bd3249b10f3755ea827148f4",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/natural-ConEC-4374910-laughter.flac"
+      ]
     },
     "ES2006a-cue": {
       "text": "Assistant, what work was the person whose voice went muffled going to do?",
@@ -2331,7 +3463,16 @@
       "whisper_large": null,
       "source_review": null,
       "voice_similarity": 0.6538,
-      "source": "completed participant recordings"
+      "source": "completed participant recordings",
+      "context": "research/question-dataset/audio/turns/ES2006a-cue--1.flac",
+      "request_at": 66.43,
+      "duration": 73.906,
+      "context_sha256": "6fac53665d9ed7cd66214c1fc36e4643b59b2de9b8c1a6a89a9bda5084677f28",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/turns/ES2006a-cue--1.flac",
+        "research/question-dataset/audio/turns/ES2006a-cue--2.flac"
+      ]
     },
     "conec-C01": {
       "text": "Assistant, what are we adding in Vietnam beyond the cut-and-sew work we already do there?",
@@ -2360,11 +3501,16 @@
       "source_review": "All three transcripts recover the question. They spell the final syllable in “cut-and-sew” as its homophone “so.” The selected F5 input uses “cut and so” to elicit the pronunciation of “sew.”",
       "voice_similarity": 0.7531,
       "source": "completed participant recordings",
-      "insertion_seconds": 1741.62,
-      "context_start_seconds": 1721.82,
       "context": "research/question-dataset/audio/participants/conec-C01--conversation.flac",
-      "request_at": 19.98,
-      "duration": 27.881375
+      "request_at": 17.865,
+      "duration": 25.766375,
+      "context_sha256": "43175fcafb108d201ea0dc2b21b6afc6dad13e85f026bb9ba157bef0355888f5",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-C01--conversation.flac"
+      ],
+      "insertion_seconds": 1741.625,
+      "context_start_seconds": 1724.18
     },
     "conec-C04": {
       "text": "Assistant, if the court route is closed, what’s the remaining fix, and what would it change for pipe replacements?",
@@ -2393,11 +3539,16 @@
       "source_review": null,
       "voice_similarity": 0.5376,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-C04--conversation.flac",
-      "request_at": 19.68,
-      "duration": 28.792
+      "request_at": 15.63,
+      "duration": 24.742,
+      "context_sha256": "d9bd61d3f1a4768a01d078e96559a26737cbdd7134be1583d8bed6818b696f1c",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-C04--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "conec-I05.1": {
       "text": "Assistant, how did margins in Missouri and the Southern utilities compare after the warm winter?",
@@ -2426,11 +3577,16 @@
       "source_review": null,
       "voice_similarity": 0.6208,
       "source": "completed participant recordings",
-      "insertion_seconds": 2061.49,
-      "context_start_seconds": 2042.13,
       "context": "research/question-dataset/audio/participants/conec-I05.1--conversation.flac",
-      "request_at": 19.54,
-      "duration": 28.477375
+      "request_at": 25.47,
+      "duration": 34.407375,
+      "context_sha256": "76678972a76c44acdd0a3d93ace4c41c066b10a80e8f0bb5950e15550b3e0dd9",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-I05.1--conversation.flac"
+      ],
+      "insertion_seconds": 2061.49,
+      "context_start_seconds": 2036.44
     },
     "conec-I08.1": {
       "text": "Assistant, what is Spire trying to show about the pipe it already replaced?",
@@ -2459,11 +3615,16 @@
       "source_review": null,
       "voice_similarity": 0.6594,
       "source": "completed participant recordings",
-      "insertion_seconds": 2268.51,
-      "context_start_seconds": 2249.01,
       "context": "research/question-dataset/audio/participants/conec-I08.1--conversation.flac",
-      "request_at": 19.68,
-      "duration": 28.34
+      "request_at": 15.63,
+      "duration": 24.29,
+      "context_sha256": "87043e0ff8cc02bb5eb6e447a17fd77d7c927b2e585ddd91ef94e51ad5b64f05",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-I08.1--conversation.flac"
+      ],
+      "insertion_seconds": 2268.67,
+      "context_start_seconds": 2253.46
     },
     "conec-R05.1": {
       "text": "Assistant, what was Spire’s spending forecast before the increase to $640 million?",
@@ -2492,11 +3653,16 @@
       "source_review": null,
       "voice_similarity": 0.7746,
       "source": "completed participant recordings",
-      "insertion_seconds": 2061.49,
-      "context_start_seconds": 2042.13,
       "context": "research/question-dataset/audio/participants/conec-R05.1--conversation.flac",
-      "request_at": 19.54,
-      "duration": 33.345375
+      "request_at": 25.47,
+      "duration": 39.275375,
+      "context_sha256": "1a25f2acdecfe7faa0db5ea1246599b4a3cb8e4f3ad0a1dcf379d4dcee60e1c7",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-R05.1--conversation.flac"
+      ],
+      "insertion_seconds": 2061.49,
+      "context_start_seconds": 2036.44
     },
     "conec-T11.1": {
       "text": "Assistant, in Doug’s Italy example, what share were using Amex for an online purchase for the first time?",
@@ -2525,11 +3691,16 @@
       "source_review": null,
       "voice_similarity": 0.7893,
       "source": "completed participant recordings",
-      "insertion_seconds": 1035.16,
-      "context_start_seconds": 1015.66,
       "context": "research/question-dataset/audio/participants/conec-T11.1--conversation.flac",
-      "request_at": 19.68,
-      "duration": 31.133375
+      "request_at": 14.44,
+      "duration": 25.893375,
+      "context_sha256": "8b84fa9bdada09d399cc86aed26d9ac5676bbfe4ae7c6bff4af4ee713864b9a0",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T11.1--conversation.flac"
+      ],
+      "insertion_seconds": 1090.0,
+      "context_start_seconds": 1075.98
     },
     "conec-I03.2": {
       "text": "Assistant, what did Iv say Culp has done about the fake reviews on Amazon?",
@@ -2559,11 +3730,16 @@
       "voice_similarity": 0.6709,
       "source": "completed participant recordings",
       "name_reference": "research/question-dataset/audio/participants/original-4330115-introduction.flac",
-      "insertion_seconds": 1954.26,
-      "context_start_seconds": 1935.14,
       "context": "research/question-dataset/audio/participants/conec-I03.2--conversation.flac",
-      "request_at": 19.3,
-      "duration": 24.993375
+      "request_at": 20.98,
+      "duration": 26.673375,
+      "context_sha256": "6e8ed06723e97273c0713118f00dc9088a35c7cfee9db2ce83bb821ca92f6723",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-I03.2--conversation.flac"
+      ],
+      "insertion_seconds": 1954.26,
+      "context_start_seconds": 1933.7
     },
     "conec-T02.1": {
       "text": "Assistant, when did Ken say the high-tax exception could start helping Culp?",
@@ -2593,11 +3769,16 @@
       "voice_similarity": 0.594,
       "source": "completed participant recordings",
       "name_reference": "research/question-dataset/audio/participants/original-4330115-introduction.flac",
-      "insertion_seconds": 1741.62,
-      "context_start_seconds": 1721.82,
       "context": "research/question-dataset/audio/participants/conec-T02.1--conversation.flac",
-      "request_at": 19.98,
-      "duration": 26.12
+      "request_at": 17.865,
+      "duration": 24.005,
+      "context_sha256": "bebd590c253e4348807730afaf6f29760096f20237e82d2efec763162d58618e",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T02.1--conversation.flac"
+      ],
+      "insertion_seconds": 1741.625,
+      "context_start_seconds": 1724.18
     },
     "conec-T03.1": {
       "text": "Assistant, how much of the home accessories business did Iv expect Amazon to account for?",
@@ -2627,11 +3808,16 @@
       "voice_similarity": 0.6002,
       "source": "completed participant recordings",
       "name_reference": "research/question-dataset/audio/participants/original-4330115-introduction.flac",
-      "insertion_seconds": 1954.26,
-      "context_start_seconds": 1935.14,
       "context": "research/question-dataset/audio/participants/conec-T03.1--conversation.flac",
-      "request_at": 19.3,
-      "duration": 29.233375
+      "request_at": 20.98,
+      "duration": 30.913375,
+      "context_sha256": "efcddde505849cc2cd45097627216bf6ddb298a4afd1e1e66f738c640c5e3306",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T03.1--conversation.flac"
+      ],
+      "insertion_seconds": 1954.26,
+      "context_start_seconds": 1933.7
     },
     "conec-T06.1": {
       "text": "Assistant, is the $11 million in the Missouri settlement the same thing as the provision they mentioned earlier?",
@@ -2660,11 +3846,16 @@
       "source_review": null,
       "voice_similarity": 0.5991,
       "source": "completed participant recordings",
-      "insertion_seconds": 2061.49,
-      "context_start_seconds": 2042.13,
       "context": "research/question-dataset/audio/participants/conec-T06.1--conversation.flac",
-      "request_at": 19.54,
-      "duration": 29.457375
+      "request_at": 25.47,
+      "duration": 35.387375,
+      "context_sha256": "873aa349d66f122f32607d3142770fb7d0de1c7f8cc91441c69a3f04e11542ae",
+      "listening_gain_db": 0,
+      "context_versions": [
+        "research/question-dataset/audio/participants/conec-T06.1--conversation.flac"
+      ],
+      "insertion_seconds": 2061.49,
+      "context_start_seconds": 2036.44
     }
   }
 }

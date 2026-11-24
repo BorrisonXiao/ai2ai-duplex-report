@@ -8,12 +8,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did we decide to annotate Hubble?",
-      "insertion_seconds": 300.97,
-      "fraction": 0.098606,
+      "insertion_seconds": 307.18,
+      "fraction": 0.10064,
       "equal_type": false,
+      "original_evaluation_seconds": 300.97,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S05-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S05-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2006b-S05-Q1.flac"
     },
     {
       "id": "scale:TS3004d-slide-reasons",
@@ -28,7 +29,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-slide-reasons--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-slide-reasons--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3004d-slide-reasons.flac"
     },
     {
       "id": "scale:TS3006c-S05-Q3",
@@ -43,7 +44,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S05-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S05-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3006c-S05-Q3.flac"
     },
     {
       "id": "scale:IN1007-matlab-availability",
@@ -58,7 +59,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IN1007-matlab-availability--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IN1007-matlab-availability--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IN1007-matlab-availability.flac"
     },
     {
       "id": "scale:EN2004a-S05-Q3",
@@ -73,7 +74,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S05-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S05-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2004a-S05-Q3.flac"
     },
     {
       "id": "scale:IB4001-S05-Q1",
@@ -88,7 +89,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IB4001-S05-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4001-S05-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IB4001-S05-Q1.flac"
     },
     {
       "id": "scale:IN1005-S075-Q1",
@@ -98,12 +99,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, can you clarify how the initial PLSA topic distribution is used before the link-based iteration starts?",
-      "insertion_seconds": 502.38,
-      "fraction": 0.179496,
+      "insertion_seconds": 509.55,
+      "fraction": 0.182058,
       "equal_type": false,
+      "original_evaluation_seconds": 502.38,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IN1005-S075-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IN1005-S075-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IN1005-S075-Q1.flac"
     },
     {
       "id": "scale:IB4003-S075-Q3",
@@ -113,12 +115,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how many people were we finding offices for again?",
-      "insertion_seconds": 436.54,
-      "fraction": 0.215753,
+      "insertion_seconds": 440.08,
+      "fraction": 0.217502,
       "equal_type": false,
+      "original_evaluation_seconds": 436.54,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S075-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S075-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IB4003-S075-Q3.flac"
     },
     {
       "id": "scale:ES2010b-Smiddle-Q3",
@@ -133,7 +136,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2010b-Smiddle-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2010b-Smiddle-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2010b-Smiddle-Q3.flac"
     },
     {
       "id": "scale:EN2009b-Smiddle-Q2",
@@ -143,12 +146,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what exactly does the ten kilo-hertz sound need to do in the setup to be detected properly?",
-      "insertion_seconds": 1228.22,
-      "fraction": 0.496386,
+      "insertion_seconds": 1233.53,
+      "fraction": 0.498532,
       "equal_type": false,
+      "original_evaluation_seconds": 1228.22,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-Smiddle-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-Smiddle-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2009b-Smiddle-Q2.flac"
     },
     {
       "id": "first:authored-W2-1",
@@ -163,7 +167,7 @@
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--authored-W2-1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W2-1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--authored-W2-1.flac"
     },
     {
       "id": "expansion:TS-looks",
@@ -178,7 +182,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--TS-looks--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--TS-looks--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--TS-looks.flac"
     },
     {
       "id": "expansion:EN-times",
@@ -193,7 +197,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--EN-times--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--EN-times--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--EN-times.flac"
     },
     {
       "id": "expansion:IS-receiver",
@@ -203,12 +207,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what can we change on the TV side?",
-      "insertion_seconds": 1244.2,
-      "fraction": 0.531482,
+      "insertion_seconds": 1244.44,
+      "fraction": 0.531585,
       "equal_type": false,
+      "original_evaluation_seconds": 1244.2,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--IS-receiver--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--IS-receiver--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--IS-receiver.flac"
     },
     {
       "id": "expansion:ES-colour",
@@ -218,12 +223,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did we ever settle on the company colour?",
-      "insertion_seconds": 1208.95,
-      "fraction": 0.530009,
+      "insertion_seconds": 1211.67,
+      "fraction": 0.531201,
       "equal_type": false,
+      "original_evaluation_seconds": 1208.95,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--ES-colour--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--ES-colour--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--ES-colour.flac"
     },
     {
       "id": "expansion:TS-target",
@@ -238,7 +244,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--TS-target--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--TS-target--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--TS-target.flac"
     },
     {
       "id": "first:authored-W3-1",
@@ -253,7 +259,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--authored-W3-1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W3-1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--authored-W3-1.flac"
     },
     {
       "id": "scale:IN1005-directory-evaluation",
@@ -268,7 +274,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IN1005-directory-evaluation--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IN1005-directory-evaluation--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IN1005-directory-evaluation.flac"
     },
     {
       "id": "first:authored-W3-2",
@@ -283,7 +289,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--authored-W3-2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W3-2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--authored-W3-2.flac"
     },
     {
       "id": "scale:ES2003c-Slater-Q2",
@@ -293,12 +299,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, if we use a double curved design, how does that impact the battery placement and internal space?",
-      "insertion_seconds": 1798.74,
-      "fraction": 0.799085,
+      "insertion_seconds": 1799.22,
+      "fraction": 0.799298,
       "equal_type": false,
+      "original_evaluation_seconds": 1798.74,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-Slater-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-Slater-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2003c-Slater-Q2.flac"
     },
     {
       "id": "scale:TS3005b-Slater-Q3",
@@ -308,12 +315,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did we confirm whether the LCD screen can be made with large buttons for elderly users? That was part of the user needs.",
-      "insertion_seconds": 1954.13,
-      "fraction": 0.800901,
+      "insertion_seconds": 1966.67,
+      "fraction": 0.80604,
       "equal_type": false,
+      "original_evaluation_seconds": 1954.13,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3005b-Slater-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3005b-Slater-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3005b-Slater-Q3.flac"
     },
     {
       "id": "scale:ES2006a-Slater-Q1",
@@ -328,7 +336,7 @@
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2006a-Slater-Q1.flac"
     },
     {
       "id": "scale:EN2001b-Slater-Q2",
@@ -338,12 +346,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what was the plan for storing the information-density values alongside the segments?",
-      "insertion_seconds": 2769.16,
-      "fraction": 0.802203,
+      "insertion_seconds": 2793.63,
+      "fraction": 0.809291,
       "equal_type": false,
+      "original_evaluation_seconds": 2769.16,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2001b-Slater-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2001b-Slater-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2001b-Slater-Q2.flac"
     },
     {
       "id": "scale:ES2008b-Slater-Q1",
@@ -358,7 +367,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Slater-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Slater-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2008b-Slater-Q1.flac"
     },
     {
       "id": "scale:ES2005b-Slater-Q3",
@@ -368,12 +377,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, can you clarify what data we have on whether people actually use voice commands on remotes, since that affects our design choices?",
-      "insertion_seconds": 1859.39,
-      "fraction": 0.805628,
+      "insertion_seconds": 1860.7,
+      "fraction": 0.806196,
       "equal_type": false,
+      "original_evaluation_seconds": 1859.39,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2005b-Slater-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2005b-Slater-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2005b-Slater-Q3.flac"
     },
     {
       "id": "pilot:P-EN-handoff",
@@ -383,12 +393,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, when did the person putting our sections together expect to have the search interface ready?",
-      "insertion_seconds": 1385.22,
-      "fraction": 0.775199,
+      "insertion_seconds": 1385.42,
+      "fraction": 0.775311,
       "equal_type": false,
+      "original_evaluation_seconds": 1385.22,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-handoff--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-handoff--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-handoff.flac"
     },
     {
       "id": "scale:ES2007a-Slater-Q3",
@@ -398,12 +409,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, was it agreed that the remote should control only TV or also connected devices like DVD players?",
-      "insertion_seconds": 997.74,
-      "fraction": 0.81715,
+      "insertion_seconds": 998.58,
+      "fraction": 0.817838,
       "equal_type": false,
+      "original_evaluation_seconds": 997.74,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-Slater-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-Slater-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2007a-Slater-Q3.flac"
     },
     {
       "id": "pilot:P-IS-budget",
@@ -413,12 +425,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what cost limit were we worried the voice features might exceed?",
-      "insertion_seconds": 1855.31,
-      "fraction": 0.792529,
+      "insertion_seconds": 1855.33,
+      "fraction": 0.792537,
       "equal_type": false,
+      "original_evaluation_seconds": 1855.31,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-budget--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-budget--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-budget.flac"
     },
     {
       "id": "scale:TS3004d-Slater-Q1",
@@ -428,12 +441,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what was the final decision on the slide panel's backlighting after the discussion?",
-      "insertion_seconds": 2189.66,
-      "fraction": 0.79769,
+      "insertion_seconds": 2189.81,
+      "fraction": 0.797745,
       "equal_type": false,
+      "original_evaluation_seconds": 2189.66,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3004d-Slater-Q1.flac"
     },
     {
       "id": "pilot:P-ES-power",
@@ -443,12 +457,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what extra hardware would voice recognition need?",
-      "insertion_seconds": 1823.87,
-      "fraction": 0.799592,
+      "insertion_seconds": 1824.03,
+      "fraction": 0.799662,
       "equal_type": false,
+      "original_evaluation_seconds": 1823.87,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-power--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-power--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-power.flac"
     },
     {
       "id": "scale:ES2006a-Slater-Q2",
@@ -463,7 +478,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2006a-Slater-Q2.flac"
     },
     {
       "id": "scale:IB4001-Slater-Q2",
@@ -478,7 +493,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IB4001-Slater-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4001-Slater-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IB4001-Slater-Q2.flac"
     },
     {
       "id": "pilot:P-IS-components",
@@ -488,12 +503,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, were those components a final choice or just a preference?",
-      "insertion_seconds": 1855.31,
-      "fraction": 0.792529,
+      "insertion_seconds": 1855.33,
+      "fraction": 0.792537,
       "equal_type": false,
+      "original_evaluation_seconds": 1855.31,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-components--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-components--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-components.flac"
     },
     {
       "id": "scale:TS3004d-Slater-Q2",
@@ -503,12 +519,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how did we settle on the number for the 'fancy look-and-feel' criterion?",
-      "insertion_seconds": 2189.66,
-      "fraction": 0.79769,
+      "insertion_seconds": 2189.81,
+      "fraction": 0.797745,
       "equal_type": false,
+      "original_evaluation_seconds": 2189.66,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3004d-Slater-Q2.flac"
     },
     {
       "id": "expansion:EN-results",
@@ -523,7 +540,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--EN-results--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--EN-results--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--EN-results.flac"
     },
     {
       "id": "expansion:ES-devices",
@@ -533,12 +550,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, was this meant to work with DVD players too?",
-      "insertion_seconds": 1873.33,
-      "fraction": 0.821276,
+      "insertion_seconds": 1874.41,
+      "fraction": 0.821749,
       "equal_type": false,
+      "original_evaluation_seconds": 1873.33,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--ES-devices--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--ES-devices--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--ES-devices.flac"
     },
     {
       "id": "expansion:DH-growth",
@@ -554,7 +572,7 @@
       "original_evaluation_seconds": 1630.99,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--DH-growth--question.wav",
-      "context_audio": "../research/question-dataset/audio/expansion--DH-growth--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--DH-growth.flac"
     },
     {
       "id": "expansion:DH-basis",
@@ -570,7 +588,7 @@
       "original_evaluation_seconds": 2342.13,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--DH-basis--question.wav",
-      "context_audio": "../research/question-dataset/audio/expansion--DH-basis--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--DH-basis.flac"
     },
     {
       "id": "expansion:MO-performance",
@@ -586,7 +604,7 @@
       "original_evaluation_seconds": 1976.85,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--MO-performance--question.wav",
-      "context_audio": "../research/question-dataset/audio/expansion--MO-performance--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--MO-performance.flac"
     },
     {
       "id": "expansion:MO-selection",
@@ -602,7 +620,7 @@
       "original_evaluation_seconds": 2823.71,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--MO-selection--question.wav",
-      "context_audio": "../research/question-dataset/audio/expansion--MO-selection--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--MO-selection.flac"
     },
     {
       "id": "pilot:P-MO-comparison",
@@ -618,7 +636,7 @@
       "original_evaluation_seconds": 303.18,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-MO-comparison--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-MO-comparison.flac"
     },
     {
       "id": "pilot:P-MO-pricing",
@@ -634,7 +652,7 @@
       "original_evaluation_seconds": 448.61,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-pricing--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-MO-pricing--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-MO-pricing.flac"
     },
     {
       "id": "pilot:P-MO-completion",
@@ -650,7 +668,7 @@
       "original_evaluation_seconds": 599.89,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-completion--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-MO-completion--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-MO-completion.flac"
     },
     {
       "id": "pilot:P-DH-documents",
@@ -666,7 +684,7 @@
       "original_evaluation_seconds": 296.84999999999997,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-documents--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-DH-documents--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-DH-documents.flac"
     },
     {
       "id": "pilot:P-DH-replay",
@@ -682,7 +700,7 @@
       "original_evaluation_seconds": 596.0699999999999,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-replay--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-DH-replay--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-DH-replay.flac"
     },
     {
       "id": "pilot:P-DH-cepheid",
@@ -698,7 +716,7 @@
       "original_evaluation_seconds": 2126.22,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-cepheid--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-DH-cepheid--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-DH-cepheid.flac"
     },
     {
       "id": "pilot:P-DH-idt",
@@ -714,7 +732,7 @@
       "original_evaluation_seconds": 446.81,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-idt--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--P-DH-idt--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-DH-idt.flac"
     },
     {
       "id": "pilot:Q-MO-weather",
@@ -730,7 +748,7 @@
       "original_evaluation_seconds": 303.18,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-MO-weather--question.wav",
-      "context_audio": "../research/question-dataset/audio/pilot--Q-MO-weather--turn-end.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--Q-MO-weather.flac"
     },
     {
       "id": "conec-C01",
@@ -740,10 +758,9 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what are we adding in Vietnam beyond the cut-and-sew work we already do there?",
-      "insertion_seconds": 1741.62,
-      "fraction": 0.708291,
+      "insertion_seconds": 1741.625,
+      "fraction": 0.708293,
       "equal_type": false,
-      "original_evaluation_seconds": 1741.625,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/conec-C01.wav",
       "speech_check_note": "All three transcripts recover the question. They spell the final syllable in “cut-and-sew” as its homophone “so.” The selected F5 input uses “cut and so” to elicit the pronunciation of “sew.”",
@@ -789,8 +806,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, if the court route is closed, what’s the remaining fix, and what would it change for pipe replacements?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": false,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -821,8 +838,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Amex offer customers who still needed help after the short payment holidays?",
-      "insertion_seconds": 1035.16,
-      "fraction": 0.510299,
+      "insertion_seconds": 1090.0,
+      "fraction": 0.537333,
       "equal_type": false,
       "original_evaluation_seconds": 1014.46,
       "request_audio_status": "Requester voice with matched background",
@@ -871,8 +888,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, why did Spire think it could keep moving on infrastructure work through the pandemic?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": false,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -887,8 +904,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what is Spire trying to show about the pipe it already replaced?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": false,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -903,8 +920,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what does the Missouri commission still have to decide in July, and what could that mean for customers?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": true,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -919,10 +936,9 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, when did Ken say the high-tax exception could start helping Culp?",
-      "insertion_seconds": 1741.62,
-      "fraction": 0.708291,
+      "insertion_seconds": 1741.625,
+      "fraction": 0.708293,
       "equal_type": false,
-      "original_evaluation_seconds": 1741.625,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/conec-T02.1.wav",
       "speech_check_note": "Parakeet recovered the complete question, including Ken and Culp. An independent CTC recognizer also recovered the final company name. Both Whisper models disagreed on the ending. Company pronunciation remains flagged.",
@@ -987,8 +1003,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how much of the increase in Spire’s spending plan was for the utilities?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": false,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -1003,8 +1019,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did Spire say the House and Senate bills would change its pipe replacement rules in different ways?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": false,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -1019,8 +1035,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, in Doug’s Italy example, what share were using Amex for an online purchase for the first time?",
-      "insertion_seconds": 1035.16,
-      "fraction": 0.510299,
+      "insertion_seconds": 1090.0,
+      "fraction": 0.537333,
       "equal_type": false,
       "original_evaluation_seconds": 1014.46,
       "request_audio_status": "Requester voice with matched background",
@@ -1035,10 +1051,9 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what was Culp’s effective tax rate for the year to date?",
-      "insertion_seconds": 1741.62,
-      "fraction": 0.708291,
+      "insertion_seconds": 1741.625,
+      "fraction": 0.708293,
       "equal_type": false,
-      "original_evaluation_seconds": 1741.625,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/conec-R01.1.wav",
       "context_audio": "../research/question-dataset/audio/participants/conec-R01.1--conversation.flac"
@@ -1051,10 +1066,9 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Ken say was keeping Culp’s tax rate so high for the rest of the year?",
-      "insertion_seconds": 1741.62,
-      "fraction": 0.708291,
+      "insertion_seconds": 1741.625,
+      "fraction": 0.708293,
       "equal_type": false,
-      "original_evaluation_seconds": 1741.625,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/conec-R02.1.wav",
       "context_audio": "../research/question-dataset/audio/participants/conec-R02.1--conversation.flac"
@@ -1099,8 +1113,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, which part goes to the commission and which part still needs the House and Senate to agree?",
-      "insertion_seconds": 2268.51,
-      "fraction": 0.692578,
+      "insertion_seconds": 2268.67,
+      "fraction": 0.692627,
       "equal_type": false,
       "original_evaluation_seconds": 2268.505,
       "request_audio_status": "Requester voice with matched background",
@@ -1115,8 +1129,8 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Doug say was helping Amex’s credit quality even with all those jobless claims?",
-      "insertion_seconds": 1035.16,
-      "fraction": 0.510299,
+      "insertion_seconds": 1090.0,
+      "fraction": 0.537333,
       "equal_type": false,
       "original_evaluation_seconds": 1014.46,
       "request_audio_status": "Requester voice with matched background",
@@ -1135,7 +1149,8 @@
       "fraction": 0.253904,
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/ES2012a-S1.wav"
+      "request_audio": "../research/question-dataset/audio/participants/ES2012a-S1.wav",
+      "context_audio": "../research/question-dataset/audio/turns/ES2012a-S1.flac"
     },
     {
       "id": "ES2012a-S2",
@@ -1149,7 +1164,8 @@
       "fraction": 0.253904,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/ES2012a-S2.wav"
+      "request_audio": "../research/question-dataset/audio/participants/ES2012a-S2.wav",
+      "context_audio": "../research/question-dataset/audio/turns/ES2012a-S2.flac"
     },
     {
       "id": "IS1009c-S1",
@@ -1163,7 +1179,8 @@
       "fraction": 0.217957,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/IS1009c-S1.wav"
+      "request_audio": "../research/question-dataset/audio/participants/IS1009c-S1.wav",
+      "context_audio": "../research/question-dataset/audio/turns/IS1009c-S1.flac"
     },
     {
       "id": "IS1009c-S2",
@@ -1177,7 +1194,8 @@
       "fraction": 0.217957,
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/IS1009c-S2.wav"
+      "request_audio": "../research/question-dataset/audio/participants/IS1009c-S2.wav",
+      "context_audio": "../research/question-dataset/audio/turns/IS1009c-S2.flac"
     },
     {
       "id": "4346818-S1",
@@ -1187,10 +1205,9 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, which business was Andy asking about when he brought up the April order decline?",
-      "insertion_seconds": 2610.19,
-      "fraction": 0.657144,
+      "insertion_seconds": 2606.81,
+      "fraction": 0.656293,
       "equal_type": true,
-      "original_evaluation_seconds": 2606.81,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/4346818-S1.wav",
       "context_audio": "../research/question-dataset/audio/participants/4346818-S1--conversation.flac"
@@ -1203,10 +1220,9 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, how big were the other cost cuts Julian mentioned on top of the synergies?",
-      "insertion_seconds": 2610.19,
-      "fraction": 0.657144,
+      "insertion_seconds": 2606.81,
+      "fraction": 0.656293,
       "equal_type": false,
-      "original_evaluation_seconds": 2606.81,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/4346818-S2.wav",
       "context_audio": "../research/question-dataset/audio/participants/4346818-S2--conversation.flac"
@@ -1219,10 +1235,9 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, what earnings number was David checking that one-time benefit against?",
-      "insertion_seconds": 3059.36,
-      "fraction": 0.813672,
+      "insertion_seconds": 3037.0,
+      "fraction": 0.807725,
       "equal_type": false,
-      "original_evaluation_seconds": 3037.0,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/4359971-S1.wav",
       "context_audio": "../research/question-dataset/audio/participants/4359971-S1--conversation.flac"
@@ -1235,10 +1250,9 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, what did Curtis want to know about the hundred million euros in savings?",
-      "insertion_seconds": 3059.36,
-      "fraction": 0.813672,
+      "insertion_seconds": 3037.0,
+      "fraction": 0.807725,
       "equal_type": true,
-      "original_evaluation_seconds": 3037.0,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-dataset/audio/participants/4359971-S2.wav",
       "context_audio": "../research/question-dataset/audio/participants/4359971-S2--conversation.flac"
@@ -1255,7 +1269,8 @@
       "fraction": 0.233795,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/EN2003a-requester.wav"
+      "request_audio": "../research/question-dataset/audio/EN2003a-requester.wav",
+      "context_audio": "../research/question-dataset/audio/EN2003a-cue-1.flac"
     },
     {
       "id": "ES2006a-cue",
@@ -1269,7 +1284,8 @@
       "fraction": 0.526659,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/ES2006a-cue.wav"
+      "request_audio": "../research/question-dataset/audio/participants/ES2006a-cue.wav",
+      "context_audio": "../research/question-dataset/audio/turns/ES2006a-cue--1.flac"
     },
     {
       "id": "ES2012a-cue",
@@ -1283,7 +1299,8 @@
       "fraction": 0.253904,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/ES2012a-cue.wav"
+      "request_audio": "../research/question-dataset/audio/participants/ES2012a-cue.wav",
+      "context_audio": "../research/question-dataset/audio/turns/ES2012a-cue--1.flac"
     },
     {
       "id": "IS1009c-cue",
@@ -1297,7 +1314,8 @@
       "fraction": 0.217957,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/IS1009c-cue.wav"
+      "request_audio": "../research/question-dataset/audio/participants/IS1009c-cue.wav",
+      "context_audio": "../research/question-dataset/audio/turns/IS1009c-cue--1.flac"
     },
     {
       "id": "4346818-cue",
@@ -1311,7 +1329,8 @@
       "fraction": 0.656293,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/4346818-cue.wav"
+      "request_audio": "../research/question-dataset/audio/participants/4346818-cue.wav",
+      "context_audio": "../research/question-dataset/audio/turns/4346818-cue--1.flac"
     },
     {
       "id": "4359971-cue",
@@ -1325,7 +1344,8 @@
       "fraction": 0.807725,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/4359971-requester.wav"
+      "request_audio": "../research/question-dataset/audio/4359971-requester.wav",
+      "context_audio": "../research/question-dataset/audio/4359971-cue-1.flac"
     },
     {
       "id": "4330115-cue",
@@ -1339,7 +1359,8 @@
       "fraction": 0.794767,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/4330115-cue.wav"
+      "request_audio": "../research/question-dataset/audio/participants/4330115-cue.wav",
+      "context_audio": "../research/question-dataset/audio/turns/4330115-cue--1.flac"
     },
     {
       "id": "4344866-cue",
@@ -1353,7 +1374,8 @@
       "fraction": 0.692577,
       "equal_type": true,
       "request_audio_status": "Requester voice with matched background",
-      "request_audio": "../research/question-dataset/audio/participants/4344866-cue.wav"
+      "request_audio": "../research/question-dataset/audio/participants/4344866-cue.wav",
+      "context_audio": "../research/question-dataset/audio/turns/4344866-cue--1.flac"
     },
     {
       "id": "first:authored-W1-2",
@@ -1368,7 +1390,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--authored-W1-2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W1-2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--authored-W1-2.flac"
     },
     {
       "id": "first:authored-W4-1",
@@ -1383,7 +1405,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--authored-W4-1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W4-1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--authored-W4-1.flac"
     },
     {
       "id": "first:authored-W4-2",
@@ -1398,7 +1420,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--authored-W4-2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W4-2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--authored-W4-2.flac"
     },
     {
       "id": "first:abstract-title-deadlines",
@@ -1413,7 +1435,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/first--abstract-title-deadlines--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/first--abstract-title-deadlines--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/first--abstract-title-deadlines.flac"
     },
     {
       "id": "expansion:EN-xml",
@@ -1428,7 +1450,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--EN-xml--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--EN-xml--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--EN-xml.flac"
     },
     {
       "id": "expansion:ES-teletext",
@@ -1438,12 +1460,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what did the company say about teletext?",
-      "insertion_seconds": 1873.33,
-      "fraction": 0.821276,
+      "insertion_seconds": 1874.41,
+      "fraction": 0.821749,
       "equal_type": false,
+      "original_evaluation_seconds": 1873.33,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--ES-teletext--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--ES-teletext--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--ES-teletext.flac"
     },
     {
       "id": "expansion:IS-lost",
@@ -1458,7 +1481,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--IS-lost--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--IS-lost--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--IS-lost.flac"
     },
     {
       "id": "expansion:IS-voice",
@@ -1473,7 +1496,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/expansion--IS-voice--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/expansion--IS-voice--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/expansion--IS-voice.flac"
     },
     {
       "id": "pilot:P-EN-notes",
@@ -1483,12 +1506,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, who said they'd take the notes today?",
-      "insertion_seconds": 303.62,
-      "fraction": 0.169912,
+      "insertion_seconds": 304.85,
+      "fraction": 0.170601,
       "equal_type": false,
+      "original_evaluation_seconds": 303.62,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-notes--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-notes--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-notes.flac"
     },
     {
       "id": "pilot:P-EN-timeline",
@@ -1498,12 +1522,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, was that timeline updated, or copied from the earlier documents?",
-      "insertion_seconds": 303.62,
-      "fraction": 0.169912,
+      "insertion_seconds": 304.85,
+      "fraction": 0.170601,
       "equal_type": false,
+      "original_evaluation_seconds": 303.62,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-timeline--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-timeline--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-timeline.flac"
     },
     {
       "id": "pilot:P-EN-audio",
@@ -1513,12 +1538,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, why were we dropping the work on the audio files?",
-      "insertion_seconds": 471.33,
-      "fraction": 0.263766,
+      "insertion_seconds": 471.49,
+      "fraction": 0.263856,
       "equal_type": false,
+      "original_evaluation_seconds": 471.33,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-audio--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-audio--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-audio.flac"
     },
     {
       "id": "pilot:P-EN-report",
@@ -1528,12 +1554,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, where were we going to explain the work we dropped?",
-      "insertion_seconds": 471.33,
-      "fraction": 0.263766,
+      "insertion_seconds": 471.49,
+      "fraction": 0.263856,
       "equal_type": false,
+      "original_evaluation_seconds": 471.33,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-report--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-report--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-report.flac"
     },
     {
       "id": "pilot:P-EN-segmentation",
@@ -1543,12 +1570,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how far had we got with topic segmentation?",
-      "insertion_seconds": 599.29,
-      "fraction": 0.335376,
+      "insertion_seconds": 611.86,
+      "fraction": 0.34241,
       "equal_type": false,
+      "original_evaluation_seconds": 599.29,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-segmentation--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-segmentation--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-segmentation.flac"
     },
     {
       "id": "pilot:P-EN-order",
@@ -1558,12 +1586,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how did we think the search results should be ordered?",
-      "insertion_seconds": 1385.22,
-      "fraction": 0.775199,
+      "insertion_seconds": 1385.42,
+      "fraction": 0.775311,
       "equal_type": false,
+      "original_evaluation_seconds": 1385.22,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-order--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-order--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-order.flac"
     },
     {
       "id": "pilot:P-EN-same-person",
@@ -1573,12 +1602,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, was the person taking notes also going to put our sections together?",
-      "insertion_seconds": 471.33,
-      "fraction": 0.263766,
+      "insertion_seconds": 471.49,
+      "fraction": 0.263856,
       "equal_type": false,
+      "original_evaluation_seconds": 471.33,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-same-person--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-same-person--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-EN-same-person.flac"
     },
     {
       "id": "pilot:P-ES-minutes",
@@ -1588,12 +1618,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, where were the notes from the last meeting again?",
-      "insertion_seconds": 308.77,
-      "fraction": 0.135366,
+      "insertion_seconds": 318.69,
+      "fraction": 0.139715,
       "equal_type": false,
+      "original_evaluation_seconds": 308.77,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-minutes--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-minutes--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-minutes.flac"
     },
     {
       "id": "pilot:P-ES-slogan",
@@ -1603,12 +1634,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, did they want the actual slogan on the remote, or just the idea behind it?",
-      "insertion_seconds": 308.77,
-      "fraction": 0.135366,
+      "insertion_seconds": 318.69,
+      "fraction": 0.139715,
       "equal_type": false,
+      "original_evaluation_seconds": 308.77,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-slogan--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-slogan--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-slogan.flac"
     },
     {
       "id": "pilot:P-ES-complexity",
@@ -1618,12 +1650,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what was the reason for keeping it so simple?",
-      "insertion_seconds": 308.77,
-      "fraction": 0.135366,
+      "insertion_seconds": 318.69,
+      "fraction": 0.139715,
       "equal_type": false,
+      "original_evaluation_seconds": 308.77,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-complexity--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-complexity--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-complexity.flac"
     },
     {
       "id": "pilot:P-ES-hidden",
@@ -1633,12 +1666,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how were those extra controls going to be kept out of the way?",
-      "insertion_seconds": 460.02,
-      "fraction": 0.201675,
+      "insertion_seconds": 460.06,
+      "fraction": 0.201692,
       "equal_type": false,
+      "original_evaluation_seconds": 460.02,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-hidden--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-hidden--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-hidden.flac"
     },
     {
       "id": "pilot:P-ES-numbers",
@@ -1648,12 +1682,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, were the channel number buttons optional, or did we say they were essential?",
-      "insertion_seconds": 556.02,
-      "fraction": 0.243762,
+      "insertion_seconds": 577.98,
+      "fraction": 0.253389,
       "equal_type": false,
+      "original_evaluation_seconds": 556.02,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-numbers--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-numbers--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-numbers.flac"
     },
     {
       "id": "pilot:P-ES-voice-open",
@@ -1663,12 +1698,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, did we commit to the feature adults said they'd pay extra for, or were we still keeping our options open?",
-      "insertion_seconds": 1823.87,
-      "fraction": 0.799592,
+      "insertion_seconds": 1824.03,
+      "fraction": 0.799662,
       "equal_type": false,
+      "original_evaluation_seconds": 1823.87,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-voice-open--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-voice-open--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-ES-voice-open.flac"
     },
     {
       "id": "pilot:P-IS-notes",
@@ -1678,12 +1714,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, were the notes from our last meeting sent out yet?",
-      "insertion_seconds": 328.15,
-      "fraction": 0.140175,
+      "insertion_seconds": 344.87,
+      "fraction": 0.147317,
       "equal_type": false,
+      "original_evaluation_seconds": 328.15,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-notes--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-notes--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-notes.flac"
     },
     {
       "id": "pilot:P-IS-sample",
@@ -1693,12 +1730,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how many people were in that research group?",
-      "insertion_seconds": 600.64,
-      "fraction": 0.256574,
+      "insertion_seconds": 600.83,
+      "fraction": 0.256655,
       "equal_type": false,
+      "original_evaluation_seconds": 600.64,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-sample--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-sample--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-sample.flac"
     },
     {
       "id": "pilot:P-IS-frequency",
@@ -1708,12 +1746,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how often were people changing channels in that research?",
-      "insertion_seconds": 600.64,
-      "fraction": 0.256574,
+      "insertion_seconds": 600.83,
+      "fraction": 0.256655,
       "equal_type": false,
+      "original_evaluation_seconds": 600.64,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-frequency--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-frequency--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-frequency.flac"
     },
     {
       "id": "pilot:P-IS-learning",
@@ -1723,12 +1762,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what proportion said a new remote took too long to learn?",
-      "insertion_seconds": 600.64,
-      "fraction": 0.256574,
+      "insertion_seconds": 600.83,
+      "fraction": 0.256655,
       "equal_type": false,
+      "original_evaluation_seconds": 600.64,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-learning--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-learning--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-learning.flac"
     },
     {
       "id": "pilot:P-IS-teletext-usage",
@@ -1738,12 +1778,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how much were people using the function the account manager was questioning whether to include?",
-      "insertion_seconds": 1855.31,
-      "fraction": 0.792529,
+      "insertion_seconds": 1855.33,
+      "fraction": 0.792537,
       "equal_type": false,
+      "original_evaluation_seconds": 1855.31,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-teletext-usage--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-teletext-usage--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-teletext-usage.flac"
     },
     {
       "id": "pilot:P-TS-time",
@@ -1753,12 +1794,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how long were we allowing for each presentation?",
-      "insertion_seconds": 302.37,
-      "fraction": 0.1368,
+      "insertion_seconds": 306.94,
+      "fraction": 0.138868,
       "equal_type": false,
+      "original_evaluation_seconds": 302.37,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-time--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-time--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-time.flac"
     },
     {
       "id": "pilot:P-TS-sample",
@@ -1768,12 +1810,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how many people took part in that usability research?",
-      "insertion_seconds": 302.37,
-      "fraction": 0.1368,
+      "insertion_seconds": 306.94,
+      "fraction": 0.138868,
       "equal_type": false,
+      "original_evaluation_seconds": 302.37,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-sample--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-sample--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-sample.flac"
     },
     {
       "id": "pilot:P-TS-buttons",
@@ -1783,12 +1826,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how many people said they only used a small fraction of the buttons?",
-      "insertion_seconds": 451.9,
-      "fraction": 0.204451,
+      "insertion_seconds": 452.1,
+      "fraction": 0.204542,
       "equal_type": false,
+      "original_evaluation_seconds": 451.9,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-buttons--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-buttons--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-buttons.flac"
     },
     {
       "id": "pilot:P-TS-relevance",
@@ -1798,12 +1842,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, which controls got the highest relevance score?",
-      "insertion_seconds": 451.9,
-      "fraction": 0.204451,
+      "insertion_seconds": 452.1,
+      "fraction": 0.204542,
       "equal_type": false,
+      "original_evaluation_seconds": 451.9,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-relevance--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-relevance--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-relevance.flac"
     },
     {
       "id": "pilot:P-TS-dock",
@@ -1813,12 +1858,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what share of the people surveyed had the problem that the proposed docking station would help with?",
-      "insertion_seconds": 583.52,
-      "fraction": 0.264,
+      "insertion_seconds": 633.16,
+      "fraction": 0.286458,
       "equal_type": false,
+      "original_evaluation_seconds": 583.52,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-dock.flac"
     },
     {
       "id": "pilot:P-TS-learning",
@@ -1828,12 +1874,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what percentage found a new remote hard to learn?",
-      "insertion_seconds": 583.52,
-      "fraction": 0.264,
+      "insertion_seconds": 633.16,
+      "fraction": 0.286458,
       "equal_type": false,
+      "original_evaluation_seconds": 583.52,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-learning--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-learning--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-learning.flac"
     },
     {
       "id": "pilot:P-TS-target-change",
@@ -1843,12 +1890,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how did the target audience change from the marketing presentation to the new requirements?",
-      "insertion_seconds": 1721.99,
-      "fraction": 0.779073,
+      "insertion_seconds": 1722.23,
+      "fraction": 0.779182,
       "equal_type": false,
+      "original_evaluation_seconds": 1721.99,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-target-change--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-target-change--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-target-change.flac"
     },
     {
       "id": "pilot:P-TS-teletext",
@@ -1858,12 +1906,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, were we definitely leaving teletext out, or had that changed?",
-      "insertion_seconds": 1721.99,
-      "fraction": 0.779073,
+      "insertion_seconds": 1722.23,
+      "fraction": 0.779182,
       "equal_type": false,
+      "original_evaluation_seconds": 1721.99,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-teletext--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-teletext--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-teletext.flac"
     },
     {
       "id": "pilot:P-IS-target-unknown",
@@ -1873,12 +1922,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, did we agree on the target group for the remote control?",
-      "insertion_seconds": 441.94,
-      "fraction": 0.188783,
+      "insertion_seconds": 450.31,
+      "fraction": 0.192358,
       "equal_type": false,
+      "original_evaluation_seconds": 441.94,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-target-unknown--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-target-unknown--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-IS-target-unknown.flac"
     },
     {
       "id": "pilot:P-TS-dock-mechanism",
@@ -1888,12 +1938,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, how would the docking station help if the remote gets lost?",
-      "insertion_seconds": 583.52,
-      "fraction": 0.264,
+      "insertion_seconds": 633.16,
+      "fraction": 0.286458,
       "equal_type": false,
+      "original_evaluation_seconds": 583.52,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock-mechanism--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock-mechanism--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--P-TS-dock-mechanism.flac"
     },
     {
       "id": "pilot:Q-IS-teletext-comparison",
@@ -1903,12 +1954,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what did Anna's research say about teletext usage compared to the account manager's concern about it being used less?",
-      "insertion_seconds": 1855.31,
-      "fraction": 0.792529,
+      "insertion_seconds": 1855.33,
+      "fraction": 0.792537,
       "equal_type": false,
+      "original_evaluation_seconds": 1855.31,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-IS-teletext-comparison--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--Q-IS-teletext-comparison--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--Q-IS-teletext-comparison.flac"
     },
     {
       "id": "pilot:Q-EN-compiler",
@@ -1918,12 +1970,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, who said they could put everyone's parts together?",
-      "insertion_seconds": 471.33,
-      "fraction": 0.263766,
+      "insertion_seconds": 471.49,
+      "fraction": 0.263856,
       "equal_type": false,
+      "original_evaluation_seconds": 471.33,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-EN-compiler--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--Q-EN-compiler--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--Q-EN-compiler.flac"
     },
     {
       "id": "pilot:Q-TS-current-audience",
@@ -1933,12 +1986,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, which age group did the new requirements specify?",
-      "insertion_seconds": 1721.99,
-      "fraction": 0.779073,
+      "insertion_seconds": 1722.23,
+      "fraction": 0.779182,
       "equal_type": false,
+      "original_evaluation_seconds": 1721.99,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-TS-current-audience--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/pilot--Q-TS-current-audience--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/pilot--Q-TS-current-audience.flac"
     },
     {
       "id": "scale:EN2004a-S075-Q2",
@@ -1953,7 +2007,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S075-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S075-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2004a-S075-Q2.flac"
     },
     {
       "id": "scale:EN2004a-Smiddle-Q2",
@@ -1963,12 +2017,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what kinds of restarts were we supposed to mark with a hyphen?",
-      "insertion_seconds": 1697.61,
-      "fraction": 0.492672,
+      "insertion_seconds": 1727.55,
+      "fraction": 0.501362,
       "equal_type": false,
+      "original_evaluation_seconds": 1697.61,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-Smiddle-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-Smiddle-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2004a-Smiddle-Q2.flac"
     },
     {
       "id": "scale:EN2009b-S10-Q3",
@@ -1978,12 +2033,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, is Nynke available to help with the pilot test when she returns tomorrow?",
-      "insertion_seconds": 732.14,
-      "fraction": 0.295895,
+      "insertion_seconds": 732.24,
+      "fraction": 0.295935,
       "equal_type": false,
+      "original_evaluation_seconds": 732.14,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-S10-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-S10-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2009b-S10-Q3.flac"
     },
     {
       "id": "scale:IB4003-S10-Q3",
@@ -1993,12 +2049,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, had we picked a room for the reading lounge?",
-      "insertion_seconds": 656.27,
-      "fraction": 0.32435,
+      "insertion_seconds": 656.31,
+      "fraction": 0.32437,
       "equal_type": false,
+      "original_evaluation_seconds": 656.27,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S10-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S10-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IB4003-S10-Q3.flac"
     },
     {
       "id": "scale:IB4003-Smiddle-Q3",
@@ -2008,12 +2065,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, since I need my own desk and drawers, can we confirm that no one will be sharing a desk, even in a two-person room?",
-      "insertion_seconds": 1078.12,
-      "fraction": 0.532843,
+      "insertion_seconds": 1124.1,
+      "fraction": 0.555568,
       "equal_type": false,
+      "original_evaluation_seconds": 1078.12,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--IB4003-Smiddle-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4003-Smiddle-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--IB4003-Smiddle-Q3.flac"
     },
     {
       "id": "scale:ES2003c-S075-Q3",
@@ -2028,7 +2086,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S075-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S075-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2003c-S075-Q3.flac"
     },
     {
       "id": "scale:ES2003c-S10-Q1",
@@ -2043,7 +2101,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S10-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S10-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2003c-S10-Q1.flac"
     },
     {
       "id": "scale:TS3004d-S075-Q1",
@@ -2058,7 +2116,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-S075-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-S075-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3004d-S075-Q1.flac"
     },
     {
       "id": "scale:TS3004d-Smiddle-Q3",
@@ -2073,7 +2131,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Smiddle-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Smiddle-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3004d-Smiddle-Q3.flac"
     },
     {
       "id": "scale:ES2004d-infrared-location",
@@ -2083,12 +2141,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, where were we planning to put the infrared sender?",
-      "insertion_seconds": 450.92,
-      "fraction": 0.203117,
+      "insertion_seconds": 451.6,
+      "fraction": 0.203423,
       "equal_type": false,
+      "original_evaluation_seconds": 450.92,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2004d-infrared-location--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2004d-infrared-location--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2004d-infrared-location.flac"
     },
     {
       "id": "scale:TS3006c-S10-Q1",
@@ -2098,12 +2157,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what priority ratio did marketing give for fancy look-and-feel, innovation and ease of use?",
-      "insertion_seconds": 606.19,
-      "fraction": 0.234572,
+      "insertion_seconds": 611.07,
+      "fraction": 0.236461,
       "equal_type": false,
+      "original_evaluation_seconds": 606.19,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S10-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S10-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3006c-S10-Q1.flac"
     },
     {
       "id": "scale:TS3006c-Smiddle-Q2",
@@ -2118,7 +2178,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-Smiddle-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-Smiddle-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--TS3006c-Smiddle-Q2.flac"
     },
     {
       "id": "scale:ES2006a-S075-Q3",
@@ -2128,12 +2188,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, can we confirm when the detailed design phase begins relative to the others?",
-      "insertion_seconds": 452.23,
-      "fraction": 0.350566,
+      "insertion_seconds": 452.91,
+      "fraction": 0.351093,
       "equal_type": false,
+      "original_evaluation_seconds": 452.23,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-S075-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-S075-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2006a-S075-Q3.flac"
     },
     {
       "id": "scale:EN2006b-S075-Q1",
@@ -2143,12 +2204,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what was the earlier agreement about underlining the HTML goo in the annotation rules?",
-      "insertion_seconds": 440.13,
-      "fraction": 0.144198,
+      "insertion_seconds": 440.34,
+      "fraction": 0.144267,
       "equal_type": false,
+      "original_evaluation_seconds": 440.13,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2006b-S075-Q1.flac"
     },
     {
       "id": "scale:EN2006b-S075-Q2",
@@ -2158,12 +2220,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what did we say about annotating absorption line systems?",
-      "insertion_seconds": 440.13,
-      "fraction": 0.144198,
+      "insertion_seconds": 440.34,
+      "fraction": 0.144267,
       "equal_type": false,
+      "original_evaluation_seconds": 440.13,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q2--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q2--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--EN2006b-S075-Q2.flac"
     },
     {
       "id": "scale:ES2007a-S075-Q3",
@@ -2178,7 +2241,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-S075-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-S075-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2007a-S075-Q3.flac"
     },
     {
       "id": "scale:ES2008b-Smiddle-Q3",
@@ -2188,12 +2251,13 @@
       "split": "",
       "kind": "Semantic",
       "question": "Assistant, what exactly did the usability lab find about the frequency of channel changing during an hour of use?",
-      "insertion_seconds": 1007.48,
-      "fraction": 0.479524,
+      "insertion_seconds": 1010.55,
+      "fraction": 0.480985,
       "equal_type": false,
+      "original_evaluation_seconds": 1007.48,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Smiddle-Q3--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Smiddle-Q3--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2008b-Smiddle-Q3.flac"
     },
     {
       "id": "scale:ES2009a-S10-Q1",
@@ -2208,7 +2272,7 @@
       "equal_type": false,
       "request_audio_status": "Requester voice with matched background",
       "request_audio": "../research/question-acoustic-bank/audio/scale--ES2009a-S10-Q1--question.wav",
-      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2009a-S10-Q1--injected.wav"
+      "context_audio": "../research/question-dataset/audio/turns/scale--ES2009a-S10-Q1.flac"
     },
     {
       "id": "natural-AMI-ES2006a-laughter",
@@ -2248,9 +2312,9 @@
       "tracks": [
         {
           "label": "Conversation and inserted question",
-          "file": "../research/question-acoustic-bank/audio/first--authored-W2-1--injected.wav",
-          "duration": 30.0426875,
-          "request_at": 19.91
+          "file": "../research/question-dataset/audio/turns/first--authored-W2-1.flac",
+          "duration": 27.3226875,
+          "request_at": 20.19
         }
       ],
       "answers": [
@@ -2264,16 +2328,15 @@
       "tracks": [
         {
           "label": "Conversation and question",
-          "file": "../research/question-dataset/audio/pilot--P-MO-comparison--turn-end.wav",
-          "duration": 26.4386875,
-          "request_at": 19.37
+          "file": "../research/question-dataset/audio/turns/pilot--P-MO-comparison.flac",
+          "duration": 26.8586875,
+          "request_at": 19.79
         }
       ],
       "answers": [
         "January comparable-store sales were down 4 percent, compared with a 0.9 percent decline for the third quarter overall."
       ],
-      "question_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--question.wav",
-      "turn_end": "of us executing well against the areas within our control."
+      "question_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--question.wav"
     },
     {
       "id": "EN2003a-cue",
@@ -2282,14 +2345,14 @@
         {
           "label": "Version 1",
           "file": "../research/question-dataset/audio/EN2003a-cue-1.flac",
-          "duration": 21.143,
-          "request_at": 14.89
+          "duration": 24.603,
+          "request_at": 18.35
         },
         {
           "label": "Version 2",
           "file": "../research/question-dataset/audio/EN2003a-cue-2.flac",
-          "duration": 21.143,
-          "request_at": 14.89
+          "duration": 24.603,
+          "request_at": 18.35
         }
       ],
       "answers": [
@@ -2307,14 +2370,14 @@
         {
           "label": "Version 1",
           "file": "../research/question-dataset/audio/4359971-cue-1.flac",
-          "duration": 58.367375,
-          "request_at": 50.49
+          "duration": 61.807375,
+          "request_at": 53.93
         },
         {
           "label": "Version 2",
           "file": "../research/question-dataset/audio/4359971-cue-2.flac",
-          "duration": 58.367375,
-          "request_at": 50.49
+          "duration": 61.807375,
+          "request_at": 53.93
         }
       ],
       "answers": [
@@ -2332,8 +2395,8 @@
         {
           "label": "Two original excerpts and the spoken question",
           "file": "../research/question-dataset/audio/natural-AMI-ES2006a-laughter.flac",
-          "duration": 28.677375,
-          "request_at": 21.98
+          "duration": 28.537375,
+          "request_at": 21.84
         }
       ],
       "answers": [
@@ -2347,8 +2410,8 @@
         {
           "label": "Two original excerpts and the spoken question",
           "file": "../research/question-dataset/audio/natural-ConEC-4374910-laughter.flac",
-          "duration": 29.632,
-          "request_at": 21.48
+          "duration": 57.432,
+          "request_at": 49.28
         }
       ],
       "answers": [

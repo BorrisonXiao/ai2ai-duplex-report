@@ -1,5 +1,7 @@
 # AI2AI Duplex research report
 
+- Review question insertions with source audio and transcripts in the [ConEC appendix](experiments/recording-review.html?corpus=ConEC) and [AMI appendix](experiments/recording-review.html?corpus=AMI).
+
 - [Latest S2 results: answer quality and thinking cost](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/note-functions.html) compares the same 105 questions across text and audio thinkers.
 - [Browse native answers and source evidence](https://borrisonxiao.github.io/ai2ai-duplex-report/experiments/note-functions.html#examples) to inspect individual scores and corrections.
 - [Project TODO](https://borrisonxiao.github.io/ai2ai-duplex-report/todo.html), [experiment progress](https://borrisonxiao.github.io/ai2ai-duplex-report/study-progress.html) and [daily log](https://borrisonxiao.github.io/ai2ai-duplex-report/daily-log.html) track current work.

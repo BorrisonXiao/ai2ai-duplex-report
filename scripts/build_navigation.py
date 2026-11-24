@@ -24,7 +24,7 @@ REVIEW_KEYS = {
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
     'answering-results.html': 'answering', 'structured-notes.html': 'notes', 'full-answering-results.html': 'full-answering',
-    'note-functions.html': 'note-functions', 'cue-notes.html': 'cue-notes', 'question-dataset.html': 'dataset',
+    'note-functions.html': 'note-functions', 'cue-notes.html': 'cue-notes', 'question-dataset.html': 'dataset', 'recording-review.html': 'dataset',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',

@@ -1,10 +1,11 @@
 """One listening library for all retained question intents, preserving old URLs."""
 from html import escape as e
+import question_turn_review_view as turn_view
 import json
 from pathlib import Path
 from build_question_overview import document,clock,p,table
 ROOT=Path(__file__).resolve().parents[1];D=ROOT/'research/question-audio-complete'
-def player(url,label):return '<audio controls preload="none" aria-label="'+e(label)+'"><source src="'+e(url)+'" type="audio/wav"></audio>'
+def player(url,label):return '<audio controls preload="none" aria-label="'+e(label)+'"><source src="'+e(url)+'" type="'+('audio/flac' if '.flac' in url else 'audio/wav')+'"></audio>'
 def main():
  d=json.loads((D/'library.json').read_text());clips=d['clips'];from question_acoustic_bank_view import apply,alternatives,revise_prose
  clips,revision=apply(clips);new=json.loads((D/'audio.json').read_text())['clips'];enroll=sum(c['separate_enrollment_after_question'] for c in new);subset=json.loads((D/'evaluation-subset.json').read_text());frozen={q['question_id'] for q in subset['evaluation_questions']}
@@ -13,14 +14,13 @@ def main():
  body+='<p><strong>Voice enrollment is separate from conversation history.</strong> '+str(enroll)+' new questions use conditioning speech recorded after the insertion time, as authorized for speakers with little earlier speech. Those clips and transcripts never enter the duplex model’s history or background preparation. Cards label these cases. Some comparison utterances also come from later speech and are for listening only. All 20 questions in the frozen six-meeting subset use earlier conditioning speech.</p><p>The recording clock stops during the synthetic question. The player clock continues. A listening excerpt is not evidence that a model can retain the full preceding meeting. The twelve earnings-call previews now wait for a completed sentence and a quiet gap. Each stops after the question to leave the assistant time to answer. <a href="../research/question-dataset/conec-turns.json">Original and revised times</a>.</p><p><a href="../research/question-audio-complete/recipe.json">Frozen synthesis recipe</a> · <a href="../research/question-audio-complete/evaluation-subset.json">Frozen 20-question subset and fact checklists</a> · <a href="../research/question-audio-complete/library.json">Complete audio index</a> · <a href="question-plan.html">Four-stage project TODO</a></p></section>'
  body+='<section class="section" id="checks"><h2>What the automatic checks show</h2>'+p('For the 92 new processed question clips, Parakeet recognizes Assistant as the first word in '+str(sum(c['processed_asr']['cue_first'] for c in new))+'/92. Its full transcript matches the intended question after case, punctuation, number and contraction normalization in '+str(sum(c['processed_asr']['normalized_wer']==0 for c in new))+'/92. Allowing separately recorded acronym, compound and homophone spelling differences gives '+str(sum(c.get('processed_orthographic_match',False) for c in new))+'/92. Remaining differences stay visible in the cards below; they are not silently counted as correct speech.')+'<p>Three names need pronunciation review: Cytiva, Nynke, and the Marios/Petr pair. A recognizer may spell unfamiliar names incorrectly, and TTS may also mispronounce them. These clips are available for review and are not word-accuracy passes. Independent human judgments are still needed for naturalness and voice/acoustic similarity.</p></section>'
  body+='<section class="section" id="listen"><h2>Browse and listen</h2><div class="catalog-filters"><label>Source<select id="audio-source"><option value="all">All sources</option><option>AMI</option><option>Earnings calls</option></select></label><label>Meeting<select id="audio-meeting"><option value="all">All meetings</option>'+''.join('<option>'+e(m)+'</option>' for m in sorted({c['meeting'] for c in clips}))+'</select></label><label>Subset<select id="audio-subset"><option value="all">All questions</option><option value="frozen">Frozen 20-question subset</option><option value="enrollment">Later voice enrollment</option></select></label></div><p id="audio-count" aria-live="polite">105 questions shown</p>'
- turns=json.loads((ROOT/'research/question-dataset/conec-turns.json').read_text())['cases']
+ review=turn_view.read_review()
  for c in clips:
-  repair=turns.get(c['catalog_id'])
-  timestamp=c['source_time_seconds'] if repair is None else repair['source_time_seconds']
-  position=c['synthetic_speech_playback_start_seconds'] if repair is None else repair['request_at']
-  preview=c['base']+c['public_injected'] if repair is None else '../research/question-dataset/'+repair['file']
+  key=c['catalog_id']
+  row=review[key];t=row['tracks'][0]
+  timestamp=row['parts'][-1]['end'];position=t['request_at'];preview='../'+t['file']+'?v='+t['sha256'][:10]
   base=c['base'];later=c['separate_enrollment_after_question'];f=c['catalog_id'] in frozen
-  body+='<article class="catalog-question listen-card" id="'+c['slug']+'" data-source="'+e(c['dataset'])+'" data-meeting="'+c['meeting']+'" data-frozen="'+str(f).lower()+'" data-enrollment="'+str(later).lower()+'"><h3>'+e(c['meeting']+' · requester '+c['requester']+' · '+clock(round(timestamp) if repair else timestamp))+'</h3><p class="question">'+e(c['question'])+'</p>'
+  body+='<article class="catalog-question listen-card" id="'+c['slug']+'" data-source="'+e(c['dataset'])+'" data-meeting="'+c['meeting']+'" data-frozen="'+str(f).lower()+'" data-enrollment="'+str(later).lower()+'"><h3>'+e(c['meeting']+' · requester '+c['requester']+' · '+clock(round(timestamp)))+'</h3><p class="question">'+e(c['question'])+'</p>'
   if 'requires' in c.get('selection_note',''):body+='<p><strong>Pronunciation review needed:</strong> '+e(c['selection_note'])+'</p>'
   score=c.get('speaker_check',{}).get('target_cosine',c.get('processed_speaker_check',{}).get('target_cosine'))
   if score is not None and score<.3:body+='<p><strong>Voice review priority:</strong> low similarity to the separate requester recording. This is a screening flag, not a verified identity error.</p>'
@@ -34,10 +34,7 @@ def main():
   if c.get('whisper_text'):body+='<p><strong>Whisper transcript:</strong> '+e(c['whisper_text'])+'</p>'
   if a.get('normalized_wer',a.get('wer')) is not None:body+=p('Normalized word error rate: '+f"{100*a.get('normalized_wer',a.get('wer')):.1f}%"+'. Case, punctuation, common number forms and contractions are normalized. Compare the displayed transcripts for recognizer disagreements.')
   if c.get('conditioning_reference_start_seconds') is not None:body+=p('TTS conditioning interval: '+clock(c['conditioning_reference_start_seconds'])+'–'+clock(c['conditioning_reference_end_seconds'])+'.')
-  if repair:
-   body+=p('The speaker finishes a sentence, the requester asks the question, and the preview leaves two seconds for a reply. Earlier experiments used the original cutoff at '+clock(repair['original_cutoff'])+'.')
-  else:body+=p('Source recording pauses at '+clock(c['source_time_seconds'])+'; synthetic speech occupies '+f"{c['synthetic_speech_playback_start_seconds']:.2f}–{c['synthetic_speech_playback_end_seconds']:.2f} seconds"+' in this player. Source speech before and after the insertion is unchanged.')
-  if not repair and c.get('pause_adjustment_seconds'):body+=p('The insertion moves '+f"{c['pause_adjustment_seconds']:.2f} s"+' after the original transcript cutoff to avoid splitting a spoken word.')
+  body+='<p><a href="'+e(turn_view.link(key))+'">Review the source transcript and insertion</a></p>'
   body+='</details></article>'
  body+='</section>'
  if revision:body+=alternatives(revision,player)

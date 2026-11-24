@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from statistics import mean
 
+import question_turn_review_view as turn_view
 from site_navigation import experiment_subtabs, project_tabs
 
 SITE = Path(__file__).resolve().parents[1]
@@ -15,9 +16,9 @@ BY_KIND = {
     'Semantic': ('semantic', 'Questions about what people said',
                  'Each clip plays the conversation around the insertion point, including the synthesized question in the requester’s voice. Earlier turns can also contribute to the reference answer.'),
     'Controlled sound': ('controlled', 'Questions about an edited sound',
-                         'Play either version. Both use the same two excerpts and the same requester’s question. Moving the muffling or chime changes which remarks answer the question. F5-TTS uses earlier speech from each requester. We match their speaking level and mix in background sound from the recording. In both demos we use noise with the same level and frequency profile as the quietest 5% of the earlier recording. For AMI, the first attempt at using recorded room tone produced recognizable words in the background check. The earlier sound-cue experiments used a stock Flite voice.'),
+                         'Play either version. Both use the same two excerpts and the same requester’s question. Moving the muffling or chime changes which remarks answer the question. F5-TTS uses a separate voice sample from each requester. We match their speaking level and mix in background sound from the recording. In both demos we use noise with the same level and frequency profile as the quietest 5% of the earlier recording. For AMI, the first attempt at using recorded room tone produced recognizable words in the background check. The earlier sound-cue experiments used a stock Flite voice.'),
     'Natural laughter': ('natural', 'Questions about laughter in the original recording',
-                         'Each clip plays the two excerpts judged by the listener, followed by the same question in a participant’s voice. AMI uses speaker C and ConEC uses speaker S0. The listener checked the laughter and topic in the original excerpts.'),
+                         'Each listening copy includes the original laughter exchange and ends at a reviewed pause before the participant asks the question. AMI uses speaker C and ConEC uses speaker S0. The listener checked the laughter and topic in the original excerpts.'),
 }
 
 
@@ -53,11 +54,11 @@ def timing_panel(questions):
         bars.append(''.join(group)+'</div>')
     return (f'<section id="timing"><h2>When are questions asked?</h2><p>{" and ".join(descriptions)}. '
             f'The {len(timed)} timed questions average <strong>{mean(q["insertion_seconds"] for q in timed)/60:.1f} minutes</strong> from the start. '
-            'The continuous earnings-call previews use reviewed pauses at sentence endings. The controlled sound cases use their evaluation cutoffs. The two laughter cases use paired excerpts without a full-recording insertion time.</p>'
+            'Continuous previews use the source time where the speaker finishes and the recording pauses. Paired sound and semantic examples retain their experiment cutoff here. The appendix gives the exact source times of both excerpts. The two laughter examples also use paired excerpts.</p>'
             f'<figure><figcaption><strong>Figure 1.</strong> Question counts and percentages by time since the recording began. Each percentage uses the timed questions from that corpus.</figcaption><div class="pair">{"".join(bars)}</div></figure></section>')
 
 
-def demo_card(q, demo):
+def demo_card(q, demo, review):
     cutoff = '' if q['insertion_seconds'] is None else ' · Question at '+clock(q['insertion_seconds'])
     if q['kind']=='Controlled sound':
         cutoff = ' · Paired excerpts · Evaluation time '+clock(q['insertion_seconds'])
@@ -80,6 +81,9 @@ def demo_card(q, demo):
         accessible = f'{demo["title"]}, {track["label"]}'
         parts.append(f'<div class="track"><p>{escape(caption)}</p><audio id="{audio_id}" controls preload="none" aria-label="{escape(accessible, quote=True)}" src="{file}"><a href="{file}">Download audio</a></audio>'
                      f'<button type="button" class="jump" hidden data-track="{audio_id}" data-start="{track["request_at"]:.4f}">Play from question <span>({clock(track["request_at"])})</span></button></div>')
+    opened=' open' if q['id']=='natural-ConEC-4374910-laughter' else ''
+    parts.append('<details class="transcription"'+opened+'><summary>Clip transcript and insertion time</summary>'+turn_view.transcript(review)+'</details>')
+    parts.append('<p><a href="'+escape(turn_view.link(q['id']),quote=True)+'">Check this insertion in the appendix</a></p>')
     if 'reference_voice' in demo:
         voice=escape(demo['requester'])
         parts.append(f'<details class="voice-check"><summary>Compare requester {voice} with the synthesized question</summary>')
@@ -106,11 +110,13 @@ def recording_picker(questions):
     return ('<div class="recording-picker"><label for="recording-select">Choose a question</label>'
             '<select id="recording-select">'+''.join(options)+'</select>'
             '<audio id="recording-player" controls preload="none" aria-label="Selected question"></audio>'
-            '<a id="recording-context" hidden>Listen with the preceding conversation</a><p id="recording-note" hidden></p><a id="recording-reference" hidden>Hear the name in the original Culp call (4 seconds)</a></div>')
+            '<a id="recording-review">Review this clip and its transcript</a><a id="recording-context" hidden>Listen with the preceding conversation</a><p id="recording-note" hidden></p><a id="recording-reference" hidden>Hear the name in the original Culp call (4 seconds)</a></div>')
 
 
 def render():
     public = json.loads((SITE/'research/question-dataset/overview.json').read_text())
+    review=turn_view.read_review()
+    turn_view.build(review)
     questions = public['questions']
     cases = {q['id']: q for q in questions}
     counts = Counter((q['kind'], q['corpus']) for q in questions)
@@ -138,7 +144,7 @@ def render():
     body = [f'<header><h1>{title}</h1><ul class="summary">',
             f'<li><strong>{len(questions)} question–recording cases</strong> cover {records["AMI"]} AMI meetings and {records["ConEC"]} ConEC financial conversations. <a href="#inventory">Corpus and question counts</a></li>',
             f'<li>The balanced evaluation set has <strong>{balanced_by_corpus["AMI"]} AMI and {balanced_by_corpus["ConEC"]} ConEC questions</strong>, with the same mix of semantic and sound questions in each corpus. <a href="#balanced">Evaluation split</a></li>',
-            '<li>Listen to six examples in context or choose any participant question from the full recording list. <a href="#demos">Question text and audio</a> · <a href="#sources">All recordings</a></li></ul></header>',
+            '<li>Listen to six examples in context or choose any participant question from the full recording list. <a href="#demos">Question text and audio</a> · <a href="#sources">All recordings</a></li></ul><strong>Manual review appendix</strong>'+turn_view.corpus_links()+'</header>',
             '<section id="inventory"><h2>What does the dataset contain?</h2><p>A case is one question about one recording. A controlled question has two audio versions and counts once. The same laughter question appears on two different recordings and contributes two cases.</p>',
             table('Table 1. All question–recording cases, including reserve questions and the two listener-reviewed examples.',
                   ['Question type',*CORPORA,'Total'],by_type),
@@ -158,11 +164,11 @@ def render():
         for demo in public['demos']:
             q = cases[demo['id']]
             if q['kind']==kind:
-                body.append(demo_card(q,demo))
+                body.append(demo_card(q,demo,review[q["id"]]))
         body.append('</div></section>')
     body.extend(['</section><section id="sources"><h2>Inventory and recordings</h2>',
                  f'<p>All {audio_status["Requester voice with matched background"]} cases have an F5-TTS question in the requester’s voice. AMI uses recorded room tone when it passes the speech check. ConEC and the remaining AMI cases use noise matched to the quietest earlier frames. Earlier experiment scores describe the audio used in those runs.</p>',
-                 recording_picker(questions),
+                 turn_view.corpus_links(),recording_picker(questions),
                  '<p><a href="../research/question-dataset/overview.json" download>Download the full question list (JSON)</a> for question text, recording IDs, set membership and insertion times. The <a href="question-audio.html">earlier audio library</a> contains the first 105 question events. <a href="../research/question-dataset/conec-turns.json">Revised earnings-call times</a> · <a href="../research/question-dataset/participant-recordings.json">All recording files and checks</a> · <a href="../research/question-dataset/requester-voices.json">Requester voices and speech checks</a>.</p>',
                  '<p>Meeting excerpts are from the AMI Consortium. Financial conversations use Rev’s Earnings-21 recordings with ConEC transcripts. The listening copies join short excerpts with the synthesized request. The controlled copies also include the sound edits. <a href="https://groups.inf.ed.ac.uk/ami/corpus/license.shtml">AMI recording licence</a> · <a href="https://github.com/revdotcom/speech-datasets/tree/c05ab6fd8b4b627d123c922a22a39e993dd37635/earnings21">Earnings-21 recordings and credits</a> · <a href="https://aclanthology.org/2024.lrec-main.328/">ConEC corpus</a></p></section>'])
     version = sha256((SITE/'assets/site.css').read_bytes()).hexdigest()[:12]
@@ -173,7 +179,7 @@ def render():
     (SITE/'experiments/question-dataset.html').write_text(page)
 
 
-CSS = """
+CSS = turn_view.STYLE + """
 .recording-picker{display:grid;gap:.6rem;max-width:52rem}.recording-picker select{width:100%;min-width:0;font:inherit;padding:.45rem}.recording-picker audio{width:100%}
 .dataset{max-width:64rem;padding:1.7rem 0 3.5rem}.dataset h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.08;margin:0 0 1rem}
 .dataset .summary{padding-left:1.4rem}.dataset li{margin:.55rem 0}.dataset section{margin-top:2.3rem;scroll-margin-top:5rem}
@@ -198,6 +204,7 @@ const select=document.getElementById('recording-select');
 function selectRecording(){
   const option=select.selectedOptions[0];
   document.getElementById('recording-player').src=option.value;
+  document.getElementById('recording-review').href='recording-review.html?case='+encodeURIComponent(option.dataset.id);
   const link=document.getElementById('recording-context');
   link.hidden=!option.dataset.context;
   if(link.hidden)link.removeAttribute('href');else link.href=option.dataset.context;
