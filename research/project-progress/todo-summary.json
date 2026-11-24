@@ -1,6 +1,18 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-24",
   "now": [
+    {
+      "id": "cue-note-pilot",
+      "text": "Compare sound times, saved topics and answers on AMI meetings and ConEC calls.",
+      "status": "complete",
+      "url": "experiments/cue-notes.html#answers"
+    },
+    {
+      "id": "cue-note-attribution",
+      "text": "Check whether saving the speaker’s exact words preserves names and technical terms on more recordings.",
+      "status": "pending",
+      "url": "experiments/cue-notes.html#next"
+    },
     {
       "id": "overview-foundation",
       "text": "Keep the completed 105-question comparisons and current report explanations.",

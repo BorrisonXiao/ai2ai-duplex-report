@@ -24,7 +24,7 @@ REVIEW_KEYS = {
 EXPERIMENT_KEYS = {
     'index.html': 'overview', 'duplexomni.html': 'duplex',
     'answering-results.html': 'answering', 'structured-notes.html': 'notes', 'full-answering-results.html': 'full-answering',
-    'note-functions.html': 'note-functions',
+    'note-functions.html': 'note-functions', 'cue-notes.html': 'overview',
     'single-request.html': 'basic', 's1-investigation.html': 'basic',
     'trajectory.html': 'replay', 'interruption.html': 'replay',
     'natural-study.html': 'evidence', 's2-single.html': 's2',
@@ -81,6 +81,7 @@ def build_collections():
     collection('experiments/index.html', 'experiments', 'Experiments',
         'Speech-model tests, meeting questions and early work on reasoning during conversation.',
         section('Project progress', 'The project plan and daily work record.', [
+            ('Saving sound cues before a question', 'How sound timing and topic notes affect answers on AMI and ConEC.', 'cue-notes.html'),
             ('Latest S2 results', 'Start here: full-set text and audio results, thinking cost, methods and an answer browser.', 'note-functions.html'),
             ('Full 105-question evaluation', 'Saved S1 and S2 runs, reference checks and measured post-request latency.', 'full-answering-results.html'),
             ('Structured-note optimization', 'Compact note states, incremental edits, event changes and token costs.', 'structured-notes.html'),

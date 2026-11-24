@@ -8,6 +8,7 @@
 
 | Topic | Page |
 |---|---|
+| Sound cues, notes and answer quality | [AMI and ConEC experiment](experiments/cue-notes.html) |
 | Current text/audio S2 comparison | [Latest S2 results](experiments/note-functions.html) |
 | Earlier full S1/S2 evaluation | [Full evaluation](experiments/full-answering-results.html) |
 | Earlier paired examples and implementation details | [S1/S2 report](experiments/answering-results.html) |
