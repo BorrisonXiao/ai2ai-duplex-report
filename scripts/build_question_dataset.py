@@ -15,7 +15,7 @@ BY_KIND = {
     'Semantic': ('semantic', 'Questions about what people said',
                  'Each clip plays the conversation around the insertion point, including the synthesized question in the requester’s voice. Earlier turns can also contribute to the reference answer.'),
     'Controlled sound': ('controlled', 'Questions about an edited sound',
-                         'Play either version. Both use the same two excerpts and the same requester’s question. Moving the muffling or chime changes which remarks answer the question. For these two demos, F5-TTS uses earlier speech from the requester and we match the question level to their recording. The earlier sound-cue experiments used a stock Flite voice.'),
+                         'Play either version. Both use the same two excerpts and the same requester’s question. Moving the muffling or chime changes which remarks answer the question. F5-TTS uses earlier speech from each requester. We match their speaking level and mix in background sound from the recording. In both demos we use noise with the same level and frequency profile as the quietest 5% of the earlier recording. For AMI, the first attempt at using recorded room tone produced recognizable words in the background check. The earlier sound-cue experiments used a stock Flite voice.'),
     'Natural laughter': ('natural', 'Questions about laughter in the original recording',
                          'Each clip plays two original excerpts followed by the same question in a stock narrator voice. One listener checked both the location of the laughter and the topic under discussion.'),
 }
@@ -99,6 +99,7 @@ def render():
     questions = public['questions']
     cases = {q['id']: q for q in questions}
     counts = Counter((q['kind'], q['corpus']) for q in questions)
+    audio_status = Counter(q['request_audio_status'] for q in questions)
     groups = Counter(q['group'] for q in questions)
     records = {c:len({q['recording'] for q in questions if q['corpus']==c}) for c in CORPORA}
     per_corpus = [sum(counts[k, c] for k in KINDS) for c in CORPORA]
@@ -145,6 +146,7 @@ def render():
                 body.append(demo_card(q,demo))
         body.append('</div></section>')
     body.extend(['</section><section id="sources"><h2>Inventory and recordings</h2>',
+                 f'<p>{audio_status["Requester voice with matched background"]} cases have a spoken question in the requester’s voice with matched background sound. Of the remaining cases, {audio_status["Stock narrator experiment recording"]} have a stock voice from earlier experiments, {audio_status["Text only"]} have question text only, and {audio_status["Stock narrator listening control"]} use a narrator for the laughter check.</p>',
                  '<p><a href="../research/question-dataset/overview.json" download>Download the full question list (JSON)</a> for question text, recording IDs, set membership and insertion times. The <a href="question-audio.html">earlier audio library</a> contains the first 105 question events. <a href="../research/question-dataset/conec-turns.json">Revised earnings-call times</a> · <a href="../research/question-dataset/requester-voices.json">Requester voices and speech checks</a>.</p>',
                  '<p>Meeting excerpts are from the AMI Consortium. Financial conversations use Rev’s Earnings-21 recordings with ConEC transcripts. The listening copies join short excerpts with the synthesized request. The controlled copies also include the sound edits. <a href="https://groups.inf.ed.ac.uk/ami/corpus/license.shtml">AMI recording licence</a> · <a href="https://github.com/revdotcom/speech-datasets/tree/c05ab6fd8b4b627d123c922a22a39e993dd37635/earnings21">Earnings-21 recordings and credits</a> · <a href="https://aclanthology.org/2024.lrec-main.328/">ConEC corpus</a></p></section>'])
     version = sha256((SITE/'assets/site.css').read_bytes()).hexdigest()[:12]

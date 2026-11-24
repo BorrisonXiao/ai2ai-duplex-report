@@ -29,11 +29,21 @@
       ]
     ],
     "preset": "primary-calm",
-    "matched_similarity": 0.473,
+    "matched_similarity": 0.474,
     "stock_similarity": -0.032,
     "whisper_transcript": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
     "parakeet_transcript": "Assistant, what part of the workshop planning was the person with the muffled voice talking about?",
-    "longest_internal_quiet_seconds": 0.12
+    "longest_internal_quiet_seconds": 0.12,
+    "acoustic_recipe": "2026-10-31 question bank",
+    "calibration": "Earlier requester words without overlapping speech; identity EQ",
+    "background": "Noise matched to the quietest 5% of earlier meeting frames",
+    "source_window_seconds": [
+      292.8,
+      472.8
+    ],
+    "background_rms_dbfs": -86.76,
+    "background_asr": "",
+    "request_sha256": "16a9994a8fbcc77d1ede7a1af3bcbcd4f47d77912713574437cba084a709d524"
   },
   "4359971": {
     "model": "F5-TTS v1 Base",
@@ -65,10 +75,20 @@
       ]
     ],
     "preset": "alternate-calm",
-    "matched_similarity": 0.687,
+    "matched_similarity": 0.661,
     "stock_similarity": 0.029,
-    "whisper_transcript": "assistant, what was the analyst asking about when that chime sounded?",
+    "whisper_transcript": "Assistant, what was the analyst asking about when that chime sounded?",
     "parakeet_transcript": "Assistant, what was the analyst asking about when that chime sounded?",
-    "longest_internal_quiet_seconds": 0.86
+    "longest_internal_quiet_seconds": 0.88,
+    "acoustic_recipe": "2026-10-31 question bank",
+    "calibration": "Earlier requester speech on the same call channel; identity EQ",
+    "background": "Noise matched to the quietest 5% of earlier call frames",
+    "source_window_seconds": [
+      2302.3,
+      2482.3
+    ],
+    "background_rms_dbfs": -59.1,
+    "background_asr": "",
+    "request_sha256": "8e12e9693f8c057c00d4c5e84437db92327780f5567a30e9e008b8c52f9af5c4"
   }
 }
