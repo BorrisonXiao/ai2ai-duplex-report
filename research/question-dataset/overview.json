@@ -11,7 +11,9 @@
       "insertion_seconds": 300.97,
       "fraction": 0.098606,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S05-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S05-Q1--injected.wav"
     },
     {
       "id": "scale:TS3004d-slide-reasons",
@@ -24,7 +26,9 @@
       "insertion_seconds": 304.46,
       "fraction": 0.110914,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-slide-reasons--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-slide-reasons--injected.wav"
     },
     {
       "id": "scale:TS3006c-S05-Q3",
@@ -37,7 +41,9 @@
       "insertion_seconds": 309.03,
       "fraction": 0.119583,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S05-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S05-Q3--injected.wav"
     },
     {
       "id": "scale:IN1007-matlab-availability",
@@ -50,7 +56,9 @@
       "insertion_seconds": 328.62,
       "fraction": 0.136281,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IN1007-matlab-availability--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IN1007-matlab-availability--injected.wav"
     },
     {
       "id": "scale:EN2004a-S05-Q3",
@@ -63,7 +71,9 @@
       "insertion_seconds": 561.16,
       "fraction": 0.162857,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S05-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S05-Q3--injected.wav"
     },
     {
       "id": "scale:IB4001-S05-Q1",
@@ -76,7 +86,9 @@
       "insertion_seconds": 298.01,
       "fraction": 0.167358,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IB4001-S05-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4001-S05-Q1--injected.wav"
     },
     {
       "id": "scale:IN1005-S075-Q1",
@@ -89,7 +101,9 @@
       "insertion_seconds": 502.38,
       "fraction": 0.179496,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IN1005-S075-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IN1005-S075-Q1--injected.wav"
     },
     {
       "id": "scale:IB4003-S075-Q3",
@@ -102,7 +116,9 @@
       "insertion_seconds": 436.54,
       "fraction": 0.215753,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S075-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S075-Q3--injected.wav"
     },
     {
       "id": "scale:ES2010b-Smiddle-Q3",
@@ -115,7 +131,9 @@
       "insertion_seconds": 887.55,
       "fraction": 0.503146,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2010b-Smiddle-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2010b-Smiddle-Q3--injected.wav"
     },
     {
       "id": "scale:EN2009b-Smiddle-Q2",
@@ -128,7 +146,9 @@
       "insertion_seconds": 1228.22,
       "fraction": 0.496386,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-Smiddle-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-Smiddle-Q2--injected.wav"
     },
     {
       "id": "first:authored-W2-1",
@@ -141,7 +161,9 @@
       "insertion_seconds": 1075.0,
       "fraction": 0.479838,
       "equal_type": true,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--authored-W2-1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W2-1--injected.wav"
     },
     {
       "id": "expansion:TS-looks",
@@ -154,7 +176,9 @@
       "insertion_seconds": 1241.23,
       "fraction": 0.561565,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--TS-looks--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--TS-looks--injected.wav"
     },
     {
       "id": "expansion:EN-times",
@@ -167,7 +191,9 @@
       "insertion_seconds": 986.98,
       "fraction": 0.552335,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--EN-times--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--EN-times--injected.wav"
     },
     {
       "id": "expansion:IS-receiver",
@@ -180,7 +206,9 @@
       "insertion_seconds": 1244.2,
       "fraction": 0.531482,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--IS-receiver--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--IS-receiver--injected.wav"
     },
     {
       "id": "expansion:ES-colour",
@@ -193,7 +221,9 @@
       "insertion_seconds": 1208.95,
       "fraction": 0.530009,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--ES-colour--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--ES-colour--injected.wav"
     },
     {
       "id": "expansion:TS-target",
@@ -206,7 +236,9 @@
       "insertion_seconds": 1241.23,
       "fraction": 0.561565,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--TS-target--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--TS-target--injected.wav"
     },
     {
       "id": "first:authored-W3-1",
@@ -219,7 +251,9 @@
       "insertion_seconds": 1578.92,
       "fraction": 0.704768,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--authored-W3-1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W3-1--injected.wav"
     },
     {
       "id": "scale:IN1005-directory-evaluation",
@@ -232,7 +266,9 @@
       "insertion_seconds": 1504.36,
       "fraction": 0.537495,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IN1005-directory-evaluation--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IN1005-directory-evaluation--injected.wav"
     },
     {
       "id": "first:authored-W3-2",
@@ -245,7 +281,9 @@
       "insertion_seconds": 1578.92,
       "fraction": 0.704768,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--authored-W3-2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W3-2--injected.wav"
     },
     {
       "id": "scale:ES2003c-Slater-Q2",
@@ -258,7 +296,9 @@
       "insertion_seconds": 1798.74,
       "fraction": 0.799085,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-Slater-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-Slater-Q2--injected.wav"
     },
     {
       "id": "scale:TS3005b-Slater-Q3",
@@ -271,7 +311,9 @@
       "insertion_seconds": 1954.13,
       "fraction": 0.800901,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3005b-Slater-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3005b-Slater-Q3--injected.wav"
     },
     {
       "id": "scale:ES2006a-Slater-Q1",
@@ -284,7 +326,9 @@
       "insertion_seconds": 1033.85,
       "fraction": 0.801434,
       "equal_type": true,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q1--injected.wav"
     },
     {
       "id": "scale:EN2001b-Slater-Q2",
@@ -297,7 +341,9 @@
       "insertion_seconds": 2769.16,
       "fraction": 0.802203,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2001b-Slater-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2001b-Slater-Q2--injected.wav"
     },
     {
       "id": "scale:ES2008b-Slater-Q1",
@@ -310,7 +356,9 @@
       "insertion_seconds": 1689.56,
       "fraction": 0.804169,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Slater-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Slater-Q1--injected.wav"
     },
     {
       "id": "scale:ES2005b-Slater-Q3",
@@ -323,7 +371,9 @@
       "insertion_seconds": 1859.39,
       "fraction": 0.805628,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2005b-Slater-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2005b-Slater-Q3--injected.wav"
     },
     {
       "id": "pilot:P-EN-handoff",
@@ -336,7 +386,9 @@
       "insertion_seconds": 1385.22,
       "fraction": 0.775199,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-handoff--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-handoff--injected.wav"
     },
     {
       "id": "scale:ES2007a-Slater-Q3",
@@ -349,7 +401,9 @@
       "insertion_seconds": 997.74,
       "fraction": 0.81715,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-Slater-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-Slater-Q3--injected.wav"
     },
     {
       "id": "pilot:P-IS-budget",
@@ -362,7 +416,9 @@
       "insertion_seconds": 1855.31,
       "fraction": 0.792529,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-budget--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-budget--injected.wav"
     },
     {
       "id": "scale:TS3004d-Slater-Q1",
@@ -375,7 +431,9 @@
       "insertion_seconds": 2189.66,
       "fraction": 0.79769,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q1--injected.wav"
     },
     {
       "id": "pilot:P-ES-power",
@@ -388,7 +446,9 @@
       "insertion_seconds": 1823.87,
       "fraction": 0.799592,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-power--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-power--injected.wav"
     },
     {
       "id": "scale:ES2006a-Slater-Q2",
@@ -401,7 +461,9 @@
       "insertion_seconds": 1033.85,
       "fraction": 0.801434,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-Slater-Q2--injected.wav"
     },
     {
       "id": "scale:IB4001-Slater-Q2",
@@ -414,7 +476,9 @@
       "insertion_seconds": 1436.84,
       "fraction": 0.80691,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IB4001-Slater-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4001-Slater-Q2--injected.wav"
     },
     {
       "id": "pilot:P-IS-components",
@@ -427,7 +491,9 @@
       "insertion_seconds": 1855.31,
       "fraction": 0.792529,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-components--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-components--injected.wav"
     },
     {
       "id": "scale:TS3004d-Slater-Q2",
@@ -440,7 +506,9 @@
       "insertion_seconds": 2189.66,
       "fraction": 0.79769,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Slater-Q2--injected.wav"
     },
     {
       "id": "expansion:EN-results",
@@ -453,7 +521,9 @@
       "insertion_seconds": 1555.86,
       "fraction": 0.870693,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--EN-results--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--EN-results--injected.wav"
     },
     {
       "id": "expansion:ES-devices",
@@ -466,7 +536,9 @@
       "insertion_seconds": 1873.33,
       "fraction": 0.821276,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--ES-devices--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--ES-devices--injected.wav"
     },
     {
       "id": "expansion:DH-growth",
@@ -480,7 +552,9 @@
       "fraction": 0.610557,
       "equal_type": false,
       "original_evaluation_seconds": 1630.99,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--DH-growth--question.wav",
+      "context_audio": "../research/question-dataset/audio/expansion--DH-growth--turn-end.wav"
     },
     {
       "id": "expansion:DH-basis",
@@ -494,7 +568,9 @@
       "fraction": 0.868917,
       "equal_type": false,
       "original_evaluation_seconds": 2342.13,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--DH-basis--question.wav",
+      "context_audio": "../research/question-dataset/audio/expansion--DH-basis--turn-end.wav"
     },
     {
       "id": "expansion:MO-performance",
@@ -508,7 +584,9 @@
       "fraction": 0.614353,
       "equal_type": false,
       "original_evaluation_seconds": 1976.85,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--MO-performance--question.wav",
+      "context_audio": "../research/question-dataset/audio/expansion--MO-performance--turn-end.wav"
     },
     {
       "id": "expansion:MO-selection",
@@ -522,7 +600,9 @@
       "fraction": 0.868558,
       "equal_type": false,
       "original_evaluation_seconds": 2823.71,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--MO-selection--question.wav",
+      "context_audio": "../research/question-dataset/audio/expansion--MO-selection--turn-end.wav"
     },
     {
       "id": "pilot:P-MO-comparison",
@@ -536,7 +616,9 @@
       "fraction": 0.097603,
       "equal_type": false,
       "original_evaluation_seconds": 303.18,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-comparison--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-MO-comparison--turn-end.wav"
     },
     {
       "id": "pilot:P-MO-pricing",
@@ -550,7 +632,9 @@
       "fraction": 0.138238,
       "equal_type": false,
       "original_evaluation_seconds": 448.61,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-pricing--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-MO-pricing--turn-end.wav"
     },
     {
       "id": "pilot:P-MO-completion",
@@ -564,7 +648,9 @@
       "fraction": 0.183587,
       "equal_type": false,
       "original_evaluation_seconds": 599.89,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-MO-completion--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-MO-completion--turn-end.wav"
     },
     {
       "id": "pilot:P-DH-documents",
@@ -578,7 +664,9 @@
       "fraction": 0.113249,
       "equal_type": false,
       "original_evaluation_seconds": 296.84999999999997,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-documents--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-DH-documents--turn-end.wav"
     },
     {
       "id": "pilot:P-DH-replay",
@@ -592,7 +680,9 @@
       "fraction": 0.22185,
       "equal_type": false,
       "original_evaluation_seconds": 596.0699999999999,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-replay--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-DH-replay--turn-end.wav"
     },
     {
       "id": "pilot:P-DH-cepheid",
@@ -606,7 +696,9 @@
       "fraction": 0.789087,
       "equal_type": false,
       "original_evaluation_seconds": 2126.22,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-cepheid--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-DH-cepheid--turn-end.wav"
     },
     {
       "id": "pilot:P-DH-idt",
@@ -620,7 +712,9 @@
       "fraction": 0.16731,
       "equal_type": false,
       "original_evaluation_seconds": 446.81,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-DH-idt--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--P-DH-idt--turn-end.wav"
     },
     {
       "id": "pilot:Q-MO-weather",
@@ -634,7 +728,9 @@
       "fraction": 0.097603,
       "equal_type": false,
       "original_evaluation_seconds": 303.18,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-MO-weather--question.wav",
+      "context_audio": "../research/question-dataset/audio/pilot--Q-MO-weather--turn-end.wav"
     },
     {
       "id": "conec-C01",
@@ -644,11 +740,14 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what are we adding in Vietnam beyond the cut-and-sew work we already do there?",
-      "insertion_seconds": 1741.625,
-      "fraction": 0.708293,
+      "insertion_seconds": 1741.62,
+      "fraction": 0.708291,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1741.62,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1741.625,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-C01.wav",
+      "speech_check_note": "All three transcripts recover the question. They spell the final syllable in “cut-and-sew” as its homophone “so.” The selected F5 input uses “cut and so” to elicit the pronunciation of “sew.”",
+      "context_audio": "../research/question-dataset/audio/participants/conec-C01--conversation.flac"
     },
     {
       "id": "conec-C02",
@@ -658,11 +757,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, why does making the fabric in Vietnam matter for the mattress covers Culp wants to ship to the US?",
-      "insertion_seconds": 1954.255,
-      "fraction": 0.794767,
+      "insertion_seconds": 1954.26,
+      "fraction": 0.794769,
       "equal_type": true,
-      "placement_for_future_full_audio_seconds": 1954.26,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1954.255,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-C02.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-C02--conversation.flac"
     },
     {
       "id": "conec-C03",
@@ -672,11 +773,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, can you break down that Missouri weather hit between the residential mechanism and businesses?",
-      "insertion_seconds": 2061.22,
-      "fraction": 0.629293,
+      "insertion_seconds": 2061.49,
+      "fraction": 0.629375,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2061.49,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2061.22,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-C03.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-C03--conversation.flac"
     },
     {
       "id": "conec-C04",
@@ -686,11 +789,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, if the court route is closed, what’s the remaining fix, and what would it change for pipe replacements?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-C04.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-C04--conversation.flac"
     },
     {
       "id": "conec-C05",
@@ -700,11 +805,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did Doug describe the same kind of recovery for travel spending as he did for other spending?",
-      "insertion_seconds": 337.705,
-      "fraction": 0.166477,
+      "insertion_seconds": 338.04,
+      "fraction": 0.166642,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 338.04,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 337.705,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-C05.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-C05--conversation.flac"
     },
     {
       "id": "conec-C06",
@@ -714,11 +821,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Amex offer customers who still needed help after the short payment holidays?",
-      "insertion_seconds": 1014.46,
-      "fraction": 0.500095,
+      "insertion_seconds": 1035.16,
+      "fraction": 0.510299,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1035.16,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1014.46,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-C06.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-C06--conversation.flac"
     },
     {
       "id": "conec-I03.2",
@@ -728,11 +837,15 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Iv say Culp has done about the fake reviews on Amazon?",
-      "insertion_seconds": 1954.255,
-      "fraction": 0.794767,
+      "insertion_seconds": 1954.26,
+      "fraction": 0.794769,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1954.26,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1954.255,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-I03.2.wav",
+      "speech_check_note": "The call transcript spells the name Iv Culp. Parakeet heard “Yves Kulp” in the original introduction at 2:08. The selected F5 version uses the one-syllable pronunciation “Eve” and the recognizers hear that form. The exact vowel in the name still needs listening review.",
+      "name_reference": "../research/question-dataset/audio/participants/original-4330115-introduction.flac",
+      "context_audio": "../research/question-dataset/audio/participants/conec-I03.2--conversation.flac"
     },
     {
       "id": "conec-I05.1",
@@ -742,11 +855,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how did margins in Missouri and the Southern utilities compare after the warm winter?",
-      "insertion_seconds": 2061.22,
-      "fraction": 0.629293,
+      "insertion_seconds": 2061.49,
+      "fraction": 0.629375,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2061.49,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2061.22,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-I05.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-I05.1--conversation.flac"
     },
     {
       "id": "conec-I07.2",
@@ -756,11 +871,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, why did Spire think it could keep moving on infrastructure work through the pandemic?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-I07.2.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-I07.2--conversation.flac"
     },
     {
       "id": "conec-I08.1",
@@ -770,11 +887,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what is Spire trying to show about the pipe it already replaced?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-I08.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-I08.1--conversation.flac"
     },
     {
       "id": "conec-I08.2",
@@ -784,11 +903,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what does the Missouri commission still have to decide in July, and what could that mean for customers?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": true,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-I08.2.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-I08.2--conversation.flac"
     },
     {
       "id": "conec-T02.1",
@@ -798,11 +919,15 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, when did Ken say the high-tax exception could start helping Culp?",
-      "insertion_seconds": 1741.625,
-      "fraction": 0.708293,
+      "insertion_seconds": 1741.62,
+      "fraction": 0.708291,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1741.62,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1741.625,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T02.1.wav",
+      "speech_check_note": "Parakeet recovered the complete question, including Ken and Culp. An independent CTC recognizer also recovered the final company name. Both Whisper models disagreed on the ending. Company pronunciation remains flagged.",
+      "name_reference": "../research/question-dataset/audio/participants/original-4330115-introduction.flac",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T02.1--conversation.flac"
     },
     {
       "id": "conec-T03.1",
@@ -812,11 +937,15 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how much of the home accessories business did Iv expect Amazon to account for?",
-      "insertion_seconds": 1954.255,
-      "fraction": 0.794767,
+      "insertion_seconds": 1954.26,
+      "fraction": 0.794769,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1954.26,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1954.255,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T03.1.wav",
+      "speech_check_note": "The call transcript spells the name Iv Culp. Parakeet heard “Yves Kulp” in the original introduction at 2:08. The selected F5 version uses the one-syllable pronunciation “Eve” and the recognizers hear that form. The exact vowel in the name still needs listening review.",
+      "name_reference": "../research/question-dataset/audio/participants/original-4330115-introduction.flac",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T03.1--conversation.flac"
     },
     {
       "id": "conec-T03.2",
@@ -826,11 +955,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what tax rate did Ken expect for the rest of the fiscal year?",
-      "insertion_seconds": 1954.255,
-      "fraction": 0.794767,
+      "insertion_seconds": 1954.26,
+      "fraction": 0.794769,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1954.26,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1954.255,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T03.2.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T03.2--conversation.flac"
     },
     {
       "id": "conec-T06.1",
@@ -840,11 +971,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, is the $11 million in the Missouri settlement the same thing as the provision they mentioned earlier?",
-      "insertion_seconds": 2061.22,
-      "fraction": 0.629293,
+      "insertion_seconds": 2061.49,
+      "fraction": 0.629375,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2061.49,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2061.22,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T06.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T06.1--conversation.flac"
     },
     {
       "id": "conec-T07.1",
@@ -854,11 +987,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how much of the increase in Spire’s spending plan was for the utilities?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T07.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T07.1--conversation.flac"
     },
     {
       "id": "conec-T08.1",
@@ -868,11 +1003,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, did Spire say the House and Senate bills would change its pipe replacement rules in different ways?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T08.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T08.1--conversation.flac"
     },
     {
       "id": "conec-T11.1",
@@ -882,11 +1019,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, in Doug’s Italy example, what share were using Amex for an online purchase for the first time?",
-      "insertion_seconds": 1014.46,
-      "fraction": 0.500095,
+      "insertion_seconds": 1035.16,
+      "fraction": 0.510299,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1035.16,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1014.46,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-T11.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-T11.1--conversation.flac"
     },
     {
       "id": "conec-R01.1",
@@ -896,11 +1035,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what was Culp’s effective tax rate for the year to date?",
-      "insertion_seconds": 1741.625,
-      "fraction": 0.708293,
+      "insertion_seconds": 1741.62,
+      "fraction": 0.708291,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1741.62,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1741.625,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-R01.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-R01.1--conversation.flac"
     },
     {
       "id": "conec-R02.1",
@@ -910,11 +1051,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Ken say was keeping Culp’s tax rate so high for the rest of the year?",
-      "insertion_seconds": 1741.625,
-      "fraction": 0.708293,
+      "insertion_seconds": 1741.62,
+      "fraction": 0.708291,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1741.62,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1741.625,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-R02.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-R02.1--conversation.flac"
     },
     {
       "id": "conec-R05.1",
@@ -924,11 +1067,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what was Spire’s spending forecast before the increase to $640 million?",
-      "insertion_seconds": 2061.22,
-      "fraction": 0.629293,
+      "insertion_seconds": 2061.49,
+      "fraction": 0.629375,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2061.49,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2061.22,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-R05.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-R05.1--conversation.flac"
     },
     {
       "id": "conec-R06.1",
@@ -938,11 +1083,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, how much of the Missouri hit got past the weather mechanism, and when did Spire say it would work on fixing that?",
-      "insertion_seconds": 2061.22,
-      "fraction": 0.629293,
+      "insertion_seconds": 2061.49,
+      "fraction": 0.629375,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2061.49,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2061.22,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-R06.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-R06.1--conversation.flac"
     },
     {
       "id": "conec-R08.1",
@@ -952,11 +1099,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, which part goes to the commission and which part still needs the House and Senate to agree?",
-      "insertion_seconds": 2268.505,
-      "fraction": 0.692577,
+      "insertion_seconds": 2268.51,
+      "fraction": 0.692578,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2268.51,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 2268.505,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-R08.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-R08.1--conversation.flac"
     },
     {
       "id": "conec-R11.1",
@@ -966,11 +1115,13 @@
       "split": "development",
       "kind": "Semantic",
       "question": "Assistant, what did Doug say was helping Amex’s credit quality even with all those jobless claims?",
-      "insertion_seconds": 1014.46,
-      "fraction": 0.500095,
+      "insertion_seconds": 1035.16,
+      "fraction": 0.510299,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 1035.16,
-      "request_audio_status": "Text only"
+      "original_evaluation_seconds": 1014.46,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/conec-R11.1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/conec-R11.1--conversation.flac"
     },
     {
       "id": "ES2012a-S1",
@@ -983,7 +1134,8 @@
       "insertion_seconds": 280.31,
       "fraction": 0.253904,
       "equal_type": false,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/ES2012a-S1.wav"
     },
     {
       "id": "ES2012a-S2",
@@ -996,7 +1148,8 @@
       "insertion_seconds": 280.31,
       "fraction": 0.253904,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/ES2012a-S2.wav"
     },
     {
       "id": "IS1009c-S1",
@@ -1009,7 +1162,8 @@
       "insertion_seconds": 393.63,
       "fraction": 0.217957,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/IS1009c-S1.wav"
     },
     {
       "id": "IS1009c-S2",
@@ -1022,7 +1176,8 @@
       "insertion_seconds": 393.63,
       "fraction": 0.217957,
       "equal_type": false,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/IS1009c-S2.wav"
     },
     {
       "id": "4346818-S1",
@@ -1032,11 +1187,13 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, which business was Andy asking about when he brought up the April order decline?",
-      "insertion_seconds": 2606.81,
-      "fraction": 0.656293,
+      "insertion_seconds": 2610.19,
+      "fraction": 0.657144,
       "equal_type": true,
-      "placement_for_future_full_audio_seconds": 2610.19,
-      "request_audio_status": "Stock narrator experiment recording"
+      "original_evaluation_seconds": 2606.81,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4346818-S1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/4346818-S1--conversation.flac"
     },
     {
       "id": "4346818-S2",
@@ -1046,11 +1203,13 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, how big were the other cost cuts Julian mentioned on top of the synergies?",
-      "insertion_seconds": 2606.81,
-      "fraction": 0.656293,
+      "insertion_seconds": 2610.19,
+      "fraction": 0.657144,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 2610.19,
-      "request_audio_status": "Stock narrator experiment recording"
+      "original_evaluation_seconds": 2606.81,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4346818-S2.wav",
+      "context_audio": "../research/question-dataset/audio/participants/4346818-S2--conversation.flac"
     },
     {
       "id": "4359971-S1",
@@ -1060,11 +1219,13 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, what earnings number was David checking that one-time benefit against?",
-      "insertion_seconds": 3037.0,
-      "fraction": 0.807725,
+      "insertion_seconds": 3059.36,
+      "fraction": 0.813672,
       "equal_type": false,
-      "placement_for_future_full_audio_seconds": 3059.36,
-      "request_audio_status": "Stock narrator experiment recording"
+      "original_evaluation_seconds": 3037.0,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4359971-S1.wav",
+      "context_audio": "../research/question-dataset/audio/participants/4359971-S1--conversation.flac"
     },
     {
       "id": "4359971-S2",
@@ -1074,11 +1235,13 @@
       "split": "held-out",
       "kind": "Semantic",
       "question": "Assistant, what did Curtis want to know about the hundred million euros in savings?",
-      "insertion_seconds": 3037.0,
-      "fraction": 0.807725,
+      "insertion_seconds": 3059.36,
+      "fraction": 0.813672,
       "equal_type": true,
-      "placement_for_future_full_audio_seconds": 3059.36,
-      "request_audio_status": "Stock narrator experiment recording"
+      "original_evaluation_seconds": 3037.0,
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4359971-S2.wav",
+      "context_audio": "../research/question-dataset/audio/participants/4359971-S2--conversation.flac"
     },
     {
       "id": "EN2003a-cue",
@@ -1091,7 +1254,8 @@
       "insertion_seconds": 523.78,
       "fraction": 0.233795,
       "equal_type": true,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/EN2003a-requester.wav"
     },
     {
       "id": "ES2006a-cue",
@@ -1104,7 +1268,8 @@
       "insertion_seconds": 679.39,
       "fraction": 0.526659,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/ES2006a-cue.wav"
     },
     {
       "id": "ES2012a-cue",
@@ -1117,7 +1282,8 @@
       "insertion_seconds": 280.31,
       "fraction": 0.253904,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/ES2012a-cue.wav"
     },
     {
       "id": "IS1009c-cue",
@@ -1130,7 +1296,8 @@
       "insertion_seconds": 393.63,
       "fraction": 0.217957,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/IS1009c-cue.wav"
     },
     {
       "id": "4346818-cue",
@@ -1143,7 +1310,8 @@
       "insertion_seconds": 2606.81,
       "fraction": 0.656293,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4346818-cue.wav"
     },
     {
       "id": "4359971-cue",
@@ -1156,7 +1324,8 @@
       "insertion_seconds": 3037.0,
       "fraction": 0.807725,
       "equal_type": true,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/4359971-requester.wav"
     },
     {
       "id": "4330115-cue",
@@ -1169,7 +1338,8 @@
       "insertion_seconds": 1954.255,
       "fraction": 0.794767,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4330115-cue.wav"
     },
     {
       "id": "4344866-cue",
@@ -1182,7 +1352,8 @@
       "insertion_seconds": 2268.505,
       "fraction": 0.692577,
       "equal_type": true,
-      "request_audio_status": "Stock narrator experiment recording"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/4344866-cue.wav"
     },
     {
       "id": "first:authored-W1-2",
@@ -1195,7 +1366,9 @@
       "insertion_seconds": 351.0,
       "fraction": 0.156673,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--authored-W1-2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W1-2--injected.wav"
     },
     {
       "id": "first:authored-W4-1",
@@ -1208,7 +1381,9 @@
       "insertion_seconds": 2135.5,
       "fraction": 0.953203,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--authored-W4-1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W4-1--injected.wav"
     },
     {
       "id": "first:authored-W4-2",
@@ -1221,7 +1396,9 @@
       "insertion_seconds": 2135.5,
       "fraction": 0.953203,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--authored-W4-2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--authored-W4-2--injected.wav"
     },
     {
       "id": "first:abstract-title-deadlines",
@@ -1234,7 +1411,9 @@
       "insertion_seconds": 2135.5,
       "fraction": 0.953203,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/first--abstract-title-deadlines--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/first--abstract-title-deadlines--injected.wav"
     },
     {
       "id": "expansion:EN-xml",
@@ -1247,7 +1426,9 @@
       "insertion_seconds": 1555.86,
       "fraction": 0.870693,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--EN-xml--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--EN-xml--injected.wav"
     },
     {
       "id": "expansion:ES-teletext",
@@ -1260,7 +1441,9 @@
       "insertion_seconds": 1873.33,
       "fraction": 0.821276,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--ES-teletext--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--ES-teletext--injected.wav"
     },
     {
       "id": "expansion:IS-lost",
@@ -1273,7 +1456,9 @@
       "insertion_seconds": 1988.47,
       "fraction": 0.849411,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--IS-lost--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--IS-lost--injected.wav"
     },
     {
       "id": "expansion:IS-voice",
@@ -1286,7 +1471,9 @@
       "insertion_seconds": 1988.47,
       "fraction": 0.849411,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/expansion--IS-voice--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/expansion--IS-voice--injected.wav"
     },
     {
       "id": "pilot:P-EN-notes",
@@ -1299,7 +1486,9 @@
       "insertion_seconds": 303.62,
       "fraction": 0.169912,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-notes--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-notes--injected.wav"
     },
     {
       "id": "pilot:P-EN-timeline",
@@ -1312,7 +1501,9 @@
       "insertion_seconds": 303.62,
       "fraction": 0.169912,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-timeline--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-timeline--injected.wav"
     },
     {
       "id": "pilot:P-EN-audio",
@@ -1325,7 +1516,9 @@
       "insertion_seconds": 471.33,
       "fraction": 0.263766,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-audio--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-audio--injected.wav"
     },
     {
       "id": "pilot:P-EN-report",
@@ -1338,7 +1531,9 @@
       "insertion_seconds": 471.33,
       "fraction": 0.263766,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-report--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-report--injected.wav"
     },
     {
       "id": "pilot:P-EN-segmentation",
@@ -1351,7 +1546,9 @@
       "insertion_seconds": 599.29,
       "fraction": 0.335376,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-segmentation--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-segmentation--injected.wav"
     },
     {
       "id": "pilot:P-EN-order",
@@ -1364,7 +1561,9 @@
       "insertion_seconds": 1385.22,
       "fraction": 0.775199,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-order--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-order--injected.wav"
     },
     {
       "id": "pilot:P-EN-same-person",
@@ -1377,7 +1576,9 @@
       "insertion_seconds": 471.33,
       "fraction": 0.263766,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-same-person--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-EN-same-person--injected.wav"
     },
     {
       "id": "pilot:P-ES-minutes",
@@ -1390,7 +1591,9 @@
       "insertion_seconds": 308.77,
       "fraction": 0.135366,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-minutes--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-minutes--injected.wav"
     },
     {
       "id": "pilot:P-ES-slogan",
@@ -1403,7 +1606,9 @@
       "insertion_seconds": 308.77,
       "fraction": 0.135366,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-slogan--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-slogan--injected.wav"
     },
     {
       "id": "pilot:P-ES-complexity",
@@ -1416,7 +1621,9 @@
       "insertion_seconds": 308.77,
       "fraction": 0.135366,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-complexity--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-complexity--injected.wav"
     },
     {
       "id": "pilot:P-ES-hidden",
@@ -1429,7 +1636,9 @@
       "insertion_seconds": 460.02,
       "fraction": 0.201675,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-hidden--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-hidden--injected.wav"
     },
     {
       "id": "pilot:P-ES-numbers",
@@ -1442,7 +1651,9 @@
       "insertion_seconds": 556.02,
       "fraction": 0.243762,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-numbers--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-numbers--injected.wav"
     },
     {
       "id": "pilot:P-ES-voice-open",
@@ -1455,7 +1666,9 @@
       "insertion_seconds": 1823.87,
       "fraction": 0.799592,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-voice-open--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-ES-voice-open--injected.wav"
     },
     {
       "id": "pilot:P-IS-notes",
@@ -1468,7 +1681,9 @@
       "insertion_seconds": 328.15,
       "fraction": 0.140175,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-notes--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-notes--injected.wav"
     },
     {
       "id": "pilot:P-IS-sample",
@@ -1481,7 +1696,9 @@
       "insertion_seconds": 600.64,
       "fraction": 0.256574,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-sample--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-sample--injected.wav"
     },
     {
       "id": "pilot:P-IS-frequency",
@@ -1494,7 +1711,9 @@
       "insertion_seconds": 600.64,
       "fraction": 0.256574,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-frequency--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-frequency--injected.wav"
     },
     {
       "id": "pilot:P-IS-learning",
@@ -1507,7 +1726,9 @@
       "insertion_seconds": 600.64,
       "fraction": 0.256574,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-learning--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-learning--injected.wav"
     },
     {
       "id": "pilot:P-IS-teletext-usage",
@@ -1520,7 +1741,9 @@
       "insertion_seconds": 1855.31,
       "fraction": 0.792529,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-teletext-usage--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-teletext-usage--injected.wav"
     },
     {
       "id": "pilot:P-TS-time",
@@ -1533,7 +1756,9 @@
       "insertion_seconds": 302.37,
       "fraction": 0.1368,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-time--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-time--injected.wav"
     },
     {
       "id": "pilot:P-TS-sample",
@@ -1546,7 +1771,9 @@
       "insertion_seconds": 302.37,
       "fraction": 0.1368,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-sample--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-sample--injected.wav"
     },
     {
       "id": "pilot:P-TS-buttons",
@@ -1559,7 +1786,9 @@
       "insertion_seconds": 451.9,
       "fraction": 0.204451,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-buttons--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-buttons--injected.wav"
     },
     {
       "id": "pilot:P-TS-relevance",
@@ -1572,7 +1801,9 @@
       "insertion_seconds": 451.9,
       "fraction": 0.204451,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-relevance--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-relevance--injected.wav"
     },
     {
       "id": "pilot:P-TS-dock",
@@ -1585,7 +1816,9 @@
       "insertion_seconds": 583.52,
       "fraction": 0.264,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock--injected.wav"
     },
     {
       "id": "pilot:P-TS-learning",
@@ -1598,7 +1831,9 @@
       "insertion_seconds": 583.52,
       "fraction": 0.264,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-learning--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-learning--injected.wav"
     },
     {
       "id": "pilot:P-TS-target-change",
@@ -1611,7 +1846,9 @@
       "insertion_seconds": 1721.99,
       "fraction": 0.779073,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-target-change--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-target-change--injected.wav"
     },
     {
       "id": "pilot:P-TS-teletext",
@@ -1624,7 +1861,9 @@
       "insertion_seconds": 1721.99,
       "fraction": 0.779073,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-teletext--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-teletext--injected.wav"
     },
     {
       "id": "pilot:P-IS-target-unknown",
@@ -1637,7 +1876,9 @@
       "insertion_seconds": 441.94,
       "fraction": 0.188783,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-target-unknown--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-IS-target-unknown--injected.wav"
     },
     {
       "id": "pilot:P-TS-dock-mechanism",
@@ -1650,7 +1891,9 @@
       "insertion_seconds": 583.52,
       "fraction": 0.264,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock-mechanism--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--P-TS-dock-mechanism--injected.wav"
     },
     {
       "id": "pilot:Q-IS-teletext-comparison",
@@ -1663,7 +1906,9 @@
       "insertion_seconds": 1855.31,
       "fraction": 0.792529,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-IS-teletext-comparison--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--Q-IS-teletext-comparison--injected.wav"
     },
     {
       "id": "pilot:Q-EN-compiler",
@@ -1676,7 +1921,9 @@
       "insertion_seconds": 471.33,
       "fraction": 0.263766,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-EN-compiler--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--Q-EN-compiler--injected.wav"
     },
     {
       "id": "pilot:Q-TS-current-audience",
@@ -1689,7 +1936,9 @@
       "insertion_seconds": 1721.99,
       "fraction": 0.779073,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/pilot--Q-TS-current-audience--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/pilot--Q-TS-current-audience--injected.wav"
     },
     {
       "id": "scale:EN2004a-S075-Q2",
@@ -1702,7 +1951,9 @@
       "insertion_seconds": 640.16,
       "fraction": 0.185784,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S075-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-S075-Q2--injected.wav"
     },
     {
       "id": "scale:EN2004a-Smiddle-Q2",
@@ -1715,7 +1966,9 @@
       "insertion_seconds": 1697.61,
       "fraction": 0.492672,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-Smiddle-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2004a-Smiddle-Q2--injected.wav"
     },
     {
       "id": "scale:EN2009b-S10-Q3",
@@ -1728,7 +1981,9 @@
       "insertion_seconds": 732.14,
       "fraction": 0.295895,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-S10-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2009b-S10-Q3--injected.wav"
     },
     {
       "id": "scale:IB4003-S10-Q3",
@@ -1741,7 +1996,9 @@
       "insertion_seconds": 656.27,
       "fraction": 0.32435,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S10-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4003-S10-Q3--injected.wav"
     },
     {
       "id": "scale:IB4003-Smiddle-Q3",
@@ -1754,7 +2011,9 @@
       "insertion_seconds": 1078.12,
       "fraction": 0.532843,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--IB4003-Smiddle-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--IB4003-Smiddle-Q3--injected.wav"
     },
     {
       "id": "scale:ES2003c-S075-Q3",
@@ -1767,7 +2026,9 @@
       "insertion_seconds": 453.53,
       "fraction": 0.201479,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S075-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S075-Q3--injected.wav"
     },
     {
       "id": "scale:ES2003c-S10-Q1",
@@ -1780,7 +2041,9 @@
       "insertion_seconds": 605.14,
       "fraction": 0.268832,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S10-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2003c-S10-Q1--injected.wav"
     },
     {
       "id": "scale:TS3004d-S075-Q1",
@@ -1793,7 +2056,9 @@
       "insertion_seconds": 445.92,
       "fraction": 0.162448,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-S075-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-S075-Q1--injected.wav"
     },
     {
       "id": "scale:TS3004d-Smiddle-Q3",
@@ -1806,7 +2071,9 @@
       "insertion_seconds": 1370.57,
       "fraction": 0.499297,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Smiddle-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3004d-Smiddle-Q3--injected.wav"
     },
     {
       "id": "scale:ES2004d-infrared-location",
@@ -1819,7 +2086,9 @@
       "insertion_seconds": 450.92,
       "fraction": 0.203117,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2004d-infrared-location--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2004d-infrared-location--injected.wav"
     },
     {
       "id": "scale:TS3006c-S10-Q1",
@@ -1832,7 +2101,9 @@
       "insertion_seconds": 606.19,
       "fraction": 0.234572,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S10-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-S10-Q1--injected.wav"
     },
     {
       "id": "scale:TS3006c-Smiddle-Q2",
@@ -1845,7 +2116,9 @@
       "insertion_seconds": 1300.07,
       "fraction": 0.503077,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-Smiddle-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--TS3006c-Smiddle-Q2--injected.wav"
     },
     {
       "id": "scale:ES2006a-S075-Q3",
@@ -1858,7 +2131,9 @@
       "insertion_seconds": 452.23,
       "fraction": 0.350566,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-S075-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2006a-S075-Q3--injected.wav"
     },
     {
       "id": "scale:EN2006b-S075-Q1",
@@ -1871,7 +2146,9 @@
       "insertion_seconds": 440.13,
       "fraction": 0.144198,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q1--injected.wav"
     },
     {
       "id": "scale:EN2006b-S075-Q2",
@@ -1884,7 +2161,9 @@
       "insertion_seconds": 440.13,
       "fraction": 0.144198,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q2--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--EN2006b-S075-Q2--injected.wav"
     },
     {
       "id": "scale:ES2007a-S075-Q3",
@@ -1897,7 +2176,9 @@
       "insertion_seconds": 444.0,
       "fraction": 0.363636,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-S075-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2007a-S075-Q3--injected.wav"
     },
     {
       "id": "scale:ES2008b-Smiddle-Q3",
@@ -1910,7 +2191,9 @@
       "insertion_seconds": 1007.48,
       "fraction": 0.479524,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Smiddle-Q3--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2008b-Smiddle-Q3--injected.wav"
     },
     {
       "id": "scale:ES2009a-S10-Q1",
@@ -1923,7 +2206,9 @@
       "insertion_seconds": 594.37,
       "fraction": 0.42124,
       "equal_type": false,
-      "request_audio_status": "Requester voice with matched background"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-acoustic-bank/audio/scale--ES2009a-S10-Q1--question.wav",
+      "context_audio": "../research/question-acoustic-bank/audio/scale--ES2009a-S10-Q1--injected.wav"
     },
     {
       "id": "natural-AMI-ES2006a-laughter",
@@ -1936,7 +2221,9 @@
       "insertion_seconds": null,
       "fraction": null,
       "equal_type": false,
-      "request_audio_status": "Stock narrator listening control"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/natural-AMI-ES2006a-laughter.wav",
+      "context_audio": "../research/question-dataset/audio/natural-AMI-ES2006a-laughter.flac"
     },
     {
       "id": "natural-ConEC-4374910-laughter",
@@ -1949,7 +2236,9 @@
       "insertion_seconds": null,
       "fraction": null,
       "equal_type": false,
-      "request_audio_status": "Stock narrator listening control"
+      "request_audio_status": "Requester voice with matched background",
+      "request_audio": "../research/question-dataset/audio/participants/natural-ConEC-4374910-laughter.wav",
+      "context_audio": "../research/question-dataset/audio/natural-ConEC-4374910-laughter.flac"
     }
   ],
   "demos": [
@@ -2043,8 +2332,8 @@
         {
           "label": "Two original excerpts and the spoken question",
           "file": "../research/question-dataset/audio/natural-AMI-ES2006a-laughter.flac",
-          "duration": 28.11,
-          "request_at": 22.3
+          "duration": 28.677375,
+          "request_at": 21.98
         }
       ],
       "answers": [
@@ -2058,8 +2347,8 @@
         {
           "label": "Two original excerpts and the spoken question",
           "file": "../research/question-dataset/audio/natural-ConEC-4374910-laughter.flac",
-          "duration": 27.61,
-          "request_at": 21.8
+          "duration": 29.632,
+          "request_at": 21.48
         }
       ],
       "answers": [

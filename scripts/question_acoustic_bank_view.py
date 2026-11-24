@@ -14,7 +14,7 @@ def apply(clips):
  return out,d
 
 def alternatives(d,player):
- body='<section class="section" id="alternate-voices"><h2>Six additional published voice versions</h2><p>The three original AMI questions also have Qwen and Chatterbox versions. These receive the same acoustic checks and do not increase the count of 105 distinct questions. All players below use the revised audio.</p>'
+ body='<section class="section" id="alternate-voices"><h2>Archived TTS comparison</h2><p>These six Qwen and Chatterbox recordings document the original three-model comparison on AMI. Each current dataset question uses F5-TTS. <a href="question-dataset.html#sources">Listen to the current question recordings.</a></p>'
  for c in d['cases']:
   if c['primary']:continue
   body+='<article class="catalog-question" id="'+e(c['revision_id'])+'"><h3>'+e(c['meeting']+' · '+c['revision_id'].rsplit('--',1)[-1])+'</h3><p>'+e(c['question'])+'</p>'+player('../research/question-acoustic-bank/'+c['injected_audio'],'Revised inserted question '+c['revision_id'])+'<button class="jump-question" data-start="'+str(c['synthetic_speech_playback_start_seconds'])+'">Play from the question</button><details><summary>Question alone and ASR check</summary>'+player('../research/question-acoustic-bank/'+c['question_audio'],'Revised question alone '+c['revision_id'])+'<p><strong>Parakeet question transcript:</strong> '+e(c['asr']['revised']['text'])+'</p></details></article>'
